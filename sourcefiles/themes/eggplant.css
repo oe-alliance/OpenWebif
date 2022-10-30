@@ -33,7 +33,7 @@
 }
 .ui-widget-content {
 	border: 1px solid #7e7783;
-	background: #3d3644 url("images/ui-bg_gloss-wave_30_3d3644_500x100.png") 50% top repeat-x;
+	background: #3d3644;
 	color: #ffffff;
 }
 .ui-widget-content a {
