@@ -152,6 +152,13 @@ Upload these files to the receiver at
 /usr/lib/enigma2/python/Plugins/Extensions/OpenWebif/public/css/
 ```
 
+###Compile Themes for jQuery UI
+`cd` to the repo root, then run
+
+`(cd ./sourcefiles && npm run build-css-themes)`
+
+This is only needed if jQuery UI has been changed!
+
 Refresh the browser page to see any changes, there's no need to restart Twisted
 server or enigma2!
 

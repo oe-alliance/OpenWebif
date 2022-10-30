@@ -236,7 +236,7 @@ class EPG():
 
 		description = "No description available"
 		event = self._instance.lookupEvent(["ESX", (sref, 2, eventid)])
-		if event and event[0] and event[0][0]:
+		if event and event[0] and event[0][0] is not None:
 			if len(event[0][0]) > 1:
 				description = event[0][0]
 			elif len(event[0][1]) > 1:
