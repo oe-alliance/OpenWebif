@@ -1,0 +1,84 @@
+#def select($config)
+<tr>
+<td>$config.description</td>
+<td>
+	<select id="$config.path" onchange="saveConfig('$config.path', this.value, '$key');">
+		#for $choice in $config.data.choices
+			#if $config.data.current == $choice[0]
+				<option value="$choice[0]" selected="true">$choice[1]</option>
+			#else
+				<option value="$choice[0]">$choice[1]</option>
+			#end if
+		#end for
+	</select>
+</td>
+</tr>
+#end def
+
+#def checkbox($config)
+<tr>
+<td>$config.description</td>
+<td>
+	#if $config.data.current
+		<input type="checkbox" id="$config.path" checked="true" onclick="saveConfig('$config.path', this.checked, '$key');" />
+	#else
+		<input type="checkbox" id="$config.path" onclick="saveConfig('$config.path', this.checked, '$key');" />
+	#end if
+</td>
+</tr>
+#end def
+
+#def multicheckbox($config)
+<tr>
+<td>$config.description</td>
+<td>
+	#for $choice in $config.data.choices
+		#if $choice in $config.data.current
+			<input type="checkbox" id="${config.path}_${choice}" checked="true" onclick="saveConfig('$config.path', $choice, '$key');" />
+		#else
+			<input type="checkbox" id="${config.path}_${choice}" onclick="saveConfig('$config.path', $choice, '$key');" />
+		#end if
+		$choice
+	#end for
+</td>
+</tr>
+#end def
+
+#def number($config)
+<tr>
+<td>$config.description</td>
+<td>
+	<input type="text" id="${config.path}" value="$config.data.current" onkeydown="numberTextboxKeydownFilter(event);" onchange="saveConfig('$config.path', this.value, '$key');">
+</td>
+</tr>
+#end def
+
+#def text($config)
+<tr>
+<td>$config.description</td>
+<td>
+	<input type="text" id="${config.path}" value="$config.data.current" onchange="saveConfig('$config.path', this.value, '$key');">
+</td>
+</tr>
+#end def
+
+<div id="content_main">
+	<h3 class="ui-widget-header">$title</h3>
+	<table id="configuration">
+		#for $config in $configs:
+			#if $config.data.type == "select"
+				$select($config)
+			#elif $config.data.type == "checkbox"
+				$checkbox($config)
+			#elif $config.data.type == "multicheckbox"
+				$multicheckbox($config)
+			#elif $config.data.type == "number"
+				$number($config)
+			#elif $config.data.type == "text"
+				$text($config)
+			#elif $config.data.type == "slider"
+				$number($config)
+			#end if
+		#end for
+	</table>
+</div>

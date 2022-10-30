@@ -1,0 +1,405 @@
+#from urllib.parse import quote
+#from Plugins.Extensions.OpenWebif.controllers.i18n import tstrings
+#from json import dumps
+#from time import localtime, strftime, mktime
+#from Plugins.Extensions.OpenWebif.controllers.views.ajax.renderevtblock import renderEvtBlock
+<style>
+	table { font-family: Verdana; font-size: 11px; }
+	tr { vertical-align: top }
+	.float { float:left }
+	.service { font-weight: bold; font-size: 12px; line-height:30px; padding-right: 4px; white-space: nowrap; overflow: hidden;}
+	.service img { width:50px; height:30px; float:left; margin-right:10px; border: 0;}
+	.title { font-weight: bold;}
+	.desc { font-size: 10px; line-height: 1.25em; max-height: 3.75em; overflow: hidden; }
+	.event { cursor: pointer; width: 190px; overflow:hidden; margin-bottom: 0.75em;}
+	.bq { font-size: 11px; font-weight: bold; padding: 2px 4px; line-height: 18px; cursor: pointer; white-space: nowrap; display: inline-block; margin: 1px 1px 0px 0px;}
+	.plus { font-size: 13px; font-weight: bold; padding: 2px 4px; line-height: 21px; cursor: pointer; white-space: nowrap; }
+	.timer { font-weight: bold; font-size: 10px; }
+	#eventdescription { width: 375px; height: auto; position: fixed; top: 205px; left: 350px; z-index: 100; display: none; overflow: auto; }
+	#navepg { margin-bottom: 1px; }
+	#tbl1 thead tr, #tbl1 tfoot tr { display: block; width: 100%; }
+	#tbl1 tbody { width: 100%; height: 100%; overflow-y: auto; display: block; overflow-x: hidden;}
+	.ui-widget-content.nobg , .ui-widget-header.nobg{ background-image: none; } 
+	.wrapper { overflow-x: auto; width: 100%; -ms-overflow-style: -ms-autohiding-scrollbar;}
+	td.border { width: 190px; }
+	.plus.ui-state-default.lbl { border:none; background:none; cursor:default; color:inherit;}
+	.wrapper::-webkit-scrollbar { width: 12px; }
+	#tblinner::-webkit-scrollbar { width: 8px; }
+	::-webkit-scrollbar-track { background: #f1f1f1; }
+	::-webkit-scrollbar-thumb { background: #6784b3; }
+</style>
+
+<div id="navepg">
+#for $slot in list(range(0,7))
+	<div class="float plus ui-state-default #if $slot==$day then 'ui-state-active' else '' #" data-day="$(slot)">$tstrings[("day_" + (time.strftime("%w", time.localtime(time.time()+86400*slot))))]</div>
+#end for
+#if $mode == 2
+<div class="float plus ui-state-default lbl">&nbsp;$tstrings['prime_times']:&nbsp;</div>
+<div id="pt0" class="float plus ui-state-default" data-day="201">06:00</div>
+<div id="pt1" class="float plus ui-state-default" data-day="202">12:00</div>
+<div id="pt2" class="float plus ui-state-default" data-day="203">20:00</div>
+#if $day == 0
+<div id="pt3" class="float">&nbsp;</div>
+<div id="pt4" class="float plus ui-state-default" data-day="200">$tstrings['now']</div>
+#end if
+#else
+<div class="float plus ui-state-default lbl">&nbsp;$tstrings['cw']:&nbsp;</div>
+#for $wk in list(range(0,3))
+	#set $w = $wk + 1000
+	<div class="float plus ui-state-default #if $wk==$week then 'ui-state-active' else '' #" data-day="$(w)">$time.strftime("%V",time.localtime(time.time()+604800*wk))</div>
+#end for
+#end if
+<div class="float plus ui-state-default lbl">&nbsp;$tstrings['display_mode']:&nbsp;</div>
+<div class="float plus ui-state-default #if $mode==1 then 'ui-state-active' else '' #" data-day="101">$tstrings['tv_guide']</div>
+<div class="float plus ui-state-default #if $mode==2 then 'ui-state-active' else '' #" data-day="102">$tstrings['timeline']</div>
+#if $mode == 1
+<div class="float plus ui-state-default lbl">&nbsp;$tstrings['date']:&nbsp;$time.strftime("%x", time.localtime(time.time()+86400*$day+604800*$week))</div>
+#end if
+<div id="compressmepg" onclick="CompressMEPG();"><i id="compressmepgi" class="fa fa-compress link" aria-hidden="true"></i></div>
+<div id="refreshmepg2" onclick="RefreshMEPG();"><i id="refreshmepgi" class="fa fa-refresh link" aria-hidden="true"></i></div>
+	<br clear="all">
+
+#for $bq in $bouquets
+	<div class="float bq ui-state-default #if $bq[0]==$bref then 'ui-state-active' else '' #" data-ref="$quote($bq[0])">$bq[1]</div>
+#end for
+<br clear="all">
+</div>
+
+#if $mode == 2
+
+<style>
+.picon { display: inline-block; margin:0; max-width: 100px;}
+.picon > img { max-height: 30px;}
+
+.eventlist { display: inline-block; list-style-type: none; margin: 0px; padding: 1px 0px; width: calc(100% - 105px); }
+.event { display: block; position: relative; vertical-align: top; clear: left; border: none; }
+.event a,.event > span { padding: 0 0 0 10px; height:48px; width:100%; display: block; white-space: normal; overflow: hidden; }
+.event a:link:hover { text-decoration: none; }
+.ename { display: block; width: 100%; float: left; font-weight: 200; line-height: 1,4; font-size: 14px; }
+.etime,.etimer  { display: inline-block; padding-right: 20px; font-weight: 200; line-height: 1,4; font-size: 12px; }
+.event { display: inline-block; border-width: 0px 0px 0px 1px; }
+.event .ename,.event .etime,.event .etimer { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+</style>
+
+#set $now = $mktime($localtime())
+
+#if $day == 0
+#set $first = $now - 3600
+#else
+#set $first = $now + ($day * 3600 * 24)
+#end if
+
+#set $s = $strftime("%S",$localtime($first))
+#set $m = $strftime("%M",$localtime($first))
+#set $offset = $int($m) * 60
+#set $offset = $offset + $int($s)
+
+#if $day > 0
+#set $h = $strftime("%H",$localtime($first))
+#set $offset = $offset + $int($h) * 60 * 60
+#set $offset = $offset + 3600
+#end if
+
+#set $first = $first - $offset
+
+#end if
+
+#if $mode == 1
+#set $renderEventBlock = $renderEvtBlock()
+<div class="wrapper">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" id="tbl1">
+<thead>
+<tr>
+	#for $sname, $eventlist in $events.items()
+	#set $evl = $eventlist[0]
+	#set $ref= ""
+	#if $evl
+		#set $ev=$evl[0]
+		#set $ref = "data-ref='" + $ev.ref + "'"
+	#end if
+	<td class="border"><div class="service ui-widget-header" $ref><img src="$(picons[$sname])" /> $sname</div></td>
+	#end for
+</tr>
+</thead>
+<tbody id="tbl1body">
+	#for $slot in list(range(0,12))
+	<tr class="$(slot%2 and 'ui-widget-content' or 'ui-widget-content ui-state-hover') nobg">
+		#for $sname, $eventlist in $events.items()
+		<td class="border">
+			#for $event in $eventlist[$slot]
+				$renderEventBlock.render($event)
+			#end for
+			#if len($eventlist[$slot]) == 0
+			<div class="event"></div>
+			#end if
+		</td>
+		#end for
+	</tr>
+	#end for
+</tbody>
+<tfoot>
+<tr>
+	#for $sname, $eventlist in $events.items()
+	<td class="border"><div class="service ui-widget-header"><img src="$(picons[$sname])" /> $(channelnames[$sname])</div></td>
+	#end for
+</tr>
+</tfoot>
+</table>
+#else
+<div class="wrapper">
+<div id="tbl1body" style="position: relative; width: 100%;">
+	<div id="tblinner" style="height: auto;width: 100%; white-space: nowrap;">
+	<div class="timetable">
+	<div>
+	<div class="timetable-now"></div>
+	</div>
+	</div>
+
+	<ol id="timescroller" class="channel-listing ui-widget-header nobg" style="border:none;">
+		<li>
+			<span>
+				<div class="togglescroll ui-widget-header">
+					<h2 class="picon" ></h2>
+					<span></span>
+				</div>
+			</span>
+			<ol cass="eventlist">
+				#set pad = 141
+				<li class="event" style="width:${pad}px;">
+				</li>
+				#for $slot in list(range(0,50))
+					#set $t = $first + ($slot * 3600)
+					<li class="event" style="width:600px;" data-dt="$strftime("%H:%M", $localtime($t))">
+						<span class="ui-widget-header nobg">
+							<span class="ename">$tstrings[("day_" + ($strftime("%w",$localtime($t))))], $strftime('%d.%m.', $localtime($t))</span>
+							<span class="etime">$strftime("%H:%M", $localtime($t))</span>
+						</span>
+					</li>
+				#end for
+			</ol>
+		</li>
+	</ol>
+
+	#for $sname, $eventlist in $events.items()
+		<ol class="channel-listing">
+			<li>
+				<span class="ui-widget-header">
+					<div>
+						<h2 class="picon" ><img src="$(picons[$sname])" title="$(channelnames[$sname])" /></h2>
+						<span>$(channelnames[$sname])</span>
+					</div>
+				</span>
+				<ol cass="eventlist">
+					#set $c=0
+					#set $ref = ''
+					#for $event in $eventlist[0]
+					#set pad = 0
+					#if $c == 0
+						#set $ref = quote(event['ref'], safe=' ~@#$&()*!+=:;,.?/\'')
+						#set pad = 141 + ($event.begin_timestamp - $first) / 6
+						<li class="event" style=;width:${pad}px;">
+						</li>
+					#end if
+					#set $end = $event.begin_timestamp + $event.duration
+					#set $iscurr = ""
+					#if $event.begin_timestamp < $now and $end > $now
+						#set $iscurr = " ui-state-hover"
+					#end if
+					#if $event['timerStatus'] != ''
+						#set $iscurr = " ui-state-hover"
+					#end if
+					<li class="event" data-ref="$ref" data-id="${event.id}" style="width:${event.duration/6}px;" >
+						<a href="#" class="ui-widget-content ${iscurr}" title="$event['title']">
+						<span class="ename">$event['title']</span>
+						<span class="etime">$strftime("%H:%M", $localtime($event['begin_timestamp']))</span>
+						#if $event['timerStatus'] != ''
+							#set tt = $event['timer']['text']
+							<span class="etimer $event['timerStatus']">$tt</span>
+						#end if
+						</a>
+					</li>
+					#set $c = $c + 1
+					#end for
+				</ol>
+			</li>
+		</ol>
+	#end for
+</div>
+#end if
+</div>
+<div id="eventdescription"></div>
+
+<script>
+#if $mode == 2
+var opena = $first;
+var openb = $now;
+var pos = (openb - opena);
+if (pos>0)
+	pos = pos / 6;
+
+#if $day == 0
+
+\$(".timetable-now").css('left',151+pos);
+
+setTimeout(function() {
+	var nowdate = Math.round(+new Date()/1000);
+	var pos = (nowdate - opena);
+	if(pos>0)
+		pos = pos / 6;
+	\$(".timetable-now").css('left',151+pos);
+} ,10000);
+
+\$(".timetable-now").css('height',\$("#tblinner").height());
+#else
+\$(".timetable-now").css('height','0');
+#end if
+
+#end if
+var picons = $dumps($picons);
+var reloadTimers = false;
+function getScrollBarWidth () {
+	var \$outer = \$('<div>').css({visibility: 'hidden', width: 100, overflow: 'scroll'}).appendTo('body'),
+		widthWithScroll = \$('<div>').css({width: '100%'}).appendTo(\$outer).outerWidth();
+	\$outer.remove();
+	return 100 - widthWithScroll;
+}
+var scrollBarWidth=getScrollBarWidth();
+function fixTableHeight() {
+	var addScrollBarWidth = scrollBarWidth;
+	if (\$('#tbl1').width() <= \$("#tvcontent").width()){
+		addScrollBarWidth = 0;
+	}
+	
+#if $mode == 1
+	\$("#tbl1body").height( (\$("#tvcontent").height() - \$("#navepg").height() - 2*\$("#tbl1 thead").height() - addScrollBarWidth - 2) + "px");
+#else
+	\$("#tbl1body").height( (\$("#tvcontent").height() - \$("#navepg").height() - 20 - addScrollBarWidth - 2) + "px");
+#end if
+	if (!\$('#toolbar-header').is(':visible')) {
+		var dh = \$(window).height();
+		\$("#tvcontentmain").height(dh-80);
+		\$("#tbl1body").height(dh-215);
+	}
+}
+fixTableHeight();
+\$(window).resize(function(){ fixTableHeight(); });
+\$(".bq").click(function() {
+	var id = \$(this).data("ref");
+	var epgmode = "$epgmode";
+	\$("#tvcontent").html(loadspinner).load('ajax/multiepg?bref='+id +'&day=$day&epgmode=' + epgmode);
+	SetLSValue("lastmbq_"+epgmode,id);
+});
+\$(".event").click(function() {
+	var id = \$(this).data("id");
+	if (id != undefined) {
+		var ref = \$(this).data("ref");
+		\$("#eventdescription").load('ajax/event?idev='+id+'&sref='+escape(ref), function() {
+			\$("#eventdescription").show(200).draggable( { handle: ".handle" } );
+		});
+	}
+});
+#if $mode == 1
+\$(".service").click(function() {
+	var ref = \$(this).data("ref");
+	if (ref != undefined) {
+		zapChannel(ref, '');
+	}
+});
+#end if
+\$(".plus").click(function() {
+	var day = \$(this).data("day");
+	var epgmode = "$epgmode";
+	if (day != undefined) {
+		if (day > 999)
+		{
+			var w = day - 1000;
+			\$("#tvcontent").html(loadspinner).load('ajax/multiepg?bref=${quote($bref)}&day='+$day+'&epgmode='+epgmode+'&week='+w);
+		}
+		else if (day > 199)
+		{
+			var d = day - 200;
+			var dt = (d==0) ? '' : \$(this).html();
+			var pos = 0;
+			\$('#tblinner').scrollLeft(0);
+			
+			\$("#timescroller li ol .event").each( function (){
+				if (pos == 0) {
+					if (\$(this).data("dt") == dt) {
+						if(\$(this).position() != undefined)
+							pos = \$(this).position().left;
+					}
+				}
+			});
+			
+			if(d=='')
+			{
+				var l = \$(".timetable-now").css('left');
+				pos = parseInt(l.replace('px',''));
+			}
+			
+			if(pos>0)
+			{
+				pos-=200;
+				\$('#tblinner').animate({scrollLeft: pos}, 500);
+			}
+		}
+		else if (day > 100)
+		{
+			var mode = day - 100;
+			if (mode != $mode) {
+			
+				$.ajax({
+				url: 'api/setwebconfig?mepgmode=' + mode,
+					success: function(data) {
+						\$("#tvcontent").html(loadspinner).load('ajax/multiepg?bref=${quote($bref)}&day=$day&epgmode='+epgmode+'&week='+$week);
+					}
+				});
+			}
+		}
+		else {
+			\$("#tvcontent").html(loadspinner).load('ajax/multiepg?bref=${quote($bref)}&day='+day+'&epgmode='+epgmode+'&week='+$week);
+		}
+	} else {
+		epgmode = \$(this).data("tvradio");
+		if (epgmode != undefined) {
+			\$("#tvcontent").html(loadspinner).load('ajax/multiepg?day='+day+'&epgmode='+epgmode);
+		}
+	}
+});
+if(!timeredit_initialized)
+	\$('#editTimerForm').load('/ajax/edittimer');
+
+if(\$("#header").is(':hidden')) { 
+	\$('#compressmepg').show();\$('#refreshmepg2').show();
+}
+if(mepgdirect==1) {
+	mepgdirect=0;\$("#expandmepg").click();
+}
+\$(".togglescroll").click(function() {
+
+	if(\$('#tblinner').css('overflow-y')=='hidden') {
+		\$('#tblinner').css('overflow-y','');
+		\$('.togglescroll').removeClass('ui-widget-header');
+		SetLSValue('MultiEPGScrollStyle','1');
+	}else{
+		\$('#tblinner').css('overflow-y','hidden');
+		\$('.togglescroll').addClass('ui-widget-header');
+		SetLSValue('MultiEPGScrollStyle','0');
+	}
+});
+#if $mode == 2
+\$(function() {
+
+	if(GetLSValue('MultiEPGScrollStyle','0')=='0') {
+		\$('#tblinner').css('overflow-y','hidden');
+		\$('.togglescroll').addClass('ui-widget-header');
+	}
+	else
+	{
+		\$('#tblinner').css('overflow-y','');
+		\$('.togglescroll').removeClass('ui-widget-header');
+	}
+
+});
+#end if
+</script>

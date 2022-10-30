@@ -1,0 +1,335 @@
+#from Plugins.Extensions.OpenWebif.controllers.i18n import tstrings
+<style>
+.t,.t2,.t3 { display:table;width: 100%; padding-bottom:10px;background-image:none;}
+.t3.ui-widget-content,.t2.ui-widget-content,.t.ui-widget-content { border:none;}
+.t3 > div,.t > div,.t2 > div { display:table-cell;}
+.t > div:first-child { width: 160px;vertical-align:top;}
+.t2 div{ width: 50%;}
+.t3 div{ width: 33%;}
+#enabled,#justplay,#always_zap,#timerend,#cbradio,#rcb,#sep1,#timerbegin {margin-left:5px;}
+#justplay,#always_zap,#sep1,#timerbegin {margin-right:5px;}
+#repeatdays > label,#tagsnew > label { line-height:.9em;padding-left:10px;padding-right:10px; }
+#repeatdays span.ui-icon { display:none! important; }
+#bouquet_select-menu {max-height: 300px;}
+</style>
+<form>
+<div>
+	<div class="t ui-widget-content">
+		<div>$tstrings['enabled']:<input type="checkbox" name="enabled" id="enabled" value="0" /></div>
+		<div>$tstrings['just_play']:<input type="checkbox" name="justplay" id="justplay" value="0" /><span id="sep1">/</span>
+		$tstrings['zap_record']:<input type="checkbox" name="always_zap" id="always_zap" value="0" />
+		#if $pipzap
+		<br>
+		$tstrings['pipifposible']: <input type="checkbox" name="pipzap" id="pipzap" value="0" />
+		#else
+		<input type="checkbox" name="pipzap" id="pipzap" value="0" style="display:none"/>
+		#end if
+		</div>
+	</div>
+
+	<div class="t ui-widget-content">
+		<div>$tstrings['name']:</div>
+		<div><input type="text" name="timername" id="timername" style="width:100%;" class="text ui-widget-content ui-corner-all" /></div>
+	</div>
+	<div class="t ui-widget-content">
+		<div>$tstrings['description']:</div>
+		<div><textarea name="description" id="description" style="width:100%; height: 50px;" class="text ui-widget-content ui-corner-all" /></div>
+	</div>
+	<div class="t ui-widget-content">
+		<div>$tstrings['channel']:
+		<label style="display:none;"><input class="cbtvr" id="cbtv" type="checkbox" name="group1[]" /> $tstrings['tv'] </label>
+		<span id="rcb">($tstrings['radio']:<input class="cbtvr" id="cbradio" type="checkbox" name="group1[]" />)</span>
+		</div>
+		<div>
+		<select id="bouquet_select" name="bouquet_select" style="width:100%;">
+			<option value="0">$tstrings['nothing']</option>
+		</select></div>
+	</div>
+
+	<div class="t ui-widget-content">
+		<div>$tstrings['time']:</div>
+		<div>$tstrings['start']:<input type="text" name="timerbegin" id="timerbegin" value="" class="text ui-widget-content ui-corner-all" />&nbsp;
+		$tstrings['end']:<input type="text" name="timerend" id="timerend" value="" class="text ui-widget-content ui-corner-all" /></div>
+	</div>
+
+
+	<div class="t ui-widget-content">
+		<div>$tstrings['repeated']:</div>
+		<div>
+		<span id="repeatdays" style="margin: 5px;">
+		#set $i=0
+		#for $day in [$tstrings['mo'], $tstrings['tu'], $tstrings['we'], $tstrings['th'], $tstrings['fr'], $tstrings['sa'], $tstrings['su']]
+			#set $value = 2 ** $i
+			<label for="day$i">$day</label><input type="checkbox" name="repeated" id="day$i" value="$value" />
+			#set $i=$i+1
+		#end for
+		</span>
+		</div>
+	</div>
+
+	<div class="t ui-widget-content">
+		<div>$tstrings['location']:</div>
+		<div>
+		<select id="dirname" name="dirname">
+			<option value="None">$tstrings['default']</option>
+		</select>
+		</div>
+	</div>
+
+	<div class="t ui-widget-content">
+		<div>$tstrings['after_event']:</div>
+		<div>
+		<select id="afterevent" name="afterevent">
+			<option value="0">$tstrings['nothing']</option>
+			<option value="1">$tstrings['standby']</option>
+			<option value="2">$tstrings['shutdown']</option>
+			<option value="3" selected="">$tstrings['auto']</option>
+		</select>
+		</div>
+	</div>
+
+	<div class="timerlist_row" id="has_vpsplugin1">
+		<span class="timerlist_row_l">$tstrings['vps']:</span>
+		<span style="margin: 5px;">
+			<input type="checkbox" name="vpsplugin_enabled" id="vpsplugin_enabled" value="0" />
+		</span>
+		<span id="has_vpsplugin2" class="timerlist_row_r">$tstrings['safe_mode']:</span>
+		<span style="margin: 5px;">
+			<input type="checkbox" name="vpsplugin_safemode" id="vpsplugin_safemode" value="0" />
+		</span>
+	</div>
+
+	#if $allow_duplicate
+	<div class="t ui-widget-content">
+		<div>
+			$tstrings['allow_duplicate']: <input type="checkbox" id="allow_duplicate" value="1" />
+		</div>
+	</div>
+	#else
+	<input type="checkbox" name="allow_duplicate" id="allow_duplicate" value="0" style="display:none" />
+	#end if
+	
+	<div class="timerlist_row">
+		<span class="timerlist_row_l">$tstrings['tags']:</span>
+		<span id="tagsnew" style="margin:5px">
+		</span>
+	</div>
+
+	<div class="t ui-widget-content">
+		<div>$tstrings['recordingtype']:</div>
+		<div>
+		<select id="recordingtype" name="recordingtype">
+			<option value="">$tstrings['default']</option>
+			<option value="normal">$tstrings['normal']</option>
+			<option value="descrambled">$tstrings['descrambledecm']</option>
+			<option value="scrambled">$tstrings['scrambledecm']</option>
+		</select>
+		</div>
+	</div>
+	
+	<div id="errorbox" class="timerlist_row" style="color: red;">
+		<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;"> 
+			<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+			<span id="error"></span>
+		</div>
+	</div>
+</div>
+</form>
+
+<script type="text/javascript">
+
+#raw
+
+initTimerEditBegin();
+
+$('.cbtvr').click(function() {
+	$('input[name="' + this.name + '"]').not(this).prop('checked', false);
+	initTimerBQ($('#cbradio').is(':checked'));
+});
+
+$('#vpsplugin_enabled').click(function() { checkVPS();});
+
+$('#always_zap').click(function() {
+	$('#justplay').prop("disabled",$('#always_zap').is(':checked'));
+});
+
+$('#timerend').datetimepicker({
+	timeText: tstr_time,
+	hourText: tstr_hour,
+	minuteText: tstr_minute,
+	currentText: tstr_now,
+	closeText: tstr_done,
+	monthNames: [tstr_january, tstr_february, tstr_march, tstr_april, tstr_may, tstr_june, tstr_july, tstr_august, tstr_september, tstr_october, tstr_november, tstr_december],
+	dayNames: [tstr_sunday, tstr_monday, tstr_tuesday, tstr_wednesday, tstr_thursday, tstr_friday, tstr_saturday, tstr_sunday],
+	dayNamesMin: [tstr_su, tstr_mo, tstr_tu, tstr_we, tstr_th, tstr_fr, tstr_sa, tstr_su],
+	
+	dateFormat: 'dd.mm.yy',
+	timeFormat: 'HH:mm',
+	onClose: function(dateText, inst) {
+		if (!timeredit_begindestroy && $('#timerbegin').val() != '' && 
+			$('#timerbegin').datetimepicker('getDate') > $(this).datetimepicker('getDate')) {
+				$('#error').text(tstr_start_after_end);
+				$('#errorbox').show();
+		}
+		else
+			$('#errorbox').hide();
+	}
+});
+
+$('#repeatdays').buttonset();
+
+$(function() {
+	$("#bouquet_select").chosen({disable_search_threshold: 10,no_results_text: "Oops, nothing found!",width: "100%"});
+
+	$(".chosen-container .chosen-drop").addClass('ui-widget-content');
+	if (theme == 'eggplant' || theme == 'vader')
+	{
+		$(".chosen-container .chosen-drop").css('background-image','none');
+	}
+
+});
+
+
+var h = ($(window).height() > 700) ? 620:520;
+var w = ($(window).width() > 800) ? 740:650;
+
+$('#editTimerForm').dialog({
+	autoOpen: false,
+	height: h,
+	width: w,
+	modal: true,
+	buttons: [
+			{text: tstr_save,
+			click: function() {
+				var enddate = new Date($('#timerend').datetimepicker('getDate'));
+				var repeated = 0;
+				$('[name="repeated"]:checked').each(function() {
+					repeated += parseInt($(this).val());
+				});
+				var tags = "";
+				$('#tagsnew').children("input:checked").each(function() {
+					if(tags!="")
+						tags+=" ";
+					tags += $(this).val();
+				});
+
+				var urldata = { sRef: $('#bouquet_select').val(),
+					end: Math.round(enddate.getTime() / 1000),
+					name: $('#timername').val(),
+					description: $('#description').val(),
+					disabled: ($('#enabled').is(':checked')?"0":"1"),
+					afterevent: $('#afterevent').val(),
+					allow_duplicate: ($('#allow_duplicate').is(':checked')?"1":"0"),
+					tags: tags,
+					repeated: repeated };
+
+				if($('#recordingtype').val() != "") {
+					urldata["recordingtype"] = $('#recordingtype').val();					
+				}
+
+				if($('#always_zap').is(':checked')) {
+					urldata["always_zap"] = "1";
+					urldata["justplay"] = "0";
+				}
+				else {
+					urldata["always_zap"] = "0";
+					urldata["justplay"] = $('#justplay').is(':checked')?"1":"0";
+					if($('#justplay').is(':checked')) {
+						urldata["pipzap"] = $('#pipzap').is(':checked')?"1":"0";
+					}
+				}
+
+				if ($('#dirname').val() != 'None')
+					urldata["dirname"] = $('#dirname').val();
+				if (!$('#has_vpsplugin1').is(':hidden'))
+				{
+					urldata["vpsplugin_enabled"] = ($('#vpsplugin_enabled').is(':checked')?"1":"0");
+					urldata["vpsplugin_overwrite"] = ($('#vpsplugin_safemode').is(':checked')?"0":"1");
+				}
+				if (!timeredit_begindestroy) {
+					var begindate = new Date($('#timerbegin').datetimepicker('getDate'));
+					urldata["begin"] = Math.round(begindate.getTime() / 1000);
+				}
+				else
+					urldata["begin"] = Math.round(current_begin);
+
+				var canclose = false;
+				if (current_serviceref == "") {
+					$.ajax({
+						async: false,
+						url: "/api/timeradd?",
+						data: urldata,
+						dataType: "json",
+						success: function(result) {
+							if (result.result) {
+								canclose = true;
+							}
+							else {
+								if(result.conflicts)
+								{
+									var conftext='Timer Conflicts:<br>';
+									result.conflicts.forEach(function(entry) {
+										conftext += entry.name+" / "+entry.servicename+" / "+entry.realbegin+" - "+entry.realend+"<br>";
+									});
+									$("#error").text(conftext);
+								} else {
+									$("#error").text(result.message);
+								}
+								$("#errorbox").show();
+							}
+						}
+					});
+				}
+				else {
+					urldata['channelOld'] = current_serviceref;
+					urldata['beginOld'] = Math.round(current_begin);
+					urldata['endOld'] = Math.round(current_end);
+					$.ajax({
+						async: false,
+						url: "api/timerchange?",
+						data: urldata,
+						dataType: "json",
+						success: function(result) {
+							if (result.result) {
+								canclose = true;
+							}
+							else {
+								if(result.conflicts)
+								{
+									var conftext='Timer Conflicts:<br>';
+									result.conflicts.forEach(function(entry) {
+										conftext += entry.name+" / "+entry.servicename+" / "+entry.realbegin+" - "+entry.realend+"<br>";
+									});
+									$("#error").text(conftext);
+								} else {
+									$("#error").text(result.message);
+								}
+								$("#errorbox").show();
+							}
+						}
+					});
+				}
+
+				if (canclose) {
+					if (reloadTimers) load_maincontent("ajax/timers");
+					$(this).dialog("close");
+				}
+			}
+		},
+		{
+			text: tstr_close,
+			click: function() {
+				$(this).dialog("close");
+			}
+		}
+	],
+	close: function() {
+		return;
+	}
+});
+
+checkVPS();
+
+#end raw
+</script>
+<link rel="stylesheet" type="text/css" href="/css/chosen.min.css" />

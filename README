@@ -1,0 +1,15 @@
+                             <<< OpenWebif >>>                           
+                  
+           Open Source Web Interface for E2 based Linux set-top box
+
+
+                                 Depends
+           python3-pprint python3-cheetah python3-json python3-unixadmin
+            python3-twisted-web python3-pyopenssl python3-compression 
+                              python3-ipaddress
+
+                                                                            
+  This file is open source software; you can redistribute it and/or modify  
+     it under the terms of the GNU General Public License, Version 3 as      
+               published by the Free Software Foundation.                   
+                                                                            

@@ -1,0 +1,2129 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenWebif\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-10 09:36+0000\n"
+"PO-Revision-Date: \n"
+"Last-Translator: IMS <ims@openpli.org>\n"
+"Language-Team: PLi <ims@openpli.org>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
+"X-Poedit-SearchPath-0: ../plugin\n"
+
+#, python-format
+msgid "%02d.%02d."
+msgstr "%02d.%02d."
+
+#, python-format
+msgid "%02d.%02d.%d"
+msgstr "%02d.%02d.%d"
+
+#, python-format
+msgid "%02d:%02d"
+msgstr "%02d:%02d"
+
+msgid "%d.%m.%Y"
+msgstr "%d.%m.%Y"
+
+msgid "%d.%m.%Y %H:%M"
+msgstr "%d.%m.%Y %H:%M"
+
+#, python-format
+msgid "%s %02d.%02d."
+msgstr "%s %02d.%02d."
+
+#, python-format
+msgid "%s %02d.%02d.%d"
+msgstr "%s %02d.%02d.%d"
+
+#, python-format
+msgid "%s %s is locked."
+msgstr "%s %s je uzamčen."
+
+#, python-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#, python-format
+msgid "%s Style"
+msgstr ""
+
+#, python-format
+msgid "%s free / %s total"
+msgstr "%s volné / %s celkem"
+
+msgid "(Press 'shift' and click to 'hold')"
+msgstr "(dlouhý stisk = shift + klik)"
+
+msgid "(in minutes)"
+msgstr "(v minutách)"
+
+msgid "A filename is required"
+msgstr "Zadejte název souboru"
+
+msgid "A value is required"
+msgstr "Hodnota požadována"
+
+msgid "AGC"
+msgstr ""
+
+msgid "About"
+msgstr "O prohlížeči"
+
+msgid "Add"
+msgstr "Přidat"
+
+msgid "Add  AutoTimer  to tags"
+msgstr "Přidat Autotimer do tagů"
+
+msgid "Add AutoTimer name to tags"
+msgstr "Přidat název do tagů"
+
+msgid "Add Bouquet"
+msgstr "Přidat přehled"
+
+msgid "Add IPTV/URL"
+msgstr "Přidat IPTV/URL"
+
+msgid "Add Marker"
+msgstr "Přidat značku"
+
+msgid "Add Spacer"
+msgstr ""
+
+msgid "Add a timer"
+msgstr "Přidat časovač"
+
+msgid "Add a zap timer"
+msgstr "Přidat časovač přepnutí"
+
+msgid "Add an AutoTimer"
+msgstr "Přidat AutoTimer"
+
+msgid "Add channel(s) as alternate"
+msgstr "Přidat kanál(y) jako alternativu"
+
+msgid "Add filters"
+msgstr "Přidat filtry"
+
+msgid "Add selection to bouquet"
+msgstr "Přidat kanál(y) do přehledu"
+
+msgid "Add service name to stream information"
+msgstr "Přidat název programu do streamu"
+
+msgid "Add similar on conflict"
+msgstr "Přidat podobné při konfliktu"
+
+msgid "Add tags to recordings"
+msgstr "Přidat tagy do nahrávek"
+
+#, python-format
+msgid "Added %s to alternative service %s."
+msgstr ""
+
+msgid "Adjust recording time to real event time"
+msgstr "Nastavit čas nahrávání podle skutečného času události"
+
+msgid "After event"
+msgstr "Po skončení"
+
+msgid "All"
+msgstr "Vše"
+
+msgid "All Channels"
+msgstr "Všechny kanály"
+
+msgid ""
+"All Files of this Software are open source software; you can redistribute it "
+"and/or modify it under the terms of the GNU General Public License version 3 "
+"as published by the Free Software Foundation."
+msgstr ""
+"Všechny soubory tohoto software jsou open source software; můžete je "
+"distribuovat a/nebo modifikovat podle podmínek GNU General Public License "
+"verze 3 jako published by the Free Software Foundation."
+
+msgid "All alternative services deleted."
+msgstr "Všechny alternativní programy odstraněny."
+
+msgid "Allow IPK Upload"
+msgstr "Umožnit nahrát IPK"
+
+msgid "Allow duplicates"
+msgstr "Umožnit duplicity"
+
+#, python-format
+msgid "Alternative %s created failed."
+msgstr ""
+
+msgid "Always"
+msgstr "Vždy"
+
+msgid "Answer is NO!"
+msgstr "Odpověď je NE!"
+
+msgid "Answer is YES!"
+msgstr "Odpověď je ANO!"
+
+msgid "Any"
+msgstr ""
+
+msgid "Any day"
+msgstr "Libovolný den"
+
+msgid "Any service/recording"
+msgstr "Libovolný program/nahrávání"
+
+msgid "April"
+msgstr "Duben"
+
+msgid "Are you sure you want to delete the selected bouquet?"
+msgstr "Skutečně chcete odstranit zvolený přehled?"
+
+msgid "Are you sure you want to delete the selected item(s)?"
+msgstr "Chcete skutečně odstranit vybranou položku/položky?"
+
+msgid "Are you sure you want to delete this AutoTimer?"
+msgstr "Opravdu chcete odstranit tento AutoTimer?"
+
+msgid "Are you sure you want to delete this recording?"
+msgstr "Opravdu smazat tuto nahrávku?"
+
+msgid "Are you sure you want to delete this timer?"
+msgstr "Opravdu odstranit tento časovač?"
+
+msgid "Are you sure you want to rename this recording?"
+msgstr "Přejmenovat nahrávku?"
+
+msgid "Are you sure you want to restore from file?"
+msgstr "Opravdu chcete obnovit ze souboru?"
+
+msgid "Are you sure you want to start recording instantly?"
+msgstr "Opravdu spustit okamžité nahrávání?"
+
+msgid "Ask, default No"
+msgstr "Požádat, defaultně Ne"
+
+msgid "Ask, default Yes"
+msgstr "Požádat, defaultně Ano"
+
+msgid "Audio Encoding"
+msgstr ""
+
+msgid "Audio PID (APID)"
+msgstr ""
+
+msgid "Audio Track"
+msgstr ""
+
+msgid "August"
+msgstr "Srpen"
+
+msgid "Authors"
+msgstr "Autoři"
+
+msgid "Auto"
+msgstr ""
+
+msgid "AutoPoll"
+msgstr "Automatická kontrola"
+
+msgid "AutoTimer Edit"
+msgstr "Upravit AutoTimer"
+
+msgid "AutoTimer Settings"
+msgstr "Autotimer - nastavení"
+
+msgid "AutoTimers"
+msgstr "Přehled AutoTimerů"
+
+msgid "Autotimer Preview"
+msgstr "Přehled Autotimerů"
+
+msgid "BER"
+msgstr ""
+
+msgid "Back"
+msgstr "Zpět"
+
+msgid "Background only"
+msgstr "Pouze na pozadí"
+
+msgid "Begin"
+msgstr "Začátek"
+
+msgid "Begin of \"After event\" timespan"
+msgstr "Začátek časového úseku \"po události\""
+
+msgid "Beginning of timespan"
+msgstr "Začátek časového úseku"
+
+msgid "Bit Error Rate (BER)"
+msgstr ""
+
+msgid "Bookmark"
+msgstr "Záložka"
+
+msgid "Bookmarks"
+msgstr "Záložky"
+
+#, python-format
+msgid "Bouquet %s already exists."
+msgstr "Přehled %s již existuje."
+
+#, python-format
+msgid "Bouquet %s can not be moved."
+msgstr "Přehled %s nelze přemístit."
+
+#, python-format
+msgid "Bouquet %s created."
+msgstr "Přehled %s založen."
+
+#, python-format
+msgid "Bouquet %s deleted."
+msgstr "Přehled %s byl odstraněn."
+
+#, python-format
+msgid "Bouquet %s is locked."
+msgstr "Přehled %s je uzamčen."
+
+#, python-format
+msgid "Bouquet %s is unlocked."
+msgstr "Přehled %s je odemčen."
+
+#, python-format
+msgid "Bouquet %s moved."
+msgstr "Přehled %s byl přemístěn."
+
+#, python-format
+msgid "Bouquet %s removed failed, sevicerefence or mutable list is not valid."
+msgstr ""
+"Odstranění přehledu %s selhalo, sevicerefence nebo mutable list nejsou "
+"platné."
+
+#, python-format
+msgid "Bouquet %s removed failed."
+msgstr "Odstranění přehledu %s selhalo."
+
+msgid "Bouquet Editor"
+msgstr "Editor přehledů"
+
+msgid "Bouquet name"
+msgstr "Název přehledu"
+
+msgid "Bouquet renamed successfully."
+msgstr "Přehled úspěšně přejmenován."
+
+msgid "Bouquet-settings were restored successfully"
+msgstr "Nastavení přehledu byla úspěšně obnovena"
+
+msgid "BouquetEditor"
+msgstr "Editor přehledů"
+
+msgid "Bouquetlist is not editable!"
+msgstr "Seznam přehledů nelze upravovat!"
+
+msgid "Bouquets"
+msgstr "Přehledy"
+
+msgid "Box"
+msgstr "Přijímač"
+
+msgid "Box Control"
+msgstr "Ovládání boxu"
+
+msgid "Box Info"
+msgstr "O přijímači"
+
+msgid "Box uptime"
+msgstr "Doba provozu"
+
+msgid "Brand"
+msgstr "Značka"
+
+msgid "Build"
+msgstr ""
+
+msgid "Cable"
+msgstr "Kabelové"
+
+msgid "Calendar Week"
+msgstr "Týden"
+
+msgid "Cancel"
+msgstr "Zavřít"
+
+msgid "Cancelled"
+msgstr "Zrušeno"
+
+msgid "Capacity"
+msgstr "Kapacita"
+
+msgid "Capture screenshot"
+msgstr "Snímek obrazovky"
+
+msgid "Channel"
+msgstr "Kanál"
+
+msgid "Channels"
+msgstr "Kanály"
+
+msgid "Character encoding for EPG data"
+msgstr "Kódování znaků pro EPG data"
+
+msgid "Chipset"
+msgstr ""
+
+msgid "Cleanup Timers"
+msgstr "Vyčistit časovače"
+
+msgid "Close"
+msgstr "Zavřít"
+
+msgid "Common Settings"
+msgstr "Společná nastavení"
+
+msgid "Config"
+msgstr "Konfigurace"
+
+#, python-format
+msgid "Conflicting Timer(s) detected! %s"
+msgstr "Detekován(y) konfliktní časovač(e) %s"
+
+msgid "Contributors"
+msgstr "Spolupracovníci"
+
+msgid "Control"
+msgstr ""
+
+#, python-format
+msgid "Could not add timer '%s'!"
+msgstr "Nelze přidat časovač '%s'!"
+
+#, python-format
+msgid "Could not find timer '%s' with given start and end time!"
+msgstr "Nebylo možné nalézt  časovač '%s' se zadaným časem začátku a konce!"
+
+msgid "Create bouquet from selection"
+msgstr "Přidat poskytovatele jako nový přehled"
+
+msgid "Current"
+msgstr "Aktuální"
+
+msgid "Current Event"
+msgstr "Aktuální událost"
+
+msgid "Currently recording"
+msgstr ""
+
+msgid "Custom box name"
+msgstr "Vlastní název přijímače"
+
+msgid "Custom offset"
+msgstr "Vlastní posun"
+
+msgid "DHCP"
+msgstr ""
+
+msgid "Date"
+msgstr "Datum"
+
+msgid "Date (newest)"
+msgstr "Datum (nejnovější)"
+
+msgid "Date (oldest)"
+msgstr "Datum (nejstarší)"
+
+msgid "Debug - Display Tracebacks in browser"
+msgstr ""
+
+msgid "December"
+msgstr "Prosinec"
+
+msgid "Deep Standby"
+msgstr "Hluboký spánek"
+
+msgid "Default"
+msgstr "Standardní"
+
+msgid "Delay Standby"
+msgstr "Zpoždění"
+
+msgid "Delete"
+msgstr "Odstranit"
+
+msgid "Delete Bookmark"
+msgstr "Smazat záložku"
+
+msgid "Delete Bouquet"
+msgstr "Odstranit přehled"
+
+msgid "Delete Recording"
+msgstr "Odstranit nahrávku"
+
+msgid "Delete Timer"
+msgstr "Odstranit časovač"
+
+msgid ""
+"Delete failed, because there is no movie trash !\n"
+"Disable movie trash in configuration to delete this item"
+msgstr ""
+"Smazání se nezdařilo, protože zde není žádný koš!\n"
+"Chcete-li tuto položku odstranit, vypněte v konfiguraci koš"
+
+msgid "Deleted"
+msgstr "Smazáno"
+
+msgid "Description"
+msgstr "Popis"
+
+msgid "Device"
+msgstr ""
+
+msgid "Disable"
+msgstr "Zakázat"
+
+msgid "Disable Timer"
+msgstr "Zakázat časovač"
+
+msgid "Disable remote access for user root"
+msgstr "Zakázat přístup pro uživatele root"
+
+msgid "Disabled on conflict"
+msgstr "Zakázán při konfliktu"
+
+msgid "Display Mode"
+msgstr "Zobrazení"
+
+msgid "Display duration (s)"
+msgstr "Doba zobrazení (s)"
+
+msgid "Distro"
+msgstr ""
+
+msgid "Dolby"
+msgstr ""
+
+msgid "Don't create timer when movie exists in database"
+msgstr "Nevytvážet časovač, jestliže film existuje v databázi"
+
+msgid "Done"
+msgstr "Dokončeno"
+
+msgid "Download"
+msgstr "Stáhnout"
+
+msgid "Download playlist for"
+msgstr "Stáhnout playlist pro"
+
+msgid "Drivers"
+msgstr "Ovladače"
+
+msgid "Duration"
+msgstr "Délka"
+
+msgid "E"
+msgstr "E"
+
+msgid "EPG"
+msgstr ""
+
+msgid "EPG encoding"
+msgstr "Kódování EPG"
+
+msgid "EPGRefresh"
+msgstr ""
+
+msgid "ERROR: Cannot set SleepTimer while device is in Standby-Mode"
+msgstr "CHYBA: nelze nastavit časovač usínání, jestliže je přijímač ve stanby"
+
+msgid "Edit"
+msgstr "Upravit"
+
+#, fuzzy
+msgid "Edit Recording"
+msgstr "Odstranit nahrávku"
+
+msgid "Edit Timer"
+msgstr "Upravit časovač"
+
+msgid "Editor"
+msgstr ""
+
+msgid "Enable"
+msgstr "Povolit"
+
+msgid "Enable Authentication for streaming"
+msgstr "Povolit ověřování pro streamování"
+
+msgid "Enable HTTP Authentication"
+msgstr "Povolit HTTP ověřování"
+
+msgid "Enable HTTPS"
+msgstr "Povolit HTTPS"
+
+msgid "Enable HTTPS Authentication"
+msgstr "Povolit HTTPS ověřování"
+
+msgid "Enable Messages"
+msgstr "Povolit zprávy"
+
+msgid "Enable Parental Control"
+msgstr "Povolit rodičovskou kontrolu"
+
+msgid "Enable Timer"
+msgstr "Povolit časovač"
+
+msgid "Enable access from VPNs"
+msgstr "Povolit přístup z VPN"
+
+msgid "Enable filtering"
+msgstr "Povolit filtrování"
+
+msgid "Enable/Disable Screenshot on key press or"
+msgstr "Povolit/zakázat snímek obrazovky při stisku tlačítka nebo"
+
+msgid "Enabled"
+msgstr "Povolen"
+
+msgid "Encrypted"
+msgstr "Kódováno"
+
+msgid "End"
+msgstr "Konec"
+
+msgid "End of \"After event\" timespan"
+msgstr "Konec časového úseku \"po události\""
+
+msgid "End of timespan"
+msgstr "Konec časového úseku"
+
+msgid "Enter a name for the new bouquet"
+msgstr "Zadejte nový název pro přehled"
+
+msgid "Enter a name for the new marker"
+msgstr "Zadejte nový název pro značku"
+
+msgid "Enter a name for this AutoTimer"
+msgstr "Zadejte název pro tento AutoTimer"
+
+msgid "Enter path"
+msgstr "Zadejte cestu"
+
+msgid "Enter text"
+msgstr ""
+
+msgid "Enter the text to find in the EPG"
+msgstr "Zadejte text pro hledání v EPG"
+
+msgid "Error"
+msgstr "Chyba"
+
+msgid "Error parsing vps.xml"
+msgstr "Chyba při analýze vps.xml"
+
+msgid "Error upload File"
+msgstr "Chyba při nahrávání souboru"
+
+#, python-format
+msgid "Error while preparing backup file, %s does not exists."
+msgstr "Chyba při přípravě záložního souboru, %s neexistuje."
+
+msgid "Error while preparing backup file."
+msgstr "Chyba při přípravě záložního souboru."
+
+msgid "Error writing File"
+msgstr "Chyba při zápisu souboru"
+
+#, python-format
+msgid "Error, %s does not exists, restore is not possible..."
+msgstr "Chyba, %s neexistuje, obnova není možná..."
+
+#, python-format
+msgid "Error, %s was not created with WebBouquetEditor..."
+msgstr "Chyba, %s nebyl založen pomocí WebBouquetEditoru..."
+
+#, python-format
+msgid "Error: Bouquet %s could not deleted, OSError."
+msgstr "Chyba:Přehled %s nemohl být odstraněn, OSError."
+
+msgid "Event not found"
+msgstr "Událost nenalezena"
+
+msgid "EventId not found"
+msgstr "EventId nenalezeno"
+
+msgid "Every"
+msgstr "Každý"
+
+msgid "Exclude when"
+msgstr "Kromě"
+
+msgid "Execute \"After event\" during timespan"
+msgstr "Provést \"po události\" v časovém úseku"
+
+msgid "Export"
+msgstr ""
+
+msgid "Extras"
+msgstr "Další"
+
+msgid "Fake Recording"
+msgstr "Falešné nahrávání"
+
+msgid "Fastscan"
+msgstr ""
+
+msgid "February"
+msgstr "Únor"
+
+msgid "Firmware version"
+msgstr "Firmware"
+
+msgid "Force"
+msgstr "Vynutit aktualizaci"
+
+msgid "Fr"
+msgstr "Pá"
+
+msgid "Free"
+msgstr "Volné místo"
+
+msgid "Free Memory"
+msgstr "Volná paměť"
+
+msgid "Free space"
+msgstr ""
+
+msgid "Fri"
+msgstr "Pá"
+
+msgid "Friday"
+msgstr "Pátek"
+
+msgid "From date"
+msgstr "Ne po"
+
+msgid "Front processor version"
+msgstr "Verze frontprocesoru"
+
+msgid "Full remote"
+msgstr "Úplný ovladač"
+
+msgid "GB"
+msgstr ""
+
+msgid "GUI version"
+msgstr "Enigma"
+
+msgid "Gateway"
+msgstr "Brána"
+
+msgid "Get mutable list for new created alternative failed!"
+msgstr ""
+
+msgid "Get mutable list for new created bouquet failed!"
+msgstr ""
+
+msgid "HH:MM"
+msgstr "HH:MM"
+
+msgid "HTTP port"
+msgstr "HTTP port"
+
+msgid "HTTPS port"
+msgstr "HTTPS port"
+
+msgid "Hard disk model"
+msgstr "HDD model"
+
+msgid "Hardware"
+msgstr ""
+
+msgid "Hide full remote"
+msgstr "Obecný ovladač"
+
+msgid "High Resolution"
+msgstr "Vysoké rozlišení"
+
+msgid "Hold to drag"
+msgstr ""
+
+msgid "Hour"
+msgstr "Hodiny"
+
+msgid "IPTV / URL name"
+msgstr "IPTV / URL název"
+
+msgid "IPv4 address"
+msgstr "IPv4 adresa"
+
+msgid "IPv4-only Python/Twisted"
+msgstr ""
+
+msgid "IPv4-only kernel"
+msgstr ""
+
+msgid "IPv6 address(es)"
+msgstr "IPv6 adresa(y)"
+
+msgid "Import"
+msgstr ""
+
+msgid "Include description"
+msgstr "Včetně popisu"
+
+msgid "Include extended description"
+msgstr "Včetně rozšířeného popisu"
+
+msgid "Include short description"
+msgstr "Včetně krátkého popisu"
+
+msgid "Include when"
+msgstr "Včetně"
+
+msgid "Infinite Instant recording started"
+msgstr "Začalo neomezené okamžité nahrávání"
+
+msgid "Info"
+msgstr "Informace"
+
+msgid "Information"
+msgstr ""
+
+msgid "Inherit AutoTimer"
+msgstr "Převzít z Autotimeru"
+
+msgid "Install Package"
+msgstr "Instalovat balíček"
+
+msgid "Installed"
+msgstr "Instalováno:"
+
+msgid "Instant Record"
+msgstr "Okamžité nahrávání"
+
+msgid "Instant record for current Event started"
+msgstr "Začalo okamžité nahrávání pro aktuální událost"
+
+msgid "Internal error!"
+msgstr "Vnitřní chyba!"
+
+msgid "Internal flash memory"
+msgstr ""
+
+#, python-format
+msgid "Interval (in %s)"
+msgstr "Interval (v %s)"
+
+msgid "Interval (min.)"
+msgstr "Interval (min.)"
+
+msgid "Interval (sec.)"
+msgstr "Interval (sec.)"
+
+msgid "January"
+msgstr "Leden"
+
+msgid "Javascript Libraries"
+msgstr "Javascript knihovny"
+
+msgid "July"
+msgstr "Červenec"
+
+msgid "June"
+msgstr "Červen"
+
+msgid "Just play"
+msgstr "Jen přepnout"
+
+msgid "Kernel"
+msgstr "Verze jádra"
+
+msgid "LCD"
+msgstr ""
+
+msgid "LCD4Linux Setup"
+msgstr "Nastavení LCD4Linux"
+
+msgid "Label series"
+msgstr "Systém OE"
+
+msgid "License"
+msgstr ""
+
+msgid "Link speed"
+msgstr "Rychlost připojení"
+
+msgid "List of Timers has been cleaned"
+msgstr "Seznam časovačů byl vyčištěn"
+
+msgid "Loading..."
+msgstr "Načítání..."
+
+msgid "Location"
+msgstr "Umístění"
+
+msgid "Locked"
+msgstr "Zamknuto"
+
+msgid "MAC address"
+msgstr "MAC adresa"
+
+msgid "MB"
+msgstr ""
+
+msgid "Main"
+msgstr "Hlavní"
+
+msgid "Main memory"
+msgstr "Celková paměť"
+
+msgid "March"
+msgstr "Březen"
+
+msgid "Marker added."
+msgstr ""
+
+msgid "Marker name"
+msgstr "Název značky"
+
+msgid "Match text"
+msgstr "Hledat v názvu"
+
+msgid "Max Days"
+msgstr "Max dnů"
+
+msgid "May"
+msgstr "Květen"
+
+msgid "Message sent successfully!"
+msgstr "Zpráva úspěšně odeslána!"
+
+msgid "Method"
+msgstr "Metoda"
+
+msgid "Minimal EPG list"
+msgstr ""
+
+msgid "Minimal movie list"
+msgstr ""
+
+msgid "Minimal timer list"
+msgstr ""
+
+msgid "Minute"
+msgstr "Minuty"
+
+#, python-format
+msgid "Missing mandatory parameter '%s'"
+msgstr "Chybí povinný parametr '%s'"
+
+msgid "Missing requesteter: sRef"
+msgstr "Chybějící požadavek: sRef"
+
+msgid "Mo"
+msgstr "Po"
+
+msgid "Model"
+msgstr "Model"
+
+msgid "Mon"
+msgstr "Po"
+
+msgid "Monday"
+msgstr "Pondělí"
+
+msgid "Monthly"
+msgstr "měsíčně"
+
+msgid "More"
+msgstr "Více"
+
+msgid "More details"
+msgstr "Více detailů"
+
+msgid "Mount point"
+msgstr ""
+
+msgid "Movie database for EPG"
+msgstr "Databáze filmů v EPG"
+
+msgid "Movie search"
+msgstr "Hledat film"
+
+msgid "Movielist"
+msgstr "Seznam filmů"
+
+msgid "Movies"
+msgstr "Filmy"
+
+msgid "Multi-Bouquet is not enabled!"
+msgstr "Vícenásobné přehledy nejsou povoley!"
+
+msgid "MultiEPG"
+msgstr ""
+
+msgid "Mute/Unmute"
+msgstr ""
+
+msgid "NCam Webinterface"
+msgstr ""
+
+msgid "Name"
+msgstr "Název"
+
+msgid "Name (a-z)"
+msgstr "Název (a-z)"
+
+msgid "Name (z-a)"
+msgstr "Název (z-a)"
+
+msgid "Namespace"
+msgstr ""
+
+msgid "Network Interface"
+msgstr "Síťový adaptér"
+
+msgid "Network Shares"
+msgstr "Sdílení v síti"
+
+msgid "Never"
+msgstr "nikdy"
+
+msgid "New"
+msgstr "Nový"
+
+msgid "New Bookmark:"
+msgstr "Nová záložka:"
+
+msgid "New Name"
+msgstr "Nový název"
+
+msgid "No"
+msgstr "Ne"
+
+msgid "No EPG data available."
+msgstr "EPG data nejsou k dispozici"
+
+msgid "No Parent Control Setup Pin given!"
+msgstr ""
+
+msgid "No answer in time"
+msgstr "Žádná odpověď v čase"
+
+msgid "No bouquet given!"
+msgstr "Nezadán přehled!"
+
+msgid "No bouquet name given!"
+msgstr "Nezadaný název přehledu!"
+
+msgid "No current service given!"
+msgstr ""
+
+msgid "No event found! Not recording!"
+msgstr "Událost nebyla nalezena! Nenahrává se!"
+
+msgid "No marker-name given!"
+msgstr ""
+
+msgid "No matches were found in the EPG"
+msgstr "Nenalezeny odpovídající výsledky v EPG"
+
+msgid "No matching Timer found"
+msgstr "Nenalezen odpovídající časovač"
+
+msgid "No network connection"
+msgstr ""
+
+msgid "No new servicename given!"
+msgstr ""
+
+msgid "No position given!"
+msgstr "Nezadána pozice!"
+
+msgid "No provider given!"
+msgstr "Nezadán poskytovatel!"
+
+msgid "No service given!"
+msgstr "Nezadán program!"
+
+msgid "No, cancel"
+msgstr "Ne, zrušit"
+
+msgid "None"
+msgstr "Žádný"
+
+msgid "Nothing"
+msgstr "Nic"
+
+msgid "Nothing playing."
+msgstr "Nic se nepřehrává."
+
+msgid "Notify if Conflict"
+msgstr "Ohlásit při konfliktu"
+
+msgid "Notify if Similar"
+msgstr "Oznámit při podobnosti"
+
+msgid "November"
+msgstr "Listopad"
+
+msgid "Now"
+msgstr "Nyní"
+
+msgid "Now/Next Columns"
+msgstr "Sloupce Nyní/Další"
+
+msgid "Number of recordings remaining"
+msgstr "Zbývá nahrávek"
+
+msgid "ONID"
+msgstr ""
+
+msgid "OSCam Webinterface"
+msgstr ""
+
+msgid "OSD"
+msgstr ""
+
+msgid "October"
+msgstr "Říjen"
+
+msgid "Offset after recording (mins)"
+msgstr "Posun po nahrávání (v minutách)"
+
+msgid "Offset before recording (mins)"
+msgstr "Posun před nahráváním (v minutách)"
+
+msgid "On"
+msgstr ""
+
+msgid "On any service"
+msgstr "na libovolném programu"
+
+msgid "On same service"
+msgstr "na stejném programu"
+
+msgid "Only match between dates"
+msgstr "Omezit události na určité datum"
+
+msgid "Only match during timespan"
+msgstr "Jen odpovídající časovému úseku"
+
+msgid "Oops, no results matched your search"
+msgstr "Zádné odpovídající výsledky pro hledání"
+
+msgid "Oops..."
+msgstr ""
+
+msgid "Open Source Web Interface for Linux set-top box"
+msgstr "Open Source Web Interface pro linuxový set-top box"
+
+msgid "Open in new window"
+msgstr "Otevřít v novém okně"
+
+msgid "OpenWebInterface Enabled"
+msgstr "Povolit OpenWebif"
+
+msgid "OpenWebif Browser Settings"
+msgstr "Nastavení prohlížeče OpenWebif"
+
+msgid "OpenWebif Configuration"
+msgstr "Nastavení OpenWebif"
+
+msgid "OpenWebif Settings"
+msgstr "Nastavení OpenWebif"
+
+msgid "OpenWebif url:"
+msgstr "OpenWebif URL:"
+
+msgid "Orbital Position"
+msgstr "Orbitální pozice"
+
+msgid "Override found with alternative service"
+msgstr "Přepsat nalezené alternativním programem"
+
+msgid "PCR PID"
+msgstr ""
+
+msgid "PMT PID"
+msgstr ""
+
+msgid "Packages"
+msgstr "Balíčky"
+
+msgid "Parent Control Setup Pin is wrong!"
+msgstr "Nastaveny PIN rodičovské kontroly je chybný!"
+
+msgid "Parent Control is not activated."
+msgstr "Rodičovská kontrola není aktivována."
+
+msgid "Parse AutoTimer"
+msgstr "Analyzovat Autotimer"
+
+msgid "PiP"
+msgstr ""
+
+msgid "Picture in Picture"
+msgstr "Obraz v obraze (PIP)"
+
+msgid "Picture in Picture (hidden)"
+msgstr "Obraz v obraze (skryté)"
+
+msgid "Plain"
+msgstr "Prostý"
+
+msgid "Playback"
+msgstr "Přehrát"
+
+msgid "Playback IPTV Streams in browser"
+msgstr "Přehrávat IPTV Streamy prohlížeči"
+
+msgid "Playlist"
+msgstr ""
+
+msgid "Playlist format"
+msgstr "Formát playlistu"
+
+msgid "Power Control"
+msgstr "Napájení"
+
+msgid "PowerTimer feature not available"
+msgstr "PowerTimer není dostupný"
+
+msgid "Preview"
+msgstr "Náhled"
+
+msgid "Primetimes"
+msgstr ""
+
+msgid "Process"
+msgstr "Analyzovat"
+
+msgid "Provider"
+msgstr "Poskytovatel"
+
+msgid "Providers"
+msgstr "Poskytovatelé"
+
+msgid "REC"
+msgstr ""
+
+msgid "Radio"
+msgstr "Rádio"
+
+msgid "Reboot Box"
+msgstr "Restartovat Box"
+
+msgid "Record a maximum of # times"
+msgstr "Nahrát maximálně x-krát"
+
+msgid "Recording"
+msgstr ""
+
+msgid "Recording Type"
+msgstr "Typ nahrávky"
+
+msgid "Refresh"
+msgstr "Aktualizovat"
+
+msgid "Refresh Timer"
+msgstr "Aktualizovat"
+
+msgid "Refresh automatically every"
+msgstr "Aktualizovat každých"
+
+msgid "Refresh now"
+msgstr "Zaktualizovat"
+
+msgid "Reload"
+msgstr "Znovu načíst"
+
+msgid "Remote"
+msgstr "Ovladač"
+
+msgid "Remove Package"
+msgstr "Odstranit balíček"
+
+msgid "Remove filter"
+msgstr "Odstranit filtry"
+
+msgid "Rename"
+msgstr "Přejmenovat"
+
+msgid "Rename Bouquet"
+msgstr "Přejmenovat přehled"
+
+msgid "Rename Recording"
+msgstr "Přejmenovat nahrávku"
+
+msgid "Repeated"
+msgstr "Opakování"
+
+msgid "Require client cert for HTTPS"
+msgstr "Požadovat klientskou certifikaci pro HTTPS"
+
+msgid "Require description to be unique"
+msgstr "Vyžadovat unikátní popis"
+
+msgid "Reset"
+msgstr ""
+
+msgid "Reset count"
+msgstr "Vynulovat počítadlo"
+
+msgid "Restart GUI"
+msgstr "Restart Enigma"
+
+msgid "Restrict to bouquets"
+msgstr "Omezit na přehledy"
+
+msgid "Restrict to channels"
+msgstr "Omezit na programy"
+
+msgid "Root"
+msgstr "root"
+
+msgid "SLAAC"
+msgstr ""
+
+msgid "SNR"
+msgstr ""
+
+msgid "SRef"
+msgstr ""
+
+msgid "Sa"
+msgstr "So"
+
+msgid "Safe mode"
+msgstr "Bezpečný mód"
+
+msgid "Sat"
+msgstr "So"
+
+msgid "Satellites"
+msgstr "Satelity"
+
+msgid "Satfinder"
+msgstr "Satfinder"
+
+msgid "Saturday"
+msgstr "Sobota"
+
+msgid "Save"
+msgstr "Uložit"
+
+msgid "Screenshot"
+msgstr "Snímek obrazovky"
+
+msgid "Search"
+msgstr "Hledat"
+
+msgid "Search CSFD"
+msgstr "Prohledat CSFD"
+
+msgid "Search EPG"
+msgstr ""
+
+msgid "Search IMDb"
+msgstr "Prohledat IMDb"
+
+msgid "Search KinoPoisk"
+msgstr "Hledat v KinoPoisk"
+
+msgid "Search TV Guide UK"
+msgstr "Hledat v TV Guide UK"
+
+msgid "Search by name, sd / hd / uhd, or provider"
+msgstr "Hledat dle názvu, sd / hd / uhd nebo poskytovatele"
+
+msgid "Search strictness"
+msgstr "Přesnost hledání"
+
+msgid "Search type"
+msgstr "Hledat typ"
+
+msgid "Select IPK file for upload"
+msgstr "Vyberte IPK soubor pro nahrátí"
+
+msgid "Select..."
+msgstr "Vybrat..."
+
+msgid "Send"
+msgstr ""
+
+msgid "Send Message"
+msgstr "Odeslat zprávu"
+
+msgid "Send a Message"
+msgstr "Odeslat zprávu"
+
+msgid "September"
+msgstr "Září"
+
+msgid "Service"
+msgstr "Program"
+
+#, python-format
+msgid "Service %s added."
+msgstr "Program %s přidán."
+
+#, python-format
+msgid "Service %s already exists in bouquet %s."
+msgstr "Program %s již v přehledu %s existuje."
+
+#, python-format
+msgid "Service %s can not be removed."
+msgstr "Program %s nemůže být odstraněn."
+
+#, python-format
+msgid "Service %s is locked."
+msgstr "Program %s je uzamčen."
+
+#, python-format
+msgid "Service %s is unlocked."
+msgstr "Program %s je odemčen."
+
+#, python-format
+msgid "Service %s moved."
+msgstr "Program %s přemístěn."
+
+#, python-format
+msgid "Service %s removed from bouquet %s."
+msgstr "Program %s odstraněn z přehledu %s."
+
+#, python-format
+msgid "Service %s removed."
+msgstr "Program %s odstraněn."
+
+msgid "Service ID (SID)"
+msgstr ""
+
+msgid "Service can not be moved."
+msgstr "Program nemůže být přemístěn."
+
+msgid "Service can not be renamed."
+msgstr "Program nemůže být přejmenován."
+
+msgid "Service is not an alternative."
+msgstr ""
+
+msgid "Service renamed successfully."
+msgstr "Program úspěšně přejmenován."
+
+msgid "Services"
+msgstr "Programy"
+
+msgid "Serving stream"
+msgstr ""
+
+msgid "Set maximum duration"
+msgstr "Nastavit maximální délku trvání"
+
+msgid "Settings"
+msgstr "Nastavení"
+
+msgid "Show EPG for"
+msgstr "Zobrazit EPG pro"
+
+msgid "Show Full OpenWebif"
+msgstr "Zobrazit plný OpenWebif"
+
+msgid "Show IPTV channels in selection (eg. Autotimer)"
+msgstr "IPTV kanály ve výběru (např. Autotimer)"
+
+msgid "Show all packages"
+msgstr "Zobrazit všechny balíčky"
+
+msgid "Show box name in header"
+msgstr "Zobrazovat v záhlaví název přijímače"
+
+msgid "Show details"
+msgstr "Zobrazit detaily"
+
+msgid "Show full remote"
+msgstr "Úplný ovladač"
+
+msgid "Show in Extensions menu"
+msgstr "Zobrazovat v Extended menu"
+
+msgid "Show picon background"
+msgstr "Pozadí pikon"
+
+msgid "Show picons"
+msgstr "Zobrazovat pikony"
+
+msgid "Show picons in channel list"
+msgstr "Zobrazovat pikony v přehledu kanálů"
+
+msgid "Show service type in channel list"
+msgstr "Zobrazovat typ programu v přehledu kanálů"
+
+msgid "Shutdown"
+msgstr "Vypnout"
+
+msgid "Signal Power (AGC)"
+msgstr ""
+
+msgid "Signal Quality (SNR DB)"
+msgstr ""
+
+msgid "Signal Quality (SNR)"
+msgstr ""
+
+msgid "Simulate"
+msgstr "Simulace"
+
+msgid "Site and sources"
+msgstr "Umístění a zdroje"
+
+msgid "Skins"
+msgstr ""
+
+msgid "SleepTimer error"
+msgstr "Chyba časovače usínání"
+
+msgid "Sleeptimer has been disabled"
+msgstr "Časovač usínání byl zakázán"
+
+msgid "Sleeptimer is disabled"
+msgstr "Časovač usínání je zakázán"
+
+msgid "Sleeptimer is enabled"
+msgstr "Časovač usínání je povolen"
+
+#, python-format
+msgid "Sleeptimer set to %d minutes"
+msgstr "Časovač usínání nastaven na %d minut"
+
+msgid "Small remote layout"
+msgstr ""
+
+msgid "Software"
+msgstr ""
+
+msgid "Sorry this page is not yet implemented"
+msgstr "Tato stránka není zatím implementována"
+
+msgid "Sort"
+msgstr "Třidit"
+
+msgid "Spinner"
+msgstr ""
+
+msgid "Standby"
+msgstr "Standby"
+
+msgid "Start"
+msgstr "Začátek"
+
+msgid "Start Instant Record"
+msgstr "Spustit okamžité nahrávání"
+
+msgid "Start time is after end time"
+msgstr "Čas začátku je větší než čas konce"
+
+msgid "Start typing..."
+msgstr ""
+
+msgid "State"
+msgstr ""
+
+msgid "Storage"
+msgstr ""
+
+msgid "Stream"
+msgstr "Streamovat"
+
+msgid "Stream Clients"
+msgstr "Streamující klienti"
+
+msgid "Streaming port"
+msgstr "Streamovací port"
+
+msgid "Su"
+msgstr "Ne"
+
+msgid "Subdirectories"
+msgstr "Podadresáře"
+
+msgid "Subnet mask"
+msgstr "Maska"
+
+msgid "Subservices"
+msgstr "Podprogramy"
+
+msgid "Sun"
+msgstr "Ne"
+
+msgid "Sunday"
+msgstr "Neděle"
+
+msgid "System OE"
+msgstr ""
+
+msgid "TB"
+msgstr ""
+
+msgid "TSID"
+msgstr ""
+
+msgid "TV"
+msgstr ""
+
+msgid "TV Guide"
+msgstr "TV průvodce"
+
+msgid "TV Multi EPG"
+msgstr ""
+
+msgid "Tags"
+msgstr "Tagy"
+
+msgid "Teletext"
+msgstr ""
+
+msgid "Teletext PID"
+msgstr "Teletext PID"
+
+msgid "Television"
+msgstr "Televize"
+
+msgid "Template Engine"
+msgstr ""
+
+msgid "Terminal"
+msgstr ""
+
+msgid "Terrestrial"
+msgstr "Pozemní"
+
+msgid "Text"
+msgstr ""
+
+msgid "Th"
+msgstr "Čt"
+
+#, python-format
+msgid "The parameter '%s' can't be empty"
+msgstr "Parametr '%s' nemůže být prázdný"
+
+msgid "The parameter 'command' must be a number"
+msgstr "Parametr 'command' musí být číslo"
+
+#, python-format
+msgid "The timer '%s' has been %s successfully"
+msgstr "Časovač '%s' byl úspěšně %s"
+
+#, python-format
+msgid "The timer '%s' has been deleted successfully"
+msgstr "Časovač '%s' byl úspěšně odstraněn"
+
+#, python-format
+msgid "The timer '%s' now recorded! Not disabled!"
+msgstr "Časovač '%s' je právě nahráván! Nelze zakázat!"
+
+msgid "Theme"
+msgstr "Vzhled"
+
+msgid "Theme mode"
+msgstr "Vzhled"
+
+msgid "This service can not be added."
+msgstr "Tento program nemůže být přidán."
+
+msgid "Thu"
+msgstr "Čt"
+
+msgid "Thursday"
+msgstr "Čtvrtek"
+
+msgid "Time"
+msgstr "Čas"
+
+msgid "Timeline"
+msgstr "Časová osa"
+
+msgid "Timeout"
+msgstr "Trvání"
+
+msgid "Timer"
+msgstr "Časovač"
+
+#, python-format
+msgid "Timer '%s' added"
+msgstr "Přidán časovač '%s'"
+
+#, python-format
+msgid "Timer '%s' already exists!"
+msgstr "Časovač '%s' již existuje!"
+
+#, python-format
+msgid "Timer '%s' changed"
+msgstr "Časovač '%s' změněn"
+
+#, python-format
+msgid "Timer '%s' not enabled while Conflict"
+msgstr "Časovač '%s' není povolen kvůli konfliktu"
+
+#, python-format
+msgid "Timer '%s' not saved while Conflict"
+msgstr "Časovač '%s' nebyl kvůli konfliktu uložen"
+
+msgid "Timer Added"
+msgstr "Časovač přidán"
+
+msgid "Timer Conflict"
+msgstr ""
+
+msgid "Timer added"
+msgstr "Časovač přidán"
+
+msgid "Timer conflict detected! Not recording!"
+msgstr "Konflikt časovačů! Nenahrává se!"
+
+msgid "Timer type"
+msgstr "Typ časovače"
+
+msgid "TimerList has been saved"
+msgstr "Seznam časovačů byl uložen"
+
+msgid "Timerlist"
+msgstr "Přehled časovačů"
+
+msgid "Timers"
+msgstr "Časovače"
+
+msgid "Title"
+msgstr "Název"
+
+msgid "To date"
+msgstr "Ne před"
+
+msgid "Today"
+msgstr "Dnes"
+
+msgid "Toggle Standby"
+msgstr ""
+
+msgid "Transcode"
+msgstr "Transkódování"
+
+msgid "Translation to Spanish"
+msgstr "Překlad do španělštiny"
+
+msgid "Try guessing"
+msgstr "Zkusit odhadnout"
+
+msgid "Tu"
+msgstr "Út"
+
+msgid "Tue"
+msgstr "Út"
+
+msgid "Tuesday"
+msgstr "Úterý"
+
+msgid "Tuner Number"
+msgstr "Čislo tuneru"
+
+msgid "Tuner Signal"
+msgstr "Signál tuneru"
+
+msgid "Tuner Type"
+msgstr "Typ tuneru"
+
+msgid "Tuners"
+msgstr "Tunery"
+
+msgid "Type"
+msgstr "Typ"
+
+#, python-format
+msgid "Unknown Volume command %s"
+msgstr ""
+
+#, python-format
+msgid "Unknown command: '%s'"
+msgstr "Neznámý příkaz: '%s'"
+
+msgid "Upcoming Events"
+msgstr "Nadcházející události"
+
+msgid "Update"
+msgstr "Aktualizace"
+
+msgid "Update Package"
+msgstr "Aktualizovat balíček"
+
+msgid "Update from feed"
+msgstr ""
+
+msgid "Upgrade all packages"
+msgstr "Aktualizovat všechny balíčky"
+
+msgid "Upload File Error"
+msgstr ""
+
+msgid "Upload package"
+msgstr ""
+
+msgid "Uploaded Files"
+msgstr ""
+
+msgid "Use Channelname for screenshots"
+msgstr "Název kanálu pro snímek obrazovky"
+
+msgid "Use a custom location"
+msgstr "Použít vlastní umístění"
+
+msgid "Use as PiP if possible"
+msgstr "Použít jako PiP, jestliže je to možné"
+
+msgid "Use classic interface"
+msgstr "Použít klasický vzhled"
+
+msgid "Use custom Color"
+msgstr "Použít uživatelské barvy"
+
+msgid "Use custom box name"
+msgstr "Použít vlastní název přijímače"
+
+msgid "Use modern design"
+msgstr "Použít nový vzhled"
+
+msgid "Use modern interface"
+msgstr "Použít nový vzhled"
+
+msgid "VPS"
+msgstr ""
+
+msgid "VPS plugin not found"
+msgstr "Nenalezen VPS plugin"
+
+msgid "Version"
+msgstr "Verze"
+
+msgid "Video"
+msgstr ""
+
+msgid "Video Height"
+msgstr "Výška videa"
+
+msgid "Video PID (VPID)"
+msgstr ""
+
+msgid "Video Width"
+msgstr "Šířka videa"
+
+msgid "Visibly"
+msgstr "Hlavní obraz"
+
+msgid "Volume"
+msgstr "Hlasitost"
+
+msgid "Volume Control"
+msgstr "Hlasitost"
+
+msgid "W"
+msgstr "W"
+
+msgid "Waiting for answer ..."
+msgstr "Čekání na odpověď ..."
+
+msgid "Wake Up"
+msgstr "Probudit"
+
+msgid "Wakeup"
+msgstr "Probudit"
+
+msgid "Warning"
+msgstr "Varování"
+
+msgid "We"
+msgstr "St"
+
+msgid "Web TV"
+msgstr ""
+
+msgid "Wed"
+msgstr "St"
+
+msgid "Wednesday"
+msgstr "Strředa"
+
+msgid "Weekly (Monday)"
+msgstr "týdně (pondělí)"
+
+msgid "Weekly (Sunday)"
+msgstr "týdně (neděle)"
+
+msgid "Widescreen"
+msgstr ""
+
+msgid "Without auth only local access is allowed!"
+msgstr "Bez ověřování je povolen pouze lokální přístup"
+
+msgid "Wizard"
+msgstr "Průvodce"
+
+msgid "Would you like to save your changes?"
+msgstr "Chcete uložit změny?"
+
+#, python-format
+msgid "Wrong parameter format 'set=%s'. Use set=set15 "
+msgstr "Špatný formát parametru 'set=%s'. Použijte set=set15 "
+
+msgid "YYYY-MM-DD"
+msgstr "RRRR-MM-DD"
+
+msgid "Yes"
+msgstr "Ano"
+
+msgid "Yes/No"
+msgstr "Ano/Ne"
+
+msgid "Yesterday"
+msgstr "Včera"
+
+msgid "Zap"
+msgstr "Přepnout"
+
+msgid "Zap & Record"
+msgstr "Nahrát a přepnout"
+
+msgid "Zap before streaming"
+msgstr "Přepnout před streamem"
+
+msgid "Zap to"
+msgstr "Přepnout na"
+
+msgid "Zapped to"
+msgstr "Přepnuto na"
+
+msgid "any time"
+msgstr "libovolný čas"
+
+msgid "auto"
+msgstr "automaticky"
+
+msgid "box_ip"
+msgstr ""
+
+msgid "case-insensitive"
+msgstr "nerozlišovat velikost písmen"
+
+msgid "case-sensitive"
+msgstr "rozlišovat velikost písmen"
+
+msgid "descramble and record ecm"
+msgstr "dekódovat a nahrávat ecm"
+
+msgid "description contains"
+msgstr "v popisu"
+
+msgid "description match"
+msgstr "popis odpovídá"
+
+msgid "disabled"
+msgstr "zakázáno"
+
+msgid "do nothing"
+msgstr "nic nedělat"
+
+msgid "don't descramble, record ecm"
+msgstr "nedekódovat, nahrávat ecm"
+
+msgid "error! Loading Page"
+msgstr ""
+
+msgid "exact title match"
+msgstr "název přesně odpovídá"
+
+msgid "favourite desc match"
+msgstr "v popisu oblíbených"
+
+msgid "finished"
+msgstr "dokončeno"
+
+msgid "go to deep standby"
+msgstr "přejít do hlubokého spánku"
+
+msgid "go to standby"
+msgstr "přejít do pohotovostního režimu"
+
+msgid "hour"
+msgstr "hodina"
+
+msgid "kB"
+msgstr ""
+
+msgid "loading"
+msgstr "načítám"
+
+msgid "manual/disabled"
+msgstr ""
+
+msgid "mins"
+msgstr ""
+
+msgid "minute"
+msgstr "minuta"
+
+msgid "no description available"
+msgstr "popis není k dispozici"
+
+msgid "none/IPv4-only network"
+msgstr "žádná/pouze IPv4 síť"
+
+msgid "normal"
+msgstr "normální"
+
+msgid "on day"
+msgstr ""
+
+msgid "on weekday"
+msgstr "den v týdnu"
+
+msgid "one two three four unknown command"
+msgstr "jeden dva tři čtyři neznámé příkazy"
+
+msgid "partial title match"
+msgstr "název částečně odpovídá"
+
+msgid "r/o"
+msgstr ""
+
+msgid "r/w"
+msgstr ""
+
+msgid "Receiver"
+msgstr ""
+
+msgid "record"
+msgstr "nahrát"
+
+msgid "regex match (experimental)"
+msgstr ""
+
+msgid "remove"
+msgstr "smazat"
+
+msgid "running"
+msgstr "probíhá"
+
+msgid "seconds"
+msgstr "sekund"
+
+msgid "select bouquets"
+msgstr "vybrat přehledy"
+
+msgid "select channels"
+msgstr "vyberte kanály"
+
+msgid "select tags"
+msgstr "vyberte tagy"
+
+msgid "short description contains"
+msgstr "v krátkém popisu"
+
+msgid "short description match"
+msgstr "zkrácený popis odpovídá"
+
+msgid "standard"
+msgstr "standardní"
+
+msgid "static"
+msgstr ""
+
+msgid "this service is protected by a parental control pin"
+msgstr "tento program je chráněn rodičovskou kontrolou"
+
+msgid "title contains"
+msgstr "v názvu"
+
+msgid "title ends with"
+msgstr "název končí na"
+
+msgid "title or description match"
+msgstr "název nebo popis odpovídá"
+
+msgid "title or short description match"
+msgstr "název nebo zkrácený popis odpovídá"
+
+msgid "title starts with"
+msgstr "název začíná na"
+
+msgid "transcoded"
+msgstr "transkódováno"
+
+#, python-format
+msgid "type %s is not a number"
+msgstr "%s není číslo"
+
+msgid "unknown"
+msgstr "neznámý"
+
+msgid "using"
+msgstr ""
+
+msgid "via"
+msgstr ""
+
+msgid "waiting"
+msgstr "čekání"
+
+msgid "weekday"
+msgstr "Den týdne"
+
+msgid "weekend"
+msgstr "Víkend"
+
+msgid "wrong filetype"
+msgstr "špatný typ souboru"
+
+msgid "zap"
+msgstr "přepnout"
+
+#~ msgid "EPG Search"
+#~ msgstr "Hledat v EPG"
+
+#, fuzzy
+#~ msgid "Enter Text"
+#~ msgstr "Zadejte cestu"
+
+#~ msgid "LICENSE"
+#~ msgstr "LICENCE"
+
+#~ msgid "Standby Toggle"
+#~ msgstr "Přepnout Standby"
+
+#, fuzzy
+#~ msgid "Use old remote"
+#~ msgstr "Obecný ovladač"
+
+#~ msgid "Recording Status"
+#~ msgstr "Stav nahrávání"
+
+#~ msgid "Tuner Bit Error Rate BER"
+#~ msgstr "Bitová chyba signálu BER"
+
+#~ msgid "Tuner Signal Power AGC"
+#~ msgstr "Síla signálu AGC"
+
+#~ msgid "Tuner Signal Quality SNR"
+#~ msgstr "Kvalita signálu SNR"
+
+#~ msgid "Tuner Signal Quality SNR_DB"
+#~ msgstr "Kvalita signálu SNR_DB"
+
+#~ msgid "Video Wide"
+#~ msgstr "Širokoúhlé"

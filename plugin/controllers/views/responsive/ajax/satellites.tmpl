@@ -1,0 +1,26 @@
+#from urllib.parse import quote
+#from Plugins.Extensions.OpenWebif.controllers.i18n import tstrings
+
+<!-- TODO: move styles to css file -->
+<style>
+	.nav-tabs { 
+    flex-wrap: wrap;
+	}
+	
+	.nav-tabs > li > a .material-icons {
+		top: 0; 
+		margin-bottom: 3px; 
+		margin-right: 6px;
+	}
+</style>
+
+<ul class="nav nav-tabs tab--skinned">
+#for $satellite in $satellites
+	<li><a href="#tab" data-toggle="tab" onclick="load_subcontent('ajax/channels?id=$quote($satellite.service)&stype=$stype'); return false;"><i class="icon material-icons material-icons-centered">satellite_alt</i>$satellite.name</a></li>
+#end for
+</ul>
+<div class="tab-content">
+	<div class="tab-pane active" id="tab">
+		<div id='sub_content_container'></div>
+	</div>
+</div>

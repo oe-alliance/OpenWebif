@@ -1,0 +1,35 @@
+<setupxml>
+	<setup key="openwebif" title="OpenWebif Configuration">
+		<item level="0" text="OpenWebInterface Enabled" description="OpenWebInterface Enabled">config.OpenWebif.enabled</item>
+        <if conditional="config.OpenWebif.enabled.value">
+    		<item level="0" text="Use modern interface" description="Use modern interface">config.OpenWebif.webcache.responsive_enabled</item>
+    		<item level="0" text="Theme mode" description="Theme mode" conditional="config.OpenWebif.webcache.responsive_enabled.value">config.OpenWebif.responsive_themeMode</item>
+    		<item level="0" text="Use custom Color" description="Use custom Color" conditional="config.OpenWebif.webcache.responsive_enabled.value">config.OpenWebif.responsive_skinColor</item>
+    		<item level="0" text="Show box name in header" description="Show box name in header">config.OpenWebif.identifier</item>
+    		<item level="0" text="Use custom box name" description="Use custom box name" conditional="config.OpenWebif.identifier.value">config.OpenWebif.identifier_custom</item>
+    		<item level="0" text="Custom box name" description="Custom box name" conditional="config.OpenWebif.identifier_custom.value">config.OpenWebif.identifier_text</item>
+    		<item level="0" text="HTTP port" description="HTTP port">config.OpenWebif.port</item>
+    		<item level="0" text="Enable HTTP Authentication" description="Enable HTTP Authentication">config.OpenWebif.auth</item>
+    		<item level="0" text="Enable HTTPS" description="Enable HTTPS">config.OpenWebif.https_enabled</item>
+            <if conditional="config.OpenWebif.https_enabled.value">
+        		<item level="0" text="HTTPS port" description="HTTPS port">config.OpenWebif.https_port</item>
+        		<item level="0" text="Enable HTTPS Authentication" description="Enable HTTPS Authentication">config.OpenWebif.https_auth</item>
+        		<item level="0" text="Require client cert for HTTPS" description="Require client cert for HTTPS">config.OpenWebif.https_clientcert</item>
+            </if>
+            <if conditional="config.OpenWebif.auth.value">
+        		<item level="0" text="Enable Authentication for streaming" description="Enable Authentication for streaming">config.OpenWebif.auth_for_streaming</item>
+        		<item level="0" text="Disable remote access for user root" description="Disable remote access for user root">config.OpenWebif.no_root_access</item>
+            </if>
+            <if conditional="not config.OpenWebif.auth.value or (config.OpenWebif.https_enabled.value and not config.OpenWebif.https_auth.value)">
+        		<item level="0" text="Without auth only local access is allowed!" description="Without auth only local access is allowed!">config.OpenWebif.local_access_only</item>
+        		<item level="0" text="Enable access from VPNs" description="Enable access from VPNs">config.OpenWebif.vpn_access</item>
+            </if>
+    		<item level="0" text="Enable Parental Control" description="Enable Parental Control">config.OpenWebif.parentalenabled</item>
+    		<item level="0" text="Streaming port" description="Streaming port">config.OpenWebif.streamport</item>
+    		<item level="0" text="Add service name to stream information" description="Add service name to stream information">config.OpenWebif.service_name_for_stream</item>
+    		<item level="0" text="Allow IPK Upload" description="Allow IPK Upload">config.OpenWebif.allow_upload_ipk</item>
+    		<item level="0" text="Playback IPTV Streams in browser" description="Playback IPTV Streams in browser">config.OpenWebif.playiptvdirect</item>
+    		<item level="0" text="Debug - Display Tracebacks in browser" description="Debug - Display Tracebacks in browser">config.OpenWebif.displayTracebacks</item>
+        </if>
+	</setup>
+</setupxml>

@@ -1,0 +1,48 @@
+#from Plugins.Extensions.OpenWebif.controllers.i18n import tstrings
+<div id="content_main" class="ui-widget-content">
+	<div id="info">
+		<h3 class="ui-widget-header">OpenWebif</h3>
+		<h2>$tstrings['openwebif_header']</h2>
+		<h1>$tstrings['version']: $info.owiver</h1>
+		<h2>$tstrings['site_source']: <a href='https://github.com/oe-alliance/OpenWebif'>Github</a></h2>
+		<hr/>
+		<img src="images/about.jpg" alt="about" style="display:none;" id="ajpg">
+		<img src="themes/about.png" alt="about" onerror='\$(this).hide();\$("#ajpg").show();'>
+		<hr/>
+		<br/>
+		<h1>$tstrings['authors']</h1>
+		<div class="info">
+		jbleyel<br/>
+		meo aka bacicciosat<br/>
+		skaman<br/>
+		homey-GER<br/>
+		nobody9<br/>
+		rincewind<br/>
+		SpaceRat aka Schimmelreiter<br/>
+		plnick
+		</div>
+		<br/>
+		<h1>$tstrings['contributors']</h1>
+		<div class="info">
+		Army (Graphics)<br/>
+		Milo, Cimarast<br/>
+		HSA ($tstrings['translation_spanish'])<br/>
+		wedebe<br/>
+		</div>
+		<br/><hr/><br/>
+		<h1>$tstrings['javalib']</h1>
+		<div class="info">
+			<a href='http://jqueryui.com/'>Jquery UI</a>
+		</div>
+		<br/><hr/><br/>
+		<h1>$tstrings['template_engine']</h1>
+		<div class="info">
+			<a href='http://www.cheetahtemplate.org/'>Cheetah</a>
+		</div>
+		<br/><hr/><br/>
+		<h1>$tstrings['license']</h1>
+		<pre class="info" style="white-space: pre-wrap; margin: 0 100px;">
+		$tstrings['license_text']
+		</pre>
+	</div>
+</div>

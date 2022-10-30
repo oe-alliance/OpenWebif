@@ -1,0 +1,52 @@
+#from Plugins.Extensions.OpenWebif.controllers.i18n import tstrings
+
+$tstrings['folders']<hr>
+<div style="width: 100%;height: 220px;overflow:scroll;">
+<div id="foldertree"></div>
+</div>
+#if $showbookmarks
+$tstrings['bookmarks']<hr>
+<div style="width: 100%;height: 220px;overflow:scroll;">
+	<ol class="sellist" id="folderbookmarks">
+	#for $location in $locations
+		<li>$location</li>
+	#end for
+	</ol>
+</div>
+#end if
+
+#raw
+<link type="text/css" rel="stylesheet" href="css/jstree.min.css">
+<script type="text/javascript" src="js/jstree-3.3.12.min.js"></script>
+<script>
+$(function() {
+  $('#foldertree').jstree({
+    'core' : {
+      'data' : {
+        "url" : "/file?tree",
+        "data" : function (node) {
+          return { "id" : node.id };
+        }
+      }
+    }
+  });
+});
+$('#foldertree').on("changed.jstree", function (e, data) {
+	selectedfolder = data.selected[0];
+});
+
+</script>
+#end raw
+#if $showbookmarks
+<script>
+\$('#folderbookmarks').selectable({
+	selected: function ( event, ui ) {
+		var ids = \$('#folderbookmarks .ui-selected').map(function() {
+			selectedfolder = \$(this).html();
+		});
+	},classes: {
+		"ui-selected": getActiveCls()
+	}
+});
+</script>
+#end if

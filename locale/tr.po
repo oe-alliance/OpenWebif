@@ -1,0 +1,2170 @@
+# Turkish translations for enigma package.
+# Copyright (C) 2020 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# dreamosat <info@dreamosat-forum.com>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenWebif\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-10 09:36+0000\n"
+"PO-Revision-Date: 2022-06-09 18:48+0300\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/e2openplugin-"
+"openwebif/e2openplugin-openwebif/tr/>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 2.4.3\n"
+
+#, python-format
+msgid "%02d.%02d."
+msgstr ""
+
+#, python-format
+msgid "%02d.%02d.%d"
+msgstr ""
+
+#, python-format
+msgid "%02d:%02d"
+msgstr ""
+
+msgid "%d.%m.%Y"
+msgstr ""
+
+msgid "%d.%m.%Y %H:%M"
+msgstr ""
+
+#, python-format
+msgid "%s %02d.%02d."
+msgstr ""
+
+#, python-format
+msgid "%s %02d.%02d.%d"
+msgstr ""
+
+#, python-format
+msgid "%s %s is locked."
+msgstr "%s %s kilitlendi."
+
+#, python-format
+msgid "%s / %s"
+msgstr ""
+
+#, python-format
+msgid "%s Style"
+msgstr ""
+
+#, python-format
+msgid "%s free / %s total"
+msgstr "%s boş / %s toplam"
+
+msgid "(Press 'shift' and click to 'hold')"
+msgstr "(Shift + Uzun Basmak İçin Tıklayın)"
+
+#, fuzzy
+msgid "(in minutes)"
+msgstr "dakika"
+
+msgid "A filename is required"
+msgstr "Lütfen dosya adını girin"
+
+msgid "A value is required"
+msgstr "Bir şeyler yazmanız gerekiyor"
+
+msgid "AGC"
+msgstr "AGC"
+
+msgid "About"
+msgstr "Hakkında"
+
+msgid "Add"
+msgstr "Ekle"
+
+msgid "Add  AutoTimer  to tags"
+msgstr "Etiketlere Otomatik Zamanlayıcı Ekle"
+
+msgid "Add AutoTimer name to tags"
+msgstr "Etiketlere Ad Ekle"
+
+msgid "Add Bouquet"
+msgstr "Buket Ekle"
+
+msgid "Add IPTV/URL"
+msgstr "IPTV/URL Ekle"
+
+msgid "Add Marker"
+msgstr "İşaretçi Ekle"
+
+msgid "Add Spacer"
+msgstr "Boşluk Ekle"
+
+msgid "Add a timer"
+msgstr "Zamanlayıcı Ekle"
+
+msgid "Add a zap timer"
+msgstr "Yayın açma zamanlayıcısı Ekle"
+
+msgid "Add an AutoTimer"
+msgstr "Otomatik Zamanlayıcı Ekle"
+
+msgid "Add channel(s) as alternate"
+msgstr "Kanalları alternatif olarak ekle"
+
+msgid "Add filters"
+msgstr "Filtre Ekle"
+
+msgid "Add selection to bouquet"
+msgstr "Bukete kanal ekle"
+
+msgid "Add service name to stream information"
+msgstr "Akış bilgilerine hizmet adı ekle"
+
+msgid "Add similar on conflict"
+msgstr "Çakışmada Benzer Ekle"
+
+msgid "Add tags to recordings"
+msgstr "Kayıtlara tag ekle"
+
+#, python-format
+msgid "Added %s to alternative service %s."
+msgstr "%s alternatif hizmetine %s eklendi."
+
+msgid "Adjust recording time to real event time"
+msgstr "Kayıt süresini gerçek olay zamanına ayarla"
+
+msgid "After event"
+msgstr "Olaydan sonra"
+
+msgid "All"
+msgstr "Tümü"
+
+msgid "All Channels"
+msgstr "Tüm Kanallar"
+
+msgid ""
+"All Files of this Software are open source software; you can redistribute it "
+"and/or modify it under the terms of the GNU General Public License version 3 "
+"as published by the Free Software Foundation."
+msgstr ""
+"Bu Yazılımın Tüm Dosyaları açık kaynaklı yazılımdır; Özgür Yazılım Vakfı "
+"tarafından yayınlanan GNU Genel Kamu Lisansı sürüm 3 hükümlerine göre onu "
+"yeniden dağıtabilir ve/veya değiştirebilirsiniz."
+
+msgid "All alternative services deleted."
+msgstr "Tüm alternatif hizmetler silindi."
+
+msgid "Allow IPK Upload"
+msgstr "IPK Yüklemeye İzin Ver"
+
+msgid "Allow duplicates"
+msgstr "Yinelemelere izin ver"
+
+#, python-format
+msgid "Alternative %s created failed."
+msgstr "Alternatif %s oluşturulamadı."
+
+msgid "Always"
+msgstr "Her zaman"
+
+msgid "Answer is NO!"
+msgstr "Cevap HAYIR!"
+
+msgid "Answer is YES!"
+msgstr "Cevap EVET!"
+
+msgid "Any"
+msgstr "Herhangi"
+
+msgid "Any day"
+msgstr "Herhangi bir gün"
+
+msgid "Any service/recording"
+msgstr "Herhangi bir hizmet/kayıt"
+
+msgid "April"
+msgstr "Nisan"
+
+msgid "Are you sure you want to delete the selected bouquet?"
+msgstr "Buketi gerçekten silmek istiyor musunuz?"
+
+msgid "Are you sure you want to delete the selected item(s)?"
+msgstr "Seçili öğeleri gerçekten silmek istiyor musunuz?"
+
+msgid "Are you sure you want to delete this AutoTimer?"
+msgstr "Bu otomatik zamanlayıcıyı silmeye emin misiniz?"
+
+msgid "Are you sure you want to delete this recording?"
+msgstr "Kaydı silmek istediğinden emin misin?"
+
+msgid "Are you sure you want to delete this timer?"
+msgstr "Zamanlayıcıyı gerçekten sil?"
+
+msgid "Are you sure you want to rename this recording?"
+msgstr "Kaydı yeniden adlandırmak istediğinden emin misin?"
+
+msgid "Are you sure you want to restore from file?"
+msgstr "Dosyadan gerçekten geri yüklemek istiyor musunuz?"
+
+msgid "Are you sure you want to start recording instantly?"
+msgstr "Gerçekten anında kayıt başlatılsın mı?"
+
+msgid "Ask, default No"
+msgstr "Sor, varsayılan Hayır"
+
+msgid "Ask, default Yes"
+msgstr "Sor, varsayılan Evet"
+
+msgid "Audio Encoding"
+msgstr ""
+
+msgid "Audio PID (APID)"
+msgstr ""
+
+msgid "Audio Track"
+msgstr ""
+
+msgid "August"
+msgstr "Ağustos"
+
+msgid "Authors"
+msgstr "Yazarlar"
+
+msgid "Auto"
+msgstr "Otomatik"
+
+msgid "AutoPoll"
+msgstr "AutoPoll"
+
+msgid "AutoTimer Edit"
+msgstr "Otomatik Zamanlayıcı Düzenleme"
+
+msgid "AutoTimer Settings"
+msgstr "Otomatik Zamanlayıcı Ayarları"
+
+msgid "AutoTimers"
+msgstr "Otomatik Zamanlayıcı Listesi"
+
+msgid "Autotimer Preview"
+msgstr "Otomatik Zamanlayıcı Önizlemesi"
+
+msgid "BER"
+msgstr "BER"
+
+msgid "Back"
+msgstr "Geri"
+
+msgid "Background only"
+msgstr "Yalnızca arka plan"
+
+msgid "Begin"
+msgstr "Başla"
+
+#, fuzzy
+msgid "Begin of \"After event\" timespan"
+msgstr "Başlangıç ​​\"olayından sonra\" zaman aralığı"
+
+msgid "Beginning of timespan"
+msgstr "Zaman aralığının başlangıcı"
+
+msgid "Bit Error Rate (BER)"
+msgstr ""
+
+msgid "Bookmark"
+msgstr "Yer İşareti"
+
+msgid "Bookmarks"
+msgstr "Yer İşaretleri"
+
+#, python-format
+msgid "Bouquet %s already exists."
+msgstr "Buket %s zaten var."
+
+#, python-format
+msgid "Bouquet %s can not be moved."
+msgstr "Bouquet %s taşınamıyor."
+
+#, python-format
+msgid "Bouquet %s created."
+msgstr "Buket %s oluşturuldu."
+
+#, python-format
+msgid "Bouquet %s deleted."
+msgstr "Buket %s silindi."
+
+#, python-format
+msgid "Bouquet %s is locked."
+msgstr "Buket %s kilitlendi."
+
+#, python-format
+msgid "Bouquet %s is unlocked."
+msgstr "Buket %s kilidi açıldı."
+
+#, python-format
+msgid "Bouquet %s moved."
+msgstr "Bouquet %s taşındı."
+
+#, python-format
+msgid "Bouquet %s removed failed, sevicerefence or mutable list is not valid."
+msgstr ""
+"Buket %s kaldırılamadı, sevicerefence veya değiştirilebilir liste geçerli "
+"değil."
+
+#, python-format
+msgid "Bouquet %s removed failed."
+msgstr "Buket %s kaldırılamadı."
+
+msgid "Bouquet Editor"
+msgstr "Buket Düzenleyici"
+
+msgid "Bouquet name"
+msgstr "Buketin Adı"
+
+msgid "Bouquet renamed successfully."
+msgstr "Buket başarıyla yeniden adlandırıldı."
+
+msgid "Bouquet-settings were restored successfully"
+msgstr "Buket ayarları başarıyla geri yüklendi"
+
+msgid "BouquetEditor"
+msgstr "BuketDüzenleyici"
+
+msgid "Bouquetlist is not editable!"
+msgstr "Buket listesi düzenlenemez!"
+
+msgid "Bouquets"
+msgstr "Buketler"
+
+msgid "Box"
+msgstr "Box"
+
+msgid "Box Control"
+msgstr "Kutu Kontrolü"
+
+msgid "Box Info"
+msgstr "Kutu Bilgileri"
+
+msgid "Box uptime"
+msgstr "Kutu Çalışma Süresi"
+
+msgid "Brand"
+msgstr "Marka"
+
+msgid "Build"
+msgstr ""
+
+msgid "Cable"
+msgstr "Kablo"
+
+msgid "Calendar Week"
+msgstr "Takvim Haftası"
+
+msgid "Cancel"
+msgstr "İptal"
+
+msgid "Cancelled"
+msgstr "İptal edildi"
+
+msgid "Capacity"
+msgstr "Kapasite"
+
+msgid "Capture screenshot"
+msgstr "Ekran Görüntüsü Al"
+
+msgid "Channel"
+msgstr "Kanal"
+
+msgid "Channels"
+msgstr "Kanallar"
+
+msgid "Character encoding for EPG data"
+msgstr "EPG verileri için karakter kodlaması"
+
+msgid "Chipset"
+msgstr "Chipset"
+
+msgid "Cleanup Timers"
+msgstr "Zamanlayıcıları temizle"
+
+msgid "Close"
+msgstr "Kapat"
+
+msgid "Common Settings"
+msgstr "Genel Ayarlar"
+
+msgid "Config"
+msgstr "Yapılandırma"
+
+#, python-format
+msgid "Conflicting Timer(s) detected! %s"
+msgstr "Çakışan Zamanlayıcılar algılandı! %s"
+
+msgid "Contributors"
+msgstr "Katkıda Bulunanlar"
+
+msgid "Control"
+msgstr "Kontrol"
+
+#, python-format
+msgid "Could not add timer '%s'!"
+msgstr "Zamanlayıcı '%s' eklenemedi!"
+
+#, python-format
+msgid "Could not find timer '%s' with given start and end time!"
+msgstr "Verilen başlangıç ​​ve bitiş zamanına sahip '%s' zamanlayıcı bulunamadı!"
+
+msgid "Create bouquet from selection"
+msgstr "Sağlayıcıyı yeni Buket olarak Ekle"
+
+msgid "Current"
+msgstr "Geçerli"
+
+msgid "Current Event"
+msgstr "Geçerli Etkinlik"
+
+msgid "Currently recording"
+msgstr ""
+
+msgid "Custom box name"
+msgstr "Özel kutu adı"
+
+msgid "Custom offset"
+msgstr "Özel ofset"
+
+msgid "DHCP"
+msgstr "DHCP"
+
+msgid "Date"
+msgstr "Tarih"
+
+msgid "Date (newest)"
+msgstr "Tarih (en yeniden)"
+
+msgid "Date (oldest)"
+msgstr "Tarih (en eskiden)"
+
+msgid "Debug - Display Tracebacks in browser"
+msgstr "Debug - Tracebacks'i tarayıcıda görüntüle"
+
+msgid "December"
+msgstr "Aralık"
+
+msgid "Deep Standby"
+msgstr "Derin Bekleme"
+
+msgid "Default"
+msgstr "Varsayılan"
+
+msgid "Delay Standby"
+msgstr "Bekleme Gecikmesi"
+
+msgid "Delete"
+msgstr "Sil"
+
+msgid "Delete Bookmark"
+msgstr "Yer İşaretini Sil"
+
+msgid "Delete Bouquet"
+msgstr "Buketi Sil"
+
+msgid "Delete Recording"
+msgstr "Kaydı Sil"
+
+msgid "Delete Timer"
+msgstr "Zamanlayıcıyı Sil"
+
+msgid ""
+"Delete failed, because there is no movie trash !\n"
+"Disable movie trash in configuration to delete this item"
+msgstr ""
+"Silme başarısız, çünkü film çöp kutusu yok !\n"
+"Bu öğeyi silmek için yapılandırmada film çöp kutusunu devre dışı bırakın"
+
+msgid "Deleted"
+msgstr "Silindi"
+
+msgid "Description"
+msgstr "Açıklama"
+
+msgid "Device"
+msgstr ""
+
+msgid "Disable"
+msgstr "Devre dışı bırak"
+
+msgid "Disable Timer"
+msgstr "Zamanlayıcıyı Devre Dışı Bırak"
+
+msgid "Disable remote access for user root"
+msgstr "Kullanıcı root için uzaktan erişimi devre dışı bırak"
+
+msgid "Disabled on conflict"
+msgstr "Çakışmada Devre Dışı Bırakıldı"
+
+msgid "Display Mode"
+msgstr "Görüntü Modu"
+
+msgid "Display duration (s)"
+msgstr "Görünüm süresi (s)"
+
+msgid "Distro"
+msgstr "Distro"
+
+msgid "Dolby"
+msgstr "Dolby"
+
+msgid "Don't create timer when movie exists in database"
+msgstr "Veritabanında film varken zamanlayıcı oluşturma"
+
+msgid "Done"
+msgstr "Bitti"
+
+msgid "Download"
+msgstr "İndir"
+
+msgid "Download playlist for"
+msgstr "Oynatma listesini indir"
+
+msgid "Drivers"
+msgstr "Sürücüler"
+
+msgid "Duration"
+msgstr "Süre"
+
+msgid "E"
+msgstr "E"
+
+msgid "EPG"
+msgstr "EPG"
+
+msgid "EPG encoding"
+msgstr "EPG kodlaması"
+
+msgid "EPGRefresh"
+msgstr "EPGRefresh"
+
+msgid "ERROR: Cannot set SleepTimer while device is in Standby-Mode"
+msgstr "HATA: Cihaz Bekleme Modundayken uyku zamanlayıcısı ayarlanamıyor"
+
+msgid "Edit"
+msgstr "Düzenle"
+
+#, fuzzy
+msgid "Edit Recording"
+msgstr "Kaydı Sil"
+
+msgid "Edit Timer"
+msgstr "Zamanlayıcıyı Düzenle"
+
+msgid "Editor"
+msgstr "Düzenleyici"
+
+msgid "Enable"
+msgstr "Etkinleştir"
+
+msgid "Enable Authentication for streaming"
+msgstr "Akış için Kimlik Doğrulamayı Etkinleştir"
+
+msgid "Enable HTTP Authentication"
+msgstr "HTTP Kimlik Doğrulamasını Etkinleştir"
+
+msgid "Enable HTTPS"
+msgstr "HTTPS'yi etkinleştir"
+
+msgid "Enable HTTPS Authentication"
+msgstr "HTTPS Kimlik Doğrulamasını Etkinleştir"
+
+msgid "Enable Messages"
+msgstr "Mesajları Etkinleştir"
+
+msgid "Enable Parental Control"
+msgstr "Ebeveyn Denetimini Etkinleştir"
+
+msgid "Enable Timer"
+msgstr "Zamanlayıcıyı Etkinleştir"
+
+msgid "Enable access from VPNs"
+msgstr "VPN'lerden erişimi etkinleştir"
+
+msgid "Enable filtering"
+msgstr "Filtrelemeyi Etkinleştir"
+
+msgid "Enable/Disable Screenshot on key press or"
+msgstr ""
+"Tuşa basıldığında ekran görüntüsünü almayı etkinleştir / veya devre dışı bırak"
+
+msgid "Enabled"
+msgstr "Etkin"
+
+msgid "Encrypted"
+msgstr "Şifreli"
+
+msgid "End"
+msgstr "Bitiş"
+
+#, fuzzy
+msgid "End of \"After event\" timespan"
+msgstr "Zaman aralığı \"olayından sonra\" sonu"
+
+msgid "End of timespan"
+msgstr "Zaman aralığının Sonu"
+
+msgid "Enter a name for the new bouquet"
+msgstr "Buket için yeni ad girin"
+
+msgid "Enter a name for the new marker"
+msgstr "İşaretçi için yeni ad girin"
+
+msgid "Enter a name for this AutoTimer"
+msgstr "AutoTimer için yeni ad girin"
+
+msgid "Enter path"
+msgstr "Yol gir"
+
+msgid "Enter text"
+msgstr "Yazı gir"
+
+msgid "Enter the text to find in the EPG"
+msgstr "EPG'de aranacak yazıyı gir"
+
+msgid "Error"
+msgstr "Hata"
+
+msgid "Error parsing vps.xml"
+msgstr "vps.xml ayrıştırılırken hata oluştu"
+
+msgid "Error upload File"
+msgstr "Dosya yükleme hatası"
+
+#, python-format
+msgid "Error while preparing backup file, %s does not exists."
+msgstr "Yedek dosyası hazırlanırken hata oluştu,%s mevcut değil."
+
+msgid "Error while preparing backup file."
+msgstr "Yedek dosyası hazırlanırken hata oluştu."
+
+msgid "Error writing File"
+msgstr "Dosya yazılırken hata oluştu"
+
+#, python-format
+msgid "Error, %s does not exists, restore is not possible..."
+msgstr "Hata, %s yok, geri yükleme mümkün değil ..."
+
+#, python-format
+msgid "Error, %s was not created with WebBouquetEditor..."
+msgstr "Hata, %s WebBouquetEditor ile yaratılmadı ..."
+
+#, python-format
+msgid "Error: Bouquet %s could not deleted, OSError."
+msgstr "Hata: Buket %s silinemedi, OSError."
+
+msgid "Event not found"
+msgstr "Etkinlik bulunamadı"
+
+msgid "EventId not found"
+msgstr "EventId bulunamadı"
+
+msgid "Every"
+msgstr "Her"
+
+msgid "Exclude when"
+msgstr "Hariç"
+
+#, fuzzy
+msgid "Execute \"After event\" during timespan"
+msgstr "Zaman aralığında \"olaydan sonra\" yürüt"
+
+msgid "Export"
+msgstr "Dışa Aktar"
+
+msgid "Extras"
+msgstr "Ekstralar"
+
+msgid "Fake Recording"
+msgstr "Sahte Kayıt"
+
+msgid "Fastscan"
+msgstr "Hızlı tarama"
+
+msgid "February"
+msgstr "Şubat"
+
+msgid "Firmware version"
+msgstr "Firmware sürümü"
+
+msgid "Force"
+msgstr "Zorla"
+
+msgid "Fr"
+msgstr "Cum"
+
+msgid "Free"
+msgstr "Boşta"
+
+msgid "Free Memory"
+msgstr "Boş Bellek"
+
+msgid "Free space"
+msgstr "Boş alan"
+
+msgid "Fri"
+msgstr "Cum"
+
+msgid "Friday"
+msgstr "Cuma"
+
+msgid "From date"
+msgstr "Sonra değil"
+
+msgid "Front processor version"
+msgstr "Front processor version"
+
+msgid "Full remote"
+msgstr "Tam uzak"
+
+msgid "GB"
+msgstr "GB"
+
+msgid "GUI version"
+msgstr "Gui sürümü"
+
+msgid "Gateway"
+msgstr "Ağ Geçidi"
+
+msgid "Get mutable list for new created alternative failed!"
+msgstr "Yeni oluşturulan alternatif için değişken liste alınamadı!"
+
+msgid "Get mutable list for new created bouquet failed!"
+msgstr "Yeni oluşturulan buket için değişken liste alınamadı!"
+
+msgid "HH:MM"
+msgstr ""
+
+msgid "HTTP port"
+msgstr "HTTP bağlantı noktası"
+
+msgid "HTTPS port"
+msgstr "HTTPS bağlantı noktası"
+
+msgid "Hard disk model"
+msgstr "Sabit disk modeli"
+
+msgid "Hardware"
+msgstr "Donanım"
+
+msgid "Hide full remote"
+msgstr "Tam uzaktan kumandayı gizle"
+
+msgid "High Resolution"
+msgstr "Yüksek Çözünürlük"
+
+msgid "Hold to drag"
+msgstr "Sürüklemek için tut"
+
+msgid "Hour"
+msgstr "Saat"
+
+msgid "IPTV / URL name"
+msgstr "IPTV / URL adı"
+
+msgid "IPv4 address"
+msgstr "IPv4 adresi"
+
+msgid "IPv4-only Python/Twisted"
+msgstr "Yalnızca IPv4 Python/Twisted"
+
+msgid "IPv4-only kernel"
+msgstr "Yalnızca IPv4 çekirdek"
+
+msgid "IPv6 address(es)"
+msgstr "IPv6 adresleri"
+
+msgid "Import"
+msgstr "İçe Aktar"
+
+msgid "Include description"
+msgstr "Açıklamayı dahil et"
+
+msgid "Include extended description"
+msgstr "Genişletilmiş açıklamayı dahil et"
+
+msgid "Include short description"
+msgstr "Kısa açıklamayı dahil et"
+
+msgid "Include when"
+msgstr "Dahil"
+
+msgid "Infinite Instant recording started"
+msgstr "Sonsuz Anında kayıt başladı"
+
+msgid "Info"
+msgstr "Bilgi"
+
+msgid "Information"
+msgstr "Bilgi"
+
+msgid "Inherit AutoTimer"
+msgstr "Otomatik Zamanlayıcıyı Devral"
+
+msgid "Install Package"
+msgstr "Paketi Kur"
+
+msgid "Installed"
+msgstr "Yüklendi"
+
+msgid "Instant Record"
+msgstr "Anında Kayıt"
+
+msgid "Instant record for current Event started"
+msgstr "Geçerli Etkinlik için anında kayıt başlatıldı"
+
+msgid "Internal error!"
+msgstr "Dahili hata!"
+
+msgid "Internal flash memory"
+msgstr "Dahili flaş hafızası"
+
+#, python-format
+msgid "Interval (in %s)"
+msgstr "Aralık (%s olarak)"
+
+msgid "Interval (min.)"
+msgstr "Aralık (dak.)"
+
+msgid "Interval (sec.)"
+msgstr "Aralık (sn.)"
+
+msgid "January"
+msgstr "Ocak"
+
+msgid "Javascript Libraries"
+msgstr "Javascript Kitaplıkları"
+
+msgid "July"
+msgstr "Temmuz"
+
+msgid "June"
+msgstr "Haziran"
+
+msgid "Just play"
+msgstr "Sadece oynat"
+
+msgid "Kernel"
+msgstr "Kernel"
+
+msgid "LCD"
+msgstr "LCD"
+
+msgid "LCD4Linux Setup"
+msgstr "LCD4Linux Kurulumu"
+
+msgid "Label series"
+msgstr "Etiket serisi"
+
+msgid "License"
+msgstr "Lisans"
+
+msgid "Link speed"
+msgstr "Bağlantı Hızı"
+
+msgid "List of Timers has been cleaned"
+msgstr "Zamanlayıcıların Listesi temizlendi"
+
+msgid "Loading..."
+msgstr "Yükleniyor..."
+
+msgid "Location"
+msgstr "Konum"
+
+msgid "Locked"
+msgstr "Kilitli"
+
+msgid "MAC address"
+msgstr "MAC adresi"
+
+msgid "MB"
+msgstr "MB"
+
+msgid "Main"
+msgstr "Ana"
+
+msgid "Main memory"
+msgstr "Ana Bellek"
+
+msgid "March"
+msgstr "Mart"
+
+msgid "Marker added."
+msgstr "İşaretçi eklendi."
+
+msgid "Marker name"
+msgstr "İşaretleyicinin Adı"
+
+msgid "Match text"
+msgstr "Başlığı eşleştir"
+
+msgid "Max Days"
+msgstr "Maks. Gün"
+
+msgid "May"
+msgstr "Mayıs"
+
+msgid "Message sent successfully!"
+msgstr "Mesaj başarıyla gönderildi!"
+
+msgid "Method"
+msgstr "Yöntem"
+
+msgid "Minimal EPG list"
+msgstr "Minimal EPG listesi"
+
+msgid "Minimal movie list"
+msgstr "Minimal film listesi"
+
+msgid "Minimal timer list"
+msgstr "Minimal zamanlayıcı listesi"
+
+msgid "Minute"
+msgstr "Dakika"
+
+#, python-format
+msgid "Missing mandatory parameter '%s'"
+msgstr "Zorunlu '%s' parametresi eksik"
+
+msgid "Missing requesteter: sRef"
+msgstr "Eksik istek: sRef"
+
+msgid "Mo"
+msgstr "Pt"
+
+msgid "Model"
+msgstr "Model"
+
+msgid "Mon"
+msgstr "Pzt"
+
+msgid "Monday"
+msgstr "Pazartesi"
+
+msgid "Monthly"
+msgstr "Aylık"
+
+msgid "More"
+msgstr "Daha"
+
+msgid "More details"
+msgstr "Daha fazla detay"
+
+msgid "Mount point"
+msgstr "Yükleme noktası"
+
+msgid "Movie database for EPG"
+msgstr "EPG için film veritabanı"
+
+msgid "Movie search"
+msgstr "Film arama"
+
+msgid "Movielist"
+msgstr "Film listesi"
+
+msgid "Movies"
+msgstr "Filmler"
+
+msgid "Multi-Bouquet is not enabled!"
+msgstr "Çoklu Buket etkinleştirilmedi!"
+
+msgid "MultiEPG"
+msgstr "MultiEPG"
+
+msgid "Mute/Unmute"
+msgstr ""
+
+msgid "NCam Webinterface"
+msgstr "NCam Webinterface"
+
+msgid "Name"
+msgstr "Ad"
+
+msgid "Name (a-z)"
+msgstr "Ad (a-z)"
+
+msgid "Name (z-a)"
+msgstr "Ad (a-z)"
+
+msgid "Namespace"
+msgstr "Ad alanı"
+
+msgid "Network Interface"
+msgstr "Ağ Arayüzü"
+
+msgid "Network Shares"
+msgstr "Ağ Paylaşımları"
+
+msgid "Never"
+msgstr "Asla"
+
+msgid "New"
+msgstr "Yeni"
+
+msgid "New Bookmark:"
+msgstr "Yeni Yer İşareti:"
+
+msgid "New Name"
+msgstr "Yeni Ad"
+
+msgid "No"
+msgstr "Hayır"
+
+msgid "No EPG data available."
+msgstr "EPG verisi yok."
+
+msgid "No Parent Control Setup Pin given!"
+msgstr "Ebeveyn Kontrolü Kurulum Pini verilmedi!"
+
+msgid "No answer in time"
+msgstr "Zamanında yanıt yok"
+
+msgid "No bouquet given!"
+msgstr "Buket verilmedi!"
+
+msgid "No bouquet name given!"
+msgstr "Buket adı verilmemiş!"
+
+msgid "No current service given!"
+msgstr "Geçerli hizmet verilmedi!"
+
+msgid "No event found! Not recording!"
+msgstr "Olay bulunamadı! Kaydedilemiyor!"
+
+msgid "No marker-name given!"
+msgstr "İşaretçi adı belirtilmedi!"
+
+msgid "No matches were found in the EPG"
+msgstr "EPG'de eşleşme bulunamadı"
+
+msgid "No matching Timer found"
+msgstr "Eşleşen Zamanlayıcı bulunamadı"
+
+msgid "No network connection"
+msgstr "Ağ bağlantısı yok"
+
+msgid "No new servicename given!"
+msgstr "Yeni hizmet adı verilmedi!"
+
+msgid "No position given!"
+msgstr "Pozisyon verilmedi!"
+
+msgid "No provider given!"
+msgstr "Sağlayıcı belirtilmedi!"
+
+msgid "No service given!"
+msgstr "Hizmet verilmedi!"
+
+msgid "No, cancel"
+msgstr "Hayır, iptal et"
+
+msgid "None"
+msgstr "Yok"
+
+msgid "Nothing"
+msgstr "Hiçbir şey"
+
+msgid "Nothing playing."
+msgstr "Hiçbir şey oynatılmıyor."
+
+msgid "Notify if Conflict"
+msgstr "Çakışırsa Bildir"
+
+msgid "Notify if Similar"
+msgstr "Benzer ise Bildir"
+
+msgid "November"
+msgstr "Kasım"
+
+msgid "Now"
+msgstr "Şimdi"
+
+msgid "Now/Next Columns"
+msgstr "Şimdiki/Sonraki kolonları"
+
+msgid "Number of recordings remaining"
+msgstr "Kalan kayıt miktarı"
+
+msgid "ONID"
+msgstr ""
+
+msgid "OSCam Webinterface"
+msgstr "OSCam Webinterface"
+
+msgid "OSD"
+msgstr "OSD"
+
+msgid "October"
+msgstr "Ekim"
+
+msgid "Offset after recording (mins)"
+msgstr "Kayıttan sonra ofset (m cinsinden)"
+
+msgid "Offset before recording (mins)"
+msgstr "Kayıttan önce ofset (m cinsinden)"
+
+msgid "On"
+msgstr "Açık"
+
+msgid "On any service"
+msgstr "Herhangi bir hizmette"
+
+msgid "On same service"
+msgstr "Aynı hizmette"
+
+msgid "Only match between dates"
+msgstr "Belirli tarihlerdeki etkinliklerle kısıtla"
+
+msgid "Only match during timespan"
+msgstr "Yalnızca zaman aralığında eşleştir"
+
+msgid "Oops, no results matched your search"
+msgstr "Eşleşme bulunamadı"
+
+msgid "Oops..."
+msgstr ""
+
+msgid "Open Source Web Interface for Linux set-top box"
+msgstr "Linux set üstü kutusu için Açık Kaynak Web Arayüzü"
+
+msgid "Open in new window"
+msgstr "Yeni pencerede aç"
+
+msgid "OpenWebInterface Enabled"
+msgstr "OpenWebInterface Etkin"
+
+msgid "OpenWebif Browser Settings"
+msgstr "OpenWebif Tarayıcı Ayarları"
+
+msgid "OpenWebif Configuration"
+msgstr "OpenWebif Yapılandırması"
+
+msgid "OpenWebif Settings"
+msgstr "OpenWebif Ayarları"
+
+#, fuzzy
+msgid "OpenWebif url:"
+msgstr "OpenWebif URL:"
+
+msgid "Orbital Position"
+msgstr "Yörünge Konumu"
+
+msgid "Override found with alternative service"
+msgstr "Alternatif hizmetle geçersiz kılma bulundu"
+
+msgid "PCR PID"
+msgstr ""
+
+msgid "PMT PID"
+msgstr ""
+
+msgid "Packages"
+msgstr "Paketler"
+
+msgid "Parent Control Setup Pin is wrong!"
+msgstr "Ebeveyn Denetimi Kurulum PIN'i yanlış!"
+
+msgid "Parent Control is not activated."
+msgstr "Ebeveyn Kontrolü etkinleştirilmedi."
+
+msgid "Parse AutoTimer"
+msgstr "Otomatik zamanlayıcıyı ayrıştır"
+
+msgid "PiP"
+msgstr "PiP"
+
+msgid "Picture in Picture"
+msgstr "Resim İçinde Resim"
+
+msgid "Picture in Picture (hidden)"
+msgstr "Resim İçinde Resim (gizli)"
+
+msgid "Plain"
+msgstr "Düz"
+
+msgid "Playback"
+msgstr "Oynatma"
+
+msgid "Playback IPTV Streams in browser"
+msgstr "IPTV akışını tarayıcıda oynatma"
+
+msgid "Playlist"
+msgstr "Oynatma Listesi"
+
+msgid "Playlist format"
+msgstr "Oynatma Listesi Biçimi"
+
+msgid "Power Control"
+msgstr "Güç Kontrolü"
+
+msgid "PowerTimer feature not available"
+msgstr "PowerTimer özelliği kullanılamıyor"
+
+msgid "Preview"
+msgstr "Önizleme"
+
+msgid "Primetimes"
+msgstr "Primetimes"
+
+msgid "Process"
+msgstr "Ayrıştırma"
+
+msgid "Provider"
+msgstr "Sağlayıcı"
+
+msgid "Providers"
+msgstr "Sağlayıcılar"
+
+msgid "REC"
+msgstr "KAYIT"
+
+msgid "Radio"
+msgstr "Radyo"
+
+msgid "Reboot Box"
+msgstr "Yeniden Başlatma Kutusu"
+
+msgid "Record a maximum of # times"
+msgstr "En fazla x kez kaydedin"
+
+msgid "Recording"
+msgstr "Kayıt"
+
+msgid "Recording Type"
+msgstr "Kayıt Türü"
+
+msgid "Refresh"
+msgstr "Yenile"
+
+msgid "Refresh Timer"
+msgstr "Zamanlayıcıyı Yenile"
+
+msgid "Refresh automatically every"
+msgstr "Her zaman otomatik olarak yenile"
+
+msgid "Refresh now"
+msgstr "Şimdi yenile"
+
+msgid "Reload"
+msgstr "Yeniden yükle"
+
+msgid "Remote"
+msgstr "Kumanda"
+
+msgid "Remove Package"
+msgstr "Paketi Kaldır"
+
+msgid "Remove filter"
+msgstr "Filtreyi kaldır"
+
+msgid "Rename"
+msgstr "Yeniden Adlandır"
+
+msgid "Rename Bouquet"
+msgstr "Buketi Yeniden Adlandır"
+
+msgid "Rename Recording"
+msgstr "Kaydı Yeniden Adlandır"
+
+msgid "Repeated"
+msgstr "Tekrarlandı"
+
+msgid "Require client cert for HTTPS"
+msgstr "HTTPS için istemci sertifikası gerektir"
+
+msgid "Require description to be unique"
+msgstr "Açıklamanın benzersiz olmasını gerektir"
+
+msgid "Reset"
+msgstr "Sıfırla"
+
+msgid "Reset count"
+msgstr "Sayımı sıfırla"
+
+msgid "Restart GUI"
+msgstr "GUI'yi yeniden başlat"
+
+msgid "Restrict to bouquets"
+msgstr "Buketlerle Sınırla"
+
+#, fuzzy
+msgid "Restrict to channels"
+msgstr "Buketlerle Sınırla"
+
+msgid "Root"
+msgstr "Kök"
+
+msgid "SLAAC"
+msgstr "SLAAC"
+
+msgid "SNR"
+msgstr "SNR"
+
+msgid "SRef"
+msgstr ""
+
+msgid "Sa"
+msgstr "Cmt"
+
+msgid "Safe mode"
+msgstr "Güvenli mod"
+
+msgid "Sat"
+msgstr "Sat"
+
+msgid "Satellites"
+msgstr "Uydular"
+
+msgid "Satfinder"
+msgstr "Uydu bulucu"
+
+msgid "Saturday"
+msgstr "Cumartesi"
+
+msgid "Save"
+msgstr "Kaydet"
+
+msgid "Screenshot"
+msgstr "Ekran görüntüsü"
+
+msgid "Search"
+msgstr "Ara"
+
+msgid "Search CSFD"
+msgstr "CSFD'de Ara"
+
+msgid "Search EPG"
+msgstr "EPG Arama"
+
+msgid "Search IMDb"
+msgstr "IMDb'de Ara"
+
+msgid "Search KinoPoisk"
+msgstr "KinoPoisk'te Ara"
+
+#, fuzzy
+msgid "Search TV Guide UK"
+msgstr "TV Rehberi"
+
+msgid "Search by name, sd / hd / uhd, or provider"
+msgstr ""
+
+#, fuzzy
+msgid "Search strictness"
+msgstr "KinoPoisk'te Ara"
+
+msgid "Search type"
+msgstr "Arama türü"
+
+msgid "Select IPK file for upload"
+msgstr "Yükleme için IPK Dosyasını Seçin"
+
+msgid "Select..."
+msgstr "Seç..."
+
+msgid "Send"
+msgstr "Gönder"
+
+msgid "Send Message"
+msgstr "Mesaj Gönder"
+
+msgid "Send a Message"
+msgstr "Mesaj Gönder"
+
+msgid "September"
+msgstr "Eylül"
+
+msgid "Service"
+msgstr "Hizmet"
+
+#, python-format
+msgid "Service %s added."
+msgstr "%s hizmeti eklendi."
+
+#, python-format
+msgid "Service %s already exists in bouquet %s."
+msgstr "%s hizmeti %s buketinde zaten var."
+
+#, python-format
+msgid "Service %s can not be removed."
+msgstr "%s hizmeti kaldırılamaz."
+
+#, python-format
+msgid "Service %s is locked."
+msgstr "%s hizmeti kilitli."
+
+#, python-format
+msgid "Service %s is unlocked."
+msgstr "%s hizmetinin kilidi açıldı."
+
+#, python-format
+msgid "Service %s moved."
+msgstr "Hizmet %s taşındı."
+
+#, python-format
+msgid "Service %s removed from bouquet %s."
+msgstr "%s hizmeti, %s buketinden kaldırıldı."
+
+#, python-format
+msgid "Service %s removed."
+msgstr "%s hizmeti kaldırıldı."
+
+msgid "Service ID (SID)"
+msgstr ""
+
+msgid "Service can not be moved."
+msgstr "Hizmet taşınamaz."
+
+msgid "Service can not be renamed."
+msgstr "Hizmet yeniden adlandırılamaz."
+
+msgid "Service is not an alternative."
+msgstr "Servis bir alternatif değil."
+
+msgid "Service renamed successfully."
+msgstr "Hizmet başarıyla yeniden adlandırıldı."
+
+msgid "Services"
+msgstr "Hizmetler"
+
+msgid "Serving stream"
+msgstr ""
+
+msgid "Set maximum duration"
+msgstr "Maksimum süreyi ayarla"
+
+msgid "Settings"
+msgstr "Ayarlar"
+
+msgid "Show EPG for"
+msgstr "Şunun için EPG'yi Göster"
+
+msgid "Show Full OpenWebif"
+msgstr "Tam OpenWebif'i Göster"
+
+msgid "Show IPTV channels in selection (eg. Autotimer)"
+msgstr ""
+
+#, fuzzy
+msgid "Show all packages"
+msgstr "Tüm Paketleri Yükselt"
+
+msgid "Show box name in header"
+msgstr "Başlıkta kutu adını göster"
+
+msgid "Show details"
+msgstr "Ayrıntıları göster"
+
+msgid "Show full remote"
+msgstr "Tam uzaktan kumandayı göster"
+
+msgid "Show in Extensions menu"
+msgstr "Uzantı menüsünde göster"
+
+msgid "Show picon background"
+msgstr ""
+
+msgid "Show picons"
+msgstr "Piconları göster"
+
+msgid "Show picons in channel list"
+msgstr "Picon'u kanal listesinde göster"
+
+msgid "Show service type in channel list"
+msgstr "Kanal listesinde Hizmet türünü göster"
+
+msgid "Shutdown"
+msgstr "Kapat"
+
+msgid "Signal Power (AGC)"
+msgstr ""
+
+msgid "Signal Quality (SNR DB)"
+msgstr ""
+
+msgid "Signal Quality (SNR)"
+msgstr ""
+
+msgid "Simulate"
+msgstr "Simüle et"
+
+msgid "Site and sources"
+msgstr "Site ve kaynaklar"
+
+msgid "Skins"
+msgstr ""
+
+msgid "SleepTimer error"
+msgstr "Uyku Zamanlayıcısı hatası"
+
+msgid "Sleeptimer has been disabled"
+msgstr "Uyku Zamanlayıcısı devre dışı bırakıldı"
+
+msgid "Sleeptimer is disabled"
+msgstr "Uyku Zamanlayıcısı devre dışı"
+
+msgid "Sleeptimer is enabled"
+msgstr "Uyku Zamanlayıcısı etkinleştirildi"
+
+#, python-format
+msgid "Sleeptimer set to %d minutes"
+msgstr "Uyku zamanlayıcısı %d dakikaya ayarlandı"
+
+msgid "Small remote layout"
+msgstr ""
+
+msgid "Software"
+msgstr "Yazılım"
+
+msgid "Sorry this page is not yet implemented"
+msgstr "Üzgünüz, bu sayfa henüz uygulanmadı"
+
+msgid "Sort"
+msgstr "Sırala"
+
+msgid "Spinner"
+msgstr "Spinner"
+
+msgid "Standby"
+msgstr "Bekleme"
+
+msgid "Start"
+msgstr "Başlat"
+
+msgid "Start Instant Record"
+msgstr "Anında Kaydı Başlat"
+
+msgid "Start time is after end time"
+msgstr "Başlangıç ​​zamanı bitiş zamanından sonra"
+
+msgid "Start typing..."
+msgstr "Yazmaya başla..."
+
+msgid "State"
+msgstr ""
+
+msgid "Storage"
+msgstr "Depolama"
+
+msgid "Stream"
+msgstr "Akış"
+
+msgid "Stream Clients"
+msgstr "İstemci Akışı"
+
+msgid "Streaming port"
+msgstr "İstemci portu"
+
+msgid "Su"
+msgstr "Pzr"
+
+msgid "Subdirectories"
+msgstr "Alt dizinler"
+
+msgid "Subnet mask"
+msgstr "Alt ağ maskesi"
+
+msgid "Subservices"
+msgstr "Alt Hizmetler"
+
+msgid "Sun"
+msgstr "Pzr"
+
+msgid "Sunday"
+msgstr "Pazar"
+
+msgid "System OE"
+msgstr "Sistem OE"
+
+msgid "TB"
+msgstr "TB"
+
+msgid "TSID"
+msgstr ""
+
+msgid "TV"
+msgstr "TV"
+
+msgid "TV Guide"
+msgstr "TV Rehberi"
+
+msgid "TV Multi EPG"
+msgstr "TV Çoklu EPG"
+
+msgid "Tags"
+msgstr "Etiketler"
+
+msgid "Teletext"
+msgstr "Teletekst"
+
+msgid "Teletext PID"
+msgstr "Teletext PID"
+
+msgid "Television"
+msgstr "Televizyon"
+
+msgid "Template Engine"
+msgstr "Şablon Motoru"
+
+msgid "Terminal"
+msgstr "Terminal"
+
+msgid "Terrestrial"
+msgstr "Karasal"
+
+msgid "Text"
+msgstr "Metin"
+
+msgid "Th"
+msgstr "Prş"
+
+#, python-format
+msgid "The parameter '%s' can't be empty"
+msgstr "'%s' parametresi boş olamaz"
+
+msgid "The parameter 'command' must be a number"
+msgstr "'command' parametresi bir sayı olmalıdır"
+
+#, python-format
+msgid "The timer '%s' has been %s successfully"
+msgstr "Zamanlayıcı '%s' başarıyla %s oldu"
+
+#, python-format
+msgid "The timer '%s' has been deleted successfully"
+msgstr "Zamanlayıcı '%s' başarıyla silindi"
+
+#, python-format
+msgid "The timer '%s' now recorded! Not disabled!"
+msgstr "Zamanlayıcı '%s' şimdi kaydedildi! Devre dışı bırakılmadı!"
+
+msgid "Theme"
+msgstr "Tema"
+
+msgid "Theme mode"
+msgstr "Tema modu"
+
+msgid "This service can not be added."
+msgstr "Bu hizmet eklenemez."
+
+msgid "Thu"
+msgstr "Per"
+
+msgid "Thursday"
+msgstr "Perşembe"
+
+msgid "Time"
+msgstr "Zaman"
+
+msgid "Timeline"
+msgstr "Zaman çizelgesi"
+
+msgid "Timeout"
+msgstr "Zaman Aşımı"
+
+msgid "Timer"
+msgstr "Zamanlayıcı"
+
+#, python-format
+msgid "Timer '%s' added"
+msgstr "Zamanlayıcı '%s' eklendi"
+
+#, python-format
+msgid "Timer '%s' already exists!"
+msgstr "Zamanlayıcı '%s' zaten var!"
+
+#, python-format
+msgid "Timer '%s' changed"
+msgstr "Zamanlayıcı '%s' değiştirildi"
+
+#, python-format
+msgid "Timer '%s' not enabled while Conflict"
+msgstr "Zamanlayıcı '%s' Çakışma sırasında etkin değil"
+
+#, python-format
+msgid "Timer '%s' not saved while Conflict"
+msgstr "Zamanlayıcı '%s' Çakışma sırasında kaydedilmedi"
+
+msgid "Timer Added"
+msgstr "Zamanlayıcı Eklendi"
+
+msgid "Timer Conflict"
+msgstr "Zamanlayıcı çatışması"
+
+msgid "Timer added"
+msgstr "Zamanlayıcı eklendi"
+
+msgid "Timer conflict detected! Not recording!"
+msgstr "Zamanlayıcı çakışması algılandı! Kayıt yapılmıyor!"
+
+msgid "Timer type"
+msgstr "Zamanlayıcı türü"
+
+msgid "TimerList has been saved"
+msgstr "Zamanlayıcı listesi kaydedildi"
+
+msgid "Timerlist"
+msgstr "Zamanlayıcı listesi"
+
+msgid "Timers"
+msgstr "Zamanlayıcılar"
+
+msgid "Title"
+msgstr "Başlık"
+
+msgid "To date"
+msgstr "Daha önce değil"
+
+msgid "Today"
+msgstr "Bugün"
+
+msgid "Toggle Standby"
+msgstr ""
+
+msgid "Transcode"
+msgstr "Kod dönüştürme"
+
+msgid "Translation to Spanish"
+msgstr "İspanyolcaya Çeviri"
+
+msgid "Try guessing"
+msgstr "Tahmin Etmeyi Deneyin"
+
+msgid "Tu"
+msgstr "Sal"
+
+msgid "Tue"
+msgstr "Sal"
+
+msgid "Tuesday"
+msgstr "Salı"
+
+msgid "Tuner Number"
+msgstr "Tuner Numarası"
+
+msgid "Tuner Signal"
+msgstr "Tuner Sinyali"
+
+msgid "Tuner Type"
+msgstr "Tuner Türü"
+
+msgid "Tuners"
+msgstr "Tarayıcılar"
+
+msgid "Type"
+msgstr "Tür"
+
+#, python-format
+msgid "Unknown Volume command %s"
+msgstr "Bilinmeyen Ses komutu %s"
+
+#, python-format
+msgid "Unknown command: '%s'"
+msgstr "Bilinmeyen komut: '%s'"
+
+msgid "Upcoming Events"
+msgstr "Yaklaşan Etkinlikler"
+
+msgid "Update"
+msgstr "Güncelle"
+
+msgid "Update Package"
+msgstr "Paketi Güncelle"
+
+msgid "Update from feed"
+msgstr "Beslemeden Güncelle"
+
+msgid "Upgrade all packages"
+msgstr "Tüm Paketleri Yükselt"
+
+msgid "Upload File Error"
+msgstr "Dosya Yükleme Hatası"
+
+msgid "Upload package"
+msgstr "Paket yükle"
+
+msgid "Uploaded Files"
+msgstr "Yüklenen Dosyalar"
+
+msgid "Use Channelname for screenshots"
+msgstr "Screenshotlarda kanal adı olsun"
+
+msgid "Use a custom location"
+msgstr "Özel bir konum kullan"
+
+msgid "Use as PiP if possible"
+msgstr "Mümkünse PiP olarak kullanın"
+
+msgid "Use classic interface"
+msgstr "Klasik tasarım kullan"
+
+msgid "Use custom Color"
+msgstr "Özel Renk Kullan"
+
+msgid "Use custom box name"
+msgstr "Özel kutu adı kullan"
+
+#, fuzzy
+msgid "Use modern design"
+msgstr "Yeni tasarım kullan"
+
+msgid "Use modern interface"
+msgstr "Yeni tasarım kullan"
+
+msgid "VPS"
+msgstr "VPS"
+
+msgid "VPS plugin not found"
+msgstr "VPS eklentisi bulunamadı"
+
+msgid "Version"
+msgstr "Sürüm"
+
+msgid "Video"
+msgstr "Video"
+
+msgid "Video Height"
+msgstr "Video Yüksekliği"
+
+msgid "Video PID (VPID)"
+msgstr ""
+
+msgid "Video Width"
+msgstr "Video Genişliği"
+
+msgid "Visibly"
+msgstr "Görünür"
+
+msgid "Volume"
+msgstr "Ses"
+
+msgid "Volume Control"
+msgstr "Ses Kontrolü"
+
+msgid "W"
+msgstr "W"
+
+msgid "Waiting for answer ..."
+msgstr "Yanıt bekleniyor ..."
+
+msgid "Wake Up"
+msgstr "Uyandırma"
+
+msgid "Wakeup"
+msgstr "Uyandır"
+
+msgid "Warning"
+msgstr "Uyarı"
+
+msgid "We"
+msgstr "Çrş"
+
+msgid "Web TV"
+msgstr "Web TV"
+
+msgid "Wed"
+msgstr "Çar"
+
+msgid "Wednesday"
+msgstr "Çarşamba"
+
+msgid "Weekly (Monday)"
+msgstr "Haftalık (Pazartesi)"
+
+msgid "Weekly (Sunday)"
+msgstr "Haftalık (Pazar)"
+
+msgid "Widescreen"
+msgstr "Geniş ekran"
+
+msgid "Without auth only local access is allowed!"
+msgstr "Yetkilendirme olmadan yalnızca yerel erişime izin verilir!"
+
+msgid "Wizard"
+msgstr "Sihirbaz"
+
+msgid "Would you like to save your changes?"
+msgstr "Değişiklikleri kaydetmek ister misiniz?"
+
+#, python-format
+msgid "Wrong parameter format 'set=%s'. Use set=set15 "
+msgstr "Yanlış parametre biçimi 'set =%s'. set = set15 kullanın "
+
+msgid "YYYY-MM-DD"
+msgstr ""
+
+msgid "Yes"
+msgstr "Evet"
+
+msgid "Yes/No"
+msgstr "Evet/Hayır"
+
+msgid "Yesterday"
+msgstr "Dün"
+
+msgid "Zap"
+msgstr "Zap"
+
+msgid "Zap & Record"
+msgstr "Record + ZAP"
+
+msgid "Zap before streaming"
+msgstr "Akıştan önce zap"
+
+msgid "Zap to"
+msgstr "Zap to"
+
+msgid "Zapped to"
+msgstr "Zapped to"
+
+msgid "any time"
+msgstr "herhangi bir zaman"
+
+msgid "auto"
+msgstr "otomatik"
+
+msgid "box_ip"
+msgstr ""
+
+msgid "case-insensitive"
+msgstr "büyük-küçük duyarsız"
+
+msgid "case-sensitive"
+msgstr "büyük-küçük duyarlı"
+
+msgid "descramble and record ecm"
+msgstr ""
+
+msgid "description contains"
+msgstr "açıklama içeriği"
+
+msgid "description match"
+msgstr "açıklama eşleşmesi"
+
+msgid "disabled"
+msgstr "devre dışı"
+
+msgid "do nothing"
+msgstr "hiçbir şey yapma"
+
+msgid "don't descramble, record ecm"
+msgstr ""
+
+msgid "error! Loading Page"
+msgstr "hata! Sayfa yükleniyor"
+
+msgid "exact title match"
+msgstr ""
+
+msgid "favourite desc match"
+msgstr ""
+
+msgid "finished"
+msgstr "bitti"
+
+msgid "go to deep standby"
+msgstr "derin beklemeye git"
+
+msgid "go to standby"
+msgstr "beklemeye git"
+
+msgid "hour"
+msgstr "saat"
+
+msgid "kB"
+msgstr "kB"
+
+msgid "loading"
+msgstr "yükleniyor"
+
+msgid "manual/disabled"
+msgstr "manuel/devre dışı"
+
+msgid "mins"
+msgstr ""
+
+msgid "minute"
+msgstr "dakika"
+
+msgid "no description available"
+msgstr "açıklama yok"
+
+msgid "none/IPv4-only network"
+msgstr "yok/yalnızca IPv4 ağ"
+
+msgid "normal"
+msgstr ""
+
+msgid "on day"
+msgstr ""
+
+msgid "on weekday"
+msgstr "hafta içi"
+
+msgid "one two three four unknown command"
+msgstr "bir, iki, üç, dört bilinmeyen komut"
+
+msgid "partial title match"
+msgstr "kısmi ad eşleşmesi"
+
+msgid "r/o"
+msgstr "r/o"
+
+msgid "r/w"
+msgstr "r/w"
+
+msgid "Receiver"
+msgstr ""
+
+msgid "record"
+msgstr "kayıt"
+
+msgid "regex match (experimental)"
+msgstr "regex eşleme (deneysel)"
+
+msgid "remove"
+msgstr "kaldır"
+
+msgid "running"
+msgstr "çalışıyor"
+
+msgid "seconds"
+msgstr "saniye"
+
+msgid "select bouquets"
+msgstr "buketleri seçin"
+
+msgid "select channels"
+msgstr "kanalları seçin"
+
+msgid "select tags"
+msgstr "etiketleri seçin"
+
+msgid "short description contains"
+msgstr "kısa açıklama içeriği"
+
+#, fuzzy
+msgid "short description match"
+msgstr "kısa açıklama eşleşmesi"
+
+msgid "standard"
+msgstr "standart"
+
+msgid "static"
+msgstr "statik"
+
+msgid "this service is protected by a parental control pin"
+msgstr ""
+
+msgid "title contains"
+msgstr "başlık içeriği"
+
+msgid "title ends with"
+msgstr ""
+
+#, fuzzy
+msgid "title or description match"
+msgstr "başlık veya açıklama eşleşmesi"
+
+#, fuzzy
+msgid "title or short description match"
+msgstr "başlık veya kısa açıklama eşleşmesi"
+
+msgid "title starts with"
+msgstr ""
+
+msgid "transcoded"
+msgstr "kod dönüştürüldü"
+
+#, python-format
+msgid "type %s is not a number"
+msgstr "%s türü bir sayı değil"
+
+msgid "unknown"
+msgstr "bilinmiyor"
+
+msgid "using"
+msgstr "kullanma"
+
+msgid "via"
+msgstr "üzerinden"
+
+msgid "waiting"
+msgstr "bekliyor"
+
+msgid "weekday"
+msgstr "hafta içi"
+
+msgid "weekend"
+msgstr "hafta sonu"
+
+msgid "wrong filetype"
+msgstr "yanlış dosya türü"
+
+msgid "zap"
+msgstr "zap"
+
+#~ msgid "EPG Search"
+#~ msgstr "Epg Araması"
+
+#, fuzzy
+#~ msgid "Enter Text"
+#~ msgstr "Yol gir"
+
+#~ msgid "LICENSE"
+#~ msgstr "LICENSE"
+
+#~ msgid "Standby Toggle"
+#~ msgstr "Bekleme Geçişi"
+
+#, fuzzy
+#~ msgid "Use old remote"
+#~ msgstr "Tam uzaktan kumandayı gizle"
+
+#~ msgid "Apid"
+#~ msgstr "Apid"
+
+#~ msgid "Onid"
+#~ msgstr "Onid"
+
+#~ msgid "Pcrpid"
+#~ msgstr "Pcrpid"
+
+#~ msgid "Pmtpid"
+#~ msgstr "Pmtpid"
+
+#~ msgid "Recording Status"
+#~ msgstr "Kayıt Durumu"
+
+#~ msgid "Sid"
+#~ msgstr "Sid"
+
+#~ msgid "Sref"
+#~ msgstr "Sref"
+
+#~ msgid "Tsid"
+#~ msgstr "Tsid"
+
+#~ msgid "Tuner Bit Error Rate BER"
+#~ msgstr "Tuner Bit Hata Oranı BER"
+
+#~ msgid "Tuner Signal Power AGC"
+#~ msgstr "Tuner Sinyal Gücü AGC"
+
+#~ msgid "Tuner Signal Quality SNR"
+#~ msgstr "Tuner Sinyal Kalitesi SNR"
+
+#~ msgid "Tuner Signal Quality SNR_DB"
+#~ msgstr "Tuner Sinyal Kalitesi SNR_DB"
+
+#~ msgid "Video Wide"
+#~ msgstr "Video Geniş"
+
+#~ msgid "Vpid"
+#~ msgstr "Vpid"

@@ -1,0 +1,2192 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenWebif\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-10 09:36+0000\n"
+"PO-Revision-Date: 2021-12-02 19:57+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Hungarian <https://hosted.weblate.org/projects/e2openplugin-"
+"openwebif/e2openplugin-openwebif/hu/>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.10-dev\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: ../plugin\n"
+
+#, python-format
+msgid "%02d.%02d."
+msgstr ""
+
+#, python-format
+msgid "%02d.%02d.%d"
+msgstr ""
+
+#, python-format
+msgid "%02d:%02d"
+msgstr ""
+
+msgid "%d.%m.%Y"
+msgstr ""
+
+msgid "%d.%m.%Y %H:%M"
+msgstr ""
+
+#, python-format
+msgid "%s %02d.%02d."
+msgstr ""
+
+#, python-format
+msgid "%s %02d.%02d.%d"
+msgstr ""
+
+#, python-format
+msgid "%s %s is locked."
+msgstr "%s %s zárolva van."
+
+#, python-format
+msgid "%s / %s"
+msgstr ""
+
+#, python-format
+msgid "%s Style"
+msgstr ""
+
+#, python-format
+msgid "%s free / %s total"
+msgstr "%s szabad /%s összesen"
+
+msgid "(Press 'shift' and click to 'hold')"
+msgstr "(Shift + Nyomja meg a Long Press gombot)"
+
+#, fuzzy
+msgid "(in minutes)"
+msgstr "perc"
+
+msgid "A filename is required"
+msgstr "Adja meg a fájlnevet"
+
+msgid "A value is required"
+msgstr "Valamit írnia kell!"
+
+msgid "AGC"
+msgstr "AGC"
+
+msgid "About"
+msgstr "Névjegy"
+
+msgid "Add"
+msgstr "Hozzáad"
+
+msgid "Add  AutoTimer  to tags"
+msgstr "Az automata időzítő hozzáadása címkékhez"
+
+msgid "Add AutoTimer name to tags"
+msgstr "Név hozzáadása címkékhez"
+
+msgid "Add Bouquet"
+msgstr "Lista hozzáadása"
+
+msgid "Add IPTV/URL"
+msgstr ""
+
+msgid "Add Marker"
+msgstr "Marker hozzáadása"
+
+msgid "Add Spacer"
+msgstr "Spacer hozzáadása"
+
+msgid "Add a timer"
+msgstr "Időzítő hozzáadása"
+
+msgid "Add a zap timer"
+msgstr "Ugrási időzítő hozzáadása"
+
+msgid "Add an AutoTimer"
+msgstr "Automatikus időzítő hozzáadása"
+
+msgid "Add channel(s) as alternate"
+msgstr "Csatornák hozzáadása alternatívákhoz"
+
+#, fuzzy
+msgid "Add filters"
+msgstr "Időzítő hozzáadása"
+
+msgid "Add selection to bouquet"
+msgstr "Kijelölés hozzáadása bouquethez "
+
+msgid "Add service name to stream information"
+msgstr "Adja hozzá a szolgáltatás nevét az adatfolyam információihoz"
+
+msgid "Add similar on conflict"
+msgstr "Hasonló hozzáadása ütközés esetén"
+
+msgid "Add tags to recordings"
+msgstr ""
+
+#, python-format
+msgid "Added %s to alternative service %s."
+msgstr "A %s hozzáadva az %s alternatív szolgáltatáshoz."
+
+msgid "Adjust recording time to real event time"
+msgstr "A felvétel idejének az esemény valós idejéhez igazítása"
+
+msgid "After event"
+msgstr "Esemény után"
+
+msgid "All"
+msgstr "Minden"
+
+msgid "All Channels"
+msgstr "Minden csatorna"
+
+msgid ""
+"All Files of this Software are open source software; you can redistribute it "
+"and/or modify it under the terms of the GNU General Public License version 3 "
+"as published by the Free Software Foundation."
+msgstr ""
+"A szoftver összes fájlja nyílt forráskódú szoftver; továbbadhatja és/vagy "
+"módosíthatja azokat a Free Software Foundation által kiadott GNU General "
+"Public License 3. verziójának megfelelően."
+
+msgid "All alternative services deleted."
+msgstr "Minden alternatív szolgáltatás törölve."
+
+msgid "Allow IPK Upload"
+msgstr "IPK feltöltés engedélyezése"
+
+msgid "Allow duplicates"
+msgstr "Duplikáció engedélyezése"
+
+#, python-format
+msgid "Alternative %s created failed."
+msgstr "A %s alternatíva létrehozása sikertelen."
+
+msgid "Always"
+msgstr "Mindig"
+
+msgid "Answer is NO!"
+msgstr "A válasz NEM!"
+
+msgid "Answer is YES!"
+msgstr "A válasz IGEN!"
+
+msgid "Any"
+msgstr ""
+
+msgid "Any day"
+msgstr ""
+
+msgid "Any service/recording"
+msgstr "Bármely szolgáltatás/felvétel"
+
+msgid "April"
+msgstr "Április"
+
+msgid "Are you sure you want to delete the selected bouquet?"
+msgstr "Valóban szeretné törölni a listát"
+
+msgid "Are you sure you want to delete the selected item(s)?"
+msgstr "Valóban szeretné törölni a kiválasztott elem(ek)et"
+
+#, fuzzy
+msgid "Are you sure you want to delete this AutoTimer?"
+msgstr "Tényleg törli az időzítőt"
+
+msgid "Are you sure you want to delete this recording?"
+msgstr "Tényleg törli a felvételt"
+
+msgid "Are you sure you want to delete this timer?"
+msgstr "Tényleg törli az időzítőt"
+
+msgid "Are you sure you want to rename this recording?"
+msgstr "Tényleg átnevezi a felvételt"
+
+msgid "Are you sure you want to restore from file?"
+msgstr "Valóban vissza szeretné állítani egy fájlból"
+
+msgid "Are you sure you want to start recording instantly?"
+msgstr "Valóban elindítja az azonnali felvételt most?"
+
+msgid "Ask, default No"
+msgstr "Kérdezze, alapértelmezetten Nem"
+
+msgid "Ask, default Yes"
+msgstr "Kérdezze, alapértelmezetten Igen"
+
+msgid "Audio Encoding"
+msgstr ""
+
+msgid "Audio PID (APID)"
+msgstr ""
+
+msgid "Audio Track"
+msgstr ""
+
+msgid "August"
+msgstr "Augusztus"
+
+msgid "Authors"
+msgstr "Szerző"
+
+msgid "Auto"
+msgstr "Auto"
+
+msgid "AutoPoll"
+msgstr "Automatikus szavazás"
+
+msgid "AutoTimer Edit"
+msgstr "Automatikus időzítő szerkesztése"
+
+msgid "AutoTimer Settings"
+msgstr "Automatikus időzítő beállítások"
+
+msgid "AutoTimers"
+msgstr "Automatikus időzítő lista"
+
+msgid "Autotimer Preview"
+msgstr "Automatikus időzítő előnézet"
+
+msgid "BER"
+msgstr "BER"
+
+msgid "Back"
+msgstr "Vissza"
+
+msgid "Background only"
+msgstr "Csak háttér"
+
+msgid "Begin"
+msgstr "Kezdet"
+
+#, fuzzy
+msgid "Begin of \"After event\" timespan"
+msgstr "Az \"esemény után\" időszak kezdete"
+
+msgid "Beginning of timespan"
+msgstr "Az időszak kezdete"
+
+msgid "Bit Error Rate (BER)"
+msgstr ""
+
+msgid "Bookmark"
+msgstr "Könyvjelző"
+
+msgid "Bookmarks"
+msgstr "Könyvjelzők"
+
+#, python-format
+msgid "Bouquet %s already exists."
+msgstr "Bouquet %s már létezik."
+
+#, python-format
+msgid "Bouquet %s can not be moved."
+msgstr "Bouquet %s nem mozgatható."
+
+#, python-format
+msgid "Bouquet %s created."
+msgstr "A %s lista létrehozva."
+
+#, python-format
+msgid "Bouquet %s deleted."
+msgstr "Bouquet %s törölve."
+
+#, python-format
+msgid "Bouquet %s is locked."
+msgstr "Bouquet %s zárolva van."
+
+#, python-format
+msgid "Bouquet %s is unlocked."
+msgstr "Bouquet %s nyitva van."
+
+#, python-format
+msgid "Bouquet %s moved."
+msgstr "Bouquet %s mozgatás."
+
+#, python-format
+msgid "Bouquet %s removed failed, sevicerefence or mutable list is not valid."
+msgstr ""
+"A Bouquet %s eltávolítva nem sikerült,A sürgősségi vagy módosítható lista "
+"nem érvényes."
+
+#, python-format
+msgid "Bouquet %s removed failed."
+msgstr "Bouquet %s eltávolítva nem sikerült."
+
+msgid "Bouquet Editor"
+msgstr "Bouquet szerkesztő"
+
+msgid "Bouquet name"
+msgstr "A lista neve"
+
+msgid "Bouquet renamed successfully."
+msgstr "Bouquet sikeresen átnevezve."
+
+msgid "Bouquet-settings were restored successfully"
+msgstr "A Bouquet-beállítások sikeresen helyreálltak"
+
+msgid "BouquetEditor"
+msgstr "Bouquet szerkesztő"
+
+msgid "Bouquetlist is not editable!"
+msgstr "A Bouquetlistát nem lehet szerkeszteni!"
+
+msgid "Bouquets"
+msgstr "Listák"
+
+msgid "Box"
+msgstr "Box"
+
+msgid "Box Control"
+msgstr "Box vezérlés"
+
+msgid "Box Info"
+msgstr "Box Info"
+
+msgid "Box uptime"
+msgstr "Box üzemidő"
+
+msgid "Brand"
+msgstr "Márka"
+
+msgid "Build"
+msgstr ""
+
+msgid "Cable"
+msgstr "Kábel"
+
+msgid "Calendar Week"
+msgstr "Naptári hét"
+
+msgid "Cancel"
+msgstr "Töröl"
+
+msgid "Cancelled"
+msgstr "Törölve"
+
+msgid "Capacity"
+msgstr "Kapacitás"
+
+msgid "Capture screenshot"
+msgstr "Pillanatkép rögzítése"
+
+msgid "Channel"
+msgstr "Csatorna"
+
+msgid "Channels"
+msgstr "Csatornák"
+
+msgid "Character encoding for EPG data"
+msgstr "Karakterkódolás az EPG adatokhoz"
+
+msgid "Chipset"
+msgstr "Chipset"
+
+msgid "Cleanup Timers"
+msgstr "Időzítők tisztítáa"
+
+msgid "Close"
+msgstr "Bezár"
+
+msgid "Common Settings"
+msgstr "Közös beállítások"
+
+msgid "Config"
+msgstr ""
+
+#, python-format
+msgid "Conflicting Timer(s) detected! %s"
+msgstr "Időzítő(k) ütközése észlelve! %s"
+
+msgid "Contributors"
+msgstr "Közreműködők"
+
+msgid "Control"
+msgstr "Ellenőrzés"
+
+#, python-format
+msgid "Could not add timer '%s'!"
+msgstr "Nem lehet hozzáadni az '%s' időzítőt!"
+
+#, python-format
+msgid "Could not find timer '%s' with given start and end time!"
+msgstr "Az '%s' időzítő nem található az adott kezdő és befejező időpontban!"
+
+msgid "Create bouquet from selection"
+msgstr "Bouquet létrehozása a kijelölésből"
+
+msgid "Current"
+msgstr "Jelenlegi"
+
+msgid "Current Event"
+msgstr "Aktuális esemény"
+
+msgid "Currently recording"
+msgstr ""
+
+msgid "Custom box name"
+msgstr "Egyéni box név"
+
+msgid "Custom offset"
+msgstr "Egyéni eltolás"
+
+msgid "DHCP"
+msgstr "DHCP"
+
+msgid "Date"
+msgstr "Dátum"
+
+msgid "Date (newest)"
+msgstr ""
+
+msgid "Date (oldest)"
+msgstr ""
+
+msgid "Debug - Display Tracebacks in browser"
+msgstr ""
+
+msgid "December"
+msgstr "December"
+
+msgid "Deep Standby"
+msgstr "Mély készenlét"
+
+msgid "Default"
+msgstr "Alapértelmezett"
+
+msgid "Delay Standby"
+msgstr "Készenlét késleltetése"
+
+msgid "Delete"
+msgstr "Törlés"
+
+msgid "Delete Bookmark"
+msgstr "Könyvjelző törlése"
+
+msgid "Delete Bouquet"
+msgstr "Lista törlése"
+
+msgid "Delete Recording"
+msgstr "Felvétel törlése"
+
+msgid "Delete Timer"
+msgstr "Időzítő törlése"
+
+msgid ""
+"Delete failed, because there is no movie trash !\n"
+"Disable movie trash in configuration to delete this item"
+msgstr ""
+"A törlés sikertelen volt, mert nincs Kuka a filmekhez!\n"
+"Tiltsa le a Kukát a beállításoknál, hogy törölhesse ezt a filmet"
+
+msgid "Deleted"
+msgstr "Törölve"
+
+msgid "Description"
+msgstr "Leírás"
+
+msgid "Device"
+msgstr ""
+
+#, fuzzy
+msgid "Disable"
+msgstr "leiltva"
+
+msgid "Disable Timer"
+msgstr "Időzítő letiltása"
+
+msgid "Disable remote access for user root"
+msgstr "Távoli hozzáférés letiltása a root felhasználó számára"
+
+msgid "Disabled on conflict"
+msgstr "Letiltva ütközés esetén"
+
+msgid "Display Mode"
+msgstr "Megjelenítési mód"
+
+msgid "Display duration (s)"
+msgstr "Az időtartam megjelenítése (másodperc)"
+
+msgid "Distro"
+msgstr "Distro"
+
+msgid "Dolby"
+msgstr "Dolby"
+
+msgid "Don't create timer when movie exists in database"
+msgstr ""
+
+msgid "Done"
+msgstr "Kész"
+
+msgid "Download"
+msgstr "Letöltés"
+
+msgid "Download playlist for"
+msgstr "Lejátszási lista letöltése ehhez"
+
+msgid "Drivers"
+msgstr "Driverek"
+
+msgid "Duration"
+msgstr "Időtartam"
+
+msgid "E"
+msgstr "E"
+
+msgid "EPG"
+msgstr "EPG"
+
+msgid "EPG encoding"
+msgstr "EPG kódolás"
+
+msgid "EPGRefresh"
+msgstr "EPG frissítés"
+
+msgid "ERROR: Cannot set SleepTimer while device is in Standby-Mode"
+msgstr ""
+"HIBA: Nem állítható be az elalvás időzítő, amíg az eszköz készenléti "
+"állapotban van"
+
+#, fuzzy
+msgid "Edit"
+msgstr "Szerkesztő"
+
+#, fuzzy
+msgid "Edit Recording"
+msgstr "Felvétel törlése"
+
+msgid "Edit Timer"
+msgstr "Időzítő szerkesztése"
+
+msgid "Editor"
+msgstr "Szerkesztő"
+
+#, fuzzy
+msgid "Enable"
+msgstr "Engedélyezve"
+
+msgid "Enable Authentication for streaming"
+msgstr "Engedélyezze a hitelesítést streaminghez"
+
+msgid "Enable HTTP Authentication"
+msgstr "HTTP hitelesítés engedélyezése"
+
+msgid "Enable HTTPS"
+msgstr "HTTPS engedélyezése"
+
+msgid "Enable HTTPS Authentication"
+msgstr "HTTPS hitelesítés engedélyezése"
+
+msgid "Enable Messages"
+msgstr "Üzenetek engedélyezése"
+
+msgid "Enable Parental Control"
+msgstr "Engedélyezze a szülői felügyeletet"
+
+msgid "Enable Timer"
+msgstr "Időzítő engedélyezése"
+
+msgid "Enable access from VPNs"
+msgstr "A VPN-ekről való hozzáférés engedélyezése"
+
+msgid "Enable filtering"
+msgstr "Szűrés engedélyezése"
+
+msgid "Enable/Disable Screenshot on key press or"
+msgstr "Képernyőkép engedélyezése/letiltása gomb megnyomásával"
+
+msgid "Enabled"
+msgstr "Engedélyezve"
+
+msgid "Encrypted"
+msgstr "Titkosított"
+
+msgid "End"
+msgstr "Befejezés"
+
+#, fuzzy
+msgid "End of \"After event\" timespan"
+msgstr "Az \"esemény utáni\" időszak vége"
+
+msgid "End of timespan"
+msgstr "Időszak vége"
+
+msgid "Enter a name for the new bouquet"
+msgstr "Új név beírása a listához"
+
+msgid "Enter a name for the new marker"
+msgstr "Új név beírása a markerhez"
+
+#, fuzzy
+msgid "Enter a name for this AutoTimer"
+msgstr "Új név beírása a markerhez"
+
+msgid "Enter path"
+msgstr ""
+
+msgid "Enter text"
+msgstr ""
+
+msgid "Enter the text to find in the EPG"
+msgstr ""
+
+msgid "Error"
+msgstr "Hiba"
+
+msgid "Error parsing vps.xml"
+msgstr "Hiba történt a vps.xml elemzésében"
+
+msgid "Error upload File"
+msgstr "Hiba történt a fájl feltöltése közben"
+
+#, python-format
+msgid "Error while preparing backup file, %s does not exists."
+msgstr "Hiba történt a mentési fájl előkészítésénél, %s nem létezik."
+
+msgid "Error while preparing backup file."
+msgstr "Hiba történt a mentési fájl előkészítésénél."
+
+msgid "Error writing File"
+msgstr "Hiba történt a fájl írása közben"
+
+#, python-format
+msgid "Error, %s does not exists, restore is not possible..."
+msgstr "Hiba, %s nem létezik, a visszaállítás nem lehetséges..."
+
+#, python-format
+msgid "Error, %s was not created with WebBouquetEditor..."
+msgstr "Hiba, %s nem jött létre a WebBouquetEditor segítségével..."
+
+#, python-format
+msgid "Error: Bouquet %s could not deleted, OSError."
+msgstr "Hiba: %s lista nem törölhető, OSError."
+
+msgid "Event not found"
+msgstr "Esemény nem található"
+
+msgid "EventId not found"
+msgstr "Esemény Id nem található"
+
+msgid "Every"
+msgstr "Minden"
+
+msgid "Exclude when"
+msgstr "Kizárva"
+
+#, fuzzy
+msgid "Execute \"After event\" during timespan"
+msgstr "Az \"esemény után\" végrehajtása az időszak alatt"
+
+msgid "Export"
+msgstr "Export"
+
+msgid "Extras"
+msgstr "Extrák"
+
+msgid "Fake Recording"
+msgstr "Hamis felvétel"
+
+msgid "Fastscan"
+msgstr "Gyors szkennelés"
+
+msgid "February"
+msgstr "Február"
+
+msgid "Firmware version"
+msgstr "Firmware verzió"
+
+msgid "Force"
+msgstr "Kényszerítve"
+
+msgid "Fr"
+msgstr "Péntek"
+
+msgid "Free"
+msgstr "Szabad"
+
+msgid "Free Memory"
+msgstr "Szabad memoria"
+
+msgid "Free space"
+msgstr ""
+
+msgid "Fri"
+msgstr "Péntek"
+
+msgid "Friday"
+msgstr "Péntek"
+
+msgid "From date"
+msgstr "Nem később, mint"
+
+msgid "Front processor version"
+msgstr "Frontprocesszor verzió"
+
+msgid "Full remote"
+msgstr "Teljes távvezérlő"
+
+msgid "GB"
+msgstr "GB"
+
+msgid "GUI version"
+msgstr "GUI version"
+
+msgid "Gateway"
+msgstr "Átjáró"
+
+msgid "Get mutable list for new created alternative failed!"
+msgstr "A változás lista létrehozása az új alternatívákhoz nem sikerült!"
+
+msgid "Get mutable list for new created bouquet failed!"
+msgstr "A változás lista létrehozása az új bouquethez nem sikerült!"
+
+msgid "HH:MM"
+msgstr ""
+
+msgid "HTTP port"
+msgstr "HTTP port"
+
+msgid "HTTPS port"
+msgstr "HTTPS port"
+
+msgid "Hard disk model"
+msgstr "Merevlemez modell"
+
+msgid "Hardware"
+msgstr ""
+
+msgid "Hide full remote"
+msgstr "Teljes táviránytó elrejtése"
+
+msgid "High Resolution"
+msgstr "Nagy felbontású"
+
+msgid "Hold to drag"
+msgstr ""
+
+msgid "Hour"
+msgstr "Óra"
+
+msgid "IPTV / URL name"
+msgstr ""
+
+msgid "IPv4 address"
+msgstr "IPv4 cím"
+
+msgid "IPv4-only Python/Twisted"
+msgstr "IPv4-only Python/Twisted"
+
+msgid "IPv4-only kernel"
+msgstr "IPv4-only kernel"
+
+msgid "IPv6 address(es)"
+msgstr "IPv6 cím (ek)"
+
+msgid "Import"
+msgstr "Importálás"
+
+msgid "Include description"
+msgstr "Leírással"
+
+msgid "Include extended description"
+msgstr "Bővített leírással"
+
+msgid "Include short description"
+msgstr "Rövid leírással"
+
+msgid "Include when"
+msgstr "Beleértve"
+
+msgid "Infinite Instant recording started"
+msgstr "Végtelen azonnali felvétel elkezdődött"
+
+msgid "Info"
+msgstr "Infó"
+
+msgid "Information"
+msgstr ""
+
+msgid "Inherit AutoTimer"
+msgstr "Örökölt Automata időzítő"
+
+msgid "Install Package"
+msgstr "Csomag telepítése"
+
+msgid "Installed"
+msgstr "Telepített"
+
+msgid "Instant Record"
+msgstr "Azonnali felvétel"
+
+msgid "Instant record for current Event started"
+msgstr "Az aktuális esemény azonnali felvétele megkezdődött"
+
+msgid "Internal error!"
+msgstr "Belső hiba!"
+
+msgid "Internal flash memory"
+msgstr ""
+
+#, python-format
+msgid "Interval (in %s)"
+msgstr "Intervallum (in %s)"
+
+msgid "Interval (min.)"
+msgstr "Intervallum (perc.)"
+
+msgid "Interval (sec.)"
+msgstr "Intervallum (másodperc)"
+
+msgid "January"
+msgstr "Január"
+
+msgid "Javascript Libraries"
+msgstr "Javascript könyvtárak"
+
+msgid "July"
+msgstr "Július"
+
+msgid "June"
+msgstr "Június"
+
+msgid "Just play"
+msgstr "Csak lejátszás"
+
+msgid "Kernel"
+msgstr "Kernel"
+
+msgid "LCD"
+msgstr "LCD"
+
+msgid "LCD4Linux Setup"
+msgstr "LCD4Linux Beállítás"
+
+msgid "Label series"
+msgstr "Címke sorozat"
+
+msgid "License"
+msgstr ""
+
+msgid "Link speed"
+msgstr "Link sebesség"
+
+msgid "List of Timers has been cleaned"
+msgstr "Az időzítők listája kiürítve"
+
+#, fuzzy
+msgid "Loading..."
+msgstr "töltés"
+
+msgid "Location"
+msgstr "Hely"
+
+msgid "Locked"
+msgstr "Zárolt"
+
+msgid "MAC address"
+msgstr "MAC cím"
+
+msgid "MB"
+msgstr "MB"
+
+msgid "Main"
+msgstr "Fő"
+
+msgid "Main memory"
+msgstr "Fő memória"
+
+msgid "March"
+msgstr "Március"
+
+msgid "Marker added."
+msgstr "Marker hozzáadva."
+
+msgid "Marker name"
+msgstr "A marker neve"
+
+msgid "Match text"
+msgstr "Cím egyezés"
+
+msgid "Max Days"
+msgstr "Max napok"
+
+msgid "May"
+msgstr "Május"
+
+msgid "Message sent successfully!"
+msgstr "Az üzenet sikeresen elküldve!"
+
+msgid "Method"
+msgstr "Módszer"
+
+msgid "Minimal EPG list"
+msgstr "Minimális EPG lista"
+
+msgid "Minimal movie list"
+msgstr "Minimális filmlista"
+
+msgid "Minimal timer list"
+msgstr "Minimális időzítő lista"
+
+msgid "Minute"
+msgstr "Perc"
+
+#, python-format
+msgid "Missing mandatory parameter '%s'"
+msgstr "Hiányzó kötelező paraméter '%s'"
+
+msgid "Missing requesteter: sRef"
+msgstr "Hiányzó kérelem: sRef"
+
+msgid "Mo"
+msgstr "Hétfő"
+
+msgid "Model"
+msgstr "Modell"
+
+msgid "Mon"
+msgstr "Hétfő"
+
+msgid "Monday"
+msgstr "Hétfő"
+
+msgid "Monthly"
+msgstr "Havi"
+
+msgid "More"
+msgstr "Több"
+
+#, fuzzy
+msgid "More details"
+msgstr "Részletek mutatása"
+
+msgid "Mount point"
+msgstr ""
+
+msgid "Movie database for EPG"
+msgstr "EPG filmes adatbázis"
+
+msgid "Movie search"
+msgstr "Filmkeresés"
+
+msgid "Movielist"
+msgstr "Film lista"
+
+msgid "Movies"
+msgstr "Filmek"
+
+msgid "Multi-Bouquet is not enabled!"
+msgstr "Multi-lista nem engedélyezett!"
+
+msgid "MultiEPG"
+msgstr "MultiEPG"
+
+msgid "Mute/Unmute"
+msgstr ""
+
+msgid "NCam Webinterface"
+msgstr "NCam Webinterface"
+
+msgid "Name"
+msgstr "Név"
+
+msgid "Name (a-z)"
+msgstr ""
+
+msgid "Name (z-a)"
+msgstr ""
+
+msgid "Namespace"
+msgstr "Namespace"
+
+msgid "Network Interface"
+msgstr "Hálózati felület"
+
+msgid "Network Shares"
+msgstr "Hálózati megosztások"
+
+msgid "Never"
+msgstr "Soha"
+
+msgid "New"
+msgstr "Új"
+
+#, fuzzy
+msgid "New Bookmark:"
+msgstr "Könyvjelző"
+
+msgid "New Name"
+msgstr "Új név"
+
+msgid "No"
+msgstr "Nem"
+
+#, fuzzy
+msgid "No EPG data available."
+msgstr "nincs elérhető leírás"
+
+msgid "No Parent Control Setup Pin given!"
+msgstr "Nincs szülő felügyeleti PIN beállítva!"
+
+msgid "No answer in time"
+msgstr "Nincs válasz időben"
+
+msgid "No bouquet given!"
+msgstr "Nincs lista!"
+
+msgid "No bouquet name given!"
+msgstr "Nem adott nevet a listának!"
+
+msgid "No current service given!"
+msgstr "Nincs aktuális szolgáltatás!"
+
+msgid "No event found! Not recording!"
+msgstr "Esemény nem található! Nincs felvétel!"
+
+msgid "No marker-name given!"
+msgstr "Nincs megadva marker-név!"
+
+#, fuzzy
+msgid "No matches were found in the EPG"
+msgstr "Nincs megfelelő időzítő"
+
+msgid "No matching Timer found"
+msgstr "Nincs megfelelő időzítő"
+
+msgid "No network connection"
+msgstr ""
+
+msgid "No new servicename given!"
+msgstr "Nincs új szolgáltatásnév!"
+
+msgid "No position given!"
+msgstr "Nincs megadva pozíció!"
+
+msgid "No provider given!"
+msgstr "Nincs megadva szolgáltató!"
+
+msgid "No service given!"
+msgstr "Nincs szolgáltatás!"
+
+msgid "No, cancel"
+msgstr "Nem, mégsem"
+
+msgid "None"
+msgstr "Egyik sem"
+
+msgid "Nothing"
+msgstr "Semmi"
+
+msgid "Nothing playing."
+msgstr "Nincs lejátszás."
+
+msgid "Notify if Conflict"
+msgstr "Értesítés ütközés esetén"
+
+msgid "Notify if Similar"
+msgstr "Értesítés egyezés esetén"
+
+msgid "November"
+msgstr "November"
+
+msgid "Now"
+msgstr "Most"
+
+msgid "Now/Next Columns"
+msgstr ""
+
+msgid "Number of recordings remaining"
+msgstr "A hátramaradó felvételek száma"
+
+msgid "ONID"
+msgstr ""
+
+msgid "OSCam Webinterface"
+msgstr "OSCam Webinterface"
+
+msgid "OSD"
+msgstr "OSD"
+
+msgid "October"
+msgstr "Október"
+
+msgid "Offset after recording (mins)"
+msgstr "Eltolás felvétel után (percben)"
+
+msgid "Offset before recording (mins)"
+msgstr "Eltolás felvétel előtt (percben)"
+
+msgid "On"
+msgstr "On"
+
+msgid "On any service"
+msgstr "Minden szolgáltatásnál"
+
+msgid "On same service"
+msgstr "Ugyanazon a szolgáltatáson"
+
+msgid "Only match between dates"
+msgstr "Korlátozza az eseményeket bizonyos időpontokban"
+
+msgid "Only match during timespan"
+msgstr "Egyezés csak az időszak alatt"
+
+msgid "Oops, no results matched your search"
+msgstr ""
+
+msgid "Oops..."
+msgstr ""
+
+msgid "Open Source Web Interface for Linux set-top box"
+msgstr "Nyílt forráskódú Webes felület Linux set-top boxhoz"
+
+msgid "Open in new window"
+msgstr "Megnyitás új ablakban"
+
+msgid "OpenWebInterface Enabled"
+msgstr "OpenWebInterface engedélyezve"
+
+msgid "OpenWebif Browser Settings"
+msgstr "OpenWebif Böngésző beállítások"
+
+msgid "OpenWebif Configuration"
+msgstr "OpenWebif konfiguráció"
+
+msgid "OpenWebif Settings"
+msgstr "OpenWebif beállítások"
+
+#, fuzzy
+msgid "OpenWebif url:"
+msgstr "OpenWebif URL:"
+
+msgid "Orbital Position"
+msgstr "Orbitális pozíció"
+
+msgid "Override found with alternative service"
+msgstr "A megtalált felülbírálata alternatív szolgáltatással"
+
+msgid "PCR PID"
+msgstr ""
+
+msgid "PMT PID"
+msgstr ""
+
+msgid "Packages"
+msgstr "Csomagok"
+
+msgid "Parent Control Setup Pin is wrong!"
+msgstr "A szülői felügyelet PIN hibás!"
+
+msgid "Parent Control is not activated."
+msgstr "A szülői felügyelet nincs aktiválva."
+
+msgid "Parse AutoTimer"
+msgstr "Automatikus időzítő elemzése"
+
+msgid "PiP"
+msgstr "PiP"
+
+msgid "Picture in Picture"
+msgstr "Kép a képben"
+
+msgid "Picture in Picture (hidden)"
+msgstr "Kép a képben (rejtett)"
+
+msgid "Plain"
+msgstr "Egyszerű"
+
+msgid "Playback"
+msgstr "Visszajátszás"
+
+msgid "Playback IPTV Streams in browser"
+msgstr ""
+
+msgid "Playlist"
+msgstr "Lejátszási lista"
+
+msgid "Playlist format"
+msgstr "Lejátszási lista formátum"
+
+msgid "Power Control"
+msgstr "Kikapcsolás"
+
+msgid "PowerTimer feature not available"
+msgstr "PowerTimer funkció nem áll rendelkezésre"
+
+msgid "Preview"
+msgstr ""
+
+msgid "Primetimes"
+msgstr "Főműsoridő"
+
+msgid "Process"
+msgstr "Elemez"
+
+msgid "Provider"
+msgstr "Szolgáltató"
+
+msgid "Providers"
+msgstr "Szolgáltatók"
+
+msgid "REC"
+msgstr ""
+
+msgid "Radio"
+msgstr "Rádió"
+
+msgid "Reboot Box"
+msgstr "Box újraindítása"
+
+msgid "Record a maximum of # times"
+msgstr "Legfeljebb x alkalommal rögzítsen"
+
+msgid "Recording"
+msgstr ""
+
+#, fuzzy
+msgid "Recording Type"
+msgstr "Felvétel állapota"
+
+msgid "Refresh"
+msgstr "Frissítés"
+
+msgid "Refresh Timer"
+msgstr "Időzítő frissítése"
+
+msgid "Refresh automatically every"
+msgstr "Automatikus frissítés minden"
+
+msgid "Refresh now"
+msgstr "Frissítse most"
+
+msgid "Reload"
+msgstr "Újratölt"
+
+msgid "Remote"
+msgstr "Távirányító"
+
+msgid "Remove Package"
+msgstr "Csomag eltávolítása"
+
+#, fuzzy
+msgid "Remove filter"
+msgstr "Távirányító"
+
+msgid "Rename"
+msgstr "Átnevezés"
+
+msgid "Rename Bouquet"
+msgstr "Lista átnevezése"
+
+msgid "Rename Recording"
+msgstr "A felvétel átnevezése"
+
+msgid "Repeated"
+msgstr "Megismételt"
+
+msgid "Require client cert for HTTPS"
+msgstr "A kliens tanúsítvány megkövetelése HTTPS protokollhoz"
+
+msgid "Require description to be unique"
+msgstr "A leírás leírása egyedi legyen"
+
+#, fuzzy
+msgid "Reset"
+msgstr "Számlálás visszaállítása"
+
+msgid "Reset count"
+msgstr "Számlálás visszaállítása"
+
+msgid "Restart GUI"
+msgstr "Kezelőfelület újraindítása"
+
+msgid "Restrict to bouquets"
+msgstr "Korlátozza a Bouquets"
+
+#, fuzzy
+msgid "Restrict to channels"
+msgstr "Korlátozza a Bouquets"
+
+msgid "Root"
+msgstr "Root"
+
+msgid "SLAAC"
+msgstr "SLAAC"
+
+msgid "SNR"
+msgstr "SNR"
+
+msgid "SRef"
+msgstr ""
+
+msgid "Sa"
+msgstr "Szombat"
+
+msgid "Safe mode"
+msgstr "Biztonságos mód"
+
+msgid "Sat"
+msgstr "Szombat"
+
+msgid "Satellites"
+msgstr "Műholdak"
+
+msgid "Satfinder"
+msgstr "Műholdkereső"
+
+msgid "Saturday"
+msgstr "Szombat"
+
+msgid "Save"
+msgstr "Mentés"
+
+msgid "Screenshot"
+msgstr "Pillanatkép"
+
+msgid "Search"
+msgstr "Keresés"
+
+msgid "Search CSFD"
+msgstr "Keresés CSFD"
+
+msgid "Search EPG"
+msgstr ""
+
+msgid "Search IMDb"
+msgstr "Keresés IMDb"
+
+msgid "Search KinoPoisk"
+msgstr "Keresés KinoPoisk"
+
+#, fuzzy
+msgid "Search TV Guide UK"
+msgstr "Műsorújság"
+
+msgid "Search by name, sd / hd / uhd, or provider"
+msgstr ""
+
+#, fuzzy
+msgid "Search strictness"
+msgstr "Keresés KinoPoisk"
+
+#, fuzzy
+msgid "Search type"
+msgstr "Keresés"
+
+msgid "Select IPK file for upload"
+msgstr "Jelölje ki az IPK fájl a feltöltéséhez"
+
+msgid "Select..."
+msgstr ""
+
+msgid "Send"
+msgstr ""
+
+msgid "Send Message"
+msgstr "Üzenet küldése"
+
+msgid "Send a Message"
+msgstr "Egy üzenet küldése"
+
+msgid "September"
+msgstr "Szeptember"
+
+msgid "Service"
+msgstr "Szolgáltatás"
+
+#, python-format
+msgid "Service %s added."
+msgstr "A %s szolgáltatás hozzáadva."
+
+#, python-format
+msgid "Service %s already exists in bouquet %s."
+msgstr "A %s szolgáltatás már létezik a %s listában."
+
+#, python-format
+msgid "Service %s can not be removed."
+msgstr "A %s szolgáltatás nem távolítható el."
+
+#, python-format
+msgid "Service %s is locked."
+msgstr "A %s szolgáltatás zárolva van."
+
+#, python-format
+msgid "Service %s is unlocked."
+msgstr "A %s szolgáltatás nincs zárolva."
+
+#, python-format
+msgid "Service %s moved."
+msgstr "A %s szolgáltatás áthelyezve."
+
+#, python-format
+msgid "Service %s removed from bouquet %s."
+msgstr "A %s szolgáltatás törölve a %s listából."
+
+#, python-format
+msgid "Service %s removed."
+msgstr "A %s szolgáltatás eltávolítva."
+
+msgid "Service ID (SID)"
+msgstr ""
+
+msgid "Service can not be moved."
+msgstr "A szolgáltatást nem lehet áthelyezni."
+
+msgid "Service can not be renamed."
+msgstr "A szolgáltatás nem nevezhető át."
+
+msgid "Service is not an alternative."
+msgstr "A szolgáltatás nem alternatíva."
+
+msgid "Service renamed successfully."
+msgstr "A szolgáltatás átnevezése sikeres."
+
+msgid "Services"
+msgstr "Szolgáltatások"
+
+msgid "Serving stream"
+msgstr ""
+
+msgid "Set maximum duration"
+msgstr "Állítsa be a maximális időt"
+
+msgid "Settings"
+msgstr "Beállítások"
+
+msgid "Show EPG for"
+msgstr "EPG mutatása ehhez"
+
+msgid "Show Full OpenWebif"
+msgstr "Teljes OpenWebif megjelenítése"
+
+msgid "Show IPTV channels in selection (eg. Autotimer)"
+msgstr ""
+
+#, fuzzy
+msgid "Show all packages"
+msgstr "Frissítse az összes csomagot"
+
+msgid "Show box name in header"
+msgstr "A box nevének mutatása a fejlécben"
+
+msgid "Show details"
+msgstr "Részletek mutatása"
+
+msgid "Show full remote"
+msgstr "Teljes távirányító megjelenítése"
+
+msgid "Show in Extensions menu"
+msgstr "Megjelenítés a Bővítmények menüben"
+
+msgid "Show picon background"
+msgstr ""
+
+#, fuzzy
+msgid "Show picons"
+msgstr "Részletek mutatása"
+
+msgid "Show picons in channel list"
+msgstr "A Picon megjelenítése a csatorna listában"
+
+msgid "Show service type in channel list"
+msgstr "A csatorna típus megjelenítése a csatornalistában"
+
+msgid "Shutdown"
+msgstr "Kikapcsolás"
+
+msgid "Signal Power (AGC)"
+msgstr ""
+
+msgid "Signal Quality (SNR DB)"
+msgstr ""
+
+msgid "Signal Quality (SNR)"
+msgstr ""
+
+msgid "Simulate"
+msgstr "Szimulálás"
+
+msgid "Site and sources"
+msgstr "Webhely és források"
+
+msgid "Skins"
+msgstr ""
+
+msgid "SleepTimer error"
+msgstr "Elalvás időzítő hiba"
+
+msgid "Sleeptimer has been disabled"
+msgstr "Az elalvás időzítő le lett tiltva"
+
+msgid "Sleeptimer is disabled"
+msgstr "Az elalvás időzítő le van tiltva"
+
+msgid "Sleeptimer is enabled"
+msgstr "Az elalvás időzítő engedélyezve van"
+
+#, python-format
+msgid "Sleeptimer set to %d minutes"
+msgstr "Az elalvás időzítő beállítása %d percben"
+
+msgid "Small remote layout"
+msgstr ""
+
+msgid "Software"
+msgstr "Szoftver"
+
+msgid "Sorry this page is not yet implemented"
+msgstr "Sajnos ez az oldal még nem működik"
+
+msgid "Sort"
+msgstr ""
+
+msgid "Spinner"
+msgstr "Spinner"
+
+msgid "Standby"
+msgstr "Készenlét"
+
+msgid "Start"
+msgstr "Start"
+
+msgid "Start Instant Record"
+msgstr "Azonnali felvétel indítása"
+
+msgid "Start time is after end time"
+msgstr "A kezdési idő a befejező idő után van"
+
+msgid "Start typing..."
+msgstr "GÉPELÉS KEZDÉSE"
+
+msgid "State"
+msgstr ""
+
+msgid "Storage"
+msgstr ""
+
+msgid "Stream"
+msgstr "Stream"
+
+msgid "Stream Clients"
+msgstr "Streamelő kliensek"
+
+#, fuzzy
+msgid "Streaming port"
+msgstr "Streamelő kliensek"
+
+msgid "Su"
+msgstr "Vasárnap"
+
+msgid "Subdirectories"
+msgstr ""
+
+msgid "Subnet mask"
+msgstr "Alhálózati maszk"
+
+msgid "Subservices"
+msgstr "Részszolgáltatásokat"
+
+msgid "Sun"
+msgstr "Vasárnap"
+
+msgid "Sunday"
+msgstr "Vasárnap"
+
+msgid "System OE"
+msgstr "Rendszer OE"
+
+msgid "TB"
+msgstr "TB"
+
+msgid "TSID"
+msgstr ""
+
+msgid "TV"
+msgstr "TV"
+
+msgid "TV Guide"
+msgstr "Műsorújság"
+
+msgid "TV Multi EPG"
+msgstr "TV Több EPG"
+
+msgid "Tags"
+msgstr "Címkék"
+
+msgid "Teletext"
+msgstr "Teletext"
+
+msgid "Teletext PID"
+msgstr "Teletext PID"
+
+msgid "Television"
+msgstr "Televízió"
+
+msgid "Template Engine"
+msgstr "Sablon motor"
+
+msgid "Terminal"
+msgstr "Terminál"
+
+msgid "Terrestrial"
+msgstr "Földi"
+
+msgid "Text"
+msgstr "Szöveg"
+
+msgid "Th"
+msgstr "Csütörtök"
+
+#, python-format
+msgid "The parameter '%s' can't be empty"
+msgstr "A paraméter '%s' nem lehet üres"
+
+msgid "The parameter 'command' must be a number"
+msgstr "A 'parancs' paraméternek számnak kell lennie"
+
+#, python-format
+msgid "The timer '%s' has been %s successfully"
+msgstr "Az időzítő '%s' sikeres %s volt"
+
+#, python-format
+msgid "The timer '%s' has been deleted successfully"
+msgstr "Az '%s' időzítő sikeresen törölve lett"
+
+#, python-format
+msgid "The timer '%s' now recorded! Not disabled!"
+msgstr "Az '%s' időzítő éppen felvételt készít! Nem lehet tiltani!"
+
+msgid "Theme"
+msgstr "Téma"
+
+#, fuzzy
+msgid "Theme mode"
+msgstr "Téma"
+
+msgid "This service can not be added."
+msgstr "Szolgáltatást nem lehet hozzáadni."
+
+msgid "Thu"
+msgstr "Csütörtök"
+
+msgid "Thursday"
+msgstr "Csütörtök"
+
+msgid "Time"
+msgstr "Idő"
+
+msgid "Timeline"
+msgstr "Idővonal"
+
+msgid "Timeout"
+msgstr "Időtúllépés"
+
+msgid "Timer"
+msgstr "Időzítő"
+
+#, python-format
+msgid "Timer '%s' added"
+msgstr "Időzítő '%s' hozzáadva"
+
+#, python-format
+msgid "Timer '%s' already exists!"
+msgstr "Az időzítő '%s' már létezik!"
+
+#, python-format
+msgid "Timer '%s' changed"
+msgstr "Időzítő '%s' megváltozott"
+
+#, python-format
+msgid "Timer '%s' not enabled while Conflict"
+msgstr "A '%s' időzítő nem engedélyezett ütközés miatt"
+
+#, python-format
+msgid "Timer '%s' not saved while Conflict"
+msgstr "Az '%s' időzítő nem menthető ütközés miatt"
+
+msgid "Timer Added"
+msgstr "Időzítés hozzáadva"
+
+msgid "Timer Conflict"
+msgstr ""
+
+msgid "Timer added"
+msgstr "Időzítés hozzáadva"
+
+msgid "Timer conflict detected! Not recording!"
+msgstr "Időzítő ütközés észlelhető! Nem lesz felvétel!"
+
+msgid "Timer type"
+msgstr "Időzítő típusa"
+
+msgid "TimerList has been saved"
+msgstr "Az időzítő lista mentésre került"
+
+msgid "Timerlist"
+msgstr "Idõzítõ lista"
+
+msgid "Timers"
+msgstr "Időzítők"
+
+msgid "Title"
+msgstr "Cím"
+
+msgid "To date"
+msgstr "Nem hamarabb, mint"
+
+msgid "Today"
+msgstr ""
+
+msgid "Toggle Standby"
+msgstr ""
+
+msgid "Transcode"
+msgstr "Átkódolás"
+
+msgid "Translation to Spanish"
+msgstr "Fordítás spanyolra"
+
+msgid "Try guessing"
+msgstr "Próbálja kitalálni"
+
+msgid "Tu"
+msgstr "Kedd"
+
+msgid "Tue"
+msgstr "Kedd"
+
+msgid "Tuesday"
+msgstr "Kedd"
+
+msgid "Tuner Number"
+msgstr "Tuner száma"
+
+msgid "Tuner Signal"
+msgstr "Tuner jel"
+
+msgid "Tuner Type"
+msgstr "Tuner típusa"
+
+msgid "Tuners"
+msgstr "Tunerek"
+
+msgid "Type"
+msgstr "Típus"
+
+#, python-format
+msgid "Unknown Volume command %s"
+msgstr "Ismeretlen Hangerő parancs %s"
+
+#, python-format
+msgid "Unknown command: '%s'"
+msgstr "Ismeretlen parancs: '%s'"
+
+msgid "Upcoming Events"
+msgstr "Közelgő események"
+
+msgid "Update"
+msgstr "Frissítés"
+
+msgid "Update Package"
+msgstr "Csomag frissítése"
+
+msgid "Update from feed"
+msgstr "Frissítés a feedből"
+
+msgid "Upgrade all packages"
+msgstr "Frissítse az összes csomagot"
+
+msgid "Upload File Error"
+msgstr "Hiba a fájl feltöltésekor"
+
+msgid "Upload package"
+msgstr "Csomag feltöltése"
+
+msgid "Uploaded Files"
+msgstr "Feltöltött fájlok"
+
+msgid "Use Channelname for screenshots"
+msgstr ""
+
+msgid "Use a custom location"
+msgstr "Használjon egyedi helyet"
+
+msgid "Use as PiP if possible"
+msgstr "Használat PiP módban (ha lehetséges)"
+
+#, fuzzy
+msgid "Use classic interface"
+msgstr "Az új kinézet használata"
+
+#, fuzzy
+msgid "Use custom Color"
+msgstr "Használjon egyedi helyet"
+
+msgid "Use custom box name"
+msgstr "Használjon egyedi box nevet"
+
+#, fuzzy
+msgid "Use modern design"
+msgstr "Az új kinézet használata"
+
+msgid "Use modern interface"
+msgstr "Az új kinézet használata"
+
+msgid "VPS"
+msgstr "VPS"
+
+msgid "VPS plugin not found"
+msgstr "A VPS bővítmény nem található"
+
+msgid "Version"
+msgstr "Verzió"
+
+msgid "Video"
+msgstr "Videó"
+
+msgid "Video Height"
+msgstr "Video magassága"
+
+msgid "Video PID (VPID)"
+msgstr ""
+
+msgid "Video Width"
+msgstr "Videó szélessége"
+
+msgid "Visibly"
+msgstr "Láthatóan"
+
+msgid "Volume"
+msgstr "Hangerő"
+
+msgid "Volume Control"
+msgstr "Hangerőszabályozó"
+
+msgid "W"
+msgstr "W"
+
+msgid "Waiting for answer ..."
+msgstr "Várakozás a válaszra ..."
+
+msgid "Wake Up"
+msgstr "Ébresztés"
+
+msgid "Wakeup"
+msgstr "Ébresztés"
+
+msgid "Warning"
+msgstr "Figyelmeztetés"
+
+msgid "We"
+msgstr "Szerda"
+
+msgid "Web TV"
+msgstr "Web TV"
+
+msgid "Wed"
+msgstr "Szerda"
+
+msgid "Wednesday"
+msgstr "Szerda"
+
+msgid "Weekly (Monday)"
+msgstr "Hetente (hétfő)"
+
+msgid "Weekly (Sunday)"
+msgstr "Hetente (vasárnap)"
+
+msgid "Widescreen"
+msgstr ""
+
+msgid "Without auth only local access is allowed!"
+msgstr "Hitelesítés nélkül csak helyi hozzáférés engedélyezett!"
+
+msgid "Wizard"
+msgstr "Varázsló"
+
+msgid "Would you like to save your changes?"
+msgstr ""
+
+#, python-format
+msgid "Wrong parameter format 'set=%s'. Use set=set15 "
+msgstr "Helytelen paraméter formátum 'set=%s'. Use set=set15 "
+
+msgid "YYYY-MM-DD"
+msgstr ""
+
+msgid "Yes"
+msgstr "Igen"
+
+msgid "Yes/No"
+msgstr "Igen/nem"
+
+msgid "Yesterday"
+msgstr ""
+
+msgid "Zap"
+msgstr "Ugrás"
+
+msgid "Zap & Record"
+msgstr "Felvétel+ugrás"
+
+msgid "Zap before streaming"
+msgstr "ugrás stream előtt"
+
+msgid "Zap to"
+msgstr "Ugrás ide"
+
+msgid "Zapped to"
+msgstr "Ugrás megtörtént"
+
+#, fuzzy
+msgid "any time"
+msgstr "Időzítő hozzáadása"
+
+msgid "auto"
+msgstr "auto"
+
+msgid "box_ip"
+msgstr ""
+
+#, fuzzy
+msgid "case-insensitive"
+msgstr "Szigorúság keresése"
+
+#, fuzzy
+msgid "case-sensitive"
+msgstr "Szigorúság keresése"
+
+msgid "descramble and record ecm"
+msgstr ""
+
+msgid "description contains"
+msgstr "a leírásban"
+
+#, fuzzy
+msgid "description match"
+msgstr "Leírás"
+
+msgid "disabled"
+msgstr "leiltva"
+
+msgid "do nothing"
+msgstr "ne csináljon semmit"
+
+msgid "don't descramble, record ecm"
+msgstr ""
+
+msgid "error! Loading Page"
+msgstr "hiba! Oldal betöltése"
+
+msgid "exact title match"
+msgstr ""
+
+msgid "favourite desc match"
+msgstr ""
+
+msgid "finished"
+msgstr "befejezett"
+
+msgid "go to deep standby"
+msgstr "mély készenlétbe kapcsolás"
+
+msgid "go to standby"
+msgstr "készenléti állapotba kapcsolás"
+
+msgid "hour"
+msgstr "óra"
+
+msgid "kB"
+msgstr "kB"
+
+msgid "loading"
+msgstr "töltés"
+
+msgid "manual/disabled"
+msgstr "kézi/tiltva"
+
+msgid "mins"
+msgstr ""
+
+msgid "minute"
+msgstr "perc"
+
+msgid "no description available"
+msgstr "nincs elérhető leírás"
+
+msgid "none/IPv4-only network"
+msgstr "egyik sem/Csak IPv4-alapú hálózat"
+
+msgid "normal"
+msgstr ""
+
+msgid "on day"
+msgstr ""
+
+msgid "on weekday"
+msgstr "hétköznap"
+
+msgid "one two three four unknown command"
+msgstr "egy kettő három négy ismeretlen parancs"
+
+msgid "partial title match"
+msgstr ""
+
+msgid "r/o"
+msgstr "r/o"
+
+msgid "r/w"
+msgstr "r/w"
+
+msgid "Receiver"
+msgstr ""
+
+msgid "record"
+msgstr "felvétel"
+
+msgid "regex match (experimental)"
+msgstr ""
+
+msgid "remove"
+msgstr "eltávolít"
+
+msgid "running"
+msgstr "futtatás"
+
+msgid "seconds"
+msgstr "másodperc"
+
+msgid "select bouquets"
+msgstr "válasszon listát"
+
+msgid "select channels"
+msgstr "válasszon csatornát"
+
+msgid "select tags"
+msgstr "válasszon Címkét"
+
+msgid "short description contains"
+msgstr "a rövid leírásban"
+
+#, fuzzy
+msgid "short description match"
+msgstr "rövid leírás egyezés"
+
+msgid "standard"
+msgstr "alapértelmezett"
+
+msgid "static"
+msgstr "statikus"
+
+msgid "this service is protected by a parental control pin"
+msgstr ""
+
+msgid "title contains"
+msgstr "a címben"
+
+msgid "title ends with"
+msgstr ""
+
+#, fuzzy
+msgid "title or description match"
+msgstr "cím vagy leírás egyezés"
+
+#, fuzzy
+msgid "title or short description match"
+msgstr "cím vagy rövid leírás egyezés"
+
+msgid "title starts with"
+msgstr ""
+
+msgid "transcoded"
+msgstr "átkódolt"
+
+#, python-format
+msgid "type %s is not a number"
+msgstr "a %s típus nem számjegy"
+
+msgid "unknown"
+msgstr "ismeretlen"
+
+msgid "using"
+msgstr "használva"
+
+msgid "via"
+msgstr "által"
+
+msgid "waiting"
+msgstr "várakozás"
+
+msgid "weekday"
+msgstr "Hétköznap"
+
+msgid "weekend"
+msgstr "Hétvége"
+
+msgid "wrong filetype"
+msgstr "rossz fájltípus"
+
+msgid "zap"
+msgstr "ugrás"
+
+#~ msgid "EPG Search"
+#~ msgstr "Epg keresés"
+
+#, fuzzy
+#~ msgid "Enter Text"
+#~ msgstr "Tuner típusa"
+
+#~ msgid "LICENSE"
+#~ msgstr "ENGEDÉLY"
+
+#~ msgid "Standby Toggle"
+#~ msgstr "Készenléti módba váltás"
+
+#, fuzzy
+#~ msgid "Use old remote"
+#~ msgstr "Teljes táviránytó elrejtése"
+
+#~ msgid "Apid"
+#~ msgstr "Apid"
+
+#~ msgid "Onid"
+#~ msgstr "Onid"
+
+#~ msgid "Pcrpid"
+#~ msgstr "Pcrpid"
+
+#~ msgid "Pmtpid"
+#~ msgstr "Pmtpid"
+
+#~ msgid "Recording Status"
+#~ msgstr "Felvétel állapota"
+
+#~ msgid "Sid"
+#~ msgstr "Sid"
+
+#~ msgid "Sref"
+#~ msgstr "Sref"
+
+#~ msgid "Tsid"
+#~ msgstr "Tsid"
+
+#~ msgid "Tuner Bit Error Rate BER"
+#~ msgstr "Tuner bithibaarány BER"
+
+#~ msgid "Tuner Signal Power AGC"
+#~ msgstr "Tuner jelerősség AGC"
+
+#~ msgid "Tuner Signal Quality SNR"
+#~ msgstr "Tuner jel minősége SNR"
+
+#~ msgid "Tuner Signal Quality SNR_DB"
+#~ msgstr "Tuner jel minősége SNR_DB"
+
+#~ msgid "Video Wide"
+#~ msgstr "Videó széles"
+
+#~ msgid "Vpid"
+#~ msgstr "Vpid"

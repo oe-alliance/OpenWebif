@@ -1,0 +1,7 @@
+#from urllib.parse import quote
+#EXTM3U
+#EXTVLCOPT:http-reconnect=true
+#for $movie in $movies
+#EXTINF:-1,: $movie.filename_stripped
+$host/file?file=$quote($movie.filename)
+#end for

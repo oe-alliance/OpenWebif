@@ -1,0 +1,2203 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenWebif\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-10 09:36+0000\n"
+"PO-Revision-Date: 2021-12-02 19:56+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Greek <https://hosted.weblate.org/projects/e2openplugin-"
+"openwebif/e2openplugin-openwebif/el/>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.10-dev\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ../plugin\n"
+
+#, python-format
+msgid "%02d.%02d."
+msgstr ""
+
+#, python-format
+msgid "%02d.%02d.%d"
+msgstr ""
+
+#, python-format
+msgid "%02d:%02d"
+msgstr ""
+
+msgid "%d.%m.%Y"
+msgstr ""
+
+msgid "%d.%m.%Y %H:%M"
+msgstr ""
+
+#, python-format
+msgid "%s %02d.%02d."
+msgstr ""
+
+#, python-format
+msgid "%s %02d.%02d.%d"
+msgstr ""
+
+#, python-format
+msgid "%s %s is locked."
+msgstr "Το %s %s είναι κλειδωμένο."
+
+#, python-format
+msgid "%s / %s"
+msgstr ""
+
+#, python-format
+msgid "%s Style"
+msgstr ""
+
+#, python-format
+msgid "%s free / %s total"
+msgstr "%s ελεύθερα / %s συνολικά"
+
+msgid "(Press 'shift' and click to 'hold')"
+msgstr "(Shift + Click για Παρατεταμένη Πίεση)"
+
+#, fuzzy
+msgid "(in minutes)"
+msgstr "λεπτό"
+
+msgid "A filename is required"
+msgstr "Εισαγωγή νέου ονόματος αρχείου"
+
+msgid "A value is required"
+msgstr "Πρέπει να γράψετε κάτι!"
+
+msgid "AGC"
+msgstr "AGC"
+
+msgid "About"
+msgstr "Περί"
+
+msgid "Add"
+msgstr "Προσθήκη"
+
+msgid "Add  AutoTimer  to tags"
+msgstr "Προσθήκη Αυτόματου Χρονοδιακόπτη στις Ετικέτες"
+
+msgid "Add AutoTimer name to tags"
+msgstr "Προσθήκη ονόματος στις Ετικέτες"
+
+msgid "Add Bouquet"
+msgstr "Προσθήκη Μπουκέτου"
+
+msgid "Add IPTV/URL"
+msgstr ""
+
+msgid "Add Marker"
+msgstr "Προσθήκη Σημειωτή"
+
+msgid "Add Spacer"
+msgstr "Προσθήκη Διαστήματος"
+
+msgid "Add a timer"
+msgstr "Προσθήκη Χρονοδιακόπτη"
+
+msgid "Add a zap timer"
+msgstr "Προσθήκη Χρονοδιακόπτη Ζάπινγκ"
+
+msgid "Add an AutoTimer"
+msgstr "Προσθήκη Αυτ. Χρ/κόπτη"
+
+msgid "Add channel(s) as alternate"
+msgstr "Προσθήκη καναλιού(ών) ως εναλλακτικό"
+
+#, fuzzy
+msgid "Add filters"
+msgstr "Προσθήκη Χρονοδιακόπτη"
+
+msgid "Add selection to bouquet"
+msgstr "Προσθήκη καναλιού(ών) σε Μπουκέτο"
+
+msgid "Add service name to stream information"
+msgstr "Προσθήκη ονόματος υπηρεσίας στις πληροφορίες ροής"
+
+msgid "Add similar on conflict"
+msgstr "Προσθήκη Παρόμοιων κατά τη διένεξη"
+
+msgid "Add tags to recordings"
+msgstr ""
+
+#, python-format
+msgid "Added %s to alternative service %s."
+msgstr "Το %s προστέθηκε στην εναλλακτική υπηρεσία %s."
+
+msgid "Adjust recording time to real event time"
+msgstr ""
+
+msgid "After event"
+msgstr "Μετά την εκπομπή"
+
+msgid "All"
+msgstr "Όλα"
+
+msgid "All Channels"
+msgstr "Όλα τα κανάλια"
+
+msgid ""
+"All Files of this Software are open source software; you can redistribute it "
+"and/or modify it under the terms of the GNU General Public License version 3 "
+"as published by the Free Software Foundation."
+msgstr ""
+"Όλα τα αρχεία αυτού του Λογισμικού είναι ανοικτού κώδικα: μπορείτε να τα "
+"αναδιανείμετε και/ή να τα τροποποιήσετε υπό τους όρους της Γενικής Δημόσιας "
+"Άδειας GNU έκδοση 3 όπως αυτή έχει δημοσιευτεί από το Ίδρυμα Ελεύθερου "
+"Λογισμικού."
+
+msgid "All alternative services deleted."
+msgstr "Όλες οι εναλλακτικές υπηρεσίες διαγράφηκαν."
+
+msgid "Allow IPK Upload"
+msgstr "Να επιτρέπεται το Ανέβασμα IPK"
+
+msgid "Allow duplicates"
+msgstr ""
+
+#, python-format
+msgid "Alternative %s created failed."
+msgstr "Αποτυχία δημιουργίας εναλλακτικού %s."
+
+msgid "Always"
+msgstr "Πάντα"
+
+msgid "Answer is NO!"
+msgstr "Η απάντηση είναι ΟΧΙ!"
+
+msgid "Answer is YES!"
+msgstr "Η απάντηση είναι ΝΑΙ!"
+
+msgid "Any"
+msgstr ""
+
+msgid "Any day"
+msgstr ""
+
+msgid "Any service/recording"
+msgstr "Κάθε υπηρεσία/εγγραφή"
+
+msgid "April"
+msgstr "Απριλίου"
+
+msgid "Are you sure you want to delete the selected bouquet?"
+msgstr "Θέλετε σίγουρα να διαγραφεί το μπουκέτο"
+
+msgid "Are you sure you want to delete the selected item(s)?"
+msgstr "Θέλετε σίγουρα να διαγραφεί το/τα επιλεγμένο/α στοιχείο/α;"
+
+#, fuzzy
+msgid "Are you sure you want to delete this AutoTimer?"
+msgstr "Να γίνει σίγουρα διαγραφή του χρονοδιακόπτη"
+
+msgid "Are you sure you want to delete this recording?"
+msgstr "Να γίνει σίγουρα διαγραφή της εγγραφής"
+
+msgid "Are you sure you want to delete this timer?"
+msgstr "Να γίνει σίγουρα διαγραφή του χρονοδιακόπτη"
+
+msgid "Are you sure you want to rename this recording?"
+msgstr "Να γίνει σίγουρα μετονομασία της εγγραφής"
+
+msgid "Are you sure you want to restore from file?"
+msgstr "Θέλετε σίγουρα να γίνει επαναφορά από το αρχείο"
+
+#, fuzzy
+msgid "Are you sure you want to start recording instantly?"
+msgstr "Εκκίνηση Άμεσης Εγγραφής"
+
+msgid "Ask, default No"
+msgstr "Ερώτηση, προεπιλογή Όχι"
+
+msgid "Ask, default Yes"
+msgstr "Ερώτηση, προεπιλογή Ναι"
+
+msgid "Audio Encoding"
+msgstr ""
+
+msgid "Audio PID (APID)"
+msgstr ""
+
+msgid "Audio Track"
+msgstr ""
+
+msgid "August"
+msgstr "Αυγούστου"
+
+msgid "Authors"
+msgstr "Συγγραφείς"
+
+msgid "Auto"
+msgstr "Αυτόματα"
+
+msgid "AutoPoll"
+msgstr "Αυτόματος Έλεγχος"
+
+msgid "AutoTimer Edit"
+msgstr "Επεξεργασία Αυτόματου Χρονοδιακόπτη"
+
+msgid "AutoTimer Settings"
+msgstr "Ρυθμίσεις Αυτ. Χρ/κόπτη"
+
+msgid "AutoTimers"
+msgstr "Λίστα Αυτόματων Χρονοδιακοπτών"
+
+msgid "Autotimer Preview"
+msgstr "Προεπισκόπηση Αυτόματου Χρονοδιακόπτη"
+
+msgid "BER"
+msgstr "BER"
+
+msgid "Back"
+msgstr "Πίσω"
+
+msgid "Background only"
+msgstr "Μόνο στο παρασκήνιο"
+
+msgid "Begin"
+msgstr "Αρχή"
+
+#, fuzzy
+msgid "Begin of \"After event\" timespan"
+msgstr "Αρχή χρονικής διάρκειας \"μετά το πρόγραμμα\""
+
+msgid "Beginning of timespan"
+msgstr "Εκκίνηση χρονικού διαστήματος"
+
+msgid "Bit Error Rate (BER)"
+msgstr ""
+
+msgid "Bookmark"
+msgstr "Σελιδοδείκτης"
+
+msgid "Bookmarks"
+msgstr "Σελιδοδείκτες"
+
+#, python-format
+msgid "Bouquet %s already exists."
+msgstr "Το μπουκέτο %s υπάρχει ήδη!"
+
+#, python-format
+msgid "Bouquet %s can not be moved."
+msgstr "Αδυναμία μετακίνησης του Μπουκέτου %s."
+
+#, python-format
+msgid "Bouquet %s created."
+msgstr "Το μπουκέτο %s δημιουργήθηκε."
+
+#, python-format
+msgid "Bouquet %s deleted."
+msgstr "Το μπουκέτο %s διαγράφηκε."
+
+#, python-format
+msgid "Bouquet %s is locked."
+msgstr "Το μπουκέτο %s είναι κλειδωμένο."
+
+#, python-format
+msgid "Bouquet %s is unlocked."
+msgstr "Το μπουκέτο %s είναι ξεκλείδωτο."
+
+#, python-format
+msgid "Bouquet %s moved."
+msgstr "Το Μπουκέτο %s μετακινήθηκε!"
+
+#, python-format
+msgid "Bouquet %s removed failed, sevicerefence or mutable list is not valid."
+msgstr ""
+"Η αφαίρεση του μπουκέτου %s απέτυχε, μη έγκυρη αναφορά υπηρεσίας ή μεταβλητή "
+"λίστα."
+
+#, python-format
+msgid "Bouquet %s removed failed."
+msgstr "Αποτυχία αφαίρεσης του μπουκέτου %s."
+
+msgid "Bouquet Editor"
+msgstr "Επεξεργασία Μπουκέτων"
+
+msgid "Bouquet name"
+msgstr "Όνομα μπουκέτου"
+
+msgid "Bouquet renamed successfully."
+msgstr "Επιτυχία μετονομασίας Μπουκέτου."
+
+msgid "Bouquet-settings were restored successfully"
+msgstr "Επιτυχία επαναφοράς ρυθμίσεων μπουκέτου"
+
+msgid "BouquetEditor"
+msgstr "Επεξεργασία Μπουκέτων"
+
+msgid "Bouquetlist is not editable!"
+msgstr "Αδυναμία επεξεργασίας λίστας μπουκέτου!"
+
+msgid "Bouquets"
+msgstr "Μπουκέτα"
+
+msgid "Box"
+msgstr "Δέκτης"
+
+msgid "Box Control"
+msgstr "Έλεγχος Δέκτη"
+
+msgid "Box Info"
+msgstr "Πληροφορίες Δέκτη"
+
+msgid "Box uptime"
+msgstr "Χρόνος Λειτουργίας Δέκτη"
+
+msgid "Brand"
+msgstr "Μάρκα"
+
+msgid "Build"
+msgstr ""
+
+msgid "Cable"
+msgstr "Καλωδιακό"
+
+msgid "Calendar Week"
+msgstr "Ημερολογιακή Εβδομάδα"
+
+msgid "Cancel"
+msgstr "Ακύρωση"
+
+msgid "Cancelled"
+msgstr "Έγινε ακύρωση"
+
+msgid "Capacity"
+msgstr "Χωρητικότητα"
+
+msgid "Capture screenshot"
+msgstr "Λήψη Στιγμιότυπου"
+
+msgid "Channel"
+msgstr "Κανάλι"
+
+msgid "Channels"
+msgstr "Κανάλια"
+
+msgid "Character encoding for EPG data"
+msgstr "Κωδικοποίηση χαρακτήρων για τα δεδομένα του EPG"
+
+msgid "Chipset"
+msgstr "Chipset"
+
+msgid "Cleanup Timers"
+msgstr "Εκκαθάριση Χρονοδιακοπτών"
+
+msgid "Close"
+msgstr "Κλείσιμο"
+
+msgid "Common Settings"
+msgstr "Κοινές Ρυθμίσεις"
+
+msgid "Config"
+msgstr ""
+
+#, python-format
+msgid "Conflicting Timer(s) detected! %s"
+msgstr "Εντοπίστηκε(αν) διένεξη Χρονοδιακόπτη(ων)! %s"
+
+msgid "Contributors"
+msgstr "Συντελεστές"
+
+msgid "Control"
+msgstr "Έλεγχος"
+
+#, python-format
+msgid "Could not add timer '%s'!"
+msgstr "Αδυναμία προσθήκης χρονοδιακόπτη '%s'!"
+
+#, python-format
+msgid "Could not find timer '%s' with given start and end time!"
+msgstr ""
+"Αδυναμία εύρεσης του χρονοδιακόπτη '%s' με δεδομένη ώρα έναρξης και λήξης!"
+
+msgid "Create bouquet from selection"
+msgstr "Προσθήκη Παρόχου ως νέο μπουκέτο"
+
+msgid "Current"
+msgstr "Τρέχον"
+
+msgid "Current Event"
+msgstr "Τρέχον Πρόγραμμα"
+
+msgid "Currently recording"
+msgstr ""
+
+msgid "Custom box name"
+msgstr "Όνομα χρήστη για το δέκτη"
+
+msgid "Custom offset"
+msgstr "Μετατόπιση χρόνου από το χρήστη"
+
+msgid "DHCP"
+msgstr "DHCP"
+
+msgid "Date"
+msgstr "Ημερομηνία"
+
+msgid "Date (newest)"
+msgstr ""
+
+msgid "Date (oldest)"
+msgstr ""
+
+msgid "Debug - Display Tracebacks in browser"
+msgstr ""
+
+msgid "December"
+msgstr "Δεκεμβρίου"
+
+msgid "Deep Standby"
+msgstr "Βαθιά Αναμονή"
+
+msgid "Default"
+msgstr "Προεπιλογή"
+
+msgid "Delay Standby"
+msgstr "Καθυστέρηση Αναμονής"
+
+msgid "Delete"
+msgstr "Διαγραφή"
+
+#, fuzzy
+msgid "Delete Bookmark"
+msgstr "Σελιδοδείκτης"
+
+msgid "Delete Bouquet"
+msgstr "Διαγραφή Μπουκέτου"
+
+msgid "Delete Recording"
+msgstr "Διαγραφή Ταινίας"
+
+msgid "Delete Timer"
+msgstr "Διαγραφή Χρονοδιακόπτη"
+
+msgid ""
+"Delete failed, because there is no movie trash !\n"
+"Disable movie trash in configuration to delete this item"
+msgstr ""
+"Η διαγραφή απέτυχε λόγω έλλειψης του κάδου αχρήστων ταινιών!\n"
+"Απενεργοποιήστε τον κάδο αχρήστων ταινιών στις ρυθμίσεις για να διαγράψετε "
+"αυτό το στοιχείο"
+
+msgid "Deleted"
+msgstr "Διεγραμμένα"
+
+msgid "Description"
+msgstr "Περιγραφή"
+
+msgid "Device"
+msgstr ""
+
+#, fuzzy
+msgid "Disable"
+msgstr "ανενεργό"
+
+msgid "Disable Timer"
+msgstr "Απενεργοποίηση Χρονοδιακόπτη"
+
+msgid "Disable remote access for user root"
+msgstr "Απενεργοποίηση πρόσβασης για το χρήστη root"
+
+msgid "Disabled on conflict"
+msgstr "Ανενεργό κατά τη διένεξη"
+
+msgid "Display Mode"
+msgstr "Λειτουργία Οθόνης"
+
+msgid "Display duration (s)"
+msgstr "Εμφάνιση διάρκειας (ων)"
+
+msgid "Distro"
+msgstr "Διανομή"
+
+msgid "Dolby"
+msgstr "Dolby"
+
+msgid "Don't create timer when movie exists in database"
+msgstr ""
+
+msgid "Done"
+msgstr "Ολοκληρώθηκε"
+
+msgid "Download"
+msgstr "Λήψη"
+
+msgid "Download playlist for"
+msgstr "Λήψη Λίστας Αναπαραγωγής για"
+
+msgid "Drivers"
+msgstr "Οδηγοί"
+
+msgid "Duration"
+msgstr "Διάρκεια"
+
+msgid "E"
+msgstr "Α"
+
+msgid "EPG"
+msgstr "EPG"
+
+msgid "EPG encoding"
+msgstr "Κωδικοποίηση EPG"
+
+msgid "EPGRefresh"
+msgstr "Ανανέωση EPG"
+
+msgid "ERROR: Cannot set SleepTimer while device is in Standby-Mode"
+msgstr ""
+"ΣΦΑΛΜΑ: Αδυναμία ορισμού του Χρονοδιακόπτη Ύπνου όταν η συσκευή βρίσκεται σε "
+"αναμονή"
+
+#, fuzzy
+msgid "Edit"
+msgstr "Επεξεργασία"
+
+#, fuzzy
+msgid "Edit Recording"
+msgstr "Διαγραφή Ταινίας"
+
+msgid "Edit Timer"
+msgstr "Επεξεργασία Χρονοδιακόπτη"
+
+msgid "Editor"
+msgstr "Επεξεργασία"
+
+#, fuzzy
+msgid "Enable"
+msgstr "Ενεργό"
+
+msgid "Enable Authentication for streaming"
+msgstr "Ενεργοποίηση Πιστοποίησης για ροή"
+
+msgid "Enable HTTP Authentication"
+msgstr "Ενεργοποίηση πιστοποίησης HTTP"
+
+msgid "Enable HTTPS"
+msgstr "Ενεργοποίηση HTTPS"
+
+msgid "Enable HTTPS Authentication"
+msgstr "Ενεργοποίηση πιστοποίησης HTTPS"
+
+msgid "Enable Messages"
+msgstr "Ενεργοποίηση Μηνυμάτων"
+
+msgid "Enable Parental Control"
+msgstr "Ενεργοποίηση γονικού ελέγχου"
+
+msgid "Enable Timer"
+msgstr "Ενεργοποίηση Χρονοδιακόπτη"
+
+msgid "Enable access from VPNs"
+msgstr "Ενεργοποίηση πρόσβασης από VPNs"
+
+msgid "Enable filtering"
+msgstr "Ενεργοποίηση Φίλτρων"
+
+msgid "Enable/Disable Screenshot on key press or"
+msgstr ""
+"Ενεργοποίηση/απενεργοποίηση στιγμιότυπο οθόνης στο πάτημα του πλήκτρου ή"
+
+msgid "Enabled"
+msgstr "Ενεργό"
+
+msgid "Encrypted"
+msgstr "Κωδικοποιημένο"
+
+msgid "End"
+msgstr "Τέλος"
+
+#, fuzzy
+msgid "End of \"After event\" timespan"
+msgstr "Τέλος χρονικής διάρκειας \"μετά το πρόγραμμα\""
+
+msgid "End of timespan"
+msgstr "Τέλος χρονικού διαστήματος"
+
+msgid "Enter a name for the new bouquet"
+msgstr "Εισαγωγή νέου ονόματος μπουκέτου"
+
+msgid "Enter a name for the new marker"
+msgstr "Εισαγωγή νέου ονόματος σημειωτή"
+
+#, fuzzy
+msgid "Enter a name for this AutoTimer"
+msgstr "Εισαγωγή νέου ονόματος σημειωτή"
+
+msgid "Enter path"
+msgstr ""
+
+msgid "Enter text"
+msgstr ""
+
+msgid "Enter the text to find in the EPG"
+msgstr ""
+
+msgid "Error"
+msgstr "Σφάλμα"
+
+msgid "Error parsing vps.xml"
+msgstr "Σφάλμα ανάλυσης του vps.xml"
+
+msgid "Error upload File"
+msgstr "Σφάλμα ανεβάσματος Αρχείου"
+
+#, python-format
+msgid "Error while preparing backup file, %s does not exists."
+msgstr ""
+"Σφάλμα κατά την προετοιμασία του αντίγραφου ασφαλείας, το %s δεν υπάρχει."
+
+msgid "Error while preparing backup file."
+msgstr "Σφάλμα κατά την προετοιμασία του αντιγράφου ασφαλείας."
+
+msgid "Error writing File"
+msgstr "Σφάλμα εγγραφής Αρχείου"
+
+#, python-format
+msgid "Error, %s does not exists, restore is not possible..."
+msgstr "Σφάλμα, το %s δεν υπάρχει, αδύνατη η επαναφορά..."
+
+#, python-format
+msgid "Error, %s was not created with WebBouquetEditor..."
+msgstr ""
+"Σφάλμα, το %s δεν δημιουργήθηκε με τον Επεξεργαστή Μπουκέτων Διαδικτύου"
+
+#, python-format
+msgid "Error: Bouquet %s could not deleted, OSError."
+msgstr "Σφάλμα: Αδυναμία διαγραφής του Μπουκέτου %s, Σφάλμα OS."
+
+msgid "Event not found"
+msgstr "Το πρόγραμμα δεν βρέθηκε"
+
+msgid "EventId not found"
+msgstr "Το EventId δεν βρέθηκε"
+
+msgid "Every"
+msgstr "Κάθε"
+
+msgid "Exclude when"
+msgstr "Εξαίρεση"
+
+#, fuzzy
+msgid "Execute \"After event\" during timespan"
+msgstr "Εκτέλεση του \"μετά το πρόγραμμα\" κατά το χρονικό διάστημα"
+
+msgid "Export"
+msgstr "Εξαγωγή"
+
+msgid "Extras"
+msgstr "Πρόσθετα"
+
+msgid "Fake Recording"
+msgstr "Προσποίηση Εγγραφής"
+
+msgid "Fastscan"
+msgstr "Γρήγορη ανίχνευση"
+
+msgid "February"
+msgstr "Φεβρουαρίου"
+
+msgid "Firmware version"
+msgstr "Έκδοση Υλικού"
+
+msgid "Force"
+msgstr "Εξαναγκασμός"
+
+msgid "Fr"
+msgstr "Πα"
+
+msgid "Free"
+msgstr "Ελεύθερα"
+
+msgid "Free Memory"
+msgstr "Ελεύθερη Μνήμη"
+
+msgid "Free space"
+msgstr ""
+
+msgid "Fri"
+msgstr "Παρ"
+
+msgid "Friday"
+msgstr "Παρασκευή"
+
+msgid "From date"
+msgstr "Όχι έπειτα από"
+
+msgid "Front processor version"
+msgstr "Έκδοση Frontprocessor"
+
+msgid "Full remote"
+msgstr "Πλήρες τηλεχειριστήριο"
+
+msgid "GB"
+msgstr "GB"
+
+msgid "GUI version"
+msgstr "Έκδοση Επιφάνειας Χρήστη"
+
+msgid "Gateway"
+msgstr "Πύλη"
+
+msgid "Get mutable list for new created alternative failed!"
+msgstr "Αποτυχία λήψης μεταβλητής λίστας για τα νεοδημιουργημένα εναλλακτικά!"
+
+msgid "Get mutable list for new created bouquet failed!"
+msgstr "Αποτυχία λήψης μεταβλητής λίστας για τα νεοδημιουργημένα μπουκέτα!"
+
+msgid "HH:MM"
+msgstr ""
+
+msgid "HTTP port"
+msgstr "Θύρα HTTP"
+
+msgid "HTTPS port"
+msgstr "Θύρα HTTPS"
+
+msgid "Hard disk model"
+msgstr "Μοντέλο Σκληρού Δίσκου"
+
+msgid "Hardware"
+msgstr ""
+
+msgid "Hide full remote"
+msgstr "Απόκρυψη πλήρους τηλεχειριστηρίου"
+
+msgid "High Resolution"
+msgstr "Υψηλή Ανάλυση"
+
+msgid "Hold to drag"
+msgstr ""
+
+msgid "Hour"
+msgstr "Ώρα"
+
+msgid "IPTV / URL name"
+msgstr ""
+
+msgid "IPv4 address"
+msgstr "Διεύθυνση IPv4"
+
+msgid "IPv4-only Python/Twisted"
+msgstr "Python/Twisted IPv4 μόνο"
+
+msgid "IPv4-only kernel"
+msgstr "Kernel IPv4 μόνο"
+
+msgid "IPv6 address(es)"
+msgstr "IPv6 διεύθυνση(εις)"
+
+msgid "Import"
+msgstr "Εισαγωγή"
+
+msgid "Include description"
+msgstr "Συμπερίληψη περιγραφής"
+
+msgid "Include extended description"
+msgstr "Συμπερίληψη εκτεταμένης περιγραφής"
+
+msgid "Include short description"
+msgstr "Συμπερίληψη σύντομης περιγραφής"
+
+msgid "Include when"
+msgstr "Συμπερίληψη"
+
+msgid "Infinite Instant recording started"
+msgstr "Έχει ξεκινήσει απεριόριστη άμεση εγγραφή"
+
+msgid "Info"
+msgstr "Πληροφορίες"
+
+msgid "Information"
+msgstr ""
+
+msgid "Inherit AutoTimer"
+msgstr "Διαδοχή Αυτόματου Χρονοδιακόπτη"
+
+msgid "Install Package"
+msgstr "Εγκατάσταση Πακέτου"
+
+msgid "Installed"
+msgstr "Εγκατεστημένο"
+
+msgid "Instant Record"
+msgstr "Άμεση Εγγραφή"
+
+msgid "Instant record for current Event started"
+msgstr "Έχει ξεκινήσει άμεση εγγραφή για το τρέχον πρόγραμμα"
+
+msgid "Internal error!"
+msgstr "Εσωτερικό σφάλμα!"
+
+msgid "Internal flash memory"
+msgstr ""
+
+#, python-format
+msgid "Interval (in %s)"
+msgstr "Μεσοδιάστημα (σε %s)"
+
+msgid "Interval (min.)"
+msgstr "Μεσοδιάστημα (λεπτά)"
+
+msgid "Interval (sec.)"
+msgstr "Μεσοδιάστημα (δευτ.)"
+
+msgid "January"
+msgstr "Ιανουαρίου"
+
+msgid "Javascript Libraries"
+msgstr "Βιβλιοθήκες Javascript"
+
+msgid "July"
+msgstr "Ιουλίου"
+
+msgid "June"
+msgstr "Ιουνίου"
+
+msgid "Just play"
+msgstr "Αναπαραγωγή"
+
+msgid "Kernel"
+msgstr "Kernel"
+
+msgid "LCD"
+msgstr ""
+
+msgid "LCD4Linux Setup"
+msgstr "Ρυθμίσεις LCD4Linux"
+
+msgid "Label series"
+msgstr "Σειρές ετικετών"
+
+msgid "License"
+msgstr ""
+
+msgid "Link speed"
+msgstr "Ταχύτητα Σύνδεσης"
+
+msgid "List of Timers has been cleaned"
+msgstr "Έγινε εκκαθάριση της λίστας χρονοδιακοπτών"
+
+#, fuzzy
+msgid "Loading..."
+msgstr "φόρτωση"
+
+msgid "Location"
+msgstr "Τοποθεσία"
+
+msgid "Locked"
+msgstr "Κλειδωμένο"
+
+msgid "MAC address"
+msgstr "Διεύθυνση MAC"
+
+msgid "MB"
+msgstr "MB"
+
+msgid "Main"
+msgstr "Κύριο"
+
+msgid "Main memory"
+msgstr "Κύρια Μνήμη"
+
+msgid "March"
+msgstr "Μαρτίου"
+
+msgid "Marker added."
+msgstr "Ο Σημειωτής προστέθηκε."
+
+msgid "Marker name"
+msgstr "Όνομα Σημειωτή"
+
+msgid "Match text"
+msgstr "Συσχέτιση τίτλου"
+
+msgid "Max Days"
+msgstr "Μέγιστος αριθμός ημερών"
+
+msgid "May"
+msgstr "Μαΐου"
+
+msgid "Message sent successfully!"
+msgstr "Επιτυχής αποστολή μηνύματος!"
+
+msgid "Method"
+msgstr "Μέθοδος"
+
+msgid "Minimal EPG list"
+msgstr "Ελάχιστη λίστα EPG"
+
+msgid "Minimal movie list"
+msgstr "Ελάχιστη λίστα ταινιών"
+
+msgid "Minimal timer list"
+msgstr "Ελάχιστη λίστα χρονοδιακοπτών"
+
+msgid "Minute"
+msgstr "Λεπτό"
+
+#, python-format
+msgid "Missing mandatory parameter '%s'"
+msgstr "Λείπει η απαραίτητη παράμετρος '%s'"
+
+msgid "Missing requesteter: sRef"
+msgstr "Έλλειψη αναφοράς: sRef"
+
+msgid "Mo"
+msgstr "Δε"
+
+msgid "Model"
+msgstr "Μοντέλο"
+
+msgid "Mon"
+msgstr "Δευ"
+
+msgid "Monday"
+msgstr "Δευτέρα"
+
+msgid "Monthly"
+msgstr "Μηνιαία"
+
+msgid "More"
+msgstr "Περισσότερα"
+
+msgid "More details"
+msgstr ""
+
+msgid "Mount point"
+msgstr ""
+
+msgid "Movie database for EPG"
+msgstr ""
+
+msgid "Movie search"
+msgstr "Αναζήτηση ταινιών"
+
+msgid "Movielist"
+msgstr "Λίστα Ταινιών"
+
+msgid "Movies"
+msgstr "Ταινίες"
+
+msgid "Multi-Bouquet is not enabled!"
+msgstr "Τα Πολλαπλά Μπουκέτα είναι ανενεργά!"
+
+msgid "MultiEPG"
+msgstr "Πολλαπλός EPG"
+
+msgid "Mute/Unmute"
+msgstr ""
+
+#, fuzzy
+msgid "NCam Webinterface"
+msgstr "Διεπαφή Δικτύου OSCam"
+
+msgid "Name"
+msgstr "Όνομα"
+
+msgid "Name (a-z)"
+msgstr ""
+
+msgid "Name (z-a)"
+msgstr ""
+
+msgid "Namespace"
+msgstr "Χώρος ονόματος"
+
+msgid "Network Interface"
+msgstr "Διεπαφή Δικτύου"
+
+msgid "Network Shares"
+msgstr "Κοινόχρηστα Στοιχεία Δικτύου"
+
+msgid "Never"
+msgstr "Ποτέ"
+
+msgid "New"
+msgstr "Νέο"
+
+#, fuzzy
+msgid "New Bookmark:"
+msgstr "Σελιδοδείκτης"
+
+msgid "New Name"
+msgstr "Νέο Όνομα"
+
+msgid "No"
+msgstr "Όχι"
+
+#, fuzzy
+msgid "No EPG data available."
+msgstr "μη διαθέσιμη περιγραφή"
+
+msgid "No Parent Control Setup Pin given!"
+msgstr "Δεν δόθηκε Pin Ρυθμίσεων Γονικής Προστασίας!"
+
+msgid "No answer in time"
+msgstr "Μη έγκαιρη απάντηση"
+
+msgid "No bouquet given!"
+msgstr "Δεν δόθηκε μπουκέτο!"
+
+msgid "No bouquet name given!"
+msgstr "Δεν δόθηκε όνομα μπουκέτου!"
+
+msgid "No current service given!"
+msgstr "Δεν δόθηκε τρέχουσα υπηρεσία!"
+
+msgid "No event found! Not recording!"
+msgstr "Δεν βρέθηκε πρόγραμμα! Μη εγγραφή!"
+
+msgid "No marker-name given!"
+msgstr "Δεν δόθηκε όνομα σημειωτή!"
+
+#, fuzzy
+msgid "No matches were found in the EPG"
+msgstr "Δεν βρέθηκε ο αντίστοιχος Χρονοδιακόπτης"
+
+msgid "No matching Timer found"
+msgstr "Δεν βρέθηκε ο αντίστοιχος Χρονοδιακόπτης"
+
+msgid "No network connection"
+msgstr ""
+
+msgid "No new servicename given!"
+msgstr "Δεν δόθηκε νέο όνομα υπηρεσίας!"
+
+msgid "No position given!"
+msgstr "Δεν δόθηκε θέση!"
+
+msgid "No provider given!"
+msgstr "Δεν δόθηκε πάροχος!"
+
+msgid "No service given!"
+msgstr "Δεν δόθηκε υπηρεσία!"
+
+msgid "No, cancel"
+msgstr "Όχι, να γίνει ακύρωση"
+
+msgid "None"
+msgstr "Κανένα"
+
+msgid "Nothing"
+msgstr "Τίποτα"
+
+msgid "Nothing playing."
+msgstr "Καμία αναπαραγωγή."
+
+msgid "Notify if Conflict"
+msgstr "Ειδοποίηση αν υπάρχει διένεξη"
+
+msgid "Notify if Similar"
+msgstr "Ειδοποίηση αν υπάρχει Παρόμοιο"
+
+msgid "November"
+msgstr "Νοεμβρίου"
+
+msgid "Now"
+msgstr "Τώρα"
+
+msgid "Now/Next Columns"
+msgstr ""
+
+msgid "Number of recordings remaining"
+msgstr "Αριθμός εγγραφών που απομένουν"
+
+msgid "ONID"
+msgstr ""
+
+msgid "OSCam Webinterface"
+msgstr "Διεπαφή Δικτύου OSCam"
+
+msgid "OSD"
+msgstr "OSD"
+
+msgid "October"
+msgstr "Οκτωβρίου"
+
+msgid "Offset after recording (mins)"
+msgstr "Μετατόπιση χρόνου μετά την εγγραφή (σε λεπτά)"
+
+msgid "Offset before recording (mins)"
+msgstr "Μετατόπιση χρόνου πριν την εγγραφή (σε λεπτά)"
+
+msgid "On"
+msgstr "Ανοικτό"
+
+msgid "On any service"
+msgstr "Σε οποιαδήποτε υπηρεσία"
+
+msgid "On same service"
+msgstr "Στην ίδια υπηρεσία"
+
+msgid "Only match between dates"
+msgstr "Περιορισμός σε προγράμματα συγκεκριμένων ημερομηνιών"
+
+msgid "Only match during timespan"
+msgstr "Συσχέτιση μόνο κατά τη διάρκεια του χρονικού διαστήματος"
+
+msgid "Oops, no results matched your search"
+msgstr ""
+
+msgid "Oops..."
+msgstr ""
+
+msgid "Open Source Web Interface for Linux set-top box"
+msgstr "Διεπαφή Δικτύου Ανοικτού Λογισμικού για δέκτες με Linux"
+
+msgid "Open in new window"
+msgstr "Άνοιγμα σε νέο παράθυρο"
+
+msgid "OpenWebInterface Enabled"
+msgstr "OpenWebInterface Ενεργό"
+
+msgid "OpenWebif Browser Settings"
+msgstr "Ρυθμίσεις Πλοηγού OpenWebif"
+
+msgid "OpenWebif Configuration"
+msgstr "Ρυθμίσεις OpenWebif"
+
+msgid "OpenWebif Settings"
+msgstr "Ρυθμίσεις OpenWebif"
+
+#, fuzzy
+msgid "OpenWebif url:"
+msgstr "OpenWebif URL:"
+
+msgid "Orbital Position"
+msgstr "Τροχιακή Θέση"
+
+msgid "Override found with alternative service"
+msgstr "Βρέθηκε υπερκάλυψη με την εναλλακτική υπηρεσία"
+
+msgid "PCR PID"
+msgstr ""
+
+msgid "PMT PID"
+msgstr ""
+
+msgid "Packages"
+msgstr "Πακέτα"
+
+msgid "Parent Control Setup Pin is wrong!"
+msgstr "Το Pin Ρυθμίσεων Γονικού Ελέγχου είναι λανθασμένο!"
+
+msgid "Parent Control is not activated."
+msgstr "Ο γονικός έλεγχος δεν είναι ενεργός."
+
+msgid "Parse AutoTimer"
+msgstr "Ανάλυση Αυτόματου Χρονοδιακόπτη"
+
+msgid "PiP"
+msgstr ""
+
+msgid "Picture in Picture"
+msgstr "Εικόνα σε Εικόνα"
+
+msgid "Picture in Picture (hidden)"
+msgstr "Εικόνα σε Εικόνα (κρυφό)"
+
+msgid "Plain"
+msgstr "Απλό"
+
+msgid "Playback"
+msgstr "Αναπαραγωγή"
+
+msgid "Playback IPTV Streams in browser"
+msgstr ""
+
+msgid "Playlist"
+msgstr "Λίστα αναπαραγωγής"
+
+#, fuzzy
+msgid "Playlist format"
+msgstr "Λίστα αναπαραγωγής"
+
+msgid "Power Control"
+msgstr "Έλεγχος Τροφοδοσίας"
+
+msgid "PowerTimer feature not available"
+msgstr "Ο χρονοδιακόπτης απενεργοποίησης δεν είναι διαθέσιμος"
+
+msgid "Preview"
+msgstr ""
+
+msgid "Primetimes"
+msgstr "Ζώνες Αιχμής"
+
+msgid "Process"
+msgstr "Ανάλυση"
+
+msgid "Provider"
+msgstr "Πάροχος"
+
+msgid "Providers"
+msgstr "Πάροχοι"
+
+msgid "REC"
+msgstr ""
+
+msgid "Radio"
+msgstr "Ραδιόφωνο"
+
+msgid "Reboot Box"
+msgstr "Επανεκκίνηση Δέκτη"
+
+msgid "Record a maximum of # times"
+msgstr "Εγγραφή το μέγιστο x φορές"
+
+msgid "Recording"
+msgstr ""
+
+#, fuzzy
+msgid "Recording Type"
+msgstr "Κατάσταση Εγγραφής"
+
+msgid "Refresh"
+msgstr "Ανανέωση"
+
+msgid "Refresh Timer"
+msgstr "Ανανέωση Χρονοδιακόπτη"
+
+msgid "Refresh automatically every"
+msgstr "Αυτόματη ανανέωση κάθε"
+
+msgid "Refresh now"
+msgstr "Ανανέωση τώρα"
+
+msgid "Reload"
+msgstr "Ανανέωση"
+
+msgid "Remote"
+msgstr "Τηλεχειριστήριο"
+
+msgid "Remove Package"
+msgstr "Αφαίρεση Πακέτου"
+
+#, fuzzy
+msgid "Remove filter"
+msgstr "Τηλεχειριστήριο"
+
+msgid "Rename"
+msgstr "Μετονομασία"
+
+msgid "Rename Bouquet"
+msgstr "Μετονομασία Μπουκέτου"
+
+msgid "Rename Recording"
+msgstr "Μετονομασία Εγγραφής"
+
+msgid "Repeated"
+msgstr "Επαναλαμβανόμενο"
+
+msgid "Require client cert for HTTPS"
+msgstr "Απαίτηση πιστοποίησης πελάτη για HTTPS"
+
+msgid "Require description to be unique"
+msgstr "Απαίτηση μοναδικότητας της περιγραφής"
+
+#, fuzzy
+msgid "Reset"
+msgstr "Μηδενισμός μετρητών"
+
+msgid "Reset count"
+msgstr "Μηδενισμός μετρητών"
+
+msgid "Restart GUI"
+msgstr "Επανεκκίνηση GUI"
+
+msgid "Restrict to bouquets"
+msgstr "Περιορισμός στα Μπουκέτα"
+
+#, fuzzy
+msgid "Restrict to channels"
+msgstr "Περιορισμός στα Μπουκέτα"
+
+msgid "Root"
+msgstr "Ρίζα"
+
+msgid "SLAAC"
+msgstr "SLAAC"
+
+msgid "SNR"
+msgstr "SNR"
+
+msgid "SRef"
+msgstr ""
+
+msgid "Sa"
+msgstr "Σά"
+
+msgid "Safe mode"
+msgstr "Ασφαλής λειτουργία"
+
+msgid "Sat"
+msgstr "Σάβ"
+
+msgid "Satellites"
+msgstr "Δορυφόροι"
+
+msgid "Satfinder"
+msgstr "Έλεγχος σήματος"
+
+msgid "Saturday"
+msgstr "Σάββατο"
+
+msgid "Save"
+msgstr "Αποθήκευση"
+
+msgid "Screenshot"
+msgstr "Στιγμιότυπο"
+
+msgid "Search"
+msgstr "Αναζήτηση"
+
+#, fuzzy
+msgid "Search CSFD"
+msgstr "Αναζήτηση IMDb"
+
+msgid "Search EPG"
+msgstr ""
+
+msgid "Search IMDb"
+msgstr "Αναζήτηση IMDb"
+
+msgid "Search KinoPoisk"
+msgstr "Αναζήτηση στο KinoPoisk"
+
+#, fuzzy
+msgid "Search TV Guide UK"
+msgstr "Οδηγός TV"
+
+msgid "Search by name, sd / hd / uhd, or provider"
+msgstr ""
+
+#, fuzzy
+msgid "Search strictness"
+msgstr "Αναζήτηση στο KinoPoisk"
+
+#, fuzzy
+msgid "Search type"
+msgstr "Αναζήτηση"
+
+msgid "Select IPK file for upload"
+msgstr "Επιλογή αρχείου IPK για Ανέβασμα"
+
+msgid "Select..."
+msgstr ""
+
+msgid "Send"
+msgstr ""
+
+msgid "Send Message"
+msgstr "Αποστολή Μηνύματος"
+
+msgid "Send a Message"
+msgstr "Αποστολή ενός Μηνύματος"
+
+msgid "September"
+msgstr "Σεπτεμβρίου"
+
+msgid "Service"
+msgstr "Υπηρεσία"
+
+#, python-format
+msgid "Service %s added."
+msgstr "Η υπηρεσία %s προστέθηκε."
+
+#, python-format
+msgid "Service %s already exists in bouquet %s."
+msgstr "Η υπηρεσία %s υπάρχει ήδη στο μπουκέτο %s."
+
+#, python-format
+msgid "Service %s can not be removed."
+msgstr "Αδυναμία αφαίρεσης της υπηρεσίας %s."
+
+#, python-format
+msgid "Service %s is locked."
+msgstr "Η υπηρεσία %s είναι κλειδωμένη."
+
+#, python-format
+msgid "Service %s is unlocked."
+msgstr "Η υπηρεσία %s είναι ξεκλείδωτη."
+
+#, python-format
+msgid "Service %s moved."
+msgstr "Η υπηρεσία %s μετακινήθηκε."
+
+#, python-format
+msgid "Service %s removed from bouquet %s."
+msgstr "Η υπηρεσία %s αφαιρέθηκε από το μπουκέτο %s."
+
+#, python-format
+msgid "Service %s removed."
+msgstr "Η υπηρεσία %s αφαιρέθηκε."
+
+msgid "Service ID (SID)"
+msgstr ""
+
+msgid "Service can not be moved."
+msgstr "Αδυναμία μετακίνησης της υπηρεσίας."
+
+msgid "Service can not be renamed."
+msgstr "Αδυναμία μετονομασίας υπηρεσίας."
+
+msgid "Service is not an alternative."
+msgstr "Η υπηρεσία δεν είναι εναλλακτική."
+
+msgid "Service renamed successfully."
+msgstr "Επιτυχία μετονομασίας Υπηρεσίας."
+
+msgid "Services"
+msgstr "Υπηρεσίες"
+
+msgid "Serving stream"
+msgstr ""
+
+msgid "Set maximum duration"
+msgstr "Ορισμός μέγιστης διάρκειας"
+
+msgid "Settings"
+msgstr "Ρυθμίσεις"
+
+msgid "Show EPG for"
+msgstr "Εμφάνιση EPG για"
+
+msgid "Show Full OpenWebif"
+msgstr "Εμφάνιση Πλήρους OpenWebif"
+
+msgid "Show IPTV channels in selection (eg. Autotimer)"
+msgstr ""
+
+#, fuzzy
+msgid "Show all packages"
+msgstr "Αναβάθμιση όλων των Πακέτων"
+
+msgid "Show box name in header"
+msgstr "Εμφάνιση ονόματος δέκτη στην κεφαλίδα"
+
+msgid "Show details"
+msgstr ""
+
+msgid "Show full remote"
+msgstr "Εμφάνιση πλήρους τηλεχειριστηρίου"
+
+msgid "Show in Extensions menu"
+msgstr "Εμφάνιση στο μενού επεκτάσεων"
+
+msgid "Show picon background"
+msgstr ""
+
+msgid "Show picons"
+msgstr ""
+
+msgid "Show picons in channel list"
+msgstr "Εμφάνιση Λογότυπου στη λίστα καναλιών"
+
+#, fuzzy
+msgid "Show service type in channel list"
+msgstr "Εμφάνιση Λογότυπου στη λίστα καναλιών"
+
+msgid "Shutdown"
+msgstr "Τερματισμός"
+
+msgid "Signal Power (AGC)"
+msgstr ""
+
+msgid "Signal Quality (SNR DB)"
+msgstr ""
+
+msgid "Signal Quality (SNR)"
+msgstr ""
+
+msgid "Simulate"
+msgstr "Εξομοίωση"
+
+msgid "Site and sources"
+msgstr "Ιστοσελίδα και πηγές"
+
+msgid "Skins"
+msgstr ""
+
+msgid "SleepTimer error"
+msgstr "Σφάλμα Χρονοδιακόπτη Ύπνου"
+
+msgid "Sleeptimer has been disabled"
+msgstr "Ο χρονοδιακόπτης ύπνου απενεργοποιήθηκε"
+
+msgid "Sleeptimer is disabled"
+msgstr "Ο χρονοδιακόπτης ύπνου είναι ανενεργός"
+
+msgid "Sleeptimer is enabled"
+msgstr "Ο χρονοδιακόπτης ύπνου είναι ενεργός"
+
+#, python-format
+msgid "Sleeptimer set to %d minutes"
+msgstr "Ο χρονοδιακόπτης ύπνου έχει οριστεί σε %d λεπτά"
+
+msgid "Small remote layout"
+msgstr ""
+
+msgid "Software"
+msgstr "Λογισμικό"
+
+msgid "Sorry this page is not yet implemented"
+msgstr "Λυπούμαστε, αυτή η σελίδα δεν είναι ακόμα διαθέσιμη"
+
+msgid "Sort"
+msgstr ""
+
+msgid "Spinner"
+msgstr "Κινούμενο γραφικό"
+
+msgid "Standby"
+msgstr "Αναμονή"
+
+msgid "Start"
+msgstr "Εκκίνηση"
+
+msgid "Start Instant Record"
+msgstr "Εκκίνηση Άμεσης Εγγραφής"
+
+msgid "Start time is after end time"
+msgstr "Η ώρα έναρξης είναι μετά την ώρα τερματισμού"
+
+msgid "Start typing..."
+msgstr "ΕΚΚΙΝΗΣΗ ΠΛΗΚΤΡΟΛΟΓΗΣΗΣ"
+
+msgid "State"
+msgstr ""
+
+msgid "Storage"
+msgstr ""
+
+msgid "Stream"
+msgstr "Ροή"
+
+#, fuzzy
+msgid "Stream Clients"
+msgstr "Ροή"
+
+#, fuzzy
+msgid "Streaming port"
+msgstr "Ροή"
+
+msgid "Su"
+msgstr "Κυ"
+
+msgid "Subdirectories"
+msgstr ""
+
+msgid "Subnet mask"
+msgstr "Μάσκα Υποδικτύου"
+
+msgid "Subservices"
+msgstr "Υπο-υπηρεσίες"
+
+msgid "Sun"
+msgstr "Κυρ"
+
+msgid "Sunday"
+msgstr "Κυριακή"
+
+msgid "System OE"
+msgstr "ΟΕ Συστήματος"
+
+msgid "TB"
+msgstr "TB"
+
+msgid "TSID"
+msgstr ""
+
+msgid "TV"
+msgstr "TV"
+
+msgid "TV Guide"
+msgstr "Οδηγός TV"
+
+msgid "TV Multi EPG"
+msgstr "Πολλαπλός EPG TV"
+
+msgid "Tags"
+msgstr "Ετικέτες"
+
+msgid "Teletext"
+msgstr "Τηλεκείμενο"
+
+msgid "Teletext PID"
+msgstr "Teletext PID"
+
+msgid "Television"
+msgstr "Τηλεόραση"
+
+msgid "Template Engine"
+msgstr "Μηχανή Προτύπου"
+
+msgid "Terminal"
+msgstr "Τερματικό"
+
+msgid "Terrestrial"
+msgstr "Επίγειο"
+
+msgid "Text"
+msgstr "Κείμενο"
+
+msgid "Th"
+msgstr "Πέ"
+
+#, python-format
+msgid "The parameter '%s' can't be empty"
+msgstr "Η παράμετρος '%s' δεν μπορεί να είναι κενή"
+
+msgid "The parameter 'command' must be a number"
+msgstr "Η παράμετρος 'εντολή' πρέπει να είναι αριθμός"
+
+#, python-format
+msgid "The timer '%s' has been %s successfully"
+msgstr "Ο χρονοδιακόπτης '%s' έχει %s με επιτυχία"
+
+#, python-format
+msgid "The timer '%s' has been deleted successfully"
+msgstr "Ο χρονοδιακόπτης '%s' διαγράφτηκε επιτυχώς"
+
+#, python-format
+msgid "The timer '%s' now recorded! Not disabled!"
+msgstr "Γίνεται τώρα εγγραφή του χρονοδιακόπτη '%s'! Δεν απενεργοποιήθηκε!"
+
+msgid "Theme"
+msgstr "Θέμα"
+
+#, fuzzy
+msgid "Theme mode"
+msgstr "Θέμα"
+
+msgid "This service can not be added."
+msgstr "Αδυναμία προσθήκης αυτής της υπηρεσίας."
+
+msgid "Thu"
+msgstr "Πέμ"
+
+msgid "Thursday"
+msgstr "Πέμπτη"
+
+msgid "Time"
+msgstr "Χρόνος"
+
+msgid "Timeline"
+msgstr "Γραμμή χρόνου"
+
+msgid "Timeout"
+msgstr "Χρόνος Λήξης"
+
+msgid "Timer"
+msgstr "Χρονοδιακόπτης"
+
+#, python-format
+msgid "Timer '%s' added"
+msgstr "Ο χρονοδιακόπτης '%s' προστέθηκε"
+
+#, python-format
+msgid "Timer '%s' already exists!"
+msgstr "Ο χρονοδιακόπτης '%s' υπάρχει ήδη!"
+
+#, python-format
+msgid "Timer '%s' changed"
+msgstr "Ο χρονοδιακόπτης '%s' άλλαξε"
+
+#, python-format
+msgid "Timer '%s' not enabled while Conflict"
+msgstr "Ο χρονοδιακόπτης '%s' δεν ενεργοποιήθηκε κατά τη Διένεξη"
+
+#, python-format
+msgid "Timer '%s' not saved while Conflict"
+msgstr "Ο χρονοδιακόπτης '%s' δεν αποθηκεύτηκε λόγω διένεξης"
+
+msgid "Timer Added"
+msgstr "Ο Χρονοδιακόπτης Προστέθηκε"
+
+msgid "Timer Conflict"
+msgstr ""
+
+msgid "Timer added"
+msgstr "Έγινε προσθήκη του χρονοδιακόπτη"
+
+msgid "Timer conflict detected! Not recording!"
+msgstr "Εντοπίστηκε διένεξη χρονοδιακόπτη! Μη εγγραφή!"
+
+msgid "Timer type"
+msgstr "Τύπος χρονοδιακόπτη"
+
+msgid "TimerList has been saved"
+msgstr "Η λίστα χρονοδιακοπτών αποθηκεύτηκε"
+
+msgid "Timerlist"
+msgstr "Λίστα χρονοδιακοπτών"
+
+msgid "Timers"
+msgstr "Χρονοδιακόπτες"
+
+msgid "Title"
+msgstr "Τίτλος"
+
+msgid "To date"
+msgstr "Όχι πριν από"
+
+msgid "Today"
+msgstr ""
+
+msgid "Toggle Standby"
+msgstr ""
+
+msgid "Transcode"
+msgstr "Διακωδικοποίηση"
+
+msgid "Translation to Spanish"
+msgstr "Μετάφραση στα Ισπανικά"
+
+msgid "Try guessing"
+msgstr "Προσπάθεια προσδιορισμού"
+
+msgid "Tu"
+msgstr "Τρ"
+
+msgid "Tue"
+msgstr "Τρί"
+
+msgid "Tuesday"
+msgstr "Τρίτη"
+
+msgid "Tuner Number"
+msgstr "Αριθμός Tuner"
+
+msgid "Tuner Signal"
+msgstr "Σήμα Tuner"
+
+msgid "Tuner Type"
+msgstr "Τύπος Tuner"
+
+msgid "Tuners"
+msgstr "Tuners"
+
+msgid "Type"
+msgstr "Τύπος"
+
+#, python-format
+msgid "Unknown Volume command %s"
+msgstr "Άγνωστη εντολή Έντασης %s"
+
+#, python-format
+msgid "Unknown command: '%s'"
+msgstr "Άγνωστη εντολή: '%s'"
+
+msgid "Upcoming Events"
+msgstr "Επερχόμενες Εκπομπές"
+
+msgid "Update"
+msgstr "Ενημέρωση"
+
+msgid "Update Package"
+msgstr "Ενημέρωση Πακέτου"
+
+msgid "Update from feed"
+msgstr "Ενημέρωση από τις Πηγές"
+
+msgid "Upgrade all packages"
+msgstr "Αναβάθμιση όλων των Πακέτων"
+
+msgid "Upload File Error"
+msgstr "Σφάλμα Ανεβάσματος Αρχείου"
+
+msgid "Upload package"
+msgstr "Ανέβασμα πακέτου"
+
+msgid "Uploaded Files"
+msgstr "Ανεβασμένα Αρχεία"
+
+msgid "Use Channelname for screenshots"
+msgstr ""
+
+msgid "Use a custom location"
+msgstr "Χρήση τοποθεσίας ορισμένης από το χρήστη"
+
+msgid "Use as PiP if possible"
+msgstr ""
+
+#, fuzzy
+msgid "Use classic interface"
+msgstr "Χρήση νέας σχεδίασης"
+
+#, fuzzy
+msgid "Use custom Color"
+msgstr "Χρήση τοποθεσίας ορισμένης από το χρήστη"
+
+msgid "Use custom box name"
+msgstr "Χρήση ονόματος χρήστη για το δέκτη"
+
+#, fuzzy
+msgid "Use modern design"
+msgstr "Χρήση νέας σχεδίασης"
+
+msgid "Use modern interface"
+msgstr "Χρήση νέας σχεδίασης"
+
+msgid "VPS"
+msgstr "VPS"
+
+msgid "VPS plugin not found"
+msgstr "Το πρόσθετο VPS δεν βρέθηκε"
+
+msgid "Version"
+msgstr "Έκδοση"
+
+msgid "Video"
+msgstr "Βίντεο"
+
+msgid "Video Height"
+msgstr "Ύψος Βίντεο"
+
+msgid "Video PID (VPID)"
+msgstr ""
+
+msgid "Video Width"
+msgstr "Πλάτος Βίντεο"
+
+msgid "Visibly"
+msgstr "Ορατά"
+
+msgid "Volume"
+msgstr "Ένταση"
+
+msgid "Volume Control"
+msgstr "Έλεγχος Έντασης"
+
+msgid "W"
+msgstr "Δ"
+
+msgid "Waiting for answer ..."
+msgstr "Αναμονή για απάντηση ..."
+
+msgid "Wake Up"
+msgstr "Αφύπνιση"
+
+msgid "Wakeup"
+msgstr "Αφύπνιση"
+
+msgid "Warning"
+msgstr "Προειδοποίηση"
+
+msgid "We"
+msgstr "Τε"
+
+msgid "Web TV"
+msgstr "Web TV"
+
+msgid "Wed"
+msgstr "Τετ"
+
+msgid "Wednesday"
+msgstr "Τετάρτη"
+
+msgid "Weekly (Monday)"
+msgstr "Εβδομαδιαία (Δευτέρα)"
+
+msgid "Weekly (Sunday)"
+msgstr "Εβδομαδιαία (Κυριακή)"
+
+msgid "Widescreen"
+msgstr ""
+
+msgid "Without auth only local access is allowed!"
+msgstr "Χωρίς πιστοποίηση, μόνο τοπική πρόσβαση επιτρεπτή!"
+
+msgid "Wizard"
+msgstr "Οδηγός"
+
+msgid "Would you like to save your changes?"
+msgstr ""
+
+#, python-format
+msgid "Wrong parameter format 'set=%s'. Use set=set15 "
+msgstr "Λανθασμένη μορφή παραμέτρου 'set=%s'. Χρήση set=set15 "
+
+msgid "YYYY-MM-DD"
+msgstr ""
+
+msgid "Yes"
+msgstr "Ναι"
+
+msgid "Yes/No"
+msgstr "Ναι/Όχι"
+
+msgid "Yesterday"
+msgstr ""
+
+msgid "Zap"
+msgstr "Μετάβαση"
+
+msgid "Zap & Record"
+msgstr "Εγγραφή+ΖΑΠ"
+
+msgid "Zap before streaming"
+msgstr "μετάβαση πριν τη Ροή"
+
+msgid "Zap to"
+msgstr "Μετάβαση σε"
+
+msgid "Zapped to"
+msgstr "Έγινε μετάβαση σε"
+
+#, fuzzy
+msgid "any time"
+msgstr "Προσθήκη Χρονοδιακόπτη"
+
+msgid "auto"
+msgstr "αυτόματο"
+
+msgid "box_ip"
+msgstr ""
+
+#, fuzzy
+msgid "case-insensitive"
+msgstr "Αυστηρότητα αναζήτησης"
+
+#, fuzzy
+msgid "case-sensitive"
+msgstr "Αυστηρότητα αναζήτησης"
+
+msgid "descramble and record ecm"
+msgstr ""
+
+msgid "description contains"
+msgstr "σε Περιγραφή"
+
+#, fuzzy
+msgid "description match"
+msgstr "Περιγραφή"
+
+msgid "disabled"
+msgstr "ανενεργό"
+
+msgid "do nothing"
+msgstr "να μη γίνει τίποτα"
+
+msgid "don't descramble, record ecm"
+msgstr ""
+
+msgid "error! Loading Page"
+msgstr "σφάλμα! Φόρτωση Σελίδας"
+
+msgid "exact title match"
+msgstr ""
+
+msgid "favourite desc match"
+msgstr ""
+
+msgid "finished"
+msgstr "ολοκληρώθηκε"
+
+msgid "go to deep standby"
+msgstr "μετάβαση σε βαθιά αναμονή"
+
+msgid "go to standby"
+msgstr "μετάβαση σε αναμονή"
+
+msgid "hour"
+msgstr "ώρα"
+
+msgid "kB"
+msgstr "kB"
+
+msgid "loading"
+msgstr "φόρτωση"
+
+msgid "manual/disabled"
+msgstr "χειροκίνητο/ανενεργό"
+
+msgid "mins"
+msgstr ""
+
+msgid "minute"
+msgstr "λεπτό"
+
+msgid "no description available"
+msgstr "μη διαθέσιμη περιγραφή"
+
+msgid "none/IPv4-only network"
+msgstr "Δίκτυο κανένα/IPv4 μόνο"
+
+msgid "normal"
+msgstr ""
+
+msgid "on day"
+msgstr ""
+
+msgid "on weekday"
+msgstr "σε Καθημερινή"
+
+msgid "one two three four unknown command"
+msgstr "ένα δύο τρία τέσσερα άγνωστη εντολή"
+
+msgid "partial title match"
+msgstr ""
+
+msgid "r/o"
+msgstr "r/o"
+
+msgid "r/w"
+msgstr "r/w"
+
+msgid "Receiver"
+msgstr ""
+
+msgid "record"
+msgstr "εγγραφή"
+
+msgid "regex match (experimental)"
+msgstr ""
+
+msgid "remove"
+msgstr "αφαίρεση"
+
+msgid "running"
+msgstr "σε εκτέλεση"
+
+msgid "seconds"
+msgstr "δευτερόλεπτα"
+
+msgid "select bouquets"
+msgstr "επιλογή Μπουκέτων"
+
+msgid "select channels"
+msgstr "επιλογή Καναλιών"
+
+msgid "select tags"
+msgstr "επιλογή Ετικετών"
+
+msgid "short description contains"
+msgstr "σε Σύντομη περιγραφή"
+
+#, fuzzy
+msgid "short description match"
+msgstr "συσχέτιση σύντομης περιγραφής"
+
+msgid "standard"
+msgstr "στάνταρ"
+
+msgid "static"
+msgstr "στατική"
+
+msgid "this service is protected by a parental control pin"
+msgstr ""
+
+msgid "title contains"
+msgstr "σε Τίτλο"
+
+msgid "title ends with"
+msgstr ""
+
+#, fuzzy
+msgid "title or description match"
+msgstr "συσχέτιση τίτλου ή περιγραφής"
+
+#, fuzzy
+msgid "title or short description match"
+msgstr "συσχέτιση τίτλου ή σύντομης περιγραφής"
+
+msgid "title starts with"
+msgstr ""
+
+msgid "transcoded"
+msgstr "διαδικοποιημένο"
+
+#, python-format
+msgid "type %s is not a number"
+msgstr "ο τύπος %s δεν είναι αριθμός"
+
+msgid "unknown"
+msgstr "άγνωστο"
+
+msgid "using"
+msgstr "με χρήση"
+
+msgid "via"
+msgstr "μέσω"
+
+msgid "waiting"
+msgstr "αναμονή"
+
+msgid "weekday"
+msgstr "Καθημερινή"
+
+msgid "weekend"
+msgstr "Σαββατοκύριακο"
+
+msgid "wrong filetype"
+msgstr "λανθασμένος τύπος αρχείου"
+
+msgid "zap"
+msgstr "μετάβαση"
+
+#~ msgid "EPG Search"
+#~ msgstr "Αναζήτηση Epg"
+
+#, fuzzy
+#~ msgid "Enter Text"
+#~ msgstr "Τύπος Tuner"
+
+#~ msgid "LICENSE"
+#~ msgstr "ΑΔΕΙΑ"
+
+#~ msgid "Standby Toggle"
+#~ msgstr "Εναλλαγή Αναμονής"
+
+#, fuzzy
+#~ msgid "Use old remote"
+#~ msgstr "Απόκρυψη πλήρους τηλεχειριστηρίου"
+
+#~ msgid "Apid"
+#~ msgstr "Apid"
+
+#~ msgid "Onid"
+#~ msgstr "Onid"
+
+#~ msgid "Pcrpid"
+#~ msgstr "Pcrpid"
+
+#~ msgid "Pmtpid"
+#~ msgstr "Pmtpid"
+
+#~ msgid "Recording Status"
+#~ msgstr "Κατάσταση Εγγραφής"
+
+#~ msgid "Sid"
+#~ msgstr "Sid"
+
+#~ msgid "Sref"
+#~ msgstr "Αναφ"
+
+#~ msgid "Tsid"
+#~ msgstr "Tsid"
+
+#~ msgid "Tuner Bit Error Rate BER"
+#~ msgstr "Ρυθμός Σφαλμάτων Tuner BER"
+
+#~ msgid "Tuner Signal Power AGC"
+#~ msgstr "Ισχύς Σήματος Tuner AGC"
+
+#~ msgid "Tuner Signal Quality SNR"
+#~ msgstr "Ποιότητα Σήματος Tuner SNR"
+
+#~ msgid "Tuner Signal Quality SNR_DB"
+#~ msgstr "Ποιότητα Σήματος Tuner SNR_DB"
+
+#~ msgid "Video Wide"
+#~ msgstr "Ευρεία Εικόνα"
+
+#~ msgid "Vpid"
+#~ msgstr "Vpid"

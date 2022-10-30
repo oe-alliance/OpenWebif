@@ -1,0 +1,411 @@
+#from controllers.defaults import USERCSSCLASSIC
+#from controllers.i18n import tstrings
+#from json import dumps
+#set $t="original"
+#if $varExists('theme')
+	#set $t=$theme
+#end if
+#def menu($title, $name, $content)
+<div class="some-leftmenu-main">
+	#set $caret="s"
+	#set $style_val="display: initial"
+	#if $name in $collapsed
+		#set $caret="w"
+		#set $style_val="display: none"
+	#end if
+	<div class="some-leftmenu-top ui-widget-header" onclick="toggleMenu('$name');">
+		$title
+		<div id="leftmenu_expander_$name" class="ui-selectmenu-icon ui-icon ui-icon-caret-1-$caret"></div>
+	</div>
+	<div id="leftmenu_container_$name" style="$style_val">
+	$content
+	</div>
+</div>
+#end def
+#def mainMenu
+<ul>
+	<li><a class="lmc" href="ajax/tv">$tstrings['television']</a></li>
+	<li><a class="lmc" href="ajax/radio">$tstrings['radio']</a></li>
+	<li><a class="lmc spin" href="ajax/movies">$tstrings['movies']</a></li>
+	<li><a class="lmc" href="ajax/timers">$tstrings['timers']</a></li>
+	#if $webtv
+	<li><a class="lmc" href="ajax/webtv">$tstrings['webtv']</a></li>
+	#end if
+</ul>
+#end def
+#def searchMenu
+<ul>
+	<li><input type="checkbox" name="epgsearchtype" />$tstrings['epgsearchextended']</li>
+	<li><input type="checkbox" name="epgsearchbouquetsonly" />$tstrings['epgsearchbouquetsonly']</li>
+</ul>
+<form action="" onSubmit="open_epg_search_dialog(); return false;">
+	<div style="width:100%; text-align:center; padding-top:5px;"><input type="text" id="epgSearch" size="14" /></div>
+	<div style="width:100%; text-align:center;padding-top:5px; padding-bottom:7px;" class="epgsearch"><button>$tstrings['search']</button></div>
+</form>
+#end def
+#def remoteMenu
+<div style="width:100%; text-align:center;">
+		<ul>
+		<li style="margin-bottom:5px;margin-top:5px;">
+		<div class="tbl"><div>
+		<div><a class="fbb" href='#' title=$tstrings['powercontrol'].replace(" ","&nbsp;") onclick="load_dm('ajax/powerstate','$tstrings["powercontrol"]');this.blur();return false;"><i class="fa fa-power-off" aria-hidden="true"></i></a></div>
+	<!--<div><a class="lmc fbb" href="ajax/screenshot" title=$tstrings['grabscreenshot'].replace(" ","&nbsp;")><i class="fa fa-camera-retro" aria-hidden="true"></i></a></div> -->
+		<div><a class="fbb" href='#' title=$tstrings['sendamessage'].replace(" ","&nbsp;") onclick="load_message_dm('ajax/message','$tstrings["sendamessage"]');this.blur();return false;"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></div>
+		#if $textinputsupport == True
+		<div style="width: 30px;"><a class="fbb" href="#" title="Text" onclick="InputText();return false;" style="font-style: italic;font-size: 20px;text-align: center;text-decoration: underline;">T</a></div>
+		#end if
+		<div><a class="fbb" href='#' title=$tstrings['showfullremote'].replace(" ","&nbsp;") onclick="toggleFullRemote();return false;"><i class="fa fa-expand" aria-hidden="true"></i></a></div>
+		</div></div>
+		</li>
+		</ul>
+		<div class="ui-widget-header" style="border-bottom: none;background: none;margin-left: 5px;margin-right: 5px;"></div>
+		<table class="remotesmall" style="height:100px;">
+		<tr>
+			<td data-code="2"><button>1</button></td><td data-code="3"><button>2</button></td><td data-code="4"><button>3</button></td>
+		<tr>
+		<tr>
+			<td data-code="5"><button>4</button></td><td data-code="6"><button>5</button></td><td data-code="7"><button>6</button></td>
+		<tr>
+		<tr>
+			<td data-code="8"><button>7</button></td><td data-code="9"><button>8</button></td><td data-code="10"><button>9</button></td>
+		<tr>
+		<tr>
+			<td data-code="412" class="tdc bgray"><button>&lt;</button></td><td data-code="11"><button>0</button></td><td data-code="407" class="tdc bgray"><button>&gt;</button></td>
+		<tr>
+		</table>
+		<table class="remotesmall" style="height:20px;">
+		<tr>
+			<td data-code="398" class="tdc" style="background:red"><button></button></td>
+			<td data-code="399" class="tdc" style="background:green"><button></button></td>
+			<td data-code="400" class="tdc" style="background:#f5f501"><button></button></td>
+			<td data-code="401" class="tdc" style="background:#1a2cbd"><button></button></td>
+		<tr>
+		</table>
+		<table class="remotesmall" style="height:80px;">
+		<tr>
+			<td data-code="139"><button>Menu</button></td><td data-code="103" class="bgray"><button>&#x25B2;</button></td><td data-code="174"><button>Exit</button></td>
+		<tr>
+		<tr>
+			<td data-code="105" class="bgray"><button>&#x25C0;</button></td><td data-code="352" class="bgray"><button>OK</button></td><td data-code="106" class="bgray"><button>&#x25B6;</button></td>
+		<tr>
+		<tr>
+			<td data-code="358"><button>Info</button></td><td data-code="108" class="bgray"><button>&#x25BC;</button></td><td data-code="365"><button>EPG</button></td>
+		<tr>
+		</table>
+		#if $smallremote == 'ims'
+			<table class="remotesmall" style="height:20px;">
+			<tr>
+				<td data-code="167" class="tdc" style="background:#f08080"><button>Rec</button></td>
+				<td data-code="377" class="tdc bgray"><button>TV</button></td>
+				<td data-code="138" class="tdc bgray"><button>Help</button></td>
+				<td data-code="393" class="tdc bgray"><button>PVR</button></td>
+			<tr>
+			</table>
+		#else
+			<table class="remotesmall" style="height:20px;">
+			<tr>
+				<td data-code="393" class="tdf"><button>PVR</button></td>
+				<td data-code="377" class="tdf"><button>TV</button></td>
+				<td data-code="388" class="tdf"><button>Text</button></td>
+				<td data-code="138" class="tdf"><button>Help</button></td>
+			<tr>
+			</table>
+		#end if
+	<div class="help">
+		$tstrings['shiftforlong']
+	</div>
+	<ul>
+		<li style="margin-bottom:5px;margin-top:5px;">
+			<input type="checkbox" class="remotegrabscreen" name="remotegrabscreen1" /><span style="cursor:pointer;" title="$tstrings['titscreenshot'] $tstrings['grabscreenshot']" onclick="load_maincontent('ajax/screenshot');return false;">$tstrings['grabscreenshot']</span>
+		</li>
+	</ul>
+	<div class="volslider" style="display:table-row;margin-bottom:15px">
+		<div style="display:table-cell;vertical-align: middle;"><img style="margin-left:5px;" id="volimage" src="images/volume.png" title="" border="0" width="24" height="24">
+		</div>
+		<div style="vertical-align: middle;display:table-cell;">
+			<div id="slider" style="margin-left:10px;margin-right:10px;width:90px;"></div>
+		</div>
+		<div style="vertical-align: middle;display:table-cell;">
+			<input readonly class="ui-state-active" style="border:none;font-weight:bold;width:22px;user-select: none;" type="text" id="amount"/>
+		</div>
+	</div>
+	<div style="margin-bottom:5px;"></div>
+</div>
+#end def
+#def extrasMenu
+<ul>
+	<li><a class="lmc" href="ajax/boxinfo">$tstrings["box_info"]</a></li>
+	#for $extra in $extras
+		#set $target_url = $extra["key"];
+		#if 'nw' in $extra
+			#if $extra["nw"] == "1"
+			<li><a href="$target_url" target='_blank'>$extra["description"]</a></li>
+			#else
+			<li><a class="lmc pop" href="$target_url">$extra["description"]</a></li>
+			#end if
+		#else
+			<li><a class="lmc" href="$target_url">$extra["description"]</a></li>
+		#end if
+	#end for
+</ul>
+#end def
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<link rel="shortcut icon" href="images/favicon.png">
+	<link type="text/css" rel="stylesheet" href="css/jquery-ui.min.css">
+	#if $t not in ["original", "clear"]
+		#set $theme_css = $t + '.min.css'
+		<link type="text/css" rel="stylesheet" href="themes/$theme_css">
+	#end if
+	<link type="text/css" href="css/style.min.css?v2" rel="stylesheet"/>
+	#if $t == "original"
+		<link type="text/css" href="css/theme_original.css" rel="stylesheet"/>
+	#end if
+	<link type="text/css" href="web/css" rel="stylesheet"/>
+	#if $USERCSSCLASSIC != ''
+		<link rel="stylesheet" type="text/css" href="$USERCSSCLASSIC">
+	#end if
+	<link rel="stylesheet" type="text/css" href="/css/materialicons.min.css">
+	<title>$boxname - OpenWebif</title>
+</head>
+#set $body_classes = [$t]
+#if $t not in ["original", "original-small-screen"]
+#set $body_classes += ["ui-widget-header"]
+#end if
+#if $t in ["excite-bike", "pepper-grinder"]
+#set $body_classes += ["ui-state-hover"]
+#end if
+#set $body_css_class = ' '.join($body_classes)
+<body class="$body_css_class">
+	<div id="container">
+		<div id="header">
+			<h1><a href="/">Open<span class="ui-state-active">Webif</span></a></h1>
+			#if not $showname
+				#set boxname=$tstrings['box_info']
+			#end if
+			<h2>$tstrings['openwebif_header']<br/><span class="ui-state-active" onclick="load_maincontent('ajax/boxinfo'); return false">$boxname</span></h2>
+			<div id="statusheader">
+				<div id="osd">$tstrings['nothing_play']</div>
+				<div id="osd_status"></div>
+				<div id="osd_bottom"></div>
+			</div>
+		</div>
+
+		<div id="leftmenu" class="ui-widget-content">
+			<div id="menucontainer">
+				$menu($tstrings['main'], "main", $mainMenu)
+				$menu($tstrings['remote'], "remote", $remoteMenu)
+				$menu($tstrings['extras'], "extras", $extrasMenu)
+				$menu($tstrings['epgsearch'], "search", $searchMenu)
+			</div>
+
+			<div id="remotecontainer" style="display: none;">
+				<div class="some-leftmenu-main">
+					<div class="some-leftmenu-top ui-widget-header">$tstrings['remote']</div>
+					<div style="width:100%; text-align:center;">
+						<ul>
+							<li style="margin-bottom:5px;">
+								<div class="tbl"><div>
+								<div><a class="fbb" href='#' title=$tstrings['powercontrol'].replace(" ","&nbsp;") onclick="load_dm('ajax/powerstate','$tstrings["powercontrol"]');this.blur();return false;"><i class="fa fa-power-off" aria-hidden="true"></i></a></div>
+							<!--<div><a class="fbb" href='#' title=$tstrings['grabscreenshot'].replace(" ","&nbsp;") onclick="load_maincontent('ajax/screenshot');return false;"><i class="fa fa-camera-retro" aria-hidden="true"></i></a></div> -->
+								<div><a class="fbb" href='#' title=$tstrings['sendamessage'].replace(" ","&nbsp;") onclick="load_message_dm('ajax/message','$tstrings["sendamessage"]');this.blur();return false;"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></div>
+								#if $textinputsupport == True
+								<div style="width: 30px;"><a class="fbb" href="#" title="Text" onclick="InputText();return false;" style="font-style: italic;font-size: 20px;text-align: center;text-decoration: underline;">T</a></div>
+								#end if
+								<div><a class="fbb" href='#' title=$tstrings['hidefullremote'].replace(" ","&nbsp;") onclick="toggleFullRemote();return false;"><i class="fa fa-compress" aria-hidden="true"></i></a></div>
+								</div></div>
+							</li>
+						</ul>
+						<div class="ui-widget-header" style="border-bottom: none;background: none;margin-left: 5px;margin-right: 5px;"></div>
+						<table class="remotesmall" style="height:100px;">
+						<tr>
+							<td data-code="2"><button>1</button></td><td data-code="3"><button>2</button></td><td data-code="4"><button>3</button></td>
+						<tr>
+						<tr>
+							<td data-code="5"><button>4</button></td><td data-code="6"><button>5</button></td><td data-code="7"><button>6</button></td>
+						<tr>
+						<tr>
+							<td data-code="8"><button>7</button></td><td data-code="9"><button>8</button></td><td data-code="10"><button>9</button></td>
+						<tr>
+						<tr>
+							<td data-code="412" class="tdc bgray"><button>&lt;</button></td><td data-code="11"><button>0</button></td><td data-code="407" class="tdc bgray"><button>&gt;</button></td>
+						<tr>
+						</table>
+						<table class="remotesmall" style="height:20px;">
+						<tr>
+							<td data-code="398" class="tdc" style="background:red"><button></button></td>
+							<td data-code="399" class="tdc" style="background:green"><button></button></td>
+							<td data-code="400" class="tdc" style="background:#f5f501"><button></button></td>
+							<td data-code="401" class="tdc" style="background:#1a2cbd"><button></button></td>
+						<tr>
+						</table>
+						<table class="remotesmall" style="height:80px;">
+						<tr>
+							<td data-code="139"><button>Menu</button></td><td data-code="103" class="bgray"><button>&#x25B2;</button></td><td data-code="174"><button>Exit</button></td>
+						<tr>
+						<tr>
+							<td data-code="105" class="bgray"><button>&#x25C0;</button></td><td data-code="352" class="bgray"><button>OK</button></td><td data-code="106" class="bgray"><button>&#x25B6;</button></td>
+						<tr>
+						<tr>
+							<td data-code="358"><button>Info</button></td><td data-code="108" class="bgray"><button>&#x25BC;</button></td><td data-code="365"><button>EPG</button></td>
+						<tr>
+						</table>
+						<table class="remotesmall" style="height:20px;">
+						<tr>
+							<td data-code="115"><button>Vol+</button></td>
+							<td data-code="113"><button>Mute</button></td>
+							<td data-code="402"><button>CH+</button></td>
+						<tr>
+						<tr>
+							<td data-code="114"><button>Vol-</button></td>
+							<td data-code="388"><button class="_12">History</button></td>
+							<td data-code="403"><button>CH-</button></td>
+						<tr>
+						</table>
+						<table class="remotesmall" style="height:20px;">
+						<tr>
+							<td data-code="168" class="tdf"><button><span class="material-icons">fast_rewind</span></button></td>
+							<td data-code="207" class="tdf"><button><span class="material-icons">play_arrow</span></button></td>
+							<td data-code="119" class="tdf"><button><span class="material-icons">pause</span></button></td>
+							<td data-code="208" class="tdf"><button><span class="material-icons">fast_forward</span></button></td>
+						<tr>
+						</table>
+						<table class="remotesmall" style="height:20px;">
+						<tr>
+							<td data-code="165" class="tdf"><button><span class="material-icons">skip_previous</span></button></td>
+							<td data-code="167" class="tdf"><button><span class="material-icons" style="color:red;">fiber_manual_record</span></button></td>
+							<td data-code="128" class="tdf"><button><span class="material-icons">stop</span></button></td>
+							<td data-code="163" class="tdf"><button><span class="material-icons">skip_next</span></button></td>
+						<tr>
+						</table>
+						<table class="remotesmall" style="height:20px;">
+						<tr>
+							<td data-code="388" class="tdf"><button class="_12">Text</button></td>
+							<td data-code="392" class="tdf"><button class="_12">Audio</button></td>
+							<td data-code="370" class="tdf"><button class="_12">Sub</button></td>
+							<td data-code="393" class="tdf"><button class="_12">Video</button></td>
+						<tr>
+						</table>
+						<table class="remotesmall" style="height:20px;">
+						<tr>
+							<td data-code="366" class="tdf"><button>PVR</button></td>
+							<td data-code="377" class="tdf"><button>TV</button></td>
+							<td data-code="385" class="tdf"><button class="_12">Radio</button></td>
+							<td data-code="138" class="tdf"><button>Help</button></td>
+						<tr>
+						</table>
+						<table class="remotesmall" style="height:20px;">
+						<tr>
+							<td data-code="141" class="tdf"><button class="_12">Setup</button></td>
+							<td data-code="156" class="tdf"><button class="_11">Portal</button></td>
+							<td data-code="142" class="tdf"><button class="_12">Sleep</button></td>
+							<td data-code="359" class="tdf"><button class="_12">Timer</button></td>
+						<tr>
+						</table>
+						<table class="remotesmall" style="height:20px;">
+						<tr>
+							<td data-code="59" class="tdf"><button>F1</button></td>
+							<td data-code="60" class="tdf"><button>F2</button></td>
+							<td data-code="364" class="tdf"><button>Fav</button></td>
+							<td data-code="375" class="tdf"><button>PIP</button></td>
+						<tr>
+						</table>
+						<table class="remotesmall" style="height:20px;">
+						<tr>
+							<td data-code="158" class="tdf"><button class="_12">Back</button></td>
+							<td data-code="357" class="tdf"><button class="_12">Opt</button></td>
+							<td data-code="438" class="tdf"><button class="_10">Context</button></td>
+							<td data-code="373" class="tdf"><button class="_10">Aspect</button></td>
+						<tr>
+						</table>
+						<div class="help">
+							$tstrings['shiftforlong']
+						</div>
+						<ul>
+							<li style="margin-bottom:5px;">
+							<input type="checkbox" class="remotegrabscreen" name="remotegrabscreen2" /><span style="cursor:pointer;" title="Enable/Disable Screenhot on key press or $tstrings['grabscreenshot']" onclick="load_maincontent('ajax/screenshot');return false;">$tstrings['grabscreenshot']</span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="content">
+			<div id="content_container">
+			$content
+			</div>
+			<div id="footer"><h3>&nbsp;&nbsp;<a href="https://github.com/E2OpenPlugins">E2OpenPlugins</a> | <a href="http://www.opena.tv">openATV</a> | <a href="http://www.vuplus-community.net">Black Hole</a> | <a href="http://www.droidsat.org">OpenDroid</a> | <a href="http://www.egami-image.com">EGAMI</a> | <a href="http://www.hdfreaks.cc">OpenHDF</a> | <a href="https://www.nachtfalke.biz">openNFR</a> | <a href="https://openpli.org">OpenPli</a> | <a href="https://blackhole-community.com">Blackhole</a> | <a href="http://openspa.info">OpenSpa</a> | <a href="http://www.teamblue.tech">teamBlue</a> | <a href="http://www.world-of-satellite.com">OpenViX</a> | <a class="lmc" href="ajax/about">$tstrings['about']</a></h3></div>
+		</div>
+	</div>
+	<form name="portForm" action="web/stream.m3u" method="GET" target="_blank">
+		<input type="hidden" name="ref">
+		<input type="hidden" name="name">
+		<input type="hidden" name="device">
+		<input type="hidden" name="fname">
+	</form>
+	<form name="portFormTs" action="web/ts.m3u" method="GET" target="_blank">
+		<input type="hidden" name="file">
+		<input type="hidden" name="device">
+	</form>
+	<div id="modaldialog"></div>
+	<div id="dialog" title="Work in progress" style="display:none">
+		<p>Sorry, this function is not yet implemented.</p>
+	</div>
+	<div id="editTimerForm" title="$tstrings['edit_timer']"></div>
+
+	<script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.13.2.min.js"></script>
+	<script type="text/javascript" src="js/openwebif.min.js?v2.0.0"></script>
+	<script type="text/javascript" src="js/jquery-ui-timepicker-addon.min.js"></script>
+	<script type="text/javascript" src="/js/chosen-1.8.2.jquery.min.js"></script>
+	<script type="text/javascript">initJsTranslation($dumps($tstrings))</script>
+	<script type="text/javascript">
+		var h = window.innerHeight - 210;
+		var hh = h-70;
+		var css = document.createElement("style");
+		css.type = "text/css";
+		css.innerHTML = '#tvcontentmain { height: '+h.toString()+'px; } #tvcontent,#movies,#timers { height: '+hh.toString()+'px; }';
+		document.body.appendChild(css);
+
+		\$(document).ready(function() {
+			directlink();
+			\$('a.lmc').on("click", function() {
+				var target_url = \$(this).prop("href");
+				if(\$(this).hasClass("spin")) {
+					load_maincontent_spin(target_url);
+				}
+				else if(\$(this).hasClass("pop")) {
+					_epg_pop(target_url);
+				}
+				else {
+					load_maincontent(target_url);
+				}
+				return false;
+			});
+		});
+		theme = '$t';
+		SetLSValue('TimerListOffset',0);
+
+		\$(document).ready(function() {
+			\$("td",".remotesmall").click(function(e) {
+				var d = \$(this).data("code");
+				if (d != undefined) {
+	        		pressMenuRemote(d);
+				}
+    		});
+		});
+		function InputText()
+		{
+			var txt = prompt("$tstrings['enter_text']", "");
+			if (txt != null) {
+				var url = "/api/remotecontrol?text=" + txt;
+				webapi_execute(url);
+				callScreenShot();
+			}
+		}
+	</script>
+</body>
+</html>

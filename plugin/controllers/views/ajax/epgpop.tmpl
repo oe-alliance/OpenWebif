@@ -1,0 +1,173 @@
+#from urllib.parse import quote
+#from json import dumps
+#from Plugins.Extensions.OpenWebif.controllers.i18n import tstrings
+#if len($events) == 0
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+<head>
+<title>No items found.</title>
+</head>
+<body style="background: #FFFFFF; scrollbar: auto;">
+<img src="../images/not_found.jpg" title="No items found" border="0" style="display:none;" id="ajpg">
+<img src="../themes/not_found.png" title="No items found" border="0" onerror='\$(this).hide();\$("#ajpg").show();'>
+</body>
+</html>
+#else
+#set $t="original"
+#if $varExists('theme')
+	#set $t=$theme
+#end if
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="images/favicon.png">
+<script src="../js/jquery-2.2.4.min.js"></script>
+<script src="../js/jquery-ui-1.13.2.min.js"></script>
+<link rel="stylesheet" href="../css/jquery-ui.min.css">
+#if $t != "original" and $t != "clear"
+	#set $t = $t + '.min.css'
+	<link rel="stylesheet" href="../themes/$t">
+#end if
+<link type="text/css" href="../css/style.min.css" rel="stylesheet"/>
+<link type="text/css" href="../web/css" rel="stylesheet"/>
+<script type="text/javascript" src="../js/openwebif.min.js?v2.0.0"></script>
+<script type="text/javascript" src="../js/jquery-ui-timepicker-addon.min.js"></script>
+<script type="text/javascript" src="../js/chosen-1.8.2.jquery.min.js"></script>
+<script type="text/javascript">initJsTranslation($dumps($tstrings))</script>
+<style>
+
+a {text-decoration:none;color:#000;}
+.tb { display:inline-block; margin-left:3px;}
+.tb i.fa { font-size:32px;}
+#station { cursor:pointer;}
+.im { font-family:Impact,Arial;font-size:18px;text-decoration:none;}
+table { font-size:12px; font-family: Verdana,Arial,sans-serif;}
+.deltimer{display:none;}
+.ETV table {font-size:12px;width:100%;}
+.ETV table td { width:50px;height:40px;}
+.eft td { height:60px;vertical-align: middle;}
+.efi { width:100px;}
+.eft td > div { display:table;width:100%;}
+.esl1,.esl2 { display:table-cell;width:30%;font-size:13px;font-weight: bold;vertical-align: middle;height: 60px;padding-left: 10px;}
+.esl2 { width:70%;border-left: 1px solid black;}
+.eff {width:100% !important;vertical-align: top;padding-left:10px;}
+.efi img {width:100px;height:60px; border:none;}
+.eff1 {width:100%;}
+.panel.ui-state-hover { background-image: none; }
+</style>
+
+<title>Open Webif $tstrings['epg']</title>
+</head>
+<body>
+<div class="ETV">
+<table class="ui-widget ui-widget-content" border="0" cellspacing="1" cellpadding="5">
+#for $event in $events
+		#set $channel = $event.sname.replace("'", r"\'")
+		#set $title = $event.title.replace("'", r"\'")
+		#set $sref=quote($event.sref, safe=' ~@#$&()*!+=:;,.?/\'')
+
+	<tbody data-id='$sref;$event.begin_timestamp;$event.duration'>
+	<tr class="eft">
+	<td class="efi ui-widget-header" colspan="2"><img src="$event.picon" title=""></td>
+	<td style="width:100%;height:60px;">
+		<div>
+		<div class="esl1 panel ui-state-hover">$event.sname<br />
+			#if 'ns' in $event
+				#if '4097:' in $event.sref or '5002:' in $event.sref or 'http%3a' in $event.sref or 'https%3a' in $event.sref
+					IPTV
+				#else
+					$event.service_type / $event.ns
+				#end if
+			<br />
+			#end if
+			$event.date</div>
+		<div class="esl2 panel ui-state-hover">$event.title<br/>$event.begin&nbsp;-&nbsp;$event.end&nbsp;($event.duration min.)</div>
+		</div>
+	</td>
+	</tr>
+	<tr>
+		<td class="timerpanel panel ui-state-hover">
+			<a class="tb addtimer" href="#" onclick="addTimerEvent('$sref',$event.id,false);return false;" title="$tstrings['add_timer']">
+			<i class="fa fa-timerplus"></i>
+			</a>
+			<a class="tb deltimer" href="#" onclick="delTimerEvent('$sref',$event.id);return false;" title="$tstrings['delete_timer']">
+			<i class="fa fa-timertrash"></i>
+			</a>
+	</td>
+		<td class="panel ui-state-hover">
+		<a class="tb" href="#" onclick="addEditTimerEvent('$sref',$event.id);return false;" title="$tstrings['edit_timer']">
+			<i class="fa fa-timeredit"></i>
+			</a>
+			</td>
+		<td class="eff" rowspan="4"><div class="eff1">
+			<span>$event.shortdesc</span><br><br></div>
+			$event.longdesc
+	</td>
+	</tr>
+	<tr>
+		<td class="panel ui-state-hover">
+			<a class="tb" href="#" onclick="addTimerEvent('$sref',$event.id,true);return false;" title="$tstrings['add_zaptimer']">
+			<i class="fa fa-timerplay"></i>
+			</a>
+	</td>
+		<td class="panel ui-state-hover">
+				#if $at
+			<a class="tb" href="#" onclick="addAutoTimerEvent('$sref','$channel','$title','$event.begin','$event.end');return false;" title="$tstrings['add_autotimer']">
+				<i class="fa fa-timerat"></i>
+			</a>
+				#end if
+	</td>
+	</tr>
+	<tr>
+		<td class="panel ui-state-hover">
+			#if $moviedb == "Kinopoisk"
+				<a class="tb" target="_blank" href="http://www.kinopoisk.ru/index.php?first=no&kp_query=$quote($event.title)"><img src="../images/kinopoisk.png" style="width:24px; height:24px; margin:0px 3px 0px 0px" title="$tstrings['search_kinopoisk']" border="0"></a>
+			#elif $moviedb == "CSFD"
+				<a class="im tb" target="_blank" href="https://www.csfd.cz/hledat/?q=$event.title" title="$tstrings['search_csfd']">csfd</a>
+			#else
+				<a class="im tb" target="_blank" href="http://www.imdb.com/find?s=all&amp;q=$quote($event.title)" title="$tstrings['search_imdb']">IMDb</a>
+			#end if
+	</td>
+		<td></td>
+	</tr>
+</tbody>
+#end for
+</table>
+</div>
+<div id="editTimerForm" title="$tstrings['edit_timer']"></div>
+</body>
+<script type="text/javascript">
+var t = [
+#for $timer in $timers
+	{'begin':$timer.begin,'end':$timer.end,'sref':'$timer.serviceref'},
+#end for
+];
+#raw
+var reloadTimers = true;
+$(function() {
+	$('#editTimerForm').load('ajax/edittimer');
+	if (t.length > 0) {
+		var x = $(".ETV tbody");
+		if (x != undefined)
+			ShowTimers(t);
+	}
+});
+
+$(function() {
+	$(".ui-dialog").css({position: 'fixed',top:'10'});
+	$(document).scroll(function (e) {
+// FIXME !!
+//		if ($(".ui-widget-overlay"))
+//		{
+//			$(".ui-widget-overlay").css({ position: 'fixed',top: '0'});
+//			$(".ui-dialog").css({position: 'fixed',top: $(window).scrollTop()});
+//		}
+	});
+});
+
+#end raw
+</script>
+</html>
+#end if

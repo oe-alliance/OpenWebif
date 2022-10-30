@@ -1,0 +1,136 @@
+#filter WebSafe
+#from Plugins.Extensions.OpenWebif.controllers.i18n import tstrings
+<style>
+optgroup {font-weight: bolder;}
+#epgrefreshcontent label
+{
+	-webkit-margin-top-collapse: separate;
+	margin-top: 1.5em;
+	display: inline-block;
+}
+.t2,.t3 { display:table;width: 100%; padding-bottom:10px;background-image:none;}
+.t2 > div { display:table-cell;width: 50%;}
+.t3 > div { display:table-cell;width: 33%;}
+.t3.ui-widget-content,.t2.ui-widget-content { border-top:none;border-left:none;border-right:none;}
+
+</style>
+<div id="content_main" style="min-height: 500px;" class="ui-widget-content">
+<div id="info">
+<div>
+<div style="display: inline-block; width: 100%; zoom: 1;background-image:none;" class="ui-widget-content">
+<h3 class="ui-widget-header">EPG Refresh</h3>
+<div id="epgrefreshcontent">
+	<form>
+	<fieldset style="border:none;">
+		<div class="t3 ui-widget-content">
+			<div>
+		<label for="enabled">$tstrings['er_enabled']:</label>
+		<input type="checkbox" id="er_enabled" value="">
+			</div>
+			<div>
+		<label for="er_enablemessage">$tstrings['er_enable_messages']:</label>
+		<input type="checkbox" id="er_enablemessage" value="">
+			</div>
+			<div>
+		</span><label for="er_adapter">$tstrings['er_adapter']:</label>
+		<select id="er_adapter">
+		<option value="main" selected="selected">$tstrings['er_main']</option>
+		<option value="pip">$tstrings['er_pip']</option>
+		<option value="pip_hidden">$tstrings['er_pip_hidden']</option>
+		<option value="record">$tstrings['er_fake_recording']</option>
+		</select>
+			</div>
+		</div>
+		<div class="t2 ui-widget-content">
+			<div>
+		<label for="er_begin">$tstrings['er_begin']:</label>
+		<input type="text" id="er_begin" value="" class="text date ui-widget-content ui-corner-all">
+			</div>
+			<div>
+		<label for="er_end">$tstrings['er_end']:</label>
+		<input type="text" id="er_end" value="" class="text date ui-widget-content ui-corner-all">
+			</div>
+		</div>
+		<div class="t2 ui-widget-content">
+			<div>
+		<label for="er_delay_standby">$tstrings['er_delay_standby']:</label>
+		<input type="text" id="er_delay_standby">
+			</div>
+			<div>
+		<label id="lblm" for="er_interval">$tstrings['er_interval_min']:</label><label id="lbls" for="er_interval">$tstrings['er_interval_sec']:</label>
+		<input type="text" id="er_interval" class="text ui-widget-content ui-corner-all">
+			</div>
+		</div>
+		<div class="t3 ui-widget-content">
+			<div>
+		<label for="er_afterevent">$tstrings['er_afterevent']:</label>
+		<input type="checkbox" id="er_afterevent" value="">
+			</div>
+			<div>
+		<label for="er_force">$tstrings['er_force']:</label>
+		<input type="checkbox" id="er_force" value="">
+			</div>
+			<div>
+		<label for="er_wakeup">$tstrings['er_wakeup']:</label>
+		<input type="checkbox" id="er_wakeup" value="">
+			</div>
+		</div>
+		<div class="t2 ui-widget-content">
+			<div>
+		<span id="er_hasAT"><label for="er_inherit_autotimer">$tstrings['er_inherit_autotimer']:</label>
+		<input type="checkbox" id="er_inherit_autotimer" value="">
+			</div>
+			<div>
+		<label for="er_parse_autotimer">$tstrings['er_parse_autotimer']:</label>
+		<select id="er_parse_autotimer">
+		<option value="always">$tstrings['er_always']</option>
+		<option value="never" selected="selected">$tstrings['er_never']</option>
+		<option value="bg_only">$tstrings['er_bg_only']</option>
+		<option value="ask_yes">$tstrings['er_ask_yes']</option>
+		<option value="ask_no">$tstrings['er_ask_no']</option>
+		</select>
+			</div>
+		</div>
+		<br>
+		<label for="bouquets">$tstrings['bouquets']:</label>
+		<br>
+		<select data-placeholder="$tstrings['at_select_bouquets']" id="bouquets" class="bq_select_box" multiple tabindex="16">
+		</select>
+		<br>
+		<label for="channels">$tstrings['at_channels']:</label>
+		<br>
+		<select data-placeholder="$tstrings['at_select_channels']" id="channels" class="ch_select_box" multiple tabindex="16">
+		</select>
+		<br>
+		<br>
+	</fieldset>
+	</form>
+	<div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+	<div id="actions">
+	<button id="epgrbutton0">$tstrings['reload']</button>
+	<button id="epgrbutton1">$tstrings['er_save']</button>
+	<button id="epgrbutton2">$tstrings['er_refresh']</button>
+	</div></div>
+
+	<div id="statuscont" style="display:none;margin-top:10px;">
+	<div id="statusbox" class="ui-state-error ui-corner-all" style="padding: 0 .7em;"> 
+		<p>
+			<span id="statusicon" class="ui-icon ui-icon-alert" style="margin-right: .3em;"></span>
+			<span id="statustext"></span>
+		</p>
+	</div>
+	</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+#if $showiptvchannelsinselection
+var EPGRnoiptv=false;
+#else
+var EPGRnoiptv=true;
+#end if
+</script>
+<script type="text/javascript" src="js/epgr.min.js?v1.8"></script>
+<link rel="stylesheet" type="text/css" href="css/chosen.min.css" />
+#end filter

@@ -1,0 +1,2184 @@
+# Administrador <hsa2000@gmail.com>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenWebif\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-10 09:36+0000\n"
+"PO-Revision-Date: 2021-12-02 19:56+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Catalan <https://hosted.weblate.org/projects/e2openplugin-"
+"openwebif/e2openplugin-openwebif/ca/>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.10-dev\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: iso-8859-1\n"
+"X-Poedit-SearchPath-0: ../plugin\n"
+
+#, python-format
+msgid "%02d.%02d."
+msgstr ""
+
+#, python-format
+msgid "%02d.%02d.%d"
+msgstr ""
+
+#, python-format
+msgid "%02d:%02d"
+msgstr ""
+
+msgid "%d.%m.%Y"
+msgstr ""
+
+msgid "%d.%m.%Y %H:%M"
+msgstr ""
+
+#, python-format
+msgid "%s %02d.%02d."
+msgstr ""
+
+#, python-format
+msgid "%s %02d.%02d.%d"
+msgstr ""
+
+#, python-format
+msgid "%s %s is locked."
+msgstr "%s %s està bloquejat."
+
+#, python-format
+msgid "%s / %s"
+msgstr ""
+
+#, python-format
+msgid "%s Style"
+msgstr ""
+
+#, python-format
+msgid "%s free / %s total"
+msgstr "%s lliure / %s total"
+
+msgid "(Press 'shift' and click to 'hold')"
+msgstr "(shift + click per a una pulsació llarga)"
+
+#, fuzzy
+msgid "(in minutes)"
+msgstr "Minut"
+
+msgid "A filename is required"
+msgstr "Si us plau, introdueix el nom de l'arxiu"
+
+msgid "A value is required"
+msgstr ""
+
+msgid "AGC"
+msgstr "AGC"
+
+msgid "About"
+msgstr "Sobre"
+
+msgid "Add"
+msgstr "Afegir"
+
+msgid "Add  AutoTimer  to tags"
+msgstr "Afegir Autotimer a les etiquetes"
+
+msgid "Add AutoTimer name to tags"
+msgstr "Afegir nom a les etiquetes"
+
+msgid "Add Bouquet"
+msgstr "Afegir llista"
+
+msgid "Add IPTV/URL"
+msgstr ""
+
+msgid "Add Marker"
+msgstr "Afegir marca"
+
+msgid "Add Spacer"
+msgstr ""
+
+msgid "Add a timer"
+msgstr "Afegir Gravació"
+
+msgid "Add a zap timer"
+msgstr "Afegir Temporitzador de zàping"
+
+msgid "Add an AutoTimer"
+msgstr "Afegir AutoProgramació"
+
+msgid "Add channel(s) as alternate"
+msgstr "Afegir canal(s) com alternatiu"
+
+#, fuzzy
+msgid "Add filters"
+msgstr "Afegir Gravació"
+
+msgid "Add selection to bouquet"
+msgstr "Afegir canal(s) a llista"
+
+msgid "Add service name to stream information"
+msgstr "Afegir nom de servei a la informació de stream"
+
+msgid "Add similar on conflict"
+msgstr "Afegir similar quan hi ha conflicte"
+
+msgid "Add tags to recordings"
+msgstr ""
+
+#, python-format
+msgid "Added %s to alternative service %s."
+msgstr "%s afegit al servei alternatiu %s."
+
+msgid "Adjust recording time to real event time"
+msgstr ""
+
+msgid "After event"
+msgstr "Després del programa"
+
+msgid "All"
+msgstr "Tot"
+
+msgid "All Channels"
+msgstr "Tots els Canals"
+
+msgid ""
+"All Files of this Software are open source software; you can redistribute it "
+"and/or modify it under the terms of the GNU General Public License version 3 "
+"as published by the Free Software Foundation."
+msgstr ""
+"Tots els arxius d'aquest software són software de codi obert;  pots "
+"redistribuir-lo i / o modificar-lo baix els termes de la Llicència Pública "
+"General GNU versió 3, publicada per la Free Software Foundation."
+
+msgid "All alternative services deleted."
+msgstr "Tots els serveis alternatius esborrats."
+
+msgid "Allow IPK Upload"
+msgstr ""
+
+msgid "Allow duplicates"
+msgstr ""
+
+#, python-format
+msgid "Alternative %s created failed."
+msgstr "Crear alternativa %s ha fallat."
+
+msgid "Always"
+msgstr "Sempre"
+
+msgid "Answer is NO!"
+msgstr "¡La resposta és NO!"
+
+msgid "Answer is YES!"
+msgstr "¡La resposta és SI!"
+
+msgid "Any"
+msgstr ""
+
+msgid "Any day"
+msgstr ""
+
+msgid "Any service/recording"
+msgstr "Qualsevol servei/gravació"
+
+msgid "April"
+msgstr "Abril"
+
+msgid "Are you sure you want to delete the selected bouquet?"
+msgstr "Realment vols esborrar la llista?"
+
+msgid "Are you sure you want to delete the selected item(s)?"
+msgstr ""
+
+#, fuzzy
+msgid "Are you sure you want to delete this AutoTimer?"
+msgstr "Vols esborrar la gravació?"
+
+msgid "Are you sure you want to delete this recording?"
+msgstr "Vols esborrar la pel·lícula?"
+
+msgid "Are you sure you want to delete this timer?"
+msgstr "Vols esborrar la gravació?"
+
+msgid "Are you sure you want to rename this recording?"
+msgstr "Estàs segur en renombrar la gravació"
+
+msgid "Are you sure you want to restore from file?"
+msgstr "Realment vols restaurar des de l'arxiu?"
+
+#, fuzzy
+msgid "Are you sure you want to start recording instantly?"
+msgstr "Iniciar Gravació Instantània"
+
+msgid "Ask, default No"
+msgstr "Preguntar, per defecte No"
+
+msgid "Ask, default Yes"
+msgstr "Preguntar, per defecte Si"
+
+msgid "Audio Encoding"
+msgstr ""
+
+msgid "Audio PID (APID)"
+msgstr ""
+
+msgid "Audio Track"
+msgstr ""
+
+msgid "August"
+msgstr "Agost"
+
+msgid "Authors"
+msgstr "Autor"
+
+msgid "Auto"
+msgstr "Automàtic"
+
+msgid "AutoPoll"
+msgstr ""
+
+msgid "AutoTimer Edit"
+msgstr "Editar autoProgramació"
+
+msgid "AutoTimer Settings"
+msgstr "Configuració Autotimer"
+
+msgid "AutoTimers"
+msgstr "Llista autoProg."
+
+msgid "Autotimer Preview"
+msgstr "Previsualitzar AutoProgramació"
+
+msgid "BER"
+msgstr "BER"
+
+msgid "Back"
+msgstr "Enrera"
+
+msgid "Background only"
+msgstr "Només en segon pla"
+
+msgid "Begin"
+msgstr "Iniciar"
+
+#, fuzzy
+msgid "Begin of \"After event\" timespan"
+msgstr "Inici del \"després del programa\" interval de temps"
+
+msgid "Beginning of timespan"
+msgstr "Inici de l'interval de temps"
+
+msgid "Bit Error Rate (BER)"
+msgstr ""
+
+msgid "Bookmark"
+msgstr ""
+
+msgid "Bookmarks"
+msgstr ""
+
+#, python-format
+msgid "Bouquet %s already exists."
+msgstr "Llista %s ja existeix."
+
+#, python-format
+msgid "Bouquet %s can not be moved."
+msgstr "Llista %s no es pot moure."
+
+#, python-format
+msgid "Bouquet %s created."
+msgstr "Llista %s creada."
+
+#, python-format
+msgid "Bouquet %s deleted."
+msgstr "Llista %s esborrada."
+
+#, python-format
+msgid "Bouquet %s is locked."
+msgstr "Llista %s bloquejada."
+
+#, python-format
+msgid "Bouquet %s is unlocked."
+msgstr "Llista %s desbloquejada."
+
+#, python-format
+msgid "Bouquet %s moved."
+msgstr "Llista %s moguda."
+
+#, python-format
+msgid "Bouquet %s removed failed, sevicerefence or mutable list is not valid."
+msgstr ""
+"Ha fallat l'esborrat de la llista %s, servicereference o llista mutable no "
+"són vàlids."
+
+#, python-format
+msgid "Bouquet %s removed failed."
+msgstr "Ha fallat l'esborrat de la llista %s."
+
+msgid "Bouquet Editor"
+msgstr "Editor de llistes"
+
+msgid "Bouquet name"
+msgstr "Nom de la llista"
+
+msgid "Bouquet renamed successfully."
+msgstr "Llista renombrada correctament."
+
+msgid "Bouquet-settings were restored successfully"
+msgstr "Configuració de llistes s'ha restaurat amb èxit"
+
+msgid "BouquetEditor"
+msgstr "Editor de llistes"
+
+msgid "Bouquetlist is not editable!"
+msgstr "Llista de favorits no és editable!"
+
+msgid "Bouquets"
+msgstr "Llistes"
+
+msgid "Box"
+msgstr "Decodificador"
+
+msgid "Box Control"
+msgstr "Control Deco"
+
+msgid "Box Info"
+msgstr "Informació Deco"
+
+msgid "Box uptime"
+msgstr "Funcionament Decodificador"
+
+msgid "Brand"
+msgstr "Marca"
+
+msgid "Build"
+msgstr ""
+
+msgid "Cable"
+msgstr "Cable"
+
+msgid "Calendar Week"
+msgstr "Calendari setmanal"
+
+msgid "Cancel"
+msgstr "Cancel·lar"
+
+#, fuzzy
+msgid "Cancelled"
+msgstr "Cancel·lar"
+
+msgid "Capacity"
+msgstr "Capacitat"
+
+msgid "Capture screenshot"
+msgstr "Captura de Pantalla"
+
+msgid "Channel"
+msgstr "Canal"
+
+msgid "Channels"
+msgstr "Canals"
+
+msgid "Character encoding for EPG data"
+msgstr "Codificació de caràcters per a l'EPG"
+
+msgid "Chipset"
+msgstr "Chipset"
+
+msgid "Cleanup Timers"
+msgstr "Netejar Gravacions"
+
+msgid "Close"
+msgstr "Tancar"
+
+#, fuzzy
+msgid "Common Settings"
+msgstr "Configuració"
+
+msgid "Config"
+msgstr ""
+
+#, python-format
+msgid "Conflicting Timer(s) detected! %s"
+msgstr "Temporitzador(s) conflictiu(s) detectat(s)! %s"
+
+msgid "Contributors"
+msgstr "Col·laboradors"
+
+msgid "Control"
+msgstr "Control"
+
+#, python-format
+msgid "Could not add timer '%s'!"
+msgstr "No es pot afegir el temporitzador '%s'!"
+
+#, python-format
+msgid "Could not find timer '%s' with given start and end time!"
+msgstr "No s'ha trobat el temporitzador '%s' amb aquests temps d'inici i fi."
+
+msgid "Create bouquet from selection"
+msgstr "Afegir proveïdor com nova llista"
+
+msgid "Current"
+msgstr "Actual"
+
+msgid "Current Event"
+msgstr "Programa Actual"
+
+msgid "Currently recording"
+msgstr ""
+
+msgid "Custom box name"
+msgstr "Nom personalitzat del deco"
+
+msgid "Custom offset"
+msgstr "Marge personalitzat"
+
+msgid "DHCP"
+msgstr "DHCP"
+
+msgid "Date"
+msgstr "Data"
+
+msgid "Date (newest)"
+msgstr ""
+
+msgid "Date (oldest)"
+msgstr ""
+
+msgid "Debug - Display Tracebacks in browser"
+msgstr ""
+
+msgid "December"
+msgstr "Desembre"
+
+msgid "Deep Standby"
+msgstr "Repòs Profund"
+
+msgid "Default"
+msgstr "Per Defecte"
+
+msgid "Delay Standby"
+msgstr "Retard repòs"
+
+msgid "Delete"
+msgstr "Esborrar"
+
+#, fuzzy
+msgid "Delete Bookmark"
+msgstr "Esborrar Gravació"
+
+msgid "Delete Bouquet"
+msgstr "Esborrar llista"
+
+msgid "Delete Recording"
+msgstr "Esborrar Pel·lícula"
+
+msgid "Delete Timer"
+msgstr "Esborrar Gravació"
+
+msgid ""
+"Delete failed, because there is no movie trash !\n"
+"Disable movie trash in configuration to delete this item"
+msgstr ""
+
+#, fuzzy
+msgid "Deleted"
+msgstr "Esborrar"
+
+msgid "Description"
+msgstr "Descripció"
+
+msgid "Device"
+msgstr ""
+
+#, fuzzy
+msgid "Disable"
+msgstr "deshabilitat"
+
+msgid "Disable Timer"
+msgstr "Deshabilitar Gravació"
+
+msgid "Disable remote access for user root"
+msgstr "Deshabilitar accès remot per a l'usuari root"
+
+msgid "Disabled on conflict"
+msgstr "Desactivat quan hi ha conflicte"
+
+msgid "Display Mode"
+msgstr "Mode visualització"
+
+msgid "Display duration (s)"
+msgstr "Duració de visualització (s)"
+
+msgid "Distro"
+msgstr "Distribució"
+
+msgid "Dolby"
+msgstr "Dolby"
+
+msgid "Don't create timer when movie exists in database"
+msgstr ""
+
+msgid "Done"
+msgstr "Realitzat"
+
+msgid "Download"
+msgstr "Baixar"
+
+msgid "Download playlist for"
+msgstr "Baixar Llista de reproducció per a"
+
+msgid "Drivers"
+msgstr "Data de driver"
+
+msgid "Duration"
+msgstr "Duració"
+
+msgid "E"
+msgstr "E"
+
+msgid "EPG"
+msgstr "EPG"
+
+msgid "EPG encoding"
+msgstr "Codificació EPG"
+
+msgid "EPGRefresh"
+msgstr ""
+
+msgid "ERROR: Cannot set SleepTimer while device is in Standby-Mode"
+msgstr ""
+"ERROR: No es pot configurar un temporitzador d'apagat si el dispositiu està "
+"en mode d'espera"
+
+#, fuzzy
+msgid "Edit"
+msgstr "Editor"
+
+#, fuzzy
+msgid "Edit Recording"
+msgstr "Esborrar Pel·lícula"
+
+msgid "Edit Timer"
+msgstr "Editar Gravació"
+
+msgid "Editor"
+msgstr "Editor"
+
+#, fuzzy
+msgid "Enable"
+msgstr "Habilitar"
+
+msgid "Enable Authentication for streaming"
+msgstr "Habilitar autenticació per a streaming"
+
+msgid "Enable HTTP Authentication"
+msgstr "Autenticació enllaç HTTP"
+
+msgid "Enable HTTPS"
+msgstr "Habilitar HTTPS"
+
+msgid "Enable HTTPS Authentication"
+msgstr "Autenticació enllaç HTTPS"
+
+msgid "Enable Messages"
+msgstr "Habilitar missatges"
+
+msgid "Enable Parental Control"
+msgstr "Habilitar Control Parental"
+
+msgid "Enable Timer"
+msgstr "Habilitar Gravació"
+
+msgid "Enable access from VPNs"
+msgstr "Habilitar accès des de VPNs"
+
+msgid "Enable filtering"
+msgstr "Habilitar filtrat"
+
+msgid "Enable/Disable Screenshot on key press or"
+msgstr ""
+
+msgid "Enabled"
+msgstr "Habilitar"
+
+msgid "Encrypted"
+msgstr "Encriptat"
+
+msgid "End"
+msgstr "Fi"
+
+#, fuzzy
+msgid "End of \"After event\" timespan"
+msgstr "Fi del \"després del programa\" interval de temps"
+
+msgid "End of timespan"
+msgstr "Fi de l'interval de temps"
+
+msgid "Enter a name for the new bouquet"
+msgstr "Introdueix nou nom per a la llista"
+
+msgid "Enter a name for the new marker"
+msgstr "Introdueix nou nom per a la marca"
+
+#, fuzzy
+msgid "Enter a name for this AutoTimer"
+msgstr "Introdueix nou nom per a la marca"
+
+msgid "Enter path"
+msgstr ""
+
+msgid "Enter text"
+msgstr ""
+
+msgid "Enter the text to find in the EPG"
+msgstr ""
+
+msgid "Error"
+msgstr "Error"
+
+msgid "Error parsing vps.xml"
+msgstr ""
+
+msgid "Error upload File"
+msgstr "Error pujant arxiu"
+
+#, python-format
+msgid "Error while preparing backup file, %s does not exists."
+msgstr "Error durant la preparació del backup, %s no existeix."
+
+msgid "Error while preparing backup file."
+msgstr "Error durant la preparació del backup."
+
+msgid "Error writing File"
+msgstr "Error escritura arxiu"
+
+#, python-format
+msgid "Error, %s does not exists, restore is not possible..."
+msgstr "Error, %s no existeix, la restauració no és possible..."
+
+#, python-format
+msgid "Error, %s was not created with WebBouquetEditor..."
+msgstr "Error, %s no ha sigut creat amb WebBouquetEditor..."
+
+#, python-format
+msgid "Error: Bouquet %s could not deleted, OSError."
+msgstr "Error: Llista %s no es pot esborrar, OSError."
+
+msgid "Event not found"
+msgstr "Event no trobat"
+
+msgid "EventId not found"
+msgstr "ID de programa no trobat"
+
+msgid "Every"
+msgstr "Cada"
+
+msgid "Exclude when"
+msgstr "Excloure"
+
+#, fuzzy
+msgid "Execute \"After event\" during timespan"
+msgstr "Executar \"després del programa\" durant l'interval de temps"
+
+msgid "Export"
+msgstr "Exportar"
+
+msgid "Extras"
+msgstr "Extres"
+
+msgid "Fake Recording"
+msgstr "Gravació falsa"
+
+msgid "Fastscan"
+msgstr "Recerca rápida"
+
+msgid "February"
+msgstr "Febrer"
+
+msgid "Firmware version"
+msgstr "Versió de firmware"
+
+msgid "Force"
+msgstr "Forçar"
+
+msgid "Fr"
+msgstr "Div"
+
+msgid "Free"
+msgstr "Lliure"
+
+msgid "Free Memory"
+msgstr "Memòria lliure"
+
+msgid "Free space"
+msgstr ""
+
+msgid "Fri"
+msgstr "Div"
+
+msgid "Friday"
+msgstr "Divendres"
+
+msgid "From date"
+msgstr "No després de"
+
+msgid "Front processor version"
+msgstr "Versió Frontprocessor"
+
+#, fuzzy
+msgid "Full remote"
+msgstr "Ocultar comandament completo"
+
+msgid "GB"
+msgstr ""
+
+msgid "GUI version"
+msgstr "Versió GUI"
+
+msgid "Gateway"
+msgstr "Porta d'enllaç"
+
+msgid "Get mutable list for new created alternative failed!"
+msgstr "Ha fallat l'obtenció de llista mutable per la nova alternativa creada!"
+
+msgid "Get mutable list for new created bouquet failed!"
+msgstr "Obtenir llista mutable per a la nova llista ha fallat!"
+
+msgid "HH:MM"
+msgstr ""
+
+msgid "HTTP port"
+msgstr "Port HTTP"
+
+msgid "HTTPS port"
+msgstr "Port HTTPS"
+
+msgid "Hard disk model"
+msgstr "Model Disc Duro"
+
+msgid "Hardware"
+msgstr ""
+
+msgid "Hide full remote"
+msgstr "Ocultar comandament completo"
+
+msgid "High Resolution"
+msgstr "Alta resolució"
+
+msgid "Hold to drag"
+msgstr ""
+
+msgid "Hour"
+msgstr "Hora"
+
+msgid "IPTV / URL name"
+msgstr ""
+
+msgid "IPv4 address"
+msgstr "Direcció IPv4"
+
+msgid "IPv4-only Python/Twisted"
+msgstr "IPv4-només Python/Twisted"
+
+msgid "IPv4-only kernel"
+msgstr "IPv4-només kernel"
+
+msgid "IPv6 address(es)"
+msgstr "Direcció(es) IPv6"
+
+msgid "Import"
+msgstr "Importar"
+
+msgid "Include description"
+msgstr "Incloure descripció"
+
+#, fuzzy
+msgid "Include extended description"
+msgstr "Incloure descripció"
+
+#, fuzzy
+msgid "Include short description"
+msgstr "Incloure descripció"
+
+msgid "Include when"
+msgstr "Incloure"
+
+msgid "Infinite Instant recording started"
+msgstr "Gravació instantània infinita iniciada"
+
+msgid "Info"
+msgstr "Informació"
+
+msgid "Information"
+msgstr ""
+
+msgid "Inherit AutoTimer"
+msgstr "Heretar Autotimer"
+
+msgid "Install Package"
+msgstr ""
+
+#, fuzzy
+msgid "Installed"
+msgstr "Gravació instantània"
+
+msgid "Instant Record"
+msgstr "Gravació instantània"
+
+msgid "Instant record for current Event started"
+msgstr "Gravació instantània iniciada per al programa actual"
+
+msgid "Internal error!"
+msgstr "Error intern!"
+
+msgid "Internal flash memory"
+msgstr ""
+
+#, fuzzy, python-format
+msgid "Interval (in %s)"
+msgstr "Interval (en h)"
+
+msgid "Interval (min.)"
+msgstr "Interval (min.)"
+
+msgid "Interval (sec.)"
+msgstr "Interval (seg.)"
+
+msgid "January"
+msgstr "Gener"
+
+msgid "Javascript Libraries"
+msgstr "Llibreries Javascript"
+
+msgid "July"
+msgstr "Juliol"
+
+msgid "June"
+msgstr "Juny"
+
+msgid "Just play"
+msgstr "Només repr."
+
+msgid "Kernel"
+msgstr "Versió Kernel"
+
+msgid "LCD"
+msgstr ""
+
+msgid "LCD4Linux Setup"
+msgstr "Configurar LCD4Linux"
+
+msgid "Label series"
+msgstr "Sèrie d'etiquetes"
+
+msgid "License"
+msgstr ""
+
+msgid "Link speed"
+msgstr ""
+
+msgid "List of Timers has been cleaned"
+msgstr "La llista de temporitzadors s'ha netejat"
+
+#, fuzzy
+msgid "Loading..."
+msgstr "carregant"
+
+msgid "Location"
+msgstr "Localització"
+
+msgid "Locked"
+msgstr "Bloquejat"
+
+msgid "MAC address"
+msgstr "Direcció MAC"
+
+msgid "MB"
+msgstr ""
+
+msgid "Main"
+msgstr "Principal"
+
+msgid "Main memory"
+msgstr "Memòria principal"
+
+msgid "March"
+msgstr "Març"
+
+msgid "Marker added."
+msgstr "Marcador afegit."
+
+msgid "Marker name"
+msgstr "Nom de la marca"
+
+msgid "Match text"
+msgstr "Coincidència de títul"
+
+msgid "Max Days"
+msgstr "Màxim de dies"
+
+msgid "May"
+msgstr "Maig"
+
+msgid "Message sent successfully!"
+msgstr "¡Missatge enviat correctament!"
+
+msgid "Method"
+msgstr "Mètode"
+
+msgid "Minimal EPG list"
+msgstr ""
+
+#, fuzzy
+msgid "Minimal movie list"
+msgstr "Llista de Pel·lícules"
+
+msgid "Minimal timer list"
+msgstr ""
+
+msgid "Minute"
+msgstr "Minut"
+
+#, python-format
+msgid "Missing mandatory parameter '%s'"
+msgstr "Falta paràmetre obligatori '%s'"
+
+msgid "Missing requesteter: sRef"
+msgstr ""
+
+msgid "Mo"
+msgstr "Dil"
+
+msgid "Model"
+msgstr "Model"
+
+msgid "Mon"
+msgstr "Dil"
+
+msgid "Monday"
+msgstr "Dilluns"
+
+msgid "Monthly"
+msgstr "Mensual"
+
+msgid "More"
+msgstr ""
+
+msgid "More details"
+msgstr ""
+
+msgid "Mount point"
+msgstr ""
+
+msgid "Movie database for EPG"
+msgstr ""
+
+#, fuzzy
+msgid "Movie search"
+msgstr "Pel·lícules"
+
+msgid "Movielist"
+msgstr "Llista de Pel·lícules"
+
+msgid "Movies"
+msgstr "Pel·lícules"
+
+msgid "Multi-Bouquet is not enabled!"
+msgstr "Multi-llistes no està habilitat!"
+
+msgid "MultiEPG"
+msgstr "MultiEPG"
+
+msgid "Mute/Unmute"
+msgstr ""
+
+msgid "NCam Webinterface"
+msgstr ""
+
+msgid "Name"
+msgstr "Nom"
+
+msgid "Name (a-z)"
+msgstr ""
+
+msgid "Name (z-a)"
+msgstr ""
+
+msgid "Namespace"
+msgstr "Nom d'espai"
+
+msgid "Network Interface"
+msgstr "Interfície de xarxa"
+
+msgid "Network Shares"
+msgstr "Muntatges de xarxa"
+
+msgid "Never"
+msgstr "Mai"
+
+msgid "New"
+msgstr "Nou"
+
+#, fuzzy
+msgid "New Bookmark:"
+msgstr "Esborrar Gravació"
+
+msgid "New Name"
+msgstr "Nom nou"
+
+msgid "No"
+msgstr "No"
+
+#, fuzzy
+msgid "No EPG data available."
+msgstr "no hi ha descripció disponible"
+
+msgid "No Parent Control Setup Pin given!"
+msgstr "Cap PIN per a configuració control parental introduït!"
+
+msgid "No answer in time"
+msgstr "Sense resposta a temps"
+
+msgid "No bouquet given!"
+msgstr "Cap llista introduida!"
+
+msgid "No bouquet name given!"
+msgstr "Cap nom de llista introduït!"
+
+msgid "No current service given!"
+msgstr "Cap servei actual introduït!"
+
+msgid "No event found! Not recording!"
+msgstr "No s'ha trobat programa! No s'està gravant!"
+
+msgid "No marker-name given!"
+msgstr "Cap nom de marcador introduït!"
+
+#, fuzzy
+msgid "No matches were found in the EPG"
+msgstr "No s'ha trobat coincidència als temporitzadors"
+
+msgid "No matching Timer found"
+msgstr "No s'ha trobat coincidència als temporitzadors"
+
+msgid "No network connection"
+msgstr ""
+
+msgid "No new servicename given!"
+msgstr "Cap nom de servei introduït!"
+
+msgid "No position given!"
+msgstr "Cap posició introduïda!"
+
+msgid "No provider given!"
+msgstr "Cap proveïdor introduït!"
+
+msgid "No service given!"
+msgstr "Cap servei introduït!"
+
+#, fuzzy
+msgid "No, cancel"
+msgstr "Cancel·lar"
+
+msgid "None"
+msgstr "Cap"
+
+msgid "Nothing"
+msgstr "Res"
+
+msgid "Nothing playing."
+msgstr "Res a reproduir."
+
+msgid "Notify if Conflict"
+msgstr "Notificar si hi ha conflicte"
+
+msgid "Notify if Similar"
+msgstr "Notificar si hi ha un similar"
+
+msgid "November"
+msgstr "Novembre"
+
+msgid "Now"
+msgstr "Ara"
+
+msgid "Now/Next Columns"
+msgstr ""
+
+msgid "Number of recordings remaining"
+msgstr "Quantitat de gravacions faltants"
+
+msgid "ONID"
+msgstr ""
+
+msgid "OSCam Webinterface"
+msgstr ""
+
+msgid "OSD"
+msgstr "OSD"
+
+msgid "October"
+msgstr "Octubre"
+
+msgid "Offset after recording (mins)"
+msgstr "Marge després de gravar (en min.)"
+
+msgid "Offset before recording (mins)"
+msgstr "Marge abans de gravar (en min.)"
+
+msgid "On"
+msgstr "On"
+
+msgid "On any service"
+msgstr "En qualsevol servei"
+
+msgid "On same service"
+msgstr "En el mateix servei"
+
+msgid "Only match between dates"
+msgstr "Restringir als programes en determinades dates"
+
+msgid "Only match during timespan"
+msgstr "Només coincidir durant l'interval de temps"
+
+msgid "Oops, no results matched your search"
+msgstr ""
+
+msgid "Oops..."
+msgstr ""
+
+msgid "Open Source Web Interface for Linux set-top box"
+msgstr "Interfície Web de Codi Lliure per a Receptors Linux"
+
+msgid "Open in new window"
+msgstr "Obrir en nova finestra"
+
+msgid "OpenWebInterface Enabled"
+msgstr "Enllaç OpenWebInterface"
+
+msgid "OpenWebif Browser Settings"
+msgstr "Configuració navegador OpenWebif"
+
+msgid "OpenWebif Configuration"
+msgstr "Configuració OpenWebif"
+
+msgid "OpenWebif Settings"
+msgstr "Configuració OpenWebif"
+
+#, fuzzy
+msgid "OpenWebif url:"
+msgstr "Enllaç OpenWebif:"
+
+msgid "Orbital Position"
+msgstr "Posició orbital"
+
+msgid "Override found with alternative service"
+msgstr "Anular trobat amb un servei alternatiu"
+
+msgid "PCR PID"
+msgstr ""
+
+msgid "PMT PID"
+msgstr ""
+
+msgid "Packages"
+msgstr ""
+
+msgid "Parent Control Setup Pin is wrong!"
+msgstr "PIN configuració control parental erroni!"
+
+msgid "Parent Control is not activated."
+msgstr "Control parental no està activat."
+
+msgid "Parse AutoTimer"
+msgstr "Analitzar Autotimer"
+
+msgid "PiP"
+msgstr ""
+
+msgid "Picture in Picture"
+msgstr "Picture in Picture"
+
+msgid "Picture in Picture (hidden)"
+msgstr "Picture in Picture (ocult)"
+
+msgid "Plain"
+msgstr ""
+
+msgid "Playback"
+msgstr "Reproducció"
+
+msgid "Playback IPTV Streams in browser"
+msgstr ""
+
+msgid "Playlist"
+msgstr "Llista de reproducció"
+
+#, fuzzy
+msgid "Playlist format"
+msgstr "Llista de reproducció"
+
+msgid "Power Control"
+msgstr "Control d'encesa"
+
+msgid "PowerTimer feature not available"
+msgstr "La característica temporitzador d'alimentació no està disponible."
+
+msgid "Preview"
+msgstr ""
+
+msgid "Primetimes"
+msgstr ""
+
+msgid "Process"
+msgstr "Analitzar"
+
+msgid "Provider"
+msgstr "Proveïdor"
+
+msgid "Providers"
+msgstr "Proveïdors"
+
+msgid "REC"
+msgstr ""
+
+msgid "Radio"
+msgstr "Ràdio"
+
+msgid "Reboot Box"
+msgstr "Reiniciar Deco"
+
+msgid "Record a maximum of # times"
+msgstr "Gravar un màxim de x vegades"
+
+msgid "Recording"
+msgstr ""
+
+#, fuzzy
+msgid "Recording Type"
+msgstr "Estat de Gravació"
+
+msgid "Refresh"
+msgstr "Refrescar"
+
+msgid "Refresh Timer"
+msgstr "Actualitzar Gravació"
+
+msgid "Refresh automatically every"
+msgstr "Actualitzar automàticament cada"
+
+msgid "Refresh now"
+msgstr "Refrescar ara"
+
+msgid "Reload"
+msgstr "Recarregar"
+
+msgid "Remote"
+msgstr "Comandament a distància"
+
+msgid "Remove Package"
+msgstr ""
+
+#, fuzzy
+msgid "Remove filter"
+msgstr "Comandament a distància"
+
+msgid "Rename"
+msgstr "Renombrar"
+
+msgid "Rename Bouquet"
+msgstr "Renombrar llista"
+
+msgid "Rename Recording"
+msgstr "Renombrar Gravació"
+
+msgid "Repeated"
+msgstr "Repetir"
+
+msgid "Require client cert for HTTPS"
+msgstr "Requereix certificat client per a HTTPS"
+
+msgid "Require description to be unique"
+msgstr "Requereix descripció per a ser únic"
+
+#, fuzzy
+msgid "Reset"
+msgstr "Restablir contador"
+
+msgid "Reset count"
+msgstr "Restablir contador"
+
+msgid "Restart GUI"
+msgstr "Reiniciar GUI"
+
+msgid "Restrict to bouquets"
+msgstr ""
+
+#, fuzzy
+msgid "Restrict to channels"
+msgstr "sel·leccionar canals"
+
+msgid "Root"
+msgstr "Carpeta arrel"
+
+msgid "SLAAC"
+msgstr ""
+
+msgid "SNR"
+msgstr "SNR"
+
+msgid "SRef"
+msgstr ""
+
+msgid "Sa"
+msgstr "Dis"
+
+msgid "Safe mode"
+msgstr "Mode segur"
+
+msgid "Sat"
+msgstr "Dis"
+
+msgid "Satellites"
+msgstr "Satèl·lits"
+
+msgid "Satfinder"
+msgstr "Buscador de satèl·lit"
+
+msgid "Saturday"
+msgstr "Dissabte"
+
+msgid "Save"
+msgstr "Guardar"
+
+msgid "Screenshot"
+msgstr "Captura de Pantalla"
+
+msgid "Search"
+msgstr "Buscar"
+
+#, fuzzy
+msgid "Search CSFD"
+msgstr "Buscar en IMDb"
+
+msgid "Search EPG"
+msgstr ""
+
+msgid "Search IMDb"
+msgstr "Buscar en IMDb"
+
+msgid "Search KinoPoisk"
+msgstr "Buscar KinoPoisk"
+
+#, fuzzy
+msgid "Search TV Guide UK"
+msgstr "Guia TV"
+
+msgid "Search by name, sd / hd / uhd, or provider"
+msgstr ""
+
+#, fuzzy
+msgid "Search strictness"
+msgstr "Buscar KinoPoisk"
+
+#, fuzzy
+msgid "Search type"
+msgstr "Buscar"
+
+msgid "Select IPK file for upload"
+msgstr ""
+
+msgid "Select..."
+msgstr ""
+
+msgid "Send"
+msgstr ""
+
+msgid "Send Message"
+msgstr "Enviar missatge"
+
+msgid "Send a Message"
+msgstr "Enviar un missatge"
+
+msgid "September"
+msgstr "Setembre"
+
+msgid "Service"
+msgstr "Servei"
+
+#, python-format
+msgid "Service %s added."
+msgstr "Servei %s afegit."
+
+#, python-format
+msgid "Service %s already exists in bouquet %s."
+msgstr "Servei %s ja existeix a la llista %s."
+
+#, python-format
+msgid "Service %s can not be removed."
+msgstr "Servei %s no es pot esborrar."
+
+#, python-format
+msgid "Service %s is locked."
+msgstr "Servei %s bloquejat."
+
+#, python-format
+msgid "Service %s is unlocked."
+msgstr "Servei %s desbloquejat."
+
+#, python-format
+msgid "Service %s moved."
+msgstr "Servei %s mogut."
+
+#, python-format
+msgid "Service %s removed from bouquet %s."
+msgstr "Servei %s esborrat de la llista %s."
+
+#, python-format
+msgid "Service %s removed."
+msgstr "Servei %s esborrat."
+
+msgid "Service ID (SID)"
+msgstr ""
+
+msgid "Service can not be moved."
+msgstr "Servei no es pot moure."
+
+msgid "Service can not be renamed."
+msgstr "Servei no es pot renombrar."
+
+msgid "Service is not an alternative."
+msgstr "Servei no és una alternativa."
+
+msgid "Service renamed successfully."
+msgstr "Servei renombrat correctament."
+
+msgid "Services"
+msgstr "Serveis"
+
+msgid "Serving stream"
+msgstr ""
+
+msgid "Set maximum duration"
+msgstr "Configurar duració màxima"
+
+msgid "Settings"
+msgstr "Configuració"
+
+msgid "Show EPG for"
+msgstr "Veure EPG per a"
+
+msgid "Show Full OpenWebif"
+msgstr "Veure OpenWebif Complert"
+
+msgid "Show IPTV channels in selection (eg. Autotimer)"
+msgstr ""
+
+msgid "Show all packages"
+msgstr ""
+
+msgid "Show box name in header"
+msgstr "Mostrar nom del deco a la capçalera"
+
+msgid "Show details"
+msgstr ""
+
+msgid "Show full remote"
+msgstr "Veure comandament a distància complert"
+
+msgid "Show in Extensions menu"
+msgstr "Mostrar al menú d'extensions"
+
+msgid "Show picon background"
+msgstr ""
+
+msgid "Show picons"
+msgstr ""
+
+msgid "Show picons in channel list"
+msgstr "Mostar Picon en llista de canals"
+
+#, fuzzy
+msgid "Show service type in channel list"
+msgstr "Mostar Picon en llista de canals"
+
+msgid "Shutdown"
+msgstr "Apagar"
+
+msgid "Signal Power (AGC)"
+msgstr ""
+
+msgid "Signal Quality (SNR DB)"
+msgstr ""
+
+msgid "Signal Quality (SNR)"
+msgstr ""
+
+msgid "Simulate"
+msgstr "Simular"
+
+msgid "Site and sources"
+msgstr "Lloc i fonts"
+
+msgid "Skins"
+msgstr ""
+
+msgid "SleepTimer error"
+msgstr "Error temporitzador d'apagat"
+
+msgid "Sleeptimer has been disabled"
+msgstr "El temporitzador d'apagat s'ha desactivat"
+
+msgid "Sleeptimer is disabled"
+msgstr "Temporitzador d'apagat desactivat"
+
+msgid "Sleeptimer is enabled"
+msgstr "Temporitzador d'apagat activat"
+
+#, fuzzy, python-format
+msgid "Sleeptimer set to %d minutes"
+msgstr "Temporitzador d'apagat configurat a %d minuts"
+
+msgid "Small remote layout"
+msgstr ""
+
+msgid "Software"
+msgstr "Software"
+
+msgid "Sorry this page is not yet implemented"
+msgstr "Ho sentim, aquesta pàgina encara no està implementada"
+
+msgid "Sort"
+msgstr ""
+
+msgid "Spinner"
+msgstr ""
+
+msgid "Standby"
+msgstr "Mode d'espera"
+
+msgid "Start"
+msgstr "Inici"
+
+msgid "Start Instant Record"
+msgstr "Iniciar Gravació Instantània"
+
+msgid "Start time is after end time"
+msgstr "L'hora d'inici és després de l'hora de finalització"
+
+msgid "Start typing..."
+msgstr ""
+
+msgid "State"
+msgstr ""
+
+msgid "Storage"
+msgstr ""
+
+msgid "Stream"
+msgstr "Stream"
+
+#, fuzzy
+msgid "Stream Clients"
+msgstr "Stream"
+
+#, fuzzy
+msgid "Streaming port"
+msgstr "Stream"
+
+msgid "Su"
+msgstr "Diu"
+
+msgid "Subdirectories"
+msgstr ""
+
+msgid "Subnet mask"
+msgstr "Màscara de xarxa"
+
+msgid "Subservices"
+msgstr "Subserveis"
+
+msgid "Sun"
+msgstr "Diu"
+
+msgid "Sunday"
+msgstr "Diumenge"
+
+msgid "System OE"
+msgstr "Sistema OE"
+
+msgid "TB"
+msgstr ""
+
+msgid "TSID"
+msgstr ""
+
+msgid "TV"
+msgstr "TV"
+
+msgid "TV Guide"
+msgstr "Guia TV"
+
+msgid "TV Multi EPG"
+msgstr "TV Multi EPG"
+
+msgid "Tags"
+msgstr "Etiquetes"
+
+msgid "Teletext"
+msgstr "Teletext"
+
+msgid "Teletext PID"
+msgstr "Teletext PID"
+
+msgid "Television"
+msgstr "Televisió"
+
+msgid "Template Engine"
+msgstr "Motor de la Plantilla"
+
+msgid "Terminal"
+msgstr ""
+
+msgid "Terrestrial"
+msgstr "Terrestre"
+
+msgid "Text"
+msgstr "Text"
+
+msgid "Th"
+msgstr "Dij"
+
+#, python-format
+msgid "The parameter '%s' can't be empty"
+msgstr "El paràmetre '%s' no pot estar buit"
+
+msgid "The parameter 'command' must be a number"
+msgstr "El paràmetre 'ordre' ha de ser un número"
+
+#, python-format
+msgid "The timer '%s' has been %s successfully"
+msgstr "El temporitzador '%s' ha sigut %s satisfactòriament"
+
+#, python-format
+msgid "The timer '%s' has been deleted successfully"
+msgstr "El tmeporitzador '%s' s'ha eliminat satisfactòriament"
+
+#, python-format
+msgid "The timer '%s' now recorded! Not disabled!"
+msgstr "Temporitzador '%s' s'ha gravat! No està deshabilitat!"
+
+msgid "Theme"
+msgstr "Tema"
+
+#, fuzzy
+msgid "Theme mode"
+msgstr "Tema"
+
+msgid "This service can not be added."
+msgstr "Aquest servei no es pot afegir."
+
+msgid "Thu"
+msgstr "Dij"
+
+msgid "Thursday"
+msgstr "Dijous"
+
+msgid "Time"
+msgstr "Temps"
+
+msgid "Timeline"
+msgstr "Plaç"
+
+msgid "Timeout"
+msgstr "Temps d'espera"
+
+msgid "Timer"
+msgstr "Gravació"
+
+#, python-format
+msgid "Timer '%s' added"
+msgstr "Temporitzador '%s' afegit"
+
+#, python-format
+msgid "Timer '%s' already exists!"
+msgstr "Temporitzador '%s' ja existeix!"
+
+#, python-format
+msgid "Timer '%s' changed"
+msgstr "Temporitzador '%s' canviat"
+
+#, python-format
+msgid "Timer '%s' not enabled while Conflict"
+msgstr "Temporitzador %s no habilitat durant el conflicte"
+
+#, python-format
+msgid "Timer '%s' not saved while Conflict"
+msgstr "El temporitzador '%s' no s'ha guardat per un conflicte"
+
+msgid "Timer Added"
+msgstr "Temporitzador afegit"
+
+msgid "Timer Conflict"
+msgstr ""
+
+msgid "Timer added"
+msgstr "Afegir gravació"
+
+msgid "Timer conflict detected! Not recording!"
+msgstr "Detectat conflicte entre temporitzadors. No s'està gravant."
+
+msgid "Timer type"
+msgstr "Tipus gravació"
+
+msgid "TimerList has been saved"
+msgstr "La llista de temporitzadors s'ha guardat"
+
+msgid "Timerlist"
+msgstr "Llista de gravacions"
+
+msgid "Timers"
+msgstr "Gravacions"
+
+msgid "Title"
+msgstr "Títul"
+
+msgid "To date"
+msgstr "No abans de"
+
+msgid "Today"
+msgstr ""
+
+msgid "Toggle Standby"
+msgstr ""
+
+msgid "Transcode"
+msgstr "Transcodificar"
+
+msgid "Translation to Spanish"
+msgstr "Traducció a l'espanyol"
+
+msgid "Try guessing"
+msgstr "Tractar d'encertar"
+
+msgid "Tu"
+msgstr "Dim"
+
+msgid "Tue"
+msgstr "Dim"
+
+msgid "Tuesday"
+msgstr "Dimarts"
+
+msgid "Tuner Number"
+msgstr "Número de sintonitzador"
+
+msgid "Tuner Signal"
+msgstr "Senyal del sintonitzador"
+
+msgid "Tuner Type"
+msgstr "Tipus de sintonitzador"
+
+msgid "Tuners"
+msgstr "Sintonitzadors"
+
+msgid "Type"
+msgstr "Tipus"
+
+#, python-format
+msgid "Unknown Volume command %s"
+msgstr "Ordre %s de Volum Desconeguda"
+
+#, python-format
+msgid "Unknown command: '%s'"
+msgstr "Ordre desconeguda: '%s'"
+
+msgid "Upcoming Events"
+msgstr "Pròxims programes"
+
+msgid "Update"
+msgstr ""
+
+msgid "Update Package"
+msgstr ""
+
+msgid "Update from feed"
+msgstr ""
+
+msgid "Upgrade all packages"
+msgstr ""
+
+msgid "Upload File Error"
+msgstr ""
+
+msgid "Upload package"
+msgstr ""
+
+#, fuzzy
+msgid "Uploaded Files"
+msgstr "Error pujant arxiu"
+
+msgid "Use Channelname for screenshots"
+msgstr ""
+
+msgid "Use a custom location"
+msgstr "Utilitzar una ubicació personalitzada"
+
+msgid "Use as PiP if possible"
+msgstr ""
+
+#, fuzzy
+msgid "Use classic interface"
+msgstr "Utilitzar nou diseny"
+
+#, fuzzy
+msgid "Use custom Color"
+msgstr "Utilitzar una ubicació personalitzada"
+
+msgid "Use custom box name"
+msgstr "Utilitzar nom personalitzat per al deco"
+
+#, fuzzy
+msgid "Use modern design"
+msgstr "Utilitzar nou diseny"
+
+msgid "Use modern interface"
+msgstr "Utilitzar nou diseny"
+
+msgid "VPS"
+msgstr "VPS"
+
+msgid "VPS plugin not found"
+msgstr "Plugin VPS no trobat"
+
+msgid "Version"
+msgstr "Versió"
+
+msgid "Video"
+msgstr "Vídeo"
+
+msgid "Video Height"
+msgstr "Altura de vídeo"
+
+msgid "Video PID (VPID)"
+msgstr ""
+
+msgid "Video Width"
+msgstr "Ample de Video"
+
+msgid "Visibly"
+msgstr "Visible"
+
+msgid "Volume"
+msgstr "Volum"
+
+msgid "Volume Control"
+msgstr "Control de volum"
+
+msgid "W"
+msgstr "W"
+
+msgid "Waiting for answer ..."
+msgstr "Esperant reposta..."
+
+#, fuzzy
+msgid "Wake Up"
+msgstr "Despertar"
+
+msgid "Wakeup"
+msgstr "Despertar"
+
+msgid "Warning"
+msgstr "Advertència"
+
+msgid "We"
+msgstr "Dimx"
+
+msgid "Web TV"
+msgstr ""
+
+msgid "Wed"
+msgstr "Dimx"
+
+msgid "Wednesday"
+msgstr "Dimecres"
+
+msgid "Weekly (Monday)"
+msgstr "Setmanal (Dilluns)"
+
+msgid "Weekly (Sunday)"
+msgstr "Setmanal (Diumenge)"
+
+msgid "Widescreen"
+msgstr ""
+
+msgid "Without auth only local access is allowed!"
+msgstr "Sense autorització, només es permet l'accès local!"
+
+msgid "Wizard"
+msgstr "Assistent"
+
+msgid "Would you like to save your changes?"
+msgstr ""
+
+#, python-format
+msgid "Wrong parameter format 'set=%s'. Use set=set15 "
+msgstr "Format de paràmetres incorrecte 'set=%s'. Utilitza set=set15"
+
+msgid "YYYY-MM-DD"
+msgstr ""
+
+msgid "Yes"
+msgstr "Si"
+
+msgid "Yes/No"
+msgstr "Si/No"
+
+msgid "Yesterday"
+msgstr ""
+
+msgid "Zap"
+msgstr "Canviar"
+
+msgid "Zap & Record"
+msgstr "Gravar+Fer zàping"
+
+msgid "Zap before streaming"
+msgstr "canviar abans del stream"
+
+msgid "Zap to"
+msgstr "Canviar a"
+
+msgid "Zapped to"
+msgstr "Canviat a"
+
+#, fuzzy
+msgid "any time"
+msgstr "Afegir Gravació"
+
+msgid "auto"
+msgstr "automàtic"
+
+msgid "box_ip"
+msgstr ""
+
+#, fuzzy
+msgid "case-insensitive"
+msgstr "Recerca estricta"
+
+#, fuzzy
+msgid "case-sensitive"
+msgstr "Recerca estricta"
+
+msgid "descramble and record ecm"
+msgstr ""
+
+msgid "description contains"
+msgstr "a la descripció"
+
+#, fuzzy
+msgid "description match"
+msgstr "Descripció"
+
+msgid "disabled"
+msgstr "deshabilitat"
+
+msgid "do nothing"
+msgstr "no fer res"
+
+msgid "don't descramble, record ecm"
+msgstr ""
+
+msgid "error! Loading Page"
+msgstr "error! Carregant pàgina"
+
+msgid "exact title match"
+msgstr ""
+
+msgid "favourite desc match"
+msgstr ""
+
+msgid "finished"
+msgstr "acabat"
+
+msgid "go to deep standby"
+msgstr "anar a repòs profund"
+
+msgid "go to standby"
+msgstr "anar a repòs"
+
+msgid "hour"
+msgstr ""
+
+msgid "kB"
+msgstr ""
+
+msgid "loading"
+msgstr "carregant"
+
+msgid "manual/disabled"
+msgstr "manual/deshabilitat"
+
+msgid "mins"
+msgstr ""
+
+#, fuzzy
+msgid "minute"
+msgstr "Minut"
+
+msgid "no description available"
+msgstr "no hi ha descripció disponible"
+
+msgid "none/IPv4-only network"
+msgstr "no/IPv4-només xarxa"
+
+msgid "normal"
+msgstr ""
+
+msgid "on day"
+msgstr ""
+
+msgid "on weekday"
+msgstr "de Dilluns a Divendres"
+
+msgid "one two three four unknown command"
+msgstr "un dos tres quatre ordre desconeguda"
+
+msgid "partial title match"
+msgstr ""
+
+msgid "r/o"
+msgstr ""
+
+msgid "r/w"
+msgstr ""
+
+msgid "Receiver"
+msgstr ""
+
+msgid "record"
+msgstr "gravar"
+
+msgid "regex match (experimental)"
+msgstr ""
+
+msgid "remove"
+msgstr ""
+
+msgid "running"
+msgstr "funcionant"
+
+msgid "seconds"
+msgstr "segons"
+
+msgid "select bouquets"
+msgstr "sel·lecionar llistes"
+
+msgid "select channels"
+msgstr "sel·leccionar canals"
+
+msgid "select tags"
+msgstr "sel·leccionar etiquetes"
+
+msgid "short description contains"
+msgstr "a la descripció curta"
+
+#, fuzzy
+msgid "short description match"
+msgstr "coincidència en descripció curta"
+
+msgid "standard"
+msgstr "estàndar"
+
+msgid "static"
+msgstr "estàtic"
+
+msgid "this service is protected by a parental control pin"
+msgstr ""
+
+msgid "title contains"
+msgstr "al Títul"
+
+msgid "title ends with"
+msgstr ""
+
+#, fuzzy
+msgid "title or description match"
+msgstr "coincidència en títul o descripció"
+
+#, fuzzy
+msgid "title or short description match"
+msgstr "coincidència en títul o descripció curta"
+
+msgid "title starts with"
+msgstr ""
+
+msgid "transcoded"
+msgstr "transcodificat"
+
+#, python-format
+msgid "type %s is not a number"
+msgstr "El tipus %s no és un número"
+
+msgid "unknown"
+msgstr "desconegut"
+
+msgid "using"
+msgstr "utilitzant"
+
+msgid "via"
+msgstr ""
+
+msgid "waiting"
+msgstr "esperant"
+
+msgid "weekday"
+msgstr "Díes laborables"
+
+msgid "weekend"
+msgstr "Cap de setmana"
+
+msgid "wrong filetype"
+msgstr "Tipus d'arxiu erroni"
+
+msgid "zap"
+msgstr "canviar"
+
+#~ msgid "EPG Search"
+#~ msgstr "Buscar EPG"
+
+#, fuzzy
+#~ msgid "Enter Text"
+#~ msgstr "Tipus de sintonitzador"
+
+#~ msgid "LICENSE"
+#~ msgstr "LLICÈNCIA"
+
+#~ msgid "Standby Toggle"
+#~ msgstr "Activar Repòs"
+
+#, fuzzy
+#~ msgid "Use old remote"
+#~ msgstr "Ocultar comandament completo"
+
+#~ msgid "Recording Status"
+#~ msgstr "Estat de Gravació"
+
+#~ msgid "Tuner Bit Error Rate BER"
+#~ msgstr "Bit de taxa d'error (BER) del sintonitzador"
+
+#~ msgid "Tuner Signal Power AGC"
+#~ msgstr "Potència de senyal del sintonitzador AGC"
+
+#~ msgid "Tuner Signal Quality SNR"
+#~ msgstr "Qualitat de senyal del sintonitzador SNR"
+
+#~ msgid "Tuner Signal Quality SNR_DB"
+#~ msgstr "Qualitat de senyal del sintonitzador SNR DB"
+
+#~ msgid "Video Wide"
+#~ msgstr "Vídeo ample"

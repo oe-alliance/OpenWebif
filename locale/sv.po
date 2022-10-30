@@ -1,0 +1,2178 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenWebif\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-10 09:36+0000\n"
+"PO-Revision-Date: 2021-12-02 19:58+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/e2openplugin-"
+"openwebif/e2openplugin-openwebif/sv/>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.10-dev\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ../plugin\n"
+
+#, python-format
+msgid "%02d.%02d."
+msgstr ""
+
+#, python-format
+msgid "%02d.%02d.%d"
+msgstr ""
+
+#, python-format
+msgid "%02d:%02d"
+msgstr ""
+
+msgid "%d.%m.%Y"
+msgstr ""
+
+msgid "%d.%m.%Y %H:%M"
+msgstr ""
+
+#, python-format
+msgid "%s %02d.%02d."
+msgstr ""
+
+#, python-format
+msgid "%s %02d.%02d.%d"
+msgstr ""
+
+#, python-format
+msgid "%s %s is locked."
+msgstr "%s %s är låst."
+
+#, python-format
+msgid "%s / %s"
+msgstr ""
+
+#, python-format
+msgid "%s Style"
+msgstr ""
+
+#, python-format
+msgid "%s free / %s total"
+msgstr "%s ledigt / %s totalt"
+
+msgid "(Press 'shift' and click to 'hold')"
+msgstr "(shift + klick ger lång knapptryckning)"
+
+#, fuzzy
+msgid "(in minutes)"
+msgstr "Minut"
+
+msgid "A filename is required"
+msgstr "Vänligen ange ett filnamn"
+
+msgid "A value is required"
+msgstr ""
+
+msgid "AGC"
+msgstr "AGC"
+
+msgid "About"
+msgstr "Om"
+
+msgid "Add"
+msgstr "Lägg till"
+
+msgid "Add  AutoTimer  to tags"
+msgstr "Lägg till \"Autotimer\" som etikett"
+
+msgid "Add AutoTimer name to tags"
+msgstr "Lägg till \"Beskrivning\" som etikett"
+
+msgid "Add Bouquet"
+msgstr "Lägg till favoritlista"
+
+msgid "Add IPTV/URL"
+msgstr ""
+
+msgid "Add Marker"
+msgstr "Lägg till bokmärke"
+
+msgid "Add Spacer"
+msgstr ""
+
+msgid "Add a timer"
+msgstr "Lägg till timer"
+
+msgid "Add a zap timer"
+msgstr "Lägg till zaptimer"
+
+msgid "Add an AutoTimer"
+msgstr "Lägg till Autotimer"
+
+msgid "Add channel(s) as alternate"
+msgstr "Lägg till kanalen som alternativ"
+
+#, fuzzy
+msgid "Add filters"
+msgstr "Lägg till timer"
+
+msgid "Add selection to bouquet"
+msgstr "Lägg till kanal(er) till en favoritlista"
+
+msgid "Add service name to stream information"
+msgstr "Lägg till distributörens namn till strömningsinformationen"
+
+msgid "Add similar on conflict"
+msgstr "Lägg till liknande vid konflikt"
+
+msgid "Add tags to recordings"
+msgstr ""
+
+#, python-format
+msgid "Added %s to alternative service %s."
+msgstr "Lade till %s som alternativ distributör %s."
+
+msgid "Adjust recording time to real event time"
+msgstr ""
+
+msgid "After event"
+msgstr "Välj hur aktiveteten skall slutföras"
+
+msgid "All"
+msgstr "Allt"
+
+msgid "All Channels"
+msgstr "Alla kanaler"
+
+msgid ""
+"All Files of this Software are open source software; you can redistribute it "
+"and/or modify it under the terms of the GNU General Public License version 3 "
+"as published by the Free Software Foundation."
+msgstr ""
+
+msgid "All alternative services deleted."
+msgstr "Alla alternativa distributörer togs bort."
+
+msgid "Allow IPK Upload"
+msgstr ""
+
+msgid "Allow duplicates"
+msgstr ""
+
+#, python-format
+msgid "Alternative %s created failed."
+msgstr "Misslyckades med att skapa alternativ distributör %s"
+
+msgid "Always"
+msgstr "Alltid"
+
+msgid "Answer is NO!"
+msgstr "Svaret är NEJ!"
+
+msgid "Answer is YES!"
+msgstr "Svaret är JA!"
+
+msgid "Any"
+msgstr ""
+
+msgid "Any day"
+msgstr ""
+
+msgid "Any service/recording"
+msgstr "Valfri distributör/inspelning"
+
+msgid "April"
+msgstr "April"
+
+msgid "Are you sure you want to delete the selected bouquet?"
+msgstr "Vill du verkligen ta bort favoritlistan"
+
+msgid "Are you sure you want to delete the selected item(s)?"
+msgstr ""
+
+#, fuzzy
+msgid "Are you sure you want to delete this AutoTimer?"
+msgstr "Vill du verkligen ta bort timern"
+
+msgid "Are you sure you want to delete this recording?"
+msgstr "Vill du verkligen ta bort inspelningen"
+
+msgid "Are you sure you want to delete this timer?"
+msgstr "Vill du verkligen ta bort timern"
+
+msgid "Are you sure you want to rename this recording?"
+msgstr "Skall namnet på inspelningen verkligen bytas"
+
+msgid "Are you sure you want to restore from file?"
+msgstr "Vill du verkligen återställa från en fil"
+
+#, fuzzy
+msgid "Are you sure you want to start recording instantly?"
+msgstr "Starta direktinspelning"
+
+msgid "Ask, default No"
+msgstr "Fråga, med standardsvar Nej"
+
+msgid "Ask, default Yes"
+msgstr "Fråga, med standardsvar Ja"
+
+msgid "Audio Encoding"
+msgstr ""
+
+msgid "Audio PID (APID)"
+msgstr ""
+
+msgid "Audio Track"
+msgstr ""
+
+msgid "August"
+msgstr "Augusti"
+
+msgid "Authors"
+msgstr "Applikationsutvecklare"
+
+msgid "Auto"
+msgstr "Automatiskt"
+
+msgid "AutoPoll"
+msgstr "Automatiskt bevakning"
+
+msgid "AutoTimer Edit"
+msgstr "Redigera AutoTimer"
+
+msgid "AutoTimer Settings"
+msgstr "Inställningar för AutoTimer"
+
+msgid "AutoTimers"
+msgstr "AutoTimer-lista"
+
+msgid "Autotimer Preview"
+msgstr "AutoTimer förhandsvisning"
+
+msgid "BER"
+msgstr "BER"
+
+msgid "Back"
+msgstr "Tillbaka"
+
+msgid "Background only"
+msgstr "Uppdateringen sker i bakgrunden"
+
+msgid "Begin"
+msgstr "Börjar"
+
+#, fuzzy
+msgid "Begin of \"After event\" timespan"
+msgstr "Början av begränsningsperioden (tt:mm)"
+
+msgid "Beginning of timespan"
+msgstr "Perioden börjar"
+
+msgid "Bit Error Rate (BER)"
+msgstr ""
+
+msgid "Bookmark"
+msgstr ""
+
+msgid "Bookmarks"
+msgstr ""
+
+#, python-format
+msgid "Bouquet %s already exists."
+msgstr "Favoritlistan %s finns redan."
+
+#, python-format
+msgid "Bouquet %s can not be moved."
+msgstr "Favoritlista %s kan inte flyttas."
+
+#, python-format
+msgid "Bouquet %s created."
+msgstr "Favoritlista %s  skapades."
+
+#, python-format
+msgid "Bouquet %s deleted."
+msgstr "Favoritlistan %s togs bort."
+
+#, python-format
+msgid "Bouquet %s is locked."
+msgstr "Favoritlistan %s är låst."
+
+#, python-format
+msgid "Bouquet %s is unlocked."
+msgstr "Favoritlistan %s är upplåst."
+
+#, python-format
+msgid "Bouquet %s moved."
+msgstr "Favoritlista %s flyttades."
+
+#, python-format
+msgid "Bouquet %s removed failed, sevicerefence or mutable list is not valid."
+msgstr ""
+"Borttagning av favoritlista %s misslyckades. Distributören eller föränderlig "
+"lista är ogiltig."
+
+#, python-format
+msgid "Bouquet %s removed failed."
+msgstr "Borttagning av favoritlista %s misslyckades."
+
+msgid "Bouquet Editor"
+msgstr "Redigerare för favoritlistor"
+
+msgid "Bouquet name"
+msgstr "Favoritlistans namn"
+
+msgid "Bouquet renamed successfully."
+msgstr "Namnet på favoritlistan ändrades."
+
+msgid "Bouquet-settings were restored successfully"
+msgstr "Favoritlistans inställningar återskapades."
+
+msgid "BouquetEditor"
+msgstr "Redigera favoritlistor"
+
+msgid "Bouquetlist is not editable!"
+msgstr "Favoritlistan kan inte redigeras!"
+
+msgid "Bouquets"
+msgstr "Favoritlistor"
+
+msgid "Box"
+msgstr "Box"
+
+msgid "Box Control"
+msgstr "Boxstryrning"
+
+msgid "Box Info"
+msgstr "Boxinfo"
+
+msgid "Box uptime"
+msgstr "Boxens drifttid"
+
+msgid "Brand"
+msgstr "Fabrikat"
+
+msgid "Build"
+msgstr ""
+
+msgid "Cable"
+msgstr "Kabel-TV"
+
+msgid "Calendar Week"
+msgstr ""
+
+msgid "Cancel"
+msgstr "Avbryt"
+
+#, fuzzy
+msgid "Cancelled"
+msgstr "Avbryt"
+
+msgid "Capacity"
+msgstr "Kapacitet"
+
+msgid "Capture screenshot"
+msgstr "Ta en skärmdump"
+
+msgid "Channel"
+msgstr "Kanal"
+
+msgid "Channels"
+msgstr "Kanaler"
+
+msgid "Character encoding for EPG data"
+msgstr "Teckenkodning av EPG-data"
+
+msgid "Chipset"
+msgstr "Chipset"
+
+msgid "Cleanup Timers"
+msgstr "Rensa timer"
+
+msgid "Close"
+msgstr "Stäng"
+
+#, fuzzy
+msgid "Common Settings"
+msgstr "Inställningar"
+
+msgid "Config"
+msgstr ""
+
+#, python-format
+msgid "Conflicting Timer(s) detected! %s"
+msgstr "Timerkonflikt(er) upptäckta %s"
+
+msgid "Contributors"
+msgstr "Andra som har bidragit"
+
+msgid "Control"
+msgstr "Kontroll"
+
+#, python-format
+msgid "Could not add timer '%s'!"
+msgstr "Kunde inte lägga till timer '%s'!"
+
+#, python-format
+msgid "Could not find timer '%s' with given start and end time!"
+msgstr "Kunde inte hitta någon timer '%s' med angiven start-och stopptid"
+
+msgid "Create bouquet from selection"
+msgstr "Lägg till leverantören som en ny favoritlista"
+
+msgid "Current"
+msgstr "Pågående"
+
+msgid "Current Event"
+msgstr "Pågående aktivitet"
+
+msgid "Currently recording"
+msgstr ""
+
+msgid "Custom box name"
+msgstr "Anpassat boxnamn"
+
+msgid "Custom offset"
+msgstr "Anpassad extra tidsmarginal"
+
+msgid "DHCP"
+msgstr "DHCP"
+
+msgid "Date"
+msgstr "Datum"
+
+msgid "Date (newest)"
+msgstr ""
+
+msgid "Date (oldest)"
+msgstr ""
+
+msgid "Debug - Display Tracebacks in browser"
+msgstr ""
+
+msgid "December"
+msgstr "December"
+
+msgid "Deep Standby"
+msgstr "Djupt viloläge"
+
+msgid "Default"
+msgstr "Standardvärde"
+
+msgid "Delay Standby"
+msgstr "Fördröj uppdateringen om mottagaren inte är i viloläge (min)"
+
+msgid "Delete"
+msgstr "Ta bort"
+
+#, fuzzy
+msgid "Delete Bookmark"
+msgstr "Ta bort timern"
+
+msgid "Delete Bouquet"
+msgstr "Ta bort favoritlista"
+
+msgid "Delete Recording"
+msgstr "Ta bort inspelningen"
+
+msgid "Delete Timer"
+msgstr "Ta bort timern"
+
+msgid ""
+"Delete failed, because there is no movie trash !\n"
+"Disable movie trash in configuration to delete this item"
+msgstr ""
+
+#, fuzzy
+msgid "Deleted"
+msgstr "Ta bort"
+
+msgid "Description"
+msgstr "Beskrivning"
+
+msgid "Device"
+msgstr ""
+
+#, fuzzy
+msgid "Disable"
+msgstr "avaktiverat"
+
+msgid "Disable Timer"
+msgstr "Slå av timern"
+
+msgid "Disable remote access for user root"
+msgstr "Slå av fjärråtkomst för rootanvändaren"
+
+msgid "Disabled on conflict"
+msgstr "Avaktiverad vid konflikt"
+
+msgid "Display Mode"
+msgstr "Visningsläge"
+
+msgid "Display duration (s)"
+msgstr "Tid att visa (s)"
+
+msgid "Distro"
+msgstr "Distribution av programvaran"
+
+msgid "Dolby"
+msgstr "Dolby"
+
+msgid "Don't create timer when movie exists in database"
+msgstr ""
+
+msgid "Done"
+msgstr "Utfört"
+
+msgid "Download"
+msgstr "Ladda ner"
+
+msgid "Download playlist for"
+msgstr "Ladda ner spellista för"
+
+msgid "Drivers"
+msgstr "Version av drivrutinerna"
+
+msgid "Duration"
+msgstr "Varaktighet (i min)"
+
+msgid "E"
+msgstr "Ö"
+
+msgid "EPG"
+msgstr "EPG"
+
+msgid "EPG encoding"
+msgstr "EPG teckenkodning"
+
+msgid "EPGRefresh"
+msgstr "EPGRefresh"
+
+msgid "ERROR: Cannot set SleepTimer while device is in Standby-Mode"
+msgstr "FEL: Kan inte ställa in insomningstimer medan enheten är i viloläge"
+
+#, fuzzy
+msgid "Edit"
+msgstr "Redigerare"
+
+#, fuzzy
+msgid "Edit Recording"
+msgstr "Ta bort inspelningen"
+
+msgid "Edit Timer"
+msgstr "Redigera timern"
+
+msgid "Editor"
+msgstr "Redigerare"
+
+#, fuzzy
+msgid "Enable"
+msgstr "Aktiverat"
+
+msgid "Enable Authentication for streaming"
+msgstr "Aktivera autentisering för strömning"
+
+msgid "Enable HTTP Authentication"
+msgstr "Aktivera HTTP autentisering"
+
+msgid "Enable HTTPS"
+msgstr "Aktivera HTTPS"
+
+msgid "Enable HTTPS Authentication"
+msgstr "Aktivera HTTPS autentisering"
+
+msgid "Enable Messages"
+msgstr "Aktivera statusmeddelanden"
+
+msgid "Enable Parental Control"
+msgstr "Aktivera föräldrakontroll"
+
+msgid "Enable Timer"
+msgstr "Aktivera timern"
+
+msgid "Enable access from VPNs"
+msgstr "Aktivera åtkomst från VPN"
+
+msgid "Enable filtering"
+msgstr "Slå på filtrering"
+
+msgid "Enable/Disable Screenshot on key press or"
+msgstr ""
+
+msgid "Enabled"
+msgstr "Aktiverat"
+
+msgid "Encrypted"
+msgstr "Krypterat"
+
+msgid "End"
+msgstr "Slutar"
+
+#, fuzzy
+msgid "End of \"After event\" timespan"
+msgstr "Slutet på begränsningsperioden (tt:mm)"
+
+msgid "End of timespan"
+msgstr "Perioden slutar"
+
+msgid "Enter a name for the new bouquet"
+msgstr "Ange ett nytt namn för favoritlistan"
+
+msgid "Enter a name for the new marker"
+msgstr "Ange ett nytt namn för bokmärket"
+
+#, fuzzy
+msgid "Enter a name for this AutoTimer"
+msgstr "Ange ett nytt namn för bokmärket"
+
+msgid "Enter path"
+msgstr ""
+
+msgid "Enter text"
+msgstr ""
+
+msgid "Enter the text to find in the EPG"
+msgstr ""
+
+msgid "Error"
+msgstr "Fel"
+
+msgid "Error parsing vps.xml"
+msgstr "vps.xml feltolkas"
+
+msgid "Error upload File"
+msgstr "Fel vid uppladdning av fil"
+
+#, python-format
+msgid "Error while preparing backup file, %s does not exists."
+msgstr "Fel vid förberedelse av säkerhetskopiering, filen %s saknas."
+
+msgid "Error while preparing backup file."
+msgstr "Fel vid förberedelse av fil för säkerhetskopia."
+
+msgid "Error writing File"
+msgstr "Fel när filen skrevs"
+
+#, python-format
+msgid "Error, %s does not exists, restore is not possible..."
+msgstr "Fel: %s existerar inte. Därför kan återställning inte utföras..."
+
+#, python-format
+msgid "Error, %s was not created with WebBouquetEditor..."
+msgstr "Fel: %s skapades inte av WebBouquetEditor... "
+
+#, python-format
+msgid "Error: Bouquet %s could not deleted, OSError."
+msgstr "Fel: Favoritlistan %s kunde inte tas bort, OSError."
+
+msgid "Event not found"
+msgstr "Aktiviteten hittades inte"
+
+msgid "EventId not found"
+msgstr "Aktivitetens ID kunde inte hittas"
+
+msgid "Every"
+msgstr "Varje"
+
+msgid "Exclude when"
+msgstr "Undanta"
+
+#, fuzzy
+msgid "Execute \"After event\" during timespan"
+msgstr "Begränsa valt avslutsalternativ till att gälla tidsintervallet"
+
+msgid "Export"
+msgstr "Exportera"
+
+msgid "Extras"
+msgstr "Extrafunktioner"
+
+msgid "Fake Recording"
+msgstr "Simulerad inspelning"
+
+msgid "Fastscan"
+msgstr "Snabb avsökning"
+
+msgid "February"
+msgstr "Februari"
+
+msgid "Firmware version"
+msgstr "Firmware version"
+
+msgid "Force"
+msgstr "Tvinga fram en uppdatering"
+
+msgid "Fr"
+msgstr "Fr"
+
+msgid "Free"
+msgstr "Ledigt"
+
+msgid "Free Memory"
+msgstr "Ledigt minne"
+
+msgid "Free space"
+msgstr ""
+
+msgid "Fri"
+msgstr "Fre"
+
+msgid "Friday"
+msgstr "Fredag"
+
+msgid "From date"
+msgstr "Inte efter"
+
+msgid "Front processor version"
+msgstr "Frontprocessorversion"
+
+#, fuzzy
+msgid "Full remote"
+msgstr "Dölj stor fjärrkontroll"
+
+msgid "GB"
+msgstr "GB"
+
+msgid "GUI version"
+msgstr "GUI version"
+
+msgid "Gateway"
+msgstr "Gateway"
+
+msgid "Get mutable list for new created alternative failed!"
+msgstr ""
+"Den föränderliga listan för en ny alternativ distributör kunde inte hämtas!"
+
+msgid "Get mutable list for new created bouquet failed!"
+msgstr "Den föränderliga listan för en ny favorit kunde inte hämtas!"
+
+msgid "HH:MM"
+msgstr ""
+
+msgid "HTTP port"
+msgstr "HTTP port"
+
+msgid "HTTPS port"
+msgstr "HTTPS port"
+
+msgid "Hard disk model"
+msgstr "Hårddiskmodell"
+
+msgid "Hardware"
+msgstr ""
+
+msgid "Hide full remote"
+msgstr "Dölj stor fjärrkontroll"
+
+msgid "High Resolution"
+msgstr "Hög upplösning"
+
+msgid "Hold to drag"
+msgstr ""
+
+msgid "Hour"
+msgstr "Timme"
+
+msgid "IPTV / URL name"
+msgstr ""
+
+msgid "IPv4 address"
+msgstr "IPv4-adress"
+
+msgid "IPv4-only Python/Twisted"
+msgstr "Endast Python/Twisted för IPv4"
+
+msgid "IPv4-only kernel"
+msgstr "Kernel enbart för IPv4"
+
+msgid "IPv6 address(es)"
+msgstr "IPv6 adress(er)"
+
+msgid "Import"
+msgstr "Importera"
+
+msgid "Include description"
+msgstr "Inkludera beskrivningen"
+
+#, fuzzy
+msgid "Include extended description"
+msgstr "Inkludera beskrivningen"
+
+#, fuzzy
+msgid "Include short description"
+msgstr "Inkludera beskrivningen"
+
+msgid "Include when"
+msgstr "Inkludera"
+
+msgid "Infinite Instant recording started"
+msgstr "En direktinspelning utan tidsgräns startades"
+
+msgid "Info"
+msgstr "Information"
+
+msgid "Information"
+msgstr ""
+
+msgid "Inherit AutoTimer"
+msgstr "Överför distributörer från Autotimer"
+
+msgid "Install Package"
+msgstr ""
+
+#, fuzzy
+msgid "Installed"
+msgstr "Direktinspelning"
+
+msgid "Instant Record"
+msgstr "Direktinspelning"
+
+msgid "Instant record for current Event started"
+msgstr "En direktinspelning av aktuellt program startades"
+
+msgid "Internal error!"
+msgstr "Internt fel!"
+
+msgid "Internal flash memory"
+msgstr ""
+
+#, fuzzy, python-format
+msgid "Interval (in %s)"
+msgstr "Intervall (i tim)"
+
+msgid "Interval (min.)"
+msgstr "Tid för att hålla servicekanalen öppen (min)"
+
+msgid "Interval (sec.)"
+msgstr "Tid för att hålla servicekanalen öppen (sek)"
+
+msgid "January"
+msgstr "Januari"
+
+msgid "Javascript Libraries"
+msgstr "Javascriptbibliotek"
+
+msgid "July"
+msgstr "Juli"
+
+msgid "June"
+msgstr "Juni"
+
+msgid "Just play"
+msgstr "Spela upp"
+
+msgid "Kernel"
+msgstr "Kernel"
+
+msgid "LCD"
+msgstr ""
+
+msgid "LCD4Linux Setup"
+msgstr "LCD4Linux inställning"
+
+msgid "Label series"
+msgstr "Lägg till avsnittsinformation för TV-serier"
+
+msgid "License"
+msgstr ""
+
+msgid "Link speed"
+msgstr "Länkhastighet"
+
+msgid "List of Timers has been cleaned"
+msgstr "Timerlistan har rensats"
+
+#, fuzzy
+msgid "Loading..."
+msgstr "laddar"
+
+msgid "Location"
+msgstr "Plats"
+
+msgid "Locked"
+msgstr "Låst"
+
+msgid "MAC address"
+msgstr "MAC-adress"
+
+msgid "MB"
+msgstr "MB"
+
+msgid "Main"
+msgstr "Huvudfunktioner"
+
+msgid "Main memory"
+msgstr "Totalt minne"
+
+msgid "March"
+msgstr "Mars"
+
+msgid "Marker added."
+msgstr "Bokmärket lades till."
+
+msgid "Marker name"
+msgstr "Bokmärkets namn"
+
+msgid "Match text"
+msgstr "Matcha titeln"
+
+msgid "Max Days"
+msgstr "Max dagar framåt"
+
+msgid "May"
+msgstr "Maj"
+
+msgid "Message sent successfully!"
+msgstr "Meddelandet skickades!"
+
+msgid "Method"
+msgstr "Uppdatera EPG genom att använda"
+
+msgid "Minimal EPG list"
+msgstr ""
+
+#, fuzzy
+msgid "Minimal movie list"
+msgstr "Filmlista"
+
+msgid "Minimal timer list"
+msgstr ""
+
+msgid "Minute"
+msgstr "Minut"
+
+#, python-format
+msgid "Missing mandatory parameter '%s'"
+msgstr "Saknar den obligatoriska parametern '%s'"
+
+msgid "Missing requesteter: sRef"
+msgstr "Begäran saknas: sRef"
+
+msgid "Mo"
+msgstr "Må"
+
+msgid "Model"
+msgstr "Modell"
+
+msgid "Mon"
+msgstr "Mån"
+
+msgid "Monday"
+msgstr "Måndag"
+
+msgid "Monthly"
+msgstr "Månadsvis"
+
+msgid "More"
+msgstr ""
+
+msgid "More details"
+msgstr ""
+
+msgid "Mount point"
+msgstr ""
+
+msgid "Movie database for EPG"
+msgstr ""
+
+#, fuzzy
+msgid "Movie search"
+msgstr "Filmer"
+
+msgid "Movielist"
+msgstr "Filmlista"
+
+msgid "Movies"
+msgstr "Filmer"
+
+msgid "Multi-Bouquet is not enabled!"
+msgstr "Multi-favoritlista är inte aktiverad!"
+
+msgid "MultiEPG"
+msgstr "MultiEPG"
+
+msgid "Mute/Unmute"
+msgstr ""
+
+#, fuzzy
+msgid "NCam Webinterface"
+msgstr "Webbgränssnitt för OSCam "
+
+msgid "Name"
+msgstr "Namn"
+
+msgid "Name (a-z)"
+msgstr ""
+
+msgid "Name (z-a)"
+msgstr ""
+
+msgid "Namespace"
+msgstr "Namnrymd"
+
+msgid "Network Interface"
+msgstr "Nätverksgränssnitt"
+
+msgid "Network Shares"
+msgstr "Delade nätverksresurser"
+
+msgid "Never"
+msgstr "Aldrig"
+
+msgid "New"
+msgstr "Ny"
+
+#, fuzzy
+msgid "New Bookmark:"
+msgstr "Ta bort timern"
+
+msgid "New Name"
+msgstr "Nytt namn"
+
+msgid "No"
+msgstr "Nej"
+
+#, fuzzy
+msgid "No EPG data available."
+msgstr "beskrivning saknas"
+
+msgid "No Parent Control Setup Pin given!"
+msgstr "Ingen kod för föräldrakontroll angavs!"
+
+msgid "No answer in time"
+msgstr "Svaret kom inte i tid"
+
+msgid "No bouquet given!"
+msgstr "Ingen favoritlista angavs!"
+
+msgid "No bouquet name given!"
+msgstr "Namn saknas för favoritlistan!"
+
+msgid "No current service given!"
+msgstr "Ingen aktuell distributör angiven!"
+
+msgid "No event found! Not recording!"
+msgstr "Ingen aktivitet hittades. Spelar inte in!"
+
+msgid "No marker-name given!"
+msgstr "Bokmärkesnamnet angavs inte!"
+
+#, fuzzy
+msgid "No matches were found in the EPG"
+msgstr "Kunde inte hitta någon passande timer"
+
+msgid "No matching Timer found"
+msgstr "Kunde inte hitta någon passande timer"
+
+msgid "No network connection"
+msgstr ""
+
+msgid "No new servicename given!"
+msgstr "Ett nytt distributörsnamn angavs inte!"
+
+msgid "No position given!"
+msgstr "Position angavs inte!"
+
+msgid "No provider given!"
+msgstr "Ingen leverantör angavs!"
+
+msgid "No service given!"
+msgstr "Ingen distributör angavs!"
+
+#, fuzzy
+msgid "No, cancel"
+msgstr "Avbryt"
+
+msgid "None"
+msgstr "Inga"
+
+msgid "Nothing"
+msgstr "Inget"
+
+msgid "Nothing playing."
+msgstr "Inget spelas upp"
+
+msgid "Notify if Conflict"
+msgstr "Meddela vid konflikt"
+
+msgid "Notify if Similar"
+msgstr "Meddela om liknande finns"
+
+msgid "November"
+msgstr "November"
+
+msgid "Now"
+msgstr "Nu"
+
+msgid "Now/Next Columns"
+msgstr ""
+
+msgid "Number of recordings remaining"
+msgstr "Antal inspelningar kvar"
+
+msgid "ONID"
+msgstr ""
+
+msgid "OSCam Webinterface"
+msgstr "Webbgränssnitt för OSCam "
+
+msgid "OSD"
+msgstr "OSD"
+
+msgid "October"
+msgstr "Oktober"
+
+msgid "Offset after recording (mins)"
+msgstr "Marginal efter inspelningen (i min)"
+
+msgid "Offset before recording (mins)"
+msgstr "Marginal före inspelningen (i min)"
+
+msgid "On"
+msgstr "På"
+
+msgid "On any service"
+msgstr "Hos valfri distributör"
+
+msgid "On same service"
+msgstr "Hos samma distributör"
+
+msgid "Only match between dates"
+msgstr "Tider skall bokas endast vissa datum"
+
+msgid "Only match during timespan"
+msgstr "Enbart matchning under tidsintervallet "
+
+msgid "Oops, no results matched your search"
+msgstr ""
+
+msgid "Oops..."
+msgstr ""
+
+msgid "Open Source Web Interface for Linux set-top box"
+msgstr "Open Source webbstöd för Linux-set-top-boxar"
+
+msgid "Open in new window"
+msgstr "Öppna i ett nytt fönster"
+
+msgid "OpenWebInterface Enabled"
+msgstr "OpenWebif är aktiverad"
+
+msgid "OpenWebif Browser Settings"
+msgstr "OpenWebifs inställningar för webbläsare"
+
+msgid "OpenWebif Configuration"
+msgstr "Inställningar för OpenWebif"
+
+msgid "OpenWebif Settings"
+msgstr "Inställningar för OpenWebif"
+
+#, fuzzy
+msgid "OpenWebif url:"
+msgstr "OpenWebif URL:"
+
+msgid "Orbital Position"
+msgstr "Omloppsbanans position"
+
+msgid "Override found with alternative service"
+msgstr " Använd vid behov samma kanal från en alternativ distributör"
+
+msgid "PCR PID"
+msgstr ""
+
+msgid "PMT PID"
+msgstr ""
+
+msgid "Packages"
+msgstr ""
+
+msgid "Parent Control Setup Pin is wrong!"
+msgstr "Koden för föräldrakontroll är fel!"
+
+msgid "Parent Control is not activated."
+msgstr "Föräldrakontroll är inte aktiverat."
+
+msgid "Parse AutoTimer"
+msgstr "Starta en Autotimeranalys efter EPG uppdateringar"
+
+msgid "PiP"
+msgstr ""
+
+msgid "Picture in Picture"
+msgstr "Bild i Bild"
+
+msgid "Picture in Picture (hidden)"
+msgstr "Bild i Bild (dold)"
+
+msgid "Plain"
+msgstr "Normalt formulär"
+
+msgid "Playback"
+msgstr "Uppspelning"
+
+msgid "Playback IPTV Streams in browser"
+msgstr ""
+
+msgid "Playlist"
+msgstr "Spellista"
+
+#, fuzzy
+msgid "Playlist format"
+msgstr "Spellista"
+
+msgid "Power Control"
+msgstr "Strömbrytare"
+
+msgid "PowerTimer feature not available"
+msgstr "Funktionen för att hantera PowerTimer saknas"
+
+msgid "Preview"
+msgstr ""
+
+msgid "Primetimes"
+msgstr ""
+
+msgid "Process"
+msgstr "Analysera"
+
+msgid "Provider"
+msgstr "Leverantör"
+
+msgid "Providers"
+msgstr "Leverantörer"
+
+msgid "REC"
+msgstr ""
+
+msgid "Radio"
+msgstr "Radio"
+
+msgid "Reboot Box"
+msgstr "Starta om boxen"
+
+msgid "Record a maximum of # times"
+msgstr "Spela maximalt in vid x tillfällen"
+
+msgid "Recording"
+msgstr ""
+
+#, fuzzy
+msgid "Recording Type"
+msgstr "Inspelning pågår"
+
+msgid "Refresh"
+msgstr "Uppdatera"
+
+msgid "Refresh Timer"
+msgstr "Uppdatera listan"
+
+msgid "Refresh automatically every"
+msgstr "Uppdatera automatiskt varje"
+
+msgid "Refresh now"
+msgstr "Uppdatera nu"
+
+msgid "Reload"
+msgstr "Ladda om"
+
+msgid "Remote"
+msgstr "Fjärrkontroll"
+
+msgid "Remove Package"
+msgstr ""
+
+#, fuzzy
+msgid "Remove filter"
+msgstr "Fjärrkontroll"
+
+msgid "Rename"
+msgstr "Byt namn"
+
+msgid "Rename Bouquet"
+msgstr "Byt namn på favoritlista"
+
+msgid "Rename Recording"
+msgstr "Byt namn på inspelningen"
+
+msgid "Repeated"
+msgstr "Repeterat"
+
+msgid "Require client cert for HTTPS"
+msgstr "Kräv klientcertifikat för HTTPS"
+
+msgid "Require description to be unique"
+msgstr "Kräv att beskrivningen är unik"
+
+#, fuzzy
+msgid "Reset"
+msgstr "Återställ antalet"
+
+msgid "Reset count"
+msgstr "Återställ antalet"
+
+msgid "Restart GUI"
+msgstr "Starta om GUI"
+
+msgid "Restrict to bouquets"
+msgstr ""
+
+#, fuzzy
+msgid "Restrict to channels"
+msgstr "Välj kanaler"
+
+msgid "Root"
+msgstr "Root"
+
+msgid "SLAAC"
+msgstr "SLAAC"
+
+msgid "SNR"
+msgstr "SNR"
+
+msgid "SRef"
+msgstr ""
+
+msgid "Sa"
+msgstr "Lö"
+
+msgid "Safe mode"
+msgstr "Felsäkert läge"
+
+msgid "Sat"
+msgstr "Lör"
+
+msgid "Satellites"
+msgstr "Satelliter"
+
+msgid "Satfinder"
+msgstr "Satfinder"
+
+msgid "Saturday"
+msgstr "Lördag"
+
+msgid "Save"
+msgstr "Spara"
+
+msgid "Screenshot"
+msgstr "Skärmdump"
+
+msgid "Search"
+msgstr "Sök"
+
+#, fuzzy
+msgid "Search CSFD"
+msgstr "Sök i IMDb"
+
+msgid "Search EPG"
+msgstr ""
+
+msgid "Search IMDb"
+msgstr "Sök i IMDb"
+
+msgid "Search KinoPoisk"
+msgstr "Sök i KinoPoisk"
+
+#, fuzzy
+msgid "Search TV Guide UK"
+msgstr "TV tablå"
+
+msgid "Search by name, sd / hd / uhd, or provider"
+msgstr ""
+
+#, fuzzy
+msgid "Search strictness"
+msgstr "Sök i KinoPoisk"
+
+#, fuzzy
+msgid "Search type"
+msgstr "Sök"
+
+msgid "Select IPK file for upload"
+msgstr ""
+
+msgid "Select..."
+msgstr ""
+
+msgid "Send"
+msgstr ""
+
+msgid "Send Message"
+msgstr "Skicka meddelandet"
+
+msgid "Send a Message"
+msgstr "Skicka ett meddelande"
+
+msgid "September"
+msgstr "September"
+
+msgid "Service"
+msgstr "Distributör"
+
+#, python-format
+msgid "Service %s added."
+msgstr "Distributören %s lades till."
+
+#, python-format
+msgid "Service %s already exists in bouquet %s."
+msgstr "Distributören %s finns redan i favoritlista %s."
+
+#, python-format
+msgid "Service %s can not be removed."
+msgstr "Distributör %s kan inte tas bort."
+
+#, python-format
+msgid "Service %s is locked."
+msgstr "Distributören %s är låst."
+
+#, python-format
+msgid "Service %s is unlocked."
+msgstr "Distributören %s är upplåst."
+
+#, python-format
+msgid "Service %s moved."
+msgstr "Distributör %s flyttades."
+
+#, python-format
+msgid "Service %s removed from bouquet %s."
+msgstr "Distributör %s togs bort från favoritlistan %s."
+
+#, python-format
+msgid "Service %s removed."
+msgstr "Distributör %s togs bort."
+
+msgid "Service ID (SID)"
+msgstr ""
+
+msgid "Service can not be moved."
+msgstr "Distributören kan inte tas bort."
+
+msgid "Service can not be renamed."
+msgstr "Distributörens namn kan inte ändras."
+
+msgid "Service is not an alternative."
+msgstr "Distributören är inte en alternativ distributör."
+
+msgid "Service renamed successfully."
+msgstr "Namnet på distributören ändrades."
+
+msgid "Services"
+msgstr "Tjänster"
+
+msgid "Serving stream"
+msgstr ""
+
+msgid "Set maximum duration"
+msgstr "Ställ in maximal varaktighet (i min)"
+
+msgid "Settings"
+msgstr "Inställningar"
+
+msgid "Show EPG for"
+msgstr "Visa EPG för"
+
+msgid "Show Full OpenWebif"
+msgstr "Visa fullständiga OpenWebif"
+
+msgid "Show IPTV channels in selection (eg. Autotimer)"
+msgstr ""
+
+msgid "Show all packages"
+msgstr ""
+
+msgid "Show box name in header"
+msgstr "Visa digitalboxens namn i rubriken"
+
+msgid "Show details"
+msgstr ""
+
+msgid "Show full remote"
+msgstr "Visa stor fjärrkontroll"
+
+msgid "Show in Extensions menu"
+msgstr "Visa i utvidgningsmenyn"
+
+msgid "Show picon background"
+msgstr ""
+
+msgid "Show picons"
+msgstr ""
+
+msgid "Show picons in channel list"
+msgstr "Visa programikon i kanallistan"
+
+#, fuzzy
+msgid "Show service type in channel list"
+msgstr "Visa programikon i kanallistan"
+
+msgid "Shutdown"
+msgstr "Stäng av"
+
+msgid "Signal Power (AGC)"
+msgstr ""
+
+msgid "Signal Quality (SNR DB)"
+msgstr ""
+
+msgid "Signal Quality (SNR)"
+msgstr ""
+
+msgid "Simulate"
+msgstr "Simulera"
+
+msgid "Site and sources"
+msgstr "Webbplats och källor"
+
+msgid "Skins"
+msgstr ""
+
+msgid "SleepTimer error"
+msgstr "Fel på insomningstimern"
+
+msgid "Sleeptimer has been disabled"
+msgstr "Insomningstimer har avaktiverats"
+
+msgid "Sleeptimer is disabled"
+msgstr "Insomningstimer är avaktiverad"
+
+msgid "Sleeptimer is enabled"
+msgstr "Insommningstimer är aktiverad"
+
+#, python-format
+msgid "Sleeptimer set to %d minutes"
+msgstr "Insomningstimer är ställd på %d minuter"
+
+msgid "Small remote layout"
+msgstr ""
+
+msgid "Software"
+msgstr "Programvara"
+
+msgid "Sorry this page is not yet implemented"
+msgstr "Tyvärr är sidan inte implementerad ännu"
+
+msgid "Sort"
+msgstr ""
+
+msgid "Spinner"
+msgstr "Vänta-ikon"
+
+msgid "Standby"
+msgstr "Viloläge"
+
+msgid "Start"
+msgstr "Börjar"
+
+msgid "Start Instant Record"
+msgstr "Starta direktinspelning"
+
+msgid "Start time is after end time"
+msgstr "Starttiden är senare än sluttiden"
+
+msgid "Start typing..."
+msgstr ""
+
+msgid "State"
+msgstr ""
+
+msgid "Storage"
+msgstr ""
+
+msgid "Stream"
+msgstr "Strömma"
+
+#, fuzzy
+msgid "Stream Clients"
+msgstr "Strömma"
+
+#, fuzzy
+msgid "Streaming port"
+msgstr "Strömma"
+
+msgid "Su"
+msgstr "Sö"
+
+msgid "Subdirectories"
+msgstr ""
+
+msgid "Subnet mask"
+msgstr "Subnet mask"
+
+msgid "Subservices"
+msgstr "Underleverantörer"
+
+msgid "Sun"
+msgstr "Sön"
+
+msgid "Sunday"
+msgstr "Söndag"
+
+msgid "System OE"
+msgstr "OE system"
+
+msgid "TB"
+msgstr "TB"
+
+msgid "TSID"
+msgstr ""
+
+msgid "TV"
+msgstr "TV"
+
+msgid "TV Guide"
+msgstr "TV tablå"
+
+msgid "TV Multi EPG"
+msgstr "TV Multi EPG"
+
+msgid "Tags"
+msgstr "Etiketter"
+
+msgid "Teletext"
+msgstr "Text-TV"
+
+msgid "Teletext PID"
+msgstr "Teletext PID"
+
+msgid "Television"
+msgstr "Television"
+
+msgid "Template Engine"
+msgstr "Webbutvecklingsverktyg"
+
+msgid "Terminal"
+msgstr ""
+
+msgid "Terrestrial"
+msgstr "Markbunden"
+
+msgid "Text"
+msgstr "Text"
+
+msgid "Th"
+msgstr "To"
+
+#, python-format
+msgid "The parameter '%s' can't be empty"
+msgstr "Parametern '%s' kan inte vara tom "
+
+msgid "The parameter 'command' must be a number"
+msgstr "Parametern 'command' måste vara numerisk"
+
+#, python-format
+msgid "The timer '%s' has been %s successfully"
+msgstr "Timern '%s' har %s framgångsrikt"
+
+#, python-format
+msgid "The timer '%s' has been deleted successfully"
+msgstr "Timern '%s' togs bort"
+
+#, python-format
+msgid "The timer '%s' now recorded! Not disabled!"
+msgstr "Timern '%s' har registrerats! Inte avaktiverad!"
+
+msgid "Theme"
+msgstr "Tema"
+
+#, fuzzy
+msgid "Theme mode"
+msgstr "Tema"
+
+msgid "This service can not be added."
+msgstr "Distributören kan inte läggas till."
+
+msgid "Thu"
+msgstr "Tor"
+
+msgid "Thursday"
+msgstr "Torsdag"
+
+msgid "Time"
+msgstr "Tid"
+
+msgid "Timeline"
+msgstr "Tidslinje"
+
+msgid "Timeout"
+msgstr "Timeout"
+
+msgid "Timer"
+msgstr "Timer"
+
+#, python-format
+msgid "Timer '%s' added"
+msgstr "Timer '%s' lades till"
+
+#, python-format
+msgid "Timer '%s' already exists!"
+msgstr "Timern '%s' finns redan!"
+
+#, python-format
+msgid "Timer '%s' changed"
+msgstr "Timer '%s' ändrades"
+
+#, python-format
+msgid "Timer '%s' not enabled while Conflict"
+msgstr "Timern '%s' kan inte aktiveras p.g.a. en konflikt"
+
+#, python-format
+msgid "Timer '%s' not saved while Conflict"
+msgstr "Timer '%s' sparades inte på grund av en konflikt"
+
+msgid "Timer Added"
+msgstr "Timer tillagd"
+
+msgid "Timer Conflict"
+msgstr ""
+
+msgid "Timer added"
+msgstr "Timmer lades till"
+
+msgid "Timer conflict detected! Not recording!"
+msgstr "En timerkonflikt har upptäckts. Spelar inte in!"
+
+msgid "Timer type"
+msgstr "Timertyp"
+
+msgid "TimerList has been saved"
+msgstr "Timerlistan har sparats"
+
+msgid "Timerlist"
+msgstr "Timerlista"
+
+msgid "Timers"
+msgstr "Timer"
+
+msgid "Title"
+msgstr "Titel"
+
+msgid "To date"
+msgstr "Inte före"
+
+msgid "Today"
+msgstr ""
+
+msgid "Toggle Standby"
+msgstr ""
+
+msgid "Transcode"
+msgstr "Koda om"
+
+msgid "Translation to Spanish"
+msgstr "Översättning till spanska"
+
+msgid "Try guessing"
+msgstr "Försök att gissa"
+
+msgid "Tu"
+msgstr "Ti"
+
+msgid "Tue"
+msgstr "Tis"
+
+msgid "Tuesday"
+msgstr "Tisdag"
+
+msgid "Tuner Number"
+msgstr "Mottagare nummer"
+
+msgid "Tuner Signal"
+msgstr "Mottagarens signal"
+
+msgid "Tuner Type"
+msgstr "Mottagartyp"
+
+msgid "Tuners"
+msgstr "Mottagare"
+
+msgid "Type"
+msgstr "Typ"
+
+#, python-format
+msgid "Unknown Volume command %s"
+msgstr "Okänd volyminstruktion %s"
+
+#, python-format
+msgid "Unknown command: '%s'"
+msgstr "Odefinierad instruktion: '%s'"
+
+msgid "Upcoming Events"
+msgstr "Kommande aktiviteter"
+
+msgid "Update"
+msgstr ""
+
+msgid "Update Package"
+msgstr ""
+
+msgid "Update from feed"
+msgstr ""
+
+msgid "Upgrade all packages"
+msgstr ""
+
+msgid "Upload File Error"
+msgstr ""
+
+msgid "Upload package"
+msgstr ""
+
+#, fuzzy
+msgid "Uploaded Files"
+msgstr "Fel vid uppladdning av fil"
+
+msgid "Use Channelname for screenshots"
+msgstr ""
+
+msgid "Use a custom location"
+msgstr "Använd en anpassad lagringsplats"
+
+msgid "Use as PiP if possible"
+msgstr ""
+
+msgid "Use classic interface"
+msgstr ""
+
+#, fuzzy
+msgid "Use custom Color"
+msgstr "Använd en anpassad lagringsplats"
+
+msgid "Use custom box name"
+msgstr "Använd anpassat boxnamn"
+
+msgid "Use modern design"
+msgstr ""
+
+msgid "Use modern interface"
+msgstr ""
+
+msgid "VPS"
+msgstr "VPS"
+
+msgid "VPS plugin not found"
+msgstr "Insticksprogrammet för VPS kunde inte hittas"
+
+msgid "Version"
+msgstr "Version"
+
+msgid "Video"
+msgstr "Video"
+
+msgid "Video Height"
+msgstr "Bildhöjd"
+
+msgid "Video PID (VPID)"
+msgstr ""
+
+msgid "Video Width"
+msgstr "Bildbredd"
+
+msgid "Visibly"
+msgstr "Synlig"
+
+msgid "Volume"
+msgstr "Volym"
+
+msgid "Volume Control"
+msgstr "Volymkontroll"
+
+msgid "W"
+msgstr "V"
+
+msgid "Waiting for answer ..."
+msgstr "Väntar på svar..."
+
+#, fuzzy
+msgid "Wake Up"
+msgstr "Vakna från djupt viloläge för EPG-uppdateringar"
+
+msgid "Wakeup"
+msgstr "Vakna från djupt viloläge för EPG-uppdateringar"
+
+msgid "Warning"
+msgstr "Varning"
+
+msgid "We"
+msgstr "On"
+
+msgid "Web TV"
+msgstr "Webb-TV"
+
+msgid "Wed"
+msgstr "Ons"
+
+msgid "Wednesday"
+msgstr "Onsdag"
+
+msgid "Weekly (Monday)"
+msgstr "Veckovis (måndag)"
+
+msgid "Weekly (Sunday)"
+msgstr "Veckovis (söndag)"
+
+msgid "Widescreen"
+msgstr ""
+
+msgid "Without auth only local access is allowed!"
+msgstr "Endast lokal åtkomst är tillåten utan inloggning!"
+
+msgid "Wizard"
+msgstr "Använd guide"
+
+msgid "Would you like to save your changes?"
+msgstr ""
+
+#, python-format
+msgid "Wrong parameter format 'set=%s'. Use set=set15 "
+msgstr "Fel parameterformat 'set=%s'. Använd set=set15 "
+
+msgid "YYYY-MM-DD"
+msgstr ""
+
+msgid "Yes"
+msgstr "Ja"
+
+msgid "Yes/No"
+msgstr "Ja/Nej"
+
+msgid "Yesterday"
+msgstr ""
+
+msgid "Zap"
+msgstr "Zappa"
+
+msgid "Zap & Record"
+msgstr "Spela in & zappa"
+
+msgid "Zap before streaming"
+msgstr "zappa före strömning"
+
+msgid "Zap to"
+msgstr "Zappa till"
+
+msgid "Zapped to"
+msgstr "Zappade till"
+
+#, fuzzy
+msgid "any time"
+msgstr "Lägg till timer"
+
+msgid "auto"
+msgstr "automatisk"
+
+msgid "box_ip"
+msgstr ""
+
+#, fuzzy
+msgid "case-insensitive"
+msgstr "Söknoggrannhet"
+
+#, fuzzy
+msgid "case-sensitive"
+msgstr "Söknoggrannhet"
+
+msgid "descramble and record ecm"
+msgstr ""
+
+msgid "description contains"
+msgstr "i beskrivningen"
+
+#, fuzzy
+msgid "description match"
+msgstr "Beskrivning"
+
+msgid "disabled"
+msgstr "avaktiverat"
+
+msgid "do nothing"
+msgstr "gör inget"
+
+msgid "don't descramble, record ecm"
+msgstr ""
+
+msgid "error! Loading Page"
+msgstr "Fel! Laddar sidan"
+
+msgid "exact title match"
+msgstr ""
+
+msgid "favourite desc match"
+msgstr ""
+
+msgid "finished"
+msgstr "slutfördes"
+
+msgid "go to deep standby"
+msgstr "inta djupt viloläge"
+
+msgid "go to standby"
+msgstr "inta viloläge"
+
+msgid "hour"
+msgstr ""
+
+msgid "kB"
+msgstr "kB"
+
+msgid "loading"
+msgstr "laddar"
+
+msgid "manual/disabled"
+msgstr "manuell/avaktiverad"
+
+msgid "mins"
+msgstr ""
+
+#, fuzzy
+msgid "minute"
+msgstr "Minut"
+
+msgid "no description available"
+msgstr "beskrivning saknas"
+
+msgid "none/IPv4-only network"
+msgstr "inga/endast IPv4-nätverk"
+
+msgid "normal"
+msgstr ""
+
+msgid "on day"
+msgstr ""
+
+msgid "on weekday"
+msgstr "på veckodagar"
+
+msgid "one two three four unknown command"
+msgstr "ett två tre fyra okänt kommando"
+
+msgid "partial title match"
+msgstr ""
+
+msgid "r/o"
+msgstr ""
+
+msgid "r/w"
+msgstr ""
+
+msgid "Receiver"
+msgstr ""
+
+msgid "record"
+msgstr "spela in"
+
+msgid "regex match (experimental)"
+msgstr ""
+
+msgid "remove"
+msgstr ""
+
+msgid "running"
+msgstr "pågår"
+
+msgid "seconds"
+msgstr "sekunder"
+
+msgid "select bouquets"
+msgstr "Välj favoritlistor"
+
+msgid "select channels"
+msgstr "Välj kanaler"
+
+msgid "select tags"
+msgstr "Välj etiketter"
+
+msgid "short description contains"
+msgstr "i kortfattade beskrivningen"
+
+#, fuzzy
+msgid "short description match"
+msgstr "kortfattade beskrivningen matchar"
+
+msgid "standard"
+msgstr "standard"
+
+msgid "static"
+msgstr "statisk"
+
+msgid "this service is protected by a parental control pin"
+msgstr ""
+
+msgid "title contains"
+msgstr "i titeln"
+
+msgid "title ends with"
+msgstr ""
+
+#, fuzzy
+msgid "title or description match"
+msgstr "titeln eller beskrivningen  matchar"
+
+#, fuzzy
+msgid "title or short description match"
+msgstr "titeln eller kortfattade beskrivningen matchar"
+
+msgid "title starts with"
+msgstr ""
+
+msgid "transcoded"
+msgstr "omkodad"
+
+#, python-format
+msgid "type %s is not a number"
+msgstr "typ %s är inte en siffra"
+
+msgid "unknown"
+msgstr "okänd"
+
+msgid "using"
+msgstr "användning"
+
+msgid "via"
+msgstr ""
+
+msgid "waiting"
+msgstr "väntar"
+
+msgid "weekday"
+msgstr "Veckodagar"
+
+msgid "weekend"
+msgstr "Veckoslut"
+
+msgid "wrong filetype"
+msgstr "Fel filtyp"
+
+msgid "zap"
+msgstr "zappa"
+
+#~ msgid "EPG Search"
+#~ msgstr "Sökning i EPG"
+
+#, fuzzy
+#~ msgid "Enter Text"
+#~ msgstr "Mottagartyp"
+
+#~ msgid "LICENSE"
+#~ msgstr "LICENS"
+
+#~ msgid "Standby Toggle"
+#~ msgstr "På/Viloläge"
+
+#, fuzzy
+#~ msgid "Use old remote"
+#~ msgstr "Dölj stor fjärrkontroll"
+
+#~ msgid "Recording Status"
+#~ msgstr "Inspelning pågår"
+
+#~ msgid "Tuner Bit Error Rate BER"
+#~ msgstr "Mottagarens bitfelfrekvens BER"
+
+#~ msgid "Tuner Signal Power AGC"
+#~ msgstr "Mottagarens signalstyrka AGC"
+
+#~ msgid "Tuner Signal Quality SNR"
+#~ msgstr "Mottagarens signalkvalitet SNR"
+
+#~ msgid "Tuner Signal Quality SNR_DB"
+#~ msgstr "Mottagarens signalkvalitet SNR_DB"
+
+#~ msgid "Video Wide"
+#~ msgstr "Bredbild"

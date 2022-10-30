@@ -1,0 +1,944 @@
+//******************************************************************************
+//* bqe.js: openwebif Bouqueteditor plugin
+//* Version 2.10
+//******************************************************************************
+//* Copyright (C) 2014-2022 jbleyel
+//* Copyright (C) 2014-2022 E2OpenPlugins
+//*
+//* Authors: jbleyel
+//*          Robert Damas <https://github.com/rdamas>
+
+//* V 2.0 - complete refactored
+//* V 2.1 - theme support
+//* V 2.2 - update status label
+//* V 2.3 - fix #198
+//* V 2.4 - improve search fix #419
+//* V 2.5 - prepare support spacers #239
+//* V 2.6 - improve spacers #239
+//* V 2.7 - improve channel numbers
+//* V 2.8 - show ns text #840
+//* V 2.9 - fix ns text, show provider as tooltip #840
+//* V 2.10 - use let instead of var
+
+//* License GPL V2
+//* https://github.com/oe-alliance/OpenWebif/blob/main/LICENSE.txt
+//*******************************************************************************
+// TODO: alternatives
+
+(function() {
+
+	var BQE = function () {
+		// keep reference to object.
+		var self;
+		
+		// Mode=0: TV, Mode=1: Radio
+		var	Mode;
+		
+		// keep track of which list in left pane is shown.
+		// 0: satellites, 1: providers, 2: all channels
+		var cType;
+		
+		// Array of services type markers.
+		var sType;
+
+		var hovercls;
+
+		var activecls;
+		
+		var allChannelsCache;
+
+		var filterChannelsCache;
+		
+		var bqStartPositions;
+
+		// used for caching.
+		var date;
+
+		return {
+			// Callback for display left panel providers list
+			// Triggers fetching and displaying dependent services list
+			// for selected provider
+			showProviders: function (options) {
+				$('#sel0').show();
+				$('#btn-provider-add')
+					.show()
+					.prop( 'disabled', (self.cType !==1 ) );
+				$('#provider').empty();
+				$.each(options, function(k,v) {
+					$('#provider').append(v);
+				});
+				$('#provider').children().first().addClass('ui-selected');
+				self.changeProvider(
+					$('#provider').children().first().data('sref'),
+					self.showChannels
+				);
+				self.setHover('#provider');
+			},
+		
+			// Callback for display left panel services list
+			showChannels: function (options) {
+				$('#channels').empty();
+				$.each(options, function(k,v) {
+					$('#channels').append(v);
+				});
+				self.setChannelButtons();
+				self.setHover('#channels');
+			},
+
+			// Callback for display right panel bouquet list
+			// Triggers fetching and displaying dependent services list
+			// for selected bouquet
+			showBouquets: function (options) {
+				$('#bql').empty();
+				$.each(options, function(k,v) {
+					$('#bql').append(v);
+				});
+				$('#bql').children().first().addClass('ui-selected');
+				self.changeBouquet(
+					$('#bql').children().first().data('sref'),
+					self.showBouquetChannels
+				);
+				self.setHover('#bql');
+			},
+
+			// Callback for display right panel services list
+			showBouquetChannels: function (options) {
+				$('#bqs').empty();
+				$.each(options, function(k,v) {
+					$('#bqs').append(v);
+				});
+				self.setBouquetChannelButtons();
+				self.setHover('#bqs');
+			},
+
+			// Build ref string for selecting services list
+			// @param type int which list to use
+			// @return string
+			buildRefStr: function (type) {
+				let r = '1:7:2:0:0:0:0:0:0:0:(type == 2) || (type == 10) ';
+				if (self.Mode === 0) {
+					r = '1:7:1:0:0:0:0:0:0:0:(type == 1) || (type == 17) || (type == 195) || (type == 25) || (type == 22) || (type == 31) || (type == 211) ';
+				}
+				if (type === 0) {
+					r += 'FROM BOUQUET "bouquets.';
+					r += (self.Mode === 0) ? 'tv' : 'radio';
+					r += '" ORDER BY bouquet';
+				} else if (type === 1) {
+					r += 'FROM PROVIDERS ORDER BY name';
+				} else if (type === 2) {
+					r += 'FROM SATELLITES ORDER BY satellitePosition';
+				} else if (type === 3) {
+					r+='ORDER BY name';
+				}
+				// console.log("buildref => "+r);
+				return r;
+			},
+
+			// Callback function for TV/Radio button
+			// @param nmode int 
+			//        0: TV, 1: Radio, 2: Option, 3: initial setup, triggers reload
+			setTvRadioMode: function (nmode) {
+				let reload = false;
+				if (nmode !== self.Mode || nmode === 3) {
+					reload = true;
+				}
+	
+				if (nmode > 1) {
+					self.Mode = 0;
+				} else {
+					self.Mode = nmode;
+				}
+	
+				if (self.cType === 0) {
+					self.getSatellites(self.showProviders);
+				} else if (self.cType === 1) {
+					self.getProviders(self.showProviders);
+				} else if (self.cType === 2) {
+					$('#sel0').hide();
+					self.getChannels(self.showChannels);
+				}
+			
+				if (reload) {
+					self.getBouquets(self.showBouquets);
+				}
+			},
+
+			// Callback function for left pane "satellites" button.
+			// Fetches satellites list, param callback displays list.
+			// @param callback function
+			getSatellites: function (callback) {
+				self.cType = 0;
+				let ref = self.buildRefStr(2);
+				let stype = (self.Mode === 0) ? 'tv' : 'radio';
+				$.ajax({
+					url: '/api/getsatellites',
+					dataType: 'json',
+					cache: true,
+					data: { sRef: ref, stype: stype, date: self.date },
+					success: function ( data ) {
+						let options = [];
+						let s = data['satellites'];
+						$.each( s, function ( key, val ) {
+							let sref = val['service'];
+							let name = val['name'];
+							options.push( $("<li/>", {
+								class: "ui-widget-content",
+								data: { sref: sref }
+							}).html(name));
+						});
+						if (callback) {
+							callback(options);
+						}
+					}
+				});
+			},
+		
+			// Callback function for left pane "providers" button.
+			// Fetches provider list, param callback displays list.
+			// @param callback function
+			getProviders: function (callback) {
+				self.cType = 1;
+				let ref = self.buildRefStr(1);
+				$.ajax({
+					url: '/api/getservices', 
+					dataType: 'json',
+					cache: true,
+					data: { sRef: ref, date: self.date },
+					success: function ( data ) {
+						let options = [];
+						let s = data['services'];
+						$.each( s, function ( key, val ) {
+							let sref = val['servicereference'];
+							let name = val['servicename'];
+							options.push( $('<li/>', {
+								class: "ui-widget-content",
+								data: { sref: sref }
+							}).html(name) );
+						});
+						if (callback) {
+							callback(options);
+						}
+					}
+				});
+			},
+		
+			// Callback function for left pane "channels" button.
+			// Fetches channels list, param callback displays list.
+			// @param callback function
+			getChannels: function (callback) {
+				self.cType = 2;
+				let ref = self.buildRefStr(3);
+				$.ajax({
+					url: '/api/getservices?sRef=' + ref + "&showproviders=1", 
+					dataType: 'json',
+					cache: true,
+					data: { date: self.date },
+					success: function ( data ) {
+						self.allChannelsCache = data['services'];
+						self.filterChannelsCache = data['services'];
+						self.fillChannels(callback);
+					}
+				});
+			},
+			
+			fillChannels: function (callback)
+			{
+				let options = [];
+				$.each( self.filterChannelsCache, function ( key, val ) {
+					let sref = val['servicereference'];
+					let name = val['servicename'];
+					let prov = val['provider'];
+					let stype = sref.split(':')[2];
+					let ns = sref.split(':')[6];
+					let _ns = self.getNS(ns);
+					let m = '<span title="'+prov+'" class="marker">' + _ns + ' ' + (self.sType[stype] || '') + '</span>';
+					options.push( $('<li/>', {
+						class: "ui-widget-content",
+						data: { stype: stype, sref: sref }
+					}).html(name+m) );
+				});
+				if (callback) {
+					callback(options);
+				}
+			},
+			
+			// Callback function for fetching right panel bouquets list.
+			// @param callback function display bouquets list
+			getBouquets: function (callback) {
+				self.bqStartPositions = {};
+				let ref = self.buildRefStr(0);
+				$.ajax({
+					url: '/bouqueteditor/api/getservices', 
+					dataType: 'json',
+					cache: false,
+					data: { sRef: ref },
+					success: function ( data ) {
+						let options = [];
+						let s = data['services'];
+						$.each( s, function ( key, val ) {
+							self.bqStartPositions[val['servicereference']] = val['startpos'];
+							let sref = val['servicereference'];
+							let name = val['servicename'];
+							options.push( $('<li/>', {
+								class: "ui-widget-content",
+								data: { sref: sref }
+							}).html('<div class="handle"><span class="ui-icon ui-icon-dragndrop"></span></div>'+name+'</li>') );
+						});
+						if (callback) {
+							callback(options);
+						}
+					}
+				});
+			},
+
+			// Callback function for selecting provider in left panel
+			// providers list.
+			// @param sref string selected provider reference string 
+			// @param callback function display services list
+			changeProvider: function (sref, callback) {
+				$.ajax({
+					url: '/api/getservices', 
+					dataType: 'json',
+					cache: true,
+					data: { sRef: sref, date: self.date, provider:"1"},
+					success: function ( data ) {
+						self.allChannelsCache = data['services'];
+						self.filterChannelsCache = data['services'];
+						self.fillChannels(callback);
+					}
+				});
+			},
+
+			// Callback function for selecting bouquet in right panel
+			// bouquets list.
+			// @param bref string selected bouquet reference string 
+			// @param callback function display services list
+			changeBouquet: function (bref, callback) {
+				let spos=0;
+				if(self.bqStartPositions[bref])
+					spos = self.bqStartPositions[bref];
+				$.ajax({
+					url: '/bouqueteditor/api/getservices', 
+					dataType: 'json',
+					cache: false,
+					data: { sRef: bref },
+					success: function ( data ) {
+						let options = [];
+						let s = data['services'];
+						$.each( s, function ( key, val ) {
+							let sref = val['servicereference'];
+							let m = (val['ismarker'] == 1) ? '<span style="float:right">(M)</span>' : '';
+							let name=val['servicename'];
+							let pos = spos + val['pos'];
+							if(val['ismarker'] == 2)
+								m= '<span style="float:right">(S)</span>';
+							name = pos.toString() + ' - ' + name;
+							if(name!='')
+								options.push( $('<li/>', {
+									class: "ui-widget-content",
+									data: { 
+										ismarker: val['ismarker'],
+										sref: sref
+									}
+								}).html('<div class="handle"><span class="ui-icon ui-icon-dragndrop"></span></div>'+name+m+'</li>') );
+						});
+						if (callback) {
+							callback(options);
+						}
+					}
+				});
+			},
+
+			// Callback function for adding selecting provider in left panel
+			// providers list to bouquets list
+			addProvider: function () {
+				let sref = $('#provider li.ui-selected').data('sref');
+				$.ajax({
+					url: '/bouqueteditor/api/addprovidertobouquetlist', 
+					dataType: 'json',
+					cache: true,
+					data: { sProviderRef: sref, mode: self.Mode, date: self.date },
+					success: function ( data ) {
+						let r = data.Result;
+						if (r.length == 2) {
+							self.showError(r[1],r[0]);
+						}
+						self.getBouquets(self.showBouquets);
+					}
+				});
+			},
+
+			// Callback function for moving bouquet in bouquets list
+			moveBouquet: function (obj) {
+				$.ajax({
+					url: '/bouqueteditor/api/movebouquet',
+					dataType: 'json',
+					cache: false,
+					data: { sBouquetRef: obj.sBouquetRef, mode: obj.mode, position: obj.position },
+					success: function () {}
+				});
+			},
+
+			// Callback function for bouquet add button in right pane
+			// Prompts for bouquet name
+			addBouquet: function () {
+				let newname = prompt(tstr_bqe_name_bouquet + ':');
+				if (newname.length) {
+					$.ajax({
+						url: '/bouqueteditor/api/addbouquet',
+						dataType: 'json',
+						cache: false,
+						data: { name: newname, mode: self.Mode }, 
+						success: function ( data ) {
+							let r = data.Result;
+							if (r.length == 2) {
+								self.showError(r[1],r[0]);
+							}
+							self.getBouquets(self.showBouquets);
+						}
+					});
+				}
+			},
+		
+			// Callback function for bouquet rename button in right pane
+			// Prompts for new bouquet name
+			renameBouquet: function () {
+				if ($('#bql li.ui-selected').length !== 1) {
+					return;
+				}
+				let item = $('#bql li.ui-selected');
+				let pos = item.index();
+				let sname = item.text();
+				let sref = item.data('sref');
+
+				let newname=prompt(tstr_bqe_rename_bouquet + ':', sname);
+				if (newname && newname!=sname){
+					$.ajax({
+						url: '/bouqueteditor/api/renameservice',
+						dataType: 'json',
+						cache: false,
+						data: { sRef: sref, mode: self.Mode, newName: newname }, 
+						success: function ( data ) {
+							let r = data.Result;
+							if (r.length == 2) {
+								self.showError(r[1],r[0]);
+							}
+							self.getBouquets(self.showBouquets);
+						}
+					});
+				}
+			},
+
+			// Callback function for bouquet delete button in roght panel
+			// Prompts for confirmation
+			deleteBouquet: function () {
+				if ($('#bql li.ui-selected').length !== 1) {
+					return;
+				}
+				let sname = $('#bql li.ui-selected').text();
+				let sref = $('#bql li.ui-selected').data('sref');
+				if (confirm(tstr_bqe_del_bouquet_question + "\n" + sname + ' ?') === false) {
+					return;
+				}
+
+				$.ajax({
+					url: '/bouqueteditor/api/removebouquet',
+					dataType: 'json',
+					cache: false,
+					data: { sBouquetRef: sref, mode: self.Mode }, 
+					success: function ( data ) {
+						let r = data.Result;
+						if (r.length == 2) {
+							self.showError(r[1],r[0]);
+						}
+						self.getBouquets(self.showBouquets);
+					}
+				});
+			},
+
+			// Disable/enable left pane channel buttons on selection state
+			setChannelButtons: function () {
+				let enabled = $('#channels li.ui-selected').length == 0;
+				$('#btn-channel-add').prop( 'disabled', enabled );
+				$('#btn-alternative-add').prop( 'disabled', enabled );
+			},
+
+			// Disable/enable right pane channel buttons on selection state
+			setBouquetChannelButtons: function () {
+				let item = $('#bqs li.ui-selected');
+				let state = item.length == 0;
+				$('#btn-channel-delete').prop( 'disabled', state );
+				$('#btn-marker-add').prop( 'disabled', state );
+				$('#btn-spacer-add').prop( 'disabled', state );
+
+				state = item.length != 1 || item.data('ismarker') != 1;
+				$('#btn-marker-group-rename').prop( "disabled", state );
+			},
+
+			// Callback function for moving service in right pane services list
+			moveChannel: function (obj) {
+				$.ajax({
+					url: '/bouqueteditor/api/moveservice',
+					dataType: 'json',
+					cache: false,
+					data: { 
+						sBouquetRef: obj.sBouquetRef, 
+						sRef: obj.sRef, 
+						mode: obj.mode,  
+						position: obj.position 
+					}, 
+					success:self.renumberChannel
+				});
+			},
+
+			renumberChannel: function ()
+			{
+				//TODO
+			},
+
+			// Add selected services from left pane channels list to right pane channels list
+			// Services will be added before selected service in right pane.
+			addChannel: function () {
+				let reqjobs = [];
+				let bref = $('#bql li.ui-selected').data('sref');
+				let dstref = $('#bqs li.ui-selected').data('sref') || '';
+			
+				$('#channels li.ui-selected').each(function () {
+					reqjobs.push($.ajax({
+						url: '/bouqueteditor/api/addservicetobouquet',
+						dataType: 'json',
+						cache: false,
+						data: { 
+							sBouquetRef: bref,
+							sRef: $(this).data('sref'),
+							sRefBefore: dstref 
+						}, 
+						success: function () {} 
+					}));
+				});
+
+				if (reqjobs.length !== 0) {
+					$.when.apply($, reqjobs).then(function () {
+						self.changeBouquet(bref, self.showBouquetChannels);
+					});
+				}
+			},
+
+			// TBD.
+			addAlternative: function () {
+				alert('NOT implemented YET');
+				return;
+			},
+
+			// Callback function for right pane delete channel button
+			// Deletes selected services, prompts for confirmation.
+			deleteChannel: function () {
+				if ($('#bqs li.ui-selected').length === 0) {
+					return;
+				}
+
+				let bref = $('#bql li.ui-selected').data('sref');
+				let snames = [];
+				let jobs = [];
+
+				$('#bqs li.ui-selected').each(function () { 
+					snames.push( $(this).text() );
+					jobs.push({
+						sBouquetRef: bref,
+						mode: self.Mode,
+						sRef: $(this).data('sref')
+					});
+				});
+			
+				if (confirm(tstr_bqe_del_channel_question + "\n" + snames.join(', ') + ' ?') === false) {
+					return;
+				}
+
+				let reqjobs = [];
+				$.each( jobs, function ( key, jobdata ) {
+					reqjobs.push($.ajax({
+						url: '/bouqueteditor/api/removeservice',
+						dataType: 'json',
+						cache: false,
+						data: jobdata, 
+						success: function (){} 
+					}));
+				});
+
+				if (reqjobs.length !== 0) {
+					$.when.apply($, reqjobs).then(function () {
+						self.changeBouquet(bref, self.showBouquetChannels);
+					});
+				}
+			},
+			addMarker: function () {
+				self._addMarker(false);
+			},
+			addSpacer: function () {
+				self._addMarker(true);
+			},
+			// Callback function for right pane add marker button
+			// Prompts for marker name, marker will be added before selected service
+			_addMarker: function (sp) {
+				let newname = '';
+				if (!sp)
+					newname = prompt(tstr_bqe_name_marker + ':');
+				if (newname.length || sp) {
+					let bref = $('#bql li.ui-selected').data('sref');
+					let dstref = $('#bqs li.ui-selected').data('sref') || '';
+					let params = { sBouquetRef: bref, Name: newname, sRefBefore: dstref };
+					if(sp)
+						params = { sBouquetRef: bref, SP: '1', sRefBefore: dstref };
+					$.ajax({
+						url: '/bouqueteditor/api/addmarkertobouquet',
+						dataType: 'json',
+						cache: false,
+						data: params, 
+						success: function ( data ) {
+							let r = data.Result;
+							if (r.length == 2) {
+								self.showError(r[1],r[0]);
+							}
+							self.changeBouquet(bref, self.showBouquetChannels);
+						}
+					});
+				}
+			},
+
+			// Callback function for right panel rename marker button
+			// At the moment only markers will be renamed. Prompts for new marker name.
+			renameMarkerGroup: function () {
+				// rename marker or group
+				let item = $('#bqs li.ui-selected');
+				if (item.length !== 1) {
+					return;
+				}
+
+				// TODO : rename group
+				if (item.data('ismarker') == 0) {
+					return;
+				}
+			
+				let pos = item.index();
+				let sname = item.text();
+				let sref = item.data('sref');
+				let bref = $('#bql li.ui-selected').data('sref');
+				let dstref = $('#bqs li.ui-selected').next().data('sref') || '';
+
+				let newname = prompt(tstr_bqe_rename_marker + ': ', sname);
+				if (newname && newname !== sname) {
+					$.ajax({
+						url: '/bouqueteditor/api/renameservice',
+						dataType: 'json',
+						cache: false,
+						data: { sBouquetRef: bref, sRef: sref, newName: newname, sRefBefore: dstref }, 
+						success: function ( data ) {
+							let r = data.Result;
+							if (r.length == 2) {
+								self.showError(r[1],r[0]);
+							}
+							self.changeBouquet(bref, self.showBouquetChannels);
+						}
+					});
+				}
+			},
+
+			// Callback function for search box in left pane
+			// Filters matching services in channels list. 
+			searchChannel: function (txt) {
+				let t = txt.toLowerCase();
+				
+				self.filterChannelsCache = [];
+				$.each( self.allChannelsCache, function ( key, val ) {
+					let name = val['servicename'];
+					if (name.toLowerCase().indexOf(t) !== -1)
+						self.filterChannelsCache.push({
+							servicename: val['servicename'],
+							servicereference:val['servicereference'],
+							provider:val['provider']
+						});
+				});
+				
+				self.fillChannels(self.showChannels);
+				self.setChannelButtons();
+			},
+
+			// Display success and errors for selected ajax functions
+			// @param txt string success/error msg
+			// @param st bool False: error, True: success
+			showError: function (txt, st) {
+				st = typeof st !== 'undefined' ? st : 'False';
+				$('#statustext').text('');
+			
+				if (st === true || st === 'True' || st === 'true') {
+					$('#statusbox').removeClass('ui-state-error').addClass('ui-state-highlight');
+					$('#statusicon').removeClass('ui-icon-alert').addClass('ui-icon-info');
+				} else {
+					$('#statusbox').removeClass('ui-state-highlight').addClass('ui-state-error');
+					$('#statusicon').removeClass('ui-icon-info').addClass('ui-icon-alert');
+				}
+				$('#statustext').text(txt);
+			
+				if (txt !== '') {
+					$('#statuscont').show();
+				} else {
+					$('#statuscont').hide();
+				}
+			},
+
+			// Callback function for export button in right pane.
+			// Prompts for backup file name
+			exportBouquets: function () {
+				let fn = prompt(tstr_bqe_filename + ': ', 'bouquets_backup');
+				if (fn) {
+					$.ajax({
+						url: '/bouqueteditor/api/backup',
+						dataType: 'json',
+						cache: false,
+						data: { Filename: fn }, 
+						success: function ( data ) {
+							let r = data.Result;
+							if (r[0] === false) {
+								self.showError(r[1],r[0]);
+							} else {
+								let url =  "/bouqueteditor/tmp/" + r[1];
+								window.open(url,'Download');
+							}
+						}
+					});
+				}
+			},
+
+			// Callback function for import button in right pane.
+			// Triggers file upload dialog.
+			importBouquets: function () {
+				$("#rfile").trigger('click');
+			},
+
+			// Callback function for import button in right pane.
+			// Called after file upload dialog. Prompts for confirmation of upload,
+			// uploads backup file.
+			prepareRestore: function () {
+				let fn = $(this).val();
+				fn = fn.replace('C:\\fakepath\\','');
+				if (confirm(tstr_bqe_restore_question + ' ( ' + fn + ') ?') === false) {
+					return;
+				}
+	
+				$('form#uploadrestore')
+					.unbind('submit')
+					.submit(function (_e) 
+				{
+					let formData = new FormData(this);
+					$.ajax({
+						url: '/bouqueteditor/uploadrestore',
+						type: 'POST',
+						data:  formData,
+						mimeType:"multipart/form-data",
+						contentType: false,
+						cache: false,
+						processData:false,
+						dataType: 'json',
+						success: function (data, textStatus, jqXHR) {
+							let r = data.Result;
+							if (r[0]) {
+								self.doRestore(r[1]);
+							} else {
+								self.showError("Upload File: " + textStatus);
+							}
+						},
+						error: function (jqXHR, textStatus, errorThrown) {
+							self.showError("Upload File Error: " + errorThrown);
+						}
+					});
+					_e.preventDefault();
+					try {
+						_e.unbind();
+					} catch(ex){}
+				});
+				$('form#uploadrestore').submit();
+			},
+
+			// Callback function for restoring uploaded bouquet backup file
+			doRestore: function (fn) {
+				if (fn) {
+					$.ajax({
+						url: '/bouqueteditor/api/restore',
+						dataType: 'json',
+						cache: false,
+						data: { Filename: fn }, 
+						success: function ( data ) {
+							// console.log(data);
+							let r = data.Result;
+							if (r.length == 2) {
+								self.showError(r[1],r[0]);
+							}
+						}
+					});
+				}
+			},
+
+			// Setup handlers, trigger building lists.
+			// This is the starting point.
+			setup: function () {
+				self = this;
+				self.Mode = 0;
+				self.cType = 1;
+				self.sType = { '1': '[SD]', '16': '[SD4]', '19': '[HD]', '1F': '[UHD]', 'D3': '[OPT]' };
+				self.hovercls = getHoverCls();
+				self.activecls = getActiveCls();
+
+				// Styled button sets; #tb1, #tb2 in left pane, #tb3 in right pane
+				$('#tb1').buttonset();
+				$('#tb2').buttonset();
+				$('#tb3').buttonset();
+
+				// Setup callback functions in left pane
+				$('#btn-provider-add').click(self.addProvider);
+				$('#btn-channel-add').click(self.addChannel);
+				$('#btn-alternative-add').click(self.addAlternative);
+
+				// Setup callback functions in right pane
+				$('#btn-bouquet-add').click(self.addBouquet);
+				$('#btn-bouquet-rename').click(self.renameBouquet);
+				$('#btn-bouquet-delete').click(self.deleteBouquet);
+
+				$('#btn-channel-delete').click(self.deleteChannel);
+				$('#btn-marker-add').click(self.addMarker);
+				$('#btn-spacer-add').click(self.addSpacer);
+				$('#btn-marker-group-rename').click(self.renameMarkerGroup);
+				
+				// Setup selection callback function for left pane providers list
+				// Triggers building services list for selected provider
+				$('#provider').selectable({
+					selected: function ( event, ui ) {
+						$(ui.selected).addClass('ui-selected').siblings().removeClass('ui-selected');
+						self.changeProvider($(ui.selected).data('sref'), self.showChannels);
+					},classes: {
+						"ui-selected": self.activecls 
+					}
+				});
+
+				// Setup selection callback function for left pane channels list
+				$('#channels').selectable({
+					stop: self.setChannelButtons,
+					classes: {
+						"ui-selected": self.activecls 
+					}
+				});
+
+				// Setup callback functions for right pane bouquets list
+				// Sorting is done via sortable widget, selection via selectable
+				// widget triggers building of channels list for selected bouquet.
+				$('#bql').sortable({
+					handle: '.handle',
+					stop: function ( event, ui ) {
+						let sref = $(ui.item).data('sref');
+						let position = ui.item.index();
+						self.moveBouquet({ sBouquetRef: sref, mode: self.Mode, position: position});
+					}
+				}).selectable({
+					filter: 'li',
+					cancel: '.handle',
+					selected: function ( event, ui ) {
+						$(ui.selected).addClass('ui-selected').siblings().removeClass('ui-selected');
+						self.changeBouquet($(ui.selected).data('sref'), self.showBouquetChannels);
+					},classes: {
+						"ui-selected": self.activecls 
+					}
+				});
+
+				// Setup callback functions for right pane channels list
+				// Sorting is done via sortable widget.
+				$('#bqs').sortable({
+					handle: '.handle',
+					stop: function ( event, ui ) {
+						let bref = $('#bql li.ui-selected').data('sref');
+						let sref = $(ui.item).data('sref');
+						let position = ui.item.index();
+						self.moveChannel({ sBouquetRef: bref, sRef: sref, mode: self.Mode, position: position});
+					}
+				}).selectable({
+					filter: 'li',
+					cancel: '.handle',
+					stop: self.setBouquetChannelButtons,
+					classes: {
+						"ui-selected": self.activecls 
+					}
+				});
+
+				// Setup callback functions for left pane toolbar buttons
+				$('#toolbar-choose-tv').click(function () { self.setTvRadioMode(0); });
+				$('#toolbar-choose-radio').click(function () { self.setTvRadioMode(1); });
+
+				$('#toolbar-choose-satellites').click(function () { self.getSatellites(self.showProviders); });
+				$('#toolbar-choose-providers').click(function () { self.getProviders(self.showProviders); });
+				$('#toolbar-choose-channels').click(function () { 
+					$('#sel0').hide();
+					$('#btn-provider-add').hide();
+					self.getChannels(self.showChannels); 
+				});
+
+				// Setup callback functions for right pane toolbar buttons
+				$('#toolbar-bouquets-reload').click(function () { self.getBouquets(self.showBouquets); });
+				$('#toolbar-bouquets-export').click(self.exportBouquets);
+				$('#toolbar-bouquets-import').click(self.importBouquets);
+
+				// Setup callback function for left pane search box
+				$('#searchch').focus(function () { 
+					if ($(this).val() === '...') {
+						$(this).val('');
+					}
+				}).keyup(function (){
+					if ($(this).data('val') !== this.value) {
+						self.searchChannel(this.value);
+					}
+					$(this).data('val', this.value);
+				}).blur(function (){
+					$(this).data('val', '');
+					if ($(this).val() === '') {
+						$(this).val('...');
+					}
+				});
+
+				// Setup callback function hidden file upload button
+				$('#rfile').change(self.prepareRestore);
+
+				// Initially build all lists.
+				self.setTvRadioMode(3);
+			},setHover : function(obj)
+			{
+				$(obj + ' li').hover(
+					function(){ $(this).addClass(self.hovercls); },
+					function(){ $(this).removeClass(self.hovercls); }
+				);
+			},getNS : function(ns)
+			{
+				let _ns = ns.toLowerCase();
+				if (_ns.startsWith("ffff",0))
+				{
+					return "DVB-C";
+				}
+				if (_ns.startsWith("eeee",0))
+				{
+					return "DVB-T";
+				}
+				let __ns = parseInt(_ns,16) >> 16 & 0xFFF;
+				let d = " E";
+				if(__ns > 1800)
+				{
+					d = " W";
+					__ns = 3600 - __ns;
+				}
+				return (__ns/10).toFixed(1).toString() + d;
+			}
+			
+		 };
+	};
+
+	let bqe = new BQE();
+	let date = new Date();
+	bqe.date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate();
+	bqe.setup();
+
+})();

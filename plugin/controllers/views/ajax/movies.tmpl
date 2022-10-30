@@ -1,0 +1,121 @@
+#from urllib.parse import quote
+#from time import localtime, strftime
+#from Plugins.Extensions.OpenWebif.controllers.i18n import tstrings
+<div id="content_main" class="ui-widget-content" style="min-height: 500px;">
+	<div id="tvcontentmain">
+		<div id="toolbar-header" class="ui-widget-header">
+		<div style=display:inline-block;float:left;>
+			<select id="moviesort">
+			#set $count = 0
+			#set $da = $tstrings['date']
+			#set $na = $tstrings['name']
+			#set $sortnames = [$na,$na,$da,$da]
+			#set $sorttypes = ['name','named','date','dated']
+			#set $sortimg = ['fa-sort-alpha-asc','fa-sort-alpha-desc','fa-sort-numeric-asc','fa-sort-numeric-desc']
+			#for $title in $sortnames
+				<option value="$sorttypes[$count]"
+				#if $sorttypes[$count] == $sort
+					selected="selected"
+				#end if
+				 data-class="$sortimg[$count]">$title</option>
+				#set $count += 1
+			#end for
+		</select>
+		</div>
+		<span id="toolbar">
+		#set $path=''
+		<span id="moviebuttons">
+			<!-- <button onclick="load_maincontent_spin('ajax/movies?dirname=/'); return false">$tstrings['Root']</button>-->
+			#for $dir in $directory[0:-1].split("/")[1:-1]
+				#set $path += '/' + $dir
+				<button onclick="load_maincontent_spin('ajax/movies?dirname='+escape('$path'));">$dir</button>
+			#end for
+			#if $directory != '/'
+				<button class="ui-state-active"><span style="font-weight: bold;">
+					#echo $directory[0:-1].split("/")[-1]
+				</span></button>
+			#end if
+		</span>
+
+		#if $len($bookmarks)
+			<select id="directory">
+			<option>Subdirs:</option>
+			#for $bookmark in $bookmarks
+				<option value="$directory$bookmark">$bookmark</option>
+			#end for
+			</select>
+		#end if
+		</span>
+		</div>
+		<div id="movies">
+		#set $count = 0
+		#for $movie in $movies
+			#set $mname = $movie.eventname.replace("\"", r"'")
+			<div class="tm_row ui-widget-content ui-state-default" id="$count" data-title="$mname" data-start="$movie.recordingtime">
+				<div class="m_buttons tm_buttons">
+						<div>
+						<a href='#' onclick="playRecording('$quote($movie.serviceref)');" title="$tstrings['playback']"><div><i class="fa fa-play"></i></div></a>
+						#if $transcoding
+						<a href="#" onclick="jumper80('$quote($movie.filename)');" title="$tstrings['stream']: $mname"><div><i class="fa fa-desktop"></i></div></a>
+						<a href="#" onclick="jumper8003('$quote($movie.filename)');" title="$tstrings['stream'] ($tstrings['transcoded']): $mname"><div><i class="fa fa-mobile"></i></div></a>
+						#else
+						<a target="_blank" href='web/ts.m3u?file=$quote($movie.filename)' title="$tstrings['stream'] $mname"><div><i class="fa fa-desktop"></i></div></a>
+						#end if
+						<br><br>
+						#set $w = $movie.lastseen
+						#if $w > 0
+							#set $w = $w * 70 / 100
+							#set $size = str($w) + '%'
+							<div class="ui-progressbar ui-corner-all ui-widget ui-widget-content">
+								<div class="ui-progressbar-value ui-corner-left ui-widget-header" style="width: $size;"></div>
+							</div>
+						#end if
+						<br>
+						#set $eventname_escaped =  $movie.eventname.replace("'", r"\'").replace('"', r"\'")
+						<a href='/file?action=download&file=$quote($movie.filename)' title="$tstrings['download'] $mname"><div><i class="fa fa-save"></i></div></a>
+						<a href='#' onclick="editmovie('$quote($movie.serviceref)','$eventname_escaped', escape('$directory').replace('+','%2B'));" title="$tstrings['edit_recording']"><div><i class="fa fa-edit"></i></div></a>
+						<a href='#' onclick="deleteMovie('$quote($movie.serviceref)', '$count', '$eventname_escaped'); return false;" title="$tstrings['delete_recording']"><div><i class="fa fa-trash-o"></i></div></a>
+
+						</div>
+				</div>
+				<div class="tm_text">
+					#if $movie.eventname != ""
+						<div>
+							<span class="tm_title">$movie.eventname</span><br /> $movie.servicename / $movie.begintime<br /> $movie.length min. / $movie.filesize_readable
+						</div>
+						<div>
+							<span class="tm_desc" style="font-weight: bold;">$movie.description</span>
+						</div>
+						<div>
+							<span class="tm_desc">$movie.descriptionExtended</span>
+						</div>
+					#else
+						<div>
+							<span class="tm_title">$movie.filename</span>
+						</div>
+					#end if
+				</div>
+				#set $count += 1
+			</div>
+		#end for
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+
+\$( function() {
+	\$('#moviebuttons').buttonset();
+	MLHelper.Load('$sort');
+	setTMHover();
+});
+
+#if $len($bookmarks)
+\$("#directory").selectmenu({change: function(event, ui) {
+	load_maincontent_spin('ajax/movies?dirname='+escape(ui.item.value).replace('+','%2B'))
+}
+});
+
+#end if
+
+</script>

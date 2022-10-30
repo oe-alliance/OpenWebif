@@ -1,0 +1,2153 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenWebif\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-10 09:36+0000\n"
+"PO-Revision-Date: 2021-12-23 21:59+0100\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/e2openplugin-"
+"openwebif/e2openplugin-openwebif/nl/>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 3.0\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ../plugin\n"
+
+#, python-format
+msgid "%02d.%02d."
+msgstr "%02d.%02d."
+
+#, python-format
+msgid "%02d.%02d.%d"
+msgstr "%02d.%02d.%d"
+
+#, python-format
+msgid "%02d:%02d"
+msgstr "%02d:%02d"
+
+msgid "%d.%m.%Y"
+msgstr "%d.%m.%Y"
+
+msgid "%d.%m.%Y %H:%M"
+msgstr "%d.%m.%Y %H:%M"
+
+#, python-format
+msgid "%s %02d.%02d."
+msgstr "%s %02d.%02d."
+
+#, python-format
+msgid "%s %02d.%02d.%d"
+msgstr "%s %02d.%02d.%d"
+
+#, python-format
+msgid "%s %s is locked."
+msgstr "%s %s is vergrendeld."
+
+#, python-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#, python-format
+msgid "%s Style"
+msgstr ""
+
+#, python-format
+msgid "%s free / %s total"
+msgstr "%s vrij / %s totaal"
+
+msgid "(Press 'shift' and click to 'hold')"
+msgstr "(shift + klik voor lang-drukken)"
+
+msgid "(in minutes)"
+msgstr "(in minuten)"
+
+msgid "A filename is required"
+msgstr "Geef bestandsnaam in"
+
+msgid "A value is required"
+msgstr "U moet iets opschrijven!"
+
+msgid "AGC"
+msgstr "AGC"
+
+msgid "About"
+msgstr "Over"
+
+msgid "Add"
+msgstr "Toevoegen"
+
+msgid "Add  AutoTimer  to tags"
+msgstr "Autotimer aan Tags toevoegen"
+
+msgid "Add AutoTimer name to tags"
+msgstr "Naam aan Tags toevoegen"
+
+msgid "Add Bouquet"
+msgstr "Bouquet toevoegen"
+
+msgid "Add IPTV/URL"
+msgstr "Voeg de IPTV/URL toe"
+
+msgid "Add Marker"
+msgstr "Marker toevoegen"
+
+msgid "Add Spacer"
+msgstr "Ruimte toevoegen"
+
+msgid "Add a timer"
+msgstr "Timer toevoegen"
+
+msgid "Add a zap timer"
+msgstr "Voeg zap-timer toe"
+
+msgid "Add an AutoTimer"
+msgstr "Autotimer toevoegen"
+
+msgid "Add channel(s) as alternate"
+msgstr "Zender(s) toevoegen als alternatief"
+
+msgid "Add filters"
+msgstr "Voeg filters toe"
+
+msgid "Add selection to bouquet"
+msgstr "Zender(s) toevoegen aan Bouquet"
+
+msgid "Add service name to stream information"
+msgstr "De zendernaam toevoegen aan stream informatie"
+
+msgid "Add similar on conflict"
+msgstr "Soortgelijke toevoegen bij conflict"
+
+msgid "Add tags to recordings"
+msgstr "Voeg een Tag aan de opname toe"
+
+#, python-format
+msgid "Added %s to alternative service %s."
+msgstr "%s toegevoegd aan alternatieve zender %s."
+
+msgid "Adjust recording time to real event time"
+msgstr "Opname tijd aanpassen aan werkelijke programma tijd"
+
+msgid "After event"
+msgstr "Na afloop"
+
+msgid "All"
+msgstr "Alle"
+
+msgid "All Channels"
+msgstr "Alle zenders"
+
+msgid ""
+"All Files of this Software are open source software; you can redistribute it "
+"and/or modify it under the terms of the GNU General Public License version 3 "
+"as published by the Free Software Foundation."
+msgstr ""
+"Alle bestanden van deze software zijn Open Source; u kunt deze "
+"herdistribueren en modificeren volgens de regels van de GNU General Public "
+"License versie 3 zoals gepubliceerd door de 'Free Software Foundation'."
+
+msgid "All alternative services deleted."
+msgstr "Alle alternatieve zenders verwijderd."
+
+msgid "Allow IPK Upload"
+msgstr "IPK upload toestaan"
+
+msgid "Allow duplicates"
+msgstr "Duplicaten toestaan"
+
+#, python-format
+msgid "Alternative %s created failed."
+msgstr "Maken alternatieve %s is mislukt."
+
+msgid "Always"
+msgstr "Altijd"
+
+msgid "Answer is NO!"
+msgstr "Antwoord is NEE!"
+
+msgid "Answer is YES!"
+msgstr "Antwoord is JA!"
+
+msgid "Any"
+msgstr ""
+
+msgid "Any day"
+msgstr "Elke dag"
+
+msgid "Any service/recording"
+msgstr "Elke zender/opname"
+
+msgid "April"
+msgstr "april"
+
+msgid "Are you sure you want to delete the selected bouquet?"
+msgstr "Wilt u de lijst echt verwijderen?"
+
+msgid "Are you sure you want to delete the selected item(s)?"
+msgstr "Wit u deze items(s) echt verwijderen?"
+
+msgid "Are you sure you want to delete this AutoTimer?"
+msgstr "Wilt u deze AutoTimer echt verwijderen?"
+
+msgid "Are you sure you want to delete this recording?"
+msgstr "De opname echt verwijderen?"
+
+msgid "Are you sure you want to delete this timer?"
+msgstr "De timer echt verwijderen?"
+
+msgid "Are you sure you want to rename this recording?"
+msgstr "Werkelijk de opname hernoemen"
+
+msgid "Are you sure you want to restore from file?"
+msgstr "Wilt u echt herstellen vanaf bestand"
+
+msgid "Are you sure you want to start recording instantly?"
+msgstr "Start opname onmiddellijk?"
+
+msgid "Ask, default No"
+msgstr "Vraag, default Nee"
+
+msgid "Ask, default Yes"
+msgstr "Vraag, default Ja"
+
+msgid "Audio Encoding"
+msgstr ""
+
+msgid "Audio PID (APID)"
+msgstr ""
+
+msgid "Audio Track"
+msgstr ""
+
+msgid "August"
+msgstr "augustus"
+
+msgid "Authors"
+msgstr "Auteurs"
+
+msgid "Auto"
+msgstr "Auto"
+
+msgid "AutoPoll"
+msgstr "AutoPoll"
+
+msgid "AutoTimer Edit"
+msgstr "Autotimer aanpassen"
+
+msgid "AutoTimer Settings"
+msgstr "AutoTimer instellingen"
+
+msgid "AutoTimers"
+msgstr "Autotimer lijst"
+
+msgid "Autotimer Preview"
+msgstr "Autotimer preview"
+
+msgid "BER"
+msgstr "BER"
+
+msgid "Back"
+msgstr "Terug"
+
+msgid "Background only"
+msgstr "Alleen in achtergrond"
+
+msgid "Begin"
+msgstr "Begin"
+
+msgid "Begin of \"After event\" timespan"
+msgstr "Begin van de tijdspanne 'Na afloop'"
+
+msgid "Beginning of timespan"
+msgstr "Begintijd"
+
+msgid "Bit Error Rate (BER)"
+msgstr ""
+
+msgid "Bookmark"
+msgstr "Markering"
+
+msgid "Bookmarks"
+msgstr "Markeerpunten"
+
+#, python-format
+msgid "Bouquet %s already exists."
+msgstr "Het bouquet %s bestaat al."
+
+#, python-format
+msgid "Bouquet %s can not be moved."
+msgstr "Het bouquet %s kan niet worden verplaatst."
+
+#, python-format
+msgid "Bouquet %s created."
+msgstr "Het bouquet %s is aangemaakt."
+
+#, python-format
+msgid "Bouquet %s deleted."
+msgstr "Het bouquet %s is verwijderd."
+
+#, python-format
+msgid "Bouquet %s is locked."
+msgstr "Bouquet %s is vergrendeld."
+
+#, python-format
+msgid "Bouquet %s is unlocked."
+msgstr "Bouquet %s wordt ontgrendeld."
+
+#, python-format
+msgid "Bouquet %s moved."
+msgstr "Het bouquet %s is verplaatst."
+
+#, python-format
+msgid "Bouquet %s removed failed, sevicerefence or mutable list is not valid."
+msgstr ""
+"Het verwijderen van het bouquet %s is mislukt, zenderreferentie of "
+"veranderde lijst is niet geldig."
+
+#, python-format
+msgid "Bouquet %s removed failed."
+msgstr "Bouquet %s verwijderen is mislukt."
+
+msgid "Bouquet Editor"
+msgstr "Bouquet editor"
+
+msgid "Bouquet name"
+msgstr "Naam van het bouquet"
+
+msgid "Bouquet renamed successfully."
+msgstr "Bouquet met succes hernoemd."
+
+msgid "Bouquet-settings were restored successfully"
+msgstr "Bouquet-instellingen werden hersteld"
+
+msgid "BouquetEditor"
+msgstr "Bouquet Editor"
+
+msgid "Bouquetlist is not editable!"
+msgstr "De bouquetlijst kan niet worden bewerkt!"
+
+msgid "Bouquets"
+msgstr "Bouquetten"
+
+msgid "Box"
+msgstr "STB"
+
+msgid "Box Control"
+msgstr "STB controle"
+
+msgid "Box Info"
+msgstr "Box Info"
+
+msgid "Box uptime"
+msgstr "Box Uptime"
+
+msgid "Brand"
+msgstr "Merk"
+
+msgid "Build"
+msgstr ""
+
+msgid "Cable"
+msgstr "Kabel"
+
+msgid "Calendar Week"
+msgstr "Kalender week"
+
+msgid "Cancel"
+msgstr "Annuleren"
+
+msgid "Cancelled"
+msgstr "Geannuleerd"
+
+msgid "Capacity"
+msgstr "Capaciteit"
+
+msgid "Capture screenshot"
+msgstr "Maak screenshot"
+
+msgid "Channel"
+msgstr "Zender"
+
+msgid "Channels"
+msgstr "Zenders"
+
+msgid "Character encoding for EPG data"
+msgstr "Karaktercodering voor EPG-data"
+
+msgid "Chipset"
+msgstr "Chipset"
+
+msgid "Cleanup Timers"
+msgstr "Timers opruimen"
+
+msgid "Close"
+msgstr "Sluiten"
+
+msgid "Common Settings"
+msgstr "Algemene instellingen"
+
+msgid "Config"
+msgstr "Configuratie"
+
+#, python-format
+msgid "Conflicting Timer(s) detected! %s"
+msgstr "Conflicterende Timer(s) gedetecteerd! %s"
+
+msgid "Contributors"
+msgstr "Medewerkers"
+
+msgid "Control"
+msgstr "Bedien"
+
+#, python-format
+msgid "Could not add timer '%s'!"
+msgstr "Kan Timer '%s' niet toevoegen!"
+
+#, python-format
+msgid "Could not find timer '%s' with given start and end time!"
+msgstr "Kon de timer '%s' met aangegeven start en eindtijd niet vinden!"
+
+msgid "Create bouquet from selection"
+msgstr "Provider toevoegen als nieuw Bouquet"
+
+msgid "Current"
+msgstr "Huidige"
+
+msgid "Current Event"
+msgstr "Huidig programma"
+
+msgid "Currently recording"
+msgstr ""
+
+msgid "Custom box name"
+msgstr "Alternatieve naam voor de box"
+
+msgid "Custom offset"
+msgstr "Eigen tijd afwijking"
+
+msgid "DHCP"
+msgstr "DHCP"
+
+msgid "Date"
+msgstr "Datum"
+
+msgid "Date (newest)"
+msgstr "Datum (nieuwste)"
+
+msgid "Date (oldest)"
+msgstr "Datum (oudste)"
+
+msgid "Debug - Display Tracebacks in browser"
+msgstr "Debug - Tracebacks weergeven in de browser"
+
+msgid "December"
+msgstr "december"
+
+msgid "Deep Standby"
+msgstr "Deep Standby"
+
+msgid "Default"
+msgstr "Default"
+
+msgid "Delay Standby"
+msgstr "Vertraag stand-by"
+
+msgid "Delete"
+msgstr "Verwijder"
+
+msgid "Delete Bookmark"
+msgstr "Markering verwijderen"
+
+msgid "Delete Bouquet"
+msgstr "Bouquet verwijderen"
+
+msgid "Delete Recording"
+msgstr "Verwijder opname"
+
+msgid "Delete Timer"
+msgstr "Verwijder timer"
+
+msgid ""
+"Delete failed, because there is no movie trash !\n"
+"Disable movie trash in configuration to delete this item"
+msgstr ""
+"Verwijderen mislukt, omdat er geen opname prullenbak is !\n"
+"De opname prullenbak uitschakelen in de instellingen om item te verwijderen"
+
+msgid "Deleted"
+msgstr "Verwijderd"
+
+msgid "Description"
+msgstr "Beschrijving"
+
+msgid "Device"
+msgstr ""
+
+msgid "Disable"
+msgstr "Déactiveer"
+
+msgid "Disable Timer"
+msgstr "Timer uitschakelen"
+
+msgid "Disable remote access for user root"
+msgstr "Déactiveer de externe toegang voor de gebruiker 'root'"
+
+msgid "Disabled on conflict"
+msgstr "Uitgeschakeld bij Conflict"
+
+msgid "Display Mode"
+msgstr "Weergave"
+
+msgid "Display duration (s)"
+msgstr "Weergave duur (s)"
+
+msgid "Distro"
+msgstr "Distro"
+
+msgid "Dolby"
+msgstr "Dolby"
+
+msgid "Don't create timer when movie exists in database"
+msgstr "Maak geen timer aan als de film al bestaat in de database"
+
+msgid "Done"
+msgstr "Gedaan"
+
+msgid "Download"
+msgstr "Download"
+
+msgid "Download playlist for"
+msgstr "Download afspeellijst voor"
+
+msgid "Drivers"
+msgstr "stuurprogramma datum"
+
+msgid "Duration"
+msgstr "Duur"
+
+msgid "E"
+msgstr "E"
+
+msgid "EPG"
+msgstr "EPG"
+
+msgid "EPG encoding"
+msgstr "EPG codering"
+
+msgid "EPGRefresh"
+msgstr "EPGRefresh"
+
+msgid "ERROR: Cannot set SleepTimer while device is in Standby-Mode"
+msgstr ""
+"FOUT: Kan geen SleepTimer instellen terwijl het apparaat zich in de Standby-"
+"modus bevind"
+
+msgid "Edit"
+msgstr "Aanpassen"
+
+msgid "Edit Recording"
+msgstr "Wijzig opname"
+
+msgid "Edit Timer"
+msgstr "Pas timer aan"
+
+msgid "Editor"
+msgstr "Editor"
+
+msgid "Enable"
+msgstr "Ingeschakeld"
+
+msgid "Enable Authentication for streaming"
+msgstr "Streaming authentificatie inschakelen"
+
+msgid "Enable HTTP Authentication"
+msgstr "HTTP authentificatie inschakelen"
+
+msgid "Enable HTTPS"
+msgstr "HTTPS inschakelen"
+
+msgid "Enable HTTPS Authentication"
+msgstr "HTTPS authentificatie inschakelen"
+
+msgid "Enable Messages"
+msgstr "Berichten inschakelen"
+
+msgid "Enable Parental Control"
+msgstr "Kinderslot inschakelen"
+
+msgid "Enable Timer"
+msgstr "Timer inschakelen"
+
+msgid "Enable access from VPNs"
+msgstr "Toegang voor VPN's inschakelen"
+
+msgid "Enable filtering"
+msgstr "Filters inschakelen"
+
+msgid "Enable/Disable Screenshot on key press or"
+msgstr "in- uitschakelen screenshot met knopdruk of"
+
+msgid "Enabled"
+msgstr "Ingeschakeld"
+
+msgid "Encrypted"
+msgstr "Versleuteld"
+
+msgid "End"
+msgstr "Einde"
+
+msgid "End of \"After event\" timespan"
+msgstr "Einde van de tijdspanne 'Na afloop'"
+
+msgid "End of timespan"
+msgstr "Eindtijd"
+
+msgid "Enter a name for the new bouquet"
+msgstr "Geef de neiuwe naam van de lijst"
+
+msgid "Enter a name for the new marker"
+msgstr "Geef de nieuwe naam van de marker"
+
+msgid "Enter a name for this AutoTimer"
+msgstr "Geef deze AutoTimer een naam"
+
+msgid "Enter path"
+msgstr "Geef het path in"
+
+msgid "Enter text"
+msgstr ""
+
+msgid "Enter the text to find in the EPG"
+msgstr "Voer de tekst in die u in de EPG zoekt"
+
+msgid "Error"
+msgstr "Fout"
+
+msgid "Error parsing vps.xml"
+msgstr "Fout verwerken van vps.xml"
+
+msgid "Error upload File"
+msgstr "Fout in het uploaden van een bestand"
+
+#, python-format
+msgid "Error while preparing backup file, %s does not exists."
+msgstr "Fout bij het voorbereiden van de back-upbestand, %s bestaat niet."
+
+msgid "Error while preparing backup file."
+msgstr "Fout bij de voorbereiding van het  backup bestand."
+
+msgid "Error writing File"
+msgstr "Fout bij schrijven bestand"
+
+#, python-format
+msgid "Error, %s does not exists, restore is not possible..."
+msgstr "Fout, %s bestaat niet, herstellen is niet mogelijk..."
+
+#, python-format
+msgid "Error, %s was not created with WebBouquetEditor..."
+msgstr "Fout, %s is niet gemaakt met WebBouquetEditor..."
+
+#, python-format
+msgid "Error: Bouquet %s could not deleted, OSError."
+msgstr "Fout: Het bouquet %s kon niet worden verwijderd, OSError."
+
+msgid "Event not found"
+msgstr "Programma niet gevonden"
+
+msgid "EventId not found"
+msgstr "Event Id niet gevonden"
+
+msgid "Every"
+msgstr "Elke"
+
+msgid "Exclude when"
+msgstr "Sluit uit"
+
+msgid "Execute \"After event\" during timespan"
+msgstr "Voer 'Na het programma' uit tijdens de tijdspanne"
+
+msgid "Export"
+msgstr "Exporteer"
+
+msgid "Extras"
+msgstr "Extra's"
+
+msgid "Fake Recording"
+msgstr "Nepopname"
+
+msgid "Fastscan"
+msgstr "Snelscan"
+
+msgid "February"
+msgstr "ferbuari"
+
+msgid "Firmware version"
+msgstr "Firmware versie"
+
+msgid "Force"
+msgstr "Forceer"
+
+msgid "Fr"
+msgstr "vr"
+
+msgid "Free"
+msgstr "Vrij"
+
+msgid "Free Memory"
+msgstr "Vrij geheugen"
+
+msgid "Free space"
+msgstr ""
+
+msgid "Fri"
+msgstr "vr"
+
+msgid "Friday"
+msgstr "vrijdag"
+
+msgid "From date"
+msgstr "Niet na"
+
+msgid "Front processor version"
+msgstr "Frontprocessor Versie"
+
+msgid "Full remote"
+msgstr "Volledige AB"
+
+msgid "GB"
+msgstr "GB"
+
+msgid "GUI version"
+msgstr "Gui versie"
+
+msgid "Gateway"
+msgstr "Gateway"
+
+msgid "Get mutable list for new created alternative failed!"
+msgstr "Ontvangen van gewijzigde lijst voor maken alternatieven mislukt!"
+
+msgid "Get mutable list for new created bouquet failed!"
+msgstr "Ontvangen van gewijzigde lijst voor maken bouquet mislukt!"
+
+msgid "HH:MM"
+msgstr "HH:MM"
+
+msgid "HTTP port"
+msgstr "HTTP poort"
+
+msgid "HTTPS port"
+msgstr "HTTPS poort"
+
+msgid "Hard disk model"
+msgstr "Model harde schijf"
+
+msgid "Hardware"
+msgstr ""
+
+msgid "Hide full remote"
+msgstr "Verberg volledige AB"
+
+msgid "High Resolution"
+msgstr "Hoge resolutie"
+
+msgid "Hold to drag"
+msgstr ""
+
+msgid "Hour"
+msgstr "Uur"
+
+msgid "IPTV / URL name"
+msgstr "IPTV / URL naam"
+
+msgid "IPv4 address"
+msgstr "IPv4-adres"
+
+msgid "IPv4-only Python/Twisted"
+msgstr "IPv4-only Python/Twisted"
+
+msgid "IPv4-only kernel"
+msgstr "Alleen IPv4-kernel"
+
+msgid "IPv6 address(es)"
+msgstr "IPv6-adres(en)"
+
+msgid "Import"
+msgstr "Importeer"
+
+msgid "Include description"
+msgstr "Beschrijving toevoegen"
+
+msgid "Include extended description"
+msgstr "Neem de uitgebreide beschrijvingen hierin op"
+
+msgid "Include short description"
+msgstr "Voeg de korte beschrijvingen toe"
+
+msgid "Include when"
+msgstr "Sluit in"
+
+msgid "Infinite Instant recording started"
+msgstr "Oneindige directe opname gestart"
+
+msgid "Info"
+msgstr "Info"
+
+msgid "Information"
+msgstr ""
+
+msgid "Inherit AutoTimer"
+msgstr "Erf autotimer"
+
+msgid "Install Package"
+msgstr "Installeer pakket"
+
+msgid "Installed"
+msgstr "Geïnstalleerd"
+
+msgid "Instant Record"
+msgstr "Onmiddellijk opnemen"
+
+msgid "Instant record for current Event started"
+msgstr "Directe opname voor de huidige gebeurtenis gestart"
+
+msgid "Internal error!"
+msgstr "Interne fout!"
+
+msgid "Internal flash memory"
+msgstr ""
+
+#, python-format
+msgid "Interval (in %s)"
+msgstr "Interval (in %s)"
+
+msgid "Interval (min.)"
+msgstr "Interval (min.)"
+
+msgid "Interval (sec.)"
+msgstr "Interval (sec.)"
+
+msgid "January"
+msgstr "januari"
+
+msgid "Javascript Libraries"
+msgstr "Javascript Libraries"
+
+msgid "July"
+msgstr "juli"
+
+msgid "June"
+msgstr "juni"
+
+msgid "Just play"
+msgstr "Alleen afspelen"
+
+msgid "Kernel"
+msgstr "Kernel versie"
+
+msgid "LCD"
+msgstr "LCD"
+
+msgid "LCD4Linux Setup"
+msgstr "LCD4Linux instellingen"
+
+msgid "Label series"
+msgstr "Label series"
+
+msgid "License"
+msgstr ""
+
+msgid "Link speed"
+msgstr "Link Snelheid"
+
+msgid "List of Timers has been cleaned"
+msgstr "Lijst van Timers is opgeschoond"
+
+msgid "Loading..."
+msgstr "Laden..."
+
+msgid "Location"
+msgstr "Locatie"
+
+msgid "Locked"
+msgstr "Vergrendeld"
+
+msgid "MAC address"
+msgstr "MAC-adres"
+
+msgid "MB"
+msgstr "MB"
+
+msgid "Main"
+msgstr "Hoofd"
+
+msgid "Main memory"
+msgstr "Totaal geheugen"
+
+msgid "March"
+msgstr "maart"
+
+msgid "Marker added."
+msgstr "Markering toegevoegd."
+
+msgid "Marker name"
+msgstr "Naam van de marker"
+
+msgid "Match text"
+msgstr "Overeenkomende titel"
+
+msgid "Max Days"
+msgstr "Max dagen"
+
+msgid "May"
+msgstr "mei"
+
+msgid "Message sent successfully!"
+msgstr "Bericht succesvol verstuurd!"
+
+msgid "Method"
+msgstr "Methode"
+
+msgid "Minimal EPG list"
+msgstr "Minimale EPG lijst"
+
+msgid "Minimal movie list"
+msgstr "Kleinste opnamelijst"
+
+msgid "Minimal timer list"
+msgstr "Minimale timerlijst"
+
+msgid "Minute"
+msgstr "Minuut"
+
+#, python-format
+msgid "Missing mandatory parameter '%s'"
+msgstr "De verplichte parameter '%s' ontbreekt"
+
+msgid "Missing requesteter: sRef"
+msgstr "Ontbrekende requesteter: sRef"
+
+msgid "Mo"
+msgstr "ma"
+
+msgid "Model"
+msgstr "model"
+
+msgid "Mon"
+msgstr "ma"
+
+msgid "Monday"
+msgstr "maandag"
+
+msgid "Monthly"
+msgstr "Maandelijks"
+
+msgid "More"
+msgstr "Meer"
+
+msgid "More details"
+msgstr "Meer details"
+
+msgid "Mount point"
+msgstr ""
+
+msgid "Movie database for EPG"
+msgstr "Moviedatabase t.b.v de EPG"
+
+msgid "Movie search"
+msgstr "Zoek naar films"
+
+msgid "Movielist"
+msgstr "Opnamelijst"
+
+msgid "Movies"
+msgstr "Opnames"
+
+msgid "Multi-Bouquet is not enabled!"
+msgstr "Multi bouquet is niet ingeschakeld!"
+
+msgid "MultiEPG"
+msgstr "Multi-EPG"
+
+msgid "Mute/Unmute"
+msgstr ""
+
+msgid "NCam Webinterface"
+msgstr "NCam Webinterface"
+
+msgid "Name"
+msgstr "Naam"
+
+msgid "Name (a-z)"
+msgstr "Naam (a-z)"
+
+msgid "Name (z-a)"
+msgstr "Naam (z-a)"
+
+msgid "Namespace"
+msgstr "Namespace"
+
+msgid "Network Interface"
+msgstr "Netwerkinterface"
+
+msgid "Network Shares"
+msgstr "Netwerk shares"
+
+msgid "Never"
+msgstr "nooit"
+
+msgid "New"
+msgstr "Nieuw"
+
+msgid "New Bookmark:"
+msgstr "Nieuwe bladwijzer"
+
+msgid "New Name"
+msgstr "Nieuwe naam"
+
+msgid "No"
+msgstr "Nee"
+
+msgid "No EPG data available."
+msgstr "Geen EPG data beschikbaar."
+
+msgid "No Parent Control Setup Pin given!"
+msgstr "Er is geen pincode aan het kinderslot toegevoegd!"
+
+msgid "No answer in time"
+msgstr "Geen tijdig antwoord"
+
+msgid "No bouquet given!"
+msgstr "Geen bouquet ingevoerd!"
+
+msgid "No bouquet name given!"
+msgstr "Geen naam voor Bouquet ingevoerd!"
+
+msgid "No current service given!"
+msgstr "Geen huidige zender ingevoerd!"
+
+msgid "No event found! Not recording!"
+msgstr "Geen evenement gevonden! Niet opnemen!"
+
+msgid "No marker-name given!"
+msgstr "Geen markering-naam ingevoerd!"
+
+msgid "No matches were found in the EPG"
+msgstr "Er zijn geen overeenkomsten gevonden in de EPG"
+
+msgid "No matching Timer found"
+msgstr "Geen overeenkomende Timer gevonden"
+
+msgid "No network connection"
+msgstr ""
+
+msgid "No new servicename given!"
+msgstr "Geen nieuwe zendernaam ingevoerd!"
+
+msgid "No position given!"
+msgstr "Geen positie ingevoerd!"
+
+msgid "No provider given!"
+msgstr "Geen provider ingevoerd!"
+
+msgid "No service given!"
+msgstr "Geen zender ingevoerd!"
+
+msgid "No, cancel"
+msgstr "Nee, annuleer"
+
+msgid "None"
+msgstr "Geen"
+
+msgid "Nothing"
+msgstr "Niets"
+
+msgid "Nothing playing."
+msgstr "Er speelt niets."
+
+msgid "Notify if Conflict"
+msgstr "Melden bij Conflict"
+
+msgid "Notify if Similar"
+msgstr "Melden bij soortgelijke"
+
+msgid "November"
+msgstr "november"
+
+msgid "Now"
+msgstr "Nu"
+
+msgid "Now/Next Columns"
+msgstr "Nu/Straks Kolommen"
+
+msgid "Number of recordings remaining"
+msgstr "Aantal overgebleven opnames"
+
+msgid "ONID"
+msgstr ""
+
+msgid "OSCam Webinterface"
+msgstr "OSCam Webinterface"
+
+msgid "OSD"
+msgstr "OSD"
+
+msgid "October"
+msgstr "oktober"
+
+msgid "Offset after recording (mins)"
+msgstr "Extra tijd aan het einde (min)"
+
+msgid "Offset before recording (mins)"
+msgstr "Extra tijd aan het begin (min)"
+
+msgid "On"
+msgstr "Aan"
+
+msgid "On any service"
+msgstr "Op elke zender"
+
+msgid "On same service"
+msgstr "Op dezelfde zender"
+
+msgid "Only match between dates"
+msgstr "Beperk tot bepaalde data"
+
+msgid "Only match during timespan"
+msgstr "Alleen vergelijken tijdens"
+
+msgid "Oops, no results matched your search"
+msgstr "Oeps, er zijn geen overeengekomen resultaten gevonden"
+
+msgid "Oops..."
+msgstr "Oops..."
+
+msgid "Open Source Web Interface for Linux set-top box"
+msgstr "Open Source web interface voor Linux set-top boxen"
+
+msgid "Open in new window"
+msgstr "Open in nieuw venster"
+
+msgid "OpenWebInterface Enabled"
+msgstr "OpenWebinterface status"
+
+msgid "OpenWebif Browser Settings"
+msgstr "Openwebif Browser instellingen"
+
+msgid "OpenWebif Configuration"
+msgstr "Openwebif configuratie"
+
+msgid "OpenWebif Settings"
+msgstr "Openwebif instellingen"
+
+msgid "OpenWebif url:"
+msgstr "Openwebif URL:"
+
+msgid "Orbital Position"
+msgstr "Orbitale-positie (graden)"
+
+msgid "Override found with alternative service"
+msgstr "Overschrijf met alternatieve zender"
+
+msgid "PCR PID"
+msgstr ""
+
+msgid "PMT PID"
+msgstr ""
+
+msgid "Packages"
+msgstr "Pakketten"
+
+msgid "Parent Control Setup Pin is wrong!"
+msgstr "Kinderslot Pin is verkeerd!"
+
+msgid "Parent Control is not activated."
+msgstr "Kinderslot Pin is niet geactiveerd."
+
+msgid "Parse AutoTimer"
+msgstr "Parse AutoTimer"
+
+msgid "PiP"
+msgstr "Pip"
+
+msgid "Picture in Picture"
+msgstr "Picture in Picture"
+
+msgid "Picture in Picture (hidden)"
+msgstr "Picture in Picture (verborgen)"
+
+msgid "Plain"
+msgstr "Vlak"
+
+msgid "Playback"
+msgstr "Afspelen"
+
+msgid "Playback IPTV Streams in browser"
+msgstr "Afspelen van IPTV streams in de browser"
+
+msgid "Playlist"
+msgstr "Afspeellijst"
+
+msgid "Playlist format"
+msgstr "Afspeellijst formaat"
+
+msgid "Power Control"
+msgstr "In/uitschakelen"
+
+msgid "PowerTimer feature not available"
+msgstr "PowerTimer functie niet beschikbaar"
+
+msgid "Preview"
+msgstr "Voorvertoning"
+
+msgid "Primetimes"
+msgstr "Primetimes"
+
+msgid "Process"
+msgstr "Process"
+
+msgid "Provider"
+msgstr "Provider"
+
+msgid "Providers"
+msgstr "Providers"
+
+msgid "REC"
+msgstr "REC"
+
+msgid "Radio"
+msgstr "Radio"
+
+msgid "Reboot Box"
+msgstr "STB herstarten"
+
+msgid "Record a maximum of # times"
+msgstr "Maximaal x keer opnemen"
+
+msgid "Recording"
+msgstr ""
+
+msgid "Recording Type"
+msgstr "Soort opname"
+
+msgid "Refresh"
+msgstr "Ververs"
+
+msgid "Refresh Timer"
+msgstr "Timers verversen"
+
+msgid "Refresh automatically every"
+msgstr "Ververs automatisch elke"
+
+msgid "Refresh now"
+msgstr "Ververs nu"
+
+msgid "Reload"
+msgstr "Herlaad"
+
+msgid "Remote"
+msgstr "Afstandsbediening"
+
+msgid "Remove Package"
+msgstr "Verwijder pakket"
+
+msgid "Remove filter"
+msgstr "Verwijder het filter"
+
+msgid "Rename"
+msgstr "Hernoem"
+
+msgid "Rename Bouquet"
+msgstr "Bouquet hernoemen"
+
+msgid "Rename Recording"
+msgstr "Hernoem opname"
+
+msgid "Repeated"
+msgstr "Herhaald"
+
+msgid "Require client cert for HTTPS"
+msgstr "Een gebruikers certificaat is vereist voor HTTPS"
+
+msgid "Require description to be unique"
+msgstr "Vereist een unieke beschrijving"
+
+msgid "Reset"
+msgstr "Reset"
+
+msgid "Reset count"
+msgstr "Reset teller"
+
+msgid "Restart GUI"
+msgstr "Hestart GUI"
+
+msgid "Restrict to bouquets"
+msgstr "Beperk tot bouquetten"
+
+msgid "Restrict to channels"
+msgstr "Beperk tot zenders"
+
+msgid "Root"
+msgstr "Root"
+
+msgid "SLAAC"
+msgstr "SLAAC"
+
+msgid "SNR"
+msgstr "SNR"
+
+msgid "SRef"
+msgstr ""
+
+msgid "Sa"
+msgstr "za"
+
+msgid "Safe mode"
+msgstr "Veilige Modus"
+
+msgid "Sat"
+msgstr "za"
+
+msgid "Satellites"
+msgstr "Satellieten"
+
+msgid "Satfinder"
+msgstr "Signaalzoeker"
+
+msgid "Saturday"
+msgstr "zaterdag"
+
+msgid "Save"
+msgstr "Bevestigen"
+
+msgid "Screenshot"
+msgstr "Screenshot"
+
+msgid "Search"
+msgstr "Zoek"
+
+msgid "Search CSFD"
+msgstr "Zoek CSFD (filmdatabase)"
+
+msgid "Search EPG"
+msgstr ""
+
+msgid "Search IMDb"
+msgstr "Zoek IMDb"
+
+msgid "Search KinoPoisk"
+msgstr "Zoek KinoPoisk"
+
+msgid "Search TV Guide UK"
+msgstr "Zoek de UK TV gids"
+
+msgid "Search by name, sd / hd / uhd, or provider"
+msgstr "Op naam zoeken, SD / HD / UHD, of de provider"
+
+msgid "Search strictness"
+msgstr "Zoek-accuratesse"
+
+msgid "Search type"
+msgstr "Zoektype"
+
+msgid "Select IPK file for upload"
+msgstr "Kies het IPK bestand om te uploaden"
+
+msgid "Select..."
+msgstr "Kies..."
+
+msgid "Send"
+msgstr ""
+
+msgid "Send Message"
+msgstr "Stuur een bericht"
+
+msgid "Send a Message"
+msgstr "Stuur een bericht"
+
+msgid "September"
+msgstr "september"
+
+msgid "Service"
+msgstr "Zenders"
+
+#, python-format
+msgid "Service %s added."
+msgstr "Zender %s toegevoegd."
+
+#, python-format
+msgid "Service %s already exists in bouquet %s."
+msgstr "Zender %s bestaat al in bouquet %s."
+
+#, python-format
+msgid "Service %s can not be removed."
+msgstr "De zender %s kan niet worden verwijderd."
+
+#, python-format
+msgid "Service %s is locked."
+msgstr "Zender %s is vergrendeld."
+
+#, python-format
+msgid "Service %s is unlocked."
+msgstr "Zender %s wordt ontgrendeld."
+
+#, python-format
+msgid "Service %s moved."
+msgstr "Zender %s verplaatst."
+
+#, python-format
+msgid "Service %s removed from bouquet %s."
+msgstr "Zender %s is verwijderd uit het bouquet %s."
+
+#, python-format
+msgid "Service %s removed."
+msgstr "Zender %s is verwijderd."
+
+msgid "Service ID (SID)"
+msgstr ""
+
+msgid "Service can not be moved."
+msgstr "De zender kan niet worden verplaatst."
+
+msgid "Service can not be renamed."
+msgstr "Zender kan niet worden hernoemd."
+
+msgid "Service is not an alternative."
+msgstr "Zender is geen alternatief."
+
+msgid "Service renamed successfully."
+msgstr "Zender met succes hernoemd."
+
+msgid "Services"
+msgstr "Zenders"
+
+msgid "Serving stream"
+msgstr ""
+
+msgid "Set maximum duration"
+msgstr "Stel de maximale duur in"
+
+msgid "Settings"
+msgstr "Instellingen"
+
+msgid "Show EPG for"
+msgstr "Toon EPG voor"
+
+msgid "Show Full OpenWebif"
+msgstr "Toon volledige OpenWebif"
+
+msgid "Show IPTV channels in selection (eg. Autotimer)"
+msgstr "Toon de IPTV zenders in de selectie (bv. Autotimer)"
+
+msgid "Show all packages"
+msgstr "Toon alle pakketten"
+
+msgid "Show box name in header"
+msgstr "Toon de naam van de box rechtsboven"
+
+msgid "Show details"
+msgstr "Toon de details"
+
+msgid "Show full remote"
+msgstr "Toon volledige AB"
+
+msgid "Show in Extensions menu"
+msgstr "Toon in Extensions menu"
+
+msgid "Show picon background"
+msgstr "Toon de picon achtergrond"
+
+msgid "Show picons"
+msgstr "Toon de picons"
+
+msgid "Show picons in channel list"
+msgstr "Toon Picon in de zenderlijst"
+
+msgid "Show service type in channel list"
+msgstr "Toon het zendertype in de zenderlijst"
+
+msgid "Shutdown"
+msgstr "Afsluiten"
+
+msgid "Signal Power (AGC)"
+msgstr ""
+
+msgid "Signal Quality (SNR DB)"
+msgstr ""
+
+msgid "Signal Quality (SNR)"
+msgstr ""
+
+msgid "Simulate"
+msgstr "Simuleer"
+
+msgid "Site and sources"
+msgstr "Site en broncode"
+
+msgid "Skins"
+msgstr "Skins"
+
+msgid "SleepTimer error"
+msgstr "Slaaptimer fout"
+
+msgid "Sleeptimer has been disabled"
+msgstr "Slaaptimer is uitgeschakeld"
+
+msgid "Sleeptimer is disabled"
+msgstr "Slaaptimer is uitgeschakeld"
+
+msgid "Sleeptimer is enabled"
+msgstr "Slaaptimer is ingeschakeld"
+
+#, python-format
+msgid "Sleeptimer set to %d minutes"
+msgstr "Slaaptimer ingesteld op %d minuten"
+
+msgid "Small remote layout"
+msgstr ""
+
+msgid "Software"
+msgstr "Software"
+
+msgid "Sorry this page is not yet implemented"
+msgstr "Deze pagina is nog niet geïmplementeerd"
+
+msgid "Sort"
+msgstr "Sorteer"
+
+msgid "Spinner"
+msgstr "Spinner"
+
+msgid "Standby"
+msgstr "Standby"
+
+msgid "Start"
+msgstr "Start"
+
+msgid "Start Instant Record"
+msgstr "Start opname onmiddellijk"
+
+msgid "Start time is after end time"
+msgstr "Starttijd ligt na de begintijd"
+
+msgid "Start typing..."
+msgstr "BEGIN MET TYPEN"
+
+msgid "State"
+msgstr "Status"
+
+msgid "Storage"
+msgstr ""
+
+msgid "Stream"
+msgstr "Stream"
+
+msgid "Stream Clients"
+msgstr "Stream clients"
+
+msgid "Streaming port"
+msgstr "Streamingpoort"
+
+msgid "Su"
+msgstr "zo"
+
+msgid "Subdirectories"
+msgstr "Subdirectories"
+
+msgid "Subnet mask"
+msgstr "Subnet mask"
+
+msgid "Subservices"
+msgstr "Subservices"
+
+msgid "Sun"
+msgstr "zo"
+
+msgid "Sunday"
+msgstr "zondag"
+
+msgid "System OE"
+msgstr "Systeem OE"
+
+msgid "TB"
+msgstr "TB"
+
+msgid "TSID"
+msgstr ""
+
+msgid "TV"
+msgstr "Tv"
+
+msgid "TV Guide"
+msgstr "TV gids"
+
+msgid "TV Multi EPG"
+msgstr "TV Multi EPG"
+
+msgid "Tags"
+msgstr "Tags"
+
+msgid "Teletext"
+msgstr "Teletekst"
+
+msgid "Teletext PID"
+msgstr "Teletext PID"
+
+msgid "Television"
+msgstr "Televisie"
+
+msgid "Template Engine"
+msgstr "Template-Engine"
+
+msgid "Terminal"
+msgstr "Terminal"
+
+msgid "Terrestrial"
+msgstr "Terrestrial"
+
+msgid "Text"
+msgstr "Tekst"
+
+msgid "Th"
+msgstr "do"
+
+#, python-format
+msgid "The parameter '%s' can't be empty"
+msgstr "De parameter '%s' kan niet leeg zijn"
+
+msgid "The parameter 'command' must be a number"
+msgstr "De parameter 'commando' moet een getal zijn"
+
+#, python-format
+msgid "The timer '%s' has been %s successfully"
+msgstr "De timer '%s' was %s succesvol"
+
+#, python-format
+msgid "The timer '%s' has been deleted successfully"
+msgstr "De timer '%s' is succesvol verwijderd"
+
+#, python-format
+msgid "The timer '%s' now recorded! Not disabled!"
+msgstr "De timer '%s' is nu opgenomen! Niet uitgeschakeld!"
+
+msgid "Theme"
+msgstr "Thema"
+
+msgid "Theme mode"
+msgstr "Thema modus"
+
+msgid "This service can not be added."
+msgstr "Deze zender kan niet worden toegevoegd."
+
+msgid "Thu"
+msgstr "do"
+
+msgid "Thursday"
+msgstr "donderdag"
+
+msgid "Time"
+msgstr "Tijd"
+
+msgid "Timeline"
+msgstr "Tijdlijn"
+
+msgid "Timeout"
+msgstr "Timeout"
+
+msgid "Timer"
+msgstr "Timer"
+
+#, python-format
+msgid "Timer '%s' added"
+msgstr "Timer '%s' toegevoegd"
+
+#, python-format
+msgid "Timer '%s' already exists!"
+msgstr "Timer '%s' bestaat al!"
+
+#, python-format
+msgid "Timer '%s' changed"
+msgstr "Timer '%s' gewijzigd"
+
+#, python-format
+msgid "Timer '%s' not enabled while Conflict"
+msgstr "Timer '%s' niet ingeschakeld tijdens het Conflict"
+
+#, python-format
+msgid "Timer '%s' not saved while Conflict"
+msgstr "Timer '%s' niet opgeslagen tijdens het Conflict"
+
+msgid "Timer Added"
+msgstr "Timer toegevoegd"
+
+msgid "Timer Conflict"
+msgstr ""
+
+msgid "Timer added"
+msgstr "Timer toegevoegd"
+
+msgid "Timer conflict detected! Not recording!"
+msgstr "Timer conflict ontdekt! Niet opnemen!"
+
+msgid "Timer type"
+msgstr "Timer type"
+
+msgid "TimerList has been saved"
+msgstr "Timerlijst is opgeslagen"
+
+msgid "Timerlist"
+msgstr "Timerlijst"
+
+msgid "Timers"
+msgstr "Timers"
+
+msgid "Title"
+msgstr "Titel"
+
+msgid "To date"
+msgstr "Niet voor"
+
+msgid "Today"
+msgstr "Vandaag"
+
+msgid "Toggle Standby"
+msgstr ""
+
+msgid "Transcode"
+msgstr "Transcoderen"
+
+msgid "Translation to Spanish"
+msgstr "Vertaling in het Spaans"
+
+msgid "Try guessing"
+msgstr "Probeer te raden"
+
+msgid "Tu"
+msgstr "di"
+
+msgid "Tue"
+msgstr "di"
+
+msgid "Tuesday"
+msgstr "dinsdag"
+
+msgid "Tuner Number"
+msgstr "Tuner nummer"
+
+msgid "Tuner Signal"
+msgstr "Tuner signaal"
+
+msgid "Tuner Type"
+msgstr "Tuner type"
+
+msgid "Tuners"
+msgstr "Tuners"
+
+msgid "Type"
+msgstr "Type"
+
+#, python-format
+msgid "Unknown Volume command %s"
+msgstr "Onbekend volumecommando %s"
+
+#, python-format
+msgid "Unknown command: '%s'"
+msgstr "Onbekende opdracht: '%s'"
+
+msgid "Upcoming Events"
+msgstr "Komende programma's"
+
+msgid "Update"
+msgstr "Update"
+
+msgid "Update Package"
+msgstr "Actualiseer het pakket"
+
+msgid "Update from feed"
+msgstr "Update vanuit de feed"
+
+msgid "Upgrade all packages"
+msgstr "Actualiseer alle pakketten"
+
+msgid "Upload File Error"
+msgstr "Fout met uploaden bestand"
+
+msgid "Upload package"
+msgstr "Pakket uploaden"
+
+msgid "Uploaded Files"
+msgstr "Actualiseer de bestanden"
+
+msgid "Use Channelname for screenshots"
+msgstr "Gberuik de zendernaam t.b.v. screenshot"
+
+msgid "Use a custom location"
+msgstr "Gebruik een aangepaste locatie"
+
+msgid "Use as PiP if possible"
+msgstr "Gebruik indien mogelijk als PIP"
+
+msgid "Use classic interface"
+msgstr "Gebruik de klassieke interface"
+
+msgid "Use custom Color"
+msgstr "Gebruik een aangepaste kleur"
+
+msgid "Use custom box name"
+msgstr "Gebruik een alternatieve naam voor de box"
+
+msgid "Use modern design"
+msgstr "Gebruik een modern ontwerp"
+
+msgid "Use modern interface"
+msgstr "Gebruik de nieuwe vormgeving"
+
+msgid "VPS"
+msgstr "VPS"
+
+msgid "VPS plugin not found"
+msgstr "VPS plugin niet gevonden"
+
+msgid "Version"
+msgstr "Versie"
+
+msgid "Video"
+msgstr "Video"
+
+msgid "Video Height"
+msgstr "Beeld hoogte"
+
+msgid "Video PID (VPID)"
+msgstr ""
+
+msgid "Video Width"
+msgstr "Beeld breedte"
+
+msgid "Visibly"
+msgstr "Zichtbaar"
+
+msgid "Volume"
+msgstr "Volume"
+
+msgid "Volume Control"
+msgstr "Volume controle"
+
+msgid "W"
+msgstr "W"
+
+msgid "Waiting for answer ..."
+msgstr "Wacht op antwoord..."
+
+msgid "Wake Up"
+msgstr "Ontwaken"
+
+msgid "Wakeup"
+msgstr "Wakker worden"
+
+msgid "Warning"
+msgstr "Waarschuwing"
+
+msgid "We"
+msgstr "wo"
+
+msgid "Web TV"
+msgstr "Web TV"
+
+msgid "Wed"
+msgstr "wo"
+
+msgid "Wednesday"
+msgstr "woensdag"
+
+msgid "Weekly (Monday)"
+msgstr "Wekelijks (maandag)"
+
+msgid "Weekly (Sunday)"
+msgstr "Wekelijks (zondag)"
+
+msgid "Widescreen"
+msgstr ""
+
+msgid "Without auth only local access is allowed!"
+msgstr "Zonder authentificatie is alléén lokale toegang mogelijk!"
+
+msgid "Wizard"
+msgstr "Wizard"
+
+msgid "Would you like to save your changes?"
+msgstr "Wilt u de wijzigingen opslaan?"
+
+#, python-format
+msgid "Wrong parameter format 'set=%s'. Use set=set15 "
+msgstr "Verkeerd parameterformaat 'set=%s'. Gebruik set=set15 "
+
+msgid "YYYY-MM-DD"
+msgstr "YYYY-MM-DD"
+
+msgid "Yes"
+msgstr "Ja"
+
+msgid "Yes/No"
+msgstr "Ja/Nee"
+
+msgid "Yesterday"
+msgstr "Gisteren"
+
+msgid "Zap"
+msgstr "Zap"
+
+msgid "Zap & Record"
+msgstr "Opname+ZAP"
+
+msgid "Zap before streaming"
+msgstr "Zap alvorens te streamen"
+
+msgid "Zap to"
+msgstr "Zap naar"
+
+msgid "Zapped to"
+msgstr "Gezapd naar"
+
+msgid "any time"
+msgstr "altijd"
+
+msgid "auto"
+msgstr "auto"
+
+msgid "box_ip"
+msgstr "IPadres van de box"
+
+msgid "case-insensitive"
+msgstr "hoofdletterongevoelig"
+
+msgid "case-sensitive"
+msgstr "hoofdlettergevoelig"
+
+msgid "descramble and record ecm"
+msgstr "decodeer en neem de ECM op"
+
+msgid "description contains"
+msgstr "in beschrijving"
+
+msgid "description match"
+msgstr "komt met de omschrijving overeen"
+
+msgid "disabled"
+msgstr "gedeactiveerd"
+
+msgid "do nothing"
+msgstr "doe niets"
+
+msgid "don't descramble, record ecm"
+msgstr "decodeer niet, neem de ECM op"
+
+msgid "error! Loading Page"
+msgstr "fout! Laden Pagina"
+
+msgid "exact title match"
+msgstr "exacte overeenkomst van de titel"
+
+#, fuzzy
+msgid "favourite desc match"
+msgstr "favoriete desc overeenkomst"
+
+msgid "finished"
+msgstr "afgelopen"
+
+msgid "go to deep standby"
+msgstr "ga naar deep standby"
+
+msgid "go to standby"
+msgstr "ga naar standby"
+
+msgid "hour"
+msgstr "uur"
+
+msgid "kB"
+msgstr "kB"
+
+msgid "loading"
+msgstr "bezig met laden"
+
+msgid "manual/disabled"
+msgstr "handmatig/uitgeschakeld"
+
+msgid "mins"
+msgstr "minuten"
+
+msgid "minute"
+msgstr "minuut"
+
+msgid "no description available"
+msgstr "Geen beschrijving beschikbaar"
+
+msgid "none/IPv4-only network"
+msgstr "geen / IPv4-only netwerk"
+
+msgid "normal"
+msgstr "normaal"
+
+msgid "on day"
+msgstr "op dag"
+
+msgid "on weekday"
+msgstr "op werkdag"
+
+msgid "one two three four unknown command"
+msgstr "één twee drie vier onbekende commando's"
+
+msgid "partial title match"
+msgstr "gedeeltelijke overeenkomst met de titel"
+
+msgid "r/o"
+msgstr "r/o"
+
+msgid "r/w"
+msgstr "r/w"
+
+msgid "Receiver"
+msgstr ""
+
+msgid "record"
+msgstr "neem op"
+
+msgid "regex match (experimental)"
+msgstr "overeenkomst regex (experimenteel)"
+
+msgid "remove"
+msgstr "verwijder"
+
+msgid "running"
+msgstr "loopt"
+
+msgid "seconds"
+msgstr "seconde(n)"
+
+msgid "select bouquets"
+msgstr "Kies Bouquetten"
+
+msgid "select channels"
+msgstr "Kies zenders"
+
+msgid "select tags"
+msgstr "Kies tags"
+
+msgid "short description contains"
+msgstr "in korte beschrijving"
+
+msgid "short description match"
+msgstr "komt overeen met de korte omschrijving"
+
+msgid "standard"
+msgstr "standaard"
+
+msgid "static"
+msgstr "statisch"
+
+msgid "this service is protected by a parental control pin"
+msgstr "dit programma is beveiligd d.m.v. 'ouderlijk toezicht pincode'"
+
+msgid "title contains"
+msgstr "in titel"
+
+msgid "title ends with"
+msgstr "de titel eindigt met"
+
+msgid "title or description match"
+msgstr "titel of omschrijving komt overeen"
+
+msgid "title or short description match"
+msgstr "titel of korte beschrijving komt overeen"
+
+msgid "title starts with"
+msgstr "de titel begint met"
+
+msgid "transcoded"
+msgstr "Getranscodeerd"
+
+#, python-format
+msgid "type %s is not a number"
+msgstr "type %s is geen getal"
+
+msgid "unknown"
+msgstr "onbekend"
+
+msgid "using"
+msgstr "gebruikt"
+
+msgid "via"
+msgstr "via"
+
+msgid "waiting"
+msgstr "wacht"
+
+msgid "weekday"
+msgstr "Werkdag"
+
+msgid "weekend"
+msgstr "Weekeinde"
+
+msgid "wrong filetype"
+msgstr "verkeerd bestandstype"
+
+msgid "zap"
+msgstr "zap"
+
+#~ msgid "EPG Search"
+#~ msgstr "EPG zoeken"
+
+#~ msgid "Enter Text"
+#~ msgstr "Tekst invoeren"
+
+#~ msgid "LICENSE"
+#~ msgstr "Licentie"
+
+#~ msgid "Standby Toggle"
+#~ msgstr "Wissel standby"
+
+#~ msgid "Use old remote"
+#~ msgstr "Gebruik oude AB"
+
+#~ msgid "Apid"
+#~ msgstr "Apid"
+
+#~ msgid "Onid"
+#~ msgstr "Onid"
+
+#~ msgid "Pcrpid"
+#~ msgstr "Pcrpid"
+
+#~ msgid "Pmtpid"
+#~ msgstr "Pmtpid"
+
+#~ msgid "Recording Status"
+#~ msgstr "Opnamestatus"
+
+#~ msgid "Sid"
+#~ msgstr "Sid"
+
+#~ msgid "Sref"
+#~ msgstr "Sref"
+
+#~ msgid "Tsid"
+#~ msgstr "Tsid"
+
+#~ msgid "Tuner Bit Error Rate BER"
+#~ msgstr "Tuner fout bit ratio BER"
+
+#~ msgid "Tuner Signal Power AGC"
+#~ msgstr "Tuner signaalsterkte AGC"
+
+#~ msgid "Tuner Signal Quality SNR"
+#~ msgstr "Tuner signaalkwaliteit SNR"
+
+#~ msgid "Tuner Signal Quality SNR_DB"
+#~ msgstr "Tuner signaalkwaliteit SNR_DB"
+
+#~ msgid "Video Wide"
+#~ msgstr "Breedbeeld"
+
+#~ msgid "Vpid"
+#~ msgstr "Vpid"

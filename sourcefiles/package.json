@@ -1,0 +1,50 @@
+{
+  "name": "openwebif-assets",
+  "version": "0.0.1",
+  "description": "Static assets for OpenWebif interface",
+  "main": "index.js",
+  "devDependencies": {
+    "clean-css": "^5.1.2",
+    "clean-css-cli": "^5.3.0",
+    "commander": "^7.2.0",
+    "glob-uglifyjs": "^2.0.0",
+    "mkdirp": "^1.0.4",
+    "node-sass": "^7.0.1",
+    "prettier": "^2.3.1",
+    "sass": "^1.53.0"
+  },
+  "resolutions": {
+    "node-forge": "~0.10.0",
+    "yargs-parser": "^20.2.7",
+    "glob-parent": "^5.1.2",
+    "css-what": "^5.0.1",
+    "normalize-url": "^4.5.1",
+    "postcss": "^8.2.10"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "scripts": {
+    "preinstall": "npx npm-force-resolutions",
+    "build-classic-js": "npx glob-uglifyjs -c ./classic-glob-uglifyjs.config",
+    "build-js": "npm run build-prod --prefix modern",
+    "build-css": "node ./_utils/mincss.js -o '../plugin/public/' './modern/css/**/*.css'",
+    "build-css-themes": "node ./_utils/mincss.js -o '../plugin/public/' './themes/*.css'",
+    "build-classic-css": "node-sass './scss/style.scss' '../plugin/public/css/style.min.css' --output-style compressed",
+    "test": "echo 'Error: no test specified!' && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oe-alliance/OpenWebif.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oe-alliance/OpenWebif/issues"
+  },
+  "homepage": "https://github.com/oe-alliance/OpenWebif#readme",
+  "dependencies": {
+    "path-exists": "^5.0.0",
+    "semver": "^7.3.7"
+  }
+}

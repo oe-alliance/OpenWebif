@@ -1,0 +1,66 @@
+#from urllib.parse import quote
+#from Plugins.Extensions.OpenWebif.controllers.i18n import tstrings
+
+#set $tabIcon = 'tv'
+#if $stype == 'radio'
+	#set $tabIcon = 'radio'
+#end if
+
+<!-- TODO: move styles to css file -->
+<style>
+	.sticky-top {
+    position: sticky;
+    top: 70px;
+		z-index: 1;
+    background: #fff;
+    box-shadow: 0px 0px 10px 10px #fff;
+	}
+
+	.theme--city-lights .sticky-top {
+    background: #282c37;
+    box-shadow: 0px 0px 10px 10px #282c37;
+	}
+</style>
+
+<div class="form-group hidden-md hidden-lg hidden-xl">
+	<select class="form-control show-tick" id="bqselector">
+	#for $bouquet in $bouquets
+		#set bn = $bouquet[1].replace('<','&lt;').replace('>','&gt;')
+		<option value='ajax/channels?id=$quote($bouquet[0])&stype=$stype'>$bn</option>
+	#end for
+	</select>
+</div>
+<div class="hidden-sm hidden-xs sticky-top">
+	<ul class="nav nav-tabs tab--skinned">
+	#set $f="id='firstBq'"
+	#for $bouquet in $bouquets
+		#set bn = $bouquet[1].replace('<','&lt;').replace('>','&gt;')
+		<li>
+			<a href='#tab' onclick="load_subcontent('ajax/channels?id=$quote($bouquet[0])&stype=$stype'); return false;" data-toggle="tab" $f>
+				<i class="material-icons material-icons-bouquets">$tabIcon</i>$bn
+			</a>
+		</li>
+		#set $f="class='align-middle'"
+	#end for
+	</ul>
+</div>
+<div class="tab-content">
+	<div class="tab-pane active" id="tab">
+		<div id='sub_content_container'></div>
+	</div>
+</div>
+
+<script>
+	var firstBq = document.getElementById("firstBq");
+	firstBq.click();
+	jQuery.AdminBSB.select.activate();
+	jQuery(function() {
+		jQuery('#bqselector').change(function() {
+			load_subcontent(jQuery(this).val());
+		});
+	});
+	function pl(bq,bn) {
+		var plf = GetLSValue('pl','m3u');
+		window.open('web/services.' + plf + '?bRef=' + bq + '&bName=' + bn, '_blank');
+	}
+</script>

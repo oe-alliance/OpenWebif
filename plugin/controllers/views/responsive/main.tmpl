@@ -1,0 +1,934 @@
+#from Plugins.Extensions.OpenWebif.controllers.i18n import tstrings
+#from Plugins.Extensions.OpenWebif.controllers.defaults import USERCSSMODERN, MOBILEDEVICE, isSettingEnabled, skinColor, themeMode, showPicons, showPiconBackground
+#from json import dumps
+
+#set $skinPrefOptions = [
+	{'value': 'black', 'label': 'Black'}, 
+	{'value': 'grey-darken-4', 'label': 'Dark Grey'}, 
+	{'value': 'blue-grey', 'label': 'Blue Grey'}, 
+	{'value': 'grey', 'label': 'Grey'}, 
+	{'value': 'red', 'label': 'Red'}, 
+	{'value': 'pink', 'label': 'Pink'}, 
+	{'value': 'purple', 'label': 'Purple'}, 
+	{'value': 'deep-purple', 'label': 'Deep Purple'}, 
+	{'value': 'indigo', 'label': 'Indigo'}, 
+	{'value': 'blue', 'label': 'Blue'}, 
+	{'value': 'light-blue', 'label': 'Light Blue'}, 
+	{'value': 'cyan', 'label': 'Cyan'}, 
+	{'value': 'teal', 'label': 'Teal'}, 
+	{'value': 'green', 'label': 'Green'}, 
+	{'value': 'light-green', 'label': 'Light Green'}, 
+	{'value': 'lime', 'label': 'Lime'}, 
+	{'value': 'yellow', 'label': 'Yellow'}, 
+	{'value': 'amber', 'label': 'Amber'}, 
+	{'value': 'orange', 'label': 'Orange'}, 
+	{'value': 'deep-orange', 'label': 'Deep Orange'}, 
+	{'value': 'brown', 'label': 'Brown'}, 
+	{'value': 'white', 'label': 'White'}
+]
+
+<!doctype html>
+<html lang="$stbLang.replace('_', '-')">
+<head>
+	<title>$boxname - OpenWebif</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86"><!-- https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag -->
+	<meta name="description" content="">
+	<meta name="author" content="">
+	#if $MOBILEDEVICE == True
+	<meta name="apple-itunes-app" content="app-id=574507135">
+	#end if
+	<link rel="shortcut icon" href="/images/favicon.png">
+	<link rel="stylesheet" type="text/css" href="/modern/css/roboto.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/materialicons.min.css">
+	<link rel="stylesheet" type="text/css" href="/modern/plugins/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/modern/plugins/node-waves/waves.min.css">
+	<link rel="stylesheet" type="text/css" href="/modern/plugins/animate-css/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="/modern/plugins/bootstrap-select/css/bootstrap-select.min.css">
+	<link rel="stylesheet" type="text/css" href="/modern/plugins/sweetalert/sweetalert.min.css">
+	<link rel="stylesheet" type="text/css" href="/modern/plugins/choices/choices.min.css">
+	<link rel="stylesheet" type="text/css" href="/modern/css/style.min.css?v=wp">
+	<link rel="stylesheet" type="text/css" href="/modern/css/header.min.css?v=wp">
+	<link rel="stylesheet" type="text/css" href="/modern/css/themes/all-themes.min.css?v=wp">
+	<link rel="stylesheet" type="text/css" href="/modern/css/bootstrap-chosen.min.css">
+	<link rel="stylesheet" type="text/css" href="/modern/css/timepicker.min.css">
+	<link rel="stylesheet" type="text/css" href="/modern/css/responsive.min.css">
+	#if $USERCSSMODERN != ''
+	<link rel="stylesheet" type="text/css" href="$USERCSSMODERN">
+	#end if
+
+	<style>
+		.page-loader-wrapper { background: rgba(156,156,156, 0.2); }
+	</style>
+
+	<script src="/js/jquery-2.2.4.min.js"></script>
+	<script src="/js/jquery-ui-1.13.2.min.js"></script>
+	<script src="/js/openwebif.min.js?v2.0.0"></script>
+	<script src="/js/chosen-1.8.2.jquery.min.js"></script>
+	<script>initJsTranslation($dumps($tstrings))</script>
+</head>
+
+<body class="theme--$themeMode skin--$skinColor" data-thememode="$themeMode" data-skinpref="$skinColor">
+	<!-- Overlay For Sidebars -->
+	<div class="overlay"></div>
+	<div class="search-bar search-bar-epg">
+		<div class="search-icon">
+			<div class="start-search">
+				<i class="material-icons">search</i>
+			</div>
+		</div>
+		<form action="#" method="get" onsubmit="window.location = '/#epgdialog?' + (new URLSearchParams(new FormData(this)).toString()); return false;">
+			<input type="text" name="sstr" id="epgsearchtext" placeholder="$tstrings['start_typing'] ( $tstrings['epgsearch'] ) ...">
+			<input type="hidden" name="bouquetsonly" value="1">
+		</form>
+		<div class="close-search">
+			<span class="start-search">
+				<i class="material-icons">search</i>
+			</span>
+			<i class="material-icons">close</i>
+		</div>
+	</div>
+	<span id="topmenuheader">
+		<header class="navbar" ondblclick="owif.gui.fullscreen();">
+			<nav id="header__wrapper">
+				<div id="osd__title">
+					<button class="bars" id="leftsidebarin"></button>
+					<h1 id="header__title">
+						<a href="/">OpenWebif</a>
+					</h1>
+					<button style="display: none;" id="osd__connection" title="$tstrings['no_network_connection']"><i class="icon material-icons">link_off</i></button>
+				</div>
+
+				<div id="osd__current">
+					<button id="osd__current-event" data-toggle="modal" data-target="#EventModal" title="$tstrings['more_details']">
+						<span id="osd__current-event__name"></span>
+						<span id="osd__current-event__time">
+							<time datetime="" id="osd__current-event__time__start"></time>
+							&ndash;
+							<time datetime="" id="osd__current-event__time__end"></time>
+						</span>
+					</button>
+					<button id="osd__current-event__record" style="padding: 0 0.4ex;" onclick="owif.stb.instantRecord();" title="$tstrings['start_instant_record']">
+						<i class="icon material-icons" style="font-size: 2.4ex; vertical-align: bottom; color: rgba(255,255,255,0.4);">radio_button_checked</i>
+					</button>
+					<a href="/#/tv" id="osd__current-service">
+						<span id="osd__current-service--text"></span>
+						<img src="" alt="" id="osd__current-service--picon"><!-- for future use -->
+					</a>
+					</a>
+					<button type="button" id="osd__current-event__epg" title="$tstrings['show_epg_for'] channel" data-toggle="modal" data-target="#EPGModal"><i class="icon material-icons">event_note</i></button>
+					<a href="" target="_blank" class="dyn" id="osd__current-event__stream" title="$tstrings['stream'] channel">
+					<!-- should probably use /web/streamcurrent.m3u?name= -->
+						<i class="icon material-icons">ondemand_video</i>
+					</a>
+				</div>
+
+				<button id="osd__active-recordings" style="display: none;" title="$tstrings['currently_recording']" data-toggle="modal" data-target="#RecModal">
+					<span class="recording--active">$tstrings['REC']</span>
+					<span class="label-count"></span>
+				</button>
+
+				<button id="osd__active-streams" title="$tstrings['serving_stream']" data-toggle="modal" data-target="#StreamModal">
+					<i class="icon material-icons">cast</i>
+					<span class="label-count"></span>
+				</button>
+
+				<div id="osd__volume">
+					<button id="osd__current-mute-status" onclick="toggleMute();" title="$tstrings['mute_unmute'] - Shortcut: x" accesskey="x">
+						<i class="icon material-icons">volume_off</i>
+					</button>
+					<!-- TODO: link step size with user prefs -->
+					<input type="range" min="0" max="100" value="30" step="5" id="volume-slider" oninput="setVolume(this.valueAsNumber);">
+					<output for="volume-slider" id="osd__current-volume"></output>
+				</div>
+
+				<div id="header_actions">
+					<a href="#/screenshot" id="header_action--screenshot" title="$tstrings['grabscreenshot'] - Shortcut: s" accesskey="s">
+						<i class="icon material-icons">photo_camera</i>
+					</a>
+
+					<button id="header_action--send-message" data-toggle="modal" data-target="#SendMessageModal" title="$tstrings['sendamessage'] - Shortcut: n" accesskey="n">
+						<i class="icon material-icons">message</i>
+					</button>
+
+					<button class="js-search-epg" data-close="true" title="$tstrings['epgsearch'] - Shortcut: f" accesskey="f">
+						<i class="icon material-icons">search</i>
+					</button>
+					<button onclick="toggleStandby();" class="btn--power-toggle" title="$tstrings['standby_toggle'] - Shortcut: 0" accesskey="0">
+						<i class="icon material-icons">power_settings_new</i>
+					</button>
+
+					<button data-toggle="modal" data-target="#PowerModal" title="$tstrings['powercontrol'] - Shortcut: p" accesskey="p">
+						<i class="icon material-icons">settings_power</i>
+					</button>
+
+					<button class="js-right-sidebar" data-close="true" title="$tstrings['settings']">
+						<i class="icon material-icons">settings</i>
+					</button>
+				</div>
+
+			</nav>
+		</header>
+		<!-- #Top Bar -->
+		<section>
+			<!-- Left Sidebar -->
+			<aside id="leftsidebar" class="sidebar">
+				<!-- Menu -->
+				<div class="menu" id="leftsidemenu">
+					<ul class="list leftnav">
+						#if not $showname
+							#set boxname=$tstrings['box_info']
+						#end if
+						<li class="header" id="leftsidemenuheader">$boxname</li>
+						<li class="active" style="display:none;"></li>
+						<li>
+							<a href="#screenshot" class="menu-toggle">
+								<i class="material-icons">dialpad</i>
+								<span>$tstrings['remote']</span>
+							</a>
+							<ul class="ml-menu noselect">
+									#set $remotecollapse = ""
+									<!--
+									#if $isSettingEnabled('rcu_full_view') != 'checked'
+									-->
+									<li style="margin-top:0px;">
+										 <span data-toggle="collapse" data-target=".remote__groupfull" aria-expanded="true" aria-controls="rcunumbers rcuplayerkeys" style="cursor:pointer;" title="Show all buttons"><i class="material-icons material-icons-centered">fullscreen</i></span>
+									</li>
+									#set $remotecollapse = " collapse"
+									<li class="align-center" style="margin-top:-30px;">
+										<span data-toggle="collapse" data-target="#rcunumbers" aria-expanded="false" aria-controls="collapseExample" style="cursor:pointer;" title="Show more buttons"><i class="material-icons material-icons-centered">arrow_drop_up</i></span>
+									</li>
+									<!--
+									#end if
+									-->
+									<li>
+										<section class="remote__groupfull remote__group remote__group--numerical$remotecollapse" id="rcunumbers">
+											<button type="button" onclick="pressMenuRemote('2');" title="1" class="remote__button icon"><i class="material-icons">filter_1</i></button>
+											<button type="button" onclick="pressMenuRemote('3');" title="2" class="remote__button icon"><i class="material-icons">filter_2</i></button>
+											<button type="button" onclick="pressMenuRemote('4');" title="3" class="remote__button icon"><i class="material-icons">filter_3</i></button>
+											<button type="button" onclick="pressMenuRemote('5');" title="4" class="remote__button icon"><i class="material-icons">filter_4</i></button>
+											<button type="button" onclick="pressMenuRemote('6');" title="5" class="remote__button icon"><i class="material-icons">filter_5</i></button>
+											<button type="button" onclick="pressMenuRemote('7');" title="6" class="remote__button icon"><i class="material-icons">filter_6</i></button>
+											<button type="button" onclick="pressMenuRemote('8');" title="7" class="remote__button icon"><i class="material-icons">filter_7</i></button>
+											<button type="button" onclick="pressMenuRemote('9');" title="8" class="remote__button icon"><i class="material-icons">filter_8</i></button>
+											<button type="button" onclick="pressMenuRemote('10');" title="9" class="remote__button icon"><i class="material-icons">filter_9</i></button>
+											<button type="button" onclick="pressMenuRemote('412');" title="&lt;" class="remote__button icon"><i class="material-icons">navigate_before</i></button>
+											<button type="button" onclick="pressMenuRemote('11');" title="0" class="remote__button icon"><i class="material-icons">exposure_zero</i></button>
+											<button type="button" onclick="pressMenuRemote('407');" title="&gt;" class="remote__button icon"><i class="material-icons">navigate_next</i></button>
+										</section>
+										<section class="remote__group">
+											<button type="button" onclick="toggleMute(); return false;" title="Mute" class="remote__button icon"><i class="material-icons">volume_off</i></button>
+											<button type="button" onclick="pressMenuRemote('114');" title="Vol-" class="remote__button icon"><i class="material-icons">volume_down</i></button>
+											<button type="button" onclick="pressMenuRemote('115');" title="Vol+" class="remote__button icon"><i class="material-icons">volume_up</i></button>
+											<button type="button" onclick="toggleStandby(); return false;" title="Power" class="remote__button remote__button--power icon"><i class="material-icons">power_settings_new</i></button>
+											<button type="button" onclick="pressMenuRemote('377');" title="TV" class="remote__button icon"><i class="material-icons">tv</i></button>
+											<button type="button" onclick="pressMenuRemote('385');" title="Radio" class="remote__button icon"><i class="material-icons">radio</i></button>
+											<button type="button" onclick="pressMenuRemote('393');" title="List" class="remote__button icon"><i class="material-icons">movie</i></button>
+											<button type="button" onclick="pressMenuRemote('102');" title="Home" class="remote__button icon"><i class="material-icons">home</i></button>
+										</section>
+										<section class="remote__group remote__group--directional">
+											<button type="button" onclick="pressMenuRemote('139');" title="Menu" class="remote__button icon"><i class="material-icons">menu</i></button>
+											<button type="button" onclick="pressMenuRemote('103');" title="Up" class="remote__button icon remote__button--arrow"><i class="material-icons">keyboard_arrow_up</i></button>
+											<button type="button" onclick="pressMenuRemote('358');" title="Info" class="remote__button icon"><i class="material-icons">info_outline</i></button>
+											<button type="button" onclick="pressMenuRemote('105');" title="Left" class="remote__button icon remote__button--arrow"><i class="material-icons">keyboard_arrow_left</i></button>
+											<button type="button" onclick="pressMenuRemote('352');" title="OK" class="remote__button icon remote__button--arrow"><i class="material-icons">thumb_up_alt</i></button>
+											<button type="button" onclick="pressMenuRemote('106');" title="Right" class="remote__button icon remote__button--arrow"><i class="material-icons">keyboard_arrow_right</i></button>
+											<button type="button" onclick="pressMenuRemote('158');" title="Back" class="remote__button icon"><i class="material-icons">keyboard_return</i></button>
+											<button type="button" onclick="pressMenuRemote('108');" title="Down" class="remote__button icon remote__button--arrow"><i class="material-icons">keyboard_arrow_down</i></button>
+											<button type="button" onclick="pressMenuRemote('174');" title="Exit" class="remote__button icon"><i class="material-icons">clear</i></button>
+										</section>
+										<section class="remote__group">
+											<button type="button" onclick="pressMenuRemote('365');" title="EPG" class="remote__button icon"><i class="material-icons">event_note</i></button>
+											<button type="button" onclick="pressMenuRemote('627');" title="VOD" class="remote__button icon"><i class="material-icons">ondemand_video</i></button>
+											<button type="button" onclick="pressMenuRemote('403');" title="CH-" class="remote__button icon"><i class="material-icons">remove</i></button>
+											<button type="button" onclick="pressMenuRemote('402');" title="CH+" class="remote__button icon"><i class="material-icons">add</i></button>
+											<button type="button" onclick="pressMenuRemote('398');" title="Red" class="remote__button icon remote__button--colour"><i class="material-icons" style="color: #F44336;">call_to_action</i></button>
+											<button type="button" onclick="pressMenuRemote('399');" title="Green" class="remote__button icon remote__button--colour"><i class="material-icons" style="color: #4CAF50;">call_to_action</i></button>
+											<button type="button" onclick="pressMenuRemote('400');" title="Yellow" class="remote__button icon remote__button--colour"><i class="material-icons" style="color: #ffe821;">call_to_action</i></button>
+											<button type="button" onclick="pressMenuRemote('401');" title="Blue" class="remote__button icon remote__button--colour"><i class="material-icons" style="color: #2196F3;">call_to_action</i></button>
+										</section>
+										<section class="remote__groupfull remote__group$remotecollapse" id="rcuplayerkeys">
+											<button type="button" onclick="pressMenuRemote('168');" title="FastRewind" class="remote__button icon"><i class="material-icons">fast_rewind</i></button>
+											<button type="button" onclick="pressMenuRemote('207');" title="Play" class="remote__button icon"><i class="material-icons">play_arrow</i></button>
+											<button type="button" onclick="pressMenuRemote('119');" title="Pause" class="remote__button icon"><i class="material-icons">pause</i></button>
+											<button type="button" onclick="pressMenuRemote('208');" title="FastForward" class="remote__button icon"><i class="material-icons">fast_forward</i></button>
+											<button type="button" onclick="pressMenuRemote('370');" title="Subtitle" class="remote__button icon"><i class="material-icons">subtitles</i></button>
+											<button type="button" onclick="pressMenuRemote('167');" title="Record" class="remote__button icon"><i class="material-icons" style="color: #F44336;">fiber_manual_record</i></button>
+											<button type="button" onclick="pressMenuRemote('128');" title="Stop" class="remote__button icon"><i class="material-icons">stop</i></button>
+											<button type="button" onclick="pressMenuRemote('392');" title="Audio" class="remote__button icon"><i class="material-icons">audiotrack</i></button>
+										</section>
+									</li>
+									#if $textinputsupport == True
+									<li class="align-center">
+										<!-- TODO: don't reset input if send fails -->
+										<form onsubmit="var el = this.elements['keyboardText']; owif.api.sendKeyboardText(el.value); el.value = ''; return false;" style="display:flex; max-width:150px; margin:1em auto 0;">
+											<input type="text" name="keyboardText" value="" placeholder="$tstrings['enter_text']">
+											<input type="submit" value="$tstrings['send']" style="margin-left:1ex;">
+										</form>
+									</li>
+									#end if
+									<!--
+									#if $isSettingEnabled('rcu_full_view') != 'checked'
+									-->
+									<li class="align-center">
+										<span data-toggle="collapse" data-target="#rcuplayerkeys" aria-expanded="false" aria-controls="collapseExample" style="cursor:pointer;" title="Show more buttons"><i class="material-icons material-icons-centered">arrow_drop_down</i></span>
+									</li>
+									<!--
+									#end if
+									-->
+								</span>
+								<li>
+									<table style="margin: 0 auto;">
+										<tr>
+											<td colspan="2">
+												<h6>$tstrings['shiftforlong']</h6>
+											</td>
+										</tr>
+										<tr>
+											<td><!-- TODO: i10n -->
+												<span style="cursor:pointer;" title="Enable/Disable Screenshot on key press or $tstrings['grabscreenshot']" onclick="load_maincontent('ajax/screenshot');return false;">$tstrings['grabscreenshot']</span>
+											</td>
+											<td>
+												<div class="switch">
+													<span class="m-r-10 font-12"></span>
+													<label>
+														<input type="checkbox" name="remotegrabscreen1" id="remotegrabscreen1" $isSettingEnabled('rcu_screenshot') class="remotegrabscreen">
+														<span class="lever switch--skinned"></span>
+													</label>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<p></p>
+											</td>
+										</tr>
+									</table>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#tv" data-close="true" accesskey="v" title="Shortcut: v">
+								<i class="material-icons">tv</i>
+								<span>$tstrings['television']</span>
+							</a>
+						</li>
+						<li>
+							<a href="#radio" data-close="true" accesskey="r" title="Shortcut: r">
+								<i class="material-icons">radio</i>
+								<span>$tstrings['radio']</span>
+							</a>
+						</li>
+						<li>
+							<a href="#myepg?epgmode=tv" data-close="true" accesskey="e" title="Shortcut: e">
+								<i class="icon material-icons">event_note</i>
+								<span>$tstrings['epg']</span>
+							</a>
+						</li>
+						<li>
+							<a href="#movies" data-close="true" accesskey="m" title="Shortcut: m">
+								<i class="material-icons">movie</i>
+								<span>$tstrings['movies']</span>
+							</a>
+						</li>
+						<li>
+							<a href="#timers" data-close="true" accesskey="t" title="Shortcut: t">
+								<i class="material-icons">alarm</i>
+								<span>$tstrings['timers']</span>
+							</a>
+						</li>
+						#for $extra in $extras
+							#if $extra["key"] in ("ajax/at",)
+								<li>
+									<a href="#at" data-close="true" accesskey="a" title="Shortcut: a">
+										<i class="material-icons">av_timer</i>
+										<span>$extra["description"]</span>
+									</a>
+								</li>
+							#end if
+						#end for
+						<li>
+							<a href="#settings" data-close="true" accesskey="c" title="Shortcut: c">
+								<i class="material-icons">settings</i>
+								<span>$tstrings['settings']</span>
+							</a>
+						</li>
+						<li>
+							<a href="#bqe" data-close="true" accesskey="b" title="Shortcut: b">
+								<i class="material-icons">view_list</i>
+								<span>$tstrings['Bouquet_Editor']</span>
+							</a>
+						</li>
+						<li>
+							<a href="#satfinder" data-close="true" accesskey="o" title="Shortcut: o">
+								<i class="material-icons">wifi</i>
+								<span>$tstrings['satfinder']</span>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="menu-toggle">
+                                <i class="material-icons">info</i>
+								<span>$tstrings['information']</span>
+							</a>
+                            <ul class="ml-menu">
+								<li><a href="#current">$tstrings['channel']</a></li>
+                                <li>
+                                    <a href="#boxinfo" data-close="true" accesskey="i" title="Shortcut: i">$tstrings['receiver']</a>
+                                </li>
+								<li><a href="#about">OpenWebif</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="menu-toggle">
+								<i class="material-icons">widgets</i>
+								<span>$tstrings['extras']</span>
+							</a>
+							<ul class="ml-menu">
+							#for $extra in $extras
+								#set $target_url = $extra["key"];
+								#if $target_url not in ('ajax/at','ajax/bqe','ajax/settings')
+									#if 'nw' in $extra
+										#if $extra["nw"] == "1"
+										<li><a href="$target_url" target='_blank'>$extra["description"]</a></li>
+										#else
+										<li><a href="$target_url" class="lmc pop">$extra["description"]</a></li>
+										#end if
+									#else
+										<li><a href='javascript:void(0);' data-close="true" onclick="load_maincontent('$target_url'); return false;" >$extra["description"]</a></li>
+									#end if
+								#end if
+							#end for
+							#if $webtv
+								<li><a href="#webtv" data-close="true" accesskey="w" title="Shortcut: w">$tstrings['webtv']</a></li>
+							#end if
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<!-- #Menu -->
+			</aside>
+			<!-- #END# Left Sidebar -->
+			<aside id="rightsidebar" class="right-sidebar">
+				<ul class="nav nav-tabs tab-nav-right tab--skinned" role="tablist">
+					<li role="presentation" class="active">
+						<a href="#settings" data-toggle="tab">$tstrings['config']</a>
+					</li>
+					<li role="presentation">
+						<a href="#skins" data-toggle="tab">$tstrings['skins']</a>
+					</li>
+				</ul>
+				<div class="tab-content" style="overflow-y: auto;position: relative;height: 90vh;">
+					<div role="tabpanel" class="tab-pane fade in active in active" id="settings">
+						<div class="demo-settings">
+							<p>$tstrings['epgsearch']</p>
+							<ul class="setting-list">
+								<li>
+									<span>$tstrings['epgsearchextended']</span>
+									<div class="switch">
+										<label>
+											<input type="checkbox" name="myepgbtn0" id="myepgbtn0" $isSettingEnabled('epgsearch_full')>
+											<span class="lever switch--skinned"></span>
+										</label>
+									</div>
+								</li>
+								<li>
+									<span>$tstrings['epgsearchbouquetsonly']</span>
+									<div class="switch">
+										<label>
+											<input type="checkbox" name="myepgbtn1" id="myepgbtn1" $isSettingEnabled('epgsearch_only_bq')>
+											<span class="lever switch--skinned"></span>
+										</label>
+									</div>
+								</li>
+							</ul>
+							<p>$tstrings['common_settings']</p>
+							<ul class="setting-list">
+								<!--
+								<li>
+									<span>$tstrings['showfullremoteshort']</span>
+									<div class="switch">
+										<label>
+											<input type="checkbox" name="remotecontrolview" id="remotecontrolview" $isSettingEnabled('rcu_full_view')>
+											<span class="lever switch--skinned"></span>
+										</label>
+									</div>
+								</li>
+								-->
+								<li>
+									<span>$tstrings['min_movie_list']</span>
+									<div class="switch">
+										<label>
+											<input type="checkbox" name="minmovielist" id="minmovielist" $isSettingEnabled('minmovielist')>
+											<span class="lever switch--skinned"></span>
+										</label>
+									</div>
+								</li>
+								<li>
+									<span>$tstrings['min_timer_list']</span>
+									<div class="switch">
+										<label>
+											<input type="checkbox" name="mintimerlist" id="mintimerlist" $isSettingEnabled('mintimerlist')>
+											<span class="lever switch--skinned"></span>
+										</label>
+									</div>
+								</li>
+								<li>
+									<span>$tstrings['min_epg_list']</span>
+									<div class="switch">
+										<label>
+											<input type="checkbox" name="minepglist" id="minepglist" $isSettingEnabled('minepglist')>
+											<span class="lever switch--skinned"></span>
+										</label>
+									</div>
+								</li>
+								<li>
+									<span>$tstrings['now_next_columns']</span>
+									<div class="switch">
+										<label>
+											<input type="checkbox" name="nownext_columns" id="nownext_columns" $isSettingEnabled('nownext_columns')>
+											<span class="lever switch--skinned"></span>
+										</label>
+									</div>
+								</li>
+								<li>
+									<span>XSPF $tstrings['playlistformat']</span>
+									<div class="switch">
+										<label>
+											<input type="checkbox" name="plformat" id="plformat">
+											<span class="lever switch--skinned"></span>
+										</label>
+									</div>
+								</li>
+								<li>
+									<span>$tstrings['zapbeforestream']</span>
+									<div class="switch">
+										<label>
+											<input type="checkbox" name="zapstream" id="zapstream" $isSettingEnabled('zapstream')>
+											<span class="lever switch--skinned"></span>
+										</label>
+									</div>
+								</li>
+								<li>
+									<span>$tstrings['show_iptv_channels_in_selection']</span>
+									<div class="switch">
+										<label>
+											<input type="checkbox" name="showiptvchannelsinselection" id="showiptvchannelsinselection" $isSettingEnabled('showiptvchannelsinselection')>
+											<span class="lever switch--skinned"></span>
+										</label>
+									</div>
+								</li>
+								<li>
+									<span>$tstrings['use_channel_name_for_screenshots']</span>
+									<div class="switch">
+										<label>
+											<input type="checkbox" name="screenshotchannelname" id="screenshotchannelname" $isSettingEnabled('screenshotchannelname')>
+											<span class="lever switch--skinned"></span>
+										</label>
+									</div>
+								</li>
+								<li>
+									<span>$tstrings['use_classic_design']</span>
+									<div class="switch">
+										<label>
+											<input type="checkbox" name="noresposive" id="noresposive">
+											<span class="lever switch--skinned"></span>
+										</label>
+									</div>
+								</li>
+							</ul>
+							
+							<p>$tstrings['channels']</p>
+							<ul class="setting-list">
+								<li>
+									<span>$tstrings['show_picons']</span>
+									<div class="switch">
+										<label>
+											<input type="checkbox" name="showpicons" id="showpicons" $showPicons>
+											<span class="lever switch--skinned"></span>
+										</label>
+									</div>
+								</li>
+								<li>
+									<span>$tstrings['show_picon_background']</span>
+									<div class="switch">
+										<label>
+											<input type="checkbox" name="showpiconbackground" id="showpiconbackground" $showPiconBackground>
+											<span class="lever switch--skinned"></span>
+										</label>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div role="tabpanel" class="tab-pane fade" id="skins">
+						<ul class="setting-list" style="margin-bottom: 0;">
+							<li>
+								<span>$tstrings['gui_theme_mode'] - City Lights</span>
+								<div class="switch">
+									<label>
+										<input type="checkbox" name="themeMode" id="thememodebtn" value="city-lights" checked="$(themeMode != 'supabright')">
+										<span class="lever switch--skinned"></span>
+									</label>
+								</div>
+							</li>
+						</ul>
+						<ul class="skin-switcher">
+#for $skinPrefOption in $skinPrefOptions
+	#set $isChecked = ''
+	#if $skinPrefOption['value'] == $skinColor
+		#set $isChecked = 'checked'
+	#end if
+							<li>
+								<label>
+									<input type="radio" name="skinpref" value="$skinPrefOption['value']" $isChecked>
+									<span class="color-swatch swatch--$skinPrefOption['value']"></span>
+									$skinPrefOption['label']
+								</label>
+							</li>
+#end for
+						</ul>
+					</div>
+				</div>
+			</aside>
+			<!-- #END# Right Sidebar -->
+		</section>
+	</span>
+
+<section class="content" id="fullmaincontent">
+		<div class="container-fluid">
+			<div class="row clearfix">
+				<div id="content_container" style="position: relative; min-height: 90vh">$content</div>
+			</div>
+			<span id="mainfooter">
+				<div class="row clearfix">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<div class="card">
+							<div class="body text-center">
+								<div id="footer">
+									<a href="https://github.com/E2OpenPlugins" target="_blank" class="link--skinned" rel="noreferrer noopener">E2OpenPlugins</a> | 
+									<a href="https://www.opena.tv" target="_blank" class="link--skinned" rel="noreferrer noopener">openATV</a> | 
+									<a href="https://www.vuplus-community.net" target="_blank" class="link--skinned" rel="noreferrer noopener">Black Hole</a> | 
+									<a href="http://www.droidsat.org" target="_blank" class="link--skinned" rel="noreferrer noopener">OpenDroid</a> | 
+									<a href="https://www.egami-image.com" target="_blank" class="link--skinned" rel="noreferrer noopener">EGAMI</a> | 
+									<a href="https://www.hdfreaks.cc" target="_blank" class="link--skinned" rel="noreferrer noopener">OpenHDF</a> | 
+									<a href="https://images.teamblue.tech" target="_blank" class="link--skinned" rel="noreferrer noopener">teamBlue</a> | 
+									<a href="https://openpli.org" target="_blank" class="link--skinned" rel="noreferrer noopener">OpenPli</a> | 
+									<a href="https://blackhole-community.com" target="_blank" class="link--skinned" rel="noreferrer noopener">Blackhole</a> | 
+									<a href="https://openspa.info" target="_blank" class="link--skinned" rel="noreferrer noopener">OpenSpa</a> | 
+									<a href="https://www.openvix.co.uk" target="_blank" class="link--skinned" rel="noreferrer noopener">OpenViX</a> | 
+									<a href="#about" class="link--skinned" rel="noreferrer noopener">$tstrings['about']</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</span>
+		</div>
+	</section>
+
+<!---<div id="modaldialog"></div>-->
+<div id="responsivespinner"></div>
+<div id="TimerConflictModal" class="modal fade" role="dialog">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header bg-red m-b-10" style="padding: 20px 20px 15px;">
+				<button type="button" class="close" data-dismiss="modal">
+					<i class="material-icons material-icons-centered">close</i>
+				</button>
+				<h4 class="modal-title">
+					<i class="material-icons material-icons-centered">error_outline</i>
+					<span>$tstrings['timer_conflict']</span>
+				</h4>
+			</div>
+			<div class="modal-body" style="max-height: calc(100vh - 180px); overflow-y: auto;">
+				<div id="timerconflictmodal"></div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn waves-effect btn-default" data-dismiss="modal">$tstrings['close']</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="StreamModal" class="modal fade" role="dialog">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header bg--skinned">
+				<button type="button" class="close" data-dismiss="modal">
+					<i class="material-icons material-icons-centered">close</i>
+				</button>
+				<span class="modal-title"><i class="material-icons material-icons-centered">wifi_tethering</i>&nbsp;Streams</span>
+			</div>
+				<div class="modal-body" style="max-height: calc(100vh - 180px); overflow-y: auto;">
+					<ul>
+						<div id="streammodalcontent"></div>
+					</ul>
+				</div>
+			<div class="modal-footer">
+				<button type="button" class="btn waves-effect btn-default" data-dismiss="modal">$tstrings['close']</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="RecModal" class="modal fade" role="dialog">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header bg--skinned">
+				<button type="button" class="close" data-dismiss="modal">
+					<i class="material-icons material-icons-centered">close</i>
+				</button>
+				<h4 class="modal-title"><i class="material-icons material-icons-centered">alarm</i><span>$tstrings['timers']</span></h4>
+			</div>
+				<div class="modal-body" style="max-height: calc(100vh - 180px); overflow-y: auto;">
+					<ul>
+						<div id="recmodalcontent"></div>
+					</ul>
+				</div>
+			<div class="modal-footer">
+				<button type="button" class="btn waves-effect btn-default" data-dismiss="modal">$tstrings['close']</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="editTimerForm" title="$tstrings['edit_timer']"></div>
+<div id="EPGModal" class="modal fade" role="dialog">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<i class="material-icons material-icons-centered">close</i>
+				</button>
+				<h4 class="modal-title"><i class="icon material-icons material-icons-centered">event_note</i><span>$tstrings['epg']</span></h4>
+			</div>
+			<div class="modal-body" style="max-height: calc(100vh - 180px); overflow-y: auto;">
+				<div id="epgmodalcontent"></div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn waves-effect btn-default" data-dismiss="modal">$tstrings['close']</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="EventModal" class="modal fade" role="dialog">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<i class="material-icons material-icons-centered">close</i>
+				</button>
+			</div>
+				<div class="modal-body" style="max-height: calc(100vh - 180px); overflow-y: auto;">
+					<div id="eventdescriptionII"></div>
+				</div>
+			<div class="modal-footer">
+				<button type="button" class="btn waves-effect btn-default" data-dismiss="modal">$tstrings['close']</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="TimerModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<i class="material-icons material-icons-centered">close</i>
+				</button>
+				<h4 class="modal-title" id="timerEditTitle"></h4>
+			</div>
+				<div class="modal-body" style="max-height: calc(100vh - 180px); overflow-y: auto;">
+					<div id="timereditmodal"></div>
+				</div>
+			<div class="modal-footer">
+				<button type="button" class="btn waves-effect btn-default" data-dismiss="modal">$tstrings['close']</button>
+				<button type="button" class="btn waves-effect responsivebtn btn--skinned" data-dismiss="modal" onclick="btn_saveTimer(); return false;">$tstrings['save']</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="PowerModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<i class="material-icons material-icons-centered">close</i>
+				</button>
+				<h4 class="modal-title"><i class="material-icons material-icons-centered">settings_power</i><span>$tstrings['powercontrol'].replace(" ","&nbsp;")</span></h4>
+			</div>
+			<div class="modal-body" style="max-height: calc(100vh - 180px); overflow-y: auto;">
+				<div class="row clearfix m-t-20">
+					<div class="col-xs-6 align-right">
+						<button type="button" onclick="handle_power_state_dialog(new_power_state = 0); return false;" class="btn waves-effect responsivebtn responsivebtnpower btn--skinned" data-dismiss="modal">
+							<h4>
+								<i class="material-icons">power_settings_new</i>
+								<span>$tstrings['standby_toggle']</span>
+							</h4>
+						</button>
+					</div>
+					<div class="col-xs-6 align-left">
+						<button type="button" onclick="handle_power_state_dialog(new_power_state = 1); return false;" class="btn waves-effect responsivebtn responsivebtnpower btn--skinned" data-dismiss="modal">
+							<h4>
+								<i class="material-icons">vertical_align_bottom</i>
+								<span>$tstrings['deep_standby']</span>
+							</h4>
+						</button>
+					</div>
+				</div>
+				<hr/>
+				<div class="row clearfix">
+					<div class="col-xs-6 align-right">
+						<button type="button" onclick="handle_power_state_dialog(new_power_state = 2); return false;" class="btn waves-effect responsivebtn responsivebtnpower btn--skinned" data-dismiss="modal">
+							<h4>
+								<i class="material-icons">loop</i>
+								<span>$tstrings['reboot_box']</span>
+							</h4>
+						</button>
+					</div>
+					<div class="col-xs-6 align-left">
+						<button type="button" onclick="handle_power_state_dialog(new_power_state = 3); return false" class="btn waves-effect responsivebtn responsivebtnpower btn--skinned" class="link--skinned" data-dismiss="modal">
+							<h4>
+								<i class="material-icons">settings_backup_restore</i>
+								<span>$tstrings['restart_gui']</span>
+							</h4>
+						</button>
+					</div>
+				</div>
+				<div class="row clearfix">
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" onclick="closeMessageModal(); return false;" class="btn btn-default waves-effect" data-dismiss="modal">$tstrings['close']</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="SendMessageModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" onclick="closeMessageModal(); return false;" class="close" data-dismiss="modal">
+					<i class="material-icons material-icons-centered">close</i>
+				</button>
+			</div>
+			<div class="modal-body" style="max-height: calc(100vh - 180px); overflow-y: auto;">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div class="card">
+						<div class="header">
+							<div class="row clearfix">
+								<div class="col-xs-12 col-sm-6">
+									<h2><i class="material-icons material-icons-centered">message</i>$tstrings['sendamessage'].replace(" ","&nbsp;")</h2>
+								</div>
+							</div>
+						</div>
+						<div class="body">
+							<div class="form-group">
+								<div class="row clearfix">
+									<div class="col-xs-12 col-sm-3 align-right">
+											<label>$tstrings['text']:&nbsp;</label>
+									</div>
+									<div class="col-xs-12 col-sm-9">
+										<div class="form-line">
+											<textarea class="form-control no-resize auto-growth active" rows="1" placeholder="$tstrings['text']" id="messageText"></textarea>
+										</div>
+									</div>
+								</div>
+								<div class="row clearfix">
+									<div class="col-xs-12 col-sm-3 align-right">
+											<label>$tstrings['display_duration_s']:&nbsp;</label>
+									</div>
+									<div class="col-xs-12 col-sm-9">
+										<div class="form-line">
+											<input type="text" name="messageTimeout" id="messageTimeout" value="30" class="form-control inactive">
+										</div>
+									</div>
+								</div>
+								<div class="row clearfix">
+									<div class="col-xs-12 col-sm-3 align-right">
+											<label>$tstrings['type']:&nbsp;</label>
+									</div>
+									<div class="col-xs-12 col-sm-9">
+										<select id="messageType" class="form-control">
+											<option value="1">$tstrings['info']</option>
+											<option value="2">$tstrings['warning']</option>
+											<option value="3">$tstrings['error']</option>
+											<option value="0">$tstrings['yes_no']</option>
+										</select>
+									</div>
+								</div>
+								<div class="row clearfix">
+									<div class="col-xs-12 align-center">
+										<div id="messageSentResponse"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" onclick="closeMessageModal(); return false;" class="btn btn-default waves-effect" data-dismiss="modal">$tstrings['close']</button>
+				<button type="button" onclick="sendModalMessage(); return false;" class="btn waves-effect responsivebtn btn--skinned">$tstrings['sendamessage'].replace(" ","&nbsp;")</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<form name="portForm" action="web/stream.m3u" method="GET" target="_blank">
+	<input type="hidden" name="ref">
+	<input type="hidden" name="name">
+	<input type="hidden" name="fname">
+	<input type="hidden" name="device">
+</form>
+<form name="portFormTs" action="web/ts.m3u" method="GET" target="_blank">
+	<input type="hidden" name="file">
+	<input type="hidden" name="device">
+</form>
+
+<script>
+	\$(document).ready(function() {
+		directlink();
+	});
+	SetLSValue('TimerListOffset',0);
+</script>
+<script src="/modern/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="/modern/plugins/bootstrap-select/js/bootstrap-select.min.js"></script>
+<script src="/modern/plugins/autosize/autosize.min.js"></script>
+<script src="/modern/plugins/node-waves/waves.min.js"></script>
+<script src="/modern/plugins/sweetalert/sweetalert.min.js"></script>
+<script src="/modern/plugins/momentjs/moment.min.js"></script>
+
+## for future use (asset versioning)
+## <!-- htmlWebpackPlugin renders the following js includes -->
+## <%= htmlWebpackPlugin
+##   .tags
+##   .bodyTags
+##   .filter((tag) => tag.tagName === 'script')
+##   .join('') 
+## %>
+<script src="/modern/js/vendors-app.js?v=wp"></script><script src="/modern/js/owif-app.js?v=wp"></script>
+
+<script src="/modern/js/bootstrap-date-timepicker.min.js"></script>
+<script src="/modern/js/admin.min.js?v=wp"></script>
+<script src="/modern/js/responsive.min.js?v1.2.23"></script>
+<script>initJsTranslationAddon($dumps($tstrings))</script>
+
+<script>
+	jQuery(document).ready(function() {
+		jQuery('#noresposive').change(function () {
+			jQuery.ajax({
+				url: "api/setwebconfig?responsive_enabled=false",
+				success: function() {
+					window.location.hash = '';
+					window.location.reload(true);
+				}
+			});
+		});
+		var pl = GetLSValue('pl','m3u');
+		jQuery('#plformat').prop('checked',( pl != 'm3u'));
+		jQuery("#plformat").change(function() {
+			var val = jQuery(this).is(":checked") ? 'xspf' : 'm3u'
+			SetLSValue('pl',val);
+		});
+	});
+</script>
+</body>
+</html>

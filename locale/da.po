@@ -1,0 +1,2189 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenWebif\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-10 09:36+0000\n"
+"PO-Revision-Date: 2021-12-02 19:56+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Danish <https://hosted.weblate.org/projects/e2openplugin-"
+"openwebif/e2openplugin-openwebif/da/>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.10-dev\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ../plugin\n"
+
+#, python-format
+msgid "%02d.%02d."
+msgstr ""
+
+#, python-format
+msgid "%02d.%02d.%d"
+msgstr ""
+
+#, python-format
+msgid "%02d:%02d"
+msgstr ""
+
+msgid "%d.%m.%Y"
+msgstr ""
+
+msgid "%d.%m.%Y %H:%M"
+msgstr ""
+
+#, python-format
+msgid "%s %02d.%02d."
+msgstr ""
+
+#, python-format
+msgid "%s %02d.%02d.%d"
+msgstr ""
+
+#, python-format
+msgid "%s %s is locked."
+msgstr "%s %s er låst."
+
+#, python-format
+msgid "%s / %s"
+msgstr ""
+
+#, python-format
+msgid "%s Style"
+msgstr ""
+
+#, python-format
+msgid "%s free / %s total"
+msgstr "%s fri / %s total"
+
+msgid "(Press 'shift' and click to 'hold')"
+msgstr "(Tryk 'Skift' og klik for langt knaptryk)"
+
+#, fuzzy
+msgid "(in minutes)"
+msgstr "minut"
+
+msgid "A filename is required"
+msgstr "Et filnavne er påkrævet"
+
+msgid "A value is required"
+msgstr "En værdi påkrævet"
+
+msgid "AGC"
+msgstr "AGC"
+
+msgid "About"
+msgstr "Om"
+
+msgid "Add"
+msgstr "Tilføj"
+
+msgid "Add  AutoTimer  to tags"
+msgstr "Tilføj  AutoTimer  til etiketter"
+
+msgid "Add AutoTimer name to tags"
+msgstr "Tilføj AutoTimer navn til etiketter"
+
+msgid "Add Bouquet"
+msgstr "Tilføj buket"
+
+msgid "Add IPTV/URL"
+msgstr ""
+
+msgid "Add Marker"
+msgstr "Tilføj mærke"
+
+msgid "Add Spacer"
+msgstr "Tilføj mellemrum"
+
+msgid "Add a timer"
+msgstr "Tilføj en Timer"
+
+msgid "Add a zap timer"
+msgstr "Tilføj en Zap-Timer"
+
+msgid "Add an AutoTimer"
+msgstr "Tilføj en AutoTimer"
+
+msgid "Add channel(s) as alternate"
+msgstr "Tilføj kanal(er) som alternativ"
+
+#, fuzzy
+msgid "Add filters"
+msgstr "Tilføj en Timer"
+
+msgid "Add selection to bouquet"
+msgstr "Tilføj valgte til buket"
+
+msgid "Add service name to stream information"
+msgstr "Tilføj kanalnavn til streaming information"
+
+msgid "Add similar on conflict"
+msgstr "Tilføj lignende ved konflikt"
+
+msgid "Add tags to recordings"
+msgstr ""
+
+#, python-format
+msgid "Added %s to alternative service %s."
+msgstr "Tilføjede %s til alternativ kanal %s."
+
+msgid "Adjust recording time to real event time"
+msgstr "Juster optagelsestid til virkelig begivenhedstid"
+
+msgid "After event"
+msgstr "Efter begivenhed"
+
+msgid "All"
+msgstr "Alle"
+
+msgid "All Channels"
+msgstr "Alle kanaler"
+
+msgid ""
+"All Files of this Software are open source software; you can redistribute it "
+"and/or modify it under the terms of the GNU General Public License version 3 "
+"as published by the Free Software Foundation."
+msgstr ""
+"Alle filer i denne software er open source software; du kan gengive det og/"
+"eller ændre det under de regler for GNU General Public License version 3, "
+"der er udgivet af the Free Software Foundation."
+
+msgid "All alternative services deleted."
+msgstr "Alle alternative kanaler slettet."
+
+msgid "Allow IPK Upload"
+msgstr "Tillad IPK upload"
+
+msgid "Allow duplicates"
+msgstr "Tillad dubletter"
+
+#, python-format
+msgid "Alternative %s created failed."
+msgstr "Alternativ %s oprettelse mislykkedes."
+
+msgid "Always"
+msgstr "Altid"
+
+msgid "Answer is NO!"
+msgstr "Svaret er NEJ!"
+
+msgid "Answer is YES!"
+msgstr "Svaret er JA!"
+
+msgid "Any"
+msgstr ""
+
+msgid "Any day"
+msgstr ""
+
+msgid "Any service/recording"
+msgstr "Enhver kanal/optagelse"
+
+msgid "April"
+msgstr "April"
+
+msgid "Are you sure you want to delete the selected bouquet?"
+msgstr "Er du sikker på at du vil slette den valgte buket ?"
+
+msgid "Are you sure you want to delete the selected item(s)?"
+msgstr "Vil du virkelig slette de(t) valgte element(er) ?"
+
+#, fuzzy
+msgid "Are you sure you want to delete this AutoTimer?"
+msgstr "Er du sikker på at du vil slette denne Timer ?"
+
+msgid "Are you sure you want to delete this recording?"
+msgstr "Er du sikker på at du vil slette denne optagelse ?"
+
+msgid "Are you sure you want to delete this timer?"
+msgstr "Er du sikker på at du vil slette denne Timer ?"
+
+msgid "Are you sure you want to rename this recording?"
+msgstr "Er du sikker på at du vil omdøbe denne optagelse ?"
+
+msgid "Are you sure you want to restore from file?"
+msgstr "Er du sikker på at du vil genskabe fra fil ?"
+
+msgid "Are you sure you want to start recording instantly?"
+msgstr "Er du sikker på at du vil starte optagelse straks ?"
+
+msgid "Ask, default No"
+msgstr "Spørg, med standardsvar Nej"
+
+msgid "Ask, default Yes"
+msgstr "Spørg, med standardsvar Ja"
+
+msgid "Audio Encoding"
+msgstr ""
+
+msgid "Audio PID (APID)"
+msgstr ""
+
+msgid "Audio Track"
+msgstr ""
+
+msgid "August"
+msgstr "August"
+
+msgid "Authors"
+msgstr "Applikationsudviklere"
+
+msgid "Auto"
+msgstr "Automatisk"
+
+msgid "AutoPoll"
+msgstr "Automatisk overvågning"
+
+msgid "AutoTimer Edit"
+msgstr "Rediger AutoTimer"
+
+msgid "AutoTimer Settings"
+msgstr "AutoTimer indstillinger"
+
+msgid "AutoTimers"
+msgstr "AutoTimere"
+
+msgid "Autotimer Preview"
+msgstr "AutoTimer forhandsvisning"
+
+msgid "BER"
+msgstr "BER"
+
+msgid "Back"
+msgstr "Tilbage"
+
+msgid "Background only"
+msgstr "Kun i baggrunden"
+
+msgid "Begin"
+msgstr "Begynd"
+
+#, fuzzy
+msgid "Begin of \"After event\" timespan"
+msgstr "Start på \"Efter begivenhed\" tidsrum"
+
+msgid "Beginning of timespan"
+msgstr "Start på tidsrum"
+
+msgid "Bit Error Rate (BER)"
+msgstr ""
+
+msgid "Bookmark"
+msgstr "Bogmærke"
+
+msgid "Bookmarks"
+msgstr "Bogmærker"
+
+#, python-format
+msgid "Bouquet %s already exists."
+msgstr "Buket %s findes allerede."
+
+#, python-format
+msgid "Bouquet %s can not be moved."
+msgstr "Buket %s kan ikke flyttes."
+
+#, python-format
+msgid "Bouquet %s created."
+msgstr "Buket %s oprettet."
+
+#, python-format
+msgid "Bouquet %s deleted."
+msgstr "Buket %s slettet."
+
+#, python-format
+msgid "Bouquet %s is locked."
+msgstr "Buket %s er låst."
+
+#, python-format
+msgid "Bouquet %s is unlocked."
+msgstr "Buket %s er låst op."
+
+#, python-format
+msgid "Bouquet %s moved."
+msgstr "Buket %s flyttet."
+
+#, python-format
+msgid "Bouquet %s removed failed, sevicerefence or mutable list is not valid."
+msgstr ""
+"Sletning af Buket %s mislykkedes, kanalreference eller foranderlig liste er "
+"ikke gyldig."
+
+#, python-format
+msgid "Bouquet %s removed failed."
+msgstr "Sletning af Buket %s mislykkedes."
+
+msgid "Bouquet Editor"
+msgstr "Buket redigering"
+
+msgid "Bouquet name"
+msgstr "Buket-navn"
+
+msgid "Bouquet renamed successfully."
+msgstr "Buket omdøbt med succes."
+
+msgid "Bouquet-settings were restored successfully"
+msgstr "Buket-indstillinger blev gendannet med succes"
+
+msgid "BouquetEditor"
+msgstr "Buket redigering"
+
+msgid "Bouquetlist is not editable!"
+msgstr "Buket-liste er ikke redigerbar!"
+
+msgid "Bouquets"
+msgstr "Buketter"
+
+msgid "Box"
+msgstr "Boks"
+
+msgid "Box Control"
+msgstr "Boksstyring"
+
+msgid "Box Info"
+msgstr "Boksinfo"
+
+msgid "Box uptime"
+msgstr "Boksens drifttid"
+
+msgid "Brand"
+msgstr "Mærke"
+
+msgid "Build"
+msgstr ""
+
+msgid "Cable"
+msgstr "Kabel-TV"
+
+msgid "Calendar Week"
+msgstr "Kalenderuge"
+
+msgid "Cancel"
+msgstr "Afbryd"
+
+msgid "Cancelled"
+msgstr "Afbrudt"
+
+msgid "Capacity"
+msgstr "Kapacitet"
+
+msgid "Capture screenshot"
+msgstr "Tag skærmdump"
+
+msgid "Channel"
+msgstr "Kanal"
+
+msgid "Channels"
+msgstr "Kanaler"
+
+msgid "Character encoding for EPG data"
+msgstr "Tegnindkodning af EPG data"
+
+msgid "Chipset"
+msgstr "Chipsæt"
+
+msgid "Cleanup Timers"
+msgstr "Ryd Timere"
+
+msgid "Close"
+msgstr "Luk"
+
+msgid "Common Settings"
+msgstr "Fælles indstillinger"
+
+msgid "Config"
+msgstr ""
+
+#, python-format
+msgid "Conflicting Timer(s) detected! %s"
+msgstr "Timerkonflikt(er) opdaget! %s"
+
+msgid "Contributors"
+msgstr "Bidragsydere"
+
+msgid "Control"
+msgstr "Kontrol"
+
+#, python-format
+msgid "Could not add timer '%s'!"
+msgstr "Kunne ikke tilføje timer '%s'!"
+
+#, python-format
+msgid "Could not find timer '%s' with given start and end time!"
+msgstr "Kunne ikke finde Timer '%s' med valgte start- og sluttid!"
+
+msgid "Create bouquet from selection"
+msgstr "Opret Buket ud fra de valgte"
+
+msgid "Current"
+msgstr "Aktuel"
+
+msgid "Current Event"
+msgstr "Aktuel begivenhed"
+
+msgid "Currently recording"
+msgstr ""
+
+msgid "Custom box name"
+msgstr "Tilpasset boksnavn"
+
+msgid "Custom offset"
+msgstr "Brugerdefineret forskydning"
+
+msgid "DHCP"
+msgstr "DHCP"
+
+msgid "Date"
+msgstr "Dato"
+
+msgid "Date (newest)"
+msgstr ""
+
+msgid "Date (oldest)"
+msgstr ""
+
+msgid "Debug - Display Tracebacks in browser"
+msgstr "Fejlsøgning - Vis tilbagesporing i browser"
+
+msgid "December"
+msgstr "December"
+
+msgid "Deep Standby"
+msgstr "Dyb Standby"
+
+msgid "Default"
+msgstr "Standard"
+
+msgid "Delay Standby"
+msgstr "Forsink standby"
+
+msgid "Delete"
+msgstr "Slet"
+
+msgid "Delete Bookmark"
+msgstr "Slet bogmærke"
+
+msgid "Delete Bouquet"
+msgstr "Slet buket"
+
+msgid "Delete Recording"
+msgstr "Slet optagelse"
+
+msgid "Delete Timer"
+msgstr "Slet Timer"
+
+msgid ""
+"Delete failed, because there is no movie trash !\n"
+"Disable movie trash in configuration to delete this item"
+msgstr ""
+"Sletning mislykkedes, fordi der ikke findes en filmskraldespand !\n"
+"Deaktiver filmskraldespanden i konfiguration for at slette dette element"
+
+msgid "Deleted"
+msgstr "Slettet"
+
+msgid "Description"
+msgstr "Beskrivelse"
+
+msgid "Device"
+msgstr ""
+
+#, fuzzy
+msgid "Disable"
+msgstr "deaktiveret"
+
+msgid "Disable Timer"
+msgstr "Deaktiver timer"
+
+msgid "Disable remote access for user root"
+msgstr "Deaktiver fjernadgang for brugeren root"
+
+msgid "Disabled on conflict"
+msgstr "Deaktiver ved konflikt"
+
+msgid "Display Mode"
+msgstr "Visningstilstand"
+
+msgid "Display duration (s)"
+msgstr "Vises i (sek.)"
+
+msgid "Distro"
+msgstr "Distribution"
+
+msgid "Dolby"
+msgstr "Dolby"
+
+msgid "Don't create timer when movie exists in database"
+msgstr "Opret ikke Timer når film findes i database"
+
+msgid "Done"
+msgstr "Færdig"
+
+msgid "Download"
+msgstr "Download"
+
+msgid "Download playlist for"
+msgstr "Hent afspilningsliste for"
+
+msgid "Drivers"
+msgstr "Drivere"
+
+msgid "Duration"
+msgstr "Varighed"
+
+msgid "E"
+msgstr "Ø"
+
+msgid "EPG"
+msgstr "EPG"
+
+msgid "EPG encoding"
+msgstr "EPG indkodning"
+
+msgid "EPGRefresh"
+msgstr "EPGRefresh"
+
+msgid "ERROR: Cannot set SleepTimer while device is in Standby-Mode"
+msgstr ""
+"FEJL: Kan ikke indstille DvaleTimer mens enheden er i Standby-tilstand."
+
+#, fuzzy
+msgid "Edit"
+msgstr "Redigering"
+
+#, fuzzy
+msgid "Edit Recording"
+msgstr "Slet optagelse"
+
+msgid "Edit Timer"
+msgstr "Rediger Timer"
+
+msgid "Editor"
+msgstr "Redigering"
+
+#, fuzzy
+msgid "Enable"
+msgstr "Aktiveret"
+
+msgid "Enable Authentication for streaming"
+msgstr "Aktiver godkendelse af streaming"
+
+msgid "Enable HTTP Authentication"
+msgstr "Aktiver HTTP godkendelse"
+
+msgid "Enable HTTPS"
+msgstr "Aktiver HTTPS"
+
+msgid "Enable HTTPS Authentication"
+msgstr "Aktiver HTTPS godkendelse"
+
+msgid "Enable Messages"
+msgstr "Aktiver beskeder"
+
+msgid "Enable Parental Control"
+msgstr "Aktiver forældrekontrol"
+
+msgid "Enable Timer"
+msgstr "Aktiver Timer"
+
+msgid "Enable access from VPNs"
+msgstr "Aktiver adgang fra VPN'er"
+
+msgid "Enable filtering"
+msgstr "Aktiver filtrering"
+
+msgid "Enable/Disable Screenshot on key press or"
+msgstr "Aktiver/Deaktiver skærmdump ved tastetryk eller"
+
+msgid "Enabled"
+msgstr "Aktiveret"
+
+msgid "Encrypted"
+msgstr "Krypteret"
+
+msgid "End"
+msgstr "Slut"
+
+#, fuzzy
+msgid "End of \"After event\" timespan"
+msgstr "Slut på \"Efter begivenhed\" tidsrum"
+
+msgid "End of timespan"
+msgstr "Slut på tidsrum"
+
+msgid "Enter a name for the new bouquet"
+msgstr "Angiv et navn til den nye buket"
+
+msgid "Enter a name for the new marker"
+msgstr "Angiv et  navn til det nye mærke"
+
+#, fuzzy
+msgid "Enter a name for this AutoTimer"
+msgstr "Angiv et  navn til det nye mærke"
+
+msgid "Enter path"
+msgstr ""
+
+msgid "Enter text"
+msgstr ""
+
+msgid "Enter the text to find in the EPG"
+msgstr ""
+
+msgid "Error"
+msgstr "Fejl"
+
+msgid "Error parsing vps.xml"
+msgstr "Fejl ved analyse af vps.xml"
+
+msgid "Error upload File"
+msgstr "Fejl ved fil-upload"
+
+#, python-format
+msgid "Error while preparing backup file, %s does not exists."
+msgstr "Fejl mens sikkerhedskopifil forberedes, %s findes ikke."
+
+msgid "Error while preparing backup file."
+msgstr "Fejl mens sikkerhedskopifil forberedes."
+
+msgid "Error writing File"
+msgstr "Fejl ved fil-skrivning"
+
+#, python-format
+msgid "Error, %s does not exists, restore is not possible..."
+msgstr "Fejl, %s findes ikke, gendannelse ikke mulig..."
+
+#, python-format
+msgid "Error, %s was not created with WebBouquetEditor..."
+msgstr "Fejl, %s blev ikke oprettet med WebBouquetEditor..."
+
+#, python-format
+msgid "Error: Bouquet %s could not deleted, OSError."
+msgstr "Fejl: Buket %s kunne ikke slettes, OSFejl."
+
+msgid "Event not found"
+msgstr "Fandt ikke Begivenhed"
+
+msgid "EventId not found"
+msgstr "Fandt ikke BegivenhedsID"
+
+msgid "Every"
+msgstr "Hver"
+
+msgid "Exclude when"
+msgstr "Udeluk"
+
+#, fuzzy
+msgid "Execute \"After event\" during timespan"
+msgstr "Udfør \"Efter begivenhed\" i tidsrummet"
+
+msgid "Export"
+msgstr "Eksporter"
+
+msgid "Extras"
+msgstr "Extrafunktioner"
+
+msgid "Fake Recording"
+msgstr "Simuler optagelse"
+
+msgid "Fastscan"
+msgstr "Hurtigsøgning"
+
+msgid "February"
+msgstr "Februar"
+
+msgid "Firmware version"
+msgstr "Firmware version"
+
+msgid "Force"
+msgstr "Tving"
+
+msgid "Fr"
+msgstr "Fr"
+
+msgid "Free"
+msgstr "Ledig"
+
+msgid "Free Memory"
+msgstr "Ledig hukommelse"
+
+msgid "Free space"
+msgstr ""
+
+msgid "Fri"
+msgstr "Fre"
+
+msgid "Friday"
+msgstr "Fredag"
+
+msgid "From date"
+msgstr "Ikke efter"
+
+msgid "Front processor version"
+msgstr "Frontprocessor version"
+
+msgid "Full remote"
+msgstr "Fuld fjernbetjening"
+
+msgid "GB"
+msgstr "GB"
+
+msgid "GUI version"
+msgstr "GUI version"
+
+msgid "Gateway"
+msgstr "Gateway"
+
+msgid "Get mutable list for new created alternative failed!"
+msgstr "Hent foranderlig liste med nyoprettet alternativ mislykkedes!"
+
+msgid "Get mutable list for new created bouquet failed!"
+msgstr "Hent foranderlig liste med nyoprettet buket mislykkedes!"
+
+msgid "HH:MM"
+msgstr ""
+
+msgid "HTTP port"
+msgstr "HTTP port"
+
+msgid "HTTPS port"
+msgstr "HTTPS port"
+
+msgid "Hard disk model"
+msgstr "Harddisk model"
+
+msgid "Hardware"
+msgstr ""
+
+msgid "Hide full remote"
+msgstr "Skjul fuld fjernbetjening"
+
+msgid "High Resolution"
+msgstr "Høj opløsning"
+
+msgid "Hold to drag"
+msgstr ""
+
+msgid "Hour"
+msgstr "Time"
+
+msgid "IPTV / URL name"
+msgstr ""
+
+msgid "IPv4 address"
+msgstr "IPv4 adresse"
+
+msgid "IPv4-only Python/Twisted"
+msgstr "Kun IPv4 Python/Twisted"
+
+msgid "IPv4-only kernel"
+msgstr "Kun IPv4 kerne"
+
+msgid "IPv6 address(es)"
+msgstr "IPv6 adress(er)"
+
+msgid "Import"
+msgstr "Importer"
+
+msgid "Include description"
+msgstr "Medtag beskrivelse"
+
+msgid "Include extended description"
+msgstr "Medtag udvidet beskrivelse"
+
+msgid "Include short description"
+msgstr "Medtag kort beskrivelse"
+
+msgid "Include when"
+msgstr "Medtag"
+
+msgid "Infinite Instant recording started"
+msgstr "Straksoptagelse med uendelig varighed er startet"
+
+msgid "Info"
+msgstr "Information"
+
+msgid "Information"
+msgstr ""
+
+msgid "Inherit AutoTimer"
+msgstr "Arv AutoTimer"
+
+msgid "Install Package"
+msgstr "Installer pakke"
+
+msgid "Installed"
+msgstr "Installeret"
+
+msgid "Instant Record"
+msgstr "Staksoptagelse"
+
+msgid "Instant record for current Event started"
+msgstr "En Straksoptagelse af den aktuelle begivenhed er startet"
+
+msgid "Internal error!"
+msgstr "Intern fejl!"
+
+msgid "Internal flash memory"
+msgstr ""
+
+#, python-format
+msgid "Interval (in %s)"
+msgstr "Interval (i %s)"
+
+msgid "Interval (min.)"
+msgstr "Interval (min.)"
+
+msgid "Interval (sec.)"
+msgstr "Interval (sec.)"
+
+msgid "January"
+msgstr "Januar"
+
+msgid "Javascript Libraries"
+msgstr "Javascript biblioteker"
+
+msgid "July"
+msgstr "Juli"
+
+msgid "June"
+msgstr "Juni"
+
+msgid "Just play"
+msgstr "Afspil nu"
+
+msgid "Kernel"
+msgstr "Kerne"
+
+msgid "LCD"
+msgstr "LCD"
+
+msgid "LCD4Linux Setup"
+msgstr "LCD4Linux opsætning"
+
+msgid "Label series"
+msgstr "Mærk serier"
+
+msgid "License"
+msgstr ""
+
+msgid "Link speed"
+msgstr "Forbindelseshastighed"
+
+msgid "List of Timers has been cleaned"
+msgstr "Listen af Timere er blevet ryddet"
+
+#, fuzzy
+msgid "Loading..."
+msgstr "Indlæser"
+
+msgid "Location"
+msgstr "Placering"
+
+msgid "Locked"
+msgstr "Låst"
+
+msgid "MAC address"
+msgstr "MAC adresse"
+
+msgid "MB"
+msgstr "MB"
+
+msgid "Main"
+msgstr "Hovedfunktioner"
+
+msgid "Main memory"
+msgstr "Total hukommelse"
+
+msgid "March"
+msgstr "Marts"
+
+msgid "Marker added."
+msgstr "Mærke tilføjet."
+
+msgid "Marker name"
+msgstr "Mærke navn"
+
+msgid "Match text"
+msgstr "Sammenlign titel"
+
+msgid "Max Days"
+msgstr "Maks dage"
+
+msgid "May"
+msgstr "Maj"
+
+msgid "Message sent successfully!"
+msgstr "Din besked er sendt!"
+
+msgid "Method"
+msgstr "Metode"
+
+msgid "Minimal EPG list"
+msgstr "Minimal EPG liste"
+
+msgid "Minimal movie list"
+msgstr "Minimal filmliste"
+
+msgid "Minimal timer list"
+msgstr "Minimal Timerliste"
+
+msgid "Minute"
+msgstr "Minut"
+
+#, python-format
+msgid "Missing mandatory parameter '%s'"
+msgstr "Mangler obligatorisk parameter '%s'"
+
+msgid "Missing requesteter: sRef"
+msgstr "Manglende efterspørgsel: sRef"
+
+msgid "Mo"
+msgstr "Ma"
+
+msgid "Model"
+msgstr "Model"
+
+msgid "Mon"
+msgstr "Man"
+
+msgid "Monday"
+msgstr "Mandag"
+
+msgid "Monthly"
+msgstr "Månedlig"
+
+msgid "More"
+msgstr "Flere"
+
+#, fuzzy
+msgid "More details"
+msgstr "Vis detaljer"
+
+msgid "Mount point"
+msgstr ""
+
+msgid "Movie database for EPG"
+msgstr "Film-database for EPG"
+
+msgid "Movie search"
+msgstr "Filmsøgning"
+
+msgid "Movielist"
+msgstr "Filmliste"
+
+msgid "Movies"
+msgstr "Film"
+
+msgid "Multi-Bouquet is not enabled!"
+msgstr "Multi-Buket er ikke aktiveret!"
+
+msgid "MultiEPG"
+msgstr "MultiEPG"
+
+msgid "Mute/Unmute"
+msgstr ""
+
+msgid "NCam Webinterface"
+msgstr "NCam Webgrænseflade"
+
+msgid "Name"
+msgstr "Navn"
+
+msgid "Name (a-z)"
+msgstr ""
+
+msgid "Name (z-a)"
+msgstr ""
+
+msgid "Namespace"
+msgstr "Navneområde"
+
+msgid "Network Interface"
+msgstr "Netværksgrænseflade"
+
+msgid "Network Shares"
+msgstr "Netværksdelinger"
+
+msgid "Never"
+msgstr "Aldrig"
+
+msgid "New"
+msgstr "Ny"
+
+#, fuzzy
+msgid "New Bookmark:"
+msgstr "Bogmærke"
+
+msgid "New Name"
+msgstr "Nyt navn"
+
+msgid "No"
+msgstr "Nej"
+
+#, fuzzy
+msgid "No EPG data available."
+msgstr "ingen beskrivelse"
+
+msgid "No Parent Control Setup Pin given!"
+msgstr "PIN til forældrekontrol opsætning ikke angivet!"
+
+msgid "No answer in time"
+msgstr "Ingen svar i tide"
+
+msgid "No bouquet given!"
+msgstr "Buket ikke angivet!"
+
+msgid "No bouquet name given!"
+msgstr "Buketnavn ikke angivet!"
+
+msgid "No current service given!"
+msgstr "Aktuel kanal ikke angivet!"
+
+msgid "No event found! Not recording!"
+msgstr "Ingen begivenhed fundet. Optager ikke!"
+
+msgid "No marker-name given!"
+msgstr "Mærke-navn ikke angivet!"
+
+#, fuzzy
+msgid "No matches were found in the EPG"
+msgstr "Ingen identisk Timer fundet"
+
+msgid "No matching Timer found"
+msgstr "Ingen identisk Timer fundet"
+
+msgid "No network connection"
+msgstr ""
+
+msgid "No new servicename given!"
+msgstr "Nyt kanalnavn ikke angivet!"
+
+msgid "No position given!"
+msgstr "Placering ikke angivet!"
+
+msgid "No provider given!"
+msgstr "Udbyder ikke angivet!"
+
+msgid "No service given!"
+msgstr "Kanal ikke angivet!"
+
+msgid "No, cancel"
+msgstr "Nej, afbryd"
+
+msgid "None"
+msgstr "Ingen"
+
+msgid "Nothing"
+msgstr "Intet"
+
+msgid "Nothing playing."
+msgstr "Intet afspilles lige nu."
+
+msgid "Notify if Conflict"
+msgstr "Underret ved konflikt"
+
+msgid "Notify if Similar"
+msgstr "Underret ved lignende"
+
+msgid "November"
+msgstr "November"
+
+msgid "Now"
+msgstr "Nu"
+
+msgid "Now/Next Columns"
+msgstr ""
+
+msgid "Number of recordings remaining"
+msgstr "Antal optagelser tilbage"
+
+msgid "ONID"
+msgstr ""
+
+msgid "OSCam Webinterface"
+msgstr "OSCam Webgrænseflade"
+
+msgid "OSD"
+msgstr "OSD"
+
+msgid "October"
+msgstr "Oktober"
+
+msgid "Offset after recording (mins)"
+msgstr "Margin efter optagelse (i min.)"
+
+msgid "Offset before recording (mins)"
+msgstr "Margin før optagelse (i min.)"
+
+msgid "On"
+msgstr "Tændt"
+
+msgid "On any service"
+msgstr "På alle kanaler"
+
+msgid "On same service"
+msgstr "På samme kanal"
+
+msgid "Only match between dates"
+msgstr "Begræns til begivenheder på bestemte datoer"
+
+msgid "Only match during timespan"
+msgstr "Sammenlign kun for tidsrummet"
+
+msgid "Oops, no results matched your search"
+msgstr ""
+
+msgid "Oops..."
+msgstr ""
+
+msgid "Open Source Web Interface for Linux set-top box"
+msgstr "Open Source Webgrænseflade til Linux-set-top-bokse"
+
+msgid "Open in new window"
+msgstr "Åben i et nyt vindue"
+
+msgid "OpenWebInterface Enabled"
+msgstr "OpenWebif er aktiveret"
+
+msgid "OpenWebif Browser Settings"
+msgstr "OpenWebif Browser indstillinger"
+
+msgid "OpenWebif Configuration"
+msgstr "OpenWebif konfiguration"
+
+msgid "OpenWebif Settings"
+msgstr "OpenWebif indstillinger"
+
+#, fuzzy
+msgid "OpenWebif url:"
+msgstr "OpenWebif URL:"
+
+msgid "Orbital Position"
+msgstr "Orbital position"
+
+msgid "Override found with alternative service"
+msgstr "Tilsidesæt fundet kanal med alternativ"
+
+msgid "PCR PID"
+msgstr ""
+
+msgid "PMT PID"
+msgstr ""
+
+msgid "Packages"
+msgstr "Pakker"
+
+msgid "Parent Control Setup Pin is wrong!"
+msgstr "Forældrekontrol opsætning PIN er forkert!"
+
+msgid "Parent Control is not activated."
+msgstr "Forældrekontrol ikke aktiveret."
+
+msgid "Parse AutoTimer"
+msgstr "Analyser AutoTimer"
+
+msgid "PiP"
+msgstr "PiP"
+
+msgid "Picture in Picture"
+msgstr "Billede i Billede"
+
+msgid "Picture in Picture (hidden)"
+msgstr "Billede i Billede (skjult)"
+
+msgid "Plain"
+msgstr "Normal"
+
+msgid "Playback"
+msgstr "Afspil"
+
+msgid "Playback IPTV Streams in browser"
+msgstr ""
+
+msgid "Playlist"
+msgstr "Afspilningsliste"
+
+msgid "Playlist format"
+msgstr "Afspilningsliste format"
+
+msgid "Power Control"
+msgstr "Strømstyring"
+
+msgid "PowerTimer feature not available"
+msgstr "StrømTimer funktion ikke tilgængelig"
+
+msgid "Preview"
+msgstr ""
+
+msgid "Primetimes"
+msgstr "Sendetider"
+
+msgid "Process"
+msgstr "Behandel"
+
+msgid "Provider"
+msgstr "Udbyder"
+
+msgid "Providers"
+msgstr "Udbydere"
+
+msgid "REC"
+msgstr ""
+
+msgid "Radio"
+msgstr "Radio"
+
+msgid "Reboot Box"
+msgstr "Genstart boksen"
+
+msgid "Record a maximum of # times"
+msgstr "Optag maksimalt X gange"
+
+msgid "Recording"
+msgstr ""
+
+#, fuzzy
+msgid "Recording Type"
+msgstr "Optagelsesstatus"
+
+msgid "Refresh"
+msgstr "Genopfrisk"
+
+msgid "Refresh Timer"
+msgstr "Genopfrisk Timer"
+
+msgid "Refresh automatically every"
+msgstr "Genopfrisk automatisk hvert"
+
+msgid "Refresh now"
+msgstr "Genopfrisk nu"
+
+msgid "Reload"
+msgstr "Genindlæs"
+
+msgid "Remote"
+msgstr "Fjernbetjening"
+
+msgid "Remove Package"
+msgstr "Fjern pakke"
+
+#, fuzzy
+msgid "Remove filter"
+msgstr "Fjernbetjening"
+
+msgid "Rename"
+msgstr "Omdøb"
+
+msgid "Rename Bouquet"
+msgstr "Omdøb buket"
+
+msgid "Rename Recording"
+msgstr "Omdøb optagelse"
+
+msgid "Repeated"
+msgstr "Gentages"
+
+msgid "Require client cert for HTTPS"
+msgstr "Kræv klientcertifikat til HTTPS"
+
+msgid "Require description to be unique"
+msgstr "Kræv at beskrivelse er unik"
+
+#, fuzzy
+msgid "Reset"
+msgstr "Nulstil antal"
+
+msgid "Reset count"
+msgstr "Nulstil antal"
+
+msgid "Restart GUI"
+msgstr "Genstart GUI"
+
+msgid "Restrict to bouquets"
+msgstr "Begræns til Buketter"
+
+#, fuzzy
+msgid "Restrict to channels"
+msgstr "Begræns til Buketter"
+
+msgid "Root"
+msgstr "Rod"
+
+msgid "SLAAC"
+msgstr "SLAAC"
+
+msgid "SNR"
+msgstr "SNR"
+
+msgid "SRef"
+msgstr ""
+
+msgid "Sa"
+msgstr "Lø"
+
+msgid "Safe mode"
+msgstr "Fejlsikker tilstand"
+
+msgid "Sat"
+msgstr "Lør"
+
+msgid "Satellites"
+msgstr "Satellitter"
+
+msgid "Satfinder"
+msgstr "Sat-søger"
+
+msgid "Saturday"
+msgstr "Lørdag"
+
+msgid "Save"
+msgstr "Gem"
+
+msgid "Screenshot"
+msgstr "Skærmdump"
+
+msgid "Search"
+msgstr "Søg"
+
+msgid "Search CSFD"
+msgstr "Søg i CSFD"
+
+msgid "Search EPG"
+msgstr ""
+
+msgid "Search IMDb"
+msgstr "Søg i IMDb"
+
+msgid "Search KinoPoisk"
+msgstr "Søg i KinoPoisk"
+
+#, fuzzy
+msgid "Search TV Guide UK"
+msgstr "TV Guide"
+
+msgid "Search by name, sd / hd / uhd, or provider"
+msgstr ""
+
+#, fuzzy
+msgid "Search strictness"
+msgstr "Søg i KinoPoisk"
+
+#, fuzzy
+msgid "Search type"
+msgstr "Søg"
+
+msgid "Select IPK file for upload"
+msgstr "Vælg IPK fil til upload"
+
+msgid "Select..."
+msgstr ""
+
+msgid "Send"
+msgstr ""
+
+msgid "Send Message"
+msgstr "Send besked"
+
+msgid "Send a Message"
+msgstr "Send en besked"
+
+msgid "September"
+msgstr "September"
+
+msgid "Service"
+msgstr "Kanal"
+
+#, python-format
+msgid "Service %s added."
+msgstr "Kanal %s tilføjet."
+
+#, python-format
+msgid "Service %s already exists in bouquet %s."
+msgstr "Kanal %s findes allerede i Buket %s."
+
+#, python-format
+msgid "Service %s can not be removed."
+msgstr "Kanal %s kan ikke fjernes."
+
+#, python-format
+msgid "Service %s is locked."
+msgstr "Kanal %s er låst."
+
+#, python-format
+msgid "Service %s is unlocked."
+msgstr "Kanal %s er låst op."
+
+#, python-format
+msgid "Service %s moved."
+msgstr "Kanal %s flyttet."
+
+#, python-format
+msgid "Service %s removed from bouquet %s."
+msgstr "Kanal %s fjernet fra Buket %s."
+
+#, python-format
+msgid "Service %s removed."
+msgstr "Kanal %s fjernet."
+
+msgid "Service ID (SID)"
+msgstr ""
+
+msgid "Service can not be moved."
+msgstr "Kanal kan ikke flyttes."
+
+msgid "Service can not be renamed."
+msgstr "Kanal kan ikke omdøbes."
+
+msgid "Service is not an alternative."
+msgstr "Kanal er ikke et alternativ."
+
+msgid "Service renamed successfully."
+msgstr "Kanal omdøbt med succes."
+
+msgid "Services"
+msgstr "Kanaler"
+
+msgid "Serving stream"
+msgstr ""
+
+msgid "Set maximum duration"
+msgstr "Sæt maksimal varighed"
+
+msgid "Settings"
+msgstr "Indstillinger"
+
+msgid "Show EPG for"
+msgstr "Vis EPG for"
+
+msgid "Show Full OpenWebif"
+msgstr "Vis fuld OpenWebif"
+
+msgid "Show IPTV channels in selection (eg. Autotimer)"
+msgstr ""
+
+#, fuzzy
+msgid "Show all packages"
+msgstr "Opgrader alle pakker"
+
+msgid "Show box name in header"
+msgstr "Vise boksens navn i overskrift"
+
+msgid "Show details"
+msgstr "Vis detaljer"
+
+msgid "Show full remote"
+msgstr "Vis fuld fjernbetjening"
+
+msgid "Show in Extensions menu"
+msgstr "Vis i Udvidelses-menu"
+
+msgid "Show picon background"
+msgstr "Vis Pikon baggrund"
+
+msgid "Show picons"
+msgstr "Vis Pikon'er"
+
+msgid "Show picons in channel list"
+msgstr "Vis Pikoner i kanalliste"
+
+msgid "Show service type in channel list"
+msgstr "Vis tjenestetype i kanalliste"
+
+msgid "Shutdown"
+msgstr "Luk ned"
+
+msgid "Signal Power (AGC)"
+msgstr ""
+
+msgid "Signal Quality (SNR DB)"
+msgstr ""
+
+msgid "Signal Quality (SNR)"
+msgstr ""
+
+msgid "Simulate"
+msgstr "Simuler"
+
+msgid "Site and sources"
+msgstr "Hjemmeside og kilder"
+
+msgid "Skins"
+msgstr ""
+
+msgid "SleepTimer error"
+msgstr "DvaleTimer fejl"
+
+msgid "Sleeptimer has been disabled"
+msgstr "DvaleTimeren er blevet deaktiveret"
+
+msgid "Sleeptimer is disabled"
+msgstr "DvaleTimer er deaktiveret"
+
+msgid "Sleeptimer is enabled"
+msgstr "DvaleTimer er aktiveret"
+
+#, python-format
+msgid "Sleeptimer set to %d minutes"
+msgstr "DvaleTimeren er sat til %d minutter"
+
+msgid "Small remote layout"
+msgstr ""
+
+msgid "Software"
+msgstr "Software"
+
+msgid "Sorry this page is not yet implemented"
+msgstr "Beklager, denne side er endnu ikke implementeret"
+
+msgid "Sort"
+msgstr ""
+
+msgid "Spinner"
+msgstr "Snurretop"
+
+msgid "Standby"
+msgstr "Standby"
+
+msgid "Start"
+msgstr "Start"
+
+msgid "Start Instant Record"
+msgstr "Start Straksoptagelse"
+
+msgid "Start time is after end time"
+msgstr "Starttiden er efter sluttiden"
+
+msgid "Start typing..."
+msgstr "Begynd at skrive..."
+
+msgid "State"
+msgstr ""
+
+msgid "Storage"
+msgstr ""
+
+msgid "Stream"
+msgstr "Stream"
+
+msgid "Stream Clients"
+msgstr "Streaming klienter"
+
+msgid "Streaming port"
+msgstr "Streaming port"
+
+msgid "Su"
+msgstr "Sø"
+
+msgid "Subdirectories"
+msgstr ""
+
+msgid "Subnet mask"
+msgstr "Undermaske"
+
+msgid "Subservices"
+msgstr "Underkanaler"
+
+msgid "Sun"
+msgstr "Søn"
+
+msgid "Sunday"
+msgstr "Søndag"
+
+msgid "System OE"
+msgstr "System OE"
+
+msgid "TB"
+msgstr "TB"
+
+msgid "TSID"
+msgstr ""
+
+msgid "TV"
+msgstr "TV"
+
+msgid "TV Guide"
+msgstr "TV Guide"
+
+msgid "TV Multi EPG"
+msgstr "TV Multi EPG"
+
+msgid "Tags"
+msgstr "Etiketter"
+
+msgid "Teletext"
+msgstr "Tekst-TV"
+
+msgid "Teletext PID"
+msgstr "Teletext PID"
+
+msgid "Television"
+msgstr "Fjernsyn"
+
+msgid "Template Engine"
+msgstr "Webudviklingsværktøj"
+
+msgid "Terminal"
+msgstr "Terminal"
+
+msgid "Terrestrial"
+msgstr "Antenne-TV"
+
+msgid "Text"
+msgstr "Tekst"
+
+msgid "Th"
+msgstr "To"
+
+#, python-format
+msgid "The parameter '%s' can't be empty"
+msgstr "Parameteren '%s' kan ikke være tom"
+
+msgid "The parameter 'command' must be a number"
+msgstr "Parameteren 'command' skal være numerisk"
+
+#, python-format
+msgid "The timer '%s' has been %s successfully"
+msgstr "Timeren '%s' er blevet %s med succes"
+
+#, python-format
+msgid "The timer '%s' has been deleted successfully"
+msgstr "Timeren '%s' er blevet slettet med succes"
+
+#, python-format
+msgid "The timer '%s' now recorded! Not disabled!"
+msgstr "Timeren '%s' er nu optaget! Ikke deaktiveret!"
+
+msgid "Theme"
+msgstr "Tema"
+
+#, fuzzy
+msgid "Theme mode"
+msgstr "Tema"
+
+msgid "This service can not be added."
+msgstr "Denne kanal kan ikke tilføjes."
+
+msgid "Thu"
+msgstr "Tor"
+
+msgid "Thursday"
+msgstr "Torsdag"
+
+msgid "Time"
+msgstr "Tid"
+
+msgid "Timeline"
+msgstr "Tidslinje"
+
+msgid "Timeout"
+msgstr "Tidsudløb"
+
+msgid "Timer"
+msgstr "Timer"
+
+#, python-format
+msgid "Timer '%s' added"
+msgstr "Timer '%s' tilføjet"
+
+#, python-format
+msgid "Timer '%s' already exists!"
+msgstr "Timer '%s' findes allerede!"
+
+#, python-format
+msgid "Timer '%s' changed"
+msgstr "Timer '%s' ændret"
+
+#, python-format
+msgid "Timer '%s' not enabled while Conflict"
+msgstr "Timer '%s' ikke aktiveret pga. en konflikt"
+
+#, python-format
+msgid "Timer '%s' not saved while Conflict"
+msgstr "Timer '%s' ikke gemt pga. en konflikt"
+
+msgid "Timer Added"
+msgstr "Timer tilføjet"
+
+msgid "Timer Conflict"
+msgstr ""
+
+msgid "Timer added"
+msgstr "Timer tilføjet"
+
+msgid "Timer conflict detected! Not recording!"
+msgstr "Timerkonflikt opdaget. Optager ikke!"
+
+msgid "Timer type"
+msgstr "Timertype"
+
+msgid "TimerList has been saved"
+msgstr "Timerlisten er gemt"
+
+msgid "Timerlist"
+msgstr "Timerliste"
+
+msgid "Timers"
+msgstr "Timere"
+
+msgid "Title"
+msgstr "Titel"
+
+msgid "To date"
+msgstr "Ikke før"
+
+msgid "Today"
+msgstr ""
+
+msgid "Toggle Standby"
+msgstr ""
+
+msgid "Transcode"
+msgstr "Omkod"
+
+msgid "Translation to Spanish"
+msgstr "Oversættelse til Spansk"
+
+msgid "Try guessing"
+msgstr "Forsøg at gætte"
+
+msgid "Tu"
+msgstr "Ti"
+
+msgid "Tue"
+msgstr "Tir"
+
+msgid "Tuesday"
+msgstr "Tirsdag"
+
+msgid "Tuner Number"
+msgstr "Tuner nummer"
+
+msgid "Tuner Signal"
+msgstr "Tuner signal"
+
+msgid "Tuner Type"
+msgstr "Tunertype"
+
+msgid "Tuners"
+msgstr "Tunere"
+
+msgid "Type"
+msgstr "Type"
+
+#, python-format
+msgid "Unknown Volume command %s"
+msgstr "Ukendt Lydstyrke-kommando %s"
+
+#, python-format
+msgid "Unknown command: '%s'"
+msgstr "Ukendt kommando: '%s'"
+
+msgid "Upcoming Events"
+msgstr "Kommende begivenheder"
+
+msgid "Update"
+msgstr "Opdater"
+
+msgid "Update Package"
+msgstr "Opdater pakke"
+
+msgid "Update from feed"
+msgstr "Opdater fra feed"
+
+msgid "Upgrade all packages"
+msgstr "Opgrader alle pakker"
+
+msgid "Upload File Error"
+msgstr "Filupload fejl"
+
+msgid "Upload package"
+msgstr "Upload pakke"
+
+msgid "Uploaded Files"
+msgstr "Uploadede filer"
+
+msgid "Use Channelname for screenshots"
+msgstr ""
+
+msgid "Use a custom location"
+msgstr "Vælg en brugerdefineret placering"
+
+msgid "Use as PiP if possible"
+msgstr "Brug som PiP hvis mulig"
+
+msgid "Use classic interface"
+msgstr "Brug klassisk grænseflade"
+
+msgid "Use custom Color"
+msgstr "Brug tilpasset farve"
+
+msgid "Use custom box name"
+msgstr "Brug brugerdefineret boksnavn"
+
+#, fuzzy
+msgid "Use modern design"
+msgstr "Brug moderne grænseflade"
+
+msgid "Use modern interface"
+msgstr "Brug moderne grænseflade"
+
+msgid "VPS"
+msgstr "VPS"
+
+msgid "VPS plugin not found"
+msgstr "VPS Plugin ikke fundet"
+
+msgid "Version"
+msgstr "Version"
+
+msgid "Video"
+msgstr "Video"
+
+msgid "Video Height"
+msgstr "Video højde"
+
+msgid "Video PID (VPID)"
+msgstr ""
+
+msgid "Video Width"
+msgstr "Video bredde"
+
+msgid "Visibly"
+msgstr "Synlig"
+
+msgid "Volume"
+msgstr "Lydstyrke"
+
+msgid "Volume Control"
+msgstr "Lydstyrkekontrol"
+
+msgid "W"
+msgstr "V"
+
+msgid "Waiting for answer ..."
+msgstr "Venter på svar..."
+
+msgid "Wake Up"
+msgstr "Vågn op"
+
+msgid "Wakeup"
+msgstr "Væk"
+
+msgid "Warning"
+msgstr "Advarsel"
+
+msgid "We"
+msgstr "On"
+
+msgid "Web TV"
+msgstr "Web TV"
+
+msgid "Wed"
+msgstr "Ons"
+
+msgid "Wednesday"
+msgstr "Onsdag"
+
+msgid "Weekly (Monday)"
+msgstr "Ugentlig (Mandag)"
+
+msgid "Weekly (Sunday)"
+msgstr "Ugentlig (Søndag)"
+
+msgid "Widescreen"
+msgstr ""
+
+msgid "Without auth only local access is allowed!"
+msgstr "Kun lokal adgang tillades uden godkendelse!"
+
+msgid "Wizard"
+msgstr "Assistent"
+
+msgid "Would you like to save your changes?"
+msgstr ""
+
+#, python-format
+msgid "Wrong parameter format 'set=%s'. Use set=set15 "
+msgstr "Forkert parameterformat 'set=%s'. Anvend set=set15 "
+
+msgid "YYYY-MM-DD"
+msgstr ""
+
+msgid "Yes"
+msgstr "Ja"
+
+msgid "Yes/No"
+msgstr "Ja/Nej"
+
+msgid "Yesterday"
+msgstr ""
+
+msgid "Zap"
+msgstr "Zap"
+
+msgid "Zap & Record"
+msgstr "Zap & Optag"
+
+msgid "Zap before streaming"
+msgstr "Zap før streaming"
+
+msgid "Zap to"
+msgstr "Zap til"
+
+msgid "Zapped to"
+msgstr "Zappede til"
+
+#, fuzzy
+msgid "any time"
+msgstr "Tilføj en Timer"
+
+msgid "auto"
+msgstr "auto"
+
+msgid "box_ip"
+msgstr ""
+
+#, fuzzy
+msgid "case-insensitive"
+msgstr "Søgestrenghed"
+
+#, fuzzy
+msgid "case-sensitive"
+msgstr "Søgestrenghed"
+
+msgid "descramble and record ecm"
+msgstr ""
+
+msgid "description contains"
+msgstr "i beskrivelse"
+
+#, fuzzy
+msgid "description match"
+msgstr "Beskrivelse"
+
+msgid "disabled"
+msgstr "deaktiveret"
+
+msgid "do nothing"
+msgstr "Gør ingenting"
+
+msgid "don't descramble, record ecm"
+msgstr ""
+
+msgid "error! Loading Page"
+msgstr "fejl! Henter side"
+
+msgid "exact title match"
+msgstr ""
+
+msgid "favourite desc match"
+msgstr ""
+
+msgid "finished"
+msgstr "Afsluttet"
+
+msgid "go to deep standby"
+msgstr "Skift til Dyb Standby"
+
+msgid "go to standby"
+msgstr "Skift til Standby"
+
+msgid "hour"
+msgstr "time"
+
+msgid "kB"
+msgstr "kB"
+
+msgid "loading"
+msgstr "Indlæser"
+
+msgid "manual/disabled"
+msgstr "manuelt/deaktiveret"
+
+msgid "mins"
+msgstr ""
+
+msgid "minute"
+msgstr "minut"
+
+msgid "no description available"
+msgstr "ingen beskrivelse"
+
+msgid "none/IPv4-only network"
+msgstr "Ingen/Kun IPv4 netværk"
+
+msgid "normal"
+msgstr ""
+
+msgid "on day"
+msgstr ""
+
+msgid "on weekday"
+msgstr "på Ugedag"
+
+msgid "one two three four unknown command"
+msgstr "en to tre fire ukendt kommando"
+
+msgid "partial title match"
+msgstr ""
+
+#, fuzzy
+msgid "r/o"
+msgstr "r/o"
+
+#, fuzzy
+msgid "r/w"
+msgstr "r/w"
+
+msgid "Receiver"
+msgstr ""
+
+msgid "record"
+msgstr "Optag"
+
+msgid "regex match (experimental)"
+msgstr ""
+
+msgid "remove"
+msgstr "fjern"
+
+msgid "running"
+msgstr "kører"
+
+msgid "seconds"
+msgstr "sekunder"
+
+msgid "select bouquets"
+msgstr "Vælg buketter"
+
+msgid "select channels"
+msgstr "Vælg kanaler"
+
+msgid "select tags"
+msgstr "Vælg etiketter"
+
+msgid "short description contains"
+msgstr "i kort beskrivelse"
+
+#, fuzzy
+msgid "short description match"
+msgstr "Kort beskrivelse identisk"
+
+msgid "standard"
+msgstr "standard"
+
+msgid "static"
+msgstr "statisk"
+
+msgid "this service is protected by a parental control pin"
+msgstr ""
+
+msgid "title contains"
+msgstr "i titel"
+
+msgid "title ends with"
+msgstr ""
+
+#, fuzzy
+msgid "title or description match"
+msgstr "Titel eller beskrivelse identisk"
+
+#, fuzzy
+msgid "title or short description match"
+msgstr "Titel eller kort beskrivelse identisk"
+
+msgid "title starts with"
+msgstr ""
+
+msgid "transcoded"
+msgstr "omkodet"
+
+#, python-format
+msgid "type %s is not a number"
+msgstr "type %s er ikke et tal"
+
+msgid "unknown"
+msgstr "ukendt"
+
+msgid "using"
+msgstr "bruger"
+
+msgid "via"
+msgstr "via"
+
+msgid "waiting"
+msgstr "Afventer"
+
+msgid "weekday"
+msgstr "Ugedag"
+
+msgid "weekend"
+msgstr "Weekend"
+
+msgid "wrong filetype"
+msgstr "forkert filtype"
+
+msgid "zap"
+msgstr "Zap"
+
+#~ msgid "EPG Search"
+#~ msgstr "Søg i EPG"
+
+#, fuzzy
+#~ msgid "Enter Text"
+#~ msgstr "Tunertype"
+
+#~ msgid "LICENSE"
+#~ msgstr "LICENS"
+
+#~ msgid "Standby Toggle"
+#~ msgstr "Standby Til/Fra"
+
+#, fuzzy
+#~ msgid "Use old remote"
+#~ msgstr "Skjul fuld fjernbetjening"
+
+#~ msgid "Apid"
+#~ msgstr "APID"
+
+#~ msgid "Onid"
+#~ msgstr "ONID"
+
+#~ msgid "Pcrpid"
+#~ msgstr "PCRPID"
+
+#~ msgid "Pmtpid"
+#~ msgstr "PMTPID"
+
+#~ msgid "Recording Status"
+#~ msgstr "Optagelsesstatus"
+
+#~ msgid "Sid"
+#~ msgstr "SID"
+
+#~ msgid "Sref"
+#~ msgstr "Sref"
+
+#~ msgid "Tsid"
+#~ msgstr "TSID"
+
+#~ msgid "Tuner Bit Error Rate BER"
+#~ msgstr "Tunerens Bitfejl hastighed BER"
+
+#~ msgid "Tuner Signal Power AGC"
+#~ msgstr "Tuner AGC signalstyrke"
+
+#~ msgid "Tuner Signal Quality SNR"
+#~ msgstr "Tuner SNR signalkvalitet"
+
+#~ msgid "Tuner Signal Quality SNR_DB"
+#~ msgstr "Tuner SNR_DB signalkvalitet"
+
+#~ msgid "Video Wide"
+#~ msgstr "Bredformat video"
+
+#~ msgid "Vpid"
+#~ msgstr "VPID"
