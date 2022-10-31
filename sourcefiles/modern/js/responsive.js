@@ -193,20 +193,6 @@ function load_maincontent_spin_force(url) {
 	return false;
 }
 
-function testPipStatus() {
-	$.ajax({
-		url: "api/pipinfo",
-		dataType: "json",
-		cache: false,
-		success: function(pipinfo) {
-			if(pipinfo.pip != pip){
-				pip = pipinfo.pip;
-                                buttonsSwitcher(pipinfo.pip);
-			}
-		}
-	});
-}
-
 var SSHelperObj = function () {
 	var self;
 	var screenshotInterval = false;

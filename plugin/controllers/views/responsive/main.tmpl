@@ -155,7 +155,7 @@
 					<button class="js-search-epg" data-close="true" title="$tstrings['epgsearch'] - Shortcut: f" accesskey="f">
 						<i class="icon material-icons">search</i>
 					</button>
-					<button onclick="toggleStandby();" class="btn--power-toggle" title="$tstrings['standby_toggle'] - Shortcut: 0" accesskey="0">
+					<button onclick="toggleStandby(event.shiftKey);" class="btn--power-toggle" title="$tstrings['standby_toggle'] - Shortcut: 0" accesskey="0">
 						<i class="icon material-icons">power_settings_new</i>
 					</button>
 
@@ -204,59 +204,59 @@
 									-->
 									<li>
 										<section class="remote__groupfull remote__group remote__group--numerical$remotecollapse" id="rcunumbers">
-											<button type="button" onclick="pressMenuRemote('2');" title="1" class="remote__button icon"><i class="material-icons">filter_1</i></button>
-											<button type="button" onclick="pressMenuRemote('3');" title="2" class="remote__button icon"><i class="material-icons">filter_2</i></button>
-											<button type="button" onclick="pressMenuRemote('4');" title="3" class="remote__button icon"><i class="material-icons">filter_3</i></button>
-											<button type="button" onclick="pressMenuRemote('5');" title="4" class="remote__button icon"><i class="material-icons">filter_4</i></button>
-											<button type="button" onclick="pressMenuRemote('6');" title="5" class="remote__button icon"><i class="material-icons">filter_5</i></button>
-											<button type="button" onclick="pressMenuRemote('7');" title="6" class="remote__button icon"><i class="material-icons">filter_6</i></button>
-											<button type="button" onclick="pressMenuRemote('8');" title="7" class="remote__button icon"><i class="material-icons">filter_7</i></button>
-											<button type="button" onclick="pressMenuRemote('9');" title="8" class="remote__button icon"><i class="material-icons">filter_8</i></button>
-											<button type="button" onclick="pressMenuRemote('10');" title="9" class="remote__button icon"><i class="material-icons">filter_9</i></button>
-											<button type="button" onclick="pressMenuRemote('412');" title="&lt;" class="remote__button icon"><i class="material-icons">navigate_before</i></button>
-											<button type="button" onclick="pressMenuRemote('11');" title="0" class="remote__button icon"><i class="material-icons">exposure_zero</i></button>
-											<button type="button" onclick="pressMenuRemote('407');" title="&gt;" class="remote__button icon"><i class="material-icons">navigate_next</i></button>
+											<button type="button" data-code="2" title="1" class="remote__button icon"><i class="material-icons">filter_1</i></button>
+											<button type="button" data-code="3" title="2" class="remote__button icon"><i class="material-icons">filter_2</i></button>
+											<button type="button" data-code="4" title="3" class="remote__button icon"><i class="material-icons">filter_3</i></button>
+											<button type="button" data-code="5" title="4" class="remote__button icon"><i class="material-icons">filter_4</i></button>
+											<button type="button" data-code="6" title="5" class="remote__button icon"><i class="material-icons">filter_5</i></button>
+											<button type="button" data-code="7" title="6" class="remote__button icon"><i class="material-icons">filter_6</i></button>
+											<button type="button" data-code="8" title="7" class="remote__button icon"><i class="material-icons">filter_7</i></button>
+											<button type="button" data-code="9" title="8" class="remote__button icon"><i class="material-icons">filter_8</i></button>
+											<button type="button" data-code="10" title="9" class="remote__button icon"><i class="material-icons">filter_9</i></button>
+											<button type="button" data-code="412" title="&lt;" class="remote__button icon"><i class="material-icons">navigate_before</i></button>
+											<button type="button" data-code="11" title="0" class="remote__button icon"><i class="material-icons">exposure_zero</i></button>
+											<button type="button" data-code="407" title="&gt;" class="remote__button icon"><i class="material-icons">navigate_next</i></button>
 										</section>
 										<section class="remote__group">
-											<button type="button" onclick="toggleMute(); return false;" title="Mute" class="remote__button icon"><i class="material-icons">volume_off</i></button>
-											<button type="button" onclick="pressMenuRemote('114');" title="Vol-" class="remote__button icon"><i class="material-icons">volume_down</i></button>
-											<button type="button" onclick="pressMenuRemote('115');" title="Vol+" class="remote__button icon"><i class="material-icons">volume_up</i></button>
-											<button type="button" onclick="toggleStandby(); return false;" title="Power" class="remote__button remote__button--power icon"><i class="material-icons">power_settings_new</i></button>
-											<button type="button" onclick="pressMenuRemote('377');" title="TV" class="remote__button icon"><i class="material-icons">tv</i></button>
-											<button type="button" onclick="pressMenuRemote('385');" title="Radio" class="remote__button icon"><i class="material-icons">radio</i></button>
-											<button type="button" onclick="pressMenuRemote('393');" title="List" class="remote__button icon"><i class="material-icons">movie</i></button>
-											<button type="button" onclick="pressMenuRemote('102');" title="Home" class="remote__button icon"><i class="material-icons">home</i></button>
+											<button type="button" data-code="1000" title="Mute" class="remote__button icon"><i class="material-icons">volume_off</i></button>
+											<button type="button" data-code="114" title="Vol-" class="remote__button icon"><i class="material-icons">volume_down</i></button>
+											<button type="button" data-code="115" title="Vol+" class="remote__button icon"><i class="material-icons">volume_up</i></button>
+											<button type="button" data-code="1001" title="Power" class="remote__button remote__button--power icon"><i class="material-icons">power_settings_new</i></button>
+											<button type="button" data-code="377" title="TV" class="remote__button icon"><i class="material-icons">tv</i></button>
+											<button type="button" data-code="385" title="Radio" class="remote__button icon"><i class="material-icons">radio</i></button>
+											<button type="button" data-code="393" title="List" class="remote__button icon"><i class="material-icons">movie</i></button>
+											<button type="button" data-code="102" title="Home" class="remote__button icon"><i class="material-icons">home</i></button>
 										</section>
 										<section class="remote__group remote__group--directional">
-											<button type="button" onclick="pressMenuRemote('139');" title="Menu" class="remote__button icon"><i class="material-icons">menu</i></button>
-											<button type="button" onclick="pressMenuRemote('103');" title="Up" class="remote__button icon remote__button--arrow"><i class="material-icons">keyboard_arrow_up</i></button>
-											<button type="button" onclick="pressMenuRemote('358');" title="Info" class="remote__button icon"><i class="material-icons">info_outline</i></button>
-											<button type="button" onclick="pressMenuRemote('105');" title="Left" class="remote__button icon remote__button--arrow"><i class="material-icons">keyboard_arrow_left</i></button>
-											<button type="button" onclick="pressMenuRemote('352');" title="OK" class="remote__button icon remote__button--arrow"><i class="material-icons">thumb_up_alt</i></button>
-											<button type="button" onclick="pressMenuRemote('106');" title="Right" class="remote__button icon remote__button--arrow"><i class="material-icons">keyboard_arrow_right</i></button>
-											<button type="button" onclick="pressMenuRemote('158');" title="Back" class="remote__button icon"><i class="material-icons">keyboard_return</i></button>
-											<button type="button" onclick="pressMenuRemote('108');" title="Down" class="remote__button icon remote__button--arrow"><i class="material-icons">keyboard_arrow_down</i></button>
-											<button type="button" onclick="pressMenuRemote('174');" title="Exit" class="remote__button icon"><i class="material-icons">clear</i></button>
+											<button type="button" data-code="139" title="Menu" class="remote__button icon"><i class="material-icons">menu</i></button>
+											<button type="button" data-code="103" title="Up" class="remote__button icon remote__button--arrow"><i class="material-icons">keyboard_arrow_up</i></button>
+											<button type="button" data-code="358" title="Info" class="remote__button icon"><i class="material-icons">info_outline</i></button>
+											<button type="button" data-code="105" title="Left" class="remote__button icon remote__button--arrow"><i class="material-icons">keyboard_arrow_left</i></button>
+											<button type="button" data-code="352" title="OK" class="remote__button icon remote__button--arrow"><i class="material-icons">thumb_up_alt</i></button>
+											<button type="button" data-code="106" title="Right" class="remote__button icon remote__button--arrow"><i class="material-icons">keyboard_arrow_right</i></button>
+											<button type="button" data-code="158" title="Back" class="remote__button icon"><i class="material-icons">keyboard_return</i></button>
+											<button type="button" data-code="108" title="Down" class="remote__button icon remote__button--arrow"><i class="material-icons">keyboard_arrow_down</i></button>
+											<button type="button" data-code="174" title="Exit" class="remote__button icon"><i class="material-icons">clear</i></button>
 										</section>
 										<section class="remote__group">
-											<button type="button" onclick="pressMenuRemote('365');" title="EPG" class="remote__button icon"><i class="material-icons">event_note</i></button>
-											<button type="button" onclick="pressMenuRemote('627');" title="VOD" class="remote__button icon"><i class="material-icons">ondemand_video</i></button>
-											<button type="button" onclick="pressMenuRemote('403');" title="CH-" class="remote__button icon"><i class="material-icons">remove</i></button>
-											<button type="button" onclick="pressMenuRemote('402');" title="CH+" class="remote__button icon"><i class="material-icons">add</i></button>
-											<button type="button" onclick="pressMenuRemote('398');" title="Red" class="remote__button icon remote__button--colour"><i class="material-icons" style="color: #F44336;">call_to_action</i></button>
-											<button type="button" onclick="pressMenuRemote('399');" title="Green" class="remote__button icon remote__button--colour"><i class="material-icons" style="color: #4CAF50;">call_to_action</i></button>
-											<button type="button" onclick="pressMenuRemote('400');" title="Yellow" class="remote__button icon remote__button--colour"><i class="material-icons" style="color: #ffe821;">call_to_action</i></button>
-											<button type="button" onclick="pressMenuRemote('401');" title="Blue" class="remote__button icon remote__button--colour"><i class="material-icons" style="color: #2196F3;">call_to_action</i></button>
+											<button type="button" data-code="365" title="EPG" class="remote__button icon"><i class="material-icons">event_note</i></button>
+											<button type="button" data-code="627" title="VOD" class="remote__button icon"><i class="material-icons">ondemand_video</i></button>
+											<button type="button" data-code="403" title="CH-" class="remote__button icon"><i class="material-icons">remove</i></button>
+											<button type="button" data-code="402" title="CH+" class="remote__button icon"><i class="material-icons">add</i></button>
+											<button type="button" data-code="398" title="Red" class="remote__button icon remote__button--colour"><i class="material-icons" style="color: #F44336;">call_to_action</i></button>
+											<button type="button" data-code="399" title="Green" class="remote__button icon remote__button--colour"><i class="material-icons" style="color: #4CAF50;">call_to_action</i></button>
+											<button type="button" data-code="400" title="Yellow" class="remote__button icon remote__button--colour"><i class="material-icons" style="color: #ffe821;">call_to_action</i></button>
+											<button type="button" data-code="401" title="Blue" class="remote__button icon remote__button--colour"><i class="material-icons" style="color: #2196F3;">call_to_action</i></button>
 										</section>
 										<section class="remote__groupfull remote__group$remotecollapse" id="rcuplayerkeys">
-											<button type="button" onclick="pressMenuRemote('168');" title="FastRewind" class="remote__button icon"><i class="material-icons">fast_rewind</i></button>
-											<button type="button" onclick="pressMenuRemote('207');" title="Play" class="remote__button icon"><i class="material-icons">play_arrow</i></button>
-											<button type="button" onclick="pressMenuRemote('119');" title="Pause" class="remote__button icon"><i class="material-icons">pause</i></button>
-											<button type="button" onclick="pressMenuRemote('208');" title="FastForward" class="remote__button icon"><i class="material-icons">fast_forward</i></button>
-											<button type="button" onclick="pressMenuRemote('370');" title="Subtitle" class="remote__button icon"><i class="material-icons">subtitles</i></button>
-											<button type="button" onclick="pressMenuRemote('167');" title="Record" class="remote__button icon"><i class="material-icons" style="color: #F44336;">fiber_manual_record</i></button>
-											<button type="button" onclick="pressMenuRemote('128');" title="Stop" class="remote__button icon"><i class="material-icons">stop</i></button>
-											<button type="button" onclick="pressMenuRemote('392');" title="Audio" class="remote__button icon"><i class="material-icons">audiotrack</i></button>
+											<button type="button" data-code="168" title="FastRewind" class="remote__button icon"><i class="material-icons">fast_rewind</i></button>
+											<button type="button" data-code="207" title="Play" class="remote__button icon"><i class="material-icons">play_arrow</i></button>
+											<button type="button" data-code="119" title="Pause" class="remote__button icon"><i class="material-icons">pause</i></button>
+											<button type="button" data-code="208" title="FastForward" class="remote__button icon"><i class="material-icons">fast_forward</i></button>
+											<button type="button" data-code="370" title="Subtitle" class="remote__button icon"><i class="material-icons">subtitles</i></button>
+											<button type="button" data-code="167" title="Record" class="remote__button icon"><i class="material-icons" style="color: #F44336;">fiber_manual_record</i></button>
+											<button type="button" data-code="128" title="Stop" class="remote__button icon"><i class="material-icons">stop</i></button>
+											<button type="button" data-code="392" title="Audio" class="remote__button icon"><i class="material-icons">audiotrack</i></button>
 										</section>
 									</li>
 									#if $textinputsupport == True
@@ -912,6 +912,27 @@
 <script>initJsTranslationAddon($dumps($tstrings))</script>
 
 <script>
+
+	\$(document).ready(function() {
+		\$(".remote__button").click(function(e) {
+			var d = \$(this).data("code");
+			if (d != undefined) {
+				if(d == "1000")
+				{
+					toggleMute();
+					return;
+				}
+				if(d == "1001")
+				{
+					toggleStandby(event.shiftKey);
+					return;
+				}
+				pressMenuRemote(d, event.shiftKey);
+			}
+		});
+	});
+
+
 	jQuery(document).ready(function() {
 		jQuery('#noresposive').change(function () {
 			jQuery.ajax({

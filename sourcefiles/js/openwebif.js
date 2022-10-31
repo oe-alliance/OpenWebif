@@ -56,7 +56,7 @@
 //*******************************************************************************
 
 $.fx.speeds._default = 1000;
-var theme='original',loadspinner = "<div id='spinner'><div class='fa fa-spinner fa-spin'></div></div>",mutestatus = 0,lastcontenturl = null,screenshotMode = 'all',MessageAnswerCounter=0,shiftbutton = false,grabTimer = 0,at2add = null,_locations = [],_tags = [],current_ref=null,current_name=null,selectedfolder="";
+var theme='original',loadspinner = "<div id='spinner'><div class='fa fa-spinner fa-spin'></div></div>",mutestatus = 0,lastcontenturl = null,screenshotMode = 'all',MessageAnswerCounter=0,grabTimer = 0,at2add = null,_locations = [],_tags = [],current_ref=null,current_name=null,selectedfolder="",pipstatus=false;
 
 $(function() {
 	
@@ -745,8 +745,8 @@ function zapChannel(sRef, sname) {
 	});
 }
 
-function toggleStandby() {
-	let sh = (shiftbutton) ? '&shift=1':'';
+function toggleStandby(shift) {
+	let sh = (shift) ? '&shift=1':'';
 	webapi_execute('api/powerstate?newstate=0'+sh);
 	setTimeout(getStatusInfo, 1500);
 }
@@ -981,16 +981,6 @@ $(function() {
 	}
 });
 
-$(window).keydown(function(evt) {
-	if (evt.which == 16) { 
-		shiftbutton = true;
-	}
-}).keyup(function(evt) {
-	if (evt.which == 16) { 
-		shiftbutton = false;
-	}
-});
-
 function callScreenShot(){
 	testPipStatus();
 	if(GetLSValue('remotegrabscreen',true))
@@ -1003,9 +993,9 @@ function callScreenShot(){
 	}
 }
 
-function pressMenuRemote(code) {
+function pressMenuRemote(code, shift) {
 	
-	let url = "/api/remotecontrol?" + ((shiftbutton) ? "type=long&" : "") + "command=" + code;
+	let url = "/api/remotecontrol?" + ((shift) ? "type=long&" : "") + "command=" + code;
 	webapi_execute(url);
 	
 	if (grabTimer > 0) {
@@ -2139,9 +2129,9 @@ function testPipStatus() {
 		dataType: "json",
 		cache: false,
 		success: function(pipinfo) {
-			if(pipinfo.pip != pip){
-				pip = pipinfo.pip;
-                                buttonsSwitcher(pipinfo.pip);
+			if(pipinfo.pip != pipstatus){
+				pipstatus = pipinfo.pip;
+                buttonsSwitcher(pipinfo.pip);
 			}
 		}
 	});

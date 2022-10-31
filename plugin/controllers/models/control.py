@@ -26,7 +26,6 @@ from enigma import eServiceReference, eActionMap, eServiceCenter
 from .services import getProtection
 from ..defaults import DEFAULT_RCU, ROOTTV, ROOTRADIO, service_types_radio, service_types_tv
 from Screens.InfoBar import InfoBar, MoviePlayer
-from Screens.Standby import Standby, TryQuitMainloop, inStandby
 import NavigationInstance
 
 ENABLE_QPIP_PROCPATH = "/proc/stb/video/decodermode"
@@ -142,6 +141,7 @@ def zapService(session, sref, title="", stream=False):
 		if isinstance(session.current_dialog, MoviePlayer):
 			session.current_dialog.lastservice = service
 			session.current_dialog.close()
+		from Screens.Standby import inStandby
 		if inStandby is None:
 			zapInServiceList(service)
 		else:
@@ -202,6 +202,7 @@ def remoteControl(key, rctype="", rcu=DEFAULT_RCU):
 
 
 def setPowerState(session, state):
+	from Screens.Standby import Standby, TryQuitMainloop, inStandby
 	state = int(state)
 	if state == 0:  # Toggle StandBy
 		if inStandby is None:
@@ -231,6 +232,7 @@ def setPowerState(session, state):
 
 
 def getStandbyState():
+	from Screens.Standby import inStandby
 	return {
 		"result": True,
 		"instandby": inStandby is not None

@@ -393,7 +393,7 @@
 			\$("td",".remotesmall").click(function(e) {
 				var d = \$(this).data("code");
 				if (d != undefined) {
-	        		pressMenuRemote(d);
+	        		pressMenuRemote(d, event.shiftKey);
 				}
     		});
 		});

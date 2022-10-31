@@ -19,6 +19,7 @@
 * remove duplicate openwebif.js
 * move material icon font to core 
 * update jQuery UI to 1.13.2
+* fix shift key for long press
 
 ## Version 1.5.2
 * improve wol
