@@ -254,8 +254,8 @@ class EPG():
 			ev["title"] = filterName(event[4], encode)
 			ev["shortdesc"] = convertDesc(event[5], encode)
 			ev["longdesc"] = convertDesc(event[6], encode)
-			if alter and event[7] is not None:
-				achannels = GetWithAlternative(event[7], False)
+			if alter and event[8] is not None:
+				achannels = GetWithAlternative(event[8], False)
 				if achannels:
 					ev["asrefs"] = achannels
 			ev["sref"] = event[8]
