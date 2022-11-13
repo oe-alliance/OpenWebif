@@ -44,13 +44,13 @@ from .utilities import toBinary, toString
 def new_getRequestHostname(self):
 	host = self.getHeader(b'host')
 	if host:
-		if host[0] == b'[':
-			host = host.split(b']', 1)[0] + b"]"
+		host = host.decode('ascii')
+		if host.startswith("["):
+			host = host.split("]")[0] + "]"
 		else:
-			host = host.split(b':', 1)[0]
+			host = host.split(":")[0]
 	else:
 		host = self.getHost().host
-	host = toString(host).encode('ascii')
 	return toString(host)
 
 
