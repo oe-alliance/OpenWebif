@@ -4,6 +4,8 @@ from os import symlink
 from os.path import dirname, exists, isdir, isfile, join as pathjoin, islink
 import sys
 
+from enigma import eDBoxLCD
+
 from Components.Language import language
 from Components.config import config as comp_config
 from Components.Network import iNetwork
@@ -292,4 +294,4 @@ DEFAULT_RCU = getDefaultRcu()
 # FIXME
 GRABPIP = False
 
-LCD = exists("/proc/stb/lcd/mode") and ("lcd" in MODEL or BoxInfo.getItem("displaytype") in ("bwlcd96", "bwlcd128", "bwlcd140", "bwlcd255", "colorlcd128", "colorlcd220", "colorlcd400", "colorlcd480", "colorlcd720", "colorlcd800"))
+LCD = hasattr(eDBoxLCD.getInstance(), "dumpLCD") and ("lcd" in MODEL or BoxInfo.getItem("displaytype") in ("bwlcd96", "bwlcd128", "bwlcd140", "bwlcd255", "colorlcd128", "colorlcd220", "colorlcd400", "colorlcd480", "colorlcd720", "colorlcd800"))
