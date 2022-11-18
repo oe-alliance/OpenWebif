@@ -130,7 +130,7 @@ config.OpenWebif.autotimer_regex_searchtype = ConfigYesNo(default=False)  # TODO
 
 class OpenWebifConfig(Setup):
 	def __init__(self, session):
-		Setup.__init__(self, session, "openwebif", plugin="Extensions/OpenWebif")
+		Setup.__init__(self, session, "openwebif", plugin="Extensions/OpenWebif", PluginLanguageDomain="OpenWebif")
 
 		owif_protocol = "https" if config.OpenWebif.https_enabled.value else "http"
 		owif_port = config.OpenWebif.https_port.value if config.OpenWebif.https_enabled.value else config.OpenWebif.port.value
