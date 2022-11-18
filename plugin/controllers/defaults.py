@@ -292,4 +292,4 @@ DEFAULT_RCU = getDefaultRcu()
 # FIXME
 GRABPIP = False
 
-LCD = ("lcd" in MODEL or BoxInfo.getItem("displaytype") in ("bwlcd96", "bwlcd128", "bwlcd140", "bwlcd255", "colorlcd128", "colorlcd220", "colorlcd400", "colorlcd480", "colorlcd720", "colorlcd800"))
+LCD = exists("/proc/stb/lcd/mode") and ("lcd" in MODEL or BoxInfo.getItem("displaytype") in ("bwlcd96", "bwlcd128", "bwlcd140", "bwlcd255", "colorlcd128", "colorlcd220", "colorlcd400", "colorlcd480", "colorlcd720", "colorlcd800"))
