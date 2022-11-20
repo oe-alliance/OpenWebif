@@ -37,7 +37,7 @@ from Components.SystemInfo import BoxInfo
 
 from .models.info import getInfo
 from .models.config import getCollapsedMenus, getConfigsSections, getShowName, getCustomName, getBoxName
-from .defaults import getPublicPath, getViewsPath, EXT_EVENT_INFO_SOURCE, STB_LANG, getIP, HASAUTOTIMER, TEXTINPUTSUPPORT
+from .defaults import getPublicPath, getViewsPath, EXT_EVENT_INFO_SOURCE, STB_LANG, getIP, HASAUTOTIMER, TEXTINPUTSUPPORT, WEBTV
 from .utilities import toBinary, toString
 
 
@@ -397,7 +397,7 @@ class BaseController(resource.Resource):
 		config.OpenWebif.webcache.moviedb.value = moviedb
 		config.OpenWebif.webcache.moviedb.save()
 		ret['moviedb'] = moviedb
-		ret['webtv'] = os.path.exists(getPublicPath('webtv'))
+		ret['webtv'] = WEBTV
 		ret['stbLang'] = STB_LANG
 		smallremote = config.OpenWebif.webcache.smallremote.value if config.OpenWebif.webcache.smallremote.value else 'new'
 		ret['smallremote'] = smallremote

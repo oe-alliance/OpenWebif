@@ -33,7 +33,7 @@ from .models.config import getConfigs, getConfigsSections
 from .models.stream import GetSession
 from .base import BaseController
 from .models.locations import getLocations
-from .defaults import OPENWEBIFVER, getPublicPath, VIEWS_PATH, TRANSCODING, EXT_EVENT_INFO_SOURCE, HASAUTOTIMER, HASAUTOTIMERTEST, HASAUTOTIMERCHANGE, HASVPS, HASSERIES, ATSEARCHTYPES
+from .defaults import OPENWEBIFVER, getPublicPath, VIEWS_PATH, TRANSCODING, EXT_EVENT_INFO_SOURCE, HASAUTOTIMER, HASAUTOTIMERTEST, HASAUTOTIMERCHANGE, HASVPS, HASSERIES, ATSEARCHTYPES, VXGENABLED
 from .utilities import getUrlArg, getEventInfoProvider
 
 
@@ -356,9 +356,6 @@ class AjaxController(BaseController):
 				auth = '-sid:' + str(session.GetSID(request)) + "@"
 		else:
 			auth = ''
-		vxgenabled = False
-		if fileExists(getPublicPath("/vxg/media_player.pexe")):
-			vxgenabled = True
 		transcoding = TRANSCODING
 		transcoder_port = 0
 		if transcoding:
@@ -368,7 +365,7 @@ class AjaxController(BaseController):
 					transcoder_port = int(config.OpenWebif.streamport.value)
 			except Exception:
 				transcoder_port = 0
-		return {"transcoder_port": transcoder_port, "vxgenabled": vxgenabled, "auth": auth, "streaming_port": streaming_port}
+		return {"transcoder_port": transcoder_port, "vxgenabled": VXGENABLED, "auth": auth, "streaming_port": streaming_port}
 
 	def P_editmovie(self, request):
 		sref = getUrlArg(request, "sRef")
