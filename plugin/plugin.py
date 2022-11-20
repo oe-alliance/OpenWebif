@@ -148,7 +148,7 @@ class OpenWebifConfig(Setup):
 		Setup.selectionChanged(self)
 		self.setFootnote(self.footnote)
 
-	def keyOK(self):
+	def keySave(self):
 		if config.OpenWebif.auth.value is not True:
 			config.OpenWebif.auth_for_streaming.value = False
 
@@ -159,7 +159,7 @@ class OpenWebifConfig(Setup):
 			HttpdRestart(global_session)
 		else:
 			HttpdStop(global_session)
-		Setup.keyOK(self)
+		Setup.keySave(self)
 
 
 def confplug(session, **kwargs):
