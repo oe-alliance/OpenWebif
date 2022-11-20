@@ -295,7 +295,6 @@ TEXTINPUTSUPPORT = getTextInputSupport()
 
 DEFAULT_RCU = getDefaultRcu()
 
-# FIXME
-GRABPIP = False
+GRABPIP = BoxInfo.getItem("ArchIsARM")
 
 LCD = ("lcd" in MODEL) or ("lcd" in BoxInfo.getItem("displaytype"))

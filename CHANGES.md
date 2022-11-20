@@ -3,6 +3,7 @@
 * fix ldc screenshot
 * fix screenhot javascript error
 * show webtv only if transcoding and vgx is available
+* enable pip grab for arm
 
 ## Version 2.0.0
 * remove all remote control images
