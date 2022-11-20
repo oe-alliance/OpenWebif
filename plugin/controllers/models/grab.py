@@ -62,7 +62,7 @@ class GrabRequest(object):
 				if InfoBar.instance.session.pipshown:
 					graboptions.append("-i 1")
 			elif mode == "lcd":
-				eDBoxLCD.getInstance().dumpLCD2PNG()
+				eDBoxLCD.getInstance().setDump(True)
 				fileformat = "png"
 				command = "cat /tmp/lcd.png"
 

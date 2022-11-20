@@ -1,5 +1,9 @@
+## Version 2.0.1
+* move about to left menu
+* fix ldc screenshot
+* fix screenhot javascript error
+
 ## Version 2.0.0
-(BETA)
 * remove all remote control images
 * remove all box images
 * remove six
