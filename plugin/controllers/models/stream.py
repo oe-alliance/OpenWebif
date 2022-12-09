@@ -90,7 +90,7 @@ def getStream(session, request, m3ufile):
 	elif exists(ENC0) or exists(ENC0APPLY):
 		transcoder_port = portnumber
 
-	if exists(BMC0) or exists(ENC0) or exists(ENC0APPLY) and device == "phone":
+	if device == "phone" and (exists(BMC0) or exists(ENC0) or exists(ENC0APPLY)):
 		try:
 			bitrate = config.plugins.transcodingsetup.bitrate.value
 			resolution = config.plugins.transcodingsetup.resolution.value
