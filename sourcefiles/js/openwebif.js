@@ -584,7 +584,11 @@ function addEditTimerEvent(sRef, eventId) {
 		dataType: "json",
 		success: function(result) { 
 			if (typeof result !== 'undefined' && typeof result.event !== 'undefined') {
-				addTimer(result.event);
+				if (result.event.timer) {
+					editTimer(sRef, null, null, result.event.id);
+				} else {
+					addTimer(result.event);
+				}
 			}
 			else
 				alert(tstr_event_not_found);
@@ -1154,11 +1158,12 @@ function isRadio(serviceref) {
 	return ret;
 }
 
-function editTimer(serviceref, begin, end) {
+function editTimer(serviceref, begin, end, evtid) {
 	serviceref=decodeURI(serviceref);
 	current_serviceref = serviceref;
 	current_begin = begin;
 	current_end = end;
+	evtid = evtid || -1
 	
 	let radio = isRadio(serviceref);
 	
@@ -1180,8 +1185,11 @@ function editTimer(serviceref, begin, end) {
 				for (let id in timers.timers) {
 					timer = timers.timers[id];
 					if (timer.serviceref == serviceref &&
-						Math.round(timer.begin) == Math.round(begin) &&
-						Math.round(timer.end) == Math.round(end)) {
+						( Math.round(timer.begin) == Math.round(begin) &&
+						  Math.round(timer.end) == Math.round(end) ||
+						  timer.eit == evtid
+						)
+					) {
 							$('#timername').val(timer.name);
 							$('#description').val(timer.description);
 							$('#bouquet_select').val(timer.serviceref);
