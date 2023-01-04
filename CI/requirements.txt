@@ -1,7 +1,0 @@
-pyOpenSSL>=22.0.0
-twisted>=22.10.0
-sphinx-rtd-theme>=1.1.1
-sphinxcontrib-napoleon>=0.7
-sphinxcontrib-websupport>=1.2.4
-Sphinx>=6.0.0
-sphinxcontrib-httpdomain>=1.8.1
