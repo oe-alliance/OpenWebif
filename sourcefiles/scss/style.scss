@@ -739,7 +739,7 @@ i.fa-mobile {font-size: 22px;}
 
 .channel-listing { white-space: normal;display:table;list-style:none;counter-reset:n 0;padding: 0;}
 .channel-listing > li { display: block; white-space: nowrap; width: 16380px; overflow: hidden; font-size: 0; vertical-align: top;}
-.channel-listing > li > span { position: absolute; left: 0; z-index: 2; border-width: 0; width: 140px;white-space: nowrap; }
+.channel-listing > li > span { position: absolute; left: 0; z-index: 2; border-width: 0; width: 140px;white-space: nowrap; margin-left: 2px; }
 .channel-listing > li > span > div { vertical-align: top; height:50px;}
 .channel-listing > li > span > div > span { font-size: 10px; display:inherit; }
 

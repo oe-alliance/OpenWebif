@@ -971,6 +971,11 @@ def getMultiEpg(self, ref, begintime=-1, endtime=None, mode=1):
 
 	srefs = services.getContent('S')
 	epg = EPG()
+
+	if begintime == -1 and mode == 2:
+		t = time()
+		begintime = int(t - config.epg.histminutes.value * 60)
+
 	epgevents = epg.getMultiChannelEvents(srefs, begintime, endtime)
 	offset = None
 	picons = {}
