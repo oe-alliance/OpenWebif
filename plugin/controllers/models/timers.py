@@ -193,7 +193,7 @@ def getTimers(session):
 		fuzzybegin = strftime(_("%d.%m.%Y %H:%M"), (localtime(float(timer.begin))))
 		fuzzyend = strftime(_("%d.%m.%Y %H:%M"), (localtime(float(timer.end))))
 
-		timers.append({
+		timerobj = {
 			"serviceref": str(timer.service_ref),
 			"servicename": removeBad(timer.service_ref.getServiceName()),
 			"eit": timer.eit,
@@ -232,9 +232,24 @@ def getTimers(session):
 			"allow_duplicate": allow_duplicate,
 			"recordingtype": recordingtype,
 			"ice_timer_id": ice_timer_id
-		})
+		}
+
+		if hasattr(timer, "marginBefore"):
+			timerobj["marginbefore"] = timer.marginBefore
+			timerobj["marginafter"] = timer.marginAfter
+			timerobj["eventbegin"] = timer.eventBegin
+			timerobj["eventend"] = timer.eventEnd
+
+		if hasattr(timer, "hasEndTime"):
+			timerobj["hasendtime"] = timer.hasEndTime
+
+		if hasattr(timer, "rename_repeat"):
+			timerobj["rename_repeat"] = timer.rename_repeat
+
+		timers.append(timerobj)
 
 	return {
+		"version": 2,
 		"result": True,
 		"timers": timers
 	}

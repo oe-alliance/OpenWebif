@@ -1,5 +1,6 @@
 ## Version 2.0.2
 * add showIsPlayable parameter to epgnow, epgnext, epgnownext
+* include additional timer properties in timer list api
 
 ## Version 2.0.1
 * move about to left menu
