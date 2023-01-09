@@ -1,3 +1,6 @@
+## Version 2.0.2
+* add showIsPlayable parameter to epgnow, epgnext, epgnownext
+
 ## Version 2.0.1
 * move about to left menu
 * fix ldc screenshot

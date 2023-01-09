@@ -806,25 +806,48 @@ def getMultiChannelNowNextEpg(slist, encode=False):
 	return {"events": events, "result": True}
 
 
-def getBouquetNowNextEpg(bqref, nowornext, encode=False):
+def getBouquetNowNextEpg(bqref, nowornext, encode=False, showisplayable=False):
 	bqref = unquote(bqref)
 	services = eServiceCenter.getInstance().list(eServiceReference(bqref))
 	if not services:
 		return {"events": [], "result": False}
+
+	playingref = None
+	if showisplayable and NavigationInstance.instance:
+		playingref = NavigationInstance.instance.getCurrentlyPlayingServiceReference()
+
+	isPlayable = []
 
 	query = []
 	if nowornext == EPG.NOW_NEXT:
 		for service in services.getContent('S'):
 			query.append((service, 0, -1))
 			query.append((service, 1, -1))
+			if not showisplayable:
+				continue
+			if playingref:
+				sref = eServiceReference(service)
+				info = eServiceCenter.getInstance().info(sref)
+				if info and info.isPlayable(sref, playingref):
+					isPlayable.append(service)
+			else:
+				isPlayable.append(service)
 	else:
 		for service in services.getContent('S'):
 			query.append((service, nowornext, -1))
+			if not showisplayable:
+				continue
+			if playingref:
+				info = eServiceCenter.getInstance().info(service)
+				if info and info.isPlayable(service, playingref):
+					isPlayable.append(service)
+			else:
+				isPlayable.append(service)
 
 	epg = EPG()
 	events = epg.getBouquetNowNextEpg(query, encode, alter=True)
 
-	return {"events": events, "result": True}
+	return {"events": events, "isplayable": isPlayable, "result": True}
 
 
 def getNowNextEpg(sref, nowornext, encode=False):

@@ -1514,36 +1514,28 @@ class WebController(BaseController):
 	# http://enigma2/api/epgnow?bRef=1%3A7%3A1%3A0%3A0%3A0%3A0%3A0%3A0%3A0%3A%20FROM%20BOUQUET%20"userbouquet.favourites.tv"%20ORDER%20BY%20bouquet
 	# http://enigma2/web/epgnow?bRef=1%3A7%3A1%3A0%3A0%3A0%3A0%3A0%3A0%3A0%3A%20FROM%20BOUQUET%20"userbouquet.favourites.tv"%20ORDER%20BY%20bouquet
 	def P_epgnow(self, request):
-		res = self.testMandatoryArguments(request, ["bRef"])
-		if res:
-			return res
-		bref = getUrlArg(request, "bRef")
-
-		return getBouquetNowNextEpg(bref, EPG.NOW, self.isJson)
+		return self.epgnownext(request, EPG.NOW)
 
 	# http://enigma2/api/epgnext?bRef=1%3A7%3A1%3A0%3A0%3A0%3A0%3A0%3A0%3A0%3A%20FROM%20BOUQUET%20"userbouquet.favourites.tv"%20ORDER%20BY%20bouquet
 	# http://enigma2/web/epgnext?bRef=1%3A7%3A1%3A0%3A0%3A0%3A0%3A0%3A0%3A0%3A%20FROM%20BOUQUET%20"userbouquet.favourites.tv"%20ORDER%20BY%20bouquet
 	def P_epgnext(self, request):
-		res = self.testMandatoryArguments(request, ["bRef"])
-		if res:
-			return res
-		bref = getUrlArg(request, "bRef")
-
-		# from Components.Sources.EventInfo import EventInfo
-		# print(EventInfo(self.session.nav, EventInfo.NEXT).getEvent().getBeginTime())
-		return getBouquetNowNextEpg(bref, EPG.NEXT, self.isJson)
+		return self.epgnownext(request, EPG.NEXT)
 
 	# http://enigma2/api/epgnownext?bRef=1%3A7%3A1%3A0%3A0%3A0%3A0%3A0%3A0%3A0%3A%20FROM%20BOUQUET%20"userbouquet.favourites.tv"%20ORDER%20BY%20bouquet
 	# http://enigma2/web/epgnownext?bRef=1%3A7%3A1%3A0%3A0%3A0%3A0%3A0%3A0%3A0%3A%20FROM%20BOUQUET%20"userbouquet.favourites.tv"%20ORDER%20BY%20bouquet
-	# TODO: fix missing now or next
 	def P_epgnownext(self, request):
+		return self.epgnownext(request, EPG.NOW_NEXT)
+
+	def epgnownext(self, request, nowornext):
 		res = self.testMandatoryArguments(request, ["bRef"])
 		if res:
 			return res
 		bref = getUrlArg(request, "bRef")
-		ret = getBouquetNowNextEpg(bref, EPG.NOW_NEXT, self.isJson)
-		info = getCurrentService(self.session)
-		ret["info"] = info
+		showisplayable = getUrlArg(request, "showIsPlayable") is not None
+		ret = getBouquetNowNextEpg(bref, nowornext, self.isJson, showisplayable)
+		if nowornext == EPG.NOW_NEXT:
+			info = getCurrentService(self.session)
+			ret["info"] = info
 		return ret
 
 	def P_epgmultichannelnownext(self, request):
