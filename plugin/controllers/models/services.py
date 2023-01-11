@@ -819,30 +819,39 @@ def getBouquetNowNextEpg(bqref, nowornext, encode=False, showisplayable=False):
 	isPlayable = []
 
 	query = []
-	if nowornext == EPG.NOW_NEXT:
-		for service in services.getContent('S'):
-			query.append((service, 0, -1))
-			query.append((service, 1, -1))
-			if not showisplayable:
-				continue
-			if playingref:
-				sref = eServiceReference(service)
-				info = eServiceCenter.getInstance().info(sref)
-				if info and info.isPlayable(sref, playingref):
+
+	if showisplayable:
+		if nowornext == EPG.NOW_NEXT:
+			for service in services.getContent('S'):
+				query.append((service, 0, -1))
+				query.append((service, 1, -1))
+				if service.startswith("1:0:") and not ('http%3a' in service or 'https%3a' in service):
+					if playingref:
+						sref = eServiceReference(service)
+						info = eServiceCenter.getInstance().info(sref)
+						if info and info.isPlayable(sref, playingref):
+							isPlayable.append(service)
+						continue
 					isPlayable.append(service)
-			else:
-				isPlayable.append(service)
+		else:
+			for service in services.getContent('S'):
+				query.append((service, nowornext, -1))
+				if service.startswith("1:0:") and not ('http%3a' in service or 'https%3a' in service):
+					if playingref:
+						sref = eServiceReference(service)
+						info = eServiceCenter.getInstance().info(sref)
+						if info and info.isPlayable(sref, playingref):
+							isPlayable.append(service)
+						continue
+					isPlayable.append(service)
 	else:
-		for service in services.getContent('S'):
-			query.append((service, nowornext, -1))
-			if not showisplayable:
-				continue
-			if playingref:
-				info = eServiceCenter.getInstance().info(service)
-				if info and info.isPlayable(service, playingref):
-					isPlayable.append(service)
-			else:
-				isPlayable.append(service)
+		if nowornext == EPG.NOW_NEXT:
+			for service in services.getContent('S'):
+				query.append((service, 0, -1))
+				query.append((service, 1, -1))
+		else:
+			for service in services.getContent('S'):
+				query.append((service, nowornext, -1))
 
 	epg = EPG()
 	events = epg.getBouquetNowNextEpg(query, encode, alter=True)
