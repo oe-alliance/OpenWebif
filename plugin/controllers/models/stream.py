@@ -120,6 +120,16 @@ def getStream(session, request, m3ufile):
 	else:
 		auth = ''
 
+	icamport = 17999
+	icam = "http://127.0.0.1:%s/" % icamport
+
+	if icam in sref:
+		portnumber = icamport
+		sref = sref.split(icam)[1]
+		sref = sref.split("::")[0] + ":"
+		auth = ""
+		args = ""
+
 	response = "#EXTM3U \n#EXTVLCOPT:http-reconnect=true \n%shttp://%s%s:%s/%s%s\n" % (progopt, auth, request.getRequestHostname(), portnumber, sref, args)
 	if config.OpenWebif.playiptvdirect.value:
 		if "http://" in sref or "https://" in sref:

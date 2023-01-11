@@ -1,3 +1,6 @@
+## Version 2.0.3
+* add icam support for stream m3u
+
 ## Version 2.0.2
 * add showIsPlayable parameter to epgnow, epgnext, epgnownext
 * include additional timer properties in timer list api
