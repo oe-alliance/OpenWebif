@@ -280,7 +280,10 @@ def toBinary(s):
 
 def toString(s):
 	if isinstance(s, bytes):
-		return s.decode(encoding='utf-8', errors='strict')
+		try:
+			return s.decode(encoding='utf-8', errors='strict')
+		except UnicodeDecodeError:
+			return s.decode(encoding='cp1252', errors='strict')
 	return s
 
 
