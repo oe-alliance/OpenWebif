@@ -30,6 +30,12 @@ from ..utilities import get_config_attribute
 from datetime import datetime
 from time import time
 
+TRANSLATE = {
+	"<default>": _("<Default movie location>"),
+	"<current>": _("<Current movie list location>"),
+	"<timer>": _("<Last timer location>")
+}
+
 
 def addCollapsedMenu(name):
 	tags = config.OpenWebif.webcache.collapsedmenus.value.split("|")
@@ -94,7 +100,11 @@ def getJsonFromConfig(cnf):
 		elif isinstance(cnf.choices.choices[0], tuple):
 			choices = []
 			for choice_tuple in cnf.choices.choices:
-				choices.append((choice_tuple[0], _(choice_tuple[1])))
+				name = choice_tuple[1]
+				if name.startswith("<") and name.endswith(">"):
+					name = TRANSLATE.get(choice_tuple[0], name)
+					name = name.replace("<", "&lt;").replace(">", "&gt;")
+				choices.append((choice_tuple[0], _(name)))
 		else:
 			choices = []
 			for choice in cnf.choices.choices:
