@@ -1004,7 +1004,7 @@ def getMultiEpg(self, ref, begintime=-1, endtime=None, mode=1):
 	srefs = services.getContent('S')
 	epg = EPG()
 
-	if begintime == -1 and mode == 2:
+	if begintime == -1:
 		t = time()
 		begintime = int(t - config.epg.histminutes.value * 60)
 
@@ -1013,17 +1013,10 @@ def getMultiEpg(self, ref, begintime=-1, endtime=None, mode=1):
 	picons = {}
 
 	if epgevents is not None:
-		if begintime == -1:
-			# If no start time is requested, use current time as start time and extend
-			# show all events until 6:00 next day
-			bt = localtime()
-			offset = mktime((bt.tm_year, bt.tm_mon, bt.tm_mday, bt.tm_hour - bt.tm_hour % 2, 0, 0, -1, -1, -1))
-			lastevent = mktime((bt.tm_year, bt.tm_mon, bt.tm_mday, 23, 59, 0, -1, -1, -1)) + 6 * 3600
-		else:
-			# If a start time is requested, show all events in a 24 hour frame
-			bt = localtime(begintime)
-			offset = mktime((bt.tm_year, bt.tm_mon, bt.tm_mday, bt.tm_hour - bt.tm_hour % 2, 0, 0, -1, -1, -1))
-			lastevent = offset + 86399
+		# If a start time is requested, show all events in a 24 hour frame
+		bt = localtime(begintime)
+		offset = mktime((bt.tm_year, bt.tm_mon, bt.tm_mday, bt.tm_hour - bt.tm_hour % 2, 0, 0, -1, -1, -1))
+		lastevent = offset + 86399
 
 		# We want to display if an event is covered by a timer.
 		# To keep the costs low for a nested loop against the timer list, we
