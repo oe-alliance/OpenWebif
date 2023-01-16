@@ -29,7 +29,7 @@ All box and remote control images are no longer part of OpenWebif.
 To find out how to access it from your browser, go to OpenWebif's configuration via your receiver's Plugins page. You'll see the `http...` address to use at the bottom.
 
 ## Documentation
-Read the [e2openplugin OpenWebif documentation](https://e2openplugins.github.io/e2openplugin-OpenWebif/).
+Read the [OpenWebif documentation](https://oe-alliance.github.io/OpenWebif/).
 
 Browse [OpenWebif API Wiki](https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation).
 

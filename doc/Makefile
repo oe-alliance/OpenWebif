@@ -4,7 +4,7 @@
 # You can set these variables from the command line.
 SPHINXOPTS    = -v
 SPHINXBUILD   = sphinx-build
-SPHINXPROJ    = e2openplugin-OpenWebif
+SPHINXPROJ    = OpenWebif
 SOURCEDIR     = source
 BUILDDIR      = build
 
