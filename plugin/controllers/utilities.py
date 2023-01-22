@@ -1,4 +1,11 @@
 from re import compile as recompile, sub
+try:
+	from Components.Converter.genre import getGenreStringLong
+except ImportError:
+# Fallback genre
+	def getGenreStringLong(hn, ln):
+		return ""
+
 try:  # this is only for the testsuite
 	from .defaults import DEBUG_ENABLED
 except Exception:
@@ -264,12 +271,6 @@ def create_servicereference(*args, **kwargs):
 		tsid,
 		oid,
 		ns)
-
-# Fallback genre
-
-
-def getGenreStringLong(hn, ln):
-	return ""
 
 
 def toBinary(s):
