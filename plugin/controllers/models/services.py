@@ -764,23 +764,24 @@ def getChannelEpg(ref, begintime=-1, endtime=-1, encode=True, nownext=False):
 	return {"events": [ev], "result": True}
 
 
-def getBouquetEpg(bqref, begintime=-1, endtime=-1, encode=False):
+def getBouquetEpg(bqref, begintime=-1, endtime=None, encode=False):
 
 	bqref = unquote(bqref)
 	services = eServiceCenter.getInstance().list(eServiceReference(bqref))
 	if not services:
 		return {"events": [], "result": False}
 
-	if endtime is None:
-		endtime = -1
-
-	# prevent crash
-	if endtime > 100000:
-		endtime = -1
-
 	query = []
-	for service in services.getContent('S'):
-		query.append((service, 0, begintime, endtime))
+
+	if endtime:
+		# prevent crash
+		if endtime > 100000:
+			endtime = -1
+		for service in services.getContent('S'):
+			query.append((service, 0, begintime, endtime))
+	else:
+		for service in services.getContent('S'):
+			query.append((service, 0, begintime))
 
 	epg = EPG()
 	events = epg.getBouquetNowNextEpg(query, encode)

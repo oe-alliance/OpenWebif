@@ -1440,8 +1440,7 @@ class WebController(BaseController):
 			except ValueError:
 				pass
 
-		# TODO: test -1 actually works
-		endtime = -1
+		endtime = None
 		if b"endTime" in list(request.args.keys()):
 			try:
 				endtime = int(request.args[b"endTime"][0])
@@ -1477,7 +1476,6 @@ class WebController(BaseController):
 			except ValueError:
 				pass
 
-		# TODO: test -1 actually works
 		endtime = -1
 		if b"endTime" in list(request.args.keys()):
 			try:
