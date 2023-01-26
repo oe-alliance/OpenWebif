@@ -773,17 +773,20 @@ def getBouquetEpg(bqref, begintime=-1, endtime=None, encode=False):
 
 	query = []
 
+	services = services.getContent('S')
+
 	if endtime:
 		# prevent crash
 		if endtime > 100000:
 			endtime = -1
-		for service in services.getContent('S'):
+		for service in services:
 			query.append((service, 0, begintime, endtime))
 	else:
-		for service in services.getContent('S'):
+		for service in services:
 			query.append((service, 0, begintime))
 
 	epg = EPG()
+
 	events = epg.getBouquetNowNextEpg(query, encode)
 
 	return {"events": events, "result": True}
@@ -821,9 +824,12 @@ def getBouquetNowNextEpg(bqref, nowornext, encode=False, showisplayable=False):
 
 	query = []
 
+	services = services.getContent('S')
+	services = [service for service in services if int(service.split(":", 2)[1]) & eServiceReference.isInvisible == 0]
+
 	if showisplayable:
 		if nowornext == EPG.NOW_NEXT:
-			for service in services.getContent('S'):
+			for service in services:
 				query.append((service, 0, -1))
 				query.append((service, 1, -1))
 				if service.startswith("1:0:") and not ('http%3a' in service or 'https%3a' in service):
@@ -835,7 +841,7 @@ def getBouquetNowNextEpg(bqref, nowornext, encode=False, showisplayable=False):
 						continue
 					isPlayable.append(service)
 		else:
-			for service in services.getContent('S'):
+			for service in services:
 				query.append((service, nowornext, -1))
 				if service.startswith("1:0:") and not ('http%3a' in service or 'https%3a' in service):
 					if playingref:
@@ -847,15 +853,15 @@ def getBouquetNowNextEpg(bqref, nowornext, encode=False, showisplayable=False):
 					isPlayable.append(service)
 	else:
 		if nowornext == EPG.NOW_NEXT:
-			for service in services.getContent('S'):
+			for service in services:
 				query.append((service, 0, -1))
 				query.append((service, 1, -1))
 		else:
-			for service in services.getContent('S'):
+			for service in services:
 				query.append((service, nowornext, -1))
 
 	epg = EPG()
-	events = epg.getBouquetNowNextEpg(query, encode, alter=True)
+	events = epg.getBouquetNowNextEpg(query, encode, alter=True, full=True)
 
 	return {"events": events, "isplayable": isPlayable, "result": True}
 

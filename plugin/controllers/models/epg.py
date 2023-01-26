@@ -39,6 +39,7 @@ NEXT_EVENT = +1
 TIME_NOW = -1
 
 BOUQUET_NOWNEXT_FIELDS = "IBDCTSEWRNX"  # getBouquetNowNextEvents
+BOUQUET_FIELDS = "IBDCTSEWRN"  # getBouquetEvents
 MULTI_CHANNEL_FIELDS = "IBTSRND"     # getMultiChannelEvents
 MULTI_NOWNEXT_FIELDS = "TBDCIESX"    # getMultiChannelNowNextEvents
 SINGLE_CHANNEL_FIELDS = "IBDTSENCW"   # getChannelEvents;
@@ -314,8 +315,11 @@ class EPG():
 		nn = 0 if nowornext == EPG.NOW else 1
 		return self.getBouquetNowNextEpg([(sref, nn, -1)], encode)
 
-	def getBouquetNowNextEpg(self, criteria, encode, alter=False):
-		criteria.insert(0, BOUQUET_NOWNEXT_FIELDS)
+	def getBouquetNowNextEpg(self, criteria, encode, alter=False, full=False):
+		if full:
+			criteria.insert(0, BOUQUET_NOWNEXT_FIELDS)
+		else:
+			criteria.insert(0, BOUQUET_FIELDS)
 		self.doencode = encode
 		self.doalter = alter
 		return self._instance.lookupEvent(criteria, self.convertEvent)
