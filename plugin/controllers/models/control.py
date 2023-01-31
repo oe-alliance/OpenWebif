@@ -62,6 +62,9 @@ def isPlayableForCur(ref):
 def zapInServiceList(service):
 	infobarinstance = InfoBar.instance
 	servicelist = infobarinstance.servicelist
+	if servicelist and hasattr(servicelist, "performZap"):
+		servicelist.performZap(service)
+		return
 	if config.usage.multibouquet.value:
 		rootstrings = (ROOTTV, ROOTRADIO)
 	else:

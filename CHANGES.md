@@ -1,5 +1,12 @@
+## Version 2.0.4
+* use new performZap function
+
 ## Version 2.0.3
 * add icam support for stream m3u
+* correction of epgbouquet api
+* remove hidden channels from epgnow/next api
+* fix save epgrefresh begin/end time
+* show history data in multiepg
 
 ## Version 2.0.2
 * add showIsPlayable parameter to epgnow, epgnext, epgnownext
