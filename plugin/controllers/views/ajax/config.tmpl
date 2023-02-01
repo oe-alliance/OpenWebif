@@ -4,7 +4,7 @@
 <td>
 	<select id="$config.path" onchange="saveConfig('$config.path', this.value, '$key');">
 		#for $choice in $config.data.choices
-			#if $config.data.current == $choice[0]
+			#if str($config.data.current) == str($choice[0])
 				<option value="$choice[0]" selected="true">$choice[1]</option>
 			#else
 				<option value="$choice[0]">$choice[1]</option>
