@@ -588,7 +588,7 @@ msgstr "Включить доступ из VPN"
 msgid "Enable filtering"
 msgstr "Применить фильтрацию"
 
-msgid "Enable/Disable Screenshot on key press or"
+msgid "Enable/Disable Screenshot on key press"
 msgstr "Включить/отключить скриншот по нажатию кнопки или"
 
 msgid "Enabled"

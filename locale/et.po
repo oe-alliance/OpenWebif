@@ -591,7 +591,7 @@ msgstr "Luba ligipääs VPN võrgust"
 msgid "Enable filtering"
 msgstr "Luba filtrid"
 
-msgid "Enable/Disable Screenshot on key press or"
+msgid "Enable/Disable Screenshot on key press"
 msgstr "Luba/keela ekraanipilt nupuvajutusel või"
 
 msgid "Enabled"

@@ -599,7 +599,7 @@ msgstr "Ativar acesso de VPNs"
 msgid "Enable filtering"
 msgstr "Ativar a filtragem"
 
-msgid "Enable/Disable Screenshot on key press or"
+msgid "Enable/Disable Screenshot on key press"
 msgstr ""
 
 msgid "Enabled"

@@ -424,7 +424,7 @@ tstrings = {
 	'er_delay_standby': _("Delay Standby"),
 	'er_interval_min': _("Interval (min.)"),
 	'er_interval_sec': _("Interval (sec.)"),
-	'er_afterevent': _("After event"),
+	'er_afterevent': _("Shutdown after refresh."),
 	'er_force': _("Force"),
 	'er_wakeup': _("Wakeup"),
 	'er_inherit_autotimer': _("Inherit AutoTimer"),
@@ -501,7 +501,7 @@ tstrings = {
 	'networkshares': _("Network Shares"),
 	'using': _("using"),
 	'prime_times': _("Primetimes"),
-	'titscreenshot': _("Enable/Disable Screenshot on key press or"),
+	'titscreenshot': _("Enable/Disable Screenshot on key press"),
 
 	'bookmarks': _("Bookmarks"),
 	'bookmark': _("Bookmark"),

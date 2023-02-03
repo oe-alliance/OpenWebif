@@ -595,7 +595,7 @@ msgstr "A VPN-ekről való hozzáférés engedélyezése"
 msgid "Enable filtering"
 msgstr "Szűrés engedélyezése"
 
-msgid "Enable/Disable Screenshot on key press or"
+msgid "Enable/Disable Screenshot on key press"
 msgstr "Képernyőkép engedélyezése/letiltása gomb megnyomásával"
 
 msgid "Enabled"

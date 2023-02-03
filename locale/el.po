@@ -600,7 +600,7 @@ msgstr "Ενεργοποίηση πρόσβασης από VPNs"
 msgid "Enable filtering"
 msgstr "Ενεργοποίηση Φίλτρων"
 
-msgid "Enable/Disable Screenshot on key press or"
+msgid "Enable/Disable Screenshot on key press"
 msgstr ""
 "Ενεργοποίηση/απενεργοποίηση στιγμιότυπο οθόνης στο πάτημα του πλήκτρου ή"
 

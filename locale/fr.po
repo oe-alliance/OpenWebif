@@ -592,7 +592,7 @@ msgstr "Activer l'accès depuis les VPNs"
 msgid "Enable filtering"
 msgstr "Activer le filtrage"
 
-msgid "Enable/Disable Screenshot on key press or"
+msgid "Enable/Disable Screenshot on key press"
 msgstr "Activer/Désactiver la capture d’écran en appuyant sur une touche ou"
 
 msgid "Enabled"

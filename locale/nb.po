@@ -595,7 +595,7 @@ msgstr "Aktiver tilgang fra VPN"
 msgid "Enable filtering"
 msgstr "Slå på filtrering"
 
-msgid "Enable/Disable Screenshot on key press or"
+msgid "Enable/Disable Screenshot on key press"
 msgstr "Vis/Fjern skjermbilde ved trykk eller"
 
 msgid "Enabled"

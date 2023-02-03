@@ -584,7 +584,7 @@ msgstr "启用VPN接入"
 msgid "Enable filtering"
 msgstr "启用筛选"
 
-msgid "Enable/Disable Screenshot on key press or"
+msgid "Enable/Disable Screenshot on key press"
 msgstr "启用/禁用键或"
 
 msgid "Enabled"

@@ -780,7 +780,7 @@ msgid "Enable filtering"
 msgstr "Įjungti filtravimą"
 
 #: ../plugin/controllers/i18n.py:503
-msgid "Enable/Disable Screenshot on key press or"
+msgid "Enable/Disable Screenshot on key press"
 msgstr "Įjungti/išjungti ekrano nuotrauką, paspaudus mygtuką, arba"
 
 #: ../plugin/controllers/i18n.py:132 ../plugin/controllers/i18n.py:301

@@ -586,7 +586,7 @@ msgstr "Povolit přístup z VPN"
 msgid "Enable filtering"
 msgstr "Povolit filtrování"
 
-msgid "Enable/Disable Screenshot on key press or"
+msgid "Enable/Disable Screenshot on key press"
 msgstr "Povolit/zakázat snímek obrazovky při stisku tlačítka nebo"
 
 msgid "Enabled"

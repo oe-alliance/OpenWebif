@@ -583,7 +583,7 @@ msgstr "Salli pääsy VPN-tunnelista"
 msgid "Enable filtering"
 msgstr "Suodata"
 
-msgid "Enable/Disable Screenshot on key press or"
+msgid "Enable/Disable Screenshot on key press"
 msgstr "Salli/Poista kuvankaappaus näppäimellä tai"
 
 msgid "Enabled"

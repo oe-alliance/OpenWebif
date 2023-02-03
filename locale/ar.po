@@ -594,7 +594,7 @@ msgstr "تمكين الدخول من الشبكة الخاصة"
 msgid "Enable filtering"
 msgstr "تفعيل الفلاتر"
 
-msgid "Enable/Disable Screenshot on key press or"
+msgid "Enable/Disable Screenshot on key press"
 msgstr "تمكين/تعطيل تصوير الشاشة على أضغط مفتاح أو"
 
 msgid "Enabled"

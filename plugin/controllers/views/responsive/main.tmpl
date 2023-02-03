@@ -287,13 +287,13 @@
 										</tr>
 										<tr>
 											<td><!-- TODO: i10n -->
-												<span style="cursor:pointer;" title="Enable/Disable Screenshot on key press or $tstrings['grabscreenshot']" onclick="load_maincontent('ajax/screenshot');return false;">$tstrings['grabscreenshot']</span>
+												<span style="cursor:pointer;" title="$tstrings['grabscreenshot']" onclick="load_maincontent('ajax/screenshot');return false;">$tstrings['grabscreenshot']</span>
 											</td>
 											<td>
 												<div class="switch">
 													<span class="m-r-10 font-12"></span>
 													<label>
-														<input type="checkbox" name="remotegrabscreen1" id="remotegrabscreen1" $isSettingEnabled('rcu_screenshot') class="remotegrabscreen">
+														<input type="checkbox" name="remotegrabscreen1" id="remotegrabscreen1" $isSettingEnabled('rcu_screenshot') class="remotegrabscreen" title="$tstrings['titscreenshot']">
 														<span class="lever switch--skinned"></span>
 													</label>
 												</div>

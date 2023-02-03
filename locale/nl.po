@@ -587,7 +587,7 @@ msgstr "Toegang voor VPN's inschakelen"
 msgid "Enable filtering"
 msgstr "Filters inschakelen"
 
-msgid "Enable/Disable Screenshot on key press or"
+msgid "Enable/Disable Screenshot on key press"
 msgstr "in- uitschakelen screenshot met knopdruk of"
 
 msgid "Enabled"
