@@ -258,7 +258,7 @@ class IpkgController(BaseController):
 
 	def Moredata(self, data):
 		if data != self.olddata or self.olddata is None and self.IsAlive:
-			data = data.encode("UTF-8")
+			data = data.decode("UTF-8")
 			self.ResultString += data
 
 	def ShowError(self, request, text):
