@@ -556,9 +556,9 @@ font-size:16px;font-weight:bold;opacity:0.3;
 
 @font-face {
 	font-family: 'fontello';
-	src: url('../fonts/fontello.woff2?37059278') format('woff2'),
-	url('../fonts/fontello.woff?37059278') format('woff'),
-	url('../fonts/fontello.ttf?37059278') format('truetype');
+	src: url('../fonts/fontello.woff2?92259964') format('woff2'),
+	url('../fonts/fontello.woff?92259964') format('woff'),
+	url('../fonts/fontello.ttf?92259964') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -681,6 +681,7 @@ font-size:16px;font-weight:bold;opacity:0.3;
 .fa-sort-numeric-asc:before { content: '\f162'; } /* '' */
 .fa-sort-numeric-desc:before { content: '\f163'; } /* '' */
 .fa-copy:before { content: '\f0c5'; } /* '' */
+.fa-download:before { content: '\e806'; } /* '' */
 
 .ui-icon-plus:after {content: '\e818';}
 .ui-icon-minus:after {content: '\e819';}
