@@ -280,6 +280,16 @@ def privSettingValues(prefix, top, result):
 def getSettings():
 	configkeyval = []
 	privSettingValues("config", config.saved_value, configkeyval)
+	configkeynames = [name[0] for name in configkeyval]
+	# add default values for some important settings
+	for name in ("recording.margin_before", "recording.margin_after", "recording.zap_margin_before", "recording.zap_margin_after"):
+		if name not in configkeynames:
+			try:
+				cnf = get_config_attribute("config.%s" % name, root_obj=config)
+				if cnf:
+					configkeyval.append(("%s" % name, cnf.default))
+			except AttributeError:
+				pass
 	return {
 		"result": True,
 		"settings": configkeyval
