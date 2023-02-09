@@ -598,5 +598,8 @@ tstrings = {
 	'device': _("Device"),
 	'free_space': _("Free space"),
 	'mount_point': _("Mount point"),
-	'folders': _("Folders")
+	'folders': _("Folders"),
+	'margin': _("Margin"),
+	'after': _("After"),
+	'before': _("Before")
 }

@@ -58,7 +58,14 @@ class AjaxController(BaseController):
 	def P_edittimer(self, request):
 		pipzap = getInfo()['timerpipzap']
 		allow_duplicate = getInfo()['allow_duplicate']
-		return {"allow_duplicate": allow_duplicate, "pipzap": pipzap}
+		margins = getInfo()['timermargins']
+		response = {"allow_duplicate": allow_duplicate, "pipzap": pipzap, "margins": margins}
+		if margins:
+			response["margin_before"] = config.recording.margin_before.value
+			response["margin_after"] = config.recording.margin_after.value
+			response["zap_margin_before"] = config.recording.zap_margin_before.value
+			response["zap_margin_after"] = config.recording.zap_margin_after.value
+		return response
 
 	def P_current(self, request):
 		return getCurrentFullInfo(self.session)

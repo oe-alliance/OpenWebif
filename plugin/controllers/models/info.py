@@ -551,6 +551,7 @@ def getInfo(session=None, need_fullinfo=False):
 
 	info["timerpipzap"] = False
 	info["allow_duplicate"] = False
+	info["timermargins"] = False
 
 	try:
 		timer = RecordTimerEntry(ServiceReference("1:0:1:0:0:0:0:0:0:0"), 0, 0, "", "", 0)
@@ -558,6 +559,8 @@ def getInfo(session=None, need_fullinfo=False):
 			info["timerpipzap"] = True
 		if hasattr(timer, "allow_duplicate"):
 			info["allow_duplicate"] = True
+		if hasattr(timer, "marginBefore"):
+			info["timermargins"] = True
 	except Exception as error:
 		print("[OpenWebif] -D- RecordTimerEntry check %s" % error)
 
