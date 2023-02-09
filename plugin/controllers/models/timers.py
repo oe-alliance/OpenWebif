@@ -255,7 +255,7 @@ def getTimers(session):
 	}
 
 
-def addTimer(session, serviceref, begin, end, name, description, disabled, justplay, afterevent, dirname, tags, repeated, recordingtype=None, vpsinfo=None, logentries=None, eit=0, always_zap=-1, pipzap=-1, allow_duplicate=1):
+def addTimer(session, serviceref, begin, end, name, description, disabled, justplay, afterevent, dirname, tags, repeated, recordingtype=None, vpsinfo=None, logentries=None, eit=0, always_zap=-1, pipzap=-1, allow_duplicate=1, marginBefore=-1, marginAfter=-1, hasEndTime=None):
 	rt = session.nav.RecordTimer
 
 	if not dirname:
@@ -334,6 +334,21 @@ def addTimer(session, serviceref, begin, end, name, description, disabled, justp
 				"scrambled": True,
 				}[recordingtype]
 
+		if getInfo()['timermargins']:
+			if marginBefore != -1:
+				timer.marginBefore = marginBefore
+				timer.eventBegin = timer.begin
+				timer.begin = timer.eventBegin - (marginBefore + 60)
+			if marginAfter != -1:
+				timer.marginAfter = marginAfter
+				timer.eventEnd = timer.end
+				timer.end = timer.eventEnd + (marginAfter + 60)
+			if hasEndTime is not None:
+				timer.hasEndTime = hasEndTime
+				if justplay and not hasEndTime:
+					timer.end = timer.begin
+					timer.eventEnd = timer.end
+
 	except Exception as e:
 		print(str(e))
 		return {
@@ -347,7 +362,7 @@ def addTimer(session, serviceref, begin, end, name, description, disabled, justp
 	}
 
 
-def addTimerByEventId(session, eventid, serviceref, justplay, dirname, tags, vpsinfo, always_zap, afterevent, pipzap, allow_duplicate, recordingtype):
+def addTimerByEventId(session, eventid, serviceref, justplay, dirname, tags, vpsinfo, always_zap, afterevent, pipzap, allow_duplicate, recordingtype, marginBefore, marginAfter, hasEndTime):
 	epg = EPG()
 	event = epg.getEventById(serviceref, eventid)
 	if event is None:
@@ -357,8 +372,18 @@ def addTimerByEventId(session, eventid, serviceref, justplay, dirname, tags, vps
 		}
 
 	(begin, end, name, description, eit) = parseEvent(event)
+	if getInfo()['timermargins']:
+		# remove the margins from parseEvent
+		begin = begin + (config.recording.margin_before.value * 60)
+		end = end - (config.recording.margin_after.value * 60)
+		if marginBefore == -1:
+			marginBefore = config.recording.zap_margin_before.value if justplay else config.recording.margin_before.value
+		if marginAfter == -1:
+			marginAfter = config.recording.zap_margin_after.value if justplay else config.recording.margin_after.value
+		if justplay and not hasEndTime:
+			end = begin
 
-	if justplay:
+	elif justplay:
 		begin += config.recording.margin_before.value * 60
 		end = begin + 1
 
@@ -381,15 +406,17 @@ def addTimerByEventId(session, eventid, serviceref, justplay, dirname, tags, vps
 		eit,
 		always_zap,
 		pipzap,
-		allow_duplicate
+		allow_duplicate,
+		marginBefore,
+		marginAfter,
+		hasEndTime
 	)
 
 
 # NEW editTimer function to prevent delete + add on change
 # !!! This new function must be tested !!!!
 # TODO: exception handling
-
-def editTimer(session, serviceref, begin, end, name, description, disabled, justplay, afterevent, dirname, tags, repeated, channelold, beginold, endold, recordingtype=None, vpsinfo=None, always_zap=-1, pipzap=-1, allow_duplicate=False):
+def editTimer(session, serviceref, begin, end, name, description, disabled, justplay, afterevent, dirname, tags, repeated, channelold, beginold, endold, recordingtype=None, vpsinfo=None, always_zap=-1, pipzap=-1, allow_duplicate=False, marginBefore=-1, marginAfter=-1, hasEndTime=None):
 	channelold_str = ":".join(str(channelold).split(":")[:11])
 	rt = session.nav.RecordTimer
 	for timer in rt.timer_list + rt.processed_timers:
@@ -438,6 +465,21 @@ def editTimer(session, serviceref, begin, end, name, description, disabled, just
 					"descrambled": True,
 					"scrambled": True,
 					}[recordingtype]
+
+			if getInfo()['timermargins']:
+				if marginBefore != -1:
+					timer.marginBefore = marginBefore
+					timer.eventBegin = timer.begin
+					timer.begin = timer.eventBegin - (marginBefore + 60)
+				if marginAfter != -1:
+					timer.marginAfter = marginAfter
+					timer.eventEnd = timer.end
+					timer.end = timer.eventEnd + (marginAfter + 60)
+				if hasEndTime is not None:
+					timer.hasEndTime = hasEndTime
+					if justplay and not hasEndTime:
+						timer.end = timer.begin
+						timer.eventEnd = timer.end
 
 			# TODO: multi tuner test
 			sanity = TimerSanityCheck(rt.timer_list, timer)

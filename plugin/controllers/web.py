@@ -1095,6 +1095,12 @@ class WebController(BaseController):
 			if recordingtype not in ("normal", "descrambled", "scrambled"):
 				recordingtype = None
 
+		marginBefore = int(getUrlArg(request, "marginbefore", "-1"))
+		marginAfter = int(getUrlArg(request, "marginafter", "-1"))
+		hasEndTime = getUrlArg(request, "hasendtime")
+		if hasEndTime:
+			hasEndTime = hasEndTime == "1"
+
 		# TODO: merge function addTimer+editTimer+addTimerByEventId in timers.py
 		if mode == 1:
 			return addTimerByEventId(
@@ -1109,7 +1115,10 @@ class WebController(BaseController):
 				afterevent,
 				pipzap,
 				allow_duplicate,
-				recordingtype
+				recordingtype,
+				marginBefore,
+				marginAfter,
+				hasEndTime
 			)
 		elif mode == 2:
 			try:
@@ -1147,7 +1156,10 @@ class WebController(BaseController):
 				self.vpsparams(request),
 				always_zap,
 				pipzap,
-				allow_duplicate
+				allow_duplicate,
+				marginBefore,
+				marginAfter,
+				hasEndTime
 			)
 		else:
 			return addTimer(
@@ -1169,7 +1181,10 @@ class WebController(BaseController):
 				eit,
 				always_zap,
 				pipzap,
-				allow_duplicate
+				allow_duplicate,
+				marginBefore,
+				marginAfter,
+				hasEndTime
 			)
 
 	def P_timeradd(self, request):

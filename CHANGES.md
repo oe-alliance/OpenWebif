@@ -1,3 +1,6 @@
+## Version 2.0.5
+* add margin parameter to timer api
+
 ## Version 2.0.4
 * use new performZap function
 
