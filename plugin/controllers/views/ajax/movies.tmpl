@@ -61,6 +61,7 @@
 						#else
 						<a target="_blank" href='web/ts.m3u?file=$quote($movie.filename)' title="$tstrings['stream'] $mname"><div><i class="fa fa-desktop"></i></div></a>
 						#end if
+						<a href='/file?action=download&file=$quote($movie.filename)' title="$tstrings['download'] $mname"><div><i class="fa fa-download"></i></div></a>
 						<br><br>
 						#set $w = $movie.lastseen
 						#if $w > 0
@@ -72,10 +73,10 @@
 						#end if
 						<br>
 						#set $eventname_escaped =  $movie.eventname.replace("'", r"\'").replace('"', r"\'")
-						<a href='/file?action=download&file=$quote($movie.filename)' title="$tstrings['download'] $mname"><div><i class="fa fa-save"></i></div></a>
 						<a href='#' onclick="editmovie('$quote($movie.serviceref)','$eventname_escaped', escape('$directory').replace('+','%2B'));" title="$tstrings['edit_recording']"><div><i class="fa fa-edit"></i></div></a>
 						<a href='#' onclick="deleteMovie('$quote($movie.serviceref)', '$count', '$eventname_escaped'); return false;" title="$tstrings['delete_recording']"><div><i class="fa fa-trash-o"></i></div></a>
-
+						<a href='#' onclick="movieaction('$quote($movie.serviceref)', '$count', '$eventname_escaped','copy'); return false;" title="$tstrings['copy_recording']"><div><i class="fa fa-copy"></i></div></a>
+						<a href='#' onclick="movieaction('$quote($movie.serviceref)', '$count', '$eventname_escaped','move'); return false;" title="$tstrings['move_recording']"><div><i class="fa fa-move"></i></div></a>
 						</div>
 				</div>
 				<div class="tm_text">
@@ -117,5 +118,49 @@
 });
 
 #end if
+
+function movieactioncallback(dirname, action, sRef, title, divid)
+{
+
+	// TODO : validate path
+
+	let questioncopy = "$tstrings['copy_recording_question']";
+	let questionmove = "$tstrings['move_recording_question']";
+
+	if(action == "copy") {
+		if (confirm(questioncopy + "\n" + title + "\nto\n" + name ) === true) {
+			webapi_execute_movie("/api/moviecopy?sRef=" + sRef + "&dirname=" + dirname,
+			);
+		}
+	}
+	if(action == "move") {
+		if (confirm(questionmove + "\n" + title + "\nto\n" + name ) === true) {
+			webapi_execute_movie("/api/moviemove?sRef=" + sRef + "&dirname=" + dirname,
+				function (state) {
+					if(state) 
+						\$('#' + divid).remove();
+				}
+			);
+		}
+	}
+}
+
+function movieaction(sRef, divid, title, action) {
+
+	if(action == "copy")
+	{
+		alert("not implemented yet");
+		return;
+	}
+
+	var w = 500;
+	var h = 400;
+	var buttons = {};
+	buttons[tstr_close] = function() { \$(this).dialog("close");};
+	buttons["OK"] = function() { \$(this).dialog("close"); movieactioncallback(selectedfolder, action, sRef, title, divid);};
+	dialogtitle = (action == "copy") ?  "Select target folder to copy" : "Select target folder to move";
+	load_dm_spinner("ajax/foldertree?showbookmarks=false",dialogtitle,w,h,buttons);
+
+}
 
 </script>

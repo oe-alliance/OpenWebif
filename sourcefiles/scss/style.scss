@@ -499,8 +499,8 @@ html, body
 
 .tm_row > div {display:table-cell;vertical-align:top;}
 .tm_text div {margin: 3px;}
-.m_buttons { width: 120px;}
-.m_buttons div {margin: 3px;}
+.m_buttons { width: 130px;}
+.m_buttons div {margin: 3px 1px 3px 1px;}
 .t_buttons { width: 20px;}
 .t_buttons div {margin: 5px;}
 
@@ -556,9 +556,9 @@ font-size:16px;font-weight:bold;opacity:0.3;
 
 @font-face {
 	font-family: 'fontello';
-	src: url('../fonts/fontello.woff2?92259964') format('woff2'),
-	url('../fonts/fontello.woff?92259964') format('woff'),
-	url('../fonts/fontello.ttf?92259964') format('truetype');
+	src: url('../fonts/fontello.woff2?80587649') format('woff2'),
+	url('../fonts/fontello.woff?80587649') format('woff'),
+	url('../fonts/fontello.ttf?80587649') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -681,7 +681,7 @@ font-size:16px;font-weight:bold;opacity:0.3;
 .fa-sort-numeric-asc:before { content: '\f162'; } /* '' */
 .fa-sort-numeric-desc:before { content: '\f163'; } /* '' */
 .fa-copy:before { content: '\f0c5'; } /* '' */
-.fa-download:before { content: '\e806'; } /* '' */
+.fa-download:before { content: '\f806'; } /* '' */
 
 .ui-icon-plus:after {content: '\e818';}
 .ui-icon-minus:after {content: '\e819';}

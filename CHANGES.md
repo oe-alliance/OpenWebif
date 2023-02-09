@@ -1,5 +1,6 @@
 ## Version 2.0.5
 * add margin parameter to timer api
+* add move/copy recording
 
 ## Version 2.0.4
 * use new performZap function
