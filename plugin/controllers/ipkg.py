@@ -116,7 +116,7 @@ class IpkgController(BaseController):
 					if package in map:
 						v = map[package][0]
 						map[package][3] = v
-						map[package][2] = "1"
+						map[package][2] = installed
 						map[package][0] = version
 					else:
 						map.update({package: [version, description.strip(), installed, "0", section]})
