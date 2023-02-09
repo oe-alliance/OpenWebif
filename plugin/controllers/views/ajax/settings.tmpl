@@ -207,11 +207,12 @@
 	</div>
 </div>
 <script type="text/javascript">
-var str_db = "$tstrings['delete_bookmark']";
-var str_upl = "$tstrings['upload_package']";
-var str_rmp = "$tstrings['remove_package']";
-var str_up = "$tstrings['update_package']";
-var str_ip = "$tstrings['install_package']";
+let str_db = "$tstrings['delete_bookmark']";
+let str_upl = "$tstrings['upload_package']";
+let str_rmp = "$tstrings['remove_package']";
+let str_up = "$tstrings['update_package']";
+let str_ip = "$tstrings['install_package']";
+let str_seldir = "$tstrings['select_directory']";
 #if $showallpackages
 var reqfilter = '';
 #else
@@ -248,7 +249,7 @@ function open_file_dialog(callback) {
 	var buttons = {};
 	buttons[tstr_close] = function() { $(this).dialog("close");};
 	buttons["OK"] = function() { $(this).dialog("close"); callback(selectedfolder);};
-	load_dm_spinner("ajax/foldertree?showbookmarks=false","Select Folder",w,h,buttons);
+	load_dm_spinner("ajax/foldertree?showbookmarks=false",str_seldir,w,h,buttons);
 }
 
 function setBookmark(name)

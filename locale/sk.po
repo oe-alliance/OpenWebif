@@ -4,11 +4,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenWebif\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-10 09:36+0000\n"
+"POT-Creation-Date: 2023-02-09 20:12+0100\n"
 "PO-Revision-Date: 2022-09-17 21:03+0000\n"
 "Last-Translator: Kiki Mora <kikimora2k13@gmail.com>\n"
-"Language-Team: Slovak <https://hosted.weblate.org/projects/"
-"e2openplugin-openwebif/e2openplugin-openwebif/sk/>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/e2openplugin-openwebif/e2openplugin-openwebif/sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,458 +15,645 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Weblate 4.14.1\n"
 
+#: ../plugin/controllers/models/timers.py:66
 #, python-format
 msgid "%02d.%02d."
 msgstr "%02d.%02d."
 
+#: ../plugin/controllers/models/timers.py:68
 #, python-format
 msgid "%02d.%02d.%d"
 msgstr "%02d.%02d.%d"
 
+#: ../plugin/controllers/models/movies.py:59
+#: ../plugin/controllers/models/timers.py:70
 #, python-format
 msgid "%02d:%02d"
 msgstr "%02d:%02d"
 
+#: ../plugin/controllers/models/epg.py:291
+#: ../plugin/controllers/models/services.py:168
+#: ../plugin/controllers/models/services.py:903
+#: ../plugin/controllers/models/services.py:959
 msgid "%d.%m.%Y"
 msgstr "%d.%m.%Y"
 
+#: ../plugin/controllers/models/timers.py:193
+#: ../plugin/controllers/models/timers.py:194
+#: ../plugin/controllers/models/timers.py:298
+#: ../plugin/controllers/models/timers.py:299
+#: ../plugin/controllers/models/timers.py:512
+#: ../plugin/controllers/models/timers.py:513
 msgid "%d.%m.%Y %H:%M"
 msgstr "%d.%m.%Y %H:%M"
 
+#: ../plugin/controllers/models/movies.py:55
+#: ../plugin/controllers/models/timers.py:64
 #, python-format
 msgid "%s %02d.%02d."
 msgstr "%s %02d.%02d."
 
+#: ../plugin/controllers/models/movies.py:57
 #, python-format
 msgid "%s %02d.%02d.%d"
 msgstr "%s %02d.%02d.%d"
 
+#: ../plugin/controllers/BouquetEditor.py:535
 #, python-format
 msgid "%s %s is locked."
 msgstr "%s %s je zamknutý."
 
+#: ../plugin/controllers/i18n.py:136
 #, python-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
+#: ../plugin/controllers/ajax.py:280
 #, python-format
 msgid "%s Style"
 msgstr "%s Style"
 
+#: ../plugin/controllers/models/info.py:290
+#: ../plugin/controllers/models/info.py:414
 #, python-format
 msgid "%s free / %s total"
 msgstr "%s voľné / %s celkom"
 
+#: ../plugin/controllers/i18n.py:237
 msgid "(Press 'shift' and click to 'hold')"
 msgstr "(dlhé pridržanie shift + klik)"
 
+#: ../plugin/controllers/i18n.py:401
 msgid "(in minutes)"
 msgstr "(v minútach)"
 
+#: ../sourcefiles/node_modules/iconv-lite/.idea/codeStyles/Project.xml
+msgid "100"
+msgstr ""
+
+#: ../sourcefiles/node_modules/iconv-lite/.idea/codeStyles/Project.xml
+msgid "4"
+msgstr ""
+
+#: ../plugin/controllers/models/config.py:35
+msgid "<Current movie list location>"
+msgstr ""
+
+#: ../plugin/controllers/models/config.py:34
+#, fuzzy
+msgid "<Default movie location>"
+msgstr "Použiť vlastné umiestnenie"
+
+#: ../plugin/controllers/models/config.py:36
+#, fuzzy
+msgid "<Last timer location>"
+msgstr "Použiť vlastné umiestnenie"
+
+#: ../plugin/controllers/i18n.py:468
 msgid "A filename is required"
 msgstr "Prosím, zadajte názov súboru"
 
+#: ../plugin/controllers/i18n.py:526
 msgid "A value is required"
 msgstr "Hodnota požadovaná"
 
+#: ../plugin/controllers/i18n.py:80
 msgid "AGC"
 msgstr "AGC"
 
+#: ../plugin/controllers/i18n.py:75
 msgid "About"
 msgstr "Informácie"
 
+#: ../plugin/controllers/i18n.py:303
 msgid "Add"
 msgstr "Pridať"
 
+#: ../plugin/controllers/i18n.py:414
 msgid "Add  AutoTimer  to tags"
 msgstr "Pridať autočasovač k štítkom"
 
+#: ../plugin/controllers/i18n.py:415
 msgid "Add AutoTimer name to tags"
 msgstr "Pridať názov do označení"
 
+#: ../plugin/controllers/i18n.py:454
 msgid "Add Bouquet"
 msgstr "Pridať prehľad"
 
+#: ../plugin/controllers/i18n.py:457
 msgid "Add IPTV/URL"
 msgstr "Pridať IPTV/URL"
 
+#: ../plugin/controllers/i18n.py:458
 msgid "Add Marker"
 msgstr "Pridať značku"
 
+#: ../plugin/controllers/i18n.py:459
 msgid "Add Spacer"
 msgstr "Pridať oddeľovač"
 
+#: ../plugin/controllers/i18n.py:76
 msgid "Add a timer"
 msgstr "Pridať časovač"
 
+#: ../plugin/controllers/i18n.py:78
 msgid "Add a zap timer"
 msgstr "Pridať časovač prepnutia"
 
+#: ../plugin/controllers/i18n.py:77
 msgid "Add an AutoTimer"
 msgstr "Pridať automatický časovač"
 
+#: ../plugin/controllers/i18n.py:451
 msgid "Add channel(s) as alternate"
 msgstr "Pridať stanicu(e) ako alternatívu"
 
+#: ../plugin/controllers/i18n.py:394
 msgid "Add filters"
 msgstr "Pridať filtre"
 
+#: ../plugin/controllers/i18n.py:450
 msgid "Add selection to bouquet"
 msgstr "Pridať stanicu(e) do prehľadu"
 
+#: ../plugin/setup.xml
 msgid "Add service name to stream information"
 msgstr "Pridať názov služby do informácie o streame"
 
+#: ../plugin/controllers/i18n.py:411
 msgid "Add similar on conflict"
 msgstr "Pri konflikte pridať rovnaké"
 
+#: ../plugin/controllers/i18n.py:367
 msgid "Add tags to recordings"
 msgstr "Pridať značky k nahrávkam"
 
+#: ../plugin/controllers/BouquetEditor.py:461
 #, python-format
 msgid "Added %s to alternative service %s."
 msgstr "%s pridaná k alternatívam stanice %s."
 
-msgid "Adjust recording time to real event time"
-msgstr "Prispôsobiť čas nahrávania skutočnému času udalosti"
+#: ../plugin/controllers/i18n.py:607
+#, fuzzy
+msgid "After"
+msgstr "Po udalosti"
 
+#: ../plugin/controllers/i18n.py:79
 msgid "After event"
 msgstr "Po udalosti"
 
+#: ../plugin/controllers/i18n.py:81 ../plugin/controllers/i18n.py:419
 msgid "All"
 msgstr "Všetky"
 
+#: ../plugin/controllers/i18n.py:82
 msgid "All Channels"
 msgstr "Všetky stanice"
 
-msgid ""
-"All Files of this Software are open source software; you can redistribute it "
-"and/or modify it under the terms of the GNU General Public License version 3 "
-"as published by the Free Software Foundation."
-msgstr ""
-"Všetky súbory v tomto softvéri sú open source; môžete ho šíriť a/alebo "
-"upravovať podľa podmienok GNU General Public License verzie 3 v znení "
-"publikovanom Free Software Foundation."
+#: ../plugin/controllers/i18n.py:300
+msgid "All Files of this Software are open source software; you can redistribute it and/or modify it under the terms of the GNU General Public License version 3 as published by the Free Software Foundation."
+msgstr "Všetky súbory v tomto softvéri sú open source; môžete ho šíriť a/alebo upravovať podľa podmienok GNU General Public License verzie 3 v znení publikovanom Free Software Foundation."
 
+#: ../plugin/controllers/BouquetEditor.py:497
 msgid "All alternative services deleted."
 msgstr "Všetky alternatívne stanice odstránené."
 
+#: ../plugin/setup.xml
 msgid "Allow IPK Upload"
 msgstr "Povoliť nahratie IPK"
 
+#: ../plugin/controllers/i18n.py:571
 msgid "Allow duplicates"
 msgstr "Umožniť duplicity"
 
+#: ../plugin/controllers/BouquetEditor.py:447
 #, python-format
 msgid "Alternative %s created failed."
 msgstr "Vytváranie alternatívy %s zlyhalo."
 
+#: ../plugin/controllers/i18n.py:436
 msgid "Always"
 msgstr "Vždy"
 
+#: ../plugin/controllers/models/message.py:55
 msgid "Answer is NO!"
 msgstr "Odpoveď je NIE!"
 
+#: ../plugin/controllers/models/message.py:55
 msgid "Answer is YES!"
 msgstr "Odpoveď je ÁNO!"
 
+#: ../plugin/controllers/i18n.py:597
 msgid "Any"
 msgstr "Všetky"
 
+#: ../plugin/controllers/i18n.py:398
 msgid "Any day"
 msgstr "Kedykoľvek"
 
+#: ../plugin/controllers/i18n.py:360
 msgid "Any service/recording"
 msgstr "Akákoľvek stanica/nahrávanie"
 
+#: ../plugin/controllers/i18n.py:65
 msgid "April"
 msgstr "Apríl"
 
+#: ../plugin/controllers/i18n.py:115
+#, fuzzy
+msgid "Are you sure you want to copy this recording?"
+msgstr "Naozaj chcete zmazať nahrávku?"
+
+#: ../plugin/controllers/i18n.py:462
 msgid "Are you sure you want to delete the selected bouquet?"
 msgstr "Naozaj chcete odstrániť prehľad?"
 
+#: ../plugin/controllers/i18n.py:461
 msgid "Are you sure you want to delete the selected item(s)?"
 msgstr "Naozaj chcete odstrániť vybrané položky?"
 
+#: ../plugin/controllers/i18n.py:389
 msgid "Are you sure you want to delete this AutoTimer?"
 msgstr "Naozaj chcete vymazať časovač?"
 
+#: ../plugin/controllers/i18n.py:113
 msgid "Are you sure you want to delete this recording?"
 msgstr "Naozaj chcete zmazať nahrávku?"
 
+#: ../plugin/controllers/i18n.py:119
 msgid "Are you sure you want to delete this timer?"
 msgstr "Naozaj chcete vymazať časovač?"
 
+#: ../plugin/controllers/i18n.py:117
+#, fuzzy
+msgid "Are you sure you want to move this recording?"
+msgstr "Naozaj chcete premenovať nahrávku?"
+
+#: ../plugin/controllers/i18n.py:216
 msgid "Are you sure you want to rename this recording?"
 msgstr "Naozaj chcete premenovať nahrávku?"
 
+#: ../plugin/controllers/i18n.py:469
 msgid "Are you sure you want to restore from file?"
 msgstr "Naozaj chcete obnoviť zo súboru?"
 
+#: ../plugin/controllers/i18n.py:167
 msgid "Are you sure you want to start recording instantly?"
 msgstr "Naozaj chcete spustiť okamžité nahrávanie?"
 
+#: ../plugin/controllers/i18n.py:440
 msgid "Ask, default No"
 msgstr "Spýtať sa, predvolene nie"
 
+#: ../plugin/controllers/i18n.py:439
 msgid "Ask, default Yes"
 msgstr "Spýtať sa, predvolene áno"
 
+#: ../plugin/controllers/i18n.py:83
 msgid "Audio Encoding"
 msgstr "Kódovanie zvuku"
 
+#: ../plugin/controllers/i18n.py:475
 msgid "Audio PID (APID)"
 msgstr "Zvukový PID (APID)"
 
+#: ../plugin/controllers/i18n.py:84
 msgid "Audio Track"
 msgstr "Zvuková stopa"
 
+#: ../plugin/controllers/i18n.py:69
 msgid "August"
 msgstr "August"
 
+#: ../plugin/controllers/i18n.py:85
 msgid "Authors"
 msgstr "Autori"
 
+#: ../plugin/controllers/i18n.py:86 ../plugin/controllers/i18n.py:418
 msgid "Auto"
 msgstr "Auto"
 
+#: ../plugin/controllers/i18n.py:404
 msgid "AutoPoll"
 msgstr "AutoPoll"
 
+#: ../plugin/controllers/i18n.py:306
 msgid "AutoTimer Edit"
 msgstr "Upraviť autočasovač"
 
+#: ../plugin/controllers/i18n.py:403
 msgid "AutoTimer Settings"
 msgstr "Nastavenia automatického časovača"
 
+#: ../plugin/controllers/base.py:342 ../plugin/controllers/i18n.py:305
 msgid "AutoTimers"
 msgstr "Zoznam autočasovačov"
 
+#: ../plugin/controllers/i18n.py:264
 msgid "Autotimer Preview"
 msgstr "Náhľad automatického časovača"
 
+#: ../plugin/controllers/i18n.py:89
 msgid "BER"
 msgstr "BER"
 
+#: ../plugin/controllers/i18n.py:87
 msgid "Back"
 msgstr "Späť"
 
+#: ../plugin/controllers/i18n.py:438
 msgid "Background only"
 msgstr "Iba pozadie"
 
+#: ../plugin/controllers/i18n.py:608
+msgid "Before"
+msgstr ""
+
+#: ../plugin/controllers/i18n.py:88 ../plugin/controllers/i18n.py:426
 msgid "Begin"
 msgstr "Začať"
 
+#: ../plugin/controllers/i18n.py:347
 msgid "Begin of \"After event\" timespan"
 msgstr "Začiatok časového úseku \"po relácii\""
 
+#: ../plugin/controllers/i18n.py:332
 msgid "Beginning of timespan"
 msgstr "Začiatok časového rozpätia"
 
+#: ../plugin/controllers/i18n.py:271
 msgid "Bit Error Rate (BER)"
 msgstr "Bitová chybovosť (BER)"
 
+#: ../plugin/controllers/i18n.py:511
 msgid "Bookmark"
 msgstr "Záložka"
 
+#: ../plugin/controllers/i18n.py:510
 msgid "Bookmarks"
 msgstr "Záložky"
 
+#: ../plugin/controllers/BouquetEditor.py:142
 #, python-format
 msgid "Bouquet %s already exists."
 msgstr "Prehľad %s už existuje."
 
+#: ../plugin/controllers/BouquetEditor.py:228
 #, python-format
 msgid "Bouquet %s can not be moved."
 msgstr "Prehľad %s nemôže byť presunutý."
 
+#: ../plugin/controllers/BouquetEditor.py:137
 #, python-format
 msgid "Bouquet %s created."
 msgstr "Prehľad %s vytvorený."
 
+#: ../plugin/controllers/BouquetEditor.py:202
 #, python-format
 msgid "Bouquet %s deleted."
 msgstr "Prehľad %s zmazaný."
 
+#: ../plugin/controllers/BouquetEditor.py:533
 #, python-format
 msgid "Bouquet %s is locked."
 msgstr "Prehľad %s je zamknutý."
 
+#: ../plugin/controllers/BouquetEditor.py:541
 #, python-format
 msgid "Bouquet %s is unlocked."
 msgstr "Prehľad %s nie je zamknutý."
 
+#: ../plugin/controllers/BouquetEditor.py:225
 #, python-format
 msgid "Bouquet %s moved."
 msgstr "Prehľad %s presunutý."
 
+#: ../plugin/controllers/BouquetEditor.py:197
 #, python-format
 msgid "Bouquet %s removed failed, sevicerefence or mutable list is not valid."
 msgstr "Odstránenie prehľadu %s zlyhalo, zoznam referencií je neplatný."
 
+#: ../plugin/controllers/BouquetEditor.py:195
 #, python-format
 msgid "Bouquet %s removed failed."
 msgstr "Odstránenie prehľadu %s zlyhalo."
 
+#: ../plugin/controllers/i18n.py:236
 msgid "Bouquet Editor"
 msgstr "Editor prehľadu"
 
+#: ../plugin/controllers/i18n.py:464
 msgid "Bouquet name"
 msgstr "Názov prehľadu"
 
+#: ../plugin/controllers/BouquetEditor.py:388
 msgid "Bouquet renamed successfully."
 msgstr "Prehľad úspešne premenovaný."
 
+#: ../plugin/controllers/BouquetEditor.py:637
 msgid "Bouquet-settings were restored successfully"
 msgstr "Obnovenie nastavení prehľadu bolo úspešné"
 
+#: ../plugin/controllers/base.py:344
 msgid "BouquetEditor"
 msgstr "Editor prehľadov"
 
+#: ../plugin/controllers/BouquetEditor.py:144
+#: ../plugin/controllers/BouquetEditor.py:449
 msgid "Bouquetlist is not editable!"
 msgstr "Zoznam prehľadov sa nedá upraviť!"
 
+#: ../plugin/controllers/i18n.py:90
 msgid "Bouquets"
 msgstr "Prehľady"
 
+#: ../plugin/controllers/i18n.py:92
 msgid "Box"
 msgstr "Prijímač"
 
+#: ../plugin/controllers/i18n.py:93
 msgid "Box Control"
 msgstr "Ovládanie prijímača"
 
+#: ../plugin/controllers/i18n.py:91
 msgid "Box Info"
 msgstr "O prijímači"
 
+#: ../plugin/controllers/i18n.py:94
 msgid "Box uptime"
 msgstr "Doba prevádzky"
 
+#: ../plugin/controllers/i18n.py:95
 msgid "Brand"
 msgstr "Značka"
 
+#: ../plugin/controllers/i18n.py:593
 msgid "Build"
 msgstr "Zostava"
 
+#: ../plugin/controllers/models/services.py:320
 msgid "Cable"
 msgstr "Káblové"
 
+#: ../plugin/controllers/i18n.py:502
 msgid "Calendar Week"
 msgstr "Týždeň"
 
+#: ../plugin/controllers/i18n.py:96
 msgid "Cancel"
 msgstr "Zrušiť"
 
+#: ../plugin/controllers/i18n.py:524
 msgid "Cancelled"
 msgstr "Zrušené"
 
+#: ../plugin/controllers/i18n.py:97
 msgid "Capacity"
 msgstr "Kapacita"
 
+#: ../plugin/controllers/i18n.py:154
 msgid "Capture screenshot"
 msgstr "Snímka obrazovky"
 
+#: ../plugin/controllers/i18n.py:98
 msgid "Channel"
 msgstr "Stanica"
 
+#: ../plugin/controllers/i18n.py:99 ../plugin/controllers/i18n.py:364
 msgid "Channels"
 msgstr "Stanice"
 
-msgid "Character encoding for EPG data"
-msgstr "Kódovanie znakov pre dáta EPG"
-
+#: ../plugin/controllers/i18n.py:100 ../plugin/controllers/models/info.py:328
 msgid "Chipset"
 msgstr "Čipset"
 
+#: ../plugin/controllers/i18n.py:101
 msgid "Cleanup Timers"
 msgstr "Vymazať časovač"
 
+#: ../plugin/controllers/i18n.py:102
 msgid "Close"
 msgstr "Zatvoriť"
 
+#: ../plugin/controllers/i18n.py:527
 msgid "Common Settings"
 msgstr "Spoločné nastavenia"
 
+#: ../plugin/controllers/i18n.py:574
 msgid "Config"
 msgstr "Konfigurácia"
 
+#: ../plugin/controllers/models/timers.py:304
 #, python-format
 msgid "Conflicting Timer(s) detected! %s"
 msgstr "Nájdené konfliktné časovače! %s"
 
+#: ../plugin/controllers/i18n.py:103
 msgid "Contributors"
 msgstr "Prispievatelia"
 
+#: ../plugin/controllers/i18n.py:104
 msgid "Control"
 msgstr "Ovládanie"
 
+#: ../plugin/controllers/i18n.py:114
+#, fuzzy
+msgid "Copy Recording"
+msgstr "Nahrávanie"
+
+#: ../plugin/controllers/models/timers.py:356
 #, python-format
 msgid "Could not add timer '%s'!"
 msgstr "Časovač '%s' sa nepodarilo pridať!"
 
+#: ../plugin/controllers/models/timers.py:524
 #, python-format
 msgid "Could not find timer '%s' with given start and end time!"
 msgstr "Nepodarilo sa nájsť časovač '%s' so zadaným časom začatia a ukončenia!"
 
+#: ../plugin/controllers/i18n.py:449
 msgid "Create bouquet from selection"
 msgstr "Pridať poskytovateľa ako nový prehľad"
 
+#: ../plugin/controllers/i18n.py:105
 msgid "Current"
 msgstr "Teraz"
 
+#: ../plugin/controllers/i18n.py:106
 msgid "Current Event"
 msgstr "Aktuálna relácia"
 
+#: ../plugin/controllers/i18n.py:588
 msgid "Currently recording"
 msgstr "Aktuálne nahrávanie"
 
+#: ../plugin/controllers/i18n.py:199 ../plugin/setup.xml
 msgid "Custom box name"
 msgstr "Vlastný názov prijímača"
 
+#: ../plugin/controllers/i18n.py:337
 msgid "Custom offset"
 msgstr "Vlastná rezerva"
 
+#: ../plugin/controllers/i18n.py:121 ../plugin/controllers/models/info.py:61
+#: ../plugin/controllers/models/info.py:80
 msgid "DHCP"
 msgstr "DHCP"
 
+#: ../plugin/controllers/i18n.py:108
 msgid "Date"
 msgstr "Dátum"
 
+#: ../plugin/controllers/i18n.py:562
 msgid "Date (newest)"
 msgstr "Dátum (najnovší)"
 
+#: ../plugin/controllers/i18n.py:561
 msgid "Date (oldest)"
 msgstr "Dátum (najstarší)"
 
+#: ../plugin/setup.xml
 msgid "Debug - Display Tracebacks in browser"
 msgstr "Ladenie - Zobrazenie Tracebacks v prehliadači"
 
+#: ../plugin/controllers/i18n.py:73
 msgid "December"
 msgstr "December"
 
+#: ../plugin/controllers/i18n.py:109
 msgid "Deep Standby"
 msgstr "Hlboký spánok"
 
+#: ../plugin/controllers/i18n.py:110
 msgid "Default"
 msgstr "Predvolené"
 
+#: ../plugin/controllers/i18n.py:428
 msgid "Delay Standby"
 msgstr "Oneskorenie pohotovostného režimu"
 
+#: ../plugin/controllers/i18n.py:111 ../plugin/controllers/i18n.py:383
 msgid "Delete"
 msgstr "Odstrániť"
 
+#: ../plugin/controllers/i18n.py:513
 msgid "Delete Bookmark"
 msgstr "Zmazať záložku"
 
+#: ../plugin/controllers/i18n.py:456
 msgid "Delete Bouquet"
 msgstr "Odstrániť prehľad"
 
+#: ../plugin/controllers/i18n.py:112
 msgid "Delete Recording"
 msgstr "Zmazať nahrávku"
 
+#: ../plugin/controllers/i18n.py:118
 msgid "Delete Timer"
 msgstr "Zmazať časovač"
 
+#: ../plugin/controllers/models/movies.py:337
 msgid ""
 "Delete failed, because there is no movie trash !\n"
 "Disable movie trash in configuration to delete this item"
@@ -475,1679 +661,2230 @@ msgstr ""
 "Zmazanie neuspešné, pretože neexistuje žiadny kôš !\n"
 "Ak chcete túto položku vymazať, vypnite kôš v konfigurácii"
 
+#: ../plugin/controllers/i18n.py:525
 msgid "Deleted"
 msgstr "Zmazané"
 
+#: ../plugin/controllers/i18n.py:120
 msgid "Description"
 msgstr "Popis"
 
+#: ../plugin/controllers/i18n.py:602
 msgid "Device"
 msgstr "Zariadenie"
 
+#: ../plugin/controllers/i18n.py:136 ../plugin/controllers/i18n.py:382
 msgid "Disable"
 msgstr "Zakázať"
 
+#: ../plugin/controllers/i18n.py:122
 msgid "Disable Timer"
 msgstr "Vypnúť časovač"
 
+#: ../plugin/setup.xml
 msgid "Disable remote access for user root"
 msgstr "Zakázať prístup pre užívateľa root"
 
+#: ../plugin/controllers/i18n.py:410
 msgid "Disabled on conflict"
 msgstr "Pri konflikte vypnuté"
 
+#: ../plugin/controllers/i18n.py:498
 msgid "Display Mode"
 msgstr "Spôsob zobrazenia"
 
+#: ../plugin/controllers/i18n.py:496
 msgid "Display duration (s)"
 msgstr "Doba zobrazenia (s)"
 
+#: ../plugin/controllers/i18n.py:124
 msgid "Distro"
 msgstr "Distribúcia"
 
+#: ../plugin/controllers/i18n.py:125
 msgid "Dolby"
 msgstr "Dolby"
 
-msgid "Don't create timer when movie exists in database"
-msgstr "Nevytvárať časovač ak film existuje v databáze"
-
+#: ../plugin/controllers/i18n.py:126
 msgid "Done"
 msgstr "Hotovo"
 
+#: ../plugin/controllers/i18n.py:127
 msgid "Download"
 msgstr "Stiahnuť"
 
+#: ../plugin/controllers/i18n.py:128
 msgid "Download playlist for"
 msgstr "Stiahnuť Playlist pre"
 
+#: ../plugin/controllers/i18n.py:129
 msgid "Drivers"
 msgstr "Dátum ovládačov"
 
+#: ../plugin/controllers/i18n.py:130
 msgid "Duration"
 msgstr "Trvanie"
 
+#: ../plugin/controllers/models/info.py:642
 msgid "E"
 msgstr "V"
 
+#: ../plugin/controllers/i18n.py:139
 msgid "EPG"
 msgstr "EPG"
 
+#: ../plugin/controllers/i18n.py:309
 msgid "EPG encoding"
 msgstr "Znaková sada EPG"
 
+#: ../plugin/controllers/base.py:348
 msgid "EPGRefresh"
 msgstr "EPG aktualizácia"
 
+#: ../plugin/controllers/models/timers.py:980
 msgid "ERROR: Cannot set SleepTimer while device is in Standby-Mode"
-msgstr ""
-"Chyba: Nie je možné nastaviť automatické vypnutie, keď je zariadenie v "
-"pohotovostnom režime"
+msgstr "Chyba: Nie je možné nastaviť automatické vypnutie, keď je zariadenie v pohotovostnom režime"
 
+#: ../plugin/controllers/i18n.py:381
 msgid "Edit"
 msgstr "Upraviť"
 
+#: ../plugin/controllers/i18n.py:586
 msgid "Edit Recording"
 msgstr "Upraviť nahrávku"
 
+#: ../plugin/controllers/i18n.py:131
 msgid "Edit Timer"
 msgstr "Upraviť časovač"
 
+#: ../plugin/controllers/i18n.py:420
 msgid "Editor"
 msgstr "Editor"
 
+#: ../plugin/controllers/i18n.py:135 ../plugin/controllers/i18n.py:136
 msgid "Enable"
 msgstr "Povoliť"
 
+#: ../plugin/setup.xml
 msgid "Enable Authentication for streaming"
 msgstr "Zapnúť overovanie pre streamovanie"
 
+#: ../plugin/setup.xml
 msgid "Enable HTTP Authentication"
 msgstr "Vyžadovať prihlásenie pre HTTP"
 
+#: ../plugin/setup.xml
 msgid "Enable HTTPS"
 msgstr "Povoliť HTTPS"
 
+#: ../plugin/setup.xml
 msgid "Enable HTTPS Authentication"
 msgstr "Vyžadovať prihlásenie pre HTTPS"
 
+#: ../plugin/controllers/i18n.py:425
 msgid "Enable Messages"
 msgstr "Povoliť správy"
 
+#: ../plugin/setup.xml
 msgid "Enable Parental Control"
 msgstr "Zapnúť rodičovskú kontrolu"
 
+#: ../plugin/controllers/i18n.py:132
 msgid "Enable Timer"
 msgstr "Zapnúť časovač"
 
+#: ../plugin/setup.xml
 msgid "Enable access from VPNs"
 msgstr "Povoliť prístup z VPN"
 
+#: ../plugin/controllers/i18n.py:371
 msgid "Enable filtering"
 msgstr "Povoliť filtrovanie"
 
+#: ../plugin/controllers/i18n.py:508
 msgid "Enable/Disable Screenshot on key press"
-msgstr ""
-"Zaškrtavacie políčko: Povoliť/Zakázať automatický snímok obrazovky po každom "
-"stlačení niektorého tlač. na DO&#13;Klik: Otvoriť okno s náhľadom pre "
-"snímanie obrazovky"
+msgstr "Zaškrtavacie políčko: Povoliť/Zakázať automatický snímok obrazovky po každom stlačení niektorého tlač. na DO&#13;Klik: Otvoriť okno s náhľadom pre snímanie obrazovky"
 
+#: ../plugin/controllers/i18n.py:137 ../plugin/controllers/i18n.py:307
+#: ../plugin/controllers/i18n.py:424
 msgid "Enabled"
 msgstr "Povolené"
 
+#: ../plugin/controllers/i18n.py:138
 msgid "Encrypted"
 msgstr "Kódované"
 
+#: ../plugin/controllers/i18n.py:134 ../plugin/controllers/i18n.py:427
 msgid "End"
 msgstr "Koniec"
 
+#: ../plugin/controllers/i18n.py:348
 msgid "End of \"After event\" timespan"
 msgstr "Koniec časového úseku \"po udalosti\""
 
+#: ../plugin/controllers/i18n.py:333
 msgid "End of timespan"
 msgstr "Koniec časového rozpätia"
 
+#: ../plugin/controllers/i18n.py:466
 msgid "Enter a name for the new bouquet"
 msgstr "Zadajte nový názov prehľadu"
 
+#: ../plugin/controllers/i18n.py:467
 msgid "Enter a name for the new marker"
 msgstr "Zadajte nový názov pre značku"
 
+#: ../plugin/controllers/i18n.py:392
 msgid "Enter a name for this AutoTimer"
 msgstr "Zadajte názov pre tento AutoTimer"
 
+#: ../plugin/controllers/i18n.py:514
 msgid "Enter path"
 msgstr "Zadajte cestu"
 
+#: ../plugin/controllers/i18n.py:585
 msgid "Enter text"
 msgstr "Zadajte text"
 
+#: ../plugin/controllers/i18n.py:393
 msgid "Enter the text to find in the EPG"
 msgstr "Zadajte text pre vyhľadanie v EPG"
 
+#: ../plugin/controllers/i18n.py:144
 msgid "Error"
 msgstr "Chyba"
 
+#: ../plugin/controllers/models/timers.py:1156
 msgid "Error parsing vps.xml"
 msgstr "Chyba pri analýze vps.xml"
 
+#: ../plugin/controllers/ipkg.py:303
 msgid "Error upload File"
 msgstr "Chyba pri odovzdávaní súboru"
 
-#, python-format
-msgid "Error while preparing backup file, %s does not exists."
-msgstr "Chyba pri príprave záložného súboru, %s neexistuje."
-
+#: ../plugin/controllers/BouquetEditor.py:582
 msgid "Error while preparing backup file."
 msgstr "Chyba pri príprave záložného súboru."
 
+#: ../plugin/controllers/AT.py:69 ../plugin/controllers/BQE.py:319
+#: ../plugin/controllers/ipkg.py:317
 msgid "Error writing File"
 msgstr "Chyba pri zápise súboru"
 
+#: ../plugin/controllers/BouquetEditor.py:644
 #, python-format
 msgid "Error, %s does not exists, restore is not possible..."
 msgstr "Chyba %s neexistuje, obnovenie nie je možné ..."
 
+#: ../plugin/controllers/BouquetEditor.py:639
 #, python-format
 msgid "Error, %s was not created with WebBouquetEditor..."
 msgstr "Chyba, %s nebol vytvorený web editorom prehľadov..."
 
+#: ../plugin/controllers/BouquetEditor.py:642
+#, python-format
+msgid "Error, extract files from backup '%s'"
+msgstr ""
+
+#: ../plugin/controllers/BouquetEditor.py:204
 #, python-format
 msgid "Error: Bouquet %s could not deleted, OSError."
 msgstr "Chyba: Prehľad %s sa nedá zmazať, OSChyba."
 
+#: ../plugin/controllers/i18n.py:487
 msgid "Event not found"
 msgstr "Relácia nebola nájdená"
 
+#: ../plugin/controllers/models/timers.py:371
 msgid "EventId not found"
 msgstr "Id relácie nenájdené"
 
+#: ../plugin/controllers/i18n.py:145
 msgid "Every"
 msgstr "Každú"
 
+#: ../plugin/controllers/i18n.py:373
 msgid "Exclude when"
 msgstr "Vylúčiť"
 
+#: ../plugin/controllers/i18n.py:346
 msgid "Execute \"After event\" during timespan"
 msgstr "Spustiť \"po udalosti\" počas časového úseku"
 
+#: ../plugin/controllers/i18n.py:556
 msgid "Export"
 msgstr "Exportovať"
 
+#: ../plugin/controllers/i18n.py:146
 msgid "Extras"
 msgstr "Extra"
 
+#: ../plugin/controllers/i18n.py:445
 msgid "Fake Recording"
 msgstr "Falošné nahrávanie"
 
+#: ../plugin/controllers/i18n.py:408
 msgid "Fastscan"
 msgstr "Fastscan"
 
+#: ../plugin/controllers/i18n.py:63
 msgid "February"
 msgstr "Február"
 
+#: ../plugin/controllers/i18n.py:147
+msgid "Find similar events"
+msgstr ""
+
+#: ../plugin/controllers/i18n.py:149
 msgid "Firmware version"
 msgstr "Verzia firmvéru"
 
+#: ../plugin/controllers/i18n.py:605
+#, fuzzy
+msgid "Folders"
+msgstr "Poskytovatelia"
+
+#: ../plugin/controllers/i18n.py:432
 msgid "Force"
 msgstr "Vynútiť"
 
+#: ../plugin/controllers/i18n.py:42
 msgid "Fr"
 msgstr "Pi"
 
+#: ../plugin/controllers/i18n.py:151
 msgid "Free"
 msgstr "Voľných"
 
+#: ../plugin/controllers/i18n.py:152
 msgid "Free Memory"
 msgstr "Voľná pamäť"
 
+#: ../plugin/controllers/i18n.py:603
 msgid "Free space"
 msgstr "Voľné miesto"
 
+#: ../plugin/controllers/i18n.py:51 ../plugin/controllers/models/movies.py:44
+#: ../plugin/controllers/models/timers.py:49
 msgid "Fri"
 msgstr "Pia"
 
+#: ../plugin/controllers/i18n.py:58
 msgid "Friday"
 msgstr "Piatok"
 
+#: ../plugin/controllers/i18n.py:335
 msgid "From date"
 msgstr "Nie po"
 
+#: ../plugin/controllers/i18n.py:150 ../plugin/controllers/models/info.py:333
 msgid "Front processor version"
 msgstr "Verzia frontprocesora"
 
+#: ../plugin/controllers/i18n.py:549
 msgid "Full remote"
 msgstr "Úplný ovládač"
 
+#: ../plugin/controllers/models/info.py:380
+#: ../plugin/controllers/models/info.py:386
+#: ../plugin/controllers/models/info.py:401
+#: ../plugin/controllers/models/info.py:404
+#: ../plugin/controllers/models/movies.py:238
+#: ../plugin/controllers/models/movies.py:677
 msgid "GB"
 msgstr "GB"
 
+#: ../plugin/controllers/i18n.py:155
 msgid "GUI version"
 msgstr "Verzia GUI"
 
+#: ../plugin/controllers/i18n.py:153
 msgid "Gateway"
 msgstr "Brána"
 
+#: ../plugin/controllers/BouquetEditor.py:445
 msgid "Get mutable list for new created alternative failed!"
 msgstr "Získanie premenlivého zoznamu pre novovytvorenú alternatívu zlyhalo!"
 
+#: ../plugin/controllers/BouquetEditor.py:139
 msgid "Get mutable list for new created bouquet failed!"
 msgstr "Získanie premenlivého zoznamu pre novovytvorený prehľad zlyhalo!"
 
+#: ../plugin/controllers/i18n.py:566
 msgid "HH:MM"
 msgstr "HH:MM"
 
+#: ../plugin/setup.xml
 msgid "HTTP port"
 msgstr "HTTP port"
 
+#: ../plugin/setup.xml
 msgid "HTTPS port"
 msgstr "HTTPS port"
 
+#: ../plugin/controllers/i18n.py:158
 msgid "Hard disk model"
 msgstr "Model pevného disku"
 
+#: ../plugin/controllers/i18n.py:599
 msgid "Hardware"
 msgstr "Hardvér"
 
+#: ../plugin/controllers/i18n.py:156
 msgid "Hide full remote"
 msgstr "Skryť úplný diaľkový ovládač"
 
+#: ../plugin/controllers/i18n.py:157
 msgid "High Resolution"
 msgstr "Vysoké rozlíšenie"
 
+#: ../plugin/controllers/i18n.py:598
 msgid "Hold to drag"
 msgstr "Podržaním potiahnite"
 
+#: ../plugin/controllers/i18n.py:159
 msgid "Hour"
 msgstr "Hodina"
 
+#: ../plugin/controllers/i18n.py:463
 msgid "IPTV / URL name"
 msgstr "IPTV / URL názov"
 
+#: ../plugin/controllers/i18n.py:160
 msgid "IPv4 address"
 msgstr "IPv4 adresa"
 
+#: ../plugin/controllers/i18n.py:163 ../plugin/controllers/models/info.py:145
 msgid "IPv4-only Python/Twisted"
 msgstr "Python/Twisted len IPv4"
 
+#: ../plugin/controllers/i18n.py:161 ../plugin/controllers/models/info.py:141
 msgid "IPv4-only kernel"
 msgstr "Jadro len IPv4"
 
+#: ../plugin/controllers/i18n.py:164
 msgid "IPv6 address(es)"
 msgstr "IPv6 adresa(y)"
 
+#: ../plugin/controllers/i18n.py:557
 msgid "Import"
 msgstr "Importovať"
 
+#: ../plugin/controllers/i18n.py:141
 msgid "Include description"
 msgstr "Zahrnúť popis"
 
+#: ../plugin/controllers/i18n.py:543
 msgid "Include extended description"
 msgstr "Zahrnúť rozšírený popis"
 
+#: ../plugin/controllers/i18n.py:542
 msgid "Include short description"
 msgstr "Zahrnúť krátky popis"
 
+#: ../plugin/controllers/i18n.py:372
 msgid "Include when"
 msgstr "Zahrnúť"
 
+#: ../plugin/controllers/models/timers.py:640
 msgid "Infinite Instant recording started"
 msgstr "Nekonečné okamžité nahrávanie začalo"
 
+#: ../plugin/controllers/i18n.py:165
 msgid "Info"
 msgstr "Informácie"
 
+#: ../plugin/controllers/i18n.py:594
 msgid "Information"
 msgstr "Informácie"
 
+#: ../plugin/controllers/i18n.py:434
 msgid "Inherit AutoTimer"
 msgstr "Prevziať autočasovač"
 
+#: ../plugin/controllers/i18n.py:534
 msgid "Install Package"
 msgstr "Nainštalovať balíček"
 
+#: ../plugin/controllers/i18n.py:536
 msgid "Installed"
 msgstr "Nainštalované"
 
+#: ../plugin/controllers/i18n.py:166
 msgid "Instant Record"
 msgstr "Okamžité nahrávanie"
 
+#: ../plugin/controllers/models/timers.py:631
 msgid "Instant record for current Event started"
 msgstr "Okamžitý záznam aktuálnej relácie začal"
 
+#: ../plugin/controllers/BouquetEditor.py:360
 msgid "Internal error!"
 msgstr "Vnútorná chyba!"
 
+#: ../plugin/controllers/i18n.py:600
 msgid "Internal flash memory"
 msgstr "Interná flash pamäť"
 
+#: ../plugin/controllers/i18n.py:405
 #, python-format
 msgid "Interval (in %s)"
 msgstr "Interval (v %s)"
 
+#: ../plugin/controllers/i18n.py:429
 msgid "Interval (min.)"
 msgstr "Interval (min.)"
 
+#: ../plugin/controllers/i18n.py:430
 msgid "Interval (sec.)"
 msgstr "Interval (sek.)"
 
+#: ../plugin/controllers/i18n.py:62
 msgid "January"
 msgstr "Január"
 
+#: ../plugin/controllers/i18n.py:168
 msgid "Javascript Libraries"
 msgstr "Knižnice JavaScript"
 
+#: ../plugin/controllers/i18n.py:68
 msgid "July"
 msgstr "Júl"
 
+#: ../plugin/controllers/i18n.py:67
 msgid "June"
 msgstr "Jún"
 
+#: ../plugin/controllers/i18n.py:169
 msgid "Just play"
 msgstr "Len prehrať"
 
+#: ../plugin/controllers/i18n.py:170
 msgid "Kernel"
 msgstr "Verzia jadra"
 
+#: ../plugin/controllers/i18n.py:171
 msgid "LCD"
 msgstr "LCD"
 
+#: ../plugin/controllers/base.py:311
 msgid "LCD4Linux Setup"
 msgstr "Nastavenie LCD4Linux"
 
+#: ../plugin/controllers/i18n.py:390
 msgid "Label series"
 msgstr "Série menoviek"
 
+#: ../plugin/controllers/i18n.py:172
 msgid "License"
 msgstr "Licencia"
 
+#: ../plugin/controllers/i18n.py:504
 msgid "Link speed"
 msgstr "Rýchlosť pripojenia"
 
+#: ../plugin/controllers/models/timers.py:601
 msgid "List of Timers has been cleaned"
 msgstr "Zoznam časovačov bol vyčistený"
 
+#: ../plugin/controllers/i18n.py:470
 msgid "Loading..."
 msgstr "Načítavam..."
 
+#: ../plugin/controllers/i18n.py:174
 msgid "Location"
 msgstr "Umiestnenie"
 
+#: ../plugin/controllers/i18n.py:175
 msgid "Locked"
 msgstr "Uzamknutý"
 
+#: ../plugin/controllers/i18n.py:176
 msgid "MAC address"
 msgstr "MAC adresa"
 
+#: ../plugin/controllers/models/info.py:377
+#: ../plugin/controllers/models/info.py:388
+#: ../plugin/controllers/models/info.py:406
+#: ../plugin/controllers/models/movies.py:240
+#: ../plugin/controllers/models/movies.py:679
 msgid "MB"
 msgstr "MB"
 
+#: ../plugin/controllers/i18n.py:177
 msgid "Main"
 msgstr "Hlavné"
 
+#: ../plugin/controllers/i18n.py:268
 msgid "Main memory"
 msgstr "Základná pamäť"
 
+#: ../plugin/controllers/i18n.py:64
 msgid "March"
 msgstr "Marec"
 
+#: ../plugin/controllers/i18n.py:606
+msgid "Margin"
+msgstr ""
+
+#: ../plugin/controllers/BouquetEditor.py:358
 msgid "Marker added."
 msgstr "Značka pridaná."
 
+#: ../plugin/controllers/i18n.py:465
 msgid "Marker name"
 msgstr "Názov značky"
 
+#: ../plugin/controllers/i18n.py:308
 msgid "Match text"
 msgstr "Zhoda v názve"
 
+#: ../plugin/controllers/i18n.py:406
 msgid "Max Days"
 msgstr "Maximálny počet dní"
 
+#: ../plugin/controllers/i18n.py:66
 msgid "May"
 msgstr "Máj"
 
+#: ../plugin/controllers/models/message.py:39
 msgid "Message sent successfully!"
 msgstr "Správa úspešne odoslaná!"
 
+#: ../plugin/controllers/i18n.py:441
 msgid "Method"
 msgstr "Metóda"
 
+#: ../plugin/controllers/i18n.py:530
 msgid "Minimal EPG list"
 msgstr "Mini zoznam EPG"
 
+#: ../plugin/controllers/i18n.py:528
 msgid "Minimal movie list"
 msgstr "Mini zoznam filmov"
 
+#: ../plugin/controllers/i18n.py:529
 msgid "Minimal timer list"
 msgstr "Mini zoznam časovačov"
 
+#: ../plugin/controllers/i18n.py:178
 msgid "Minute"
 msgstr "Minúta"
 
+#: ../plugin/controllers/web.py:82
 #, python-format
 msgid "Missing mandatory parameter '%s'"
 msgstr "Chýba povinný parameter '%s'"
 
-msgid "Missing requesteter: sRef"
+#: ../plugin/controllers/models/timers.py:729
+#, fuzzy
+msgid "Missing request parameter: sRef"
 msgstr "Chýbajúci žiadateľ: sRef"
 
+#: ../plugin/controllers/i18n.py:38
 msgid "Mo"
 msgstr "Po"
 
+#: ../plugin/controllers/i18n.py:180
 msgid "Model"
 msgstr "Model"
 
+#: ../plugin/controllers/i18n.py:47 ../plugin/controllers/models/movies.py:44
+#: ../plugin/controllers/models/timers.py:49
 msgid "Mon"
 msgstr "Pon"
 
+#: ../plugin/controllers/i18n.py:54
 msgid "Monday"
 msgstr "Pondelok"
 
+#: ../plugin/controllers/i18n.py:352
 msgid "Monthly"
 msgstr "Mesačne"
 
+#: ../plugin/controllers/i18n.py:537
 msgid "More"
 msgstr "Viac"
 
+#: ../plugin/controllers/i18n.py:181
 msgid "More details"
 msgstr "Zobraziť podrobnosti"
 
+#: ../plugin/controllers/i18n.py:604
 msgid "Mount point"
 msgstr "Pripojené miesto"
 
+#: ../plugin/controllers/i18n.py:116
+#, fuzzy
+msgid "Move Recording"
+msgstr "Falošné nahrávanie"
+
+#: ../plugin/controllers/i18n.py:489
 msgid "Movie database for EPG"
 msgstr "Databáza filmov pre EPG"
 
-msgid "Movie search"
-msgstr "Vyhľadať film"
-
+#: ../plugin/controllers/i18n.py:182
 msgid "Movielist"
 msgstr "Zoznam filmov"
 
+#: ../plugin/controllers/i18n.py:183
 msgid "Movies"
 msgstr "Filmy"
 
+#: ../plugin/controllers/BouquetEditor.py:146
+#: ../plugin/controllers/BouquetEditor.py:747
 msgid "Multi-Bouquet is not enabled!"
 msgstr "Multi-prehľad nie je zapnutý!"
 
+#: ../plugin/controllers/i18n.py:184
 msgid "MultiEPG"
 msgstr "MultiEPG"
 
+#: ../plugin/controllers/i18n.py:590
 msgid "Mute/Unmute"
 msgstr "Vypnúť/Zapnúť zvuk"
 
+#: ../plugin/controllers/base.py:339
 msgid "NCam Webinterface"
 msgstr "OSCam Webinterface"
 
+#: ../plugin/controllers/i18n.py:185
 msgid "Name"
 msgstr "Názov"
 
+#: ../plugin/controllers/i18n.py:559
 msgid "Name (a-z)"
 msgstr "Názov (a-z)"
 
+#: ../plugin/controllers/i18n.py:560
 msgid "Name (z-a)"
 msgstr "Názov (z-a)"
 
+#: ../plugin/controllers/i18n.py:186
 msgid "Namespace"
 msgstr "Priestor pre názvy"
 
+#: ../plugin/controllers/i18n.py:187
 msgid "Network Interface"
 msgstr "Sieťové rozhranie"
 
+#: ../plugin/controllers/i18n.py:505
 msgid "Network Shares"
 msgstr "Sieťové zdieľania"
 
+#: ../plugin/controllers/i18n.py:351 ../plugin/controllers/i18n.py:437
 msgid "Never"
 msgstr "Nikdy"
 
+#: ../plugin/controllers/i18n.py:391
+#: ../plugin/controllers/models/services.py:313
 msgid "New"
 msgstr "Nový"
 
+#: ../plugin/controllers/i18n.py:512
 msgid "New Bookmark:"
 msgstr "Nová záložka:"
 
+#: ../plugin/controllers/i18n.py:263
 msgid "New Name"
 msgstr "Nový názov"
 
+#: ../plugin/controllers/i18n.py:107
+#, fuzzy
+msgid "Next Event"
+msgstr "Aktuálna relácia"
+
+#: ../plugin/controllers/i18n.py:357 ../plugin/controllers/i18n.py:541
 msgid "No"
 msgstr "Nie"
 
+#: ../plugin/controllers/i18n.py:189
 msgid "No EPG data available."
 msgstr "EPG dáta nie sú k dispozícii."
 
+#: ../plugin/controllers/BouquetEditor.py:510
 msgid "No Parent Control Setup Pin given!"
 msgstr "Nebol zadaný PIN rodičovskej kontroly!"
 
+#: ../plugin/controllers/models/message.py:50
 msgid "No answer in time"
 msgstr "Žiadna odpoveď načas"
 
+#: ../plugin/controllers/BouquetEditor.py:62
 msgid "No bouquet given!"
 msgstr "Nie je uvedený prehľad!"
 
+#: ../plugin/controllers/BouquetEditor.py:65
 msgid "No bouquet name given!"
 msgstr "Nie je uvedený názov prehľadu!"
 
+#: ../plugin/controllers/BouquetEditor.py:413
 msgid "No current service given!"
 msgstr "Nezadaná aktuálna stanica!"
 
+#: ../plugin/controllers/models/timers.py:625
 msgid "No event found! Not recording!"
 msgstr "Nenájdená žiadna relácia! Nenahráva sa!"
 
+#: ../plugin/controllers/BouquetEditor.py:342
 msgid "No marker-name given!"
 msgstr "Nie je uvedený názov značky!"
 
+#: ../plugin/controllers/i18n.py:400
 msgid "No matches were found in the EPG"
 msgstr "V EPG sa nenašli žiadne zhody"
 
+#: ../plugin/controllers/models/timers.py:548
+#: ../plugin/controllers/models/timers.py:593
 msgid "No matching Timer found"
 msgstr "Zhodný časovač sa nenašiel"
 
+#: ../plugin/controllers/i18n.py:596
 msgid "No network connection"
 msgstr "Žiadne sieťové pripojenie"
 
+#: ../plugin/controllers/BouquetEditor.py:368
 msgid "No new servicename given!"
 msgstr "Nie je zadaný nový názov stanice!"
 
+#: ../plugin/controllers/BouquetEditor.py:218
+#: ../plugin/controllers/BouquetEditor.py:269
 msgid "No position given!"
 msgstr "Nebola zadaná pozícia!"
 
+#: ../plugin/controllers/BouquetEditor.py:152
 msgid "No provider given!"
 msgstr "Nebol zadaný poskytovateľ!"
 
+#: ../plugin/controllers/BouquetEditor.py:59
 msgid "No service given!"
 msgstr "Nie je uvedená stanica!"
 
+#: ../plugin/controllers/i18n.py:522
 msgid "No, cancel"
 msgstr "Nie, zrušiť"
 
+#: ../plugin/controllers/i18n.py:417
 msgid "None"
 msgstr "Žiadne"
 
+#: ../plugin/controllers/i18n.py:191
 msgid "Nothing"
 msgstr "Nič"
 
+#: ../plugin/controllers/i18n.py:192
 msgid "Nothing playing."
 msgstr "Nič sa neprehráva."
 
+#: ../plugin/controllers/i18n.py:412
 msgid "Notify if Conflict"
 msgstr "Upozorniť pri konflikte"
 
+#: ../plugin/controllers/i18n.py:413
 msgid "Notify if Similar"
 msgstr "Upozorniť pri zhode"
 
+#: ../plugin/controllers/i18n.py:72
 msgid "November"
 msgstr "November"
 
+#: ../plugin/controllers/i18n.py:193
 msgid "Now"
 msgstr "Teraz"
 
+#: ../plugin/controllers/i18n.py:531
 msgid "Now/Next Columns"
 msgstr "Stĺpce Teraz/Ďalší"
 
+#: ../plugin/controllers/i18n.py:350
 msgid "Number of recordings remaining"
 msgstr "Počet zostávajúcich nahrávaní"
 
+#: ../plugin/controllers/i18n.py:480
 msgid "ONID"
 msgstr "ONID"
 
+#: ../plugin/controllers/base.py:337
 msgid "OSCam Webinterface"
 msgstr "OSCam Webinterface"
 
+#: ../plugin/controllers/i18n.py:200
 msgid "OSD"
 msgstr "OSD"
 
+#: ../plugin/controllers/i18n.py:71
 msgid "October"
 msgstr "Október"
 
+#: ../plugin/controllers/i18n.py:339
 msgid "Offset after recording (mins)"
 msgstr "Rezerva po nahrávaní (v minútach)"
 
+#: ../plugin/controllers/i18n.py:338
 msgid "Offset before recording (mins)"
 msgstr "Rezerva pred nahrávaním (v minútach)"
 
+#: ../plugin/controllers/i18n.py:195
 msgid "On"
 msgstr "Zapnúť"
 
+#: ../plugin/controllers/i18n.py:359
 msgid "On any service"
 msgstr "Na akúkoľvek stanicu"
 
+#: ../plugin/controllers/i18n.py:358
 msgid "On same service"
 msgstr "Na rovnakej stanici"
 
+#: ../plugin/controllers/i18n.py:334
 msgid "Only match between dates"
 msgstr "Obmedziť na relácie v určených dátumoch"
 
+#: ../plugin/controllers/i18n.py:331
 msgid "Only match during timespan"
 msgstr "Zhoda jedine v rámci časového rozpätia"
 
+#: ../plugin/controllers/i18n.py:143
 msgid "Oops, no results matched your search"
 msgstr "Ups, žiadne výsledky nezodpovedajú vášmu vyhľadávaniu"
 
+#: ../plugin/controllers/i18n.py:519
 msgid "Oops..."
 msgstr "Ups..."
 
+#: ../plugin/controllers/i18n.py:196
 msgid "Open Source Web Interface for Linux set-top box"
 msgstr "Open Source webové rozhranie pre Linux prijímače"
 
+#: ../plugin/controllers/i18n.py:201
 msgid "Open in new window"
 msgstr "Otvoriť v novom okne"
 
+#: ../plugin/setup.xml
 msgid "OpenWebInterface Enabled"
 msgstr "OpenWebInterface zapnuté"
 
+#: ../plugin/controllers/i18n.py:491
 msgid "OpenWebif Browser Settings"
 msgstr "Nastavenia prehliadača OpenWebif"
 
+#: ../plugin/setup.xml
 msgid "OpenWebif Configuration"
 msgstr "Nastavenie OpenWebif"
 
+#: ../plugin/controllers/i18n.py:492
 msgid "OpenWebif Settings"
 msgstr "Nastavenia OpenWebif"
 
+#: ../plugin/plugin.py:145
 msgid "OpenWebif url:"
 msgstr "OpenWebif URL:"
 
+#: ../plugin/controllers/i18n.py:483
 msgid "Orbital Position"
 msgstr "Orbitálna pozícia"
 
+#: ../plugin/controllers/i18n.py:330
 msgid "Override found with alternative service"
 msgstr "Nájdenú prepísať alternatívnou stanicou"
 
+#: ../plugin/controllers/i18n.py:478
 msgid "PCR PID"
 msgstr "PCR PID"
 
+#: ../plugin/controllers/i18n.py:474
 msgid "PMT PID"
 msgstr "PMT PID"
 
+#: ../plugin/controllers/i18n.py:516
 msgid "Packages"
 msgstr "Balíčky"
 
+#: ../plugin/controllers/BouquetEditor.py:514
+#: ../plugin/controllers/BouquetEditor.py:516
 msgid "Parent Control Setup Pin is wrong!"
 msgstr "Zadaný PIN rodičovskej kontroly je nesprávny!"
 
+#: ../plugin/controllers/BouquetEditor.py:503
 msgid "Parent Control is not activated."
 msgstr "Rodičovská kontrola nie je aktivovaná."
 
+#: ../plugin/controllers/i18n.py:435
 msgid "Parse AutoTimer"
 msgstr "Analyzovať automatický časovač"
 
+#: ../plugin/controllers/i18n.py:202
 msgid "PiP"
 msgstr "PiP"
 
+#: ../plugin/controllers/i18n.py:443
 msgid "Picture in Picture"
 msgstr "Obraz v obraze"
 
+#: ../plugin/controllers/i18n.py:444
 msgid "Picture in Picture (hidden)"
 msgstr "Obraz v obraze (skryté)"
 
+#: ../plugin/controllers/i18n.py:421
 msgid "Plain"
 msgstr "Prostý"
 
+#: ../plugin/controllers/i18n.py:203
 msgid "Playback"
 msgstr "Prehrať"
 
+#: ../plugin/setup.xml
 msgid "Playback IPTV Streams in browser"
 msgstr "Prehrávanie IPTV streamov v prehliadači"
 
+#: ../plugin/controllers/i18n.py:204
 msgid "Playlist"
 msgstr "Zoznam prehrávania"
 
+#: ../plugin/controllers/i18n.py:569
 msgid "Playlist format"
 msgstr "Formát playlistu"
 
+#: ../plugin/controllers/i18n.py:205
 msgid "Power Control"
 msgstr "Ovládanie napájania"
 
+#: ../plugin/controllers/models/timers.py:818
 msgid "PowerTimer feature not available"
 msgstr "Časovač napájania nie je k dispozícii"
 
+#: ../plugin/controllers/i18n.py:396
 msgid "Preview"
 msgstr "Náhľad"
 
+#: ../plugin/controllers/i18n.py:507
 msgid "Primetimes"
 msgstr "Primetimes"
 
+#: ../plugin/controllers/i18n.py:385
 msgid "Process"
 msgstr "Analyzovať"
 
+#: ../sourcefiles/node_modules/iconv-lite/.idea/inspectionProfiles/Project_Default.xml
+#, fuzzy
+msgid "Project Default"
+msgstr "Predvolené"
+
+#: ../plugin/controllers/i18n.py:206
 msgid "Provider"
 msgstr "Poskytovateľ"
 
+#: ../plugin/controllers/i18n.py:207
 msgid "Providers"
 msgstr "Poskytovatelia"
 
+#: ../plugin/controllers/i18n.py:584
 msgid "REC"
 msgstr "REC"
 
+#: ../plugin/controllers/i18n.py:208
 msgid "Radio"
 msgstr "Rádio"
 
+#: ../plugin/controllers/i18n.py:209
 msgid "Reboot Box"
 msgstr "Reštartovať prijímač"
 
+#: ../plugin/controllers/i18n.py:592
+msgid "Receiver"
+msgstr "Prijímač"
+
+#: ../plugin/controllers/i18n.py:349
 msgid "Record a maximum of # times"
 msgstr "Nahrať maximálne x krát"
 
+#: ../plugin/controllers/i18n.py:210
 msgid "Recording"
 msgstr "Nahrávanie"
 
+#: ../plugin/controllers/i18n.py:580
 msgid "Recording Type"
 msgstr "Typ nahrávky"
 
+#: ../plugin/controllers/i18n.py:211 ../plugin/controllers/i18n.py:416
 msgid "Refresh"
 msgstr "Obnoviť"
 
+#: ../plugin/controllers/i18n.py:213
 msgid "Refresh Timer"
 msgstr "Obnoviť časovač"
 
+#: ../plugin/controllers/i18n.py:212
 msgid "Refresh automatically every"
 msgstr "Automaticky obnoviť každých"
 
+#: ../plugin/controllers/i18n.py:447
 msgid "Refresh now"
 msgstr "Obnoviť teraz"
 
+#: ../plugin/controllers/i18n.py:302
 msgid "Reload"
 msgstr "Znovu načítať"
 
+#: ../plugin/controllers/i18n.py:214
 msgid "Remote"
 msgstr "Diaľkový ovládač"
 
+#: ../sourcefiles/node_modules/iconv-lite/.idea/codeStyles/Project.xml
+#, fuzzy
+msgid "Remove"
+msgstr "odstrániť"
+
+#: ../plugin/controllers/i18n.py:532
 msgid "Remove Package"
 msgstr "Odstrániť balíček"
 
+#: ../plugin/controllers/i18n.py:395
 msgid "Remove filter"
 msgstr "Odstrániť filter"
 
+#: ../plugin/controllers/i18n.py:460 ../plugin/controllers/i18n.py:521
 msgid "Rename"
 msgstr "Premenovať"
 
+#: ../plugin/controllers/i18n.py:455
 msgid "Rename Bouquet"
 msgstr "Premenovať prehľad"
 
+#: ../plugin/controllers/i18n.py:215
 msgid "Rename Recording"
 msgstr "Premenovať nahrávku"
 
+#: ../plugin/controllers/i18n.py:217
 msgid "Repeated"
 msgstr "Opakovanie"
 
+#: ../plugin/setup.xml
 msgid "Require client cert for HTTPS"
 msgstr "Vyžadovať certifikát klienta pre HTTPS"
 
+#: ../plugin/controllers/i18n.py:356
 msgid "Require description to be unique"
 msgstr "Vyžadovať jedinečný popis"
 
+#: ../plugin/controllers/i18n.py:565
 msgid "Reset"
 msgstr "Reset"
 
+#: ../plugin/controllers/i18n.py:355
 msgid "Reset count"
 msgstr "Resetovať počet"
 
+#: ../plugin/controllers/i18n.py:218
 msgid "Restart GUI"
 msgstr "Reštartovať GUI"
 
+#: ../plugin/controllers/i18n.py:142 ../plugin/controllers/i18n.py:368
 msgid "Restrict to bouquets"
 msgstr "Obmedziť na prehľady"
 
+#: ../plugin/controllers/i18n.py:369
 msgid "Restrict to channels"
 msgstr "Obmedziť na stanice"
 
+#: ../plugin/controllers/i18n.py:301
 msgid "Root"
 msgstr "Koreňový adresár"
 
+#: ../plugin/controllers/models/info.py:52
 msgid "SLAAC"
 msgstr "SLAAC"
 
+#: ../plugin/controllers/i18n.py:243
 msgid "SNR"
 msgstr "SNR"
 
+#: ../plugin/controllers/i18n.py:482
 msgid "SRef"
 msgstr "SRef"
 
+#: ../plugin/controllers/i18n.py:43
 msgid "Sa"
 msgstr "So"
 
+#: ../plugin/controllers/i18n.py:220
 msgid "Safe mode"
 msgstr "Bezpečný režim"
 
+#: ../plugin/controllers/i18n.py:52 ../plugin/controllers/models/movies.py:44
+#: ../plugin/controllers/models/timers.py:49
 msgid "Sat"
 msgstr "Sob"
 
+#: ../plugin/controllers/i18n.py:221
 msgid "Satellites"
 msgstr "Satelity"
 
+#: ../plugin/controllers/i18n.py:222
 msgid "Satfinder"
 msgstr "Hľadač satelitov"
 
+#: ../plugin/controllers/i18n.py:59
 msgid "Saturday"
 msgstr "Sobota"
 
+#: ../plugin/controllers/i18n.py:223 ../plugin/controllers/i18n.py:384
+#: ../plugin/controllers/i18n.py:446
 msgid "Save"
 msgstr "Uložiť"
 
+#: ../plugin/controllers/i18n.py:224
 msgid "Screenshot"
 msgstr "Snímka obrazovky"
 
+#: ../plugin/controllers/i18n.py:225 ../plugin/controllers/i18n.py:452
 msgid "Search"
 msgstr "Hľadať"
 
+#: ../plugin/controllers/i18n.py:226
 msgid "Search CSFD"
 msgstr "Hľadať v ČSFD"
 
+#: ../plugin/controllers/i18n.py:140
 msgid "Search EPG"
 msgstr "Vyhľadávať v EPG"
 
+#: ../plugin/controllers/i18n.py:227
 msgid "Search IMDb"
 msgstr "Hľadať v IMDb"
 
+#: ../plugin/controllers/i18n.py:228
 msgid "Search KinoPoisk"
 msgstr "Hľadať v KinoPoisk"
 
+#: ../plugin/controllers/i18n.py:229
 msgid "Search TV Guide UK"
 msgstr "Hľadať v TV Guide"
 
+#: ../plugin/controllers/i18n.py:453
 msgid "Search by name, sd / hd / uhd, or provider"
 msgstr "Hľadať podľa názvu, sd / hd / uhd, alebo poskytovateľa"
 
+#: ../plugin/controllers/i18n.py:324
 msgid "Search strictness"
 msgstr "Presnosť vyhľadávania"
 
+#: ../plugin/controllers/i18n.py:310
 msgid "Search type"
 msgstr "Typ vyhľadávania"
 
+#: ../plugin/controllers/i18n.py:609
+msgid "Select Directory"
+msgstr ""
+
+#: ../plugin/controllers/i18n.py:545
 msgid "Select IPK file for upload"
 msgstr "Vybrať IPK súbor pre nahratie"
 
+#: ../plugin/controllers/i18n.py:564
 msgid "Select..."
 msgstr "Vybrať..."
 
+#: ../plugin/controllers/i18n.py:591
 msgid "Send"
 msgstr "Odoslať"
 
+#: ../plugin/controllers/i18n.py:231
 msgid "Send Message"
 msgstr "Poslať správu"
 
+#: ../plugin/controllers/i18n.py:233
 msgid "Send a Message"
 msgstr "Poslať správu"
 
+#: ../plugin/controllers/i18n.py:70
 msgid "September"
 msgstr "September"
 
+#: ../plugin/controllers/i18n.py:234
 msgid "Service"
 msgstr "Stanica"
 
+#: ../plugin/controllers/BouquetEditor.py:329
 #, python-format
 msgid "Service %s added."
 msgstr "Stanica %s pridaná."
 
+#: ../plugin/controllers/BouquetEditor.py:332
 #, python-format
 msgid "Service %s already exists in bouquet %s."
 msgstr "Stanica %s už existuje v prehľade %s."
 
+#: ../plugin/controllers/BouquetEditor.py:255
 #, python-format
 msgid "Service %s can not be removed."
 msgstr "Stanica %s sa nedá odstrániť."
 
+#: ../plugin/controllers/BouquetEditor.py:531
 #, python-format
 msgid "Service %s is locked."
 msgstr "Služba %s je zamknutá."
 
+#: ../plugin/controllers/BouquetEditor.py:539
 #, python-format
 msgid "Service %s is unlocked."
 msgstr "Služba %s nie je zamknutá."
 
+#: ../plugin/controllers/BouquetEditor.py:276
 #, python-format
 msgid "Service %s moved."
 msgstr "Stanica %s presunutá."
 
+#: ../plugin/controllers/BouquetEditor.py:254
 #, python-format
 msgid "Service %s removed from bouquet %s."
 msgstr "Stanica %s odstránená z prehľadu %s."
 
+#: ../plugin/controllers/BouquetEditor.py:246
 #, python-format
 msgid "Service %s removed."
 msgstr "Stanica %s zmazaná."
 
+#: ../plugin/controllers/i18n.py:481
 msgid "Service ID (SID)"
 msgstr "Identifikátor služby (SID)"
 
+#: ../plugin/controllers/BouquetEditor.py:277
 msgid "Service can not be moved."
 msgstr "Stanica sa nedá presunúť."
 
+#: ../plugin/controllers/BouquetEditor.py:402
 msgid "Service can not be renamed."
 msgstr "Stanica sa nedá premenovať."
 
+#: ../plugin/controllers/BouquetEditor.py:489
 msgid "Service is not an alternative."
 msgstr "Stanica nie je alternatívnou."
 
+#: ../plugin/controllers/BouquetEditor.py:401
 msgid "Service renamed successfully."
 msgstr "Stanica úspešne premenovaná."
 
+#: ../plugin/controllers/models/services.py:315
 msgid "Services"
 msgstr "Stanice"
 
+#: ../plugin/controllers/i18n.py:589
 msgid "Serving stream"
 msgstr "Poskytované streamovanie"
 
+#: ../plugin/controllers/i18n.py:340
 msgid "Set maximum duration"
 msgstr "Nastaviť maximálnu dĺžku"
 
+#: ../plugin/controllers/base.py:299 ../plugin/controllers/i18n.py:235
+#: ../plugin/controllers/i18n.py:388
 msgid "Settings"
 msgstr "Nastavenia"
 
+#: ../plugin/controllers/i18n.py:240
 msgid "Show EPG for"
 msgstr "Zobraziť EPG pre"
 
+#: ../plugin/controllers/i18n.py:238
 msgid "Show Full OpenWebif"
 msgstr "Zobraziť úplný OpenWebif"
 
+#: ../plugin/controllers/i18n.py:552
 msgid "Show IPTV channels in selection (eg. Autotimer)"
 msgstr "Zobrazenie IPTV staníc vo výbere (napr. Autotimer)"
 
+#: ../plugin/controllers/i18n.py:578
 msgid "Show all packages"
 msgstr "Zobraziť všetky balíčky"
 
+#: ../plugin/controllers/i18n.py:197 ../plugin/setup.xml
 msgid "Show box name in header"
 msgstr "Zobraziť názov prijímača v záhlaví"
 
+#: ../plugin/controllers/i18n.py:550
 msgid "Show details"
 msgstr "Zobraziť podrobnosti"
 
+#: ../plugin/controllers/i18n.py:239
 msgid "Show full remote"
 msgstr "Zobraziť úplný diaľkový ovládač"
 
+#: ../plugin/controllers/i18n.py:409
 msgid "Show in Extensions menu"
 msgstr "Zobraziť v Extra menu"
 
+#: ../plugin/controllers/i18n.py:555
 msgid "Show picon background"
 msgstr "Pozadie picon"
 
+#: ../plugin/controllers/i18n.py:554
 msgid "Show picons"
 msgstr "Zobraziť pikony"
 
+#: ../plugin/controllers/i18n.py:488
 msgid "Show picons in channel list"
 msgstr "Zobraziť pikony v zozname staníc"
 
+#: ../plugin/controllers/i18n.py:551
 msgid "Show service type in channel list"
 msgstr "Zobrazovat typ programu v zozname staníc"
 
+#: ../plugin/controllers/i18n.py:241
 msgid "Shutdown"
 msgstr "Vypnúť"
 
+#: ../plugin/controllers/i18n.py:431
+msgid "Shutdown after refresh."
+msgstr ""
+
+#: ../plugin/controllers/i18n.py:276
 msgid "Signal Power (AGC)"
 msgstr "Sila signálu (AGC)"
 
+#: ../plugin/controllers/i18n.py:275
 msgid "Signal Quality (SNR DB)"
 msgstr "Kvalita signálu (SNR DB)"
 
+#: ../plugin/controllers/i18n.py:274
 msgid "Signal Quality (SNR)"
 msgstr "Kvalita signálu (SNR)"
 
+#: ../plugin/controllers/i18n.py:386
 msgid "Simulate"
 msgstr "Simulovať"
 
+#: ../plugin/controllers/i18n.py:242
 msgid "Site and sources"
 msgstr "Stránky a zdroje"
 
+#: ../plugin/controllers/i18n.py:575
 msgid "Skins"
 msgstr "Vzhľady"
 
+#: ../plugin/controllers/models/timers.py:897
 msgid "SleepTimer error"
 msgstr "Chyba časovača vypnutia"
 
+#: ../plugin/controllers/models/timers.py:985
+#: ../plugin/controllers/models/timers.py:1108
+#: ../plugin/controllers/models/timers.py:1127
 msgid "Sleeptimer has been disabled"
 msgstr "Časovač uspania bol vypnutý"
 
+#: ../plugin/controllers/models/timers.py:891
 msgid "Sleeptimer is disabled"
 msgstr "Časovač uspania je vypnutý"
 
+#: ../plugin/controllers/models/timers.py:891
 msgid "Sleeptimer is enabled"
 msgstr "Časovač uspania je povolený"
 
+#: ../plugin/controllers/models/timers.py:991
+#: ../plugin/controllers/models/timers.py:1108
+#: ../plugin/controllers/models/timers.py:1122
 #, python-format
 msgid "Sleeptimer set to %d minutes"
 msgstr "Časovač uspania nastavený na %d minút"
 
+#: ../plugin/controllers/i18n.py:495
 msgid "Small remote layout"
 msgstr "Malý diaľkový ovládač"
 
+#: ../plugin/controllers/i18n.py:244
 msgid "Software"
 msgstr "Softvér"
 
+#: ../plugin/controllers/i18n.py:190
 msgid "Sorry this page is not yet implemented"
 msgstr "Ospravedlňujeme sa táto stránka ešte nie je implementovaná"
 
+#: ../plugin/controllers/i18n.py:558
 msgid "Sort"
 msgstr "Triediť"
 
+#: ../plugin/controllers/i18n.py:494
 msgid "Spinner"
 msgstr "Spiner"
 
+#: ../plugin/controllers/i18n.py:245
 msgid "Standby"
 msgstr "Pohotovostný režim"
 
+#: ../plugin/controllers/i18n.py:133
 msgid "Start"
 msgstr "Začiatok"
 
+#: ../plugin/controllers/i18n.py:249
 msgid "Start Instant Record"
 msgstr "Spustiť okamžité nahrávanie"
 
+#: ../plugin/controllers/i18n.py:248
 msgid "Start time is after end time"
 msgstr "Čas ukončenia sa nachádza pred časom začatia"
 
+#: ../plugin/controllers/i18n.py:544
 msgid "Start typing..."
 msgstr "Začnite písať..."
 
+#: ../plugin/controllers/i18n.py:397
 msgid "State"
 msgstr "Stav"
 
+#: ../plugin/controllers/i18n.py:601
 msgid "Storage"
 msgstr "Úložisko"
 
+#: ../plugin/controllers/i18n.py:250
 msgid "Stream"
 msgstr "Stream"
 
+#: ../plugin/controllers/i18n.py:573
 msgid "Stream Clients"
 msgstr "Streamujúci klienti"
 
+#: ../plugin/setup.xml
 msgid "Streaming port"
 msgstr "Streamovací port"
 
+#: ../plugin/controllers/i18n.py:44
 msgid "Su"
 msgstr "Ne"
 
+#: ../plugin/controllers/i18n.py:563
 msgid "Subdirectories"
 msgstr "Podadresáre"
 
+#: ../plugin/controllers/i18n.py:251
 msgid "Subnet mask"
 msgstr "Maska podsiete"
 
+#: ../plugin/controllers/i18n.py:252
 msgid "Subservices"
 msgstr "Podkanály"
 
+#: ../plugin/controllers/i18n.py:46 ../plugin/controllers/models/movies.py:44
+#: ../plugin/controllers/models/timers.py:49
 msgid "Sun"
 msgstr "Ned"
 
+#: ../plugin/controllers/i18n.py:60
 msgid "Sunday"
 msgstr "Nedeľa"
 
+#: ../plugin/controllers/i18n.py:194
 msgid "System OE"
 msgstr "Systém OE"
 
+#: ../plugin/controllers/models/info.py:384
+#: ../plugin/controllers/models/info.py:396
+#: ../plugin/controllers/models/info.py:398
 msgid "TB"
 msgstr "TB"
 
+#: ../plugin/controllers/i18n.py:479
 msgid "TSID"
 msgstr "TSID"
 
+#: ../plugin/controllers/i18n.py:279
 msgid "TV"
 msgstr "TV"
 
+#: ../plugin/controllers/i18n.py:499
 msgid "TV Guide"
 msgstr "TV sprievodca"
 
+#: ../plugin/controllers/i18n.py:280
 msgid "TV Multi EPG"
 msgstr "TV Multi EPG"
 
+#: ../plugin/controllers/i18n.py:253 ../plugin/controllers/i18n.py:362
 msgid "Tags"
 msgstr "Štítky"
 
+#: ../plugin/controllers/i18n.py:254
 msgid "Teletext"
 msgstr "Teletext"
 
+#: ../plugin/controllers/i18n.py:477
 msgid "Teletext PID"
 msgstr "Teletext PID"
 
+#: ../plugin/controllers/i18n.py:255
 msgid "Television"
 msgstr "Televízia"
 
+#: ../plugin/controllers/i18n.py:256
 msgid "Template Engine"
 msgstr "Engine šablóny"
 
+#: ../plugin/controllers/base.py:384
 msgid "Terminal"
 msgstr "Terminál"
 
+#: ../plugin/controllers/models/services.py:322
 msgid "Terrestrial"
 msgstr "Pozemné"
 
+#: ../plugin/controllers/i18n.py:257
 msgid "Text"
 msgstr "Text"
 
+#: ../plugin/controllers/i18n.py:41
 msgid "Th"
 msgstr "Št"
 
+#: ../plugin/controllers/web.py:88 ../plugin/controllers/web.py:1607
 #, python-format
 msgid "The parameter '%s' can't be empty"
 msgstr "Parameter '%s' nemôže byť prázdny"
 
+#: ../plugin/controllers/web.py:347
 msgid "The parameter 'command' must be a number"
 msgstr "Parameter \"príkaz\" musí byť číslo"
 
+#: ../plugin/controllers/models/timers.py:587
 #, python-format
 msgid "The timer '%s' has been %s successfully"
 msgstr "Časovač '%s' bol %s úspešne"
 
+#: ../plugin/controllers/models/timers.py:537
+#: ../plugin/controllers/models/timers.py:543
 #, python-format
 msgid "The timer '%s' has been deleted successfully"
 msgstr "Časovač '%s' bol úspešne odstránený"
 
+#: ../plugin/controllers/models/timers.py:579
 #, python-format
 msgid "The timer '%s' now recorded! Not disabled!"
 msgstr "Časovač '%s' zaznamenaný! Nezakázaný!"
 
+#: ../plugin/controllers/i18n.py:493
 msgid "Theme"
 msgstr "Vzhľad"
 
+#: ../plugin/controllers/i18n.py:282 ../plugin/setup.xml
 msgid "Theme mode"
 msgstr "Vzhľad"
 
+#: ../plugin/controllers/BouquetEditor.py:333
 msgid "This service can not be added."
 msgstr "Táto stanica sa nedá pridať."
 
+#: ../plugin/controllers/i18n.py:50 ../plugin/controllers/models/movies.py:44
+#: ../plugin/controllers/models/timers.py:49
 msgid "Thu"
 msgstr "Štv"
 
+#: ../plugin/controllers/i18n.py:57
 msgid "Thursday"
 msgstr "Štvrtok"
 
+#: ../plugin/controllers/i18n.py:259
 msgid "Time"
 msgstr "Čas"
 
+#: ../plugin/controllers/i18n.py:500
 msgid "Timeline"
 msgstr "Časová os"
 
+#: ../plugin/controllers/i18n.py:260
 msgid "Timeout"
 msgstr "Časový limit"
 
+#: ../plugin/controllers/i18n.py:265
 msgid "Timer"
 msgstr "Časovač"
 
+#: ../plugin/controllers/models/timers.py:361
 #, python-format
 msgid "Timer '%s' added"
 msgstr "Časovač '%s' pridaný"
 
+#: ../plugin/controllers/models/timers.py:573
 #, python-format
 msgid "Timer '%s' already exists!"
 msgstr "Časovač '%s 'už existuje!"
 
+#: ../plugin/controllers/models/timers.py:499
 #, python-format
 msgid "Timer '%s' changed"
 msgstr "Časovač '%s' sa zmenil"
 
+#: ../plugin/controllers/models/timers.py:567
 #, python-format
 msgid "Timer '%s' not enabled while Conflict"
 msgstr "Časovač '%s' je počas konfliktu zakázaný"
 
+#: ../plugin/controllers/models/timers.py:518
 #, python-format
 msgid "Timer '%s' not saved while Conflict"
 msgstr "Časovač '%s' sa počas konfliktu neuložil"
 
+#: ../plugin/controllers/i18n.py:486
 msgid "Timer Added"
 msgstr "Časovač pridaný"
 
+#: ../plugin/controllers/i18n.py:595
 msgid "Timer Conflict"
 msgstr "Konflikt časovačov"
 
+#: ../plugin/controllers/i18n.py:261
 msgid "Timer added"
 msgstr "Časovač pridaný"
 
+#: ../plugin/controllers/models/timers.py:659
 msgid "Timer conflict detected! Not recording!"
 msgstr "Bol zistený konflikt časovača! Nenahráva sa!"
 
+#: ../plugin/controllers/i18n.py:327
 msgid "Timer type"
 msgstr "Typ časovača"
 
+#: ../plugin/controllers/models/timers.py:609
 msgid "TimerList has been saved"
 msgstr "Zoznam časovačov bol uložený"
 
+#: ../plugin/controllers/i18n.py:262
 msgid "Timerlist"
 msgstr "Zoznam časovačov"
 
+#: ../plugin/controllers/i18n.py:266 ../plugin/controllers/i18n.py:387
 msgid "Timers"
 msgstr "Časovače"
 
+#: ../plugin/controllers/i18n.py:267
 msgid "Title"
 msgstr "Názov"
 
+#: ../plugin/controllers/i18n.py:336
 msgid "To date"
 msgstr "Nie pred"
 
+#: ../plugin/controllers/models/movies.py:47
+#: ../plugin/controllers/models/timers.py:53
 msgid "Today"
 msgstr "Dnes"
 
+#: ../plugin/controllers/i18n.py:246
 msgid "Toggle Standby"
 msgstr "Prepnutie do pohotovostného režimu"
 
+#: ../plugin/controllers/i18n.py:270
 msgid "Transcode"
 msgstr "Transkódovanie"
 
+#: ../plugin/controllers/i18n.py:299
 msgid "Translation to Spanish"
 msgstr "Preklad do španielčiny"
 
+#: ../plugin/controllers/i18n.py:407
 msgid "Try guessing"
 msgstr "Skúsiť uhádnuť"
 
+#: ../plugin/controllers/i18n.py:39
 msgid "Tu"
 msgstr "Ut"
 
+#: ../plugin/controllers/i18n.py:48 ../plugin/controllers/models/movies.py:44
+#: ../plugin/controllers/models/timers.py:49
 msgid "Tue"
 msgstr "Uto"
 
+#: ../plugin/controllers/i18n.py:55
 msgid "Tuesday"
 msgstr "Utorok"
 
+#: ../plugin/controllers/i18n.py:272
 msgid "Tuner Number"
 msgstr "Číslo tunera"
 
+#: ../plugin/controllers/i18n.py:273
 msgid "Tuner Signal"
 msgstr "Signál tunera"
 
+#: ../plugin/controllers/i18n.py:277
 msgid "Tuner Type"
 msgstr "Typ tunera"
 
+#: ../plugin/controllers/i18n.py:278
 msgid "Tuners"
 msgstr "Tunery"
 
+#: ../plugin/controllers/i18n.py:281
 msgid "Type"
 msgstr "Typ"
 
+#: ../plugin/controllers/web.py:249
 #, python-format
 msgid "Unknown Volume command %s"
 msgstr "Neznámy príkaz hlasitosti %s"
 
+#: ../plugin/controllers/models/timers.py:751
 #, python-format
 msgid "Unknown command: '%s'"
 msgstr "Neznámy príkaz: '%s'"
 
+#: ../plugin/controllers/i18n.py:283
 msgid "Upcoming Events"
 msgstr "Nadchádzajúce relácie"
 
+#: ../plugin/controllers/i18n.py:535
 msgid "Update"
 msgstr "Aktualizácia"
 
+#: ../plugin/controllers/i18n.py:533
 msgid "Update Package"
 msgstr "Aktualizácia balíčku"
 
+#: ../plugin/controllers/i18n.py:538
 msgid "Update from feed"
 msgstr "Aktualizácia z Feedu"
 
+#: ../plugin/controllers/i18n.py:539
 msgid "Upgrade all packages"
 msgstr "Upgradovať všetky balíčky"
 
+#: ../plugin/controllers/i18n.py:548
 msgid "Upload File Error"
 msgstr "Chyba pri nahrávaní súboru"
 
+#: ../plugin/controllers/i18n.py:547
 msgid "Upload package"
 msgstr "Nahrať balíček"
 
+#: ../plugin/controllers/i18n.py:546
 msgid "Uploaded Files"
 msgstr "Nahrané súbory"
 
+#: ../plugin/controllers/i18n.py:553
 msgid "Use Channelname for screenshots"
 msgstr "Použiť názov stanice pre snímku obrazovky"
 
+#: ../plugin/controllers/i18n.py:361
 msgid "Use a custom location"
 msgstr "Použiť vlastné umiestnenie"
 
+#: ../plugin/controllers/i18n.py:570
 msgid "Use as PiP if possible"
 msgstr "Použiť ako PiP ak je to možné"
 
+#: ../plugin/controllers/i18n.py:576
 msgid "Use classic interface"
 msgstr "Použiť klasický vzhľad"
 
+#: ../plugin/setup.xml
 msgid "Use custom Color"
 msgstr "Použiť vlastné farby"
 
+#: ../plugin/controllers/i18n.py:198 ../plugin/setup.xml
 msgid "Use custom box name"
 msgstr "Použiť vlastný názov prijímača"
 
+#: ../plugin/controllers/i18n.py:518
 msgid "Use modern design"
 msgstr "Použiť nový vzhľad"
 
+#: ../plugin/controllers/i18n.py:577 ../plugin/setup.xml
 msgid "Use modern interface"
 msgstr "Používať nový dizajn"
 
+#: ../plugin/controllers/i18n.py:289
 msgid "VPS"
 msgstr "VPS"
 
+#: ../plugin/controllers/models/timers.py:1161
 msgid "VPS plugin not found"
 msgstr "VPS plugin nebol nájdený"
 
+#: ../plugin/controllers/i18n.py:284
 msgid "Version"
 msgstr "Verzia"
 
+#: ../plugin/controllers/i18n.py:285
 msgid "Video"
 msgstr "Video"
 
+#: ../plugin/controllers/i18n.py:286
 msgid "Video Height"
 msgstr "Výška videa"
 
+#: ../plugin/controllers/i18n.py:476
 msgid "Video PID (VPID)"
 msgstr "Video PID (VPID)"
 
+#: ../plugin/controllers/i18n.py:288
 msgid "Video Width"
 msgstr "Šírka videa"
 
+#: ../plugin/controllers/i18n.py:442
 msgid "Visibly"
 msgstr "Viditeľne"
 
+#: ../plugin/controllers/i18n.py:290
 msgid "Volume"
 msgstr "Hlasitosť"
 
+#: ../plugin/controllers/i18n.py:291
 msgid "Volume Control"
 msgstr "Ovládanie hlasitosti"
 
+#: ../plugin/controllers/models/info.py:645
 msgid "W"
 msgstr "Z"
 
+#: ../plugin/controllers/i18n.py:232
 msgid "Waiting for answer ..."
 msgstr "Čakám na odpoveď..."
 
+#: ../plugin/controllers/i18n.py:247
 msgid "Wake Up"
 msgstr "Prebudiť"
 
+#: ../plugin/controllers/i18n.py:433
 msgid "Wakeup"
 msgstr "Prebudiť"
 
+#: ../plugin/controllers/i18n.py:293
 msgid "Warning"
 msgstr "Varovanie"
 
+#: ../plugin/controllers/i18n.py:40
 msgid "We"
 msgstr "St"
 
+#: ../plugin/controllers/i18n.py:501
 msgid "Web TV"
 msgstr "Web TV"
 
+#: ../plugin/controllers/i18n.py:49 ../plugin/controllers/models/movies.py:44
+#: ../plugin/controllers/models/timers.py:49
 msgid "Wed"
 msgstr "Str"
 
+#: ../plugin/controllers/i18n.py:56
 msgid "Wednesday"
 msgstr "Streda"
 
+#: ../plugin/controllers/i18n.py:354
 msgid "Weekly (Monday)"
 msgstr "Týždenne (pondelok)"
 
+#: ../plugin/controllers/i18n.py:353
 msgid "Weekly (Sunday)"
 msgstr "Týždenne (nedeľa)"
 
+#: ../plugin/controllers/i18n.py:287
 msgid "Widescreen"
 msgstr "Širokouhlá obrazovka"
 
+#: ../plugin/setup.xml
 msgid "Without auth only local access is allowed!"
 msgstr "Bez autorizácie je povolený iba lokálny prístup!"
 
+#: ../plugin/controllers/i18n.py:422
 msgid "Wizard"
 msgstr "Sprievodca"
 
+#: ../plugin/controllers/i18n.py:520
 msgid "Would you like to save your changes?"
 msgstr "Chcete uložiť zmeny?"
 
+#: ../plugin/controllers/web.py:244
 #, python-format
 msgid "Wrong parameter format 'set=%s'. Use set=set15 "
 msgstr "Chybný formát parametra 'set=%s'. Použite set=set15 "
 
+#: ../plugin/controllers/i18n.py:567
 msgid "YYYY-MM-DD"
 msgstr "RRRR-MM-DD"
 
+#: ../plugin/controllers/i18n.py:523 ../plugin/controllers/i18n.py:540
 msgid "Yes"
 msgstr "Áno"
 
+#: ../plugin/controllers/i18n.py:294
 msgid "Yes/No"
 msgstr "Áno/Nie"
 
+#: ../plugin/controllers/models/movies.py:49
+#: ../plugin/controllers/models/timers.py:56
 msgid "Yesterday"
 msgstr "Včera"
 
+#: ../plugin/controllers/i18n.py:295
 msgid "Zap"
 msgstr "Prepnúť"
 
+#: ../plugin/controllers/i18n.py:473
 msgid "Zap & Record"
 msgstr "Nahrávať & prepnúť"
 
+#: ../plugin/controllers/i18n.py:296
 msgid "Zap before streaming"
 msgstr "Prepnúť pred streamovaním"
 
+#: ../plugin/controllers/i18n.py:297
 msgid "Zap to"
 msgstr "Prepnúť na"
 
+#: ../plugin/controllers/i18n.py:298
 msgid "Zapped to"
 msgstr "Prepnuté na"
 
+#: ../plugin/controllers/i18n.py:399
 msgid "any time"
 msgstr "kedykoľvek"
 
+#: ../plugin/controllers/i18n.py:342
 msgid "auto"
 msgstr "auto"
 
+#: ../plugin/plugin.py:139
 msgid "box_ip"
 msgstr "box_ip"
 
+#: ../plugin/controllers/i18n.py:326
 msgid "case-insensitive"
 msgstr "nerozlišovať veľkosť písmen"
 
+#: ../plugin/controllers/i18n.py:325
 msgid "case-sensitive"
 msgstr "rozlišovať veľkosť písmen"
 
+#: ../plugin/controllers/i18n.py:582
 msgid "descramble and record ecm"
 msgstr "dekódovať a nahrávať ecm"
 
+#: ../plugin/controllers/i18n.py:376
 msgid "description contains"
 msgstr "v popise"
 
+#: ../plugin/controllers/i18n.py:313
 msgid "description match"
 msgstr "zhodný popis"
 
+#: ../plugin/controllers/i18n.py:123
 msgid "disabled"
 msgstr "zakázané"
 
+#: ../plugin/controllers/i18n.py:343
 msgid "do nothing"
 msgstr "žiadna akcia"
 
+#: ../plugin/controllers/i18n.py:583
 msgid "don't descramble, record ecm"
 msgstr "nedekódovať , nahrávať ecm"
 
+#: ../plugin/controllers/i18n.py:485
 msgid "error! Loading Page"
 msgstr "chyba! Načítavám stránku"
 
+#: ../plugin/controllers/i18n.py:312
 msgid "exact title match"
 msgstr "presná zhoda názvu"
 
+#: ../sourcefiles/node_modules/iconv-lite/.idea/codeStyles/Project.xml
+msgid "false"
+msgstr ""
+
+#: ../plugin/controllers/i18n.py:322
 msgid "favourite desc match"
 msgstr "v popise obľúbených"
 
+#: ../plugin/controllers/i18n.py:148
 msgid "finished"
 msgstr "ukončené"
 
+#: ../plugin/controllers/i18n.py:345
 msgid "go to deep standby"
 msgstr "prejsť do režimu hlbokého spánku"
 
+#: ../plugin/controllers/i18n.py:344
 msgid "go to standby"
 msgstr "prejsť do pohotovostného režimu"
 
+#: ../plugin/controllers/i18n.py:33
 msgid "hour"
 msgstr "hod."
 
+#: ../plugin/controllers/models/info.py:286
+#: ../plugin/controllers/models/info.py:289
+#: ../plugin/controllers/models/movies.py:242
+#: ../plugin/controllers/models/movies.py:681
 msgid "kB"
 msgstr "kB"
 
+#: ../plugin/controllers/i18n.py:173
 msgid "loading"
 msgstr "načítava sa"
 
+#: ../plugin/controllers/models/info.py:63
+#: ../plugin/controllers/models/info.py:82
 msgid "manual/disabled"
 msgstr "manuálne/zakázané"
 
+#: ../plugin/controllers/i18n.py:179
 msgid "mins"
 msgstr "minút"
 
+#: ../plugin/controllers/i18n.py:33
 msgid "minute"
 msgstr "minúta"
 
+#: ../plugin/controllers/i18n.py:188
 msgid "no description available"
 msgstr "popis nie je k dispozícii"
 
+#: ../plugin/controllers/i18n.py:162 ../plugin/controllers/models/info.py:174
 msgid "none/IPv4-only network"
 msgstr "žiadna/len IPv4 sieť"
 
+#: ../plugin/controllers/i18n.py:581
 msgid "normal"
 msgstr "normálne"
 
+#: ../plugin/controllers/i18n.py:378
 msgid "on day"
 msgstr "v deň"
 
+#: ../plugin/controllers/i18n.py:377
 msgid "on weekday"
 msgstr "v pracovný deň"
 
+#: ../plugin/controllers/BouquetEditor.py:100
 msgid "one two three four unknown command"
 msgstr "jeden dva tri štyri neznámy príkaz"
 
+#: ../plugin/controllers/i18n.py:311
 msgid "partial title match"
 msgstr "čiastočná zhoda názvu"
 
+#: ../plugin/controllers/models/info.py:447
 msgid "r/o"
 msgstr "r/o"
 
+#: ../plugin/controllers/models/info.py:443
 msgid "r/w"
 msgstr "r/w"
 
-msgid "Receiver"
-msgstr "Prijímač"
-
+#: ../plugin/controllers/i18n.py:328
 msgid "record"
 msgstr "nahrať"
 
+#: ../plugin/controllers/i18n.py:323
 msgid "regex match (experimental)"
 msgstr "regex zhoda (experimentálne)"
 
+#: ../plugin/controllers/models/movies.py:331
 msgid "remove"
 msgstr "odstrániť"
 
+#: ../plugin/controllers/i18n.py:219
 msgid "running"
 msgstr "prebieha"
 
+#: ../plugin/controllers/i18n.py:230
 msgid "seconds"
 msgstr "sekúnd"
 
+#: ../plugin/controllers/i18n.py:366
 msgid "select bouquets"
 msgstr "výber prehľadov"
 
+#: ../plugin/controllers/i18n.py:365
 msgid "select channels"
 msgstr "výber staníc"
 
+#: ../plugin/controllers/i18n.py:363
 msgid "select tags"
 msgstr "výber značiek"
 
+#: ../plugin/controllers/i18n.py:375
 msgid "short description contains"
 msgstr "v stručnom popise"
 
+#: ../plugin/controllers/i18n.py:318 ../plugin/controllers/i18n.py:319
 msgid "short description match"
 msgstr "zhodný krátky popis"
 
+#: ../plugin/controllers/i18n.py:341
 msgid "standard"
 msgstr "štandardné"
 
+#: ../plugin/controllers/models/info.py:59
+#: ../plugin/controllers/models/info.py:71
+#: ../plugin/controllers/models/info.py:78
 msgid "static"
 msgstr "statická"
 
+#: ../plugin/controllers/i18n.py:258
 msgid "this service is protected by a parental control pin"
 msgstr "tento program je chránený rodičovskou kontrolou"
 
+#: ../plugin/controllers/i18n.py:374
 msgid "title contains"
 msgstr "v názve"
 
+#: ../plugin/controllers/i18n.py:321
 msgid "title ends with"
 msgstr "názov končí na"
 
+#: ../plugin/controllers/i18n.py:314 ../plugin/controllers/i18n.py:315
 msgid "title or description match"
 msgstr "zhodný názov alebo popis"
 
+#: ../plugin/controllers/i18n.py:316 ../plugin/controllers/i18n.py:317
 msgid "title or short description match"
 msgstr "zhodný názov alebo krátky popis"
 
+#: ../plugin/controllers/i18n.py:320
 msgid "title starts with"
 msgstr "názov začína na"
 
+#: ../plugin/controllers/i18n.py:269
 msgid "transcoded"
 msgstr "transkódované"
 
+#: ../sourcefiles/node_modules/iconv-lite/.idea/codeStyles/Project.xml
+#: ../sourcefiles/node_modules/iconv-lite/.idea/codeStyles/codeStyleConfig.xml
+msgid "true"
+msgstr ""
+
+#: ../plugin/controllers/web.py:731
 #, python-format
 msgid "type %s is not a number"
 msgstr "typ %s nie je číslo"
 
+#: ../plugin/controllers/models/info.py:87
+#: ../plugin/controllers/models/info.py:104
 msgid "unknown"
 msgstr "neznáme"
 
+#: ../plugin/controllers/i18n.py:506
 msgid "using"
 msgstr "používa"
 
+#: ../plugin/controllers/i18n.py:472
 msgid "via"
 msgstr "cez"
 
+#: ../plugin/controllers/i18n.py:292
 msgid "waiting"
 msgstr "čakám"
 
+#: ../plugin/controllers/i18n.py:380
 msgid "weekday"
 msgstr "Pracovný deň"
 
+#: ../plugin/controllers/i18n.py:379
 msgid "weekend"
 msgstr "Víkend"
 
+#: ../plugin/controllers/ipkg.py:306
 msgid "wrong filetype"
 msgstr "nesprávny typ súboru"
 
+#: ../plugin/controllers/i18n.py:329
 msgid "zap"
 msgstr "prepnúť"
-
-#~ msgid "EPG Search"
-#~ msgstr "Hľadanie v EPG"
-
-#~ msgid "Enter Text"
-#~ msgstr "Typ tunera"
-
-#~ msgid "LICENSE"
-#~ msgstr "Licencia"
-
-#~ msgid "Standby Toggle"
-#~ msgstr "Prepnúť pohotov.režim"
-
-#~ msgid "Use old remote"
-#~ msgstr "Použiť starý ovládač"
-
-#~ msgid "Apid"
-#~ msgstr "Apid"
-
-#~ msgid "Onid"
-#~ msgstr "Onid"
-
-#~ msgid "Pcrpid"
-#~ msgstr "Pcrpid"
-
-#~ msgid "Pmtpid"
-#~ msgstr "Pmtpid"
-
-#~ msgid "Recording Status"
-#~ msgstr "Stav nahrávania"
-
-#~ msgid "Sid"
-#~ msgstr "Sid"
-
-#~ msgid "Sref"
-#~ msgstr "Sref"
-
-#~ msgid "Tsid"
-#~ msgstr "Tsid"
-
-#~ msgid "Tuner Bit Error Rate BER"
-#~ msgstr "Tuner Bit Error Rate BER"
-
-#~ msgid "Tuner Signal Power AGC"
-#~ msgstr "Intenzita signálu tunera AGC"
-
-#~ msgid "Tuner Signal Quality SNR"
-#~ msgstr "Kvalita signálu tunera SNR"
-
-#~ msgid "Tuner Signal Quality SNR_DB"
-#~ msgstr "Kvalita signálu tunera SNR_DB"
-
-#~ msgid "Video Wide"
-#~ msgstr "Širokouhlé"
-
-#~ msgid "Vpid"
-#~ msgstr "Vpid"

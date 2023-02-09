@@ -605,5 +605,6 @@ tstrings = {
 	'folders': _("Folders"),
 	'margin': _("Margin"),
 	'after': _("After"),
-	'before': _("Before")
+	'before': _("Before"),
+	'select_directory': _("Select Directory")
 }
