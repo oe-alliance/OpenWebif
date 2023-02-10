@@ -721,6 +721,7 @@ def getEvent(sref, eventid, encode=True):
 
 
 def getChannelEpg(ref, begintime=-1, endtime=-1, encode=True, nownext=False):
+	ret = []
 	ev = {}
 	use_empty_ev = False
 	if ref:
@@ -737,14 +738,16 @@ def getChannelEpg(ref, begintime=-1, endtime=-1, encode=True, nownext=False):
 		events = epg.getChannelEvents(_ref, begintime, endtime, encode, picon, nownext)
 		if events:
 			return {"events": events, "result": True}
-		else:
-			use_empty_ev = True
-			ev['sref'] = ref
+# TODO do we need this?
+#		else:
+#			use_empty_ev = True
+#			ev['sref'] = ref
 	else:
 		use_empty_ev = True
 		ev['sref'] = ""
 
 	if use_empty_ev:
+		ev['id'] = 0
 		ev['date'] = 0
 		ev['begin'] = 0
 		ev['begin_timestamp'] = 0
@@ -760,8 +763,9 @@ def getChannelEpg(ref, begintime=-1, endtime=-1, encode=True, nownext=False):
 		ev['now_timestamp'] = 0
 		ev['genre'] = ""
 		ev['genreid'] = 0
+		ret.append(ev)
 
-	return {"events": [ev], "result": True}
+	return {"events": ret, "result": True}
 
 
 def getBouquetEpg(bqref, begintime=-1, endtime=None, encode=False):
