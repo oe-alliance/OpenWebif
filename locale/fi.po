@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ../plugin\n"
 
@@ -80,7 +80,7 @@ msgstr "%s vapaana / %s kaikkiaan"
 
 #: ../plugin/controllers/i18n.py:237
 msgid "(Press 'shift' and click to 'hold')"
-msgstr "(Vaihto + pitkä painallus)"
+msgstr "(Paina pitkään 'vaihto')"
 
 #: ../plugin/controllers/i18n.py:401
 msgid "(in minutes)"
@@ -88,25 +88,23 @@ msgstr "(minuuteissa)"
 
 #: ../sourcefiles/node_modules/iconv-lite/.idea/codeStyles/Project.xml
 msgid "100"
-msgstr ""
+msgstr "100"
 
 #: ../sourcefiles/node_modules/iconv-lite/.idea/codeStyles/Project.xml
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #: ../plugin/controllers/models/config.py:35
 msgid "<Current movie list location>"
-msgstr ""
+msgstr "<Nykyinen elokuvien sijainti>"
 
 #: ../plugin/controllers/models/config.py:34
-#, fuzzy
 msgid "<Default movie location>"
-msgstr "Käytä omaa tiedostosijaintia"
+msgstr "<Oletus elokuvien sijainti>"
 
 #: ../plugin/controllers/models/config.py:36
-#, fuzzy
 msgid "<Last timer location>"
-msgstr "Käytä omaa tiedostosijaintia"
+msgstr "<Viimeisin ajastimen sijainti>"
 
 #: ../plugin/controllers/i18n.py:468
 msgid "A filename is required"
@@ -134,7 +132,7 @@ msgstr "Lisää automaattiajastus merkkeihin"
 
 #: ../plugin/controllers/i18n.py:415
 msgid "Add AutoTimer name to tags"
-msgstr "Lisää nimi merkeille"
+msgstr "Lisää automaattiajastuksen nimi merkkeihin"
 
 #: ../plugin/controllers/i18n.py:454
 msgid "Add Bouquet"
@@ -174,7 +172,7 @@ msgstr "Lisää suodattimia"
 
 #: ../plugin/controllers/i18n.py:450
 msgid "Add selection to bouquet"
-msgstr "Lisää kanavia suosikkilistaan"
+msgstr "Lisää valinta suosikkilistaan"
 
 #: ../plugin/setup.xml
 msgid "Add service name to stream information"
@@ -194,9 +192,8 @@ msgid "Added %s to alternative service %s."
 msgstr "Lisätty %s vaihtoehdoksi kanavalle %s."
 
 #: ../plugin/controllers/i18n.py:607
-#, fuzzy
 msgid "After"
-msgstr "Ajastuksen jälkeen"
+msgstr "Jälkeen"
 
 #: ../plugin/controllers/i18n.py:79
 msgid "After event"
@@ -260,9 +257,8 @@ msgid "April"
 msgstr "Huhtikuu"
 
 #: ../plugin/controllers/i18n.py:115
-#, fuzzy
 msgid "Are you sure you want to copy this recording?"
-msgstr "Haluatko varmasti poistaa tämän tallennuksen?"
+msgstr "Haluatko varmasti kopioida tämän tallennuksen?"
 
 #: ../plugin/controllers/i18n.py:462
 msgid "Are you sure you want to delete the selected bouquet?"
@@ -285,9 +281,8 @@ msgid "Are you sure you want to delete this timer?"
 msgstr "Haluatko varmasti poistaa tämän ajastuksen?"
 
 #: ../plugin/controllers/i18n.py:117
-#, fuzzy
 msgid "Are you sure you want to move this recording?"
-msgstr "Haluatko varmasti uudelleen nimetä tämän tallennuksen?"
+msgstr "Haluatko varmasti siirtää tämän tallennuksen?"
 
 #: ../plugin/controllers/i18n.py:216
 msgid "Are you sure you want to rename this recording?"
@@ -367,7 +362,7 @@ msgstr "Vain taustalla"
 
 #: ../plugin/controllers/i18n.py:608
 msgid "Before"
-msgstr ""
+msgstr "Ennen"
 
 #: ../plugin/controllers/i18n.py:88 ../plugin/controllers/i18n.py:426
 msgid "Begin"
@@ -431,7 +426,7 @@ msgstr "Suosikkilista %s siirretty."
 #: ../plugin/controllers/BouquetEditor.py:197
 #, python-format
 msgid "Bouquet %s removed failed, sevicerefence or mutable list is not valid."
-msgstr "Suosikkilistan %s poisto epäonnistui, kanavareferenssi tai listanmuutos ole hyväksyttävissä."
+msgstr "Suosikkilistan %s poisto epäonnistui, kanavareferenssi tai listanmuutos ei ole hyväksyttävissä."
 
 #: ../plugin/controllers/BouquetEditor.py:195
 #, python-format
@@ -557,9 +552,8 @@ msgid "Control"
 msgstr "Ohjaus"
 
 #: ../plugin/controllers/i18n.py:114
-#, fuzzy
 msgid "Copy Recording"
-msgstr "Tallennus"
+msgstr "Kopioi Tallennus"
 
 #: ../plugin/controllers/models/timers.py:356
 #, python-format
@@ -573,7 +567,7 @@ msgstr "Ei löydy ajastusta '%s' annetuilla alku- ja loppuajoilla!"
 
 #: ../plugin/controllers/i18n.py:449
 msgid "Create bouquet from selection"
-msgstr "Lisää palveluntarjoaja uudeksi suosikkilistaksi"
+msgstr "Luo suosikkilista valinnasta"
 
 #: ../plugin/controllers/i18n.py:105
 msgid "Current"
@@ -726,7 +720,7 @@ msgstr "Kesto"
 
 #: ../plugin/controllers/models/info.py:642
 msgid "E"
-msgstr "O"
+msgstr "I"
 
 #: ../plugin/controllers/i18n.py:139
 msgid "EPG"
@@ -863,7 +857,7 @@ msgstr "Virhe tiedoston latauksessa"
 
 #: ../plugin/controllers/BouquetEditor.py:582
 msgid "Error while preparing backup file."
-msgstr "Virhe varmuuskopioinnissa."
+msgstr "Virhe varmuuskopiointitiedoston valmistelussa."
 
 #: ../plugin/controllers/AT.py:69 ../plugin/controllers/BQE.py:319
 #: ../plugin/controllers/ipkg.py:317
@@ -878,12 +872,12 @@ msgstr "Virhe, %s ei löydy. Palautus ei onnistu..."
 #: ../plugin/controllers/BouquetEditor.py:639
 #, python-format
 msgid "Error, %s was not created with WebBouquetEditor..."
-msgstr "Virhe, %s ei luotu web-suosikkilistojen järjestelyllä..."
+msgstr "Virhe, %s ei luotu web-suosikkilistojen editorilla..."
 
 #: ../plugin/controllers/BouquetEditor.py:642
 #, python-format
 msgid "Error, extract files from backup '%s'"
-msgstr ""
+msgstr "Virhe, pura tiedostot varmuuskopiosta '%s'"
 
 #: ../plugin/controllers/BouquetEditor.py:204
 #, python-format
@@ -932,16 +926,15 @@ msgstr "Helmikuu"
 
 #: ../plugin/controllers/i18n.py:147
 msgid "Find similar events"
-msgstr ""
+msgstr "Etsi samanlaiset ohjelmat"
 
 #: ../plugin/controllers/i18n.py:149
 msgid "Firmware version"
-msgstr "Ohjelmisto"
+msgstr "Ohjelmiston versio"
 
 #: ../plugin/controllers/i18n.py:605
-#, fuzzy
 msgid "Folders"
-msgstr "Palveluntarjoajat"
+msgstr "Hakemistot"
 
 #: ../plugin/controllers/i18n.py:432
 msgid "Force"
@@ -974,7 +967,7 @@ msgstr "Perjantai"
 
 #: ../plugin/controllers/i18n.py:335
 msgid "From date"
-msgstr "Ei jälkeen"
+msgstr "Päivämäärästä alkaen"
 
 #: ../plugin/controllers/i18n.py:150 ../plugin/controllers/models/info.py:333
 msgid "Front processor version"
@@ -1224,7 +1217,7 @@ msgstr "Maaliskuu"
 
 #: ../plugin/controllers/i18n.py:606
 msgid "Margin"
-msgstr ""
+msgstr "Marginaali"
 
 #: ../plugin/controllers/BouquetEditor.py:358
 msgid "Marker added."
@@ -1276,9 +1269,8 @@ msgid "Missing mandatory parameter '%s'"
 msgstr "Puuttuva pakollinen asetus '%s'"
 
 #: ../plugin/controllers/models/timers.py:729
-#, fuzzy
 msgid "Missing request parameter: sRef"
-msgstr "Virheellinen pyyntö: sRef"
+msgstr "Puuttuva pyyntöparametri: sRef"
 
 #: ../plugin/controllers/i18n.py:38
 msgid "Mo"
@@ -1314,9 +1306,8 @@ msgid "Mount point"
 msgstr "Liitoskohta"
 
 #: ../plugin/controllers/i18n.py:116
-#, fuzzy
 msgid "Move Recording"
-msgstr "Valeajastus"
+msgstr "Siirrä tallennus"
 
 #: ../plugin/controllers/i18n.py:489
 msgid "Movie database for EPG"
@@ -1389,9 +1380,8 @@ msgid "New Name"
 msgstr "Uusi nimi"
 
 #: ../plugin/controllers/i18n.py:107
-#, fuzzy
 msgid "Next Event"
-msgstr "Nykyinen ohjelma"
+msgstr "Seuraava ohjelma"
 
 #: ../plugin/controllers/i18n.py:357 ../plugin/controllers/i18n.py:541
 msgid "No"
@@ -1665,9 +1655,8 @@ msgid "Process"
 msgstr "Jäsentele"
 
 #: ../sourcefiles/node_modules/iconv-lite/.idea/inspectionProfiles/Project_Default.xml
-#, fuzzy
 msgid "Project Default"
-msgstr "Oletus"
+msgstr "Oletusprojekti"
 
 #: ../plugin/controllers/i18n.py:206
 msgid "Provider"
@@ -1730,9 +1719,8 @@ msgid "Remote"
 msgstr "Kaukosäädin"
 
 #: ../sourcefiles/node_modules/iconv-lite/.idea/codeStyles/Project.xml
-#, fuzzy
 msgid "Remove"
-msgstr "poista"
+msgstr "Poista"
 
 #: ../plugin/controllers/i18n.py:532
 msgid "Remove Package"
@@ -1874,7 +1862,7 @@ msgstr "Haku tyypillä"
 
 #: ../plugin/controllers/i18n.py:609
 msgid "Select Directory"
-msgstr ""
+msgstr "Valitse hakemisto"
 
 #: ../plugin/controllers/i18n.py:545
 msgid "Select IPK file for upload"
@@ -2035,7 +2023,7 @@ msgstr "Sammuta"
 
 #: ../plugin/controllers/i18n.py:431
 msgid "Shutdown after refresh."
-msgstr ""
+msgstr "Sammuta virkistyksen jälkeen."
 
 #: ../plugin/controllers/i18n.py:276
 msgid "Signal Power (AGC)"
@@ -2685,7 +2673,7 @@ msgstr "täsmällinen ohjelmannimen vastaavuus"
 
 #: ../sourcefiles/node_modules/iconv-lite/.idea/codeStyles/Project.xml
 msgid "false"
-msgstr ""
+msgstr "väärin"
 
 #: ../plugin/controllers/i18n.py:322
 msgid "favourite desc match"
@@ -2827,7 +2815,7 @@ msgstr "nimessä"
 
 #: ../plugin/controllers/i18n.py:321
 msgid "title ends with"
-msgstr "Ohjelmannimi loppuu"
+msgstr "ohjelmannimi loppuu"
 
 #: ../plugin/controllers/i18n.py:314 ../plugin/controllers/i18n.py:315
 msgid "title or description match"
@@ -2848,7 +2836,7 @@ msgstr "transkoodaus"
 #: ../sourcefiles/node_modules/iconv-lite/.idea/codeStyles/Project.xml
 #: ../sourcefiles/node_modules/iconv-lite/.idea/codeStyles/codeStyleConfig.xml
 msgid "true"
-msgstr ""
+msgstr "tosi"
 
 #: ../plugin/controllers/web.py:731
 #, python-format
