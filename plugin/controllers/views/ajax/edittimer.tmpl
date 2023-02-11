@@ -48,10 +48,49 @@
 
 	<div class="t ui-widget-content">
 		<div>$tstrings['time']:</div>
-		<div>$tstrings['start']:<input type="text" name="timerbegin" id="timerbegin" value="" class="text ui-widget-content ui-corner-all" />&nbsp;
-		$tstrings['end']:<input type="text" name="timerend" id="timerend" value="" class="text ui-widget-content ui-corner-all" /></div>
+		<div>$tstrings['start']:<input type="text" name="timerbegin" id="timerbegin" value="" class="text ui-widget-content ui-corner-all" />&nbsp;&nbsp;
+		#if $margins
+		<input type="checkbox" name="hasendtime" id="hasendtime" checked style="display:none"/>&nbsp;&nbsp;
+		#end if
+		<span id="endtimes" style="float:right">
+		$tstrings['end']:<input type="text" name="timerend" id="timerend" value="" class="text ui-widget-content ui-corner-all" />
+		</div>
 	</div>
 
+	#if $margins
+	<div class="timerlist_row" id="margins_rec">
+		<span class="timerlist_row_l">$tstrings['margin']:</span>
+		<span>$tstrings['before']:</span>
+		<span style="margin-left: 10px;">
+			<input oninput="updateEvent()" value="$margin_before" type="number" name="margin_before" id="margin_before" style="width:80px;" min=0 step=1 max=100 class="text ui-widget-content ui-corner-all" />
+		</span>
+		<div style="float:right">
+			<span>$tstrings['after']:</span>
+			<span style="margin-left: 10px;">
+				<input oninput="updateEvent()" value="$margin_after" type="number" name="margin_after" id="margin_after" style="width:80px;" min=0 step=1 max=100 class="text ui-widget-content ui-corner-all" />
+			</span>
+		</div>
+	</div>
+	<div class="timerlist_row" id="margins_zap">
+		<span class="timerlist_row_l">$tstrings['margin']:</span>
+		<span>$tstrings['before']:</span>
+		<span style="margin-left: 10px;">
+			<input oninput="updateEvent()" value="$zap_margin_before" type="number" name="zap_margin_before" id="zap_margin_before" style="width:80px;" min=0 step=1 max=100 class="text ui-widget-content ui-corner-all" />
+		</span>
+		<div style="float:right">
+			<span>$tstrings['after']:</span>
+			<span style="margin: 5px;">
+				<input oninput="updateEvent()" value="$zap_margin_after" type="number" name="zap_margin_after" id="zap_margin_after" style="width:80px;" min=0 step=1 max=100 class="text ui-widget-content ui-corner-all" />
+			</span>
+		</div>
+	</div>
+	<div class="t ui-widget-content">
+		<div class="timerlist_row">
+			<span class="timerlist_row_l">Event:</span>
+			<span id="eventinfo" name="eventinfo"></span>
+		</div>
+	</div>
+	#end if
 
 	<div class="t ui-widget-content">
 		<div>$tstrings['repeated']:</div>
@@ -70,7 +109,7 @@
 	<div class="t ui-widget-content">
 		<div>$tstrings['location']:</div>
 		<div>
-		<select id="dirname" name="dirname">
+		<select id="dirname" name="dirname" style="width:100%">
 			<option value="None">$tstrings['default']</option>
 		</select>
 		</div>
@@ -137,9 +176,8 @@
 </form>
 
 <script type="text/javascript">
-
+hasMargins = ("$margins" == "True");
 #raw
-
 initTimerEditBegin();
 
 $('.cbtvr').click(function() {
@@ -149,30 +187,20 @@ $('.cbtvr').click(function() {
 
 $('#vpsplugin_enabled').click(function() { checkVPS();});
 
-$('#always_zap').click(function() {
-	$('#justplay').prop("disabled",$('#always_zap').is(':checked'));
+$('#justplay').click(function() { 
+	checkType();
 });
 
-$('#timerend').datetimepicker({
-	timeText: tstr_time,
-	hourText: tstr_hour,
-	minuteText: tstr_minute,
-	currentText: tstr_now,
-	closeText: tstr_done,
-	monthNames: [tstr_january, tstr_february, tstr_march, tstr_april, tstr_may, tstr_june, tstr_july, tstr_august, tstr_september, tstr_october, tstr_november, tstr_december],
-	dayNames: [tstr_sunday, tstr_monday, tstr_tuesday, tstr_wednesday, tstr_thursday, tstr_friday, tstr_saturday, tstr_sunday],
-	dayNamesMin: [tstr_su, tstr_mo, tstr_tu, tstr_we, tstr_th, tstr_fr, tstr_sa, tstr_su],
-	
-	dateFormat: 'dd.mm.yy',
-	timeFormat: 'HH:mm',
-	onClose: function(dateText, inst) {
-		if (!timeredit_begindestroy && $('#timerbegin').val() != '' && 
-			$('#timerbegin').datetimepicker('getDate') > $(this).datetimepicker('getDate')) {
-				$('#error').text(tstr_start_after_end);
-				$('#errorbox').show();
-		}
-		else
-			$('#errorbox').hide();
+$('#always_zap').click(function() {
+	checkType();
+});
+
+$('#hasendtime').click(function() {
+	if ($('#hasendtime').is(':checked')) {
+		$('#endtimes').show();
+	}
+	else {
+		$('#endtimes').hide();
 	}
 });
 
@@ -188,7 +216,6 @@ $(function() {
 	}
 
 });
-
 
 var h = ($(window).height() > 700) ? 620:520;
 var w = ($(window).width() > 800) ? 740:650;
@@ -252,6 +279,21 @@ $('#editTimerForm').dialog({
 				}
 				else
 					urldata["begin"] = Math.round(current_begin);
+
+				if(hasMargins)
+				{
+					if($('#justplay').is(':checked'))
+					{
+						urldata["hasendtime"] = $('#hasendtime').is(':checked')?"1":"0";
+						urldata["marginbefore"] = $('#zap_margin_before').val();
+						urldata["marginafter"] = $('#zap_margin_after').val();
+					}
+					else {
+						urldata["marginbefore"] = $('#margin_before').val();
+						urldata["marginafter"] = $('#margin_after').val();
+					}
+
+				}
 
 				var canclose = false;
 				if (current_serviceref == "") {
@@ -329,6 +371,7 @@ $('#editTimerForm').dialog({
 });
 
 checkVPS();
+checkType();
 
 #end raw
 </script>

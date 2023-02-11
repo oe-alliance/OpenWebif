@@ -468,13 +468,11 @@ def editTimer(session, serviceref, begin, end, name, description, disabled, just
 
 			if getInfo()['timermargins']:
 				if marginBefore != -1:
-					timer.marginBefore = marginBefore
-					timer.eventBegin = timer.begin
-					timer.begin = timer.eventBegin - (marginBefore + 60)
+					timer.marginBefore = int(marginBefore * 60)
+					timer.eventBegin = timer.begin + timer.marginBefore
 				if marginAfter != -1:
-					timer.marginAfter = marginAfter
-					timer.eventEnd = timer.end
-					timer.end = timer.eventEnd + (marginAfter + 60)
+					timer.marginAfter = int(marginAfter * 60)
+					timer.eventEnd = timer.end - timer.marginAfter
 				if hasEndTime is not None:
 					timer.hasEndTime = hasEndTime
 					if justplay and not hasEndTime:

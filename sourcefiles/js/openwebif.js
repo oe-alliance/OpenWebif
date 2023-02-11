@@ -1,8 +1,8 @@
 //******************************************************************************
 //* openwebif.js: openwebif base module
-//* Version 2.0.0
+//* Version 2.0.1
 //******************************************************************************
-//* Copyright (C) 2011-2022 E2OpenPlugins
+//* Copyright (C) 2011-2023 E2OpenPlugins
 //*
 //* V 1.0   - Initial Version
 //* V 1.1   - add movie move and rename
@@ -42,6 +42,7 @@
 //* V 1.2.27 - improve FillAllServices
 //* V 1.2.28 - improve timeredit
 //* V 2.0.0 - use let instead of var
+//* V 2.0.1 - add new timer margins
 //*
 //* Authors: jbleyel
 //*			 skaman <sandro # skanetwork.com>
@@ -56,7 +57,7 @@
 //*******************************************************************************
 
 $.fx.speeds._default = 1000;
-var theme='original',loadspinner = "<div id='spinner'><div class='fa fa-spinner fa-spin'></div></div>",mutestatus = 0,lastcontenturl = null,screenshotMode = 'all',MessageAnswerCounter=0,grabTimer = 0,at2add = null,_locations = [],_tags = [],current_ref=null,current_name=null,selectedfolder="",pipstatus=false;
+var theme='original',loadspinner = "<div id='spinner'><div class='fa fa-spinner fa-spin'></div></div>",mutestatus = 0,lastcontenturl = null,screenshotMode = 'all',MessageAnswerCounter=0,grabTimer = 0,at2add = null,_locations = [],_tags = [],current_ref=null,current_name=null,selectedfolder="",pipstatus=false,hasMargins=false;
 
 $(function() {
 	
@@ -1136,11 +1137,36 @@ function initTimerEditBegin()
 		dateFormat: 'dd.mm.yy',
 		timeFormat: 'HH:mm',
 		onClose: function(dateText, inst) {
+			updateEvent();
 			if ($('#timerend').val() != '' &&
 				$(this).datetimepicker('getDate') > $('#timerend').datetimepicker('getDate')) {
 					let begindate = new Date($(this).datetimepicker('getDate'));
 					let enddate = new Date(begindate.getTime() + (60*60*1000));
 					$('#timerend').datetimepicker('setDate', enddate);
+			}
+			else
+				$('#errorbox').hide();
+		}
+	});
+	
+	$('#timerend').datetimepicker({
+		timeText: tstr_time,
+		hourText: tstr_hour,
+		minuteText: tstr_minute,
+		currentText: tstr_now,
+		closeText: tstr_done,
+		monthNames: [tstr_january, tstr_february, tstr_march, tstr_april, tstr_may, tstr_june, tstr_july, tstr_august, tstr_september, tstr_october, tstr_november, tstr_december],
+		dayNames: [tstr_sunday, tstr_monday, tstr_tuesday, tstr_wednesday, tstr_thursday, tstr_friday, tstr_saturday, tstr_sunday],
+		dayNamesMin: [tstr_su, tstr_mo, tstr_tu, tstr_we, tstr_th, tstr_fr, tstr_sa, tstr_su],
+		
+		dateFormat: 'dd.mm.yy',
+		timeFormat: 'HH:mm',
+		onClose: function(dateText, inst) {
+			updateEvent();
+			if (!timeredit_begindestroy && $('#timerbegin').val() != '' && 
+				$('#timerbegin').datetimepicker('getDate') > $(this).datetimepicker('getDate')) {
+					$('#error').text(tstr_start_after_end);
+					$('#errorbox').show();
 			}
 			else
 				$('#errorbox').hide();
@@ -1289,6 +1315,21 @@ function editTimer(serviceref, begin, end, evtid) {
 								$('#allow_duplicate').prop("checked", timer.allow_duplicate==1);
 							}
 
+							if (typeof timer.marginafter !== 'undefined')
+							{
+								$('#margin_before').val(Math.round(timer.marginbefore/60));
+								$('#margin_after').val(Math.round(timer.marginafter/60));
+								$('#zap_margin_before').val(Math.round(timer.marginbefore/60));
+								$('#zap_margin_after').val(Math.round(timer.marginafter/60));
+							}
+
+							if (typeof timer.hasendtime !== 'undefined')
+							{
+								$('#hasendtime').prop("checked", timer.hasendtime);
+							}
+
+							checkType();
+
 							openTimerDlg(tstr_edit_timer + " - " + timer.name);
 							
 							break;
@@ -1400,6 +1441,8 @@ function addTimer(evt,chsref,chname,top,isradio) {
 	}
 	*/
 
+	checkType();
+
 	openTimerDlg(tstr_add_timer);
 	};
 	
@@ -1414,6 +1457,68 @@ function addTimer(evt,chsref,chname,top,isradio) {
 		} else {
 			bottomhalf();
 		}
+	}
+
+}
+
+
+function checkType() {
+
+	let always_zap=$('#always_zap').is(':checked');
+	if(always_zap)
+		$('#justplay').prop("checked",false);
+	$('#justplay').prop("disabled",always_zap);
+	let justplay=$('#justplay').is(':checked');
+	if (hasMargins) {
+		if (justplay) {
+			$('#hasendtime').show();
+			$('#margins_zap').show();
+			$('#margins_rec').hide();
+			if ($('#hasendtime').is(':checked')) {
+				$('#endtimes').show();
+			}
+			else {
+				$('#endtimes').hide();
+			}
+		}
+		else {
+			$('#endtimes').show();
+			$('#hasendtime').hide();
+			$('#margins_rec').show();
+			$('#margins_zap').hide();
+		}
+	}
+	updateEvent();
+}
+
+function updateEvent()
+{
+	if(hasMargins)
+	{
+		var enddate = new Date($('#timerend').datetimepicker('getDate'));
+		var begindate = new Date($('#timerbegin').datetimepicker('getDate'));
+		var hasendtime = false;
+		var	marginbefore = $('#margin_before').val();
+		var	marginafter = $('#margin_after').val();
+
+		if($('#justplay').is(':checked'))
+		{
+			hasendtime = $('#hasendtime').is(':checked');
+			marginbefore = $('#zap_margin_before').val();
+			marginafter = $('#zap_margin_after').val();
+		}
+		
+		enddate = new Date(enddate.getTime() - marginafter*60000);
+		begindate = new Date(begindate.getTime() + marginbefore*60000);
+
+		let bd = $.datepicker.formatDate('dd.mm.yy', begindate);
+		let ed = $.datepicker.formatDate('dd.mm.yy', enddate);
+
+		let bdt = $.datepicker.formatTime('HH:mm', { hour: begindate.getHours(), minute: begindate.getMinutes()}, {})
+		let edt = $.datepicker.formatTime('HH:mm', { hour: enddate.getHours(), minute: enddate.getMinutes()}, {})
+
+		$('#eventinfo').html(bd + " " + bdt + " / " + ed + " " + edt);
+
 	}
 
 }
