@@ -1,6 +1,7 @@
 #from controllers.defaults import USERCSSCLASSIC
 #from controllers.i18n import tstrings
 #from json import dumps
+#from Plugins.Extensions.OpenWebif import __version__
 #set $t="original"
 #if $varExists('theme')
 	#set $t=$theme
@@ -161,7 +162,7 @@
 		#set $theme_css = $t + '.min.css'
 		<link type="text/css" rel="stylesheet" href="themes/$theme_css">
 	#end if
-	<link type="text/css" href="css/style.min.css?v2" rel="stylesheet"/>
+	<link type="text/css" href="css/style.min.css?v$__version__" rel="stylesheet"/>
 	#if $t == "original"
 		<link type="text/css" href="css/theme_original.css" rel="stylesheet"/>
 	#end if
@@ -358,7 +359,7 @@
 
 	<script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui-1.13.2.min.js"></script>
-	<script type="text/javascript" src="js/openwebif.min.js?v2.0.1"></script>
+	<script type="text/javascript" src="js/openwebif.min.js?v$__version__"></script>
 	<script type="text/javascript" src="js/jquery-ui-timepicker-addon.min.js"></script>
 	<script type="text/javascript" src="/js/chosen-1.8.7.jquery.min.js"></script>
 	<script type="text/javascript">initJsTranslation($dumps($tstrings))</script>
