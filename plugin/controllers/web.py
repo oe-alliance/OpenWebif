@@ -174,7 +174,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#about
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#about
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -201,7 +201,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			Probably https://dream.reichholf.net/e2web/#signal
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#signal
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -219,7 +219,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#vol
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#vol
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -255,7 +255,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#getaudiotracks
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#getaudiotracks
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -270,7 +270,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#selectaudiotrack
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#selectaudiotrack
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -295,7 +295,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#zap
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#zap
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -322,7 +322,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#remotecontrol
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#remotecontrol
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -359,7 +359,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#powerstate
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#powerstate
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -430,7 +430,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#getlocations
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#getlocations
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -446,7 +446,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#getcurrlocation
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#getcurrlocation
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -462,7 +462,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#getallservices
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#getallservices
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -505,7 +505,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#getservices
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#getservices
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -564,7 +564,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#services.m3u
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#servicesm3u
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -601,7 +601,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#subservices
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#subservices
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -616,7 +616,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#parentcontrollist
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#parentcontrollist
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -632,7 +632,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#servicelistplayable
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#servicelistplayable
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -650,7 +650,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#serviceplayable
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#serviceplayable
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -668,7 +668,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#addlocation
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#addlocation
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -690,7 +690,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#removelocation
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#removelocation
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -712,7 +712,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#message
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#message
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -747,7 +747,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#messageanswer
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#messageanswer
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -763,7 +763,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#movielist
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#movielist
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -782,7 +782,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#movielist.html
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#movielisthtml
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -799,7 +799,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#movielist.m3u
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#movielistm3u
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -817,7 +817,8 @@ class WebController(BaseController):
 		Retrieve list of movie items in RSS format.
 
 		.. seealso::
-			https://dream.reichholf.net/e2web/#movielist.rss
+
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#movielistrss
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -834,7 +835,8 @@ class WebController(BaseController):
 		Delete movie file.
 
 		.. seealso::
-			https://dream.reichholf.net/e2web/#moviedelete
+
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#moviedelete
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -854,7 +856,8 @@ class WebController(BaseController):
 		Move movie file.
 
 		.. seealso::
-			https://dream.reichholf.net/e2web/#moviemove
+
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#moviemove
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -878,7 +881,8 @@ class WebController(BaseController):
 		Rename movie file.
 
 		.. seealso::
-			https://dream.reichholf.net/e2web/#movierename
+
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#movierename
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -901,8 +905,11 @@ class WebController(BaseController):
 		Request handler for the `movietags` endpoint.
 		Add/Remove tags to movie file.
 
+		DEPRECATED -> use movieinfo instead
+
 		.. seealso::
-			https://dream.reichholf.net/e2web/#movietags
+
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#movietags
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -922,6 +929,10 @@ class WebController(BaseController):
 		Add/Remove tags to movie file. Multiple tags needs to separate by ,
 		Remame title of movie.
 		Get/set movie cuts.
+
+		.. seealso::
+
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#movieinfo
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -945,6 +956,10 @@ class WebController(BaseController):
 		"""
 		Request handler for the `movie` endpoint.
 
+		.. seealso::
+
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#moviedetails
+
 		Args:
 			request (twisted.web.server.Request): HTTP request object
 		Returns:
@@ -967,7 +982,8 @@ class WebController(BaseController):
 		Get tags of movie file (?).
 
 		.. seealso::
-			https://dream.reichholf.net/e2web/#gettags
+
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#gettags
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -1031,7 +1047,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#timerlist
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#timerlist
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -1194,7 +1210,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#timeradd
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#timeradd
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -1214,7 +1230,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#timeraddbyeventid
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#timeraddbyeventid
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -1243,7 +1259,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#timerchange
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#timerchange
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -1314,7 +1330,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#timerdelete
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#timerdelete
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -1354,7 +1370,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#timercleanup
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#timercleanup
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -1369,7 +1385,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#timerlistwrite
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#timerlistwrite
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -1384,7 +1400,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#recordnow
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#recordnow
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -1402,7 +1418,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#currenttime
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#currenttime
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -1417,7 +1433,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#deviceinfo
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#deviceinfo
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -1575,7 +1591,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#epgsearch
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#epgsearch
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -1706,7 +1722,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#getcurrent
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#getcurrent
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -1803,7 +1819,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#getpid
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#getpid
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -1837,7 +1853,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#stream.m3u
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#streamm3u
 
 		.. note::
 
@@ -1867,7 +1883,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#ts.m3u
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#tsm3u
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -1890,7 +1906,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#streamcurrent.m3u
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#streamcurrentm3u
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -1909,7 +1925,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#streamsubservices
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#streamsubservices
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -1929,7 +1945,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#servicelistreload
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#servicelistreload
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -1945,7 +1961,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#tvbrowser
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#tvbrowser
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -2039,7 +2055,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#pluginlistread
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#pluginlistread
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -2054,7 +2070,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#restarttwisted
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#restarttwisted
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -2080,7 +2096,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#sleeptimer
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#sleeptimer
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -2136,7 +2152,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#external
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#external
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -2163,7 +2179,7 @@ class WebController(BaseController):
 
 		.. seealso::
 
-			https://dream.reichholf.net/e2web/#settings
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#settings
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
