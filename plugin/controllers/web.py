@@ -30,7 +30,7 @@ from .models.control import zapService, remoteControl, setPowerState, getStandby
 from .models.locations import getLocations, getCurrentLocation, addLocation, removeLocation
 from .models.timers import getTimers, addTimer, addTimerByEventId, editTimer, removeTimer, toggleTimerStatus, cleanupTimer, writeTimerList, recordNow, tvbrowser, getSleepTimer, setSleepTimer, getPowerTimer, setPowerTimer, getVPSChannels
 from .models.message import sendMessage, getMessageAnswer
-from .models.movies import getMovieList, removeMovie, getMovieInfo, moveMovie, renameMovie, getAllMovies, getMovieDetails
+from .models.movies import getMovieList, removeMovie, getMovieInfo, movieAction, getAllMovies, getMovieDetails
 from .models.config import getSettings, addCollapsedMenu, removeCollapsedMenu, saveConfig, getConfigs, getConfigsSections, getUtcOffset
 from .models.stream import getStream, getTS, getStreamSubservices, GetSession
 from .models.servicelist import reloadServicesLists
@@ -873,7 +873,32 @@ class WebController(BaseController):
 
 		sref = getUrlArg(request, "sRef")
 		dirname = getUrlArg(request, "dirname")
-		return moveMovie(self.session, sref, dirname)
+		return movieAction(self.session, sref, dirname, domove=True)
+
+	def P_moviecopy(self, request):
+		"""
+		Request handler for the `moviecopy` endpoint.
+		Copy movie file.
+
+		.. seealso::
+
+			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#moviecopy
+
+		Args:
+			request (twisted.web.server.Request): HTTP request object
+		Returns:
+			HTTP response with headers
+		"""
+		res = self.testMandatoryArguments(request, ["sRef"])
+		if res:
+			return res
+		res = self.testMandatoryArguments(request, ["dirname"])
+		if res:
+			return res
+
+		sref = getUrlArg(request, "sRef")
+		dirname = getUrlArg(request, "dirname")
+		return movieAction(self.session, sref, dirname)
 
 	def P_movierename(self, request):
 		"""
@@ -897,7 +922,7 @@ class WebController(BaseController):
 			return res
 		sref = getUrlArg(request, "sRef")
 		newname = getUrlArg(request, "newname")
-		return renameMovie(self.session, sref, newname)
+		return movieAction(self.session, sref, None, True, newname)
 
 	# DEPRECATED use movieinfo
 	def P_movietags(self, request):
@@ -1891,6 +1916,7 @@ class WebController(BaseController):
 			HTTP response with headers
 
 		.. http:get:: /web/ts.m3u
+			:query string file: filename of the stream
 
 		"""
 		self.isCustom = True
@@ -1946,6 +1972,11 @@ class WebController(BaseController):
 		.. seealso::
 
 			https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#servicelistreload
+
+
+		.. http:get:: /web/servicelistreload
+
+			:query string mode: [0=both, 1=lamedb only, 2=userbouqets only, 3=transponders, 4=parentalcontrol white-/blacklist]
 
 		Args:
 			request (twisted.web.server.Request): HTTP request object
@@ -2410,6 +2441,20 @@ class WebController(BaseController):
 		return getServiceRef(name, searchinbouquetsonly, bref)
 
 	def P_getpicon(self, request):
+		"""
+		Get the picon from service.
+
+		.. http:get:: /api/getpicon
+
+			:query string sRef: service refrerence
+			:query string path: path of the picons
+			:query string json: result as json
+
+		Args:
+			request (twisted.web.server.Request): HTTP request object
+		Returns:
+			HTTP response with headers
+		"""
 		res = self.testMandatoryArguments(request, ["sRef"])
 		if res:
 			return res

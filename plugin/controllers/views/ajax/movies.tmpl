@@ -128,13 +128,13 @@ function movieactioncallback(dirname, action, sRef, title, divid)
 	let questionmove = "$tstrings['move_recording_question']";
 
 	if(action == "copy") {
-		if (confirm(questioncopy + "\n" + title + "\nto\n" + name ) === true) {
+		if (confirm(questioncopy + "\n" + title + "\nto\n" + dirname ) === true) {
 			webapi_execute_movie("/api/moviecopy?sRef=" + sRef + "&dirname=" + dirname,
 			);
 		}
 	}
 	if(action == "move") {
-		if (confirm(questionmove + "\n" + title + "\nto\n" + name ) === true) {
+		if (confirm(questionmove + "\n" + title + "\nto\n" + dirname ) === true) {
 			webapi_execute_movie("/api/moviemove?sRef=" + sRef + "&dirname=" + dirname,
 				function (state) {
 					if(state) 
@@ -146,13 +146,6 @@ function movieactioncallback(dirname, action, sRef, title, divid)
 }
 
 function movieaction(sRef, divid, title, action) {
-
-	if(action == "copy")
-	{
-		alert("not implemented yet");
-		return;
-	}
-
 	var w = 500;
 	var h = 400;
 	var buttons = {};
