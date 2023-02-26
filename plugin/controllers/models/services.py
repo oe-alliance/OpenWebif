@@ -415,7 +415,10 @@ def getChannels(idbouquet, stype):
 		if chan['ref'].split(":")[0] == '5002':  # BAD fix !!! this needs to fix in enigma2 !!!
 			chan['name'] = chan['ref'].split(":")[-1]
 		# IPTV
-		chan['link'] = getIPTVLink(chan['ref'])
+		ref = chan['ref']
+		icam = "%3a17999/" in ref
+		chan['link'] = "" if icam else getIPTVLink(chan['ref'])
+		chan['icam'] = icam
 
 		if not int(channel[0].split(":")[1]) & 64:
 			psref = parse_servicereference(channel[0])
