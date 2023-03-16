@@ -95,13 +95,11 @@ class RootController(BaseController):
 	# the "pages functions" must be called P_pagename
 	# example http://boxip/index => P_index
 	def P_index(self, request):
-		if config.OpenWebif.webcache.responsive_enabled.value and exists(VIEWS_PATH + "/responsive"):
-			return {}
-		setMobile()
-		uagent = request.getHeader('User-Agent')
-		if exists(VIEWS_PATH + "/responsive"):
-			if uagent.lower().find("iphone") != -1 or uagent.lower().find("ipod") != -1 or uagent.lower().find("blackberry") != -1 or uagent.lower().find("mobile") != -1:
-				setMobile(True)
-				return {}
-
+		if not config.OpenWebif.webcache.responsive_enabled.value:
+			setMobile()
+			if exists(VIEWS_PATH + "/responsive"):
+				uagent = request.getHeader('User-Agent') or ""
+				uagent = uagent.lower()
+				if uagent.find("iphone") != -1 or uagent.find("ipod") != -1 or uagent.find("blackberry") != -1 or uagent.find("mobile") != -1:
+					setMobile(True)
 		return {}
