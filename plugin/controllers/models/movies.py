@@ -114,7 +114,7 @@ def getMovieList(rargs=None, locations=None, directory=None):
 			"movies": [],
 			"locations": [],
 			"bookmarks": [],
-			"directory": [],
+			"directory": ""
 		}
 
 	root = eServiceReference(MOVIE_LIST_SREF_ROOT + directory)

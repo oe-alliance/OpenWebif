@@ -18,7 +18,7 @@
 # Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
 ##########################################################################
 
-from os.path import exists
+from os.path import exists, isdir
 from time import mktime, localtime
 
 from Components.config import config
@@ -190,9 +190,9 @@ class AjaxController(BaseController):
 	def P_movies(self, request):
 		directory = getUrlArg(request, "dirname")
 		if directory is None:
-			if config.OpenWebif.webcache.moviedir.value and exists(config.OpenWebif.webcache.moviedir.value):
+			if config.OpenWebif.webcache.moviedir.value and isdir(config.OpenWebif.webcache.moviedir.value):
 				directory = config.OpenWebif.webcache.moviedir.value
-		elif exists(directory):
+		elif isdir(directory):
 			config.OpenWebif.webcache.moviedir.value = directory
 			config.OpenWebif.webcache.moviedir.save()
 		else:
