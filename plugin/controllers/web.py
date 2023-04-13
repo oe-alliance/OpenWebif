@@ -19,6 +19,7 @@
 ##########################################################################
 
 from re import match
+from os.path import isfile
 from Components.config import config as comp_config
 from Screens.InfoBar import InfoBar
 
@@ -30,7 +31,7 @@ from .models.control import zapService, remoteControl, setPowerState, getStandby
 from .models.locations import getLocations, getCurrentLocation, addLocation, removeLocation
 from .models.timers import getTimers, addTimer, addTimerByEventId, editTimer, removeTimer, toggleTimerStatus, cleanupTimer, writeTimerList, recordNow, tvbrowser, getSleepTimer, setSleepTimer, getPowerTimer, setPowerTimer, getVPSChannels
 from .models.message import sendMessage, getMessageAnswer
-from .models.movies import getMovieList, removeMovie, getMovieInfo, movieAction, getAllMovies, getMovieDetails
+from .models.movies import getMovieList, removeMovie, getMovieInfo, movieAction, getAllMovies, getMovieDetails, MOVIETAGFILE
 from .models.config import getSettings, addCollapsedMenu, removeCollapsedMenu, saveConfig, getConfigs, getConfigsSections, getUtcOffset
 from .models.stream import getStream, getTS, getStreamSubservices, GetSession
 from .models.servicelist import reloadServicesLists
@@ -1082,6 +1083,18 @@ class WebController(BaseController):
 		ret = getTimers(self.session)
 		ret["locations"] = comp_config.movielist.videodirs.value
 		ret["default"] = comp_config.usage.default_path.value
+
+		tags = []
+		if isfile(MOVIETAGFILE):
+			try:
+				with open(MOVIETAGFILE) as fd:
+					for tag in fd.read().split("\n"):
+						if tag:
+							tags.append(tag.strip())
+			except OSError:
+				pass
+
+		ret["tags"] = tags
 		return ret
 
 	def _AddEditTimer(self, request, mode):
