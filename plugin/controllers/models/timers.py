@@ -372,7 +372,7 @@ def addTimerByEventId(session, eventid, serviceref, justplay, dirname, tags, vps
 		}
 
 	(begin, end, name, description, eit) = parseEvent(event)
-	if getInfo()['timermargins']:
+	if getInfo()['timermargins'] and (marginBefore != -1 or marginAfter != -1):
 		# remove the margins from parseEvent
 		begin = begin + (config.recording.margin_before.value * 60)
 		end = end - (config.recording.margin_after.value * 60)
