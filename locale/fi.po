@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.2\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ../plugin\n"
 
@@ -2875,3 +2875,27 @@ msgstr "väärä tiedostotyyppi"
 #: ../plugin/controllers/i18n.py:329
 msgid "zap"
 msgstr "kanavanvaihto"
+
+msgid "TMDB Settings"
+msgstr "TMDB-asetukset"
+
+msgid "Cover and Backdrop Resolution:"
+msgstr "Kannen ja taustan resoluutio:"
+
+msgid "Language:"
+msgstr "Kieli:"
+
+msgid "Show details if single result:"
+msgstr "Näytä yksityiskohdat, jos yksittäinen tulos:"
+
+msgid "Cover Resolution:"
+msgstr "Kannen resoluutio:"
+
+msgid "Backdrop Resolution:"
+msgstr "Taustan resoluutio:"
+
+msgid "Check SSL certificate:"
+msgstr "Tarkista SSL-sertifikaatti:"
+
+msgid "TMDb API Key:"
+msgstr "TMDb API-avain:"
