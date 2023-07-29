@@ -21,8 +21,9 @@
 from enigma import eEnv
 from Components.SystemInfo import BoxInfo, SystemInfo
 from Components.config import config
+from gettext import dgettext
 from os import listdir
-from os.path import exists
+from os.path import exists, dirname, basename, join
 from xml.etree.ElementTree import parse
 
 from ..i18n import _
@@ -227,11 +228,13 @@ def getConfigs(key):
 	configs = []
 	title = None
 	config_entries = None
+	pluginLanguageDomain = None
 	if len(configfiles.sections) == 0:
 		configfiles.parseConfigFiles()
 	if key in configfiles.section_config:
 		config_entries = configfiles.section_config[key][1]
 		title = configfiles.section_config[key][0]
+		pluginLanguageDomain = configfiles.section_config[key][2]
 	if config_entries:
 		for entry in config_entries:
 			try:
@@ -239,7 +242,13 @@ def getConfigs(key):
 				if data is None:
 					continue
 				# print("[OpenWebif] -D- config entry: %s" % entry.text)
-				text = _(entry.get("text", ""))
+				text = entry.get("text", "")
+				if text and pluginLanguageDomain:
+					text = dgettext(pluginLanguageDomain, text)
+					if text == title:
+						text = _(text)
+				else:
+					text = _(text)
 				if "limits" in data:
 					text = "%s (%d - %d)" % (text, data["limits"][0], data["limits"][1])
 				configs.append({
@@ -332,7 +341,11 @@ class ConfigFiles:
 				setupfiles.append(('%s/enigma2/python/Plugins/%s/%s/setup.xml' % (libdir, location, plugin)))
 		for setupfile in setupfiles:
 			if exists(setupfile):
-				self.setupfiles.append(setupfile)
+				plugindir = dirname(setupfile)
+				pluginLanguageDomain = None
+				if exists(join(plugindir, "locale")):
+					pluginLanguageDomain = basename(plugindir)
+				self.setupfiles.append((setupfile, pluginLanguageDomain))
 
 	def includeElement(self, element):
 		itemlevel = int(element.get("level", 0))
@@ -383,12 +396,13 @@ class ConfigFiles:
 
 	def parseConfigFiles(self):
 		sections = []
-		for setupfile in self.setupfiles:
+		for setupfileName, pluginLanguageDomain in self.setupfiles:
 			# print("[OpenWebif] loading configuration file : %s" % setupfile)
-			setupfile = open(setupfile, 'r')
+			setupfile = open(setupfileName, 'r')
 			setupdom = parse(setupfile)  # nosec
 			setupfile.close()
 			xmldata = setupdom.getroot()
+
 			for section in xmldata.findall("setup"):
 				configs = []
 				requires = section.get("requires")
@@ -409,12 +423,23 @@ class ConfigFiles:
 					configs.append(entry)
 
 				if configs:
+					title = section.get("title")
+
+					if pluginLanguageDomain:
+						newtitle = dgettext(pluginLanguageDomain, title)
+						if newtitle == title:
+							title = _(title)
+					else:
+						title = _(title)
+
 					sections.append({
 						"key": key,
-						"description": _(section.get("title"))
+						"description": title
 					})
-					title = _(section.get("title", ""))
-					self.section_config[key] = (title, configs)
+					#title = _(section.get("title", ""))
+					if title is None:
+						title = ""
+					self.section_config[key] = (title, configs, pluginLanguageDomain)
 		sections = sorted(sections, key=lambda k: k['description'])
 		self.sections = sections
 
