@@ -1,7 +1,7 @@
 ##########################################################################
 # OpenWebif: config
 ##########################################################################
-# Copyright (C) 2011 - 2022 E2OpenPlugins
+# Copyright (C) 2011 - 2023 E2OpenPlugins
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -18,18 +18,19 @@
 # Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
 ##########################################################################
 
-from enigma import eEnv
-from Components.SystemInfo import BoxInfo, SystemInfo
-from Components.config import config
+from datetime import datetime
 from gettext import dgettext
 from os import listdir
 from os.path import exists, dirname, basename, join
+from time import time
 from xml.etree.ElementTree import parse
+
+from enigma import eEnv
+from Components.SystemInfo import BoxInfo, SystemInfo
+from Components.config import config
 
 from ..i18n import _
 from ..utilities import get_config_attribute
-from datetime import datetime
-from time import time
 
 TRANSLATE = {
 	"<default>": _("<Default movie location>"),
@@ -244,9 +245,10 @@ def getConfigs(key):
 				# print("[OpenWebif] -D- config entry: %s" % entry.text)
 				text = entry.get("text", "")
 				if text and pluginLanguageDomain:
-					text = dgettext(pluginLanguageDomain, text)
-					if text == title:
-						text = _(text)
+					newtext = dgettext(pluginLanguageDomain, text)
+					if text == newtext:
+						newtext = _(text)
+					text = newtext
 				else:
 					text = _(text)
 				if "limits" in data:
@@ -428,7 +430,8 @@ class ConfigFiles:
 					if pluginLanguageDomain:
 						newtitle = dgettext(pluginLanguageDomain, title)
 						if newtitle == title:
-							title = _(title)
+							newtitle = _(title)
+						title = newtitle
 					else:
 						title = _(title)
 

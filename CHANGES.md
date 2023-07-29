@@ -1,3 +1,7 @@
+## Version 2.0.7
+* improve servicelist reload api
+* improve settings translation for plugins
+
 ## Version 2.0.6
 * add copy/move recordings
 

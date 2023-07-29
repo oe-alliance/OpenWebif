@@ -1996,8 +1996,11 @@ class WebController(BaseController):
 		Returns:
 			HTTP response with headers
 		"""
+		res = self.testMandatoryArguments(request, ["mode"])
+		if res:
+			return res
 		mode = getUrlArg(request, "mode")
-		return reloadServicesLists(self.session, mode)
+		return reloadServicesLists(mode)
 
 	def P_tvbrowser(self, request):
 		"""
