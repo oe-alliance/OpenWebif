@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-09 20:12+0100\n"
+"POT-Creation-Date: 2023-08-22 19:39+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,7 +27,7 @@ msgstr ""
 msgid "%02d.%02d.%d"
 msgstr ""
 
-#: ../plugin/controllers/models/movies.py:59
+#: ../plugin/controllers/models/movies.py:60
 #: ../plugin/controllers/models/timers.py:70
 #, python-format
 msgid "%02d:%02d"
@@ -35,8 +35,8 @@ msgstr ""
 
 #: ../plugin/controllers/models/epg.py:291
 #: ../plugin/controllers/models/services.py:168
-#: ../plugin/controllers/models/services.py:903
-#: ../plugin/controllers/models/services.py:959
+#: ../plugin/controllers/models/services.py:910
+#: ../plugin/controllers/models/services.py:966
 msgid "%d.%m.%Y"
 msgstr ""
 
@@ -44,18 +44,18 @@ msgstr ""
 #: ../plugin/controllers/models/timers.py:194
 #: ../plugin/controllers/models/timers.py:298
 #: ../plugin/controllers/models/timers.py:299
-#: ../plugin/controllers/models/timers.py:512
-#: ../plugin/controllers/models/timers.py:513
+#: ../plugin/controllers/models/timers.py:510
+#: ../plugin/controllers/models/timers.py:511
 msgid "%d.%m.%Y %H:%M"
 msgstr ""
 
-#: ../plugin/controllers/models/movies.py:55
+#: ../plugin/controllers/models/movies.py:56
 #: ../plugin/controllers/models/timers.py:64
 #, python-format
 msgid "%s %02d.%02d."
 msgstr ""
 
-#: ../plugin/controllers/models/movies.py:57
+#: ../plugin/controllers/models/movies.py:58
 #, python-format
 msgid "%s %02d.%02d.%d"
 msgstr ""
@@ -89,15 +89,15 @@ msgstr ""
 msgid "(in minutes)"
 msgstr ""
 
-#: ../plugin/controllers/models/config.py:35
+#: ../plugin/controllers/models/config.py:37
 msgid "<Current movie list location>"
 msgstr ""
 
-#: ../plugin/controllers/models/config.py:34
+#: ../plugin/controllers/models/config.py:36
 msgid "<Default movie location>"
 msgstr ""
 
-#: ../plugin/controllers/models/config.py:36
+#: ../plugin/controllers/models/config.py:38
 msgid "<Last timer location>"
 msgstr ""
 
@@ -547,7 +547,7 @@ msgstr ""
 msgid "Could not add timer '%s'!"
 msgstr ""
 
-#: ../plugin/controllers/models/timers.py:524
+#: ../plugin/controllers/models/timers.py:522
 #, python-format
 msgid "Could not find timer '%s' with given start and end time!"
 msgstr ""
@@ -629,12 +629,6 @@ msgstr ""
 msgid "Delete Timer"
 msgstr ""
 
-#: ../plugin/controllers/models/movies.py:337
-msgid ""
-"Delete failed, because there is no movie trash !\n"
-"Disable movie trash in configuration to delete this item"
-msgstr ""
-
 #: ../plugin/controllers/i18n.py:525
 msgid "Deleted"
 msgstr ""
@@ -711,7 +705,7 @@ msgstr ""
 msgid "EPGRefresh"
 msgstr ""
 
-#: ../plugin/controllers/models/timers.py:980
+#: ../plugin/controllers/models/timers.py:978
 msgid "ERROR: Cannot set SleepTimer while device is in Standby-Mode"
 msgstr ""
 
@@ -800,7 +794,7 @@ msgstr ""
 msgid "Error"
 msgstr ""
 
-#: ../plugin/controllers/models/timers.py:1156
+#: ../plugin/controllers/models/timers.py:1154
 msgid "Error parsing vps.xml"
 msgstr ""
 
@@ -909,7 +903,7 @@ msgstr ""
 msgid "Free space"
 msgstr ""
 
-#: ../plugin/controllers/i18n.py:51 ../plugin/controllers/models/movies.py:44
+#: ../plugin/controllers/i18n.py:51 ../plugin/controllers/models/movies.py:45
 #: ../plugin/controllers/models/timers.py:49
 msgid "Fri"
 msgstr ""
@@ -934,8 +928,8 @@ msgstr ""
 #: ../plugin/controllers/models/info.py:386
 #: ../plugin/controllers/models/info.py:401
 #: ../plugin/controllers/models/info.py:404
-#: ../plugin/controllers/models/movies.py:238
-#: ../plugin/controllers/models/movies.py:677
+#: ../plugin/controllers/models/movies.py:239
+#: ../plugin/controllers/models/movies.py:661
 msgid "GB"
 msgstr ""
 
@@ -1023,7 +1017,7 @@ msgstr ""
 msgid "Include when"
 msgstr ""
 
-#: ../plugin/controllers/models/timers.py:640
+#: ../plugin/controllers/models/timers.py:638
 msgid "Infinite Instant recording started"
 msgstr ""
 
@@ -1051,7 +1045,7 @@ msgstr ""
 msgid "Instant Record"
 msgstr ""
 
-#: ../plugin/controllers/models/timers.py:631
+#: ../plugin/controllers/models/timers.py:629
 msgid "Instant record for current Event started"
 msgstr ""
 
@@ -1120,7 +1114,7 @@ msgstr ""
 msgid "Link speed"
 msgstr ""
 
-#: ../plugin/controllers/models/timers.py:601
+#: ../plugin/controllers/models/timers.py:599
 msgid "List of Timers has been cleaned"
 msgstr ""
 
@@ -1143,8 +1137,8 @@ msgstr ""
 #: ../plugin/controllers/models/info.py:377
 #: ../plugin/controllers/models/info.py:388
 #: ../plugin/controllers/models/info.py:406
-#: ../plugin/controllers/models/movies.py:240
-#: ../plugin/controllers/models/movies.py:679
+#: ../plugin/controllers/models/movies.py:241
+#: ../plugin/controllers/models/movies.py:663
 msgid "MB"
 msgstr ""
 
@@ -1208,12 +1202,12 @@ msgstr ""
 msgid "Minute"
 msgstr ""
 
-#: ../plugin/controllers/web.py:82
+#: ../plugin/controllers/web.py:83
 #, python-format
 msgid "Missing mandatory parameter '%s'"
 msgstr ""
 
-#: ../plugin/controllers/models/timers.py:729
+#: ../plugin/controllers/models/timers.py:727
 msgid "Missing request parameter: sRef"
 msgstr ""
 
@@ -1225,7 +1219,7 @@ msgstr ""
 msgid "Model"
 msgstr ""
 
-#: ../plugin/controllers/i18n.py:47 ../plugin/controllers/models/movies.py:44
+#: ../plugin/controllers/i18n.py:47 ../plugin/controllers/models/movies.py:45
 #: ../plugin/controllers/models/timers.py:49
 msgid "Mon"
 msgstr ""
@@ -1356,7 +1350,7 @@ msgstr ""
 msgid "No current service given!"
 msgstr ""
 
-#: ../plugin/controllers/models/timers.py:625
+#: ../plugin/controllers/models/timers.py:623
 msgid "No event found! Not recording!"
 msgstr ""
 
@@ -1368,8 +1362,8 @@ msgstr ""
 msgid "No matches were found in the EPG"
 msgstr ""
 
-#: ../plugin/controllers/models/timers.py:548
-#: ../plugin/controllers/models/timers.py:593
+#: ../plugin/controllers/models/timers.py:546
+#: ../plugin/controllers/models/timers.py:591
 msgid "No matching Timer found"
 msgstr ""
 
@@ -1571,7 +1565,7 @@ msgstr ""
 msgid "Power Control"
 msgstr ""
 
-#: ../plugin/controllers/models/timers.py:818
+#: ../plugin/controllers/models/timers.py:816
 msgid "PowerTimer feature not available"
 msgstr ""
 
@@ -1719,7 +1713,7 @@ msgstr ""
 msgid "Safe mode"
 msgstr ""
 
-#: ../plugin/controllers/i18n.py:52 ../plugin/controllers/models/movies.py:44
+#: ../plugin/controllers/i18n.py:52 ../plugin/controllers/models/movies.py:45
 #: ../plugin/controllers/models/timers.py:49
 msgid "Sat"
 msgstr ""
@@ -1970,27 +1964,27 @@ msgstr ""
 msgid "Skins"
 msgstr ""
 
-#: ../plugin/controllers/models/timers.py:897
+#: ../plugin/controllers/models/timers.py:895
 msgid "SleepTimer error"
 msgstr ""
 
-#: ../plugin/controllers/models/timers.py:985
-#: ../plugin/controllers/models/timers.py:1108
-#: ../plugin/controllers/models/timers.py:1127
+#: ../plugin/controllers/models/timers.py:983
+#: ../plugin/controllers/models/timers.py:1106
+#: ../plugin/controllers/models/timers.py:1125
 msgid "Sleeptimer has been disabled"
 msgstr ""
 
-#: ../plugin/controllers/models/timers.py:891
+#: ../plugin/controllers/models/timers.py:889
 msgid "Sleeptimer is disabled"
 msgstr ""
 
-#: ../plugin/controllers/models/timers.py:891
+#: ../plugin/controllers/models/timers.py:889
 msgid "Sleeptimer is enabled"
 msgstr ""
 
-#: ../plugin/controllers/models/timers.py:991
-#: ../plugin/controllers/models/timers.py:1108
-#: ../plugin/controllers/models/timers.py:1122
+#: ../plugin/controllers/models/timers.py:989
+#: ../plugin/controllers/models/timers.py:1106
+#: ../plugin/controllers/models/timers.py:1120
 #, python-format
 msgid "Sleeptimer set to %d minutes"
 msgstr ""
@@ -2067,7 +2061,7 @@ msgstr ""
 msgid "Subservices"
 msgstr ""
 
-#: ../plugin/controllers/i18n.py:46 ../plugin/controllers/models/movies.py:44
+#: ../plugin/controllers/i18n.py:46 ../plugin/controllers/models/movies.py:45
 #: ../plugin/controllers/models/timers.py:49
 msgid "Sun"
 msgstr ""
@@ -2138,27 +2132,27 @@ msgstr ""
 msgid "Th"
 msgstr ""
 
-#: ../plugin/controllers/web.py:88 ../plugin/controllers/web.py:1607
+#: ../plugin/controllers/web.py:89 ../plugin/controllers/web.py:1661
 #, python-format
 msgid "The parameter '%s' can't be empty"
 msgstr ""
 
-#: ../plugin/controllers/web.py:347
+#: ../plugin/controllers/web.py:348
 msgid "The parameter 'command' must be a number"
 msgstr ""
 
-#: ../plugin/controllers/models/timers.py:587
+#: ../plugin/controllers/models/timers.py:585
 #, python-format
 msgid "The timer '%s' has been %s successfully"
 msgstr ""
 
-#: ../plugin/controllers/models/timers.py:537
-#: ../plugin/controllers/models/timers.py:543
+#: ../plugin/controllers/models/timers.py:535
+#: ../plugin/controllers/models/timers.py:541
 #, python-format
 msgid "The timer '%s' has been deleted successfully"
 msgstr ""
 
-#: ../plugin/controllers/models/timers.py:579
+#: ../plugin/controllers/models/timers.py:577
 #, python-format
 msgid "The timer '%s' now recorded! Not disabled!"
 msgstr ""
@@ -2175,7 +2169,7 @@ msgstr ""
 msgid "This service can not be added."
 msgstr ""
 
-#: ../plugin/controllers/i18n.py:50 ../plugin/controllers/models/movies.py:44
+#: ../plugin/controllers/i18n.py:50 ../plugin/controllers/models/movies.py:45
 #: ../plugin/controllers/models/timers.py:49
 msgid "Thu"
 msgstr ""
@@ -2205,22 +2199,22 @@ msgstr ""
 msgid "Timer '%s' added"
 msgstr ""
 
-#: ../plugin/controllers/models/timers.py:573
+#: ../plugin/controllers/models/timers.py:571
 #, python-format
 msgid "Timer '%s' already exists!"
 msgstr ""
 
-#: ../plugin/controllers/models/timers.py:499
+#: ../plugin/controllers/models/timers.py:497
 #, python-format
 msgid "Timer '%s' changed"
 msgstr ""
 
-#: ../plugin/controllers/models/timers.py:567
+#: ../plugin/controllers/models/timers.py:565
 #, python-format
 msgid "Timer '%s' not enabled while Conflict"
 msgstr ""
 
-#: ../plugin/controllers/models/timers.py:518
+#: ../plugin/controllers/models/timers.py:516
 #, python-format
 msgid "Timer '%s' not saved while Conflict"
 msgstr ""
@@ -2237,7 +2231,7 @@ msgstr ""
 msgid "Timer added"
 msgstr ""
 
-#: ../plugin/controllers/models/timers.py:659
+#: ../plugin/controllers/models/timers.py:657
 msgid "Timer conflict detected! Not recording!"
 msgstr ""
 
@@ -2245,7 +2239,7 @@ msgstr ""
 msgid "Timer type"
 msgstr ""
 
-#: ../plugin/controllers/models/timers.py:609
+#: ../plugin/controllers/models/timers.py:607
 msgid "TimerList has been saved"
 msgstr ""
 
@@ -2265,7 +2259,7 @@ msgstr ""
 msgid "To date"
 msgstr ""
 
-#: ../plugin/controllers/models/movies.py:47
+#: ../plugin/controllers/models/movies.py:48
 #: ../plugin/controllers/models/timers.py:53
 msgid "Today"
 msgstr ""
@@ -2290,7 +2284,7 @@ msgstr ""
 msgid "Tu"
 msgstr ""
 
-#: ../plugin/controllers/i18n.py:48 ../plugin/controllers/models/movies.py:44
+#: ../plugin/controllers/i18n.py:48 ../plugin/controllers/models/movies.py:45
 #: ../plugin/controllers/models/timers.py:49
 msgid "Tue"
 msgstr ""
@@ -2319,12 +2313,12 @@ msgstr ""
 msgid "Type"
 msgstr ""
 
-#: ../plugin/controllers/web.py:249
+#: ../plugin/controllers/web.py:250
 #, python-format
 msgid "Unknown Volume command %s"
 msgstr ""
 
-#: ../plugin/controllers/models/timers.py:751
+#: ../plugin/controllers/models/timers.py:749
 #, python-format
 msgid "Unknown command: '%s'"
 msgstr ""
@@ -2393,7 +2387,7 @@ msgstr ""
 msgid "VPS"
 msgstr ""
 
-#: ../plugin/controllers/models/timers.py:1161
+#: ../plugin/controllers/models/timers.py:1159
 msgid "VPS plugin not found"
 msgstr ""
 
@@ -2457,7 +2451,7 @@ msgstr ""
 msgid "Web TV"
 msgstr ""
 
-#: ../plugin/controllers/i18n.py:49 ../plugin/controllers/models/movies.py:44
+#: ../plugin/controllers/i18n.py:49 ../plugin/controllers/models/movies.py:45
 #: ../plugin/controllers/models/timers.py:49
 msgid "Wed"
 msgstr ""
@@ -2486,7 +2480,7 @@ msgstr ""
 msgid "Would you like to save your changes?"
 msgstr ""
 
-#: ../plugin/controllers/web.py:244
+#: ../plugin/controllers/web.py:245
 #, python-format
 msgid "Wrong parameter format 'set=%s'. Use set=set15 "
 msgstr ""
@@ -2503,7 +2497,7 @@ msgstr ""
 msgid "Yes/No"
 msgstr ""
 
-#: ../plugin/controllers/models/movies.py:49
+#: ../plugin/controllers/models/movies.py:50
 #: ../plugin/controllers/models/timers.py:56
 msgid "Yesterday"
 msgstr ""
@@ -2602,8 +2596,8 @@ msgstr ""
 
 #: ../plugin/controllers/models/info.py:286
 #: ../plugin/controllers/models/info.py:289
-#: ../plugin/controllers/models/movies.py:242
-#: ../plugin/controllers/models/movies.py:681
+#: ../plugin/controllers/models/movies.py:243
+#: ../plugin/controllers/models/movies.py:665
 msgid "kB"
 msgstr ""
 
@@ -2666,10 +2660,6 @@ msgstr ""
 
 #: ../plugin/controllers/i18n.py:323
 msgid "regex match (experimental)"
-msgstr ""
-
-#: ../plugin/controllers/models/movies.py:331
-msgid "remove"
 msgstr ""
 
 #: ../plugin/controllers/i18n.py:219
@@ -2738,7 +2728,7 @@ msgstr ""
 msgid "transcoded"
 msgstr ""
 
-#: ../plugin/controllers/web.py:731
+#: ../plugin/controllers/web.py:732
 #, python-format
 msgid "type %s is not a number"
 msgstr ""
@@ -2850,29 +2840,4 @@ msgstr ""
 
 #: ../plugin/setup.xml
 msgid "Without auth only local access is allowed!"
-msgstr ""
-
-#: ../sourcefiles/node_modules/iconv-lite/.idea/codeStyles/Project.xml
-msgid "100"
-msgstr ""
-
-#: ../sourcefiles/node_modules/iconv-lite/.idea/codeStyles/Project.xml
-msgid "4"
-msgstr ""
-
-#: ../sourcefiles/node_modules/iconv-lite/.idea/codeStyles/Project.xml
-msgid "Remove"
-msgstr ""
-
-#: ../sourcefiles/node_modules/iconv-lite/.idea/codeStyles/Project.xml
-msgid "false"
-msgstr ""
-
-#: ../sourcefiles/node_modules/iconv-lite/.idea/codeStyles/Project.xml
-#: ../sourcefiles/node_modules/iconv-lite/.idea/codeStyles/codeStyleConfig.xml
-msgid "true"
-msgstr ""
-
-#: ../sourcefiles/node_modules/iconv-lite/.idea/inspectionProfiles/Project_Default.xml
-msgid "Project Default"
 msgstr ""
