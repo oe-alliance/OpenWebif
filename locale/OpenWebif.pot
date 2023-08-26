@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-22 19:39+0200\n"
+"POT-Creation-Date: 2023-08-26 22:02+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,7 +70,7 @@ msgstr ""
 msgid "%s / %s"
 msgstr ""
 
-#: ../plugin/controllers/ajax.py:280
+#: ../plugin/controllers/ajax.py:281
 #, python-format
 msgid "%s Style"
 msgstr ""
@@ -1496,7 +1496,7 @@ msgstr ""
 msgid "OpenWebif Settings"
 msgstr ""
 
-#: ../plugin/plugin.py:145
+#: ../plugin/plugin.py:146
 msgid "OpenWebif url:"
 msgstr ""
 
@@ -1882,6 +1882,10 @@ msgstr ""
 #: ../plugin/controllers/base.py:299 ../plugin/controllers/i18n.py:235
 #: ../plugin/controllers/i18n.py:388
 msgid "Settings"
+msgstr ""
+
+#: ../plugin/controllers/i18n.py:610
+msgid "Show EPG History"
 msgstr ""
 
 #: ../plugin/controllers/i18n.py:240
@@ -2530,7 +2534,7 @@ msgstr ""
 msgid "auto"
 msgstr ""
 
-#: ../plugin/plugin.py:139
+#: ../plugin/plugin.py:140
 msgid "box_ip"
 msgstr ""
 

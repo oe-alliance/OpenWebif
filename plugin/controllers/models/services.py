@@ -1018,10 +1018,13 @@ def getMultiEpg(self, ref, begintime=-1, endtime=None, mode=1):
 	srefs = services.getContent('S')
 	epg = EPG()
 
-	if begintime == -1 and config.epg.histminutes.value:
-		# limit begin time to 00:00 of the current day
-		bt = localtime(time())
-		begintime = int(mktime((bt.tm_year, bt.tm_mon, bt.tm_mday, 0, 0, 0, -1, -1, -1)))
+	if begintime == -1:
+		t = time()
+		begintime = int(t)
+		if config.epg.histminutes.value and config.OpenWebif.webcache.showepghistory.value:
+			# limit begin time to 00:00 of the current day
+			bt = localtime(t)
+			begintime = int(mktime((bt.tm_year, bt.tm_mon, bt.tm_mday, 0, 0, 0, -1, -1, -1)))
 
 	epgevents = epg.getMultiChannelEvents(srefs, begintime, endtime)
 	offset = None

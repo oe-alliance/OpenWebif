@@ -2408,7 +2408,7 @@ class WebController(BaseController):
 		args = list(request.args.keys())
 		for arg in args:
 			sarg = toString(arg)
-			if sarg in ("minmovielist", "mintimerlist", "minepglist", "rcu_full_view", "epgsearch_full", "epgsearch_only_bq", "nownext_columns", "responsive_enabled", "showpicons", "showchanneldetails", "showiptvchannelsinselection", "screenshotchannelname", "showallpackages", "zapstream", "screenshot_high_resolution", "screenshot_refresh_auto"):
+			if sarg in ("minmovielist", "mintimerlist", "minepglist", "rcu_full_view", "epgsearch_full", "epgsearch_only_bq", "nownext_columns", "responsive_enabled", "showpicons", "showchanneldetails", "showiptvchannelsinselection", "screenshotchannelname", "showallpackages", "showepghistory", "zapstream", "screenshot_high_resolution", "screenshot_refresh_auto"):
 				val = request.args[arg][0] in (b"true", b"1")
 				configitem = getattr(comp_config.OpenWebif.webcache, sarg)
 				configitem.value = val

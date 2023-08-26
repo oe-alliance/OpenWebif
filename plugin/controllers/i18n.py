@@ -606,5 +606,6 @@ tstrings = {
 	'margin': _("Margin"),
 	'after': _("After"),
 	'before': _("Before"),
-	'select_directory': _("Select Directory")
+	'select_directory': _("Select Directory"),
+	'showepghistory': _("Show EPG History"),
 }

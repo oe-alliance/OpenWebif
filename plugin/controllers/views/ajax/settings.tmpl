@@ -138,6 +138,13 @@
 				#end for
 				</select>
 				</td></tr>
+				<tr><td>$tstrings['showepghistory']</td><td>
+				#if $showepghistory
+				<input type="checkbox" name="showepghistory" checked="checked"/>
+				#else
+				<input type="checkbox" name="showepghistory"/>
+				#end if
+				</td></tr>
 				#if $getVar("responsivedesign", "") != ""
 					<tr><td>$tstrings['use_modern_design']</td><td>
 					#if $responsivedesign
@@ -610,6 +617,12 @@ $(function() {
 		var ch = evt.currentTarget.checked;
 		$('input[name=showallpackages]').attr('checked', ch);
 		webapi_execute("/api/setwebconfig?showallpackages=" + ch);
+	});
+
+	$("input[name=showepghistory]").click(function(evt) {
+		var ch = evt.currentTarget.checked;
+		$('input[name=showepghistory]').attr('checked', ch);
+		webapi_execute("/api/setwebconfig?showepghistory=" + ch);
 	});
 
 	$("input[name=responsivedesign]").click(function(evt) {

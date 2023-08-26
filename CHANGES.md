@@ -1,3 +1,6 @@
+## Version 2.0.8
+* improve multi epg
+
 ## Version 2.0.7
 * improve servicelist reload api
 * improve settings translation for plugins
