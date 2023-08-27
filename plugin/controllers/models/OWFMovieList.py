@@ -39,7 +39,7 @@ class StubInfo:
 				return os.stat(serviceref.getPath()).st_size
 			if w == iServiceInformation.sDescription:
 				return serviceref.getPath()
-		except:
+		except:  # nosec # noqa: E722
 			pass
 		return 0
 

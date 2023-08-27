@@ -21,7 +21,7 @@
 
 from os.path import exists
 
-from twisted.web import static, http, proxy
+from twisted.web import static, proxy
 from Components.config import config
 from Components.Harddisk import harddiskmanager
 

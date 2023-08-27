@@ -800,14 +800,14 @@ def getStatusInfo(self):
 			s = stream["name"]
 			e = stream["eventname"]
 			i = stream["ip"]
-			del stream
+#			del stream
 			if i is not None:
 				st += i + ": "
 			st += s + " - " + e
 			if st != "":
 				streaming_list.append(st)
 
-	except Exception as error:  # nosec # noqa: E722
+	except Exception:  # nosec # noqa: E722
 #		print("[OpenWebif] -D- build Streaming_list %s" % error)
 		pass
 

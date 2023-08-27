@@ -348,8 +348,8 @@ def sortSatellites(satlist):
 		sortdict[orb].append(i)
 		i += 1
 	outlist = []
-	for l in sorted(sortdict.keys()):
-		for v in sortdict[l]:
+	for key in sorted(sortdict.keys()):
+		for v in sortdict[key]:
 			outlist.append(satlist[v])
 	return outlist
 

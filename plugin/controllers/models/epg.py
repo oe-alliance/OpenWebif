@@ -21,7 +21,7 @@
 
 from datetime import datetime
 from html import escape as html_escape
-from time import time, localtime, strftime
+from time import localtime, strftime
 
 from enigma import eEPGCache, eServiceCenter, eServiceReference
 

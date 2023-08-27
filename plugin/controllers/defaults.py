@@ -4,8 +4,6 @@ from os import symlink
 from os.path import dirname, exists, isdir, isfile, join as pathjoin, islink
 import sys
 
-from enigma import eDBoxLCD
-
 from Components.Language import language
 from Components.config import config as comp_config
 from Components.Network import iNetwork

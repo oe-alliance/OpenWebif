@@ -226,7 +226,7 @@ class BQEWebController(BaseController):
 				if includepicon:
 					try:
 						service['picon'] = getPicon(sref)
-					except:
+					except:  # nosec # noqa: E722
 						service['picon'] = ''
 				if sp:
 					service['ismarker'] = '2'

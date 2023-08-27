@@ -926,7 +926,7 @@ def getSleepTimer(session):
 			if sleeptime is not None and int(sleeptime) > 0:
 				try:
 					sleeptime = int(int(sleeptime) / 60)
-				except:
+				except:  # nosec # noqa: E722
 					sleeptime = 60
 			remaining = 0
 			if active:
@@ -996,7 +996,7 @@ def setSleepTimer(session, sleeptime, action, enabled):
 			if sleeptime is None:
 				sleeptime = 60
 			# TODO test OpenPLI and similar
-			info = getInfo()
+			# info = getInfo()
 			cfgaction = None
 			if hasattr(config.usage, "sleepTimerAction"):
 				cfgaction = config.usage.sleepTimerAction

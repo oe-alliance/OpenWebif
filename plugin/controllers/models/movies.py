@@ -18,7 +18,7 @@
 # Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
 ##########################################################################
 
-from os import listdir, stat as osstat, rename, remove, statvfs
+from os import listdir, stat as osstat, statvfs
 from os.path import join as pathjoin, split as pathsplit, realpath, abspath, isdir, splitext, exists, isfile, normpath
 
 from struct import Struct
@@ -474,7 +474,7 @@ def getMovieInfo(sref=None, addtag=None, deltag=None, title=None, cuts=None, des
 					lines = fd.read().splitlines()
 				if lines:
 					meta = ["", "", "", "", "", "", ""]
-					lines = [l.strip() for l in lines]
+					lines = [line.strip() for line in lines]
 					le = len(lines)
 					meta[0:le] = lines[0:le]
 					oldtags = meta[4].split(' ')

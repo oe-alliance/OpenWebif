@@ -66,8 +66,8 @@ def getStream(session, request, m3ufile):
 	name = "stream"
 	portnumber = config.OpenWebif.streamport.value
 	info = getInfo()
-	model = info["model"]
-	machinebuild = info["machinebuild"]
+	# model = info["model"]
+	# machinebuild = info["machinebuild"]
 	urlparam = '?'
 	if info["imagedistro"] in ('openpli', 'satdreamgr', 'openvision'):
 		urlparam = '&'
@@ -133,8 +133,8 @@ def getStream(session, request, m3ufile):
 	response = "#EXTM3U \n#EXTVLCOPT:http-reconnect=true \n%shttp://%s%s:%s/%s%s\n" % (progopt, auth, request.getRequestHostname(), portnumber, sref, args)
 	if config.OpenWebif.playiptvdirect.value:
 		if "http://" in sref or "https://" in sref:
-			l = sref.split(":http")[1]
-			response = "#EXTM3U \n#EXTVLCOPT:http-reconnect=true\n%shttp%s\n" % (progopt, l)
+			link = sref.split(":http")[1]
+			response = "#EXTM3U \n#EXTVLCOPT:http-reconnect=true\n%shttp%s\n" % (progopt, link)
 	request.setHeader('Content-Type', 'application/x-mpegurl')
 	# Note: do not rename the m3u file all the time
 	fname = getUrlArg(request, "fname")
@@ -180,8 +180,8 @@ def getTS(self, request):
 		portnumber = None
 		proto = 'http'
 		info = getInfo()
-		model = info["model"]
-		machinebuild = info["machinebuild"]
+		# model = info["model"]
+		# machinebuild = info["machinebuild"]
 		transcoder_port = None
 		args = ""
 		urlparam = '?'
