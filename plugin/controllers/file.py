@@ -63,7 +63,7 @@ class FileController(resource.Resource):
 					port = config.OpenWebif.https_port.value
 					proto = 'https'
 				ourhost = request.getHeader('host')
-				m = match('.+\:(\d+)$', ourhost)
+				m = match(r'.+\:(\d+)$', ourhost)
 				if m is not None:
 					port = m.group(1)
 

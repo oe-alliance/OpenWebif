@@ -439,7 +439,7 @@ def movieActionService(serviceref, dest, name, domove, newname, action):
 						break
 				if metafilename and exists(metafilename):
 					lines = []
-					with open(metafilename, 'r') as fd:
+					with open(metafilename) as fd:
 						lines = fd.read().splitlines()
 					lines[1] = newname
 					with open(metafilename, 'w') as fd:
@@ -470,7 +470,7 @@ def getMovieInfo(sref=None, addtag=None, deltag=None, title=None, cuts=None, des
 			metafilename = pathjoin(srcPath, "%s.meta" % srcName)
 			if exists(metafilename):
 				lines = []
-				with open(metafilename, 'r') as fd:
+				with open(metafilename) as fd:
 					lines = fd.read().splitlines()
 				if lines:
 					meta = ["", "", "", "", "", "", ""]

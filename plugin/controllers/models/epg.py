@@ -108,7 +108,7 @@ def filterName(name, encode=True):
 def convertDesc(val, encode=True):
 	if val is not None:
 		if encode is True:
-			return html_escape(val, quote=True).replace(u"\x8a", "\n")
+			return html_escape(val, quote=True).replace("\x8a", "\n")
 		else:
 			# remove control chars
 			val = removeBadChars(toBinary(val))

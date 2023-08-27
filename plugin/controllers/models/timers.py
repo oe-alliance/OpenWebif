@@ -1133,7 +1133,7 @@ def getVPSChannels(session):
 	if isfile(vpsfile):
 		try:
 			import xml.etree.cElementTree  # nosec
-			with open(vpsfile, "r") as fd:
+			with open(vpsfile) as fd:
 				vpsdom = xml.etree.cElementTree.parse(fd)  # nosec
 			xmldata = vpsdom.getroot()
 			channels = []

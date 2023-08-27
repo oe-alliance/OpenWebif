@@ -86,7 +86,7 @@ def getIPv4Method(iface):
 def getLinkSpeed(iface):
 	speed = _("unknown")
 	try:
-		with open("/sys/class/net/%s/speed" % iface, "r") as f:
+		with open("/sys/class/net/%s/speed" % iface) as f:
 			speed = f.read().strip()
 	except:  # nosec # noqa: E722
 		if os.path.isdir("/sys/class/net/%s/wireless" % iface):
@@ -204,7 +204,7 @@ def getInfo(session=None, need_fullinfo=False):
 
 	chipset = "unknown"
 	if fileExists("/etc/.box"):
-		f = open("/etc/.box", "r")
+		f = open("/etc/.box")
 		model = f.readline().strip().lower()
 		f.close()
 		if model.startswith("ufs") or model.startswith("ufc"):
@@ -215,7 +215,7 @@ def getInfo(session=None, need_fullinfo=False):
 		elif model in ("topf", "tf7700hdpvr"):
 			chipset = SH4266
 		elif model.startswith("azbox"):
-			f = open(INFOMODEL, "r")
+			f = open(INFOMODEL)
 			model = f.readline().strip().lower()
 			f.close()
 			if model == "me":
@@ -230,7 +230,7 @@ def getInfo(session=None, need_fullinfo=False):
 			else:
 				chipset = "SH4 @450MHz"
 	elif fileExists("/proc/stb/info/azmodel"):
-		f = open(INFOMODEL, "r")  # TODO ??
+		f = open(INFOMODEL)  # TODO ??
 		model = f.readline().strip().lower()
 		f.close()
 		if model == "me":
@@ -240,7 +240,7 @@ def getInfo(session=None, need_fullinfo=False):
 		else:
 			chipset = "SIGMA 8634"
 	elif fileExists(INFOMODEL):
-		f = open(INFOMODEL, "r")
+		f = open(INFOMODEL)
 		model = f.readline().strip().lower()
 		f.close()
 		if model == "tf7700hdpvr":
@@ -272,14 +272,14 @@ def getInfo(session=None, need_fullinfo=False):
 			chipset = "bcm7252S"
 
 	if fileExists("/proc/stb/info/chipset"):
-		f = open("/proc/stb/info/chipset", "r")
+		f = open("/proc/stb/info/chipset")
 		chipset = f.readline().strip()
 		f.close()
 
 	info["chipset"] = chipset
 
 	memfree = 0
-	for line in open("/proc/meminfo", "r"):
+	for line in open("/proc/meminfo"):
 		parts = line.split(":")
 		key = parts[0].strip()
 		if key == "MemTotal":
@@ -290,7 +290,7 @@ def getInfo(session=None, need_fullinfo=False):
 	info["mem3"] = _("%s free / %s total") % (info["mem2"], info["mem1"])
 
 	try:
-		f = open("/proc/uptime", "r")
+		f = open("/proc/uptime")
 		uptime = int(float(f.readline().split(" ", 2)[0].strip()))
 		f.close()
 		uptimetext = ""
@@ -740,7 +740,7 @@ def getStatusInfo(self):
 		statusinfo["currservice_end_timestamp"] = end_timestamp
 		desc = curevent[3]
 		if len(desc) > 220:
-			desc = desc + u"..."
+			desc = desc + "..."
 		statusinfo["currservice_description"] = desc
 		statusinfo["currservice_station"] = currservice_station
 		if statusinfo["currservice_serviceref"].startswith("1:0:0"):

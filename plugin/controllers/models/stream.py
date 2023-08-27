@@ -155,7 +155,7 @@ def getTS(self, request):
 		progopt = ''
 
 		if exists(filename + '.meta'):
-			metafile = open(filename + '.meta', "r")
+			metafile = open(filename + '.meta')
 			name = ''
 			seconds = -1  # unknown duration default
 			line = metafile.readline()  # service ref
@@ -234,7 +234,7 @@ def getTS(self, request):
 				portnumber = config.OpenWebif.https_port.value
 				proto = 'https'
 			ourhost = request.getHeader('host')
-			m = match('.+\:(\d+)$', ourhost)
+			m = match(r'.+\:(\d+)$', ourhost)
 			if m is not None:
 				portnumber = m.group(1)
 

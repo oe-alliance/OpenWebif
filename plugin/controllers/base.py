@@ -264,7 +264,7 @@ class BaseController(resource.Resource):
 
 				conffile = file.split('/')[-1].replace("version", "conf")
 
-				data = open(file, "r").readlines()  # nosec
+				data = open(file).readlines()  # nosec
 				for i in data:
 					if "configdir:" in i.lower():
 						opath = i.split(":")[1].strip() + "/" + conffile
@@ -320,7 +320,7 @@ class BaseController(resource.Resource):
 			# oscam defaults to NOT to start the web interface unless a section for it exists, so reset port to None until we find one
 			port = None
 			try:
-				with open(oscamconf, "r") as fd:
+				with open(oscamconf) as fd:
 					data = fd.readlines()
 					for i in data:
 						if "httpport" in i.lower():

@@ -30,7 +30,7 @@ from ..utilities import getUrlArg
 GRAB_PATH = "/usr/bin/grab"
 
 
-class GrabRequest(object):
+class GrabRequest:
 	def __init__(self, request, session):
 		self.request = request
 

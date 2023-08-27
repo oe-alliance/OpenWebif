@@ -442,7 +442,7 @@ def getChannels(idbouquet, stype):
 				chan['now_begin'] = strftime("%H:%M", (localtime(nowevent[1])))
 				chan['now_end'] = strftime("%H:%M", (localtime(nowevent[1] + nowevent[2])))
 				chan['now_left'] = int(((nowevent[1] + nowevent[2]) - nowevent[3]) / 60)
-				chan['progress'] = int(((nowevent[3] - nowevent[1]) * 100 / nowevent[2]))
+				chan['progress'] = int((nowevent[3] - nowevent[1]) * 100 / nowevent[2])
 				chan['now_ev_id'] = nowevent[4]
 				chan['now_idp'] = "nowd" + str(idp)
 				chan['now_shortdesc'] = nowevent[5].strip()

@@ -39,7 +39,7 @@ except ImportError:
 def checkIsQPiP():
 	if access(ENABLE_QPIP_PROCPATH, F_OK):
 		data = ""
-		with open(ENABLE_QPIP_PROCPATH, "r") as fd:
+		with open(ENABLE_QPIP_PROCPATH) as fd:
 			data = fd.read()
 		return data.strip() == "mosaic"
 	return False
