@@ -142,7 +142,7 @@ class BaseController(resource.Resource):
 			@defer.inlineCallbacks
 			def _setContentDispositionAndSend(file_path):
 				filename = os.path.basename(file_path)
-				request.setHeader('content-disposition', 'filename="%s"' % filename)
+				request.setHeader('content-disposition', f'filename="{filename}"')
 				request.setHeader('content-type', "image/png")
 				f = open(file_path, "rb")
 				yield FileSender().beginFileTransfer(f, request)
@@ -223,7 +223,7 @@ class BaseController(resource.Resource):
 				module = module.replace(".", "")
 				out = self.loadTemplate(module, self.path, data)
 				if out is None:
-					print("[OpenWebif] ERROR! Template not found for page '%s'" % request.uri)
+					print(f"[OpenWebif] ERROR! Template not found for page '{request.uri}'")
 					self.error404(request)
 				else:
 					if self.withMainTemplate:
@@ -238,7 +238,7 @@ class BaseController(resource.Resource):
 					request.finish()
 
 		else:
-			print("[OpenWebif] page '%s' not found" % request.uri)
+			print(f"[OpenWebif] page '{request.uri}' not found")
 			self.error404(request)
 
 		# restore cached data
@@ -332,7 +332,7 @@ class BaseController(resource.Resource):
 				pass
 
 		if oscamwebif and port is not None:
-			url = "%s://%s:%s" % (proto, request.getRequestHostname(), port)
+			url = f"{proto}://{request.getRequestHostname()}:{port}"
 			if variant == "oscam":
 				extras.append({'key': url, 'description': _("OSCam Webinterface"), 'nw': '1'})
 			elif variant == "ncam":

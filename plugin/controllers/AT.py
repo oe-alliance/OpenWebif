@@ -94,7 +94,7 @@ class AutoTimerDoBackupResource(ATBaseController):
 			return (True, ATFN)
 
 		except Exception as err:
-			print("[OpenWebif] Error: create autotimer backup '%s'" % str(err))
+			print(f"[OpenWebif] Error: create autotimer backup '{err}'")
 			return (False, "Error while preparing backup file.")
 
 
@@ -113,8 +113,8 @@ class AutoTimerDoRestoreResource(ATBaseController):
 					if check_tar:
 						tar.extract("etc/enigma2/autotimer.xml", "/")
 			except Exception as err:
-				print("[OpenWebif] Error: extract autotimer.xml from backup '%s'" % str(err))
-				return (False, "Error, %s was not created with AutoTimerWebEditor..." % ATFN)
+				print(f"[OpenWebif] Error: extract autotimer.xml from backup '{err}'")
+				return (False, f"Error, {ATFN} was not created with AutoTimerWebEditor...")
 
 			if check_tar:
 				from Plugins.Extensions.AutoTimer.plugin import autotimer
@@ -124,15 +124,15 @@ class AutoTimerDoRestoreResource(ATBaseController):
 						autotimer.configMtime = -1
 						autotimer.readXml()
 					except Exception as err:
-						print("[OpenWebif] Error: read autotimer.xml from backup '%s'" % str(err))
+						print(f"[OpenWebif] Error: read autotimer.xml from backup '{err}'")
 						remove(ATFN)
 						return (False, "Error in autotimer.xml ...")
 					remove(ATFN)
 				return (True, "AutoTimer-settings were restored successfully")
 			else:
-				return (False, "Error, %s was not created with AutoTimerWebEditor..." % ATFN)
+				return (False, f"Error, {ATFN} was not created with AutoTimerWebEditor...")
 		else:
-			return (False, "Error, %s does not exists, restore is not possible..." % ATFN)
+			return (False, f"Error, {ATFN} does not exists, restore is not possible...")
 
 
 class ATController(ATBaseController):

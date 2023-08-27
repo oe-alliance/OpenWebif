@@ -38,19 +38,19 @@ def addLocation(dirname, create):
 			except OSError:
 				return {
 					"result": False,
-					"message": "Creation of folder '%s' failed" % dirname
+					"message": f"Creation of folder '{dirname}' failed"
 				}
 		else:
 			return {
 				"result": False,
-				"message": "Folder '%s' does not exist" % dirname
+				"message": f"Folder '{dirname}' does not exist"
 			}
 
 	locations = config.movielist.videodirs.value[:] or []
 	if dirname in locations:
 		return {
 			"result": False,
-			"message": "Location '%s' is already defined" % dirname
+			"message": f"Location '{dirname}' is already defined"
 		}
 
 	locations.append(dirname)
@@ -59,14 +59,14 @@ def addLocation(dirname, create):
 
 	return {
 		"result": True,
-		"message": "Location '%s' added succesfully" % dirname
+		"message": f"Location '{dirname}' added succesfully"
 	}
 
 
 def removeLocation(dirname, remove):
 	locations = config.movielist.videodirs.value[:] or []
 	res = False
-	msg = "Location '%s' is not defined" % dirname
+	msg = f"Location '{dirname}' is not defined"
 	if dirname in locations:
 		res = True
 		locations.remove(dirname)
@@ -75,11 +75,11 @@ def removeLocation(dirname, remove):
 		if exists(dirname) and remove:
 			try:
 				rmdir(dirname)
-				msg = "Location and Folder '%s' removed succesfully" % dirname
+				msg = f"Location and Folder '{dirname}' removed succesfully"
 			except OSError:
-				msg = "Location '%s' removed succesfully but the Folder not exists or is not empty" % dirname
+				msg = f"Location '{dirname}' removed succesfully but the Folder not exists or is not empty"
 		else:
-			msg = "Location '%s' removed succesfully" % dirname
+			msg = f"Location '{dirname}' removed succesfully"
 	return {
 		"result": res,
 		"message": msg

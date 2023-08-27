@@ -53,7 +53,7 @@ class FileController(resource.Resource):
 			filename = sanitise_filename_slashes(realpath(filename))
 
 			if not exists(filename):
-				return "File '%s' not found" % (filename)
+				return f"File '{filename}' not found"
 
 			if action == "stream":
 				name = getUrlArg(request, "name", "stream")
@@ -67,15 +67,15 @@ class FileController(resource.Resource):
 				if m is not None:
 					port = m.group(1)
 
-				response = "#EXTM3U\n#EXTVLCOPT:http-reconnect=true\n#EXTINF:-1,%s\n%s://%s:%s/file?action=download&file=%s" % (name, proto, request.getRequestHostname(), port, quote(filename))
-				request.setHeader("Content-Disposition", 'attachment;filename="%s.m3u"' % name)
+				response = f"#EXTM3U\n#EXTVLCOPT:http-reconnect=true\n#EXTINF:-1,{name}\n{proto}://{request.getRequestHostname()}:{port}/file?action=download&file={quote(filename)}"
+				request.setHeader("Content-Disposition", f'attachment;filename="{name}.m3u"')
 				request.setHeader("Content-Type", "application/x-mpegurl")
 				return response
 			elif action == "delete":
 				request.setResponseCode(http.OK)
-				return "TODO: DELETE FILE: %s" % (filename)
+				return f"TODO: DELETE FILE: {filename}"
 			elif action == "download":
-				request.setHeader("Content-Disposition", "attachment;filename=\"%s\"" % (filename.split('/')[-1]))
+				request.setHeader("Content-Disposition", f"attachment;filename=\"{filename.split('/')[-1]}\"")
 				rfile = static.File(toBinary(filename), defaultType="application/octet-stream")
 				return rfile.render(request)
 			else:
@@ -107,7 +107,7 @@ class FileController(resource.Resource):
 					files = []
 				return toBinary(dumps({"result": True, "dirs": directories, "files": files}, indent=2))
 			else:
-				return toBinary(dumps({"result": False, "message": "path %s not exits" % (path)}, indent=2))
+				return toBinary(dumps({"result": False, "message": f"path {path} not exits"}, indent=2))
 
 		tree = "tree" in request.args
 		path = getUrlArg(request, "id")

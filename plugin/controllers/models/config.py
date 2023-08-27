@@ -163,7 +163,7 @@ def getJsonFromConfig(cnf):
 	elif cnf.__class__.__name__ == "ConfigNothing":
 		return None
 
-	print("[OpenWebif] Unknown class '%s'" % cnf.__class__.__name__)
+	print(f"[OpenWebif] Unknown class '{cnf.__class__.__name__}'")
 	return {
 		"result": False,
 		"type": "unknown"
@@ -174,7 +174,7 @@ def saveConfig(path, value):
 	try:
 		cnf = get_config_attribute(path, root_obj=config)
 	except Exception as exc:
-		print("[OpenWebif] saveConfig Error : %s" % str(exc))
+		print(f"[OpenWebif] saveConfig Error : {exc}")
 		return {
 			"result": False,
 			"message": "I'm sorry Dave, I'm afraid I can't do that"
@@ -215,7 +215,7 @@ def saveConfig(path, value):
 		cnf.save()
 		configfiles.reload()
 	except Exception as e:
-		print("[OpenWebif] saveConfig Error : %s" % str(e))
+		print(f"[OpenWebif] saveConfig Error : {e}")
 		return {
 			"result": False
 		}
@@ -296,9 +296,9 @@ def getSettings():
 	for name in ("recording.margin_before", "recording.margin_after", "recording.zap_margin_before", "recording.zap_margin_after"):
 		if name not in configkeynames:
 			try:
-				cnf = get_config_attribute("config.%s" % name, root_obj=config)
+				cnf = get_config_attribute(f"config.{name}", root_obj=config)
 				if cnf:
-					configkeyval.append(("%s" % name, cnf.default))
+					configkeyval.append((f"{name}", cnf.default))
 			except AttributeError:
 				pass
 	return {
@@ -315,7 +315,7 @@ def getUtcOffset():
 	return {
 		"result": True,
 		# round minutes to next quarter hour
-		"utcoffset": "{:+05}".format(int(hours * 100 + (round(minutes / 900) * 900 / 60)))
+		"utcoffset": f"{int(hours * 100 + round(minutes / 900) * 900 / 60):+05}"
 	}
 
 
@@ -338,9 +338,9 @@ class ConfigFiles:
 		locations = ('SystemPlugins', 'Extensions')
 		libdir = eEnv.resolve('${libdir}')
 		for location in locations:
-			plugins = listdir('%s/enigma2/python/Plugins/%s' % (libdir, location))
+			plugins = listdir(f'{libdir}/enigma2/python/Plugins/{location}')
 			for plugin in plugins:
-				setupfiles.append('%s/enigma2/python/Plugins/%s/%s/setup.xml' % (libdir, location, plugin))
+				setupfiles.append(f'{libdir}/enigma2/python/Plugins/{location}/{plugin}/setup.xml')
 		for setupfile in setupfiles:
 			if exists(setupfile):
 				plugindir = dirname(setupfile)

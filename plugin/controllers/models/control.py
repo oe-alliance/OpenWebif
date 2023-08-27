@@ -131,7 +131,7 @@ def zapService(session, sref, title="", stream=False):
 			if getProtection(service.toString()) != "0":
 				return {
 					"result": False,
-					"message": "Service '%s' is blocked by parental Control" % title
+					"message": f"Service '{title}' is blocked by parental Control"
 				}
 
 	# use mediaplayer for recording
@@ -155,14 +155,14 @@ def zapService(session, sref, title="", stream=False):
 					stop_text = ": simple stop current service"
 				return {
 					"result": True,
-					"message": "For stream don't need zap in standby %s" % stop_text
+					"message": f"For stream don't need zap in standby {stop_text}"
 				}
 			else:
 				session.nav.playService(service)
 
 	return {
 		"result": True,
-		"message": "Active service is now '%s'" % title
+		"message": f"Active service is now '{title}'"
 	}
 
 
@@ -183,7 +183,7 @@ def remoteControl(key, rctype="", rcu=DEFAULT_RCU):
 				setPrevAsciiCode(ord(k))
 				amap.keyPressed(remotetype, 510, 0)
 				amap.keyPressed(remotetype, 510, 1)
-			message = "RC command text '%s' has been issued" % str(rcu)
+			message = f"RC command text '{rcu}' has been issued"
 			result = True
 		return {
 			"result": result,
@@ -200,7 +200,7 @@ def remoteControl(key, rctype="", rcu=DEFAULT_RCU):
 	amap.keyPressed(remotetype, key, 1)
 	return {
 		"result": True,
-		"message": "RC command '%s' has been issued" % str(key)
+		"message": f"RC command '{key}' has been issued"
 	}
 
 

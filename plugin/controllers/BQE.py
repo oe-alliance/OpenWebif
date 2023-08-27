@@ -183,7 +183,7 @@ class BQEWebController(BaseController):
 		calcpos = False
 
 		if sref == "":
-			sref = '%s FROM BOUQUET "bouquets.tv" ORDER BY bouquet' % (service_types_tv)
+			sref = f'{service_types_tv} FROM BOUQUET "bouquets.tv" ORDER BY bouquet'
 			calcpos = True
 		elif ' "bouquets.radio" ' in sref:
 			calcpos = True

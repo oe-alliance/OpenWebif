@@ -57,7 +57,7 @@ def mediaPlayerAdd(session, filename):
 	if not service.valid():
 		return {
 			"result": False,
-			"message": "'%s' is neither a valid reference nor a valid file" % filename
+			"message": f"'{filename}' is neither a valid reference nor a valid file"
 		}
 
 	mp.playlist.addFile(service)
@@ -65,7 +65,7 @@ def mediaPlayerAdd(session, filename):
 
 	return {
 		"result": True,
-		"message": "'%s' has been added to playlist" % filename
+		"message": f"'{filename}' has been added to playlist"
 	}
 
 
@@ -81,7 +81,7 @@ def mediaPlayerRemove(session, filename):
 	if not service.valid():
 		return {
 			"result": False,
-			"message": "'%s' is neither a valid reference nor a valid file" % filename
+			"message": f"'{filename}' is neither a valid reference nor a valid file"
 		}
 
 	count = 0
@@ -96,13 +96,13 @@ def mediaPlayerRemove(session, filename):
 	if not removed:
 		return {
 			"result": False,
-			"message": "'%s' not found in playlist" % filename
+			"message": f"'{filename}' not found in playlist"
 		}
 
 	mp.playlist.updateList()
 	return {
 		"result": True,
-		"message": "'%s' removed from playlist" % filename
+		"message": f"'{filename}' removed from playlist"
 	}
 
 
@@ -119,7 +119,7 @@ def mediaPlayerPlay(session, filename, root):
 	if not service.valid():
 		return {
 			"result": False,
-			"message": "'%s' is neither a valid reference nor a valid file" % filename
+			"message": f"'{filename}' is neither a valid reference nor a valid file"
 		}
 
 	if root != "playlist":
@@ -130,7 +130,7 @@ def mediaPlayerPlay(session, filename, root):
 
 	return {
 		"result": True,
-		"message": "'%s' has been added to playlist" % filename
+		"message": f"'{filename}' has been added to playlist"
 	}
 
 
@@ -161,11 +161,11 @@ def mediaPlayerCommand(session, command):
 	else:
 		return {
 			"result": False,
-			"message": "Unknown parameter %s" % command
+			"message": f"Unknown parameter {command}"
 		}
 	return {
 		"result": True,
-		"message": "Command '%s' executed" % command
+		"message": f"Command '{command}' executed"
 	}
 
 
@@ -267,13 +267,13 @@ def mediaPlayerLoad(session, filename):
 	if not isfile(path):
 		return {
 			"result": False,
-			"message": "Playlist '%s' does not exist" % path
+			"message": f"Playlist '{path}' does not exist"
 		}
 
 	mp.PlaylistSelected((filename, path))
 	return {
 		"result": True,
-		"message": "Playlist loaded from '%s'" % path
+		"message": f"Playlist loaded from '{path}'"
 	}
 
 
@@ -286,7 +286,7 @@ def mediaPlayerSave(session, filename):
 	mp.playlistIOInternal.save(path)
 	return {
 		"result": True,
-		"message": "Playlist saved to '%s'" % path
+		"message": f"Playlist saved to '{path}'"
 	}
 
 

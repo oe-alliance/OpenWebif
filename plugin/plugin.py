@@ -139,11 +139,11 @@ class OpenWebifConfig(Setup):
 		if ip is None:
 			ip = _("box_ip")
 
-		ports = ":%d" % owif_port
+		ports = f":{owif_port}"
 		if (owif_protocol == "http" and owif_port == 80) or (owif_protocol == "https" and owif_port == 443):
 			ports = ""
 
-		self.footnote = "%s %s://%s%s" % (_("OpenWebif url:"), owif_protocol, ip, ports)
+		self.footnote = f"{_('OpenWebif url:')} {owif_protocol}://{ip}{ports}"
 
 	def selectionChanged(self):
 		Setup.selectionChanged(self)

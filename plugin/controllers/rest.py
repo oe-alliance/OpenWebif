@@ -51,7 +51,7 @@ class RESTControllerSkeleton(resource.Resource):
         self.session = kwargs.get("session")
 
         for verb in CORS_ALLOWED_METHODS_DEFAULT:
-            method_name = 'render_{:s}'.format(verb)
+            method_name = f'render_{verb:s}'
             if hasattr(self, method_name):
                 http_verbs.append(verb)
         self._cors_header['Access-Control-Allow-Methods'] = ','.join(http_verbs)

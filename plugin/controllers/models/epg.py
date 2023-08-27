@@ -127,7 +127,7 @@ class TimedProcess:
 
 	def __exit__(self, exc_type, exc_value, exc_tb):
 		self.timetaken = datetime.now() - self.tick
-		debug("Process took {}".format(self.timetaken), "EPG")
+		debug(f"Process took {self.timetaken}", "EPG")
 
 	# def getTimeTaken(self):
 	# 	return self.timetaken
@@ -288,7 +288,7 @@ class EPG():
 		}
 
 		if event[1]:
-			ev["date"] = "%s %s" % (tstrings[("day_" + strftime("%w", (localtime(event[1]))))], strftime(_("%d.%m.%Y"), (localtime(event[1]))))
+			ev["date"] = f"{tstrings['day_' + strftime('%w', localtime(event[1]))]} {strftime(_('%d.%m.%Y'), localtime(event[1]))}"
 			ev["begin"] = strftime("%H:%M", (localtime(event[1])))
 			ev["begin_timestamp"] = event[1]
 			ev["duration"] = int(event[2] / 60)

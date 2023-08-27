@@ -66,7 +66,7 @@ class GrabRequest:
 				fileformat = "png"
 				command = "cat /tmp/lcd.png"
 
-		self.filepath = "/tmp/screenshot.%s" % fileformat
+		self.filepath = f"/tmp/screenshot.{fileformat}"
 		self.container = eConsoleAppContainer()
 		self.container.appClosed.append(self.grabFinished)
 		self.container.stdoutAvail.append(request.write)
@@ -87,10 +87,10 @@ class GrabRequest:
 					sref = ServiceReference(ref).getServiceName()
 			except Exception:  # nosec # noqa: E722
 				sref = "screenshot"
-		sref = "%s_%s" % (sref, time.strftime("%Y%m%d%H%M%S", time.localtime(time.time())))
+		sref = f"{sref}_{time.strftime('%Y%m%d%H%M%S', time.localtime(time.time()))}"
 		request.notifyFinish().addErrback(self.requestAborted)
-		request.setHeader('Content-Disposition', 'inline; filename=%s.%s;' % (sref, fileformat))
-		request.setHeader('Content-Type', 'image/%s' % fileformat.replace("jpg", "jpeg"))
+		request.setHeader('Content-Disposition', f'inline; filename={sref}.{fileformat};')
+		request.setHeader('Content-Type', f"image/{fileformat.replace('jpg', 'jpeg')}")
 		# request.setHeader('Expires', 'Sat, 26 Jul 1997 05:00:00 GMT')
 		# request.setHeader('Cache-Control', 'no-store, must-revalidate, post-check=0, pre-check=0')
 		# request.setHeader('Pragma', 'no-cache')
@@ -107,7 +107,7 @@ class GrabRequest:
 		try:
 			self.request.finish()
 		except RuntimeError as error:
-			print("[OpenWebif] grabFinished error: %s" % error)
+			print(f"[OpenWebif] grabFinished error: {error}")
 		# Break the chain of ownership
 		del self.request
 

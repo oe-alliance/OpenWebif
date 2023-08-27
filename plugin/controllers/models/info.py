@@ -86,12 +86,12 @@ def getIPv4Method(iface):
 def getLinkSpeed(iface):
 	speed = _("unknown")
 	try:
-		with open("/sys/class/net/%s/speed" % iface) as f:
+		with open(f"/sys/class/net/{iface}/speed") as f:
 			speed = f.read().strip()
 	except:  # nosec # noqa: E722
-		if os.path.isdir("/sys/class/net/%s/wireless" % iface):
+		if os.path.isdir(f"/sys/class/net/{iface}/wireless"):
 			try:
-				speed = os.popen('iwlist %s bitrate | grep "Bit Rate"' % iface).read().split(":")[1].split(" ")[0]
+				speed = os.popen(f'iwlist {iface} bitrate | grep "Bit Rate"').read().split(":")[1].split(" ")[0]
 			except:  # nosec # noqa: E722
 				pass
 	speed = str(speed) + " MBit/s"
@@ -160,7 +160,7 @@ def getAdapterIPv6(ifname):
 						firstpublic = normalize_ipv6(tmpaddr)
 
 					if tmp[2].lower() != "ff":
-						tmpaddr = "%s/%s" % (tmpaddr, int(tmp[2].lower(), 16))
+						tmpaddr = f"{tmpaddr}/{int(tmp[2].lower(), 16)}"
 
 					tmpaddr = normalize_ipv6(tmpaddr)
 					tempaddrs.append(tmpaddr)
@@ -286,7 +286,7 @@ def getInfo(session=None, need_fullinfo=False):
 			info["mem1"] = parts[1].strip().replace("kB", _("kB"))
 		elif key in ("MemFree", "Buffers", "Cached"):
 			memfree += int(parts[1].strip().split(" ", 1)[0])
-	info["mem2"] = "%s %s" % (memfree, _("kB"))
+	info["mem2"] = f"{memfree} {_('kB')}"
 	info["mem3"] = _("%s free / %s total") % (info["mem2"], info["mem1"])
 
 	try:
@@ -310,7 +310,7 @@ def getInfo(session=None, need_fullinfo=False):
 	info["imagever"] = BoxInfo.getItem("imageversion")
 	ib = BoxInfo.getItem("imagebuild")
 	if ib:
-		info["imagever"] = "%s.%s" % (info["imagever"], ib)
+		info["imagever"] = f"{info['imagever']}.{ib}"
 	info["enigmaver"] = getEnigmaVersionString()
 	info["driverdate"] = BoxInfo.getItem("driversdate")
 	info["kernelver"] = about.getKernelVersionString()
@@ -377,13 +377,13 @@ def getInfo(session=None, need_fullinfo=False):
 			free = "%i %s" % (free, _("MB"))
 		else:
 			free = free / 1024.
-			free = "%.1f %s" % (free, _("GB"))
+			free = f"{free:.1f} {_('GB')}"
 
 		size = hdd.diskSize() * 1000000 / 1048576.
 		if size > 1048576:
-			size = "%.1f %s" % ((size / 1048576.), _("TB"))
+			size = f"{size / 1048576.0:.1f} {_('TB')}"
 		elif size > 1024:
-			size = "%.1f %s" % ((size / 1024.), _("GB"))
+			size = f"{size / 1024.0:.1f} {_('GB')}"
 		else:
 			size = "%d %s" % (size, _("MB"))
 
@@ -393,7 +393,7 @@ def getInfo(session=None, need_fullinfo=False):
 			iecsize = (iecsize + 50000) // float(100000) / 10
 			# Omit decimal fraction if it is 0
 			if (iecsize % 1 > 0):
-				iecsize = "%.1f %s" % (iecsize, _("TB"))
+				iecsize = f"{iecsize:.1f} {_('TB')}"
 			else:
 				iecsize = "%d %s" % (iecsize, _("TB"))
 		# Round harddisk sizes beyond ~300GB to full tens: 320, 500, 640, 750GB
@@ -505,8 +505,8 @@ def getInfo(session=None, need_fullinfo=False):
 				s_name = ""
 				if len(info["streams"]) == 1:
 					sinfo = info["streams"][0]
-					s_name = "%s (%s)" % (sinfo["name"], sinfo["ip"])
-					print("[OpenWebif] -D- s_name '%s'" % s_name)
+					s_name = f"{sinfo['name']} ({sinfo['ip']})"
+					print(f"[OpenWebif] -D- s_name '{s_name}'")
 
 				servicenames = {}
 				for timer in NavigationInstance.instance.RecordTimer.timer_list:
@@ -520,9 +520,9 @@ def getInfo(session=None, need_fullinfo=False):
 								servicenames[tuner_num] += ", " + removeBad(timer.service_ref.getServiceName())
 							else:
 								servicenames[tuner_num] = removeBad(timer.service_ref.getServiceName())
-						print("[OpenWebif] -D- timer '%s'" % timer.service_ref.getServiceName())
+						print(f"[OpenWebif] -D- timer '{timer.service_ref.getServiceName()}'")
 
-				print("[OpenWebif] -D- recs count '%d'" % len(recs))
+				print(f"[OpenWebif] -D- recs count '{len(recs)}'")
 
 				for rec in recs:
 					feinfo = rec.frontendInfo()
@@ -532,9 +532,9 @@ def getInfo(session=None, need_fullinfo=False):
 						if cur_info:
 							nr = frontenddata["tuner_number"]
 							if nr in servicenames:
-								info["tuners"][nr]["rec"] = "%s / %s" % (getOrbitalText(cur_info), servicenames[nr])
+								info["tuners"][nr]["rec"] = f"{getOrbitalText(cur_info)} / {servicenames[nr]}"
 							else:
-								info["tuners"][nr]["rec"] = "%s / %s" % (getOrbitalText(cur_info), s_name)
+								info["tuners"][nr]["rec"] = f"{getOrbitalText(cur_info)} / {s_name}"
 
 			service = session.nav.getCurrentService()
 			if service is not None:
@@ -545,7 +545,7 @@ def getInfo(session=None, need_fullinfo=False):
 					cur_info = feinfo.getTransponderData(True)
 					if cur_info:
 						nr = frontenddata["tuner_number"]
-						info["tuners"][nr]["live"] = "%s / %s" % (getOrbitalText(cur_info), sname)
+						info["tuners"][nr]["live"] = f"{getOrbitalText(cur_info)} / {sname}"
 		except Exception as error:
 			info["EX"] = error
 
@@ -562,7 +562,7 @@ def getInfo(session=None, need_fullinfo=False):
 		if hasattr(timer, "marginBefore"):
 			info["timermargins"] = True
 	except Exception as error:
-		print("[OpenWebif] -D- RecordTimerEntry check %s" % error)
+		print(f"[OpenWebif] -D- RecordTimerEntry check {error}")
 
 	info["textinputsupport"] = TEXTINPUTSUPPORT
 	STATICBOXINFO = info
@@ -656,10 +656,7 @@ def getFrontendStatus(session):
 	inf["ber"] = ""
 
 	from Screens.Standby import inStandby
-	if inStandby is None:
-		inf["inStandby"] = "false"
-	else:
-		inf["inStandby"] = "true"
+	inf["inStandby"] = "false" if inStandby is None else "true"
 
 	service = session.nav.getCurrentService()
 	if service is None:
@@ -679,7 +676,7 @@ def getFrontendStatus(session):
 			inf["snr_db"] = inf["snr"]
 		percent = frontendstatus.get("tuner_signal_quality_db")
 		if percent is not None:
-			inf["snr_db"] = "%3.02f" % (percent / 100.0)
+			inf["snr_db"] = f"{percent / 100.0:3.02f}"
 		percent = frontendstatus.get("tuner_signal_power")
 		if percent is not None:
 			inf["agc"] = int(percent * 100 / 65535)
@@ -771,10 +768,7 @@ def getStatusInfo(self):
 
 	# Get Standby State
 	from Screens.Standby import inStandby
-	if inStandby is None:
-		statusinfo["inStandby"] = "false"
-	else:
-		statusinfo["inStandby"] = "true"
+	statusinfo["inStandby"] = "false" if inStandby is None else "true"
 
 	# Get recording state
 	recs = NavigationInstance.instance.getRecordings()

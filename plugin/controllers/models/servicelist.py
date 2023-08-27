@@ -45,7 +45,7 @@ def reloadServicesLists(mode):
 	if msgs:
 		return {
 			"result": True,
-			"message": "reloaded %s" % " ".join(msgs)
+			"message": f"reloaded {' '.join(msgs)}"
 		}
 	else:
 		return {

@@ -165,7 +165,7 @@ def get_config_attribute(path, root_obj, head=None):
 
 	if portions[0] != head:
 		raise ValueError(
-			'Head is {!r}, expected {!r}'.format(portions[0], head))
+			f'Head is {portions[0]!r}, expected {head!r}')
 
 	current_obj = root_obj
 
@@ -264,13 +264,7 @@ def create_servicereference(*args, **kwargs):
 	oid = kwargs.get('oid', 0)
 	ns = kwargs.get('ns', 0)
 
-	return '{:x}:0:{:x}:{:x}:{:x}:{:x}:{:08x}:0:0:0:'.format(
-		1,
-		service_type,
-		sid,
-		tsid,
-		oid,
-		ns)
+	return f'{1:x}:0:{service_type:x}:{sid:x}:{tsid:x}:{oid:x}:{ns:08x}:0:0:0:'
 
 
 def toBinary(s):
@@ -347,17 +341,17 @@ def getEventInfoProvider(moviedb):
 
 def error(text, context=""):
 	if context:
-		print("[OpenWebif] [%s] Error: %s" % (context, text))
+		print(f"[OpenWebif] [{context}] Error: {text}")
 	else:
-		print("[OpenWebif] Error: %s" % text)
+		print(f"[OpenWebif] Error: {text}")
 
 
 def debug(text, context=""):
 	if DEBUG_ENABLED:
 		if context:
-			print("[OpenWebif] [%s] %s" % (context, text))
+			print(f"[OpenWebif] [{context}] {text}")
 		else:
-			print("[OpenWebif] %s" % text)
+			print(f"[OpenWebif] {text}")
 
 
 def e2simplexmlresult(result, resulttext):
@@ -370,4 +364,4 @@ if __name__ == '__main__':
 	import doctest
 
 	(FAILED, SUCCEEDED) = doctest.testmod()
-	print("[doctest] SUCCEEDED/FAILED: {:d}/{:d}".format(SUCCEEDED, FAILED))
+	print(f"[doctest] SUCCEEDED/FAILED: {SUCCEEDED:d}/{FAILED:d}")

@@ -11,7 +11,7 @@ from Components.SystemInfo import BoxInfo
 from Tools.Directories import isPluginInstalled
 from Plugins.Extensions.OpenWebif import __version__
 
-OPENWEBIFVER = "OWIF %s" % __version__
+OPENWEBIFVER = f"OWIF {__version__}"
 
 PLUGIN_NAME = 'OpenWebif'
 PLUGIN_DESCRIPTION = "OpenWebif Configuration"
@@ -108,7 +108,7 @@ def getPiconPath():
 			for folder in PICON_FOLDERS:
 				current = prefix + folder + '/'
 				if isdir(current):
-					print("Current Picon Path : %s" % current)
+					print(f"Current Picon Path : {current}")
 					return current
 #: TODO discuss
 #					for item in os.listdir(current):
@@ -255,8 +255,8 @@ def showPicons():
 
 
 def getCustomCSS(css):
-	cssfilename = "openwebif-%s.css" % css
-	csslinkpath = "%scss/%s" % (css + "/" if css == "modern" else "", cssfilename)
+	cssfilename = f"openwebif-{css}.css"
+	csslinkpath = f"{css + '/' if css == 'modern' else ''}css/{cssfilename}"
 	csssrcpath = pathjoin("/etc/enigma2", cssfilename)
 	try:
 		if isfile(csssrcpath):
@@ -267,7 +267,7 @@ def getCustomCSS(css):
 				symlink(csssrcpath, csspath)
 				return csslinkpath
 	except OSError as err:
-		print("[OpenWebif] Error getCustomCSS : %s" % str(err))
+		print(f"[OpenWebif] Error getCustomCSS : {err}")
 	return ""
 
 

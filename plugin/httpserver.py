@@ -61,7 +61,7 @@ def getAllNetworks():
 				tmp = line.split()
 				tmpaddr = str(ipaddress.ip_address(int(tmp[0], 16)))
 				if tmp[2].lower() != "ff":
-					tmpaddr = "%s/%s" % (tmpaddr, int(tmp[2].lower(), 16))
+					tmpaddr = f"{tmpaddr}/{int(tmp[2].lower(), 16)}"
 					tmpaddr = str(ipaddress.IPv6Network(str(tmpaddr), strict=False))
 
 				tempaddrs.append(tmpaddr)
@@ -86,10 +86,10 @@ def getAllNetworks():
 
 def verifyCallback(connection, x509, errnum, errdepth, ok):
 	if not ok:
-		print('[OpenWebif] Invalid cert from subject: %s' % str(x509.get_subject()))
+		print(f'[OpenWebif] Invalid cert from subject: {str(x509.get_subject())}')
 		return False
 	else:
-		print('[OpenWebif] Successful cert authed as: %s' % str(x509.get_subject()))
+		print(f'[OpenWebif] Successful cert authed as: {str(x509.get_subject())}')
 	return True
 
 
@@ -168,7 +168,7 @@ def buildRootTree(session):
 		if len(loaded_plugins) > 0:
 			for plugin in loaded_plugins:
 				root.putChild2(plugin[0], plugin[1])
-				print("[OpenWebif] plugin '%s' loaded on path '/%s'" % (plugin[2], plugin[0]))
+				print(f"[OpenWebif] plugin '{plugin[2]}' loaded on path '/{plugin[0]}'")
 		else:
 			print("[OpenWebif] no plugins to load")
 	return root
@@ -221,7 +221,7 @@ def HttpdStart(session):
 				try:
 					key = crypto.load_privatekey(crypto.FILETYPE_PEM, open(KEY_FILE, 'rt').read())
 					cert = crypto.load_certificate(crypto.FILETYPE_PEM, open(CERT_FILE, 'rt').read())
-					print("[OpenWebif] CHAIN_FILE = %s" % CHAIN_FILE)
+					print(f"[OpenWebif] CHAIN_FILE = {CHAIN_FILE}")
 					chain = None
 					if exists(CHAIN_FILE):
 						chain = [crypto.load_certificate(crypto.FILETYPE_PEM, open(CHAIN_FILE, 'rt').read())]
@@ -256,7 +256,7 @@ def HttpdStart(session):
 				else:
 					# ipv4 only
 					listener.append(reactor.listenSSL(httpsport, sslsite, context))
-				print("[OpenWebif] started on port:%s" % str(httpsport))
+				print(f"[OpenWebif] started on port:{str(httpsport)}")
 				BJregisterService('https', httpsport)
 			except CannotListenError:
 				print("[OpenWebif] failed to listen on Port", httpsport)
@@ -316,7 +316,7 @@ class AuthResource(resource.Resource):
 			peer = peer.split("%")[0]
 
 		if self.login(request.getUser(), request.getPassword(), peer) is False:
-			request.setHeader('WWW-authenticate', 'Basic realm="%s"' % ("OpenWebif"))
+			request.setHeader('WWW-authenticate', f'Basic realm="OpenWebif"')
 			errpage = resource.ErrorPage(http.UNAUTHORIZED, "Unauthorized", "401 Authentication required")
 			return errpage.render(request)
 		else:
@@ -393,7 +393,7 @@ class AuthResource(resource.Resource):
 			return self.resource.getChildWithDefault(path, request)
 
 		if self.login(ruser, rpw, peer) is False:
-			request.setHeader('WWW-authenticate', 'Basic realm="%s"' % ("OpenWebif"))
+			request.setHeader('WWW-authenticate', f'Basic realm="OpenWebif"')
 			return resource.ErrorPage(http.UNAUTHORIZED, "Unauthorized", "401 Authentication required")
 		else:
 			session["logged"] = True
@@ -447,7 +447,7 @@ class StopServer:
 		global listener
 		self.server_to_stop = 0
 		for interface in listener:
-			print("[OpenWebif] Stopping server on port:%s" % str(interface.port))
+			print(f"[OpenWebif] Stopping server on port:{str(interface.port)}")
 			deferred = interface.stopListening()
 			try:
 				self.server_to_stop += 1
@@ -494,6 +494,6 @@ def BJregisterService(protocol, port):
 		pass
 	try:
 		from enigma import e2avahi_announce
-		e2avahi_announce(None, "_%s._tcp" % protocol, port)
+		e2avahi_announce(None, f"_{protocol}._tcp", port)
 	except:  # nosec # noqa: E722
 		pass

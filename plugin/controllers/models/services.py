@@ -221,7 +221,7 @@ def getCurrentFullInfo(session):
 			inf['snr_db'] = inf['snr']
 		percent = frontendstatus.get("tuner_signal_quality_db")
 		if percent is not None:
-			inf['snr_db'] = "%3.02f dB" % (percent / 100.0)
+			inf['snr_db'] = f"{percent / 100.0:3.02f} dB"
 		percent = frontendstatus.get("tuner_signal_power")
 		if percent is not None:
 			inf['agc'] = int(percent * 100 / 65535)
@@ -262,7 +262,7 @@ def getBouquets(stype):
 		s_type = service_types_radio
 		s_type2 = "bouquets.radio"
 	servicehandler = eServiceCenter.getInstance()
-	services = servicehandler.list(eServiceReference('%s FROM BOUQUET "%s" ORDER BY bouquet' % (s_type, s_type2)))
+	services = servicehandler.list(eServiceReference(f'{s_type} FROM BOUQUET "{s_type2}" ORDER BY bouquet'))
 	bouquets = services and services.getContent("SN", True)
 	bouquets = removeHiddenBouquets(bouquets)
 	return {"bouquets": bouquets}
@@ -283,7 +283,7 @@ def getProviders(stype):
 	if stype == "radio":
 		s_type = service_types_radio
 	servicehandler = eServiceCenter.getInstance()
-	services = servicehandler.list(eServiceReference('%s FROM PROVIDERS ORDER BY name' % (s_type)))
+	services = servicehandler.list(eServiceReference(f'{s_type} FROM PROVIDERS ORDER BY name'))
 	providers = services and services.getContent("SN", True)
 	return {"providers": providers}
 
@@ -293,7 +293,7 @@ def getSatellites(stype):
 	s_type = service_types_tv
 	if stype == "radio":
 		s_type = service_types_radio
-	refstr = '%s FROM SATELLITES ORDER BY satellitePosition' % (s_type)
+	refstr = f'{s_type} FROM SATELLITES ORDER BY satellitePosition'
 	ref = eServiceReference(refstr)
 	servicehandler = eServiceCenter.getInstance()
 	servicelist = servicehandler.list(ref)
@@ -322,7 +322,7 @@ def getSatellites(stype):
 					service_name = _("Terrestrial")
 				else:
 					service_name = getOrb(orbpos)
-			service.setName("%s - %s" % (service_name, service_type))
+			service.setName(f"{service_name} - {service_type}")
 			ret.append({
 				"service": service.toString(),
 				"name": service.getName()
@@ -394,7 +394,7 @@ def getChannels(idbouquet, stype):
 	if stype == "radio":
 		s_type = service_types_radio
 	if idbouquet == "ALL":
-		idbouquet = '%s ORDER BY name' % (s_type)
+		idbouquet = f'{s_type} ORDER BY name'
 
 	epg = EPG()
 	servicehandler = eServiceCenter.getInstance()
@@ -488,7 +488,7 @@ def getServices(sref, showall=True, showhidden=False, pos=0, showproviders=False
 	servicehandler = eServiceCenter.getInstance()
 
 	if not sref:
-		sref = '%s FROM BOUQUET "bouquets.tv" ORDER BY bouquet' % (service_types_tv)
+		sref = f'{service_types_tv} FROM BOUQUET "bouquets.tv" ORDER BY bouquet'
 		calcpos = True
 	elif ' "bouquets.radio" ' in sref or ' "bouquets.tv" ' in sref:
 		calcpos = True
@@ -497,7 +497,7 @@ def getServices(sref, showall=True, showhidden=False, pos=0, showproviders=False
 		s_type = service_types_tv
 		if "radio" in sref:
 			s_type = service_types_radio
-		pservices = servicehandler.list(eServiceReference('%s FROM PROVIDERS ORDER BY name' % (s_type)))
+		pservices = servicehandler.list(eServiceReference(f'{s_type} FROM PROVIDERS ORDER BY name'))
 		providers = pservices and pservices.getContent("SN", True)
 
 		for provider in providers:
@@ -560,7 +560,7 @@ def getServices(sref, showall=True, showhidden=False, pos=0, showproviders=False
 	timeelapsed = datetime.now() - starttime
 	return {
 		"result": True,
-		"processingtime": "{}".format(timeelapsed),
+		"processingtime": f"{timeelapsed}",
 		"pos": pos,
 		"services": services
 	}
@@ -588,14 +588,14 @@ def getAllServices(mode, noiptv=False, nolastscanned=False, removenamefromsref=F
 
 	return {
 		"result": True,
-		"processingtime": "{}".format(timeelapsed),
+		"processingtime": f"{timeelapsed}",
 		"services": services
 	}
 
 
 def getPlayableServices(sref, srefplaying):
 	if sref == "":
-		sref = '%s FROM BOUQUET "bouquets.tv" ORDER BY bouquet' % (service_types_tv)
+		sref = f'{service_types_tv} FROM BOUQUET "bouquets.tv" ORDER BY bouquet'
 
 	services = []
 	servicecenter = eServiceCenter.getInstance()
@@ -907,7 +907,7 @@ def getSearchEpg(sstr, endtime=None, fulldesc=False, bouquetsonly=False, encode=
 				continue
 			ev = {}
 			ev['id'] = event[0]
-			ev['date'] = "%s %s" % (tstrings[("day_" + strftime("%w", (localtime(event[1]))))], strftime(_("%d.%m.%Y"), (localtime(event[1]))))
+			ev['date'] = f"{tstrings['day_' + strftime('%w', localtime(event[1]))]} {strftime(_('%d.%m.%Y'), localtime(event[1]))}"
 			ev['begin_timestamp'] = event[1]
 			ev['begin'] = strftime("%H:%M", (localtime(event[1])))
 			ev['duration_sec'] = event[2]
@@ -963,7 +963,7 @@ def getSimilarEpg(ref, eventid, encode=False):
 		for event in events:
 			ev = {}
 			ev['id'] = event[0]
-			ev['date'] = "%s %s" % (tstrings[("day_" + strftime("%w", (localtime(event[1]))))], strftime(_("%d.%m.%Y"), (localtime(event[1]))))
+			ev['date'] = f"{tstrings['day_' + strftime('%w', localtime(event[1]))]} {strftime(_('%d.%m.%Y'), localtime(event[1]))}"
 			ev['begin_timestamp'] = event[1]
 			ev['begin'] = strftime("%H:%M", (localtime(event[1])))
 			ev['duration_sec'] = event[2]
@@ -1226,7 +1226,7 @@ def getServiceRef(name, searchinbouquetsonly=False, bref=None):
 	#			s_type = service_types_radio
 	#			s_type2 = "bouquets.radio"
 		if bref is None:
-			services = servicehandler.list(eServiceReference('%s FROM BOUQUET "%s" ORDER BY bouquet' % (s_type, s_type2)))
+			services = servicehandler.list(eServiceReference(f'{s_type} FROM BOUQUET "{s_type2}" ORDER BY bouquet'))
 			bouquets = services and services.getContent("SN", True)
 			bouquets = removeHiddenBouquets(bouquets)
 
@@ -1241,7 +1241,7 @@ def getServiceRef(name, searchinbouquetsonly=False, bref=None):
 					}
 
 	else:
-		refstr = '%s ORDER BY name' % (service_types_tv)
+		refstr = f'{service_types_tv} ORDER BY name'
 		serviceslist = servicehandler.list(eServiceReference(refstr))
 		sfulllist = serviceslist and serviceslist.getContent("SN", True)
 		for sv in sfulllist:

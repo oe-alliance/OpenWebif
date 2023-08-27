@@ -61,7 +61,7 @@ def getStream(session, request, m3ufile):
 	progopt = ''
 	name = getUrlArg(request, "name")
 	if name is not None and config.OpenWebif.service_name_for_stream.value:
-		progopt = "#EXTINF:-1,%s\n" % name
+		progopt = f"#EXTINF:-1,{name}\n"
 
 	name = "stream"
 	portnumber = config.OpenWebif.streamport.value
@@ -100,9 +100,9 @@ def getStream(session, request, m3ufile):
 			interlaced = config.plugins.transcodingsetup.interlaced.value
 			if exists("/proc/stb/encoder/0/vcodec"):
 				vcodec = config.plugins.transcodingsetup.vcodec.value
-				args = "?bitrate=%s__width=%s__height=%s__vcodec=%s__aspectratio=%s__interlaced=%s" % (bitrate, width, height, vcodec, aspectratio, interlaced)
+				args = f"?bitrate={bitrate}__width={width}__height={height}__vcodec={vcodec}__aspectratio={aspectratio}__interlaced={interlaced}"
 			else:
-				args = "?bitrate=%s__width=%s__height=%s__aspectratio=%s__interlaced=%s" % (bitrate, width, height, aspectratio, interlaced)
+				args = f"?bitrate={bitrate}__width={width}__height={height}__aspectratio={aspectratio}__interlaced={interlaced}"
 			args = args.replace('__', urlparam)
 		except Exception:
 			pass
@@ -116,12 +116,12 @@ def getStream(session, request, m3ufile):
 		if asession.GetAuth(request) is not None:
 			auth = ':'.join(asession.GetAuth(request)) + "@"
 		else:
-			auth = '-sid:' + str(asession.GetSID(request)) + "@"
+			auth = f"-sid:{asession.GetSID(request)}@"
 	else:
 		auth = ''
 
 	icamport = 17999
-	icam = "http://127.0.0.1:%s/" % icamport
+	icam = f"http://127.0.0.1:{icamport}/"
 
 	if icam in sref:
 		portnumber = icamport
@@ -130,16 +130,16 @@ def getStream(session, request, m3ufile):
 		auth = ""
 		args = ""
 
-	response = "#EXTM3U \n#EXTVLCOPT:http-reconnect=true \n%shttp://%s%s:%s/%s%s\n" % (progopt, auth, request.getRequestHostname(), portnumber, sref, args)
+	response = f"#EXTM3U \n#EXTVLCOPT:http-reconnect=true \n{progopt}http://{auth}{request.getRequestHostname()}:{portnumber}/{sref}{args}\n"
 	if config.OpenWebif.playiptvdirect.value:
 		if "http://" in sref or "https://" in sref:
 			link = sref.split(":http")[1]
-			response = "#EXTM3U \n#EXTVLCOPT:http-reconnect=true\n%shttp%s\n" % (progopt, link)
+			response = f"#EXTM3U \n#EXTVLCOPT:http-reconnect=true\n{progopt}http{link}\n"
 	request.setHeader('Content-Type', 'application/x-mpegurl')
 	# Note: do not rename the m3u file all the time
 	fname = getUrlArg(request, "fname")
 	if fname is not None:
-		request.setHeader('Content-Disposition', 'inline; filename=%s.%s;' % (fname, 'm3u8'))
+		request.setHeader('Content-Disposition', f'inline; filename={fname}.m3u8;')
 	return response
 
 
@@ -148,7 +148,7 @@ def getTS(self, request):
 	if _file is not None:
 		filename = unquote(_file)
 		if not exists(filename):
-			return "File '%s' not found" % (filename)
+			return f"File '{filename}' not found"
 
 # ServiceReference is not part of filename so look in the '.ts.meta' file
 		sref = ""
@@ -213,9 +213,9 @@ def getTS(self, request):
 					interlaced = config.plugins.transcodingsetup.interlaced.value
 					if exists("/proc/stb/encoder/0/vcodec"):
 						vcodec = config.plugins.transcodingsetup.vcodec.value
-						args = "?bitrate=%s__width=%s__height=%s__vcodec=%s__aspectratio=%s__interlaced=%s" % (bitrate, width, height, vcodec, aspectratio, interlaced)
+						args = f"?bitrate={bitrate}__width={width}__height={height}__vcodec={vcodec}__aspectratio={aspectratio}__interlaced={interlaced}"
 					else:
-						args = "?bitrate=%s__width=%s__height=%s__aspectratio=%s__interlaced=%s" % (bitrate, width, height, aspectratio, interlaced)
+						args = f"?bitrate={bitrate}__width={width}__height={height}__aspectratio={aspectratio}__interlaced={interlaced}"
 					args = args.replace('__', urlparam)
 				except Exception:
 					pass
@@ -243,11 +243,11 @@ def getTS(self, request):
 			if asession.GetAuth(request) is not None:
 				auth = ':'.join(asession.GetAuth(request)) + "@"
 			else:
-				auth = '-sid:' + str(asession.GetSID(request)) + "@"
+				auth = f"-sid:{asession.GetSID(request)}@"
 		else:
 			auth = ''
 
-		response = "#EXTM3U \n#EXTVLCOPT:http-reconnect=true \n%s%s://%s%s:%s/file?file=%s%s\n" % (progopt, proto, auth, request.getRequestHostname(), portnumber, quote(filename), args)
+		response = f"#EXTM3U \n#EXTVLCOPT:http-reconnect=true \n{progopt}{proto}://{auth}{request.getRequestHostname()}:{portnumber}/file?file={quote(filename)}{args}\n"
 		request.setHeader('Content-Type', 'application/x-mpegurl')
 		return response
 	else:

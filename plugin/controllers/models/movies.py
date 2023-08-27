@@ -236,11 +236,11 @@ def getMovieList(rargs=None, locations=None, directory=None):
 					try:
 						size = osstat(filename).st_size
 						if size > 1073741824:
-							sz = "%.2f %s" % ((size / 1073741824.), _("GB"))
+							sz = f"{size / 1073741824.0:.2f} {_('GB')}"
 						elif size > 1048576:
-							sz = "%.2f %s" % ((size / 1048576.), _("MB"))
+							sz = f"{size / 1048576.0:.2f} {_('MB')}"
 						elif size > 1024:
-							sz = "%.2f %s" % ((size / 1024.), _("kB"))
+							sz = f"{size / 1024.0:.2f} {_('kB')}"
 					except:  # nosec # noqa: E722
 						pass
 
@@ -308,11 +308,11 @@ def removeMovie(session, sref, force=False):
 					trash = Tools.Trashcan.createTrashFolder(srcpath)
 					moveServiceFiles(service.ref, trash)
 					result = True
-					message = "The recording '%s' has been successfully moved to trashcan" % name
+					message = f"The recording '{name}' has been successfully moved to trashcan"
 				except ImportError:
 					message = "trashcan exception"
 				except Exception as e:
-					message = "Failed to move to .Trash folder: %s" + str(e)
+					message = f"Failed to move to .Trash folder: {e}"
 					print(message)
 				deleted = True
 		if not deleted and not offline.deleteFromDisk(0):
@@ -323,7 +323,7 @@ def removeMovie(session, sref, force=False):
 	if result is False:
 		return {
 			"result": False,
-			"message": "Could not delete Movie '%s' / %s" % (name, message)
+			"message": f"Could not delete Movie '{name}' / {message}"
 		}
 	else:
 		# EMC reload
@@ -333,7 +333,7 @@ def removeMovie(session, sref, force=False):
 			pass
 		return {
 			"result": True,
-			"message": "The movie '%s' has been deleted successfully" % name
+			"message": f"The movie '{name}' has been deleted successfully"
 		}
 
 
@@ -351,7 +351,7 @@ def movieAction(session, sref, dirname=None, domove=False, newname=None):
 		if dirname:
 			dirname = pathjoin(dirname, "")
 
-		message = "The recording '%s' has been %sd successfully" % (name, action)
+		message = f"The recording '{name}' has been {action}d successfully"
 
 		try:
 			movieActionService(service, dirname, name, domove, newname, action)
@@ -361,7 +361,7 @@ def movieAction(session, sref, dirname=None, domove=False, newname=None):
 				pass
 			result = True
 		except Exception as err:
-			message = "The recording '%s' has not been %sd / error: %s" % (name, action, err)
+			message = f"The recording '{name}' has not been {action}d / error: {err}"
 
 		return {
 			"result": result,
@@ -369,7 +369,7 @@ def movieAction(session, sref, dirname=None, domove=False, newname=None):
 	else:
 		return {
 			"result": result,
-			"message": "Could not %s recording" % action
+			"message": f"Could not {action} recording"
 		}
 
 
@@ -380,7 +380,7 @@ def createActionList(serviceref, dest, newname=None):
 			stat = statvfs(dest)
 			free = stat.f_bfree * stat.f_bsize
 		except OSError as err:
-			raise Exception("Error checking free space: %s" % str(err))
+			raise Exception(f"Error checking free space: {err}")
 
 	# normpath is to remove the trailing "/" from directories
 	src = normpath(serviceref.getPath())
@@ -398,12 +398,12 @@ def createActionList(serviceref, dest, newname=None):
 		baseName = pathsplit(srcBase)[1]
 		if newname:
 			baseName = newname
-		suffixes = [".eit", ".jpg", "%s.cuts" % fileext, "%s.meta" % fileext, ".txt"]
+		suffixes = [".eit", ".jpg", f"{fileext}.cuts", f"{fileext}.meta", ".txt"]
 		if fileext == '.ts':
 			suffixes.extend([".ts.ap", ".ts.sc", ".ts_mp.jpg"])
 
 		for suffix in suffixes:
-			fileName = "%s%s" % (baseName, suffix)
+			fileName = f"{baseName}{suffix}"
 			candidate = pathjoin(srcPath, fileName)
 			if exists(candidate):
 				moveList.append((candidate, pathjoin(dest, fileName)))
@@ -414,7 +414,7 @@ def createActionList(serviceref, dest, newname=None):
 				for src in moveList:
 					size += osstat(src[0]).st_size
 			except OSError as err:
-				raise Exception("Error checking free space: %s" % str(err))
+				raise Exception(f"Error checking free space: {err}")
 
 			if size > free:
 				raise Exception("Not enough free space")
@@ -449,7 +449,7 @@ def movieActionService(serviceref, dest, name, domove, newname, action):
 		else:
 			copyFiles(items, name)
 	except Exception as err:
-		print("[OpenWebif] fail to %s %s Error:%s" % (action, name, err))
+		print(f"[OpenWebif] fail to {action} {name} Error:{err}")
 		# rethrow exception
 		raise
 
@@ -467,7 +467,7 @@ def getMovieInfo(sref=None, addtag=None, deltag=None, title=None, cuts=None, des
 		if service is not None:
 			fullpath = service.ref.getPath()
 			srcPath, srcName = pathsplit(fullpath)
-			metafilename = pathjoin(srcPath, "%s.meta" % srcName)
+			metafilename = pathjoin(srcPath, f"{srcName}.meta")
 			if exists(metafilename):
 				lines = []
 				with open(metafilename) as fd:
@@ -523,7 +523,7 @@ def getMovieInfo(sref=None, addtag=None, deltag=None, title=None, cuts=None, des
 							"tags": newtags
 						}
 
-				cutsfilename = pathjoin(srcPath, "%s.cuts" % srcName)
+				cutsfilename = pathjoin(srcPath, f"{srcName}.cuts")
 				if exists(cutsfilename):
 					try:
 						f = open(cutsfilename, 'rb')
@@ -658,11 +658,11 @@ def getMovieDetails(sref=None):
 		try:
 			size = osstat(filename).st_size
 			if size > 1073741824:
-				sz = "%.2f %s" % ((size / 1073741824.), _("GB"))
+				sz = f"{size / 1073741824.0:.2f} {_('GB')}"
 			elif size > 1048576:
-				sz = "%.2f %s" % ((size / 1048576.), _("MB"))
+				sz = f"{size / 1048576.0:.2f} {_('MB')}"
 			elif size > 1024:
-				sz = "%.2f %s" % ((size / 1024.), _("kB"))
+				sz = f"{size / 1024.0:.2f} {_('kB')}"
 		except:  # nosec # noqa: E722
 			pass
 

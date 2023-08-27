@@ -65,7 +65,7 @@ class BouquetEditor(Source):
 		return (False, _("No bouquet name given!"))
 
 	def handleCommand(self, cmd):
-		print("[WebComponents.BouquetEditor] handleCommand with cmd = %s" % cmd)
+		print(f"[WebComponents.BouquetEditor] handleCommand with cmd = {cmd}")
 		if self.func is self.ADD_BOUQUET:
 			self.result = self.addToBouquet(cmd)
 		elif self.func is self.MOVE_BOUQUET:
@@ -100,7 +100,7 @@ class BouquetEditor(Source):
 			self.result = (False, _("one two three four unknown command"))
 
 	def addToBouquet(self, param):
-		print("[WebComponents.BouquetEditor] addToBouquet with param = %s" % param)
+		print(f"[WebComponents.BouquetEditor] addToBouquet with param = {param}")
 		bname = param["name"]
 		if bname is None:
 			return self.noBouquetName()
@@ -117,10 +117,10 @@ class BouquetEditor(Source):
 				name, filename = self.buildBouquetID(bname, prefix, mode)
 				if mode == MODE_TV:
 					bname += " (TV)"
-					sref = '1:7:1:0:0:0:0:0:0:0:FROM BOUQUET \"%s.%s.tv\" ORDER BY bouquet' % (prefix, name)
+					sref = f'1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "{prefix}.{name}.tv" ORDER BY bouquet'
 				else:
 					bname += " (Radio)"
-					sref = '1:7:2:0:0:0:0:0:0:0:FROM BOUQUET \"%s.%s.radio\" ORDER BY bouquet' % (prefix, name)
+					sref = f'1:7:2:0:0:0:0:0:0:0:FROM BOUQUET "{prefix}.{name}.radio" ORDER BY bouquet'
 				new_bouquet_ref = eServiceReference(sref)
 				if not mutablebouquetlist.addService(new_bouquet_ref):
 					mutablebouquetlist.flushChanges()
@@ -131,7 +131,7 @@ class BouquetEditor(Source):
 						if services is not None:
 							for service in services:
 								if mutablebouquet.addService(service):
-									print("add %s to new bouquet failed" % service.toString())
+									print(f"add {service.toString()} to new bouquet failed")
 						mutablebouquet.flushChanges()
 						self.setRoot(self.bouquet_rootstr)
 						return (True, _("Bouquet %s created.") % bname)
@@ -146,7 +146,7 @@ class BouquetEditor(Source):
 			return (False, _("Multi-Bouquet is not enabled!"))
 
 	def addProviderToBouquetlist(self, param):
-		print("[WebComponents.BouquetEditor] addProviderToBouquet with param = %s" % param)
+		print(f"[WebComponents.BouquetEditor] addProviderToBouquet with param = {param}")
 		refstr = param["sProviderRef"]
 		if refstr is None:
 			return (False, _("No provider given!"))
@@ -161,7 +161,7 @@ class BouquetEditor(Source):
 		return self.addBouquet(providername, mode, services and services.getContent('R', True))
 
 	def removeBouquet(self, param):
-		print("[WebComponents.BouquetEditor] removeBouquet with param = %s" % param)
+		print(f"[WebComponents.BouquetEditor] removeBouquet with param = {param}")
 		refstr = sref = param["sBouquetRef"]
 		if refstr is None:
 			return self.noBouquetName()
@@ -204,7 +204,7 @@ class BouquetEditor(Source):
 			return (False, _("Error: Bouquet %s could not deleted, OSError.") % filename)
 
 	def moveBouquet(self, param):
-		print("[WebComponents.BouquetEditor] moveBouquet with param = %s" % param)
+		print(f"[WebComponents.BouquetEditor] moveBouquet with param = {param}")
 		sbouquetref = param["sBouquetRef"]
 		if sbouquetref is None:
 			return self.noBouquetName()
@@ -228,7 +228,7 @@ class BouquetEditor(Source):
 			return (False, _("Bouquet %s can not be moved.") % self.getName(ref))
 
 	def removeService(self, param):
-		print("[WebComponents.BouquetEditor] removeService with param = %s" % param)
+		print(f"[WebComponents.BouquetEditor] removeService with param = {param}")
 		sbouquetref = param["sBouquetRef"]
 		if sbouquetref is None:
 			return self.noBouquet()
@@ -255,7 +255,7 @@ class BouquetEditor(Source):
 		return (False, _("Service %s can not be removed.") % self.getName(ref))
 
 	def moveService(self, param):
-		print("[WebComponents.BouquetEditor] moveService with param = %s" % param)
+		print(f"[WebComponents.BouquetEditor] moveService with param = {param}")
 		sbouquetref = param["sBouquetRef"]
 		if sbouquetref is None:
 			return self.noBouquet()
@@ -277,7 +277,7 @@ class BouquetEditor(Source):
 		return (False, _("Service can not be moved."))
 
 	def addServiceToBouquet(self, param):
-		print("[WebComponents.BouquetEditor] addService with param = %s" % param)
+		print(f"[WebComponents.BouquetEditor] addService with param = {param}")
 		sbouquetref = param["sBouquetRef"]
 		if sbouquetref is None:
 			return self.noBouquet()
@@ -304,15 +304,15 @@ class BouquetEditor(Source):
 			prefix = "subbouquet"
 			name, filename = self.buildBouquetID(sname, prefix, mode)
 			if mode == MODE_TV:
-				sref = '1:7:1:0:0:0:0:0:0:0:FROM BOUQUET \"%s.%s.tv\" ORDER BY bouquet' % (prefix, name)
+				sref = f'1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "{prefix}.{name}.tv" ORDER BY bouquet'
 			else:
-				sref = '1:7:2:0:0:0:0:0:0:0:FROM BOUQUET \"%s.%s.radio\" ORDER BY bouquet' % (prefix, name)
+				sref = f'1:7:2:0:0:0:0:0:0:0:FROM BOUQUET "{prefix}.{name}.radio" ORDER BY bouquet'
 			# create bouquet file
 			try:
 				with open(filename, "w") as fd:
-					fd.write("#NAME %s\n" % sname)
+					fd.write(f"#NAME {sname}\n")
 			except OSError as err:
-				print("Error %d: Unable to create file '%s'!  (%s)" % (err.errno, filename, err.strerror))
+				print(f"Error {err.errno}: Unable to create file '{filename}'!  ({err.strerror})")
 
 		bouquetref = eServiceReference(sbouquetref)
 		mutablebouquetlist = self.getMutableList(bouquetref)
@@ -333,7 +333,7 @@ class BouquetEditor(Source):
 		return (False, _("This service can not be added."))
 
 	def addMarkerToBouquet(self, param):
-		print("[WebComponents.BouquetEditor] addMarkerToBouquet with param = %s" % param)
+		print(f"[WebComponents.BouquetEditor] addMarkerToBouquet with param = {param}")
 		sbouquetref = param["sBouquetRef"]
 		if sbouquetref is None:
 			return self.noBouquet()
@@ -348,9 +348,9 @@ class BouquetEditor(Source):
 		cnt = 0
 		while mutablebouquetlist:
 			if name is None:
-				service_str = '1:832:D:%d:0:0:0:0:0:0:' % cnt
+				service_str = f'1:832:D:{cnt}:0:0:0:0:0:0:'
 			else:
-				service_str = '1:64:%d:0:0:0:0:0:0:0::%s' % (cnt, name)
+				service_str = f'1:64:{cnt}:0:0:0:0:0:0:0::{name}'
 			ref = eServiceReference(service_str)
 			if not mutablebouquetlist.addService(ref, srefbefore):
 				mutablebouquetlist.flushChanges()
@@ -425,9 +425,9 @@ class BouquetEditor(Source):
 				prefix = "alternatives"
 				name, filename = self.buildBouquetID(name, prefix, mode)
 				if mode == MODE_TV:
-					sref = '1:134:1:0:0:0:0:0:0:0:FROM BOUQUET \"%s.%s.tv\" ORDER BY bouquet' % (prefix, name)
+					sref = f'1:134:1:0:0:0:0:0:0:0:FROM BOUQUET "{prefix}.{name}.tv" ORDER BY bouquet'
 				else:
-					sref = '1:134:2:0:0:0:0:0:0:0:FROM BOUQUET \"%s.%s.radio\" ORDER BY bouquet' % (prefix, name)
+					sref = f'1:134:2:0:0:0:0:0:0:0:FROM BOUQUET "{prefix}.{name}.radio" ORDER BY bouquet'
 				new_ref = eServiceReference(sref)
 				if not mutablebouquetlist.addService(new_ref, cur_ref):
 					mutablebouquetlist.removeService(cur_ref)
@@ -437,7 +437,7 @@ class BouquetEditor(Source):
 					if mutablealternatives:
 						mutablealternatives.setListName(name)
 						if mutablealternatives.addService(cur_ref):
-							print("add %s to new alternatives failed" % cur_ref.toString())
+							print(f"add {cur_ref.toString()} to new alternatives failed")
 						mutablealternatives.flushChanges()
 						self.setRoot(sbouquetref)
 						scurrentref = sref  # currentRef is now an alternative (bouquet)
@@ -463,7 +463,7 @@ class BouquetEditor(Source):
 			return returnvalue
 
 	def removeAlternativeServices(self, param):
-		print("[WebComponents.BouquetEditor] removeAlternativeServices with param = %s" % param)
+		print(f"[WebComponents.BouquetEditor] removeAlternativeServices with param = {param}")
 		sbouquetref = param["sBouquetRef"]
 		if sbouquetref is None:
 			return self.noBouquet()
@@ -546,7 +546,7 @@ class BouquetEditor(Source):
 		if not filename:
 			filename = self.BACKUP_FILENAME
 		invalidcharacters = compile(r'[^A-Za-z0-9_. ]+|^\.|\.$|^ | $|^$')
-		tarfilename = "%s.tar" % invalidcharacters.sub('_', filename)
+		tarfilename = f"{invalidcharacters.sub('_', filename)}.tar"
 		backupfilename = pathjoin(self.BACKUP_PATH, tarfilename)
 		if exists(backupfilename):
 			remove(backupfilename)
@@ -578,7 +578,7 @@ class BouquetEditor(Source):
 #					if not exists(arg):
 #						return (False, _("Error while preparing backup file, %s does not exists.") % arg)
 		except Exception as err:
-			print("[OpenWebif] Error: preparing backup file '%s'" % str(err))
+			print(f"[OpenWebif] Error: preparing backup file '{err}'")
 			return (False, _("Error while preparing backup file."))
 
 		remove(checkfile)
@@ -638,7 +638,7 @@ class BouquetEditor(Source):
 				else:
 					return (False, _("Error, %s was not created with WebBouquetEditor...") % backupfilename)
 			except Exception as err:
-				print("[OpenWebif] Error: extract files from backup '%s'" % str(err))
+				print(f"[OpenWebif] Error: extract files from backup '{err}'")
 				return (False, _("Error, extract files from backup '%s'") % backupfilename)
 		else:
 			return (False, _("Error, %s does not exists, restore is not possible...") % backupfilename)
@@ -678,15 +678,15 @@ class BouquetEditor(Source):
 			suffix = "tv"
 		else:
 			suffix = "radio"
-		filename = pathjoin(ETCENIGMA, "%s.%s.%s" % (prefix, name, suffix))
+		filename = pathjoin(ETCENIGMA, f"{prefix}.{name}.{suffix}")
 		if exists(filename):
 			i = 1
 			while True:
-				filename = pathjoin(ETCENIGMA, "%s.%s_%d.%s" % (prefix, name, i, suffix))
+				filename = pathjoin(ETCENIGMA, f"{prefix}.{name}_{i}.{suffix}")
 				if exists(filename):
 					i += 1
 				else:
-					name = "%s_%d" % (name, i)
+					name = f"{name}_{i}"
 					break
 		return name, filename
 
@@ -719,9 +719,9 @@ class BouquetEditor(Source):
 			fullfilename = pathjoin(ETCENIGMA, filename)
 
 			if mode == MODE_TV:
-				sref = '1:7:1:0:0:0:0:0:0:0:FROM BOUQUET \"%s\" ORDER BY bouquet' % (filename)
+				sref = f'1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "{filename}" ORDER BY bouquet'
 			else:
-				sref = '1:7:2:0:0:0:0:0:0:0:FROM BOUQUET \"%s\" ORDER BY bouquet' % (filename)
+				sref = f'1:7:2:0:0:0:0:0:0:0:FROM BOUQUET "{filename}" ORDER BY bouquet'
 
 			if not exists(fullfilename):
 				new_bouquet_ref = eServiceReference(str(sref))

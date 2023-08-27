@@ -542,18 +542,18 @@ class WebController(BaseController):
 		bouquetname = getUrlArg(request, "bName")
 		if bouquetname:
 			bouquetname = bouquetname.replace(",", "_").replace(";", "_")
-			request.setHeader('Content-Disposition', 'inline; filename=%s.%s;' % (bouquetname, 'xspf'))
+			request.setHeader('Content-Disposition', f'inline; filename={bouquetname}.xspf;')
 		services = getServices(bref, False)
 		if comp_config.OpenWebif.auth_for_streaming.value:
 			session = GetSession()
 			if session.GetAuth(request) is not None:
 				auth = ':'.join(session.GetAuth(request)) + "@"
 			else:
-				auth = '-sid:' + str(session.GetSID(request)) + "@"
+				auth = f"-sid:{session.GetSID(request)}@"
 		else:
 			auth = ''
 		portnumber = comp_config.OpenWebif.streamport.value
-		services["host"] = "%s:%s" % (request.getRequestHostname(), portnumber)
+		services["host"] = f"{request.getRequestHostname()}:{portnumber}"
 		services["auth"] = auth
 		services["bname"] = bouquetname
 		return services
@@ -581,18 +581,18 @@ class WebController(BaseController):
 		bouquetname = getUrlArg(request, "bName")
 		if bouquetname:
 			bouquetname = bouquetname.replace(",", "_").replace(";", "_")
-			request.setHeader('Content-Disposition', 'inline; filename=%s.%s;' % (bouquetname, 'm3u8'))
+			request.setHeader('Content-Disposition', f'inline; filename={bouquetname}.m3u8;')
 		services = getServices(bref, False)
 		if comp_config.OpenWebif.auth_for_streaming.value:
 			session = GetSession()
 			if session.GetAuth(request) is not None:
 				auth = ':'.join(session.GetAuth(request)) + "@"
 			else:
-				auth = '-sid:' + str(session.GetSID(request)) + "@"
+				auth = f"-sid:{session.GetSID(request)}@"
 		else:
 			auth = ''
 		portnumber = comp_config.OpenWebif.streamport.value
-		services["host"] = "%s:%s" % (request.getRequestHostname(), portnumber)
+		services["host"] = f"{request.getRequestHostname()}:{portnumber}"
 		services["auth"] = auth
 		return services
 
@@ -809,7 +809,7 @@ class WebController(BaseController):
 		"""
 		request.setHeader('Content-Type', 'application/x-mpegurl')
 		movielist = getMovieList(request.args)
-		movielist["host"] = "%s://%s:%s" % (whoami(request)['proto'], request.getRequestHostname(), whoami(request)['port'])
+		movielist["host"] = f"{whoami(request)['proto']}://{request.getRequestHostname()}:{whoami(request)['port']}"
 		return movielist
 
 	def P_movielistrss(self, request):
@@ -827,7 +827,7 @@ class WebController(BaseController):
 			HTTP response with headers
 		"""
 		movielist = getMovieList(request.args)
-		movielist["host"] = "%s://%s:%s" % (whoami(request)['proto'], request.getRequestHostname(), whoami(request)['port'])
+		movielist["host"] = f"{whoami(request)['proto']}://{request.getRequestHostname()}:{whoami(request)['port']}"
 		return movielist
 
 	def P_moviedelete(self, request):
@@ -1676,9 +1676,9 @@ class WebController(BaseController):
 
 		search = getUrlArg(request, "search")
 		ret = getSearchEpg(search)
-		ret["title"] = "EPG Search '%s'" % search
+		ret["title"] = f"EPG Search '{search}'"
 		ret["generator"] = "OpenWebif"
-		ret["description"] = "%d result for '%s'" % (len(ret["events"]), search)
+		ret["description"] = f"{len(ret['events'])} result for '{search}'"
 		return ret
 
 	# http://enigma2/api/epgservice?sRef=1%3A0%3A19%3A1B1F%3A802%3A2%3A11A0000%3A0%3A0%3A0%3A
@@ -1867,9 +1867,9 @@ class WebController(BaseController):
 		request.setHeader("content-type", "text/html")
 		info = getCurrentService(self.session)
 		return {
-			"ppid": "%x" % info["pmtpid"],
-			"vpid": "%x" % info["vpid"],
-			"apid": "%x" % info["apid"],
+			"ppid": f"{info['pmtpid']:x}",
+			"vpid": f"{info['vpid']:x}",
+			"apid": f"{info['apid']:x}",
 			"host": request.getRequestHostname()
 		}
 
@@ -2180,7 +2180,7 @@ class WebController(BaseController):
 		ret = getSleepTimer(self.session)
 
 		if cmd != "set":
-			ret["message"] = "ERROR: Obligatory parameter 'cmd' [get,set] has unspecified value '%s'" % cmd
+			ret["message"] = f"ERROR: Obligatory parameter 'cmd' [get,set] has unspecified value '{cmd}'"
 			return ret
 
 		if time is None and enabled is True:  # it's used only if the timer is enabled
@@ -2495,7 +2495,7 @@ class WebController(BaseController):
 	def P_setthememode(self, request):
 		thememode = getUrlArg(request, "themeMode")
 		if thememode:
-			print("save theme mode: %s" % thememode)
+			print(f"save theme mode: {thememode}")
 			comp_config.OpenWebif.responsive_themeMode.value = thememode
 			comp_config.OpenWebif.responsive_themeMode.save()
 		return {}
@@ -2503,7 +2503,7 @@ class WebController(BaseController):
 	def P_setskincolor(self, request):
 		skincolor = getUrlArg(request, "skincolor")
 		if skincolor:
-			print("save color: %s" % skincolor)
+			print(f"save color: {skincolor}")
 			comp_config.OpenWebif.responsive_skinColor.value = skincolor
 			comp_config.OpenWebif.responsive_skinColor.save()
 		return {}

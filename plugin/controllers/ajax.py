@@ -121,7 +121,7 @@ class AjaxController(BaseController):
 	def P_boxinfo(self, request):
 		info = getInfo(self.session, need_fullinfo=True)
 		boxtype = info["boxtype"]
-		info["boximage"] = "%s_front.png" % boxtype
+		info["boximage"] = f"{boxtype}_front.png"
 		return info
 
 	# http://enigma2/ajax/epgpop?sstr=test&bouquetsonly=1
@@ -361,9 +361,9 @@ class AjaxController(BaseController):
 			if session.GetAuth(request) is not None:
 				auth = ':'.join(session.GetAuth(request)) + "@"
 			else:
-				auth = '-sid:' + str(session.GetSID(request)) + "@"
+				auth = f"-sid:{session.GetSID(request)}@"
 		else:
-			auth = ''
+			auth = ""
 		transcoding = TRANSCODING
 		transcoder_port = 0
 		if transcoding:
