@@ -23,7 +23,7 @@ ENC0APPLY = "/proc/stb/encoder/0/apply"
 
 class GetSession(Resource):
 	def GetSID(self, request):
-		sid = request.getSession().uid
+		sid = request.getSession().uid.decode()
 		return sid
 
 	def GetAuth(self, request):
