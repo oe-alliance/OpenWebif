@@ -1,7 +1,7 @@
 ##########################################################################
 # OpenWebif: BaseController
 ##########################################################################
-# Copyright (C) 2011 - 2022 E2OpenPlugins
+# Copyright (C) 2011 - 2023 jbleyel and E2OpenPlugins
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -18,9 +18,9 @@
 # Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
 ##########################################################################
 
-import os
-import imp
+from importlib.util import spec_from_file_location, module_from_spec
 import json
+from os.path import basename, exists
 
 from twisted.web import server, http, resource
 from twisted.web.resource import EncodingResourceWrapper
@@ -29,7 +29,7 @@ from twisted.internet import defer
 from twisted.protocols.basic import FileSender
 
 from Plugins.Extensions.OpenWebif.controllers.i18n import _
-from Tools.Directories import fileExists, isPluginInstalled
+from Tools.Directories import isPluginInstalled
 from Cheetah.Template import Template
 from enigma import eEPGCache
 from Components.config import config
@@ -100,17 +100,18 @@ class BaseController(resource.Resource):
 		request.finish()
 
 	def loadTemplate(self, path, module, args):
-		if fileExists(getViewsPath(path + ".py")) or fileExists(getViewsPath(path + ".pyo")) or fileExists(getViewsPath(path + ".pyc")):
-			if fileExists(getViewsPath(path + ".pyo")):
-				template = imp.load_compiled(module, getViewsPath(path + ".pyo"))
-			elif fileExists(getViewsPath(path + ".pyc")):
-				template = imp.load_compiled(module, getViewsPath(path + ".pyc"))
-			else:
-				template = imp.load_source(module, getViewsPath(path + ".py"))
+		template = None
+		if exists(getViewsPath(path + ".pyc")):
+			spec = spec_from_file_location(module, getViewsPath(path + ".pyc"))
+			template = module_from_spec(spec)
+		elif exists(getViewsPath(path + ".py")):
+			spec = spec_from_file_location(module, getViewsPath(path + ".py"))
+			template = module_from_spec(spec)
+		if template:
 			mod = getattr(template, module, None)
 			if callable(mod):
 				return str(mod(searchList=args))
-		elif fileExists(getViewsPath(path + ".tmpl")):
+		if exists(getViewsPath(path + ".tmpl")):
 			vp = str(getViewsPath(path + ".tmpl"))
 			return str(Template(file=vp, searchList=[args]))
 		return None
@@ -141,7 +142,7 @@ class BaseController(resource.Resource):
 
 			@defer.inlineCallbacks
 			def _setContentDispositionAndSend(file_path):
-				filename = os.path.basename(file_path)
+				filename = basename(file_path)
 				request.setHeader('content-disposition', f'filename="{filename}"')
 				request.setHeader('content-type', "image/png")
 				f = open(file_path, "rb")
@@ -149,7 +150,7 @@ class BaseController(resource.Resource):
 				f.close()
 				defer.returnValue(0)
 
-			if os.path.exists(data):
+			if exists(data):
 				yield _setContentDispositionAndSend(data)
 			else:
 				request.setResponseCode(http.NOT_FOUND)
@@ -256,7 +257,7 @@ class BaseController(resource.Resource):
 		oport = None
 		variant = "oscam"
 		for file in ["/tmp/.ncam/ncam.version", "/tmp/.oscam/oscam.version"]:
-			if fileExists(file):  # nosec
+			if exists(file):  # nosec
 				if "ncam" in file:
 					variant = "ncam"
 				else:
@@ -268,7 +269,7 @@ class BaseController(resource.Resource):
 				for i in data:
 					if "configdir:" in i.lower():
 						opath = i.split(":")[1].strip() + "/" + conffile
-						if not fileExists(opath):
+						if not exists(opath):
 							opath = None
 					elif "web interface support:" in i.lower():
 						owebif = i.split(":")[1].strip()
@@ -380,14 +381,14 @@ class BaseController(resource.Resource):
 		except ImportError:
 			pass
 
-		if os.path.exists('/usr/bin/shellinaboxd'):
+		if exists('/usr/bin/shellinaboxd'):
 			extras.append({'key': 'ajax/terminal', 'description': _('Terminal')})
 
 		ret['extras'] = extras
 		theme = 'original'
 		if config.OpenWebif.webcache.theme.value:
 			theme = config.OpenWebif.webcache.theme.value
-		if not os.path.exists(getPublicPath('themes')):
+		if not exists(getPublicPath('themes')):
 			if not (theme == 'original' or theme == 'clear'):
 				theme = 'original'
 				config.OpenWebif.webcache.theme.value = theme

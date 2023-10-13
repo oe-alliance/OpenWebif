@@ -1,7 +1,7 @@
 ##########################################################################
 # OpenWebif: httpserver
 ##########################################################################
-# Copyright (C) 2011 - 2022 E2OpenPlugins
+# Copyright (C) 2011 - 2023 jbleyel and E2OpenPlugins
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -19,10 +19,11 @@
 ##########################################################################
 
 import ipaddress
-from imp import load_compiled, load_source
+from importlib.util import spec_from_file_location, module_from_spec
 from os import listdir, makedirs, remove, symlink
 from os.path import exists, islink
 from socket import has_ipv6
+import sys
 from OpenSSL import SSL
 from OpenSSL import crypto
 from twisted import version
@@ -34,7 +35,6 @@ from enigma import eEnv
 from Screens.MessageBox import MessageBox
 from Components.config import config
 from Components.Network import iNetwork
-from Tools.Directories import fileExists
 
 from .controllers.root import RootController
 from .controllers.utilities import toString
@@ -50,7 +50,7 @@ INET6 = "/proc/net/if_inet6"
 def getAllNetworks():
 	tempaddrs = []
 	# Get all IP networks
-	if fileExists(INET6):
+	if exists(INET6):
 		if has_ipv6 and version.major >= 12:
 			proc = INET6
 			for line in open(proc).readlines():
@@ -95,7 +95,7 @@ def verifyCallback(connection, x509, errnum, errdepth, ok):
 
 def isOriginalWebifInstalled():
 	pluginpath = eEnv.resolve('${libdir}/enigma2/python/Plugins/Extensions/WebInterface/plugin.py')
-	if fileExists(pluginpath) or fileExists(pluginpath + "o") or fileExists(pluginpath + "c"):
+	if exists(pluginpath) or exists(pluginpath + "c"):
 		return True
 
 	return False
@@ -127,7 +127,7 @@ def buildRootTree(session):
 			]
 
 			for cleanupfile in cleanuplist:
-				if fileExists(origwebifpath + cleanupfile):
+				if exists(origwebifpath + cleanupfile):
 					remove(origwebifpath + cleanupfile)
 
 			if not exists(origwebifpath + "/WebChilds/External"):
@@ -145,9 +145,9 @@ def buildRootTree(session):
 			externals = listdir(origwebifpath + "/WebChilds/External")
 			loaded = []
 			for external in externals:
-				if external[-3:] == ".py":
+				if external.endswith(".py"):
 					modulename = external[:-3]
-				elif external[-4:] == ".pyc":
+				elif external.endswith(".pyc"):
 					modulename = external[:-4]
 				else:
 					continue
@@ -160,10 +160,20 @@ def buildRootTree(session):
 
 				loaded.append(modulename)
 				try:
-					load_source(modulename, origwebifpath + "/WebChilds/External/" + modulename + ".py")
-				except Exception as e:
+					spec = spec_from_file_location(modulename, origwebifpath + "/WebChilds/External/" + modulename + ".py")
+					module = module_from_spec(spec)
+					sys.modules[modulename] = module
+					spec.loader.exec_module(module)
+				except Exception as err:
+					print(f"[OpenWebif] Error load external module '{modulename}'. {err}")
 					# maybe there's only the compiled version
-					load_compiled(modulename, origwebifpath + "/WebChilds/External/" + external)
+					try:
+						spec = spec_from_file_location(modulename, origwebifpath + "/WebChilds/External/" + external)
+						module = module_from_spec(spec)
+						sys.modules[modulename] = module
+						spec.loader.exec_module(module)
+					except Exception as err:
+						print(f"[OpenWebif] Error load external module '{modulename}'. {err}")
 
 		if len(loaded_plugins) > 0:
 			for plugin in loaded_plugins:
@@ -195,16 +205,16 @@ def HttpdStart(session):
 
 		# start http webserver on configured port
 		try:
-			if has_ipv6 and fileExists(INET6) and version.major >= 12:
+			if has_ipv6 and exists(INET6) and version.major >= 12:
 				# use ipv6
 				listener.append(reactor.listenTCP(port, site, interface='::'))
 			else:
 				# ipv4 only
 				listener.append(reactor.listenTCP(port, site))
-			print("[OpenWebif] started on %i" % (port))
+			print(f"[OpenWebif] started on {port}")
 			BJregisterService('http', port)
 		except CannotListenError:
-			print("[OpenWebif] failed to listen on Port %i" % (port))
+			print(f"[OpenWebif] failed to listen on Port {port}")
 
 		if config.OpenWebif.https_clientcert.value is True and not exists(CA_FILE):
 			# Disable https
@@ -250,16 +260,16 @@ def HttpdStart(session):
 				sslroot = AuthResource(session, temproot)
 				sslsite = server.Site(sslroot)
 
-				if has_ipv6 and fileExists(INET6) and version.major >= 12:
+				if has_ipv6 and exists(INET6) and version.major >= 12:
 					# use ipv6
 					listener.append(reactor.listenSSL(httpsport, sslsite, context, interface='::'))
 				else:
 					# ipv4 only
 					listener.append(reactor.listenSSL(httpsport, sslsite, context))
-				print(f"[OpenWebif] started on port:{str(httpsport)}")
+				print(f"[OpenWebif] started on port:{httpsport}")
 				BJregisterService('https', httpsport)
 			except CannotListenError:
-				print("[OpenWebif] failed to listen on Port", httpsport)
+				print(f"[OpenWebif] failed to listen on Port: {httpsport}")
 			except:  # nosec # noqa: E722
 				print("[OpenWebif] failed to start https, disabling...")
 				# Disable https
@@ -269,7 +279,7 @@ def HttpdStart(session):
 		# Streaming requires listening on 127.0.0.1:80
 		if port != 80:
 			try:
-				if has_ipv6 and fileExists(INET6) and version.major >= 12:
+				if has_ipv6 and exists(INET6) and version.major >= 12:
 					# use ipv6
 					# Dear Twisted devs: Learning English, lesson 1 - interface != address
 					listener.append(reactor.listenTCP(80, site, interface='::1'))
@@ -296,7 +306,7 @@ class AuthResource(resource.Resource):
 		self.resource = root
 
 	def noShell(self, user):
-		if fileExists('/etc/passwd'):
+		if exists('/etc/passwd'):
 			for line in open('/etc/passwd').readlines():
 				line = line.strip()
 				if line.startswith(user + ":") and (line.endswith(":/bin/false") or line.endswith(":/sbin/nologin")):
