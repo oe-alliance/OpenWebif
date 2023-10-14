@@ -104,9 +104,11 @@ class BaseController(resource.Resource):
 		if exists(getViewsPath(path + ".pyc")):
 			spec = spec_from_file_location(module, getViewsPath(path + ".pyc"))
 			template = module_from_spec(spec)
+			spec.loader.exec_module(template)
 		elif exists(getViewsPath(path + ".py")):
 			spec = spec_from_file_location(module, getViewsPath(path + ".py"))
 			template = module_from_spec(spec)
+			spec.loader.exec_module(template)
 		if template:
 			mod = getattr(template, module, None)
 			if callable(mod):
