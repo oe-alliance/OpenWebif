@@ -49,7 +49,7 @@ class GrabRequest:
 		size = getUrlArg(request, "r")
 		if size is not None:
 			graboptions.append("-r")
-			graboptions.append("%d" % int(size))
+			graboptions.append(f"{int(size)}")
 
 		mode = getUrlArg(request, "mode")
 		if mode is not None:

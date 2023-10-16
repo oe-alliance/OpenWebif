@@ -179,7 +179,7 @@ def getAdapterIPv6(ifname):
 def formatIp(ip):
 	if ip is None or len(ip) != 4:
 		return "0.0.0.0"  # nosec
-	return "%d.%d.%d.%d" % (ip[0], ip[1], ip[2], ip[3])
+	return f"{ip[0]}.{ip[1]}.{ip[2]}.{ip[3]}"
 
 
 def getInfo(session=None, need_fullinfo=False):
@@ -297,8 +297,8 @@ def getInfo(session=None, need_fullinfo=False):
 		if uptime > 86400:
 			d = uptime / 86400
 			uptime = uptime % 86400
-			uptimetext += "%dd " % d
-		uptimetext += "%d:%.2d" % (uptime / 3600, (uptime % 3600) / 60)
+			uptimetext += f"{d}d "
+		uptimetext += "%s:%.2d" % (uptime / 3600, (uptime % 3600) / 60)
 	except:  # nosec # noqa: E722
 		uptimetext = "?"
 	info["uptime"] = uptimetext
@@ -337,7 +337,7 @@ def getInfo(session=None, need_fullinfo=False):
 	info["friendlychipsettext"] = friendlychipsettext
 	info["tuners"] = []
 	for i in list(range(0, nimmanager.getSlotCount())):
-		print("[OpenWebif] -D- tuner '%d' '%s' '%s'" % (i, nimmanager.getNimName(i), nimmanager.getNim(i).getSlotName()))
+		print(f"[OpenWebif] -D- tuner '{i}' '{nimmanager.getNimName(i)}' '{nimmanager.getNim(i).getSlotName()}'")
 		info["tuners"].append({
 			"name": nimmanager.getNim(i).getSlotName(),
 			"type": nimmanager.getNimName(i) + " (" + nimmanager.getNim(i).getFriendlyType() + ")",
@@ -385,7 +385,7 @@ def getInfo(session=None, need_fullinfo=False):
 		elif size > 1024:
 			size = f"{size / 1024.0:.1f} {_('GB')}"
 		else:
-			size = "%d %s" % (size, _("MB"))
+			size = f"{size} {_('MB')}"
 
 		iecsize = hdd.diskSize()
 		# Harddisks > 1000 decimal Gigabytes are labelled in TB
@@ -395,15 +395,15 @@ def getInfo(session=None, need_fullinfo=False):
 			if (iecsize % 1 > 0):
 				iecsize = f"{iecsize:.1f} {_('TB')}"
 			else:
-				iecsize = "%d %s" % (iecsize, _("TB"))
+				iecsize = f"{iecsize} {_('TB')}"
 		# Round harddisk sizes beyond ~300GB to full tens: 320, 500, 640, 750GB
 		elif iecsize > 300000:
-			iecsize = "%d %s" % (((iecsize + 5000) // 10000 * 10), _("GB"))
+			iecsize = f"{(iecsize + 5000) // 10000 * 10} {_('GB')}"
 		# ... be more precise for media < ~300GB (Sticks, SSDs, CF, MMC, ...): 1, 2, 4, 8, 16 ... 256GB
 		elif iecsize > 1000:
-			iecsize = "%d %s" % (((iecsize + 500) // 1000), _("GB"))
+			iecsize = f"{(iecsize + 500) // 1000} {_('GB')}"
 		else:
-			iecsize = "%d %s" % (iecsize, _("MB"))
+			iecsize = f"{iecsize} {_('MB')}"
 
 		info["hdd"].append({
 			"model": hdd.model(),
@@ -423,7 +423,7 @@ def getInfo(session=None, need_fullinfo=False):
 				if not line.startswith("#"):
 					# Replace escaped spaces that can appear inside credentials with underscores
 					# Not elegant but we wouldn't want to expose credentials on the OWIF anyways
-					tmpline = line.replace("\ ", "_")
+					tmpline = line.replace(r"\ ", "_")
 					tmp = tmpline.split()
 					if len(tmp) != 3:
 						continue
@@ -643,7 +643,7 @@ def getOrb(pos):
 	if pos > 1800:
 		pos = 3600 - pos
 		direction = _("W")
-	return "%d.%d° %s" % (pos / 10, pos % 10, direction)
+	return f"{pos / 10}.{pos % 10}° {direction}"
 
 
 def getFrontendStatus(session):

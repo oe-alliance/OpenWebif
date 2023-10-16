@@ -53,8 +53,8 @@ class SSLCertificateGenerator:
 		keypair = self.__genKeyPair()
 		certificate = self.__genCertificate(keypair)
 		print("[OpenWebif] Install newly generated key pair and certificate")
-		open(KEY_FILE, "wt").write(toString(crypto.dump_privatekey(crypto.FILETYPE_PEM, keypair)))
-		open(CERT_FILE, "wt").write(toString(crypto.dump_certificate(crypto.FILETYPE_PEM, certificate)))
+		open(KEY_FILE, "w").write(toString(crypto.dump_privatekey(crypto.FILETYPE_PEM, keypair)))
+		open(CERT_FILE, "w").write(toString(crypto.dump_certificate(crypto.FILETYPE_PEM, certificate)))
 
 	# generate a key pair
 	def __genKeyPair(self):

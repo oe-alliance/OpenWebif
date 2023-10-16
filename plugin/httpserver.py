@@ -229,12 +229,12 @@ def HttpdStart(session):
 			# start https webserver on port configured port
 			try:
 				try:
-					key = crypto.load_privatekey(crypto.FILETYPE_PEM, open(KEY_FILE, 'rt').read())
-					cert = crypto.load_certificate(crypto.FILETYPE_PEM, open(CERT_FILE, 'rt').read())
+					key = crypto.load_privatekey(crypto.FILETYPE_PEM, open(KEY_FILE).read())
+					cert = crypto.load_certificate(crypto.FILETYPE_PEM, open(CERT_FILE).read())
 					print(f"[OpenWebif] CHAIN_FILE = {CHAIN_FILE}")
 					chain = None
 					if exists(CHAIN_FILE):
-						chain = [crypto.load_certificate(crypto.FILETYPE_PEM, open(CHAIN_FILE, 'rt').read())]
+						chain = [crypto.load_certificate(crypto.FILETYPE_PEM, open(CHAIN_FILE).read())]
 						print("[OpenWebif] ssl chain file found - loading")
 					context = ssl.CertificateOptions(privateKey=key, certificate=cert, extraCertChain=chain)
 				except:  # nosec # noqa: E722

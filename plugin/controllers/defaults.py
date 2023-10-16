@@ -129,7 +129,7 @@ def getIP():
 	if len(ifaces):
 		ip_list = iNetwork.getAdapterAttribute(ifaces[0], "ip")  # use only the first configured interface
 		if ip_list:
-			return "%d.%d.%d.%d" % (ip_list[0], ip_list[1], ip_list[2], ip_list[3])
+			return f"{ip_list[0]}.{ip_list[1]}.{ip_list[2]}.{ip_list[3]}"
 	return None
 
 

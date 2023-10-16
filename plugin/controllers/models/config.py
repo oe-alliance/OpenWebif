@@ -252,7 +252,7 @@ def getConfigs(key):
 				else:
 					text = _(text)
 				if "limits" in data:
-					text = "%s (%d - %d)" % (text, data["limits"][0], data["limits"][1])
+					text = f"{text} ({data['limits'][0]} - {data['limits'][1]})"
 				configs.append({
 					"description": text,
 					"path": entry.text or "",

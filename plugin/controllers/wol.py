@@ -131,5 +131,5 @@ class WOLClientController(resource.Resource):
 				my_socket.setsockopt(SOL_SOCKET, SO_BROADCAST, 1)
 				my_socket.sendto(magic, (ip, port))
 				my_socket.close()
-				return e2simplexmlresult(True, toBinary("MagicPacket send to IP %s at port %d" % (ip, port)))
+				return e2simplexmlresult(True, toBinary(f"MagicPacket send to IP {ip} at port {port}"))
 		return e2simplexmlresult(False, b"'ip' and 'mac' are mandatory arguments")
