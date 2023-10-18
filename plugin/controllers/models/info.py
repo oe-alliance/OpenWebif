@@ -295,10 +295,9 @@ def getInfo(session=None, need_fullinfo=False):
 		f.close()
 		uptimetext = ""
 		if uptime > 86400:
-			d = uptime / 86400
+			uptimetext = f"{int(uptime / 86400)}d "
 			uptime = uptime % 86400
-			uptimetext += f"{d}d "
-		uptimetext += "%s:%.2d" % (uptime / 3600, (uptime % 3600) / 60)
+		uptimetext = f"{uptimetext}{int(uptime / 3600):02d}:{int((uptime % 3600) / 60):02d}"
 	except:  # nosec # noqa: E722
 		uptimetext = "?"
 	info["uptime"] = uptimetext
