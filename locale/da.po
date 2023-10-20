@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenWebif\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-22 19:39+0200\n"
+"POT-Creation-Date: 2023-08-26 22:02+0200\n"
 "PO-Revision-Date: 2023-08-22 17:44+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/e2openplugin-"
@@ -1442,6 +1442,9 @@ msgstr "Sæt maksimal varighed"
 
 msgid "Settings"
 msgstr "Indstillinger"
+
+msgid "Show EPG History"
+msgstr ""
 
 msgid "Show EPG for"
 msgstr "Vis EPG for"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenWebif\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-22 19:39+0200\n"
+"POT-Creation-Date: 2023-08-26 22:02+0200\n"
 "PO-Revision-Date: 2023-08-22 17:45+0000\n"
 "Last-Translator: Vitor Fernandes <vitoratfernandes@mail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/e2openplugin-"
@@ -1458,6 +1458,9 @@ msgstr "Definir a duração máxima"
 
 msgid "Settings"
 msgstr "Definições"
+
+msgid "Show EPG History"
+msgstr ""
 
 msgid "Show EPG for"
 msgstr "Mostrar EPG para"

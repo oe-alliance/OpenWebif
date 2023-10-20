@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenWebif\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-22 19:39+0200\n"
+"POT-Creation-Date: 2023-08-26 22:02+0200\n"
 "PO-Revision-Date: 2023-08-22 17:46+0000\n"
 "Last-Translator: Tlsn <developer216@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/e2openplugin-"
@@ -1421,6 +1421,9 @@ msgstr "Встановіть максимальну тривалість"
 
 msgid "Settings"
 msgstr "Налаштування"
+
+msgid "Show EPG History"
+msgstr ""
 
 msgid "Show EPG for"
 msgstr "Показати EPG для"
