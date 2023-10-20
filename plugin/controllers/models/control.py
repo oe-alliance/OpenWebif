@@ -1,7 +1,7 @@
 ##########################################################################
 # OpenWebif: control
 ##########################################################################
-# Copyright (C) 2011 - 2022 E2OpenPlugins
+# Copyright (C) 2011 - 2023 E2OpenPlugins
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -68,7 +68,7 @@ def zapInServiceList(service):
 	if config.usage.multibouquet.value:
 		rootstrings = (ROOTTV, ROOTRADIO)
 	else:
-		rootstrings = (service_types_tv + ' FROM BOUQUET "userbouquet.favourites.tv" ORDER BY bouquet', service_types_radio + ' FROM BOUQUET "userbouquet.favourites.radio" ORDER BY bouquet')
+		rootstrings = (f'{service_types_tv} FROM BOUQUET "userbouquet.favourites.tv" ORDER BY bouquet', f'{service_types_radio} FROM BOUQUET "userbouquet.favourites.radio" ORDER BY bouquet')
 	bouquet_found = False
 	for bouquet_rootstr in rootstrings:
 		servicelist.bouquet_root = eServiceReference(bouquet_rootstr)

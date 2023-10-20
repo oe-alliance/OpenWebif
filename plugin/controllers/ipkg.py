@@ -171,11 +171,11 @@ class IpkgController(BaseController):
 		cmd = ''
 		if package is not None:
 			if self.action == 'forceremove':
-				cmd = 'remove ' + package + ' --force-remove --force-depends'
+				cmd = f"remove {package} --force-remove --force-depends"
 			elif self.action == 'forceinstall':
-				cmd = '--force-overwrite install ' + package
+				cmd = f"--force-overwrite install {package}"
 			else:
-				cmd = self.action + ' ' + package
+				cmd = f"{self.action} {package}"
 		else:
 			cmd = self.action
 		request.setResponseCode(http.OK)

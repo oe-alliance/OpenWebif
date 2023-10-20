@@ -24,7 +24,7 @@ def getAudioTracks(session):
 
 			description = track.getDescription()
 			if description:
-				description += " (" + language + ")"
+				description += f" ({language})"
 			else:
 				description = language
 

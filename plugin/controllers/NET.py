@@ -47,7 +47,7 @@ class NetController(resource.Resource):
 		self.request.finish()
 
 	def render(self, request):
-		func = getattr(self, "P_" + self.path, None)
+		func = getattr(self, f"P_{self.path}", None)
 		self.request = request
 		if callable(func):
 			request.setResponseCode(http.OK)
@@ -56,7 +56,7 @@ class NetController(resource.Resource):
 			request.write(dumps(self.result))
 			request.finish()
 		else:
-			func = getattr(self, "PC_" + self.path, None)
+			func = getattr(self, f"PC_{self.path}", None)
 			if callable(func):
 				self.callback = self.parsecallback
 				func()

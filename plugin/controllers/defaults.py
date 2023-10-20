@@ -71,14 +71,14 @@ def setMobile(ismobile=False):
 
 def getViewsPath(file=""):
 	global MOBILEDEVICE
-	if (comp_config.OpenWebif.webcache.responsive_enabled.value or MOBILEDEVICE) and exists(VIEWS_PATH + "/responsive") and not (file.startswith('web/') or file.startswith('/web/')):
-		return VIEWS_PATH + "/responsive/" + file
+	if (comp_config.OpenWebif.webcache.responsive_enabled.value or MOBILEDEVICE) and exists(f"{VIEWS_PATH}/responsive") and not (file.startswith('web/') or file.startswith('/web/')):
+		return f"{VIEWS_PATH}/responsive/{file}"
 	else:
-		return VIEWS_PATH + "/" + file
+		return f"{VIEWS_PATH}/{file}"
 
 
 def getPublicPath(file=""):
-	return PUBLIC_PATH + "/" + file
+	return f"{PUBLIC_PATH}/{file}"
 
 
 def getPiconPath():
@@ -106,7 +106,7 @@ def getPiconPath():
 	for prefix in PICON_PREFIXES:
 		if isdir(prefix):
 			for folder in PICON_FOLDERS:
-				current = prefix + folder + '/'
+				current = f"{prefix}{folder}/"
 				if isdir(current):
 					print(f"Current Picon Path : {current}")
 					return current

@@ -94,14 +94,14 @@ class FileController(resource.Resource):
 				if path == '/':
 					path = ''
 				try:
-					files = glob(path + '/' + pattern)
+					files = glob(f"{path}/{pattern}")
 				except OSError:
 					files = []
 				files.sort()
 				tmpfiles = files[:]
 				for x in tmpfiles:
 					if isdir(x):
-						directories.append(x + '/')
+						directories.append(f"{x}/")
 						files.remove(x)
 				if nofiles:
 					files = []
@@ -120,7 +120,7 @@ class FileController(resource.Resource):
 				if path == "/":
 					path = ""
 				try:
-					files = glob(path + '/*')
+					files = glob(f"{path}/*")
 				except OSError:
 					files = []
 				files.sort()

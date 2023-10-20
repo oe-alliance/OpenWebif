@@ -36,10 +36,7 @@ class GetSession(Resource):
 
 def getStream(session, request, m3ufile):
 	sref = getUrlArg(request, "ref")
-	if sref is not None:
-		sref = unquote(unquote(sref))
-	else:
-		sref = ""
+	sref = unquote(unquote(sref)) if sref is not None else ""
 
 	currentserviceref = None
 	if m3ufile == "streamcurrent.m3u":
@@ -126,7 +123,7 @@ def getStream(session, request, m3ufile):
 	if icam in sref:
 		portnumber = icamport
 		sref = sref.split(icam)[1]
-		sref = sref.split("::")[0] + ":"
+		sref = f'{sref.split("::")[0]}:'
 		auth = ""
 		args = ""
 
@@ -173,7 +170,7 @@ def getTS(self, request):
 				seconds = float(line6.strip()) / 90000  # In seconds
 
 			if config.OpenWebif.service_name_for_stream.value:
-				progopt = "%s#EXTINF:%d,%s\n" % (progopt, seconds, name)
+				progopt = f"{progopt}#EXTINF:{int(seconds)},{name}\n"
 
 			metafile.close()
 
@@ -226,7 +223,7 @@ def getTS(self, request):
 
 		# When you use EXTVLCOPT:program in a transcoded stream, VLC does not play stream
 		if config.OpenWebif.service_name_for_stream.value and sref != '' and portnumber != transcoder_port:
-			progopt = "%s#EXTVLCOPT:program=%d\n" % (progopt, int(sref.split(':')[3], 16))
+			progopt = f"{progopt}#EXTVLCOPT:program={int(sref.split(':')[3], 16)}\n"
 
 		if portnumber is None:
 			portnumber = config.OpenWebif.port.value

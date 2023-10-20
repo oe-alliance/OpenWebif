@@ -1,7 +1,7 @@
 ##########################################################################
 # OpenWebif: grab
 ##########################################################################
-# Copyright (C) 2011 - 2022 E2OpenPlugins
+# Copyright (C) 2011 - 2023 E2OpenPlugins, jbleyel
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -18,13 +18,12 @@
 # Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
 ##########################################################################
 
-from enigma import eConsoleAppContainer
-from ServiceReference import ServiceReference
+from time import localtime, strftime, time
+from twisted.web import resource, server
+from enigma import eConsoleAppContainer, eDBoxLCD
 from Components.config import config
 from Screens.InfoBar import InfoBar
-from twisted.web import resource, server
-from enigma import eDBoxLCD
-import time
+from ServiceReference import ServiceReference
 from ..utilities import getUrlArg
 
 GRAB_PATH = "/usr/bin/grab"
@@ -87,7 +86,7 @@ class GrabRequest:
 					sref = ServiceReference(ref).getServiceName()
 			except Exception:  # nosec # noqa: E722
 				sref = "screenshot"
-		sref = f"{sref}_{time.strftime('%Y%m%d%H%M%S', time.localtime(time.time()))}"
+		sref = f"{sref}_{strftime('%Y%m%d%H%M%S', localtime(time()))}"
 		request.notifyFinish().addErrback(self.requestAborted)
 		request.setHeader('Content-Disposition', f'inline; filename={sref}.{fileformat};')
 		request.setHeader('Content-Type', f"image/{fileformat.replace('jpg', 'jpeg')}")

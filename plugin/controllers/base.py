@@ -101,20 +101,20 @@ class BaseController(resource.Resource):
 
 	def loadTemplate(self, path, module, args):
 		template = None
-		if exists(getViewsPath(path + ".pyc")):
-			spec = spec_from_file_location(module, getViewsPath(path + ".pyc"))
+		if exists(getViewsPath(f"{path}.pyc")):
+			spec = spec_from_file_location(module, getViewsPath(f"{path}.pyc"))
 			template = module_from_spec(spec)
 			spec.loader.exec_module(template)
-		elif exists(getViewsPath(path + ".py")):
-			spec = spec_from_file_location(module, getViewsPath(path + ".py"))
+		elif exists(getViewsPath(f"{path}.py")):
+			spec = spec_from_file_location(module, getViewsPath(f"{path}.py"))
 			template = module_from_spec(spec)
 			spec.loader.exec_module(template)
 		if template:
 			mod = getattr(template, module, None)
 			if callable(mod):
 				return str(mod(searchList=args))
-		if exists(getViewsPath(path + ".tmpl")):
-			vp = str(getViewsPath(path + ".tmpl"))
+		if exists(getViewsPath(f"{path}.tmpl")):
+			vp = str(getViewsPath(f"{path}.tmpl"))
 			return str(Template(file=vp, searchList=[args]))
 		return None
 
@@ -180,7 +180,7 @@ class BaseController(resource.Resource):
 		elif self.path in self.NoDataRender():
 			func = getattr(self, "noData", None)
 		else:
-			func = getattr(self, "P_" + self.path, None)
+			func = getattr(self, f"P_{self.path}", None)
 
 		if callable(func):
 			request.setResponseCode(http.OK)
@@ -270,7 +270,7 @@ class BaseController(resource.Resource):
 				data = open(file).readlines()  # nosec
 				for i in data:
 					if "configdir:" in i.lower():
-						opath = i.split(":")[1].strip() + "/" + conffile
+						opath = f'{i.split(":")[1].strip()}/{conffile}'
 						if not exists(opath):
 							opath = None
 					elif "web interface support:" in i.lower():
@@ -293,7 +293,7 @@ class BaseController(resource.Resource):
 		ret['customname'] = getCustomName()['customname']
 		ret['boxname'] = getBoxName()['boxname']
 		if not ret['boxname'] or not ret['customname']:
-			ret['boxname'] = getInfo()['brand'] + " " + getInfo()['model']
+			ret['boxname'] = f"{getInfo()['brand']} {getInfo()['model']}"
 		ret['box'] = BoxInfo.getItem("machinebuild")
 		if hasattr(eEPGCache, 'FULL_DESCRIPTION_SEARCH'):
 			ret['epgsearchcaps'] = True
@@ -306,8 +306,8 @@ class BaseController(resource.Resource):
 			lcd4linux_key = "lcd4linux/config"
 			if isPluginInstalled("WebInterface"):
 				try:
-					lcd4linux_port = "http://" + ip + ":" + str(config.plugins.Webinterface.http.port.value) + "/"
-					lcd4linux_key = lcd4linux_port + 'lcd4linux/config'
+					lcd4linux_port = f"http://{ip}:{str(config.plugins.Webinterface.http.port.value)}/"
+					lcd4linux_key = f"{lcd4linux_port}lcd4linux/config"
 				except:  # nosec # noqa: E722
 					lcd4linux_key = None
 			if lcd4linux_key:

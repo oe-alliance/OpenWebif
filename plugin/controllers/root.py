@@ -54,10 +54,10 @@ class RootController(BaseController):
 		self.putChild2("grab", GrabScreenshot(session))
 		self.putChild2('hardware', static.File(toBinary("/usr/share/enigma2/hardware")))
 		for static_val in ('js', 'css', 'static', 'images', 'fonts'):
-			self.putChild2(static_val, static.File(toBinary(getPublicPath() + '/' + static_val)))
+			self.putChild2(static_val, static.File(toBinary(getPublicPath(static_val))))
 		for static_val in ('modern', 'themes', 'webtv', 'vxg'):
 			if exists(getPublicPath(static_val)):
-				self.putChild2(static_val, static.File(toBinary(getPublicPath() + '/' + static_val)))
+				self.putChild2(static_val, static.File(toBinary(getPublicPath(static_val))))
 
 		if exists('/usr/bin/shellinaboxd'):
 			self.putChild2("terminal", proxy.ReverseProxyResource('::1', 4200, b'/'))
@@ -97,7 +97,7 @@ class RootController(BaseController):
 	def P_index(self, request):
 		if not config.OpenWebif.webcache.responsive_enabled.value:
 			setMobile()
-			if exists(VIEWS_PATH + "/responsive"):
+			if exists(f"{VIEWS_PATH}/responsive"):
 				uagent = request.getHeader('User-Agent') or ""
 				uagent = uagent.lower()
 				if uagent.find("iphone") != -1 or uagent.find("ipod") != -1 or uagent.find("blackberry") != -1 or uagent.find("mobile") != -1:

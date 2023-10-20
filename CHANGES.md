@@ -1,3 +1,7 @@
+## Version 2.0.9
+* use python fstring
+* improve python imports
+
 ## Version 2.0.8
 * improve multi epg
 
