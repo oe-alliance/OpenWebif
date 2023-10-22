@@ -38,7 +38,7 @@ from Screens.InfoBar import InfoBar
 from .info import getOrbitalText, getOrb
 from ..utilities import parse_servicereference, SERVICE_TYPE_LOOKUP, NS_LOOKUP
 from ..i18n import _, tstrings
-from ..defaults import PICON_PATH
+from ..defaults import PICON_PATH, STREAMRELAY
 from .epg import EPG, convertGenre, getIPTVLink, filterName, convertDesc, GetWithAlternative
 
 
@@ -403,6 +403,14 @@ def getChannels(idbouquet, stype):
 	epgnownextevents = epg.getMultiChannelNowNextEvents([item[0] for item in channels])
 	index = -2
 
+	streamRelay = []
+	if STREAMRELAY:
+		try:
+			with open("/etc/enigma2/whitelist_streamrelay") as fd:
+				streamRelay = [line.strip() for line in fd.readlines()]
+		except OSError:
+			pass
+
 	for channel in channels:
 		index = index + 2  # each channel has a `now` and a `next` event entry
 		chan = {
@@ -418,7 +426,7 @@ def getChannels(idbouquet, stype):
 		ref = chan['ref']
 		icam = "%3a17999/" in ref
 		chan['link'] = "" if icam else getIPTVLink(chan['ref'])
-		chan['icam'] = icam
+		chan['icam'] = icam or (streamRelay and ref in streamRelay)
 
 		if not int(channel[0].split(":")[1]) & 64:
 			psref = parse_servicereference(channel[0])

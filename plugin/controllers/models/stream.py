@@ -15,6 +15,7 @@ from Components.config import config
 from twisted.web.resource import Resource
 from .info import getInfo
 from ..utilities import getUrlArg
+from ..defaults import STREAMRELAY
 
 BMC0 = "/dev/bcm_enc0"
 ENC0 = "/dev/encoder0"
@@ -55,7 +56,7 @@ def getStream(session, request, m3ufile):
 			sref = ref.toString()
 
 	# #EXTINF:-1,%s\n adding back to show service name in programs like VLC
-	progopt = ''
+	progopt = ""
 	name = getUrlArg(request, "name")
 	if name is not None and config.OpenWebif.service_name_for_stream.value:
 		progopt = f"#EXTINF:-1,{name}\n"
@@ -65,9 +66,9 @@ def getStream(session, request, m3ufile):
 	info = getInfo()
 	# model = info["model"]
 	# machinebuild = info["machinebuild"]
-	urlparam = '?'
-	if info["imagedistro"] in ('openpli', 'satdreamgr', 'openvision'):
-		urlparam = '&'
+	urlparam = "?"
+	if info["imagedistro"] in ("openpli", "satdreamgr", "openvision"):
+		urlparam = "&"
 	transcoder_port = None
 	args = ""
 
@@ -91,7 +92,7 @@ def getStream(session, request, m3ufile):
 		try:
 			bitrate = config.plugins.transcodingsetup.bitrate.value
 			resolution = config.plugins.transcodingsetup.resolution.value
-			(width, height) = tuple(resolution.split('x'))
+			(width, height) = tuple(resolution.split("x"))
 			# framerate = config.plugins.transcodingsetup.framerate.value
 			aspectratio = config.plugins.transcodingsetup.aspectratio.value
 			interlaced = config.plugins.transcodingsetup.interlaced.value
@@ -100,25 +101,27 @@ def getStream(session, request, m3ufile):
 				args = f"?bitrate={bitrate}__width={width}__height={height}__vcodec={vcodec}__aspectratio={aspectratio}__interlaced={interlaced}"
 			else:
 				args = f"?bitrate={bitrate}__width={width}__height={height}__aspectratio={aspectratio}__interlaced={interlaced}"
-			args = args.replace('__', urlparam)
+			args = args.replace("__", urlparam)
 		except Exception:
 			pass
 
 	# When you use EXTVLCOPT:program in a transcoded stream, VLC does not play stream
-	if config.OpenWebif.service_name_for_stream.value and sref != '' and portnumber != transcoder_port:
-		progopt = "%s#EXTVLCOPT:program=%d\n" % (progopt, int(sref.split(':')[3], 16))
+	if config.OpenWebif.service_name_for_stream.value and sref != "" and portnumber != transcoder_port:
+		progopt = "%s#EXTVLCOPT:program=%d\n" % (progopt, int(sref.split(":")[3], 16))
 
 	if config.OpenWebif.auth_for_streaming.value:
 		asession = GetSession()
 		if asession.GetAuth(request) is not None:
-			auth = ':'.join(asession.GetAuth(request)) + "@"
+			auth = ":".join(asession.GetAuth(request)) + "@"
 		else:
 			auth = f"-sid:{asession.GetSID(request)}@"
 	else:
-		auth = ''
+		auth = ""
 
-	icamport = 17999
-	icam = f"http://127.0.0.1:{icamport}/"
+	icamport = config.misc.softcam_streamrelay_port.value if STREAMRELAY else "127.0.0.1"
+	icamip = ".".join("%d" % d for d in config.misc.softcam_streamrelay_url.value) if STREAMRELAY else 17999
+
+	icam = f"http://{icamip}:{icamport}/"
 
 	if icam in sref:
 		portnumber = icamport
@@ -126,17 +129,28 @@ def getStream(session, request, m3ufile):
 		sref = f'{sref.split("::")[0]}:'
 		auth = ""
 		args = ""
+	elif STREAMRELAY:
+		streamRelay = []
+		try:
+			with open("/etc/enigma2/whitelist_streamrelay") as fd:
+				streamRelay = [line.strip() for line in fd.readlines()]
+		except OSError:
+			pass
+		if streamRelay and sref in streamRelay:
+			portnumber = icamport
+			auth = ""
+			args = ""
 
 	response = f"#EXTM3U \n#EXTVLCOPT:http-reconnect=true \n{progopt}http://{auth}{request.getRequestHostname()}:{portnumber}/{sref}{args}\n"
 	if config.OpenWebif.playiptvdirect.value:
 		if "http://" in sref or "https://" in sref:
 			link = sref.split(":http")[1]
 			response = f"#EXTM3U \n#EXTVLCOPT:http-reconnect=true\n{progopt}http{link}\n"
-	request.setHeader('Content-Type', 'application/x-mpegurl')
+	request.setHeader("Content-Type", "application/x-mpegurl")
 	# Note: do not rename the m3u file all the time
 	fname = getUrlArg(request, "fname")
 	if fname is not None:
-		request.setHeader('Content-Disposition', f'inline; filename={fname}.m3u8;')
+		request.setHeader("Content-Disposition", f"inline; filename={fname}.m3u8;")
 	return response
 
 
@@ -149,11 +163,11 @@ def getTS(self, request):
 
 # ServiceReference is not part of filename so look in the '.ts.meta' file
 		sref = ""
-		progopt = ''
+		progopt = ""
 
-		if exists(filename + '.meta'):
-			metafile = open(filename + '.meta')
-			name = ''
+		if exists(filename + ".meta"):
+			metafile = open(filename + ".meta")
+			name = ""
 			seconds = -1  # unknown duration default
 			line = metafile.readline()  # service ref
 			if line:
@@ -175,15 +189,15 @@ def getTS(self, request):
 			metafile.close()
 
 		portnumber = None
-		proto = 'http'
+		proto = "http"
 		info = getInfo()
 		# model = info["model"]
 		# machinebuild = info["machinebuild"]
 		transcoder_port = None
 		args = ""
-		urlparam = '?'
-		if info["imagedistro"] in ('openpli', 'satdreamgr', 'openvision'):
-			urlparam = '&'
+		urlparam = "?"
+		if info["imagedistro"] in ("openpli", "satdreamgr", "openvision"):
+			urlparam = "&"
 
 		device = getUrlArg(request, "device")
 
@@ -204,7 +218,7 @@ def getTS(self, request):
 				try:
 					bitrate = config.plugins.transcodingsetup.bitrate.value
 					resolution = config.plugins.transcodingsetup.resolution.value
-					(width, height) = tuple(resolution.split('x'))
+					(width, height) = tuple(resolution.split("x"))
 					# framerate = config.plugins.transcodingsetup.framerate.value
 					aspectratio = config.plugins.transcodingsetup.aspectratio.value
 					interlaced = config.plugins.transcodingsetup.interlaced.value
@@ -213,7 +227,7 @@ def getTS(self, request):
 						args = f"?bitrate={bitrate}__width={width}__height={height}__vcodec={vcodec}__aspectratio={aspectratio}__interlaced={interlaced}"
 					else:
 						args = f"?bitrate={bitrate}__width={width}__height={height}__aspectratio={aspectratio}__interlaced={interlaced}"
-					args = args.replace('__', urlparam)
+					args = args.replace("__", urlparam)
 				except Exception:
 					pass
 			# Add position parameter to m3u link
@@ -222,15 +236,15 @@ def getTS(self, request):
 				args = args + "&position=" + position
 
 		# When you use EXTVLCOPT:program in a transcoded stream, VLC does not play stream
-		if config.OpenWebif.service_name_for_stream.value and sref != '' and portnumber != transcoder_port:
-			progopt = f"{progopt}#EXTVLCOPT:program={int(sref.split(':')[3], 16)}\n"
+		if config.OpenWebif.service_name_for_stream.value and sref != "" and portnumber != transcoder_port:
+			progopt = f"{progopt}#EXTVLCOPT:program={int(sref.split(": ")[3], 16)}\n"
 
 		if portnumber is None:
 			portnumber = config.OpenWebif.port.value
 			if request.isSecure():
 				portnumber = config.OpenWebif.https_port.value
-				proto = 'https'
-			ourhost = request.getHeader('host')
+				proto = "https"
+			ourhost = request.getHeader("host")
 			m = match(r'.+\:(\d+)$', ourhost)
 			if m is not None:
 				portnumber = m.group(1)
@@ -238,14 +252,14 @@ def getTS(self, request):
 		if config.OpenWebif.auth_for_streaming.value:
 			asession = GetSession()
 			if asession.GetAuth(request) is not None:
-				auth = ':'.join(asession.GetAuth(request)) + "@"
+				auth = ":".join(asession.GetAuth(request)) + "@"
 			else:
 				auth = f"-sid:{asession.GetSID(request)}@"
 		else:
-			auth = ''
+			auth = ""
 
 		response = f"#EXTM3U \n#EXTVLCOPT:http-reconnect=true \n{progopt}{proto}://{auth}{request.getRequestHostname()}:{portnumber}/file?file={quote(filename)}{args}\n"
-		request.setHeader('Content-Type', 'application/x-mpegurl')
+		request.setHeader("Content-Type", "application/x-mpegurl")
 		return response
 	else:
 		return "Missing file parameter"

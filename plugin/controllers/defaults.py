@@ -296,3 +296,5 @@ DEFAULT_RCU = getDefaultRcu()
 GRABPIP = BoxInfo.getItem("ArchIsARM")
 
 LCD = ("lcd" in MODEL) or ("lcd" in BoxInfo.getItem("displaytype"))
+
+STREAMRELAY = hasattr(comp_config.misc, "softcam_streamrelay_url") and hasattr(comp_config.misc, "softcam_streamrelay_port")
