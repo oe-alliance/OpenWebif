@@ -237,7 +237,7 @@ def getTS(self, request):
 
 		# When you use EXTVLCOPT:program in a transcoded stream, VLC does not play stream
 		if config.OpenWebif.service_name_for_stream.value and sref != "" and portnumber != transcoder_port:
-			progopt = f"{progopt}#EXTVLCOPT:program={int(sref.split(": ")[3], 16)}\n"
+			progopt = f"{progopt}#EXTVLCOPT:program={int(sref.split(': ')[3], 16)}\n"
 
 		if portnumber is None:
 			portnumber = config.OpenWebif.port.value
