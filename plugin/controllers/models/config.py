@@ -301,6 +301,16 @@ def getSettings():
 					configkeyval.append((f"{name}", cnf.default))
 			except AttributeError:
 				pass
+
+	try:
+		streamRelay = []
+		with open("/etc/enigma2/whitelist_streamrelay") as fd:
+			streamRelay = [line.strip() for line in fd.readlines()]
+		if streamRelay:
+			configkeyval.append(("whitelist_streamrelay", ",".join(streamRelay)))
+	except OSError:
+		pass
+
 	return {
 		"result": True,
 		"settings": configkeyval
