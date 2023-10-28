@@ -1,9 +1,9 @@
 //******************************************************************************
 //* bqe.js: openwebif Bouqueteditor plugin
-//* Version 2.10
+//* Version 2.11
 //******************************************************************************
-//* Copyright (C) 2014-2022 jbleyel
-//* Copyright (C) 2014-2022 E2OpenPlugins
+//* Copyright (C) 2014-2023 jbleyel
+//* Copyright (C) 2014-2023 E2OpenPlugins
 //*
 //* Authors: jbleyel
 //*          Robert Damas <https://github.com/rdamas>
@@ -19,6 +19,7 @@
 //* V 2.8 - show ns text #840
 //* V 2.9 - fix ns text, show provider as tooltip #840
 //* V 2.10 - use let instead of var
+//* V 2.11 - fix marker pos
 
 //* License GPL V2
 //* https://github.com/oe-alliance/OpenWebif/blob/main/LICENSE.txt
@@ -332,7 +333,8 @@
 							let pos = spos + val['pos'];
 							if(val['ismarker'] == 2)
 								m= '<span style="float:right">(S)</span>';
-							name = pos.toString() + ' - ' + name;
+							if(val['ismarker'] != 1)
+								name = pos.toString() + ' - ' + name;
 							if(name!='')
 								options.push( $('<li/>', {
 									class: "ui-widget-content",

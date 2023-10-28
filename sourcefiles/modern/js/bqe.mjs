@@ -363,6 +363,8 @@
           });
       },
 
+
+      // TODO : fix absolute channel number
       // display bouquet channels panel content
       populateBouquetChannels: (channels) => {
         bqsPanel.populate(channels, (channel, item) => {
@@ -399,6 +401,7 @@
                 break;
               case '2':
                 marker.textContent = '[ S ]';
+                channelName = `${channel['pos'].toString()} - ${channel['servicename']}`;
                 break;
             }
             marker.classList.remove('hidden');
