@@ -205,14 +205,14 @@ class BQEWebController(BaseController):
 				for sitem in sfulllist:
 					sref = sitem[0].toString()
 					hs = (int(sref.split(":")[1]) & 512)
-					sp = (sref[:7] == '1:832:D')
+					sp = sitem[0].flags & eServiceReference.isNumberedMarker
 					if not hs or sp:  # 512 is hidden service on sifteam image. Doesn't affect other images
 						opos = opos + 1
 						if not sp and sitem[0].flags & eServiceReference.isMarker:
 							opos = opos - 1
 			sref = item[0].toString()
 			hs = (int(sref.split(":")[1]) & 512)
-			sp = (sref[:7] == '1:832:D')
+			sp = item[0].flags & eServiceReference.isNumberedMarker
 			if not hs or sp:  # 512 is hidden service on sifteam image. Doesn't affect other images
 				pos = pos + 1
 				service = {}

@@ -158,7 +158,7 @@ class BouquetEditor(Source):
 		providername = provider.getServiceName()
 		servicehandler = eServiceCenter.getInstance()
 		services = servicehandler.list(provider.ref)
-		return self.addBouquet(providername, mode, services and services.getContent('R', True))
+		return self.addBouquet(providername, mode, services and services.getContent("R", True))
 
 	def removeBouquet(self, param):
 		print(f"[WebComponents.BouquetEditor] removeBouquet with param = {param}")
@@ -347,10 +347,7 @@ class BouquetEditor(Source):
 		mutablebouquetlist = self.getMutableList(bouquet_ref)
 		cnt = 0
 		while mutablebouquetlist:
-			if name is None:
-				service_str = f'1:832:D:{cnt}:0:0:0:0:0:0:'
-			else:
-				service_str = f'1:64:{cnt}:0:0:0:0:0:0:0::{name}'
+			service_str = f'1:320:0:{cnt}:0:0:0:0:0:0:' if name is None else f"1:64:{cnt}:0:0:0:0:0:0:0::{name}"
 			ref = eServiceReference(service_str)
 			if not mutablebouquetlist.addService(ref, srefbefore):
 				mutablebouquetlist.flushChanges()
@@ -550,7 +547,7 @@ class BouquetEditor(Source):
 		backupfilename = pathjoin(self.BACKUP_PATH, tarfilename)
 		if exists(backupfilename):
 			remove(backupfilename)
-		checkfile = pathjoin(self.BACKUP_PATH, '.webouquetedit')
+		checkfile = pathjoin(self.BACKUP_PATH, ".webouquetedit")
 		try:
 			with open(checkfile, "w") as fd:
 				fd.write("created with WebBouquetEditor")
@@ -666,12 +663,12 @@ class BouquetEditor(Source):
 
 	def buildBouquetID(self, str, prefix, mode):
 		tmp = str.lower()
-		name = ''
+		name = ""
 		for c in tmp:
-			if (c >= 'a' and c <= 'z') or (c >= '0' and c <= '9'):
+			if (c >= "a" and c <= "z") or (c >= "0" and c <= "9"):
 				name += c
 			else:
-				name += '_'
+				name += "_"
 		# check if file is unique
 		suffix = ""
 		if mode == MODE_TV:
@@ -702,7 +699,7 @@ class BouquetEditor(Source):
 	def importBouquet(self, param):
 		if config.usage.multibouquet.value:
 			import json
-			ret = [False, 'json format error']
+			ret = [False, "json format error"]
 			mode = MODE_TV
 			try:
 				bqimport = json.loads(param["json"][0])
@@ -729,19 +726,16 @@ class BouquetEditor(Source):
 				mutablebouquetlist.addService(new_bouquet_ref)
 				mutablebouquetlist.flushChanges()
 
-			if overwrite == 1:
-				f = open(fullfilename, 'w')
-			else:
-				f = open(fullfilename, 'a')
+			f = open(fullfilename, "w" if overwrite == 1 else "a")
 			if f:
 				for line in lines:
 					f.write(line)
 					f.write("\n")
 				f.close()
 			else:
-				return [False, 'error creating bouquet file']
+				return [False, "error creating bouquet file"]
 
 			eDVBDB.getInstance().reloadBouquets()
-			return [True, 'bouquet added']
+			return [True, "bouquet added"]
 		else:
 			return [False, _("Multi-Bouquet is not enabled!")]
