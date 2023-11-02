@@ -118,9 +118,8 @@ def getStream(session, request, m3ufile):
 	else:
 		auth = ""
 
-	icamport = config.misc.softcam_streamrelay_port.value if STREAMRELAY else "127.0.0.1"
-	icamip = ".".join("%d" % d for d in config.misc.softcam_streamrelay_url.value) if STREAMRELAY else 17999
-
+	icamport = config.misc.softcam_streamrelay_port.value if STREAMRELAY else 17999
+	icamip = ".".join("%d" % d for d in config.misc.softcam_streamrelay_url.value) if STREAMRELAY else "127.0.0.1"
 	icam = f"http://{icamip}:{icamport}/"
 
 	if icam in sref:
