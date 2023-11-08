@@ -6374,7 +6374,6 @@ img[src*="default_picon"] {
 	/* display: flex; */
 	margin-bottom: 16px;
 	overflow-x: auto;
-	height: 10em;
 }
 
 #tvcontent .nav-tabs>li {
