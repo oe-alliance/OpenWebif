@@ -28,7 +28,8 @@
 
 #for $channel in $channels
 	## TODO: normalise these in a utility function
-	#set $sRefQuoteEscaped = $channel.ref.replace("'", "\\'").replace("%3a", "%253a")
+	#set $sRefQuoteEscaped = $channel.ref.replace("'", "\\'")
+	#set $sRefQuoteEscaped2 = $sRefQuoteEscaped.replace("%3a", "%253a")
 	#set $channelName = $channel.name.replace("&#x27;", "\\'").replace("'", "\\'")
 	#set $isProtected = 'protection' in $channel and $channel.protection != "0"
 
@@ -53,7 +54,7 @@
 			#if $isProtected
 					$piconHTML
 			#else
-					<a href="javascript:zapChannel('$sRefQuoteEscaped', '$channelName');" title="$tstrings['zap_to'] $channel.name">$piconHTML</a>
+					<a href="javascript:zapChannel('$sRefQuoteEscaped2', '$channelName');" title="$tstrings['zap_to'] $channel.name">$piconHTML</a>
 			#end if
 				</div>
 #else
@@ -65,7 +66,7 @@
 			#if $isProtected
 					<span class="link--skinned" title="$tstrings['locked']">$channel.name</span>
 			#else
-					<a href="javascript:zapChannel('$sRefQuoteEscaped', '$channelName');" class="link--skinned" title="$tstrings['zap_to'] $channel.name">$channel.name</a>
+					<a href="javascript:zapChannel('$sRefQuoteEscaped2', '$channelName');" class="link--skinned" title="$tstrings['zap_to'] $channel.name">$channel.name</a>
 			#end if
 				</h2>
 				<div class="now-next__channel__actions">
