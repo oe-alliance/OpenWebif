@@ -6366,10 +6366,6 @@ img[src*="default_picon"] {
 	max-height: 300px;
 }
 
-.vxgplayer-error {
-	margin-left: 0px;
-}
-
 #tvcontent .nav-tabs {
 	/* display: flex; */
 	margin-bottom: 16px;

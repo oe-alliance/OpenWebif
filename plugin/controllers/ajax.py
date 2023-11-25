@@ -33,7 +33,7 @@ from .models.config import getConfigs, getConfigsSections
 from .models.stream import GetSession
 from .base import BaseController
 from .models.locations import getLocations
-from .defaults import OPENWEBIFVER, getPublicPath, VIEWS_PATH, TRANSCODING, EXT_EVENT_INFO_SOURCE, HASAUTOTIMER, HASAUTOTIMERTEST, HASAUTOTIMERCHANGE, HASVPS, HASSERIES, ATSEARCHTYPES, VXGENABLED
+from .defaults import OPENWEBIFVER, getPublicPath, VIEWS_PATH, TRANSCODING, EXT_EVENT_INFO_SOURCE, HASAUTOTIMER, HASAUTOTIMERTEST, HASAUTOTIMERCHANGE, HASVPS, HASSERIES, ATSEARCHTYPES
 from .utilities import getUrlArg, getEventInfoProvider
 
 
@@ -353,27 +353,6 @@ class AjaxController(BaseController):
 		ret['locations'] = loc['locations']
 		ret['showiptvchannelsinselection'] = config.OpenWebif.webcache.showiptvchannelsinselection.value
 		return ret
-
-	def P_webtv(self, request):
-		streaming_port = int(config.OpenWebif.streamport.value)
-		if config.OpenWebif.auth_for_streaming.value:
-			session = GetSession()
-			if session.GetAuth(request) is not None:
-				auth = ':'.join(session.GetAuth(request)) + "@"
-			else:
-				auth = f"-sid:{session.GetSID(request)}@"
-		else:
-			auth = ""
-		transcoding = TRANSCODING
-		transcoder_port = 0
-		if transcoding:
-			try:
-				transcoder_port = int(config.plugins.transcodingsetup.port.value)
-				if BoxInfo.getItem("model") in ('inihdp', 'hd2400', 'et10000', 'et13000', 'sf5008', 'ew7356', 'formuler1tc', 'tiviaraplus', '8100s'):
-					transcoder_port = int(config.OpenWebif.streamport.value)
-			except Exception:
-				transcoder_port = 0
-		return {"transcoder_port": transcoder_port, "vxgenabled": VXGENABLED, "auth": auth, "streaming_port": streaming_port}
 
 	def P_editmovie(self, request):
 		sref = getUrlArg(request, "sRef")

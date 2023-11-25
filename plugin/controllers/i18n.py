@@ -498,7 +498,6 @@ tstrings = {
 	'display_mode': _("Display Mode"),
 	'tv_guide': _("TV Guide"),
 	'timeline': _("Timeline"),
-	'webtv': _("Web TV"),
 	'cw': _("Calendar Week"),
 
 	'linkspeed': _("Link speed"),

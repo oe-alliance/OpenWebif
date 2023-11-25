@@ -1876,7 +1876,6 @@ function directlink()
 		case 'timers':
 		case 'satfinder':
 		case 'boxinfo':
-		case 'webtv':
 		case 'about':
 		case 'screenshot':
 		case 'current':

@@ -55,7 +55,7 @@ class RootController(BaseController):
 		self.putChild2('hardware', static.File(toBinary("/usr/share/enigma2/hardware")))
 		for static_val in ('js', 'css', 'static', 'images', 'fonts'):
 			self.putChild2(static_val, static.File(toBinary(getPublicPath(static_val))))
-		for static_val in ('modern', 'themes', 'webtv', 'vxg'):
+		for static_val in ('modern', 'themes'):
 			if exists(getPublicPath(static_val)):
 				self.putChild2(static_val, static.File(toBinary(getPublicPath(static_val))))
 
