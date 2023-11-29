@@ -637,7 +637,7 @@ def getOrb(pos):
 	if pos > 1800:
 		pos = 3600 - pos
 		direction = _("W")
-	return f"{pos / 10}.{pos % 10}° {direction}"
+	return f"{pos // 10}.{pos % 10}° {direction}"
 
 
 def getFrontendStatus(session):
