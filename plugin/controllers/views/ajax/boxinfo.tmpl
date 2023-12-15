@@ -65,12 +65,15 @@
 							<td class="infoleft" style="vertical-align:text-top;">$tuner.name</td>
 							<td class="inforight">
 								$tuner.type<br>
-									#if $tuner.live != ''
-										<div class='tled-box'><div class='tled green'></div></div>$tuner.live<br>
-									#end if
-									#if $tuner.rec != ''
-										<div class='tled-box'><div class='tled red'></div></div>$tuner.rec<br>
-									#end if
+								#if $tuner.live != ''
+									<div class='tled-box'><div class='tled green'></div></div>$tuner.live<br>
+								#end if
+								#if $tuner.rec != ''
+									<div class='tled-box'><div class='tled red'></div></div>$tuner.rec<br>
+								#end if
+								#if $tuner.stream != ''
+									<div class='tled-box'><div class='tled orange'></div></div>$tuner.stream<br>
+								#end if
 							</div>
 							</td>
 						</tr>

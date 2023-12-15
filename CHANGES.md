@@ -1,3 +1,7 @@
+## Version 2.1.0
+* improve streamrelay
+* improve stream tuner info
+
 ## Version 2.0.9
 * use python fstring
 * improve python imports

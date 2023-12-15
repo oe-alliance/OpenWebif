@@ -335,12 +335,13 @@ def getInfo(session=None, need_fullinfo=False):
 	info["friendlychipsettext"] = friendlychipsettext
 	info["tuners"] = []
 	for i in list(range(0, nimmanager.getSlotCount())):
-		print(f"[OpenWebif] -D- tuner '{i}' '{nimmanager.getNimName(i)}' '{nimmanager.getNim(i).getSlotName()}'")
+		# print(f"[OpenWebif] -D- tuner '{i}' '{nimmanager.getNimName(i)}' '{nimmanager.getNim(i).getSlotName()}'")
 		info["tuners"].append({
 			"name": nimmanager.getNim(i).getSlotName(),
 			"type": f"{nimmanager.getNimName(i)} ({nimmanager.getNim(i).getFriendlyType()})",
 			"rec": "",
-			"live": ""
+			"live": "",
+			"stream": ""
 		})
 
 	info["ifaces"] = []
@@ -494,18 +495,9 @@ def getInfo(session=None, need_fullinfo=False):
 	if session:
 		try:
 			#  gets all current stream clients for images using eStreamServer
-			#  TODO: get tuner info for streams
-			info["streams"] = GetStreamInfo()
-
+			info["streams"] = GetStreamInfo(True)
 			recs = NavigationInstance.instance.getRecordings()
 			if recs:
-				#  only one stream
-				s_name = ""
-				if len(info["streams"]) == 1:
-					sinfo = info["streams"][0]
-					s_name = f"{sinfo['name']} ({sinfo['ip']})"
-					print(f"[OpenWebif] -D- s_name '{s_name}'")
-
 				servicenames = {}
 				for timer in NavigationInstance.instance.RecordTimer.timer_list:
 					if timer.isRunning() and not timer.justplay:
@@ -518,9 +510,9 @@ def getInfo(session=None, need_fullinfo=False):
 								servicenames[tuner_num] += ", " + removeBad(timer.service_ref.getServiceName())
 							else:
 								servicenames[tuner_num] = removeBad(timer.service_ref.getServiceName())
-						print(f"[OpenWebif] -D- timer '{timer.service_ref.getServiceName()}'")
+						# print(f"[OpenWebif] -D- timer '{timer.service_ref.getServiceName()}'")
 
-				print(f"[OpenWebif] -D- recs count '{len(recs)}'")
+				# print(f"[OpenWebif] -D- recs count '{len(recs)}'")
 
 				for rec in recs:
 					feinfo = rec.frontendInfo()
@@ -531,10 +523,15 @@ def getInfo(session=None, need_fullinfo=False):
 							nr = frontenddata["tuner_number"]
 							if nr in servicenames:
 								info["tuners"][nr]["rec"] = f"{getOrbitalText(cur_info)} / {servicenames[nr]}"
-							else:
-								info["tuners"][nr]["rec"] = f"{getOrbitalText(cur_info)} / {s_name}"
 
 			service = session.nav.getCurrentService()
+			for sinfo in info["streams"]:
+				tuner = sinfo.get("tuner_number", -1)
+				if tuner > -1:
+					sname = sinfo.get("name")
+					cur_info = sinfo.get("transponder")
+					info["tuners"][tuner]["stream"] = f"{getOrbitalText(cur_info)} / {sname}"
+
 			if service is not None:
 				sname = service.info().getName()
 				feinfo = service.frontendInfo()
@@ -544,6 +541,7 @@ def getInfo(session=None, need_fullinfo=False):
 					if cur_info:
 						nr = frontenddata["tuner_number"]
 						info["tuners"][nr]["live"] = f"{getOrbitalText(cur_info)} / {sname}"
+
 		except Exception as error:
 			info["EX"] = error
 
@@ -583,25 +581,37 @@ def getStreamServiceAndEvent(ref):
 	return sname, eventname
 
 
-def GetStreamInfo():
+def GetStreamInfo(details=False):
 	streams = []
+	streamInfo = {}
 	nostreamserver = True
 	try:
 		from enigma import eStreamServer
 		streamserver = eStreamServer.getInstance()
 		if streamserver is not None:
 			nostreamserver = False
-			for x in streamserver.getConnectedClients():
-				servicename, eventname = getStreamServiceAndEvent(x[1])
-				streams.append({
-					"ref": x[1],
+			for index, client in enumerate(streamserver.getConnectedClients()):
+				servicename, eventname = getStreamServiceAndEvent(client[1])
+				streamInfo = {
+					"ref": client[1],
 					"name": servicename,
 					"eventname": eventname,
-					"ip": x[0],  # TODO: ip Address format
-					"type": "S" if int(x[2]) == 0 else "T"
-				})
-	except Exception:  # as error:  # nosec # noqa: E722
-#		print("[OpenWebif] -D- no eStreamServer %s" % error)
+					"ip": client[0],  # TODO: ip Address format
+					"type": "S" if int(client[2]) == 0 else "T"
+				}
+				if details:
+					try:
+						clientInfo = streamserver.getConnectedClientDetails(index)
+						tuner_number = clientInfo.get("frontend", {}).get("tuner_number", -1)
+						if tuner_number > -1:
+							streamInfo["tuner_number"] = tuner_number
+							streamInfo["transponder"] = clientInfo.get("transponder")
+					except Exception:  # as derr  # nosec # noqa: E722
+				#		print(f"[OpenWebif] -D- no eStreamServer details {derr}")
+						pass
+				streams.append(streamInfo)
+	except Exception:  # as err:  # nosec # noqa: E722
+#		print(f"[OpenWebif] -D- no eStreamServer {err}")
 		pass
 
 	if nostreamserver:

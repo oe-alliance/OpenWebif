@@ -404,7 +404,10 @@ def getChannels(idbouquet, stype):
 	index = -2
 
 	streamRelay = []
+	streamrelayport = 17999
 	if STREAMRELAY:
+		streamrelayport = config.misc.softcam_streamrelay_port.value
+
 		try:
 			with open("/etc/enigma2/whitelist_streamrelay") as fd:
 				streamRelay = [line.strip() for line in fd.readlines()]
@@ -424,9 +427,10 @@ def getChannels(idbouquet, stype):
 			chan['name'] = chan['ref'].split(":")[-1]
 		# IPTV
 		ref = chan['ref']
-		icam = "%3a17999/" in ref
-		chan['link'] = "" if icam else getIPTVLink(chan['ref'])
-		chan['icam'] = icam or (streamRelay and ref in streamRelay)
+		isStreamRelay = f"%3a{streamrelayport}/" in ref
+		chan['link'] = "" if isStreamRelay else getIPTVLink(chan['ref'])
+		if isStreamRelay or (streamRelay and ref in streamRelay):
+			chan['sr'] = "1"
 
 		if not int(channel[0].split(":")[1]) & 64:
 			psref = parse_servicereference(channel[0])

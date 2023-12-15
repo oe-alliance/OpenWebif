@@ -118,13 +118,13 @@ def getStream(session, request, m3ufile):
 	else:
 		auth = ""
 
-	icamport = config.misc.softcam_streamrelay_port.value if STREAMRELAY else 17999
-	icamip = ".".join("%d" % d for d in config.misc.softcam_streamrelay_url.value) if STREAMRELAY else "127.0.0.1"
-	icam = f"http://{icamip}:{icamport}/"
+	streamrelayport = config.misc.softcam_streamrelay_port.value if STREAMRELAY else 17999
+	streamrelayip = ".".join("%d" % d for d in config.misc.softcam_streamrelay_url.value) if STREAMRELAY else "127.0.0.1"
+	streamrelayurl = f"http://{streamrelayip}:{streamrelayport}/"
 
-	if icam in sref:
-		portnumber = icamport
-		sref = sref.split(icam)[1]
+	if streamrelayurl in sref:
+		portnumber = streamrelayport
+		sref = sref.split(streamrelayurl)[1]
 		sref = f'{sref.split("::")[0]}:'
 		auth = ""
 		args = ""
@@ -136,7 +136,7 @@ def getStream(session, request, m3ufile):
 		except OSError:
 			pass
 		if streamRelay and sref in streamRelay:
-			portnumber = icamport
+			portnumber = streamrelayport
 			auth = ""
 			args = ""
 
