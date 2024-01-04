@@ -1,3 +1,6 @@
+## Version 2.1.1
+* show lcn in bouquet editor
+
 ## Version 2.1.0
 * improve streamrelay
 * improve stream tuner info

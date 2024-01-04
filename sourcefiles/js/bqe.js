@@ -1,9 +1,9 @@
 //******************************************************************************
 //* bqe.js: openwebif Bouqueteditor plugin
-//* Version 2.11
+//* Version 2.12
 //******************************************************************************
-//* Copyright (C) 2014-2023 jbleyel
-//* Copyright (C) 2014-2023 E2OpenPlugins
+//* Copyright (C) 2014-2024 jbleyel
+//* Copyright (C) 2014-2024 E2OpenPlugins
 //*
 //* Authors: jbleyel
 //*          Robert Damas <https://github.com/rdamas>
@@ -20,6 +20,7 @@
 //* V 2.9 - fix ns text, show provider as tooltip #840
 //* V 2.10 - use let instead of var
 //* V 2.11 - fix marker pos
+//* V 2.12 - show lcn
 
 //* License GPL V2
 //* https://github.com/oe-alliance/OpenWebif/blob/main/LICENSE.txt
@@ -249,6 +250,12 @@
 					let sref = val['servicereference'];
 					let name = val['servicename'];
 					let prov = val['provider'];
+					var lcn = val['lcn'];
+					if (lcn == undefined || lcn == "") {
+						lcn = "";
+					} else {
+						lcn += " ";
+					}
 					let stype = sref.split(':')[2];
 					let ns = sref.split(':')[6];
 					let _ns = self.getNS(ns);
@@ -256,7 +263,7 @@
 					options.push( $('<li/>', {
 						class: "ui-widget-content",
 						data: { stype: stype, sref: sref }
-					}).html(name+m) );
+					}).html(lcn+name+m) );
 				});
 				if (callback) {
 					callback(options);

@@ -1,7 +1,7 @@
 ##########################################################################
 # OpenWebif: services
 ##########################################################################
-# Copyright (C) 2011 - 2022 E2OpenPlugins
+# Copyright (C) 2011 - 2024 E2OpenPlugins, jbleyel
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -38,7 +38,7 @@ from Screens.InfoBar import InfoBar
 from .info import getOrbitalText, getOrb
 from ..utilities import parse_servicereference, SERVICE_TYPE_LOOKUP, NS_LOOKUP
 from ..i18n import _, tstrings
-from ..defaults import PICON_PATH, STREAMRELAY
+from ..defaults import PICON_PATH, STREAMRELAY, LCNDB
 from .epg import EPG, convertGenre, getIPTVLink, filterName, convertDesc, GetWithAlternative
 
 
@@ -567,6 +567,15 @@ def getServices(sref, showall=True, showhidden=False, pos=0, showproviders=False
 					service['provider'] = allproviders[sitem[0]]
 				else:
 					service['provider'] = ""
+			if flags == 0 and LCNDB:
+				lcnref = sr.split(":")
+				if len(lcnref) > 6:
+					lcnref = lcnref[3:7]
+					lcnref = ":".join(lcnref).upper()
+					lcn = LCNDB.get(lcnref, "")
+					if lcn:
+						service['lcn'] = lcn
+
 			services.append(service)
 
 	timeelapsed = datetime.now() - starttime
