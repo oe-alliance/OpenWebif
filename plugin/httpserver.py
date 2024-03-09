@@ -315,7 +315,7 @@ class AuthResource(resource.Resource):
 
 	def render(self, request):
 		host = request.getHost().host
-		peer = request.getClientIP()
+		peer = request.getClientAddress().host
 		if peer is None:
 			peer = request.transport.socket.getpeername()[0]
 
@@ -336,7 +336,7 @@ class AuthResource(resource.Resource):
 		global site, sslsite
 		session = request.getSession().sessionNamespaces
 		host = request.getHost().host
-		peer = request.getClientIP()
+		peer = request.getClientAddress().host
 		host = toString(host)
 		if request.getHeader("x-forwarded-for"):
 			peer = request.getHeader("x-forwarded-for")

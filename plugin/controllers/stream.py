@@ -40,7 +40,7 @@ class StreamAdapter:
 		self.nav.record_event.append(self.requestWrite)
 		request.notifyFinish().addCallback(self.close, None)
 		request.notifyFinish().addErrback(self.close, None)
-		self.mystream.clientIP = request.getAllHeaders().get('x-forwarded-for', request.getClientIP())
+		self.mystream.clientIP = request.getAllHeaders().get('x-forwarded-for', request.getClientAddress().host)
 		self.mystream.streamIndex = len(streamList) - 1
 		self.mystream.request = request
 		streamList.append(self.mystream)
