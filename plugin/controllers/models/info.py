@@ -663,16 +663,24 @@ def getFrontendStatus(session):
 	inf["inStandby"] = "false" if inStandby is None else "true"
 
 	service = session.nav.getCurrentService()
-	if service is None:
-		return inf
-	feinfo = service.frontendInfo()
-	frontenddata = feinfo and feinfo.getAll(True)
+	frontenddata = None
+	frontendstatus = None
+	if service is not None:
+		feinfo = service.frontendInfo()
+		frontenddata = feinfo and feinfo.getAll(True)
+		frontendstatus = feinfo and feinfo.getFrontendStatus()
+	elif "Satfinder" in session.current_dialog.__class__.__name__:
+		signalfinder = session.current_dialog
+		frontendstatus = {}
+		frontenddata = {}
+		if hasattr(signalfinder, "frontend") and signalfinder.frontend:
+			signalfinder.frontend.getFrontendStatus(frontendstatus)
+			signalfinder.frontend.getFrontendData(frontenddata)
 
 	if frontenddata is not None:
 		inf["tunertype"] = frontenddata.get("tuner_type", "UNKNOWN")
 		inf["tunernumber"] = frontenddata.get("tuner_number")
 
-	frontendstatus = feinfo and feinfo.getFrontendStatus()
 	if frontendstatus is not None:
 		percent = frontendstatus.get("tuner_signal_quality")
 		if percent is not None:
