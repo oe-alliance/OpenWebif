@@ -1,7 +1,7 @@
 ##########################################################################
 # OpenWebif: serviceslist
 ##########################################################################
-# Copyright (C) 2011 - 2023 jbleyel and E2OpenPlugins
+# Copyright (C) 2011 - 2024 jbleyel and E2OpenPlugins
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -41,6 +41,20 @@ def reloadServicesLists(mode):
 		elif mode == "4":
 			Components.ParentalControl.parentalControl.open()
 			msgs.append("parentalcontrol white-/blacklist")
+		elif mode == "5":  # whitelist_streamrelay
+			try:
+				from Screens.InfoBarGenerics import streamrelay
+				streamrelay.reload()
+				msgs.append("whitelist_streamrelay")
+			except ImportError:
+				pass
+		elif mode == "6":  # autocam
+			try:
+				from Screens.InfoBarGenerics import autocam
+				autocam.reload()
+				msgs.append("autocam")
+			except ImportError:
+				pass
 
 	if msgs:
 		return {
@@ -50,5 +64,5 @@ def reloadServicesLists(mode):
 	else:
 		return {
 			"result": False,
-			"message": "missing or wrong parameter mode [0 = lamedb and userbouqets, 1 = lamedb only, 2 = userbouqets only, 3 = transponders, 4 = parentalcontrol white/blacklist"
+			"message": "missing or wrong parameter mode [0 = lamedb and userbouqets, 1 = lamedb only, 2 = userbouqets only, 3 = transponders, 4 = parentalcontrol white/blacklist, 5 = whitelist_streamrelay, 6 = autocam"
 		}

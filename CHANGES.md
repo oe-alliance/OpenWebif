@@ -1,5 +1,6 @@
 ## Version 2.1.1
 * show lcn in bouquet editor
+* add more options to servicelist reload api
 
 ## Version 2.1.0
 * improve streamrelay
