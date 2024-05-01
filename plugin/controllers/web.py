@@ -1720,8 +1720,20 @@ class WebController(BaseController):
 			return res
 		return getNowNextEpg(getUrlArg(request, "sRef"), EPG.NEXT, self.isJson)
 
+	def P_epgservicenownext(self, request):
+		res = self.testMandatoryArguments(request, ["sRef"])
+		if res:
+			return res
+
+		eventnow = getNowNextEpg(getUrlArg(request, "sRef"), EPG.NOW, self.isJson)
+		eventnext = getNowNextEpg(getUrlArg(request, "sRef"), EPG.NEXT, self.isJson)
+		eventnow = eventnow["events"][0] if eventnow["events"] else {}
+		eventnext = eventnext["events"][0] if eventnext["events"] else {}
+		return {"events": [eventnow, eventnext]}
+
 	# http://enigma2/api/epgsimilar?sRef=1%3A0%3A19%3A1B1F%3A802%3A2%3A11A0000%3A0%3A0%3A0%3A&eventid=32645
 	# http://enigma2/web/epgsimilar?sRef=1%3A0%3A19%3A1B1F%3A802%3A2%3A11A0000%3A0%3A0%3A0%3A&eventid=32645
+
 	def P_epgsimilar(self, request):
 		res = self.testMandatoryArguments(request, ["sRef", "eventid"])
 		if res:
