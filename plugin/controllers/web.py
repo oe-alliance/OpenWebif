@@ -1099,6 +1099,7 @@ class WebController(BaseController):
 
 	def _AddEditTimer(self, request, mode):
 
+		returntimer = getUrlArg(request, "returntimer") == "1"
 		disabled = getUrlArg(request, "disabled") == "1"
 		justplay = getUrlArg(request, "justplay") == "1"
 		afterevent = getUrlArg(request, "afterevent", "3")
@@ -1173,7 +1174,8 @@ class WebController(BaseController):
 				recordingtype,
 				marginBefore,
 				marginAfter,
-				hasEndTime
+				hasEndTime,
+				returntimer
 			)
 		elif mode == 2:
 			try:
@@ -1214,7 +1216,8 @@ class WebController(BaseController):
 				allow_duplicate,
 				marginBefore,
 				marginAfter,
-				hasEndTime
+				hasEndTime,
+				returntimer
 			)
 		else:
 			return addTimer(
@@ -1239,7 +1242,8 @@ class WebController(BaseController):
 				allow_duplicate,
 				marginBefore,
 				marginAfter,
-				hasEndTime
+				hasEndTime,
+				returntimer
 			)
 
 	def P_timeradd(self, request):

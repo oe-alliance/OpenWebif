@@ -72,6 +72,172 @@ def FuzzyTime(t, inpast=False):
 	return date, timeres
 
 
+def getTimerObj(timer, descriptionextended):
+
+	filename = None
+	nextactivation = None
+
+	try:
+		filename = timer.Filename
+	except Exception:
+		pass
+
+	try:
+		nextactivation = timer.next_activation
+	except Exception:
+		pass
+
+	disabled = 0
+	if timer.disabled:
+		disabled = 1
+
+	justplay = 0
+	if timer.justplay:
+		justplay = 1
+
+	if hasattr(timer, "allow_duplicate"):
+		allow_duplicate = timer.allow_duplicate and 1 or 0
+	else:
+		allow_duplicate = 1
+
+	if timer.dirname:
+		dirname = timer.dirname
+	else:
+		dirname = "None"
+
+	dontsave = 0
+	if timer.dontSave:
+		dontsave = 1
+
+	toggledisabled = 1
+	if timer.disabled:
+		toggledisabled = 0
+
+	toggledisabledimg = "off"
+	if timer.disabled:
+		toggledisabledimg = "on"
+
+	asrefs = ""
+	achannels = GetWithAlternative(str(timer.service_ref), False)
+	if achannels:
+		asrefs = achannels
+
+	vpsplugin_enabled = False
+	vpsplugin_overwrite = False
+	vpsplugin_time = -1
+	if hasattr(timer, "vpsplugin_enabled"):
+		vpsplugin_enabled = True if timer.vpsplugin_enabled else False
+	if hasattr(timer, "vpsplugin_overwrite"):
+		vpsplugin_overwrite = True if timer.vpsplugin_overwrite else False
+	if hasattr(timer, "vpsplugin_time"):
+		vpsplugin_time = timer.vpsplugin_time
+		if not vpsplugin_time:
+			vpsplugin_time = -1
+
+	always_zap = -1
+	if hasattr(timer, "always_zap"):
+		if timer.always_zap:
+			always_zap = 1
+		else:
+			always_zap = 0
+	if hasattr(timer, "zapbeforerecord"):
+		if timer.zapbeforerecord:
+			always_zap = 1
+		else:
+			always_zap = 0
+
+	pipzap = -1
+	if hasattr(timer, "pipzap"):
+		if timer.pipzap:
+			pipzap = 1
+		else:
+			pipzap = 0
+
+	isautotimer = -1
+	if hasattr(timer, "isAutoTimer"):
+		if timer.isAutoTimer:
+			isautotimer = 1
+		else:
+			isautotimer = 0
+
+	recordingtype = "normal"
+
+	if timer.record_ecm:
+		recordingtype = "scrambled"
+		if timer.descramble:
+			recordingtype = "descrambled"
+
+	ice_timer_id = -1
+	if hasattr(timer, "ice_timer_id"):
+		ice_timer_id = timer.ice_timer_id or -1
+
+	fuzzybegin = strftime(_("%d.%m.%Y %H:%M"), (localtime(float(timer.begin))))
+	fuzzyend = strftime(_("%d.%m.%Y %H:%M"), (localtime(float(timer.end))))
+
+	# switch back to old way.
+	#fuzzybegin = ' '.join(str(i) for i in FuzzyTime(timer.begin, inpast = True)[1:])
+	#fuzzyend = ""
+	#if strftime("%Y%m%d", localtime(timer.begin)) == strftime("%Y%m%d", localtime(timer.end)):
+	#	fuzzyend = FuzzyTime(timer.end)[1]
+	#else:
+	#	fuzzyend = ' '.join(str(i) for i in FuzzyTime(timer.end, inpast = True))
+
+	timerobj = {
+		"serviceref": str(timer.service_ref),
+		"servicename": removeBad(timer.service_ref.getServiceName()),
+		"eit": timer.eit,
+		"name": timer.name,
+		"description": timer.description,
+		"descriptionextended": descriptionextended,
+		"disabled": disabled,
+		"begin": timer.begin,
+		"end": timer.end,
+		"duration": timer.end - timer.begin,
+		"startprepare": timer.start_prepare,
+		"justplay": justplay,
+		"afterevent": timer.afterEvent,
+		"dirname": dirname,
+		"tags": " ".join(timer.tags),
+		"logentries": timer.log_entries,
+		"backoff": timer.backoff,
+		"firsttryprepare": timer.first_try_prepare,
+		"state": timer.state,
+		"repeated": timer.repeated,
+		"dontsave": dontsave,
+		"cancelled": timer.cancelled,
+		"toggledisabled": toggledisabled,
+		"toggledisabledimg": toggledisabledimg,
+		"filename": filename,
+		"nextactivation": nextactivation,
+		"realbegin": fuzzybegin,
+		"realend": fuzzyend,
+		"asrefs": asrefs,
+		"vpsplugin_enabled": vpsplugin_enabled,
+		"vpsplugin_overwrite": vpsplugin_overwrite,
+		"vpsplugin_time": vpsplugin_time,
+		"always_zap": always_zap,
+		"pipzap": pipzap,
+		"isAutoTimer": isautotimer,
+		"allow_duplicate": allow_duplicate,
+		"recordingtype": recordingtype,
+		"ice_timer_id": ice_timer_id
+	}
+
+	if hasattr(timer, "marginBefore"):
+		timerobj["marginbefore"] = timer.marginBefore
+		timerobj["marginafter"] = timer.marginAfter
+		timerobj["eventbegin"] = timer.eventBegin
+		timerobj["eventend"] = timer.eventEnd
+
+	if hasattr(timer, "hasEndTime"):
+		timerobj["hasendtime"] = timer.hasEndTime
+
+	if hasattr(timer, "rename_repeat"):
+		timerobj["rename_repeat"] = timer.rename_repeat
+
+	return timerobj
+
+
 def getTimers(session):
 	rt = session.nav.RecordTimer
 	epg = EPG()
@@ -83,170 +249,10 @@ def getTimers(session):
 				continue
 
 		descriptionextended = "N/A"
-		filename = None
-		nextactivation = None
 		if timer.eit and timer.service_ref:
 			descriptionextended = epg.getEventDescription(timer.service_ref, timer.eit)
 
-		try:
-			filename = timer.Filename
-		except Exception:
-			pass
-
-		try:
-			nextactivation = timer.next_activation
-		except Exception:
-			pass
-
-		disabled = 0
-		if timer.disabled:
-			disabled = 1
-
-		justplay = 0
-		if timer.justplay:
-			justplay = 1
-
-		if hasattr(timer, "allow_duplicate"):
-			allow_duplicate = timer.allow_duplicate and 1 or 0
-		else:
-			allow_duplicate = 1
-
-		if timer.dirname:
-			dirname = timer.dirname
-		else:
-			dirname = "None"
-
-		dontsave = 0
-		if timer.dontSave:
-			dontsave = 1
-
-		toggledisabled = 1
-		if timer.disabled:
-			toggledisabled = 0
-
-		toggledisabledimg = "off"
-		if timer.disabled:
-			toggledisabledimg = "on"
-
-		asrefs = ""
-		achannels = GetWithAlternative(str(timer.service_ref), False)
-		if achannels:
-			asrefs = achannels
-
-		vpsplugin_enabled = False
-		vpsplugin_overwrite = False
-		vpsplugin_time = -1
-		if hasattr(timer, "vpsplugin_enabled"):
-			vpsplugin_enabled = True if timer.vpsplugin_enabled else False
-		if hasattr(timer, "vpsplugin_overwrite"):
-			vpsplugin_overwrite = True if timer.vpsplugin_overwrite else False
-		if hasattr(timer, "vpsplugin_time"):
-			vpsplugin_time = timer.vpsplugin_time
-			if not vpsplugin_time:
-				vpsplugin_time = -1
-
-		always_zap = -1
-		if hasattr(timer, "always_zap"):
-			if timer.always_zap:
-				always_zap = 1
-			else:
-				always_zap = 0
-		if hasattr(timer, "zapbeforerecord"):
-			if timer.zapbeforerecord:
-				always_zap = 1
-			else:
-				always_zap = 0
-
-		pipzap = -1
-		if hasattr(timer, "pipzap"):
-			if timer.pipzap:
-				pipzap = 1
-			else:
-				pipzap = 0
-
-		isautotimer = -1
-		if hasattr(timer, "isAutoTimer"):
-			if timer.isAutoTimer:
-				isautotimer = 1
-			else:
-				isautotimer = 0
-
-		recordingtype = "normal"
-
-		if timer.record_ecm:
-			recordingtype = "scrambled"
-			if timer.descramble:
-				recordingtype = "descrambled"
-
-		ice_timer_id = -1
-		if hasattr(timer, "ice_timer_id"):
-			ice_timer_id = timer.ice_timer_id or -1
-
-		# switch back to old way.
-		#fuzzybegin = ' '.join(str(i) for i in FuzzyTime(timer.begin, inpast = True)[1:])
-		#fuzzyend = ""
-		#if strftime("%Y%m%d", localtime(timer.begin)) == strftime("%Y%m%d", localtime(timer.end)):
-		#	fuzzyend = FuzzyTime(timer.end)[1]
-		#else:
-		#	fuzzyend = ' '.join(str(i) for i in FuzzyTime(timer.end, inpast = True))
-
-		fuzzybegin = strftime(_("%d.%m.%Y %H:%M"), (localtime(float(timer.begin))))
-		fuzzyend = strftime(_("%d.%m.%Y %H:%M"), (localtime(float(timer.end))))
-
-		timerobj = {
-			"serviceref": str(timer.service_ref),
-			"servicename": removeBad(timer.service_ref.getServiceName()),
-			"eit": timer.eit,
-			"name": timer.name,
-			"description": timer.description,
-			"descriptionextended": descriptionextended,
-			"disabled": disabled,
-			"begin": timer.begin,
-			"end": timer.end,
-			"duration": timer.end - timer.begin,
-			"startprepare": timer.start_prepare,
-			"justplay": justplay,
-			"afterevent": timer.afterEvent,
-			"dirname": dirname,
-			"tags": " ".join(timer.tags),
-			"logentries": timer.log_entries,
-			"backoff": timer.backoff,
-			"firsttryprepare": timer.first_try_prepare,
-			"state": timer.state,
-			"repeated": timer.repeated,
-			"dontsave": dontsave,
-			"cancelled": timer.cancelled,
-			"toggledisabled": toggledisabled,
-			"toggledisabledimg": toggledisabledimg,
-			"filename": filename,
-			"nextactivation": nextactivation,
-			"realbegin": fuzzybegin,
-			"realend": fuzzyend,
-			"asrefs": asrefs,
-			"vpsplugin_enabled": vpsplugin_enabled,
-			"vpsplugin_overwrite": vpsplugin_overwrite,
-			"vpsplugin_time": vpsplugin_time,
-			"always_zap": always_zap,
-			"pipzap": pipzap,
-			"isAutoTimer": isautotimer,
-			"allow_duplicate": allow_duplicate,
-			"recordingtype": recordingtype,
-			"ice_timer_id": ice_timer_id
-		}
-
-		if hasattr(timer, "marginBefore"):
-			timerobj["marginbefore"] = timer.marginBefore
-			timerobj["marginafter"] = timer.marginAfter
-			timerobj["eventbegin"] = timer.eventBegin
-			timerobj["eventend"] = timer.eventEnd
-
-		if hasattr(timer, "hasEndTime"):
-			timerobj["hasendtime"] = timer.hasEndTime
-
-		if hasattr(timer, "rename_repeat"):
-			timerobj["rename_repeat"] = timer.rename_repeat
-
-		timers.append(timerobj)
+		timers.append(getTimerObj(timer, descriptionextended))
 
 	return {
 		"version": 2,
@@ -255,8 +261,10 @@ def getTimers(session):
 	}
 
 
-def addTimer(session, serviceref, begin, end, name, description, disabled, justplay, afterevent, dirname, tags, repeated, recordingtype=None, vpsinfo=None, logentries=None, eit=0, always_zap=-1, pipzap=-1, allow_duplicate=1, marginBefore=-1, marginAfter=-1, hasEndTime=None):
+def addTimer(session, serviceref, begin, end, name, description, disabled, justplay, afterevent, dirname, tags, repeated, recordingtype=None, vpsinfo=None, logentries=None, eit=0, always_zap=-1, pipzap=-1, allow_duplicate=1, marginBefore=-1, marginAfter=-1, hasEndTime=None, returntimer=False):
 	rt = session.nav.RecordTimer
+
+	timerObj = None
 
 	if not dirname:
 		dirname = preferredTimerPath()
@@ -349,6 +357,9 @@ def addTimer(session, serviceref, begin, end, name, description, disabled, justp
 					timer.end = timer.begin
 					timer.eventEnd = timer.end
 
+			if returntimer:
+				timerObj = getTimerObj(timer, "")
+
 	except Exception as e:
 		print(str(e))
 		return {
@@ -356,13 +367,21 @@ def addTimer(session, serviceref, begin, end, name, description, disabled, justp
 			"message": _("Could not add timer '%s'!") % name
 		}
 
-	return {
-		"result": True,
-		"message": _("Timer '%s' added") % name
-	}
+	if timerObj:
+		return {
+			"result": True,
+			"message": _("Timer '%s' added") % name,
+			"timer": timerObj
+		}
+	else:
+		return {
+			"result": True,
+			"message": _("Timer '%s' added") % name
+		}
 
 
-def addTimerByEventId(session, eventid, serviceref, justplay, dirname, tags, vpsinfo, always_zap, afterevent, pipzap, allow_duplicate, recordingtype, marginBefore, marginAfter, hasEndTime):
+def addTimerByEventId(session, eventid, serviceref, justplay, dirname, tags, vpsinfo, always_zap, afterevent, pipzap, allow_duplicate, recordingtype, marginBefore, marginAfter, hasEndTime, returntimer=False):
+
 	epg = EPG()
 	event = epg.getEventById(serviceref, eventid)
 	if event is None:
@@ -416,7 +435,8 @@ def addTimerByEventId(session, eventid, serviceref, justplay, dirname, tags, vps
 # NEW editTimer function to prevent delete + add on change
 # !!! This new function must be tested !!!!
 # TODO: exception handling
-def editTimer(session, serviceref, begin, end, name, description, disabled, justplay, afterevent, dirname, tags, repeated, channelold, beginold, endold, recordingtype=None, vpsinfo=None, always_zap=-1, pipzap=-1, allow_duplicate=False, marginBefore=-1, marginAfter=-1, hasEndTime=None):
+def editTimer(session, serviceref, begin, end, name, description, disabled, justplay, afterevent, dirname, tags, repeated, channelold, beginold, endold, recordingtype=None, vpsinfo=None, always_zap=-1, pipzap=-1, allow_duplicate=False, marginBefore=-1, marginAfter=-1, hasEndTime=None, returntimer=False):
+	timerObj = None
 	channelold_str = ":".join(str(channelold).split(":")[:11])
 	rt = session.nav.RecordTimer
 	for timer in rt.timer_list + rt.processed_timers:
@@ -479,6 +499,9 @@ def editTimer(session, serviceref, begin, end, name, description, disabled, just
 						timer.end = timer.begin
 						timer.eventEnd = timer.end
 
+			if returntimer:
+				timerObj = getTimerObj(timer, "")
+
 			# TODO: multi tuner test
 			sanity = TimerSanityCheck(rt.timer_list, timer)
 			conflicts = None
@@ -492,10 +515,20 @@ def editTimer(session, serviceref, begin, end, name, description, disabled, just
 								conflicts = sanity.getSimulTimerList()
 			if conflicts is None:
 				rt.timeChanged(timer)
-				return {
-					"result": True,
-					"message": _("Timer '%s' changed") % name
-				}
+				if timerObj:
+					timerObj["channelold"] = channelold_str
+					timerObj["beginold"] = beginold
+					timerObj["endold"] = endold
+					return {
+						"result": True,
+						"message": _("Timer '%s' changed") % name,
+						"timer": timerObj
+					}
+				else:
+					return {
+						"result": True,
+						"message": _("Timer '%s' changed") % name
+					}
 			else:
 				errors = []
 				conflictinfo = []
