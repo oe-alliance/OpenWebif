@@ -1,7 +1,7 @@
 ##########################################################################
 # OpenWebif: config
 ##########################################################################
-# Copyright (C) 2011 - 2023 E2OpenPlugins
+# Copyright (C) 2011 - 2024 E2OpenPlugins, jbleyel
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@ from xml.etree.ElementTree import parse
 
 from enigma import eEnv
 from Components.SystemInfo import BoxInfo, SystemInfo
-from Components.config import config
+from Components.config import config, ConfigBoolean
 
 from ..i18n import _
 from ..utilities import get_config_attribute
@@ -94,7 +94,7 @@ def getBoxName():
 
 
 def getJsonFromConfig(cnf):
-	if cnf.__class__.__name__ == "ConfigSelection" or cnf.__class__.__name__ == "ConfigSelectionNumber" or cnf.__class__.__name__ == "TconfigSelection":
+	if cnf.__class__.__name__ in ("ConfigSelectionInteger", "ConfigSelectionNumber", "ConfigSelection"):
 		if isinstance(cnf.choices.choices, dict):
 			choices = []
 			for choice in cnf.choices.choices:
@@ -118,7 +118,7 @@ def getJsonFromConfig(cnf):
 			"choices": choices,
 			"current": str(cnf.value)
 		}
-	elif cnf.__class__.__name__ == "ConfigBoolean" or cnf.__class__.__name__ == "ConfigEnableDisable" or cnf.__class__.__name__ == "ConfigYesNo":
+	elif isinstance(cnf, ConfigBoolean):
 		return {
 			"result": True,
 			"type": "checkbox",
@@ -138,7 +138,7 @@ def getJsonFromConfig(cnf):
 			"type": "number",
 			"current": cnf.value
 		}
-	elif cnf.__class__.__name__ == "ConfigInteger" or cnf.__class__.__name__ == "TconfigInteger":
+	elif cnf.__class__.__name__ == "ConfigInteger":
 		return {
 			"result": True,
 			"type": "number",
@@ -436,6 +436,7 @@ class ConfigFiles:
 
 				if configs:
 					title = section.get("title")
+					allowDefault = section.get("allowDefault", "0").lower() in ("1", "enabled", "on", "true", "yes")
 
 					if pluginLanguageDomain:
 						newtitle = dgettext(pluginLanguageDomain, title)
@@ -447,7 +448,8 @@ class ConfigFiles:
 
 					sections.append({
 						"key": key,
-						"description": title
+						"description": title,
+						"allowDefault": allowDefault
 					})
 					#title = _(section.get("title", ""))
 					if title is None:
