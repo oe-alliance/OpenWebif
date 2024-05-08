@@ -490,8 +490,9 @@ class WebController(BaseController):
 		excludevod = "vod" in excludes
 		excludeiptv = "iptv" in excludes
 		excludelastscanned = "lastscanned" in excludes
+		showstreamrelay = True if getUrlArg(request, "showstreamrelay", "0") in ("1", "true") else False
 
-		bouquets = getAllServices(mode, noiptv=noiptv or excludeiptv, nolastscanned=nolastscanned or excludelastscanned, removenamefromsref=removenamefromsref, showall=showall, showproviders=showproviders, excludeprogram=excludeprogram, excludevod=excludevod)
+		bouquets = getAllServices(mode, noiptv=noiptv or excludeiptv, nolastscanned=nolastscanned or excludelastscanned, removenamefromsref=removenamefromsref, showall=showall, showproviders=showproviders, excludeprogram=excludeprogram, excludevod=excludevod, showstreamrelay=showstreamrelay)
 		if b"renameserviceforxmbc" in list(request.args.keys()):
 			for bouquet in bouquets["services"]:
 				for service in bouquet["subservices"]:
@@ -521,7 +522,10 @@ class WebController(BaseController):
 			showproviders = True
 		picon = True if getUrlArg(request, "picon", "0") in ("1", "true") else False
 		removenamefromsref = True if getUrlArg(request, "removenamefromsref", "0") in ("1", "true") else False
-		return getServices(sref=sref, showall=True, showhidden=hidden, showproviders=showproviders, picon=picon, removenamefromsref=removenamefromsref)
+		showstreamrelay = True if getUrlArg(request, "showstreamrelay", "0") in ("1", "true") else False
+		noiptv = True if getUrlArg(request, "noiptv", "0") in ("1", "true") else False
+		showall = False if getUrlArg(request, "showall", "1") in ("0", "false") else True
+		return getServices(sref=sref, showall=showall, showhidden=hidden, showproviders=showproviders, picon=picon, removenamefromsref=removenamefromsref, noiptv=noiptv, showstreamrelay=showstreamrelay)
 
 	def P_servicesxspf(self, request):
 		"""
