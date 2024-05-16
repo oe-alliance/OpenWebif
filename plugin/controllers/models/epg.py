@@ -145,6 +145,7 @@ class EPG():
 		self.doref = True
 		self.currentpicon = ""
 		self.currentsref = ""
+		self.streamRelay = []
 
 	def search(self, querystring, searchfulldescription=False):
 		querytype = eEPGCache.PARTIAL_TITLE_SEARCH
@@ -247,6 +248,7 @@ class EPG():
 	def convertEvent(self, *event):
 		encode = self.doencode
 		alter = self.doalter
+		streamRelay = self.streamRelay
 		ev = {}
 		ev["id"] = event[0]
 		if event[1]:
@@ -264,6 +266,9 @@ class EPG():
 			ev["now_timestamp"] = event[3]
 			ev["remaining"] = (event[1] + event[2]) - event[3]
 			ev["genre"], ev["genreid"] = convertGenre(event[7])
+			if streamRelay:
+				ev['streamrelay'] = event[8] in streamRelay
+
 		else:
 			ev["begin_timestamp"] = 0
 			ev["duration_sec"] = 0

@@ -1608,7 +1608,8 @@ class WebController(BaseController):
 			return res
 		bref = getUrlArg(request, "bRef")
 		showisplayable = getUrlArg(request, "showIsPlayable") is not None
-		ret = getBouquetNowNextEpg(bref, nowornext, self.isJson, showisplayable)
+		showstreamrelay = True if getUrlArg(request, "showstreamrelay", "0") in ("1", "true") else False
+		ret = getBouquetNowNextEpg(bref, nowornext, self.isJson, showisplayable=showisplayable, showstreamrelay=showstreamrelay)
 		if nowornext == EPG.NOW_NEXT:
 			info = getCurrentService(self.session)
 			ret["info"] = info

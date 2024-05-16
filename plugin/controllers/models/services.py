@@ -848,7 +848,7 @@ def getMultiChannelNowNextEpg(slist, encode=False):
 	return {"events": events, "result": True}
 
 
-def getBouquetNowNextEpg(bqref, nowornext, encode=False, showisplayable=False):
+def getBouquetNowNextEpg(bqref, nowornext, encode=False, showisplayable=False, showstreamrelay=False):
 	bqref = unquote(bqref)
 	services = eServiceCenter.getInstance().list(eServiceReference(bqref))
 	if not services:
@@ -899,6 +899,15 @@ def getBouquetNowNextEpg(bqref, nowornext, encode=False, showisplayable=False):
 				query.append((service, nowornext, -1))
 
 	epg = EPG()
+	streamRelay = []
+	if showstreamrelay:
+		try:
+			with open("/etc/enigma2/whitelist_streamrelay") as fd:
+				streamRelay = [line.strip() for line in fd.readlines()]
+		except OSError:
+			pass
+	epg.streamRelay = streamRelay
+
 	events = epg.getBouquetNowNextEpg(query, encode, alter=True, full=True)
 
 	return {"events": events, "isplayable": isPlayable, "result": True}
