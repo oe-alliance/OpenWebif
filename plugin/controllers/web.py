@@ -31,7 +31,7 @@ from .models.control import zapService, remoteControl, setPowerState, getStandby
 from .models.locations import getLocations, getCurrentLocation, addLocation, removeLocation
 from .models.timers import getTimers, addTimer, addTimerByEventId, editTimer, removeTimer, toggleTimerStatus, cleanupTimer, writeTimerList, recordNow, tvbrowser, getSleepTimer, setSleepTimer, getPowerTimer, setPowerTimer, getVPSChannels
 from .models.message import sendMessage, getMessageAnswer
-from .models.movies import getMovieList, removeMovie, getMovieInfo, movieAction, getAllMovies, getMovieDetails, MOVIETAGFILE
+from .models.movies import getMovieList, removeMovie, getMovieInfo, movieAction, getAllMovies, getMovieDetails, setMovieResumePoint, MOVIETAGFILE
 from .models.config import getSettings, addCollapsedMenu, removeCollapsedMenu, saveConfig, getConfigs, getConfigsSections, getUtcOffset
 from .models.stream import getStream, getTS, getStreamSubservices, GetSession
 from .models.servicelist import reloadServicesLists
@@ -1005,8 +1005,24 @@ class WebController(BaseController):
 				"result": False
 			}
 
-	# a duplicate api ??
-	def P_gettags(self, request):
+	def P_movieresumepoint(self, request):
+		sref = getUrlArg(request, "sRef")
+		if sref is None:
+			sref = getUrlArg(request, "sref")
+
+		try:
+			resumepoint = int(request.args[b"resumepoint"][0]) * 90000  # in seconds
+		except (ValueError, KeyError):  # nosec # noqa: E722
+			resumepoint = None
+
+		if sref and resumepoint:
+			return setMovieResumePoint(sref, resumepoint)
+		else:
+			return {
+				"result": False
+			}
+
+	def P_gettags(self, request):  # a duplicate api ??
 		"""
 		Request handler for the `gettags` endpoint.
 		Get tags of movie file (?).

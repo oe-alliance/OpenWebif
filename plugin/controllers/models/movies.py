@@ -22,7 +22,7 @@ from os import listdir, stat as osstat, statvfs
 from os.path import join as pathjoin, split as pathsplit, realpath, abspath, isdir, splitext, exists, isfile, normpath
 
 from struct import Struct
-from time import localtime
+from time import localtime, time
 from urllib.parse import unquote
 from glob import glob
 
@@ -174,7 +174,7 @@ def getMovieList(rargs=None, locations=None, directory=None):
 
 				# BAD fix
 				_serviceref = serviceref.toString().replace('%25', '%')
-				length_minutes = 0
+				length = 0
 				txtdesc = ""
 				filename = '/'.join(_serviceref.split("/")[1:])
 				filename = '/' + filename
@@ -205,14 +205,14 @@ def getMovieList(rargs=None, locations=None, directory=None):
 					movie['begintime'] = FuzzyTime2(rtime)
 
 				try:
-					length_minutes = info.getLength(serviceref)
+					length = info.getLength(serviceref)
 				except:  # nosec # noqa: E722
 					pass
 
-				if length_minutes:
-					movie['length'] = "%d:%02d" % (length_minutes / 60, length_minutes % 60)
+				if length:
+					movie['length'] = "%d:%02d" % (length / 60, length % 60)
 					if fields is None or 'pos' in fields:
-						movie['lastseen'] = moviePlayState(filename + '.cuts', serviceref, length_minutes) or 0
+						movie['lastseen'] = moviePlayState(filename + '.cuts', serviceref, length) or 0
 
 				if fields is None or 'desc' in fields:
 					txtfile = name + '.txt'
@@ -596,7 +596,7 @@ def getMovieDetails(sref=None):
 	service = ServiceReference(sref)
 	if service is not None:
 		serviceref = service.ref
-		length_minutes = 0
+		length = 0
 		txtdesc = ""
 		fullpath = serviceref.getPath()
 		filename = '/'.join(fullpath.split("/")[1:])
@@ -631,13 +631,13 @@ def getMovieDetails(sref=None):
 			movie['begintime'] = FuzzyTime2(rtime)
 
 		try:
-			length_minutes = info.getLength(serviceref)
+			length = info.getLength(serviceref)
 		except:  # nosec # noqa: E722
 			pass
 
-		if length_minutes:
-			movie['length'] = "%d:%02d" % (length_minutes / 60, length_minutes % 60)
-			movie['lastseen'] = moviePlayState(filename + '.cuts', serviceref, length_minutes) or 0
+		if length:
+			movie['length'] = "%d:%02d" % (length / 60, length % 60)
+			movie['lastseen'] = moviePlayState(filename + '.cuts', serviceref, length) or 0
 
 		txtfile = name + '.txt'
 		if ext.lower() != '.ts' and isfile(txtfile):
@@ -677,3 +677,73 @@ def getMovieDetails(sref=None):
 		return {
 			"result": False,
 		}
+
+
+def setMovieResumePoint(sref, resumepoint):
+	service = ServiceReference(sref)
+	if service is not None:
+		try:
+			servicehandler = eServiceCenter.getInstance()
+			info = servicehandler.info(service.ref)
+			length = info.getLength(service.ref)
+		except:  # nosec # noqa: E722
+			length = 0
+
+		if length:
+			try:
+				from Screens.InfoBarGenerics import resumePointCache
+				resumePointCache[service.ref.toString()] = (int(time()), resumepoint, length * 90000)
+			except:
+				pass
+
+		fullpath = service.ref.getPath()
+		srcPath, srcName = pathsplit(fullpath)
+
+		cutsfilename = pathjoin(srcPath, f"{srcName}.cuts")
+		if exists(cutsfilename):
+			oldcuts = []
+			oldresume = 0
+			try:
+				with open(cutsfilename, 'rb') as fd:
+					while True:
+						data = fd.read(cutsParser.size)
+						if len(data) < cutsParser.size:
+							break
+						_pos, _type = cutsParser.unpack(data)
+						oldcuts.append((_pos, _type))
+						if _type == 3:
+							oldresume = _pos
+			except OSError as err:
+				return {
+					"result": False,
+					"error": str(err)
+				}
+
+			try:
+				newcuts = []
+				if oldresume:
+					for cut in oldcuts:
+						if cut[1] == 3:
+							newcuts.append((resumepoint, cut[1]))
+						else:
+							newcuts.append((cut[0], cut[1]))
+				else:
+					newcuts = oldcuts
+					newcuts.append((resumepoint, 3))
+
+				with open(cutsfilename, 'wb') as fd:
+					for cut in newcuts:
+						fd.write(cutsParser.pack(int(cut[0]), int(cut[1])))
+			except OSError as err:
+				return {
+					"result": False,
+					"error": str(err)
+				}
+
+		return {
+			"result": True
+		}
+
+	return {
+		"result": False,
+	}

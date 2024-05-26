@@ -1,3 +1,12 @@
+## Version 2.2.0
+* add movieresumepoint to movie api
+* add streamrelay flag to epg api
+* add showstreamrelay, showall, noiptv parameter to getservices api
+* add support for new ConfigSelectionInteger
+* add support for new allowDefault setup.xml attribute
+* add new url parameter "returntimer" for timeradd and timerchange api to return the timerdata in response
+* add api/epgservicenownext
+
 ## Version 2.1.1
 * show lcn in bouquet editor
 * add more options to servicelist reload api
