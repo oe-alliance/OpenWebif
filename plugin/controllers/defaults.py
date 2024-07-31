@@ -297,12 +297,26 @@ def getLCNs():
 		lines = []
 		with open("/etc/enigma2/lcndb") as fd:
 			lines = [line.strip().upper() for line in fd.readlines()]
-		for lcn in lines:
-			lcnData = lcn.split(":")
-			lcnKey = lcnData[:4]
-			lcns[f"{int(lcnKey[3], 16):X}:{int(lcnKey[2], 16):X}:{int(lcnKey[1], 16):X}:{lcnKey[0]}"] = int(lcnData[4])
+
+		if lines and lines[0] == "#VERSION 2":
+			del lines[0]
+			for lcn in lines:
+				lcnData = lcn.split(":")
+				lcnKey = lcnData[7]
+				if lcnKey == "0":
+					lcnKey = lcnData[6]
+				if lcnKey == "0":
+					lcnKey = lcnData[5]
+				lcns[f"{int(lcnData[0], 16):X}:{int(lcnData[1], 16):X}:{int(lcnData[2], 16):X}:{lcnData[3]}"] = int(lcnKey)
+		else:
+			for lcn in lines:
+				lcnData = lcn.split(":")
+				lcnKey = lcnData[:4]
+				lcns[f"{int(lcnKey[3], 16):X}:{int(lcnKey[2], 16):X}:{int(lcnKey[1], 16):X}:{lcnKey[0]}"] = int(lcnData[4])
 	except OSError:
 		pass
+	except Exception as err:
+		print(f"[OpenWebif] Error parsing lcn db. {err}")
 	return lcns
 
 
