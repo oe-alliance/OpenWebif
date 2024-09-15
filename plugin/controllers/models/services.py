@@ -38,7 +38,7 @@ from Screens.InfoBar import InfoBar
 from .info import getOrbitalText, getOrb
 from ..utilities import parse_servicereference, SERVICE_TYPE_LOOKUP, NS_LOOKUP
 from ..i18n import _, tstrings
-from ..defaults import PICON_PATH, STREAMRELAY, LCNDB
+from ..defaults import PICON_PATH, STREAMRELAY, LCNSUPPORT
 from .epg import EPG, convertGenre, getIPTVLink, filterName, convertDesc, GetWithAlternative
 
 
@@ -527,7 +527,11 @@ def getServices(sref, showall=True, showhidden=False, pos=0, showproviders=False
 			pass
 
 	bqservices = servicehandler.list(eServiceReference(sref))
-	slist = bqservices and bqservices.getContent("CN" if removenamefromsref else "SN", True)
+	contentFilter = "CN" if removenamefromsref else "SN"
+	if LCNSUPPORT:
+		contentFilter += "L"
+
+	slist = bqservices and bqservices.getContent(contentFilter, True)
 
 	opos = 0
 	for sitem in slist:
@@ -575,14 +579,10 @@ def getServices(sref, showall=True, showhidden=False, pos=0, showproviders=False
 					service['provider'] = allproviders[sitem[0]]
 				else:
 					service['provider'] = ""
-			if flags == 0 and LCNDB:
-				lcnref = sr.split(":")
-				if len(lcnref) > 6:
-					lcnref = lcnref[3:7]
-					lcnref = ":".join(lcnref).upper()
-					lcn = LCNDB.get(lcnref, "")
-					if lcn:
-						service['lcn'] = lcn
+			if flags == 0 and LCNSUPPORT:
+				LCN = sitem[2]
+				if LCN:
+					service['lcn'] = LCN
 			if showstreamrelay:
 				service['streamrelay'] = sr in streamRelay
 

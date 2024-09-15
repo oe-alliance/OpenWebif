@@ -195,7 +195,7 @@ def Plugins(**kwargs):
 		PluginDescriptor(where=[PluginDescriptor.WHERE_NETWORKCONFIG_READ], fnc=IfUpIfDown),
 		]
 	screenwidth = getDesktop(0).size().width()
-	if BoxInfo.getItem("distro") in ("openatv"):
+	if BoxInfo.getItem("distro") == "openatv":
 		result.append(PluginDescriptor(name=PLUGIN_NAME, description=_(PLUGIN_DESCRIPTION), where=PluginDescriptor.WHERE_MENU, fnc=main_menu))
 	if screenwidth and screenwidth == 1920:
 		result.append(PluginDescriptor(name=PLUGIN_NAME, description=_(PLUGIN_DESCRIPTION), icon="openwebifhd.png", where=[PluginDescriptor.WHERE_PLUGINMENU], fnc=confplug))
