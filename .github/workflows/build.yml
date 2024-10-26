@@ -21,7 +21,7 @@ jobs:
 
       - name: Build python 3.13
         run: |
-          pip3 install Cheetah3
+          pip3 install CT3
           python -m compileall -l . -r 10 -q
           cheetah compile -R plugin
           python testsuite/evil_eval.py
@@ -32,7 +32,7 @@ jobs:
 
       - name: Build python 3.12
         run: |
-          pip3 install Cheetah3
+          pip3 install CT3
           python -m compileall -l . -r 10 -q
           cheetah compile -R plugin
           python testsuite/evil_eval.py
@@ -43,7 +43,7 @@ jobs:
 
       - name: Build python 3.11
         run: |
-          pip3 install Cheetah3
+          pip3 install CT3
           python -m compileall -l . -r 10 -q
           cheetah compile -R plugin
           python testsuite/evil_eval.py
@@ -54,7 +54,7 @@ jobs:
 
       - name: Build python 3.10
         run: |
-          pip3 install Cheetah3
+          pip3 install CT3
           python -m compileall -l . -r 10 -q
           cheetah compile -R plugin
           python testsuite/evil_eval.py
@@ -73,7 +73,7 @@ jobs:
           sudo apt-get -q update
           sudo apt-get install -y closure-compiler nodejs npm dos2unix gettext python3-sphinx
           sudo npm install -g jshint
-          pip3 install Cheetah3
+          pip3 install CT3
           pip3 install autopep8
           pip3 install pyOpenSSL
           pip3 install twisted
