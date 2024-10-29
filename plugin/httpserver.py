@@ -40,6 +40,28 @@ from .controllers.root import RootController
 from .controllers.utilities import toString
 from .sslcertificate import SSLCertificateGenerator, KEY_FILE, CERT_FILE, CA_FILE, CHAIN_FILE
 
+try:
+	from enigma import checkLogin
+except ImportError:
+	from crypt import crypt
+	from pwd import getpwnam
+	from spwd import getspnam
+
+	def checkLogin(user, passwd):
+		cpass = None
+		try:
+			cpass = getpwnam(user)[1]
+		except:  # nosec # noqa: E722
+			return False
+		if cpass:
+			if cpass == 'x' or cpass == '*':
+				try:
+					cpass = getspnam(user)[1]
+				except:  # nosec # noqa: E722
+					return False
+			return crypt(passwd, cpass) == cpass
+		return False
+
 
 global listener, server_to_stop, site, sslsite
 listener = []
@@ -424,22 +446,7 @@ class AuthResource(resource.Resource):
 						samenet = True
 			if not (ipaddress.ip_address(str(peer)).is_private or samenet):
 				return False
-		from crypt import crypt
-		from pwd import getpwnam
-		from spwd import getspnam
-		cpass = None
-		try:
-			cpass = getpwnam(user)[1]
-		except:  # nosec # noqa: E722
-			return False
-		if cpass:
-			if cpass == 'x' or cpass == '*':
-				try:
-					cpass = getspnam(user)[1]
-				except:  # nosec # noqa: E722
-					return False
-			return crypt(passwd, cpass) == cpass
-		return False
+		return checkLogin(user, passwd)
 
 
 class StopServer:
