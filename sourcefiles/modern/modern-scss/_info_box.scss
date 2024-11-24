@@ -1,0 +1,153 @@
+@use "_abstracts/variables";
+@use "_abstracts/mixins";
+
+$box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+$background-color: #fff;
+$text-color: #555;
+$icon-opacity: 0.4;
+$transition-duration: 0.3s;
+$hover-effect-duration: 0.95s;
+
+@mixin transition($property: all, $duration: variables.$transition-duration) {
+  transition: #{$property} $duration ease;
+}
+
+@mixin hover-effect($color: rgba(0, 0, 0, 0.05)) {
+  &:after {
+    background-color: $color;
+    content: ".";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    color: transparent;
+    @include transition(all, $hover-effect-duration);
+  }
+
+  &:hover:after {
+    width: 100%;
+  }
+}
+
+@mixin icon-transform($opacity: $icon-opacity) {
+  opacity: $opacity;
+  @include transition;
+  &:hover {
+    opacity: $opacity;
+    transform: rotate(-32deg) scale(1.4);
+  }
+}
+
+@mixin chart-line-height($height, $line-height) {
+  height: 100%;
+  line-height: $line-height;
+  canvas {
+    vertical-align: baseline !important;
+  }
+}
+
+.info-box, .info-box-2, .info-box-3, .info-box-4 {
+  box-shadow: $box-shadow;
+  height: 80px;
+  display: flex;
+  cursor: default;
+  background-color: $background-color;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 30px;
+
+  .content {
+    display: inline-block;
+    padding: 7px 10px;
+
+    .text {
+      font-size: 13px;
+      margin-top: 11px;
+      color: $text-color;
+    }
+
+    .number {
+      font-weight: normal;
+      font-size: 26px;
+      margin-top: -4px;
+      color: $text-color;
+    }
+  }
+
+  &.hover-zoom-effect {
+    .icon {
+      overflow: hidden;
+
+      i {
+        @include icon-transform;
+      }
+    }
+  }
+
+  &.hover-expand-effect {
+    @include hover-effect;
+  }
+}
+
+.info-box, .info-box-2 {
+  .icon {
+    display: inline-block;
+    text-align: center;
+    width: 80px;
+
+    i {
+      color: #fff;
+      font-size: 50px;
+      line-height: 80px;
+    }
+
+    &.chart-bar {
+      @include chart-line-height(100%, 100px);
+    }
+
+    &.chart-pie {
+      @include chart-line-height(100%, 123px);
+    }
+
+    &.chart-line {
+      @include chart-line-height(100%, 115px);
+    }
+  }
+}
+
+.info-box-3, .info-box-4 {
+  .icon {
+    position: absolute;
+    right: 10px;
+    bottom: 2px;
+    text-align: center;
+
+    i {
+      color: rgba(0, 0, 0, 0.15);
+      font-size: 60px;
+    }
+  }
+
+  .chart {
+    margin-right: 5px;
+
+    &.chart-bar {
+      @include chart-line-height(100%, 50px);
+    }
+
+    &.chart-pie {
+      @include chart-line-height(100%, 34px);
+    }
+
+    &.chart-line {
+      @include chart-line-height(100%, 40px);
+    }
+  }
+}
+
+.info-box-2 {
+  .icon {
+    background-color: rgba(0, 0, 0, 0.12);
+  }
+}

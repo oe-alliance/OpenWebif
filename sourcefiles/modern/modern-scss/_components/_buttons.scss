@@ -1,0 +1,68 @@
+@use "../_abstracts/variables";
+@use "../_abstracts/mixins";
+
+.btn {
+  @include mixins.box-shadow(variables.$shadow);
+  @include mixins.border-radius(2px);
+  border: none;
+  font-size: 14px;
+  padding: 8px 14px;
+  @include mixins.transition(#{variables.$transition-duration} ease-out);
+
+  i {
+    font-size: 20px;
+    vertical-align: middle;
+    margin-right: 4px;
+  }
+
+  span {
+    vertical-align: middle;
+  }
+
+  &.dropdown-toggle {
+    box-shadow: none;
+  }
+}
+
+
+.btn-circle {
+  border: none;
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  @include mixins.border-radius(variables.$radius);
+  i {
+    font-size: 18px;
+    position: relative;
+    left: -1px;
+  }
+}
+
+.btn-link {
+  font-weight: bold;
+  color: #333;
+  &:active,
+  &:focus {
+    text-decoration: none;
+    color: #333;
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: #333;
+    background-color: #ddd;
+  }
+}
+
+.btn-circle-lg {
+  @extend .btn-circle;
+  width: 50px;
+  height: 50px;
+  @include mixins.border-radius(variables.$radius-lg);
+  i {
+    font-size: 26px;
+    position: relative;
+    left: 0;
+    top: 6px;
+  }
+}

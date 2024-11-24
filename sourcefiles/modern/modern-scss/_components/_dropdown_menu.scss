@@ -1,0 +1,195 @@
+@use "../_abstracts/variables";
+@use "../_abstracts/mixins";
+@use "../info_box";
+
+// Variables
+$border-radius: 0;
+$box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+$divider-margin: 5px 0;
+$header-font-size: 13px;
+$header-font-weight: bold;
+$header-min-width: 270px;
+$header-border-bottom: 1px solid #eee;
+$header-padding: 4px 0 6px;
+$header-text-align: center;
+$menu-padding-left: 0;
+$task-header-color: #333;
+$task-header-font-size: 13px;
+$task-header-margin: 0 0 8px;
+$progress-height: 7px;
+$progress-margin-bottom: 7px;
+$icon-circle-size: 36px;
+$icon-circle-color: #fff;
+$icon-circle-font-size: 18px;
+$menu-info-top: 3px;
+$menu-info-left: 5px;
+$menu-info-h4-font-size: 13px;
+$menu-info-h4-color: #333;
+$menu-info-p-font-size: 11px;
+$menu-info-p-color: #aaa;
+$menu-info-p-icon-font-size: 13px;
+$menu-info-p-icon-color: #aaa;
+$menu-info-p-icon-top: 2px;
+$footer-border-top: 1px solid #eee;
+$footer-padding: 5px 0;
+$footer-font-size: 12px;
+$menu-link-padding: 7px 11px;
+$menu-link-hover-bg: #e9e9e9;
+$menu-link-transition: 0.5s;
+$menu-item-border-bottom: 1px solid #eee;
+$menu-item-padding: 7px 8px;
+$menu-item-color: #666;
+$menu-item-hover-bg: rgba(0, 0, 0, 0.075);
+$menu-item-icon-font-size: 20px;
+$menu-item-icon-margin-right: 7px;
+$menu-item-icon-margin-top: 2px;
+$menu-item-transition: 0.5s;
+$animation-duration: 0.3s;
+
+// Mixins
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+@mixin transition($duration) {
+  transition: $duration;
+}
+
+@mixin animation-duration($duration) {
+  animation-duration: $duration !important;
+}
+
+.dropdown-menu {
+  @include border-radius(variables.$border-radius-zero);
+  margin-top: -35px !important;
+  box-shadow: info_box.$box-shadow;
+  border: none;
+
+  .divider {
+    margin: $divider-margin;
+  }
+
+  .header {
+    font-size: $header-font-size;
+    font-weight: $header-font-weight;
+    min-width: $header-min-width;
+    border-bottom: $header-border-bottom;
+    text-align: $header-text-align;
+    padding: $header-padding;
+  }
+
+  ul.menu {
+    padding-left: $menu-padding-left;
+
+    &.tasks {
+      h4 {
+        color: $task-header-color;
+        font-size: $task-header-font-size;
+        margin: $task-header-margin;
+
+        small {
+          float: right;
+          margin-top: 6px;
+        }
+      }
+
+      .progress {
+        height: $progress-height;
+        margin-bottom: $progress-margin-bottom;
+      }
+    }
+
+    .icon-circle {
+      @include border-radius(50%);
+      width: $icon-circle-size;
+      height: $icon-circle-size;
+      color: $icon-circle-color;
+      text-align: center;
+      display: inline-block;
+
+      i {
+        font-size: $icon-circle-font-size;
+        line-height: $icon-circle-size;
+      }
+    }
+
+    li {
+      border-bottom: $menu-item-border-bottom;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      a {
+        padding: $menu-link-padding;
+        text-decoration: none;
+        @include transition($menu-link-transition);
+
+        &:hover {
+          background-color: $menu-link-hover-bg;
+        }
+      }
+    }
+
+    .menu-info {
+      display: inline-block;
+      position: relative;
+      top: $menu-info-top;
+      left: $menu-info-left;
+
+      h4 {
+        margin: 0;
+        font-size: $menu-info-h4-font-size;
+        color: $menu-info-h4-color;
+      }
+
+      p {
+        margin: 0;
+        font-size: $menu-info-p-font-size;
+        color: $menu-info-p-color;
+
+        .material-icons {
+          font-size: $menu-info-p-icon-font-size;
+          color: $menu-info-p-icon-color;
+          position: relative;
+          top: $menu-info-p-icon-top;
+        }
+      }
+    }
+  }
+
+  .footer a {
+    text-align: center;
+    border-top: $footer-border-top;
+    padding: $footer-padding;
+    font-size: $footer-font-size;
+    margin-bottom: -5px;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  > li > a {
+    padding: $menu-item-padding;
+    color: $menu-item-color;
+    @include transition(all $menu-item-transition);
+    font-size: 14px;
+    line-height: 25px;
+
+    &:hover {
+      background-color: $menu-item-hover-bg;
+    }
+
+    i.material-icons {
+      float: left;
+      margin-right: $menu-item-icon-margin-right;
+      margin-top: $menu-item-icon-margin-top;
+      font-size: $menu-item-icon-font-size;
+    }
+  }
+}
+
+.dropdown-animated {
+  @include animation-duration($animation-duration);
+}

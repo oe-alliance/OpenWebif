@@ -1,0 +1,269 @@
+// Variables
+$sidebar-width: 300px;
+$right-sidebar-width: 280px;
+$header-height: 70px;
+$transition-duration: 0.5s;
+$font-family-base: Roboto, sans-serif;
+$color-text: #333;
+$color-text-secondary: #747474;
+$color-background: #fdfdfd;
+$color-border: #eee;
+
+// Mixins
+@mixin sidebar-base {
+  height: calc(100vh - $header-height);
+  position: fixed;
+  background: $color-background;
+  overflow: hidden;
+  z-index: 11;
+}
+
+@mixin truncate {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+// Left Sidebar
+.sidebar {
+  @include sidebar-base;
+  transition: all $transition-duration;
+  font-family: $font-family-base;
+  width: $sidebar-width;
+  left: 0;
+  display: inline-block;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+// Legal section
+.legal {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid $color-border;
+  padding: 15px;
+  overflow: hidden;
+}
+
+.copyright {
+  font-size: 13px;
+  font-weight: bold;
+  @include truncate;
+}
+
+.version {
+  @include truncate;
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+// Menu
+.menu {
+  position: relative;
+  overflow-y: auto;
+  height: 90vh;
+}
+
+.list {
+  list-style: none;
+  padding-left: 0;
+
+  .header {
+    background: $color-border;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 16px;
+  }
+
+  li.active > :first-child span {
+    font-weight: bold;
+  }
+
+  i.material-icons {
+    margin-top: 4px;
+  }
+
+  // Menu links
+  a {
+    color: $color-text-secondary;
+    position: relative;
+    display: inline-flex;
+    vertical-align: middle;
+    width: 100%;
+    padding: 10px 13px;
+    transition: 0.2s;
+
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: none;
+      background-color: $color-border;
+    }
+
+    small {
+      position: absolute;
+      top: calc(50% - 7.5px);
+      right: 15px;
+    }
+
+    span {
+      margin: 7px 0 7px 12px;
+      color: $color-text;
+      font-weight: bold;
+      font-size: 14px;
+      overflow: hidden;
+    }
+  }
+}
+
+// Menu toggle
+.menu-toggle {
+  &::before,
+  &::after {
+    position: absolute;
+    top: calc(50% - 14px);
+    right: 17px;
+    font-size: 19px;
+    transition: all 0.3s;
+  }
+
+  &::before {
+    content: "+";
+    transform: scale(1);
+  }
+
+  &::after {
+    content: "\2013";
+    transform: scale(0);
+  }
+
+  &.toggled {
+    &::before {
+      transform: scale(0);
+    }
+
+    &::after {
+      transform: scale(1);
+    }
+  }
+}
+
+// Submenu
+.ml-menu {
+  list-style: none;
+  display: none;
+  padding-left: 0;
+
+  span {
+    font-weight: normal;
+    font-size: 14px;
+    margin: 3px 0 1px 6px;
+  }
+
+  li {
+    a {
+      padding-left: 55px;
+      padding-top: 7px;
+      padding-bottom: 7px;
+    }
+
+    &.active a.toggled:not(.menu-toggle) {
+      font-weight: 600;
+      margin-left: 5px;
+
+      &::before {
+        content: "\E315";
+        font-family: "Material Icons";
+        position: relative;
+        font-size: 21px;
+        height: 20px;
+        top: -5px;
+        right: 0;
+      }
+    }
+
+    .ml-menu {
+      li a {
+        padding-left: 80px;
+      }
+
+      .ml-menu li a {
+        padding-left: 95px;
+      }
+    }
+  }
+}
+
+// Right sidebar
+.right-sidebar {
+  @include sidebar-base;
+  width: $right-sidebar-width;
+  right: -300px;
+  top: $header-height;
+  box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: $transition-duration;
+
+  &.open {
+    right: 0;
+  }
+
+  .nav-tabs {
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 13px;
+    width: 100%;
+    margin-left: 2px;
+
+    li {
+      text-align: center;
+
+      > a {
+        margin-right: 0;
+      }
+
+      &:first-child {
+        width: 45%;
+      }
+
+      &:last-child {
+        width: 55%;
+      }
+    }
+
+    & + .tab-content {
+      padding: 0;
+    }
+  }
+
+  p {
+    margin: 20px 15px 15px;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+// Settings list
+.setting-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+
+  li {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 15px;
+    position: relative;
+    border-top: 1px solid $color-border;
+
+    span {
+      grid-area: 1 / 1 / 2 / 5;
+    }
+
+    .switch {
+      position: absolute;
+      align-self: center;
+      grid-area: 1 / 5 / 2 / 6;
+    }
+  }
+}
