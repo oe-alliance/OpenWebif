@@ -200,7 +200,6 @@ $color-border: #eee;
   @include sidebar-base;
   width: $right-sidebar-width;
   right: -300px;
-  top: $header-height;
   box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
   transition: $transition-duration;
 

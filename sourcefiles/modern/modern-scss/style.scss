@@ -491,7 +491,10 @@ body * {
 
 @media (min-width: 1170px) {
 	section.content {
-		margin-right: 15px !important;
+		margin: 100px 0 0 315px;
+	}
+	.right-sidebar {
+		top: 70px;
 	}
 }
 
@@ -503,7 +506,6 @@ body * {
 }
 
 section.content {
-	margin: 100px 0 0 315px;
 	transition: 0.5s;
 }
 

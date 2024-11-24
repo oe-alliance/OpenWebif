@@ -31,7 +31,7 @@
     "build-classic-js": "npx glob-uglifyjs -c ./classic-glob-uglifyjs.config",
     "build-js": "npm run build-prod --prefix modern",
     "prepare-modern-css": "sass ./modern/modern-scss/style.scss ./modern/css/style.css && postcss ./modern/css/style.css --use autoprefixer -o ./modern/css/style.css",
-    "build-css": "node ./_utils/mincss.js -o '../plugin/public/' './modern/css/**/*.css' && rm ./modern/css/style.css",
+    "build-css": "npm run prepare-modern-css && node ./_utils/mincss.js -o '../plugin/public/' './modern/css/**/*.css' && rm ./modern/css/style.css",
     "build-css-themes": "node ./_utils/mincss.js -o '../plugin/public/' './themes/*.css'",
     "build-classic-css": "sass './scss/style.scss' '../plugin/public/css/style.min.css' --output-style compressed",
     "test": "echo 'Error: no test specified!' && exit 1"
