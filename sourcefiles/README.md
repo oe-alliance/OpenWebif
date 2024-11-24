@@ -1,4 +1,4 @@
-#Javascript, Styles, Fonts and Icons...
+# Javascript, Styles, Fonts and Icons...
 
 There's a choice of OpenWebif interfaces to choose from:
 - `Modern` is suitable for mobile and desktop devices (also known as _responsive_)
@@ -7,7 +7,7 @@ There's a choice of OpenWebif interfaces to choose from:
 
 There are a separate set of js and css files for each.
 
-JS and CSS files are compiled and minified as part of the [CI process](CI/npm.sh).
+JS and CSS files are compiled and minified as part of the [CI process](../CI/npm.sh).
 
 This can also be done manually.
 
@@ -25,7 +25,7 @@ need to download and install all required dependencies:
 
 ---
 
-##Modern interface
+## Modern interface
 
 ```
 MODERN:
@@ -52,7 +52,7 @@ MODERN:
 jQuery and Bootstrap are currently used for some functionality, but the 
 intention is to remove these dependencies completely from the Modern interface.
 
-###Compile JS
+### Compile JS
 `cd` to the repo root, then run
 
 `(cd ./sourcefiles && npm run build-js)`
@@ -68,7 +68,7 @@ Upload these files to the receiver at
 
 [`build-prod` (there's also a `build-dev` mode which doesn't minify output)]: #
 
-###Compile CSS
+### Compile CSS
 `cd` to the repo root, then run
 
 `(cd ./sourcefiles && npm run build-css)`
@@ -85,11 +85,11 @@ Upload these files to the receiver at
 Simply reloading the browser page will be enough, there's no need to restart
 Twisted server or enigma2!
 
-###Fonts
+### Fonts
 The [Roboto](https://fonts.google.com/specimen/Roboto) font is served locally from 
 `/modern/fonts/roboto`
 
-###Icons
+### Icons
 The [Material Icons font](https://fonts.google.com/icons?selected=Material+Icons) 
 provides iconography, and is served locally from `/modern/fonts/materialicons`
 
@@ -100,7 +100,7 @@ all out of sync. This is a [known issue](https://github.com/google/material-desi
 
 ---
 
-##Classic interface
+## Classic interface
 
 ```
 CLASSIC:
@@ -122,7 +122,7 @@ CLASSIC:
     /js/*.min.js
 ```
 
-###Compile JS
+### Compile JS
 `cd` to the repo root, then run
 
 `(cd ./sourcefiles && npm run build-classic-js)`
@@ -138,7 +138,7 @@ Upload these files to the receiver at
 
 [`build-prod` (there's also a `build-dev` mode which doesn't minify output)]: #
 
-###Compile CSS
+### Compile CSS
 `cd` to the repo root, then run
 
 `(cd ./sourcefiles && npm run build-classic-css)`
@@ -152,7 +152,7 @@ Upload these files to the receiver at
 /usr/lib/enigma2/python/Plugins/Extensions/OpenWebif/public/css/
 ```
 
-###Compile Themes for jQuery UI
+### Compile Themes for jQuery UI
 `cd` to the repo root, then run
 
 `(cd ./sourcefiles && npm run build-css-themes)`
@@ -185,6 +185,6 @@ Base command is
 
 ---
 
-##Mobile interface
+## Mobile interface
 
 😐
