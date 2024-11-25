@@ -21,7 +21,7 @@
     "glob-parent": "^5.1.2",
     "css-what": "^5.0.1",
     "normalize-url": "^4.5.1",
-    "postcss": "^8.2.10"
+    "postcss": "^8.4.49"
   },
   "browserslist": [
     "defaults"
@@ -33,7 +33,7 @@
     "prepare-modern-css": "sass ./modern/modern-scss/style.scss ./modern/css/style.css && postcss ./modern/css/style.css --use autoprefixer -o ./modern/css/style.css",
     "build-css": "npm run prepare-modern-css && node ./_utils/mincss.js -o '../plugin/public/' './modern/css/**/*.css' && rm ./modern/css/style.css",
     "build-css-themes": "node ./_utils/mincss.js -o '../plugin/public/' './themes/*.css'",
-    "build-classic-css": "sass './scss/style.scss' '../plugin/public/css/style.min.css' --output-style compressed",
+    "build-classic-css": "sass './scss/style.scss' '../plugin/public/css/style.min.css' --style compressed",
     "test": "echo 'Error: no test specified!' && exit 1"
   },
   "repository": {
@@ -48,6 +48,6 @@
   "homepage": "https://github.com/oe-alliance/OpenWebif#readme",
   "dependencies": {
     "path-exists": "^5.0.0",
-    "semver": "^7.3.7"
+    "semver": "^7.6.3"
   }
 }

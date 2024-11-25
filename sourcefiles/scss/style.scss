@@ -1,3 +1,4 @@
+@use "sass:meta";
 /*
  style.css: openwebif stylesheet
  Version 1.1
@@ -208,7 +209,7 @@ FIXME : complete reorg header
    }
  }
 
-@import "leftmenu";
+@include meta.load-css("leftmenu");
 
 
 .ui-tabs
@@ -538,7 +539,7 @@ font-size:16px;font-weight:bold;opacity:0.3;
 
 .osdch {font-weight:bold;text-decoration:none;}
 
-@import "channels";
+@include meta.load-css("channels");
 
 .m_buttons .ui-progressbar { height:0.5em; width: 90%; margin: 2px 0 4px; }
 
@@ -910,4 +911,4 @@ i.fa-mobile {font-size: 22px;}
 	background: #b0b0b0;
 }
 
-@import "channel_tags";
+@include meta.load-css("channel_tags");
