@@ -25,6 +25,7 @@ $transition-duration: 0.28s;
     &:after {
       content: '';
       position: absolute;
+      left: 0;
       transition: $transition-duration ease;
     }
   }
