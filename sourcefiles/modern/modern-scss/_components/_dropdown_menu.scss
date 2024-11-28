@@ -1,6 +1,6 @@
 @use "../_abstracts/variables";
 @use "../_abstracts/mixins";
-@use "../info_box";
+@use "info_box";
 
 // Variables
 $border-radius: 0;

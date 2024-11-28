@@ -1,3 +1,4 @@
+@use "../_abstracts/variables" as _abstracts-variables;
 // Variables
 $sidebar-width: 300px;
 $right-sidebar-width: 280px;
@@ -29,7 +30,7 @@ $color-border: #eee;
   @include sidebar-base;
   transition: all $transition-duration;
   font-family: $font-family-base;
-  width: $sidebar-width;
+  width: _abstracts-variables.$sidebar-width;
   left: 0;
   display: inline-block;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
@@ -199,7 +200,7 @@ $color-border: #eee;
 .right-sidebar {
   @include sidebar-base;
   width: $right-sidebar-width;
-  right: -300px;
+  right: -1 * _abstracts-variables.$sidebar-width;
   box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
   transition: $transition-duration;
 
