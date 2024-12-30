@@ -98,7 +98,7 @@ def getCurrentService(session):
 			"iswidescreen": info.getInfo(iServiceInformation.sAspect) in (3, 4, 7, 8, 0xB, 0xC, 0xF, 0x10),
 			"bqref": quote(bqref, safe=' ~@#$&()*!+=:;,.?/\''),
 			"bqname": bqname,
-			"hbbtvurl": getServiceInfoString(info, iServiceInformation.sHBBTVUrl)
+			"hbbtvurl": info.getInfoString(iServiceInformation.sHBBTVUrl)
 		}
 	except Exception as e:
 		print(str(e))
