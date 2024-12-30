@@ -1,3 +1,6 @@
+## Version 2.2.1
+* add hbbtv url to getcurrent api
+
 ## Version 2.2.0
 * add movieresumepoint to movie api
 * add streamrelay flag to epg api

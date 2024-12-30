@@ -2,8 +2,8 @@
 //* bqe.js: openwebif Bouqueteditor plugin
 //* Version 2.12
 //******************************************************************************
-//* Copyright (C) 2014-2024 jbleyel
-//* Copyright (C) 2014-2024 E2OpenPlugins
+//* Copyright (C) 2014-2025 jbleyel
+//* Copyright (C) 2014-2025 E2OpenPlugins
 //*
 //* Authors: jbleyel
 //*          Robert Damas <https://github.com/rdamas>
@@ -26,6 +26,12 @@
 //* https://github.com/oe-alliance/OpenWebif/blob/main/LICENSE.txt
 //*******************************************************************************
 // TODO: alternatives
+
+function zeroPad(num, places) {
+	var zero = places - num.length + 1;
+	return Array(+(zero > 0 && zero)).join("0") + num;
+}
+
 
 (function() {
 
@@ -254,7 +260,7 @@
 					if (lcn == undefined || lcn == "") {
 						lcn = "";
 					} else {
-						lcn += " ";
+						lcn = "#" + zeroPad(lcn, 4) + " - "
 					}
 					let stype = sref.split(':')[2];
 					let ns = sref.split(':')[6];
