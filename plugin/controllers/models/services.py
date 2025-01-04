@@ -424,10 +424,7 @@ def getChannels(idbouquet, stype):
 
 		if chan['ref'].split(":")[1] == '320':  # Hide hidden number markers
 			continue
-		if chan['ref'].split(":")[0] == '5002':  # BAD fix !!! this needs to fix in enigma2 !!!
-			chan['name'] = filterName(channel[0].split(":")[-1])
-		else:
-			chan['name'] = filterName(channel[1])
+		chan['name'] = filterName(channel[1])
 		# IPTV
 		ref = chan['ref']
 		isStreamRelay = f"%3a{streamrelayport}/" in ref
