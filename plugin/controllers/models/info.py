@@ -1,7 +1,7 @@
 ##########################################################################
 # OpenWebif: info
 ##########################################################################
-# Copyright (C) 2011 - 2023 E2OpenPlugins, jbleyel
+# Copyright (C) 2011 - 2025 E2OpenPlugins, jbleyel
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -25,7 +25,6 @@ from twisted import version
 from socket import has_ipv6, AF_INET6, AF_INET, inet_ntop, inet_pton, getaddrinfo
 
 from enigma import eDVBVolumecontrol, eServiceCenter, eServiceReference, getEnigmaVersionString
-from Components.About import about
 from Components.config import config
 from Components.Harddisk import harddiskmanager
 from Components.NimManager import nimmanager
@@ -311,7 +310,7 @@ def getInfo(session=None, need_fullinfo=False):
 		info["imagever"] = f"{info['imagever']}.{ib}"
 	info["enigmaver"] = getEnigmaVersionString()
 	info["driverdate"] = BoxInfo.getItem("driversdate")
-	info["kernelver"] = about.getKernelVersionString()
+	info["kernelver"] = BoxInfo.getItem("kernel")
 
 	try:
 		from Tools.StbHardware import getFPVersion
