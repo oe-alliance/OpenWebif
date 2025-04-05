@@ -1028,7 +1028,7 @@ def setSleepTimer(session, sleeptime, action, enabled):
 		try:
 			if sleeptime is None:
 				sleeptime = 60
-			# TODO test OpenPLI and similar
+			# TODO test OpenPLi and similar
 			# info = getInfo()
 			cfgaction = None
 			if hasattr(config.usage, "sleepTimerAction"):

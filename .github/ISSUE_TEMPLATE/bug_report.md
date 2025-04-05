@@ -36,7 +36,7 @@ Steps to reproduce the behavior:
 Screenshots are incredibly helpful; if possible, please attach to help explain your problem.
 
 **Image (please complete the following information):**
- - OS: [e.g. OpenATV, OpenPLI]
+ - OS: [e.g. OpenATV, OpenViX, OpenPLi]
  - Version [e.g. 7.0]
 
 **Desktop (please complete the following information):**
