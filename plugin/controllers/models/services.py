@@ -1161,6 +1161,7 @@ def getPicon(sname, pp=None, defaultpicon=True):
 		# remove URL part
 		if ("://" in sname) or ("%3a//" in sname) or ("%3A//" in sname):
 			cname = unquote(sname.split(":")[-1])
+			cname = cname.split("•")[0]  # remove provider from cname
 			sname = unquote(sname)
 			# sname = ":".join(sname.split(":")[:10]) -> old way
 			sname = ":".join(sname.split("://")[:1])
