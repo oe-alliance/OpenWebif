@@ -1,0 +1,44 @@
+name: Auto Tag from Source Version
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  auto-tag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Fetch tags
+        run: git fetch --tags
+
+      - name: Extract version from source
+        id: get-version
+        run: |
+          VERSION=$(grep '__version__' ./plugin/__init__.py | sed -E "s/__version__ = ['\"]([^'\"]+)['\"]/\\1/")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Check if tag exists
+        id: tag-check
+        run: |
+          TAG_NAME=${{ steps.get-version.outputs.version }}
+          if git rev-parse "refs/tags/$TAG_NAME" >/dev/null 2>&1; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create and push tag
+        if: steps.tag-check.outputs.exists == 'false'
+        run: |
+          TAG_NAME=${{ steps.get-version.outputs.version }}
+          git tag "$TAG_NAME"
+          git push origin "$TAG_NAME"
