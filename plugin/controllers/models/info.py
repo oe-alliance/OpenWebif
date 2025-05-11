@@ -781,7 +781,10 @@ def getStatusInfo(self):
 	statusinfo["inStandby"] = "false" if inStandby is None else "true"
 
 	# Get recording state
-	recs = NavigationInstance.instance.getRecordings()
+	try:
+		recs = NavigationInstance.instance.getAnyRecordingsCount()
+	except:
+		recs = NavigationInstance.instance.getRecordings()
 	if recs:
 		statusinfo["isRecording"] = "true"
 		statusinfo["Recording_list"] = "\n"
