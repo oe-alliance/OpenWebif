@@ -1,5 +1,5 @@
 #filter WebSafe
-#from datetime import datetime
+#from datetime import datetime, timezone
 <?xml version="1.0" encoding="UTF-8"?>
 <tv source-info-url="https://github.com/oe-alliance/OpenWebif" source-info-name="OpenWebif">
 	#for $service in $services
@@ -8,7 +8,7 @@
 	</channel>
 	#end for
 	#for $event in $events
-	<programme start="$datetime.utcfromtimestamp($event.begin_timestamp).strftime('%Y%m%d%H%M%S') $offset.utcoffset" stop="$datetime.utcfromtimestamp($event.begin_timestamp + $event.duration_sec).strftime('%Y%m%d%H%M%S') $offset.utcoffset" channel="$event.sref">
+	<programme start="$datetime.fromtimestamp($event.begin_timestamp, timezone.utc).astimezone().strftime('%Y%m%d%H%M%S %z')" stop="$datetime.fromtimestamp($event.begin_timestamp + $event.duration_sec, timezone.utc).astimezone().strftime('%Y%m%d%H%M%S %z')" channel="$event.sref">
 		<title lang="$lang">$str($event.title)</title>
 		<sub-title lang="$lang">$str($event.shortdesc)</sub-title>
 		<desc lang="$lang">$str($event.longdesc)</desc>
