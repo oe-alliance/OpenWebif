@@ -336,7 +336,7 @@ class AuthResource(resource.Resource):
 		return False
 
 	def render(self, request):
-		host = request.getHost().host
+		# host = request.getHost().host
 		peer = request.getClientAddress().host
 		if peer is None:
 			peer = request.transport.socket.getpeername()[0]
@@ -348,7 +348,7 @@ class AuthResource(resource.Resource):
 			peer = peer.split("%")[0]
 
 		if self.login(request.getUser(), request.getPassword(), peer) is False:
-			request.setHeader('WWW-authenticate', f'Basic realm="OpenWebif"')
+			request.setHeader('WWW-authenticate', 'Basic realm="OpenWebif"')
 			errpage = resource.ErrorPage(http.UNAUTHORIZED, "Unauthorized", "401 Authentication required")
 			return errpage.render(request)
 		else:
@@ -425,7 +425,7 @@ class AuthResource(resource.Resource):
 			return self.resource.getChildWithDefault(path, request)
 
 		if self.login(ruser, rpw, peer) is False:
-			request.setHeader('WWW-authenticate', f'Basic realm="OpenWebif"')
+			request.setHeader('WWW-authenticate', 'Basic realm="OpenWebif"')
 			return resource.ErrorPage(http.UNAUTHORIZED, "Unauthorized", "401 Authentication required")
 		else:
 			session["logged"] = True
@@ -493,7 +493,7 @@ def installCertificates(session):
 	certgenerator = SSLCertificateGenerator()
 	try:
 		certgenerator.installCertificates()
-	except OSError as e:
+	except OSError:
 		# Disable https
 		config.OpenWebif.https_enabled.value = False
 		config.OpenWebif.https_enabled.save()

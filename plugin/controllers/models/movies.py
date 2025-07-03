@@ -693,7 +693,7 @@ def setMovieResumePoint(sref, resumepoint):
 			try:
 				from Screens.InfoBarGenerics import resumePointCache
 				resumePointCache[service.ref.toString()] = (int(time()), resumepoint, length * 90000)
-			except:
+			except:  # nosec # noqa: E722
 				pass
 
 		fullpath = service.ref.getPath()

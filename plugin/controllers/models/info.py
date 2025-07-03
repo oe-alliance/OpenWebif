@@ -783,7 +783,7 @@ def getStatusInfo(self):
 	# Get recording state
 	try:
 		recs = NavigationInstance.instance.getAnyRecordingsCount()
-	except:
+	except:  # nosec # noqa: E722
 		recs = NavigationInstance.instance.getRecordings()
 	if recs:
 		statusinfo["isRecording"] = "true"
