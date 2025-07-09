@@ -24,7 +24,7 @@ from Components.config import config as comp_config
 from Screens.InfoBar import InfoBar
 
 from .models.info import getInfo, getCurrentTime, getStatusInfo, getFrontendStatus, testPipStatus
-from .models.services import getCurrentService, getBouquets, getServices, getSubServices, getSatellites, getBouquetEpg, getBouquetNowNextEpg, getMultiChannelNowNextEpg, getSearchEpg, getSimilarEpg, getChannelEpg, getNowNextEpg, getAllServices, getPlayableServices, getPlayableService, getParentalControlList, getEvent, getServiceRef, getPicon
+from .models.services import getCurrentService, getBouquets, getServices, getSubServices, getSatellites, getBouquetEpg, getBouquetNowNextEpg, getMultiChannelNowNextEpg, getSearchEpg, getSimilarEpg, getChannelEpg, getNowNextEpg, getAllServices, getPlayableServices, getPlayableService, getParentalControlList, getEvent, getServiceRef, getPicon, getAllServicesRaw
 from .models.volume import getVolumeStatus, setVolumeUp, setVolumeDown, setVolumeMute, setVolume
 from .models.audiotrack import getAudioTracks, setAudioTrack
 from .models.control import zapService, remoteControl, setPowerState, getStandbyState
@@ -455,6 +455,14 @@ class WebController(BaseController):
 			HTTP response with headers
 		"""
 		return getCurrentLocation()
+
+	def P_allservicescsv(self, request):
+		mode = getUrlArg(request, "mode", "tv")
+		return getAllServicesRaw(mode, csv=True)
+
+	def P_allservices(self, request):
+		mode = getUrlArg(request, "mode", "tv")
+		return getAllServicesRaw(mode)
 
 	def P_getallservices(self, request):
 		"""

@@ -1,3 +1,6 @@
+## Version 2.2.2
+* add allservices and allservicescsv
+
 ## Version 2.2.1
 * add hbbtv url to getcurrent api
 
