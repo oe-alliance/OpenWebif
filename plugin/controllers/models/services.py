@@ -637,7 +637,7 @@ def getAllServicesRaw(mode, csv=False):
 	servicelist = servicelist and servicelist.getContent('SN') or []
 	if csv:
 		for service in servicelist:
-			services.append(f"{service[0]};{service[1]}")
+			services.append(f"{service[0]},{service[1]}")
 		return "\n".join(services)
 	else:
 		for service in servicelist:
