@@ -629,15 +629,18 @@ def getAllServicesRaw(mode, csv=False):
 	services = []
 	servicecenter = eServiceCenter.getInstance()
 
-	if mode is None:
-		mode = "tv"
-
-	refStr = "1:7:1:0:0:0:0:0:0:0:(type == 1) || (type == 17) || (type == 195) || (type == 25) || (type == 22) || (type == 31) || (type == 211) ORDER BY name" if mode == "tv" else "1:7:2:0:0:0:0:0:0:0:(type == 2) || (type == 10) ORDER BY name"
+	if mode == "radio":
+		refStr = "1:7:2:0:0:0:0:0:0:0:(type == 2) || (type == 10) ORDER BY name"
+	elif mode == "tv":
+		refStr = "1:7:1:0:0:0:0:0:0:0:(type == 1) || (type == 17) || (type == 195) || (type == 25) || (type == 22) || (type == 31) || (type == 211) ORDER BY name"
+	else:
+		refStr = "1:7:0:0:0:0:0:0:0:0:(type == 2) || (type == 10) || (type == 1) || (type == 17) || (type == 195) || (type == 25) || (type == 22) || (type == 31) || (type == 211)  ORDER BY name"
 	servicelist = servicecenter.list(eServiceReference(refStr))
 	servicelist = servicelist and servicelist.getContent('SN') or []
 	if csv:
+		services.append("\"ServiceRefrerence\",\"ServiceName\"")
 		for service in servicelist:
-			services.append(f"{service[0]};{service[1]}")
+			services.append(f"\"{service[0]}\",\"{service[1]}\"")
 		return "\n".join(services)
 	else:
 		for service in servicelist:

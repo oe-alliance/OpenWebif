@@ -457,11 +457,11 @@ class WebController(BaseController):
 		return getCurrentLocation()
 
 	def P_allservicescsv(self, request):
-		mode = getUrlArg(request, "mode", "tv")
+		mode = getUrlArg(request, "mode", "all")
 		return getAllServicesRaw(mode, csv=True)
 
 	def P_allservices(self, request):
-		mode = getUrlArg(request, "mode", "tv")
+		mode = getUrlArg(request, "mode", "all")
 		return getAllServicesRaw(mode)
 
 	def P_getallservices(self, request):
