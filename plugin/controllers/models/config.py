@@ -18,7 +18,7 @@
 # Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
 ##########################################################################
 
-from datetime import datetime
+from datetime import datetime, timezone
 from gettext import dgettext
 from os import listdir
 from os.path import exists, dirname, basename, join
@@ -318,15 +318,9 @@ def getSettings():
 
 
 def getUtcOffset():
-	now = time()
-	offset = (datetime.fromtimestamp(now) - datetime.utcfromtimestamp(now)).total_seconds()
-	hours = round(offset / 3600)
-	minutes = (offset - (hours * 3600))
-	return {
-		"result": True,
-		# round minutes to next quarter hour
-		"utcoffset": f"{int(hours * 100 + round(minutes / 900) * 900 / 60):+05}"
-	}
+    offset = datetime.fromtimestamp(time(), tz=timezone.utc).astimezone().utcoffset().total_seconds()
+    hours, minutes = divmod(round(offset / 900) * 900, 3600)
+    return {"result": True, "utcoffset": f"{int(hours):+03}{int(minutes / 60):02}"}
 
 
 class ConfigFiles:
