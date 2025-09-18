@@ -271,6 +271,20 @@
 
       // Plugins
       self['vps_safemode'] = !self['vps_overwrite'];
+
+      if (self['always_zap'] === 'yes' || self['always_zap'] === '1' || self['always_zap'] === true) {
+          self['justplay'] = true;
+          self['always_zap'] = true;
+      } else {
+          if (self['justplay'] === 'yes' || self['justplay'] === '1' || self['justplay'] === true) {
+              self['justplay'] = true;
+              self['always_zap'] = false;
+          } else {
+              self['always_zap'] = true;
+              self['justplay'] = false;
+          }
+      }
+
     }
 
     get bouquetSRefs() {
@@ -742,6 +756,13 @@
           filteringParamNames.forEach((param) => formData.delete(param));
         }
 
+
+        const justplay = formData.get("justplay") == "1";
+        const always_zap = formData.get("always_zap") == "1";
+
+        formData.set("justplay", (!always_zap && justplay) ? "1": "0")
+        formData.set("always_zap", (always_zap && justplay) ? "1": "0")
+
         paramsNotToSend.forEach((param) => formData.delete(param));
 
         Object.entries(formDataObj).forEach(([name, value]) => {
@@ -920,13 +941,17 @@
           evt.preventDefault();
           self.saveEntry();
         };
-        // at least one option must be checked
+
+        // at least one option must be checked, both can be checked
         (document.querySelectorAll('input[name="justplay"], input[name="always_zap"]') || nullEl).forEach((node) => {
-          node.onchange = (input) => {
-            const checkedInputs = document.querySelectorAll(
-              'input[name="justplay"]:checked, input[name="always_zap"]:checked'
-            );
-            checkedInputs.length < 1 && (event.target.checked = !event.target.checked);
+          node.onchange = (event) => {
+            const zapChecked = document.querySelector('input[name="justplay"]').checked;
+            const recordChecked = document.querySelector('input[name="always_zap"]').checked;
+            
+            // If trying to uncheck when neither would be checked, prevent it
+            if (!event.target.checked && !recordChecked && !zapChecked) {
+              event.target.checked = true;
+            }
           };
         });
 
