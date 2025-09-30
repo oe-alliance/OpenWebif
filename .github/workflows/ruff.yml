@@ -3,7 +3,7 @@ name: Ruff Linter
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
 
 jobs:
@@ -26,4 +26,5 @@ jobs:
 
       - name: Run Ruff
         run: |
+          cd ./plugin
           ruff check .
