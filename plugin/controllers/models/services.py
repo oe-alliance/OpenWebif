@@ -638,7 +638,7 @@ def getAllServicesRaw(mode, csv=False):
 	servicelist = servicecenter.list(eServiceReference(refStr))
 	servicelist = servicelist and servicelist.getContent('SN') or []
 	if csv:
-		services.append("\"ServiceRefrerence\",\"ServiceName\"")
+		services.append("\"ServiceReference\",\"ServiceName\"")
 		for service in servicelist:
 			services.append(f"\"{service[0]}\",\"{service[1]}\"")
 		return "\n".join(services)
