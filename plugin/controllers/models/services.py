@@ -41,6 +41,15 @@ from ..i18n import _, tstrings
 from ..defaults import PICON_PATH, STREAMRELAY, LCNSUPPORT
 from .epg import EPG, convertGenre, getIPTVLink, filterName, convertDesc, GetWithAlternative
 
+try:
+	from Components.Renderer.Picon import piconLocator
+	getPiconName = piconLocator.getPiconName
+except ImportError:
+	try:
+		from Components.Renderer.Picon import getPiconName
+	except ImportError:
+		getPiconName = None
+
 
 def getServiceInfoString(info, what):
 	v = info.getInfo(what)
@@ -1191,6 +1200,9 @@ def getPicon(sname, pp=None, defaultpicon=True):
 	if pp is None:
 		pp = PICON_PATH
 	if pp is not None:
+		if getPiconName is not None:  # use distro own picon resolver
+			return sname and (p := piconLocator.getPiconName(sname)) is not None and p.replace(pp, PIC) or (DEFAULTPIC if defaultpicon else None)
+
 		# remove URL part
 		if ("://" in sname) or ("%3a//" in sname) or ("%3A//" in sname):
 			cname = unquote(sname.split(":")[-1])
