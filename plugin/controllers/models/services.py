@@ -1201,7 +1201,7 @@ def getPicon(sname, pp=None, defaultpicon=True):
 		pp = PICON_PATH
 	if pp is not None:
 		if getPiconName is not None:  # use distro own picon resolver
-			return sname and (p := piconLocator.getPiconName(sname)) is not None and p.replace(pp, PIC) or (DEFAULTPIC if defaultpicon else None)
+			return sname and (p := getPiconName(sname)) is not None and p.replace(pp, PIC) or (DEFAULTPIC if defaultpicon else None)
 
 		# remove URL part
 		if ("://" in sname) or ("%3a//" in sname) or ("%3A//" in sname):
