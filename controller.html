@@ -1,0 +1,1890 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Controller &mdash; OpenWebif 2.2.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=219dea72"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Common" href="common.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            OpenWebif
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="common.html">Common</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Controller</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-controllers.root">Basic Controllers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#controllers.root.RootController"><code class="docutils literal notranslate"><span class="pre">RootController</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controllers.base.BaseController"><code class="docutils literal notranslate"><span class="pre">BaseController</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.base.BaseController.__init__"><code class="docutils literal notranslate"><span class="pre">BaseController.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.base.BaseController.error404"><code class="docutils literal notranslate"><span class="pre">BaseController.error404()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.base.BaseController.getChild"><code class="docutils literal notranslate"><span class="pre">BaseController.getChild()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.base.BaseController.render"><code class="docutils literal notranslate"><span class="pre">BaseController.render()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#controllers.utilities.NS"><code class="docutils literal notranslate"><span class="pre">NS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controllers.utilities.NS_DVB_C"><code class="docutils literal notranslate"><span class="pre">NS_DVB_C</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controllers.utilities.NS_DVB_T"><code class="docutils literal notranslate"><span class="pre">NS_DVB_T</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controllers.utilities.NS_LOOKUP"><code class="docutils literal notranslate"><span class="pre">NS_LOOKUP</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controllers.utilities.create_servicereference"><code class="docutils literal notranslate"><span class="pre">create_servicereference()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controllers.utilities.get_config_attribute"><code class="docutils literal notranslate"><span class="pre">get_config_attribute()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controllers.utilities.lenient_decode"><code class="docutils literal notranslate"><span class="pre">lenient_decode()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controllers.utilities.lenient_force_utf_8"><code class="docutils literal notranslate"><span class="pre">lenient_force_utf_8()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controllers.utilities.parse_servicereference"><code class="docutils literal notranslate"><span class="pre">parse_servicereference()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controllers.utilities.sanitise_filename_slashes"><code class="docutils literal notranslate"><span class="pre">sanitise_filename_slashes()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-controllers.web">Web Controllers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#controllers.web.ApiController"><code class="docutils literal notranslate"><span class="pre">ApiController</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controllers.web.WebController"><code class="docutils literal notranslate"><span class="pre">WebController</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_about"><code class="docutils literal notranslate"><span class="pre">WebController.P_about()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_addlocation"><code class="docutils literal notranslate"><span class="pre">WebController.P_addlocation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_bouquets"><code class="docutils literal notranslate"><span class="pre">WebController.P_bouquets()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_currenttime"><code class="docutils literal notranslate"><span class="pre">WebController.P_currenttime()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_deviceinfo"><code class="docutils literal notranslate"><span class="pre">WebController.P_deviceinfo()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_epgmulti"><code class="docutils literal notranslate"><span class="pre">WebController.P_epgmulti()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_epgsearch"><code class="docutils literal notranslate"><span class="pre">WebController.P_epgsearch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_epgxmltv"><code class="docutils literal notranslate"><span class="pre">WebController.P_epgxmltv()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_external"><code class="docutils literal notranslate"><span class="pre">WebController.P_external()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_getallservices"><code class="docutils literal notranslate"><span class="pre">WebController.P_getallservices()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_getaudiotracks"><code class="docutils literal notranslate"><span class="pre">WebController.P_getaudiotracks()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_getcurrent"><code class="docutils literal notranslate"><span class="pre">WebController.P_getcurrent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_getcurrlocation"><code class="docutils literal notranslate"><span class="pre">WebController.P_getcurrlocation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_getlocations"><code class="docutils literal notranslate"><span class="pre">WebController.P_getlocations()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_getpicon"><code class="docutils literal notranslate"><span class="pre">WebController.P_getpicon()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_getpid"><code class="docutils literal notranslate"><span class="pre">WebController.P_getpid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_getserviceref"><code class="docutils literal notranslate"><span class="pre">WebController.P_getserviceref()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_getservices"><code class="docutils literal notranslate"><span class="pre">WebController.P_getservices()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_getsubtitles"><code class="docutils literal notranslate"><span class="pre">WebController.P_getsubtitles()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_gettags"><code class="docutils literal notranslate"><span class="pre">WebController.P_gettags()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_loadepg"><code class="docutils literal notranslate"><span class="pre">WebController.P_loadepg()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_message"><code class="docutils literal notranslate"><span class="pre">WebController.P_message()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_messageanswer"><code class="docutils literal notranslate"><span class="pre">WebController.P_messageanswer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_moviecopy"><code class="docutils literal notranslate"><span class="pre">WebController.P_moviecopy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_moviedelete"><code class="docutils literal notranslate"><span class="pre">WebController.P_moviedelete()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_moviedetails"><code class="docutils literal notranslate"><span class="pre">WebController.P_moviedetails()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_movieinfo"><code class="docutils literal notranslate"><span class="pre">WebController.P_movieinfo()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_movielist"><code class="docutils literal notranslate"><span class="pre">WebController.P_movielist()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_movielisthtml"><code class="docutils literal notranslate"><span class="pre">WebController.P_movielisthtml()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_movielistm3u"><code class="docutils literal notranslate"><span class="pre">WebController.P_movielistm3u()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_movielistrss"><code class="docutils literal notranslate"><span class="pre">WebController.P_movielistrss()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_moviemove"><code class="docutils literal notranslate"><span class="pre">WebController.P_moviemove()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_movierename"><code class="docutils literal notranslate"><span class="pre">WebController.P_movierename()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_movietags"><code class="docutils literal notranslate"><span class="pre">WebController.P_movietags()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_parentcontrollist"><code class="docutils literal notranslate"><span class="pre">WebController.P_parentcontrollist()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_pluginlistread"><code class="docutils literal notranslate"><span class="pre">WebController.P_pluginlistread()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_powerstate"><code class="docutils literal notranslate"><span class="pre">WebController.P_powerstate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_recordnow"><code class="docutils literal notranslate"><span class="pre">WebController.P_recordnow()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_remotecontrol"><code class="docutils literal notranslate"><span class="pre">WebController.P_remotecontrol()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_removelocation"><code class="docutils literal notranslate"><span class="pre">WebController.P_removelocation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_restarttwisted"><code class="docutils literal notranslate"><span class="pre">WebController.P_restarttwisted()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_saveconfig"><code class="docutils literal notranslate"><span class="pre">WebController.P_saveconfig()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_saveepg"><code class="docutils literal notranslate"><span class="pre">WebController.P_saveepg()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_selectaudiotrack"><code class="docutils literal notranslate"><span class="pre">WebController.P_selectaudiotrack()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_servicelistplayable"><code class="docutils literal notranslate"><span class="pre">WebController.P_servicelistplayable()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_servicelistreload"><code class="docutils literal notranslate"><span class="pre">WebController.P_servicelistreload()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_serviceplayable"><code class="docutils literal notranslate"><span class="pre">WebController.P_serviceplayable()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_servicesm3u"><code class="docutils literal notranslate"><span class="pre">WebController.P_servicesm3u()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_servicesxspf"><code class="docutils literal notranslate"><span class="pre">WebController.P_servicesxspf()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_set_powerup_without_waking_tv"><code class="docutils literal notranslate"><span class="pre">WebController.P_set_powerup_without_waking_tv()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_settings"><code class="docutils literal notranslate"><span class="pre">WebController.P_settings()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_sleeptimer"><code class="docutils literal notranslate"><span class="pre">WebController.P_sleeptimer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_streamcurrentm3u"><code class="docutils literal notranslate"><span class="pre">WebController.P_streamcurrentm3u()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_streamm3u"><code class="docutils literal notranslate"><span class="pre">WebController.P_streamm3u()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_streamsubservices"><code class="docutils literal notranslate"><span class="pre">WebController.P_streamsubservices()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_subservices"><code class="docutils literal notranslate"><span class="pre">WebController.P_subservices()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_supports_powerup_without_waking_tv"><code class="docutils literal notranslate"><span class="pre">WebController.P_supports_powerup_without_waking_tv()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_timeradd"><code class="docutils literal notranslate"><span class="pre">WebController.P_timeradd()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_timeraddbyeventid"><code class="docutils literal notranslate"><span class="pre">WebController.P_timeraddbyeventid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_timerchange"><code class="docutils literal notranslate"><span class="pre">WebController.P_timerchange()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_timercleanup"><code class="docutils literal notranslate"><span class="pre">WebController.P_timercleanup()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_timerdelete"><code class="docutils literal notranslate"><span class="pre">WebController.P_timerdelete()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_timerlist"><code class="docutils literal notranslate"><span class="pre">WebController.P_timerlist()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_timerlistwrite"><code class="docutils literal notranslate"><span class="pre">WebController.P_timerlistwrite()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_timertogglestatus"><code class="docutils literal notranslate"><span class="pre">WebController.P_timertogglestatus()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_tsm3u"><code class="docutils literal notranslate"><span class="pre">WebController.P_tsm3u()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_tsstart"><code class="docutils literal notranslate"><span class="pre">WebController.P_tsstart()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_tsstate"><code class="docutils literal notranslate"><span class="pre">WebController.P_tsstate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_tsstop"><code class="docutils literal notranslate"><span class="pre">WebController.P_tsstop()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_tunersignal"><code class="docutils literal notranslate"><span class="pre">WebController.P_tunersignal()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_tvbrowser"><code class="docutils literal notranslate"><span class="pre">WebController.P_tvbrowser()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_vol"><code class="docutils literal notranslate"><span class="pre">WebController.P_vol()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_vpschannels"><code class="docutils literal notranslate"><span class="pre">WebController.P_vpschannels()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.P_zap"><code class="docutils literal notranslate"><span class="pre">WebController.P_zap()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controllers.web.WebController.vpsparams"><code class="docutils literal notranslate"><span class="pre">WebController.vpsparams()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">OpenWebif</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Controller</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/controller.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="controller">
+<span id="controller-label"></span><h1>Controller<a class="headerlink" href="#controller" title="Link to this heading"></a></h1>
+<section id="module-controllers.root">
+<span id="basic-controllers"></span><h2>Basic Controllers<a class="headerlink" href="#module-controllers.root" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="controllers.root.RootController">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">controllers.root.</span></span><span class="sig-name descname"><span class="pre">RootController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/root.html#RootController"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.root.RootController" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#controllers.base.BaseController" title="controllers.base.BaseController"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseController</span></code></a></p>
+<p>Root Web Controller</p>
+</dd></dl>
+
+<dl class="py class" id="module-controllers.base">
+<dt class="sig sig-object py" id="controllers.base.BaseController">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">controllers.base.</span></span><span class="sig-name descname"><span class="pre">BaseController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/base.html#BaseController"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.base.BaseController" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Resource</span></code></p>
+<p>Web Base Controller</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.base.BaseController.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/base.html#BaseController.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.base.BaseController.__init__" title="Link to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>path: Base path</p></li>
+<li><p>session: (?) Session instance</p></li>
+<li><p>withMainTemplate: (?)</p></li>
+<li><p>isJson: responses shall be JSON encoded</p></li>
+<li><p>isCustom: (?)</p></li>
+<li><p>isGZ: responses shall be GZIP compressed</p></li>
+<li><p>isImage: (?) responses shall image</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.base.BaseController.error404">
+<span class="sig-name descname"><span class="pre">error404</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/base.html#BaseController.error404"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.base.BaseController.error404" title="Link to this definition"></a></dt>
+<dd><p>Perform HTTP Error 404</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.base.BaseController.getChild">
+<span class="sig-name descname"><span class="pre">getChild</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/base.html#BaseController.getChild"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.base.BaseController.getChild" title="Link to this definition"></a></dt>
+<dd><p>Retrieve a ‘child’ resource from me.</p>
+<p>Implement this to create dynamic resource generation – resources which
+are always available may be registered with self.putChild().</p>
+<p>This will not be called if the class-level variable ‘isLeaf’ is set in
+your subclass; instead, the ‘postpath’ attribute of the request will be
+left as a list of the remaining path elements.</p>
+<p>For example, the URL /foo/bar/baz will normally be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span> <span class="n">site</span><span class="o">.</span><span class="n">resource</span><span class="o">.</span><span class="n">getChild</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">getChild</span><span class="p">(</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">getChild</span><span class="p">(</span><span class="s1">&#39;baz&#39;</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>However, if the resource returned by ‘bar’ has isLeaf set to true, then
+the getChild call will never be made on it.</p>
+<p>Parameters and return value have the same meaning and requirements as
+those defined by L{IResource.getChildWithDefault}.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.base.BaseController.render">
+<span class="sig-name descname"><span class="pre">render</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/base.html#BaseController.render"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.base.BaseController.render" title="Link to this definition"></a></dt>
+<dd><p>Render a given resource. See L{IResource}’s render method.</p>
+<p>I delegate to methods of self with the form ‘render_METHOD’
+where METHOD is the HTTP that was used to make the
+request. Examples: render_GET, render_HEAD, render_POST, and
+so on. Generally you should implement those methods instead of
+overriding this one.</p>
+<p>render_METHOD methods are expected to return a byte string which will be
+the rendered page, unless the return value is C{server.NOT_DONE_YET}, in
+which case it is this class’s responsibility to write the results using
+C{request.write(data)} and then call C{request.finish()}.</p>
+<p>Old code that overrides render() directly is likewise expected
+to return a byte string or NOT_DONE_YET.</p>
+<p>&#64;see: L{IResource.render}</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py data" id="module-controllers.utilities">
+<dt class="sig sig-object py" id="controllers.utilities.NS">
+<span class="sig-prename descclassname"><span class="pre">controllers.utilities.</span></span><span class="sig-name descname"><span class="pre">NS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'DVB-C':</span> <span class="pre">4294901760,</span> <span class="pre">'DVB-T':</span> <span class="pre">4008574976}</span></em><a class="headerlink" href="#controllers.utilities.NS" title="Link to this definition"></a></dt>
+<dd><p>Label:Namespace map</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="controllers.utilities.NS_DVB_C">
+<span class="sig-prename descclassname"><span class="pre">controllers.utilities.</span></span><span class="sig-name descname"><span class="pre">NS_DVB_C</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4294901760</span></em><a class="headerlink" href="#controllers.utilities.NS_DVB_C" title="Link to this definition"></a></dt>
+<dd><p>Namespace - DVB-C services</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="controllers.utilities.NS_DVB_T">
+<span class="sig-prename descclassname"><span class="pre">controllers.utilities.</span></span><span class="sig-name descname"><span class="pre">NS_DVB_T</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4008574976</span></em><a class="headerlink" href="#controllers.utilities.NS_DVB_T" title="Link to this definition"></a></dt>
+<dd><p>Namespace - DVB-T services</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="controllers.utilities.NS_LOOKUP">
+<span class="sig-prename descclassname"><span class="pre">controllers.utilities.</span></span><span class="sig-name descname"><span class="pre">NS_LOOKUP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{4008574976:</span> <span class="pre">'DVB-T',</span> <span class="pre">4294901760:</span> <span class="pre">'DVB-C'}</span></em><a class="headerlink" href="#controllers.utilities.NS_LOOKUP" title="Link to this definition"></a></dt>
+<dd><p>Namespace:Label lookup map</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="controllers.utilities.create_servicereference">
+<span class="sig-prename descclassname"><span class="pre">controllers.utilities.</span></span><span class="sig-name descname"><span class="pre">create_servicereference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/utilities.html#create_servicereference"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.utilities.create_servicereference" title="Link to this definition"></a></dt>
+<dd><p>Generate a (Enigma2 style) service reference string representation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong><strong>[</strong><strong>0</strong><strong>]</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>) – Service Reference Parameter as dict</p></li>
+<li><p><strong>service_type</strong> (<em>int</em>) – Service Type</p></li>
+<li><p><strong>sid</strong> (<em>int</em>) – SID</p></li>
+<li><p><strong>tsid</strong> (<em>int</em>) – TSID</p></li>
+<li><p><strong>oid</strong> (<em>int</em>) – OID</p></li>
+<li><p><strong>ns</strong> (<em>int</em>) – Enigma2 Namespace</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="controllers.utilities.get_config_attribute">
+<span class="sig-prename descclassname"><span class="pre">controllers.utilities.</span></span><span class="sig-name descname"><span class="pre">get_config_attribute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">head</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/utilities.html#get_config_attribute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.utilities.get_config_attribute" title="Link to this definition"></a></dt>
+<dd><p>Determine attribute of <em>root_obj</em> to be accessed by <em>path</em> in a
+(somewhat) safe manner.
+This implementation will allow key and index based accessing too
+(e.g. <code class="docutils literal notranslate"><span class="pre">config.some_list[0]</span></code> or <code class="docutils literal notranslate"><span class="pre">config.some_dict['some_key']</span></code>)
+The <em>path</em> value needs to start with <em>head</em> (default=’config’).</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>path: character string specifying which attribute is to be accessed
+root_obj: An object whose attributes are to be accessed.
+head: Value of the first portion of <em>path</em></p>
+</dd>
+<dt>Returns:</dt><dd><p>Attribute of <em>root_obj</em></p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: If <em>path</em> is invalid.
+AttributeError: If attribute cannot be accessed</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="controllers.utilities.lenient_decode">
+<span class="sig-prename descclassname"><span class="pre">controllers.utilities.</span></span><span class="sig-name descname"><span class="pre">lenient_decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/utilities.html#lenient_decode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.utilities.lenient_decode" title="Link to this definition"></a></dt>
+<dd><p>Decode an encoded string and convert it to an unicode string.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>value: input value
+encoding: string encoding, defaults to utf-8</p>
+</dd>
+<dt>Returns:</dt><dd><p>(unicode) decoded value</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lenient_decode</span><span class="p">(</span><span class="s2">&quot;Hallo&quot;</span><span class="p">)</span>
+<span class="go">u&#39;Hallo&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lenient_decode</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;Hallo&quot;</span><span class="p">)</span>
+<span class="go">u&#39;Hallo&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lenient_decode</span><span class="p">(</span><span class="s2">&quot;HällöÜ&quot;</span><span class="p">)</span>
+<span class="go">u&#39;H\xe4ll\xf6\xdc&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="controllers.utilities.lenient_force_utf_8">
+<span class="sig-prename descclassname"><span class="pre">controllers.utilities.</span></span><span class="sig-name descname"><span class="pre">lenient_force_utf_8</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/utilities.html#lenient_force_utf_8"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.utilities.lenient_force_utf_8" title="Link to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><p>value: input value</p>
+</dd>
+<dt>Returns:</dt><dd><p>(basestring) utf-8 encoded value</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">lenient_force_utf_8</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">),</span> <span class="n">basestring</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lenient_force_utf_8</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;Hallo&quot;</span><span class="p">)</span>
+<span class="go">&#39;Hallo&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lenient_force_utf_8</span><span class="p">(</span><span class="s2">&quot;HällöÜ&quot;</span><span class="p">)</span>
+<span class="go">&#39;H\xc3\xa4ll\xc3\xb6\xc3\x9c&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="controllers.utilities.parse_servicereference">
+<span class="sig-prename descclassname"><span class="pre">controllers.utilities.</span></span><span class="sig-name descname"><span class="pre">parse_servicereference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">serviceref</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/utilities.html#parse_servicereference"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.utilities.parse_servicereference" title="Link to this definition"></a></dt>
+<dd><p>Parse a Enigma2 style service reference string representation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>serviceref</strong> (<em>string</em>) – Enigma2 style service reference</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sref</span> <span class="o">=</span> <span class="s1">&#39;1:0:1:300:7:85:00c00000:0:0:0:&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">parse_servicereference</span><span class="p">(</span><span class="n">sref</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span>
+<span class="go">{&#39;service_type&#39;: 1, &#39;oid&#39;: 133, &#39;tsid&#39;: 7, &#39;ns&#39;: 12582912, &#39;sid&#39;: 768}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sref_g</span> <span class="o">=</span> <span class="n">create_servicereference</span><span class="p">(</span><span class="o">**</span><span class="n">result</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sref_g</span>
+<span class="go">&#39;1:0:1:300:7:85:00c00000:0:0:0:&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sref_g2</span> <span class="o">=</span> <span class="n">create_servicereference</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sref_g2</span>
+<span class="go">&#39;1:0:1:300:7:85:00c00000:0:0:0:&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sref</span> <span class="o">==</span> <span class="n">sref_g</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sref2</span> <span class="o">=</span> <span class="s1">&#39;1:64:A:0:0:0:0:0:0:0::SKY Sport&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result2</span> <span class="o">=</span> <span class="n">parse_servicereference</span><span class="p">(</span><span class="n">sref2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result2</span>
+<span class="go">{&#39;service_type&#39;: 10, &#39;oid&#39;: 0, &#39;tsid&#39;: 0, &#39;ns&#39;: 0, &#39;sid&#39;: 0}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sref3</span> <span class="o">=</span> <span class="s1">&#39;1:0:0:0:0:0:0:0:0:0:/media/hdd/movie/20170921 2055 - DASDING - DASDING Sprechstunde - .ts&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result3</span> <span class="o">=</span> <span class="n">parse_servicereference</span><span class="p">(</span><span class="n">sref3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result3</span>
+<span class="go">{&#39;service_type&#39;: 0, &#39;oid&#39;: 0, &#39;tsid&#39;: 0, &#39;ns&#39;: 0, &#39;sid&#39;: 0}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="controllers.utilities.sanitise_filename_slashes">
+<span class="sig-prename descclassname"><span class="pre">controllers.utilities.</span></span><span class="sig-name descname"><span class="pre">sanitise_filename_slashes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/utilities.html#sanitise_filename_slashes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.utilities.sanitise_filename_slashes" title="Link to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><p>value: input value</p>
+</dd>
+<dt>Returns:</dt><dd><p>value w/o multiple slashes</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">in_value</span> <span class="o">=</span> <span class="s2">&quot;///tmp/x/y/z&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expected</span> <span class="o">=</span> <span class="n">sub</span><span class="p">(</span><span class="s2">&quot;^/+&quot;</span><span class="p">,</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="s2">&quot;///tmp/x/y/z&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sanitise_filename_slashes</span><span class="p">(</span><span class="n">in_value</span><span class="p">)</span> <span class="o">==</span> <span class="n">expected</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-controllers.web">
+<span id="web-controllers"></span><h2>Web Controllers<a class="headerlink" href="#module-controllers.web" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="controllers.web.ApiController">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">controllers.web.</span></span><span class="sig-name descname"><span class="pre">ApiController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#ApiController"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.ApiController" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#controllers.web.WebController" title="controllers.web.WebController"><code class="xref py py-class docutils literal notranslate"><span class="pre">WebController</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="controllers.web.WebController">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">controllers.web.</span></span><span class="sig-name descname"><span class="pre">WebController</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#controllers.base.BaseController" title="controllers.base.BaseController"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseController</span></code></a></p>
+<p>HTTP Web Controller</p>
+<p>Fork of <em>Enigma2 WebInterface API</em> as described in e.g.
+<a class="reference external" href="https://dream.reichholf.net/e2web/">https://dream.reichholf.net/e2web/</a>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_about">
+<span class="sig-name descname"><span class="pre">P_about</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_about"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_about" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>about</cite> endpoint.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#about">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#about</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_addlocation">
+<span class="sig-name descname"><span class="pre">P_addlocation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_addlocation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_addlocation" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>addlocation</cite> endpoint.
+Add a path to the list of paths where video files are stored.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#addlocation">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#addlocation</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_bouquets">
+<span class="sig-name descname"><span class="pre">P_bouquets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_bouquets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_bouquets" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>boquets</cite> endpoint.
+Get list of tuples (bouquet reference, bouquet name) for available
+bouquets.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not available in <em>Enigma2 WebInterface API</em>.</p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_currenttime">
+<span class="sig-name descname"><span class="pre">P_currenttime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_currenttime"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_currenttime" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>currenttime</cite> endpoint.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#currenttime">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#currenttime</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_deviceinfo">
+<span class="sig-name descname"><span class="pre">P_deviceinfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_deviceinfo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_deviceinfo" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>deviceinfo</cite> endpoint.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#deviceinfo">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#deviceinfo</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_epgmulti">
+<span class="sig-name descname"><span class="pre">P_epgmulti</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_epgmulti"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_epgmulti" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>epgmulti</cite> endpoint.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not available in <em>Enigma2 WebInterface API</em>.</p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_epgsearch">
+<span class="sig-name descname"><span class="pre">P_epgsearch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_epgsearch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_epgsearch" title="Link to this definition"></a></dt>
+<dd><p>EPG event search and lookup handler.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>One may use
+<code class="xref py py-func docutils literal notranslate"><span class="pre">controllers.events.EventsController.search()</span></code> for
+searching events.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#epgsearch">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#epgsearch</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_epgxmltv">
+<span class="sig-name descname"><span class="pre">P_epgxmltv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_epgxmltv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_epgxmltv" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>epgxmltv</cite> endpoint.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not available in <em>Enigma2 WebInterface API</em>.</p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object
+bRef: mandatory, method uses epgmulti
+lang: mandatory, needed for xmltv and Enigma2 has no parameter for epg language</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_external">
+<span class="sig-name descname"><span class="pre">P_external</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_external"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_external" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>external</cite> endpoint.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#external">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#external</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_getallservices">
+<span class="sig-name descname"><span class="pre">P_getallservices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_getallservices"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_getallservices" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>getallservices</cite> endpoint.
+Retrieve list of services in bouquets.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#getallservices">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#getallservices</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_getaudiotracks">
+<span class="sig-name descname"><span class="pre">P_getaudiotracks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_getaudiotracks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_getaudiotracks" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>/getaudiotracks</cite> endpoint.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#getaudiotracks">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#getaudiotracks</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_getcurrent">
+<span class="sig-name descname"><span class="pre">P_getcurrent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_getcurrent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_getcurrent" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>getcurrent</cite> endpoint.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#getcurrent">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#getcurrent</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+<dl class="http get">
+<dt class="sig sig-object http" id="get--web-getcurrent">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/web/getcurrent</span></span><a class="headerlink" href="#get--web-getcurrent" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_getcurrlocation">
+<span class="sig-name descname"><span class="pre">P_getcurrlocation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_getcurrlocation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_getcurrlocation" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>getcurrlocation</cite> endpoint.
+Get currently selected path where video files are to be stored.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#getcurrlocation">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#getcurrlocation</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_getlocations">
+<span class="sig-name descname"><span class="pre">P_getlocations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_getlocations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_getlocations" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>getlocations</cite> endpoint.
+Retrieve paths where video files are stored.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#getlocations">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#getlocations</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_getpicon">
+<span class="sig-name descname"><span class="pre">P_getpicon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_getpicon"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_getpicon" title="Link to this definition"></a></dt>
+<dd><p>Get the picon from service.</p>
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-getpicon">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/getpicon</span></span><a class="headerlink" href="#get--api-getpicon" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sRef</strong> (<em>string</em>) – service refrerence</p></li>
+<li><p><strong>path</strong> (<em>string</em>) – path of the picons</p></li>
+<li><p><strong>json</strong> (<em>string</em>) – result as json</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_getpid">
+<span class="sig-name descname"><span class="pre">P_getpid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_getpid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_getpid" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>getpid</cite> endpoint.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#getpid">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#getpid</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_getserviceref">
+<span class="sig-name descname"><span class="pre">P_getserviceref</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_getserviceref"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_getserviceref" title="Link to this definition"></a></dt>
+<dd><p>Get the serviceref from name.</p>
+<dl class="http get">
+<dt class="sig sig-object http" id="get--api-getserviceref">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/api/getserviceref</span></span><a class="headerlink" href="#get--api-getserviceref" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>string</em>) – service name to find</p></li>
+<li><p><strong>searchinBouquetsOnly</strong> (<em>string</em>) – must be ‘true’</p></li>
+<li><p><strong>bRef</strong> (<em>string</em>) – define only one single bouquet where to find</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_getservices">
+<span class="sig-name descname"><span class="pre">P_getservices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_getservices"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_getservices" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>getservices</cite> endpoint.
+Retrieve list of bouquets.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#getservices">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#getservices</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_getsubtitles">
+<span class="sig-name descname"><span class="pre">P_getsubtitles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_getsubtitles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_getsubtitles" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>getsubtitles</cite> endpoint.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not available in <em>Enigma2 WebInterface API</em>.</p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_gettags">
+<span class="sig-name descname"><span class="pre">P_gettags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_gettags"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_gettags" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>gettags</cite> endpoint.
+Get tags of movie file (?).</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#gettags">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#gettags</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_loadepg">
+<span class="sig-name descname"><span class="pre">P_loadepg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_loadepg"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_loadepg" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>loadepg</cite> endpoint.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not available in <em>Enigma2 WebInterface API</em>.</p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_message">
+<span class="sig-name descname"><span class="pre">P_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_message" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>message</cite> endpoint.
+Display a message on the screen attached to enigma2 device.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#message">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#message</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_messageanswer">
+<span class="sig-name descname"><span class="pre">P_messageanswer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_messageanswer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_messageanswer" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>messageanswer</cite> endpoint.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#messageanswer">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#messageanswer</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_moviecopy">
+<span class="sig-name descname"><span class="pre">P_moviecopy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_moviecopy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_moviecopy" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>moviecopy</cite> endpoint.
+Copy movie file.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#moviecopy">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#moviecopy</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_moviedelete">
+<span class="sig-name descname"><span class="pre">P_moviedelete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_moviedelete"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_moviedelete" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>moviedelete</cite> endpoint.
+Delete movie file.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#moviedelete">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#moviedelete</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_moviedetails">
+<span class="sig-name descname"><span class="pre">P_moviedetails</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_moviedetails"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_moviedetails" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>movie</cite> endpoint.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#moviedetails">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#moviedetails</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_movieinfo">
+<span class="sig-name descname"><span class="pre">P_movieinfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_movieinfo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_movieinfo" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>movie</cite> endpoint.
+Add/Remove tags to movie file. Multiple tags needs to separate by ,
+Remame title of movie.
+Get/set movie cuts.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#movieinfo">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#movieinfo</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_movielist">
+<span class="sig-name descname"><span class="pre">P_movielist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_movielist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_movielist" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>movielist</cite> endpoint.
+Retrieve list of movie items. (alternative implementation)</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#movielist">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#movielist</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_movielisthtml">
+<span class="sig-name descname"><span class="pre">P_movielisthtml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_movielisthtml"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_movielisthtml" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>movielisthtml</cite> endpoint.
+Retrieve list of movie items in HTML format.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#movielisthtml">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#movielisthtml</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_movielistm3u">
+<span class="sig-name descname"><span class="pre">P_movielistm3u</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_movielistm3u"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_movielistm3u" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>movielistm3u</cite> endpoint.
+Retrieve list of movie items in M3U format.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#movielistm3u">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#movielistm3u</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_movielistrss">
+<span class="sig-name descname"><span class="pre">P_movielistrss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_movielistrss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_movielistrss" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>movielistrss</cite> endpoint.
+Retrieve list of movie items in RSS format.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#movielistrss">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#movielistrss</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_moviemove">
+<span class="sig-name descname"><span class="pre">P_moviemove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_moviemove"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_moviemove" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>moviemove</cite> endpoint.
+Move movie file.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#moviemove">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#moviemove</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_movierename">
+<span class="sig-name descname"><span class="pre">P_movierename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_movierename"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_movierename" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>movierename</cite> endpoint.
+Rename movie file.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#movierename">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#movierename</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_movietags">
+<span class="sig-name descname"><span class="pre">P_movietags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_movietags"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_movietags" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>movietags</cite> endpoint.
+Add/Remove tags to movie file.</p>
+<p>DEPRECATED -&gt; use movieinfo instead</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#movietags">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#movietags</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_parentcontrollist">
+<span class="sig-name descname"><span class="pre">P_parentcontrollist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_parentcontrollist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_parentcontrollist" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>parentcontrollist</cite> endpoint.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#parentcontrollist">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#parentcontrollist</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_pluginlistread">
+<span class="sig-name descname"><span class="pre">P_pluginlistread</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_pluginlistread"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_pluginlistread" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>pluginlistread</cite> endpoint.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#pluginlistread">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#pluginlistread</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_powerstate">
+<span class="sig-name descname"><span class="pre">P_powerstate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_powerstate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_powerstate" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>powerstate</cite> endpoint.
+Get/set power state of enigma2 device.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#powerstate">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#powerstate</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_recordnow">
+<span class="sig-name descname"><span class="pre">P_recordnow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_recordnow"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_recordnow" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>recordnow</cite> endpoint.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#recordnow">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#recordnow</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_remotecontrol">
+<span class="sig-name descname"><span class="pre">P_remotecontrol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_remotecontrol"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_remotecontrol" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>remotecontrol</cite> endpoint.
+Send remote control codes.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#remotecontrol">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#remotecontrol</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_removelocation">
+<span class="sig-name descname"><span class="pre">P_removelocation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_removelocation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_removelocation" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>removelocation</cite> endpoint.
+Remove a path from the list of paths where video files are stored.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#removelocation">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#removelocation</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_restarttwisted">
+<span class="sig-name descname"><span class="pre">P_restarttwisted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_restarttwisted"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_restarttwisted" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>restarttwisted</cite> endpoint.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#restarttwisted">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#restarttwisted</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_saveconfig">
+<span class="sig-name descname"><span class="pre">P_saveconfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_saveconfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_saveconfig" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>saveconfig</cite> endpoint.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not available in <em>Enigma2 WebInterface API</em>.</p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+<dl class="http post">
+<dt class="sig sig-object http" id="post--web-saveconfig">
+<span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/web/saveconfig</span></span><a class="headerlink" href="#post--web-saveconfig" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>string</em>) – configuration key</p></li>
+<li><p><strong>value</strong> (<em>string</em>) – configuration value</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_saveepg">
+<span class="sig-name descname"><span class="pre">P_saveepg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_saveepg"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_saveepg" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>saveepg</cite> endpoint.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not available in <em>Enigma2 WebInterface API</em>.</p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_selectaudiotrack">
+<span class="sig-name descname"><span class="pre">P_selectaudiotrack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_selectaudiotrack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_selectaudiotrack" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>/selectaudiotrack</cite> endpoint.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#selectaudiotrack">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#selectaudiotrack</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+<dl class="http get">
+<dt class="sig sig-object http" id="get--web-signal">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/web/signal</span></span><a class="headerlink" href="#get--web-signal" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<em>int</em>) – audio track ID</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_servicelistplayable">
+<span class="sig-name descname"><span class="pre">P_servicelistplayable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_servicelistplayable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_servicelistplayable" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>servicelistplayable</cite> endpoint.
+Retrieve list of ‘playable’ bouquets.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#servicelistplayable">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#servicelistplayable</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_servicelistreload">
+<span class="sig-name descname"><span class="pre">P_servicelistreload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_servicelistreload"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_servicelistreload" title="Link to this definition"></a></dt>
+<dd><p>Reload service lists, transponders, parental control black-/white lists
+or/and lamedb.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#servicelistreload">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#servicelistreload</a></p>
+</div>
+<dl class="http get">
+<dt class="sig sig-object http" id="get--web-servicelistreload">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/web/servicelistreload</span></span><a class="headerlink" href="#get--web-servicelistreload" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mode</strong> (<em>string</em>) – [0=both, 1=lamedb only, 2=userbouqets only, 3=transponders, 4=parentalcontrol white-/blacklist]</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_serviceplayable">
+<span class="sig-name descname"><span class="pre">P_serviceplayable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_serviceplayable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_serviceplayable" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>serviceplayable</cite> endpoint.
+Check if referenced service is ‘playable’.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#serviceplayable">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#serviceplayable</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_servicesm3u">
+<span class="sig-name descname"><span class="pre">P_servicesm3u</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_servicesm3u"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_servicesm3u" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>servicesm3u</cite> endpoint.
+Retrieve list of bouquets(?) in M3U format.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#servicesm3u">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#servicesm3u</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+<dl class="http get">
+<dt class="sig sig-object http" id="get--web-services.m3u">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/web/services.m3u</span></span><a class="headerlink" href="#get--web-services.m3u" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bRef</strong> (<em>string</em>) – bouquet reference</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_servicesxspf">
+<span class="sig-name descname"><span class="pre">P_servicesxspf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_servicesxspf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_servicesxspf" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>servicesxspf</cite> endpoint.
+Retrieve list of bouquets(?) in XSPF format.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+<dl class="http get">
+<dt class="sig sig-object http" id="get--web-services.xspf">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/web/services.xspf</span></span><a class="headerlink" href="#get--web-services.xspf" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bRef</strong> (<em>string</em>) – bouquet reference</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_set_powerup_without_waking_tv">
+<span class="sig-name descname"><span class="pre">P_set_powerup_without_waking_tv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_set_powerup_without_waking_tv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_set_powerup_without_waking_tv" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>set_powerup_without_waking_tv</cite> endpoint.
+Mark ‘powerup without waking TV’ being available.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not available in <em>Enigma2 WebInterface API</em>.</p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_settings">
+<span class="sig-name descname"><span class="pre">P_settings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_settings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_settings" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>settings</cite> endpoint.
+Retrieve list of key/kalue pairs of device configuration.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#settings">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#settings</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_sleeptimer">
+<span class="sig-name descname"><span class="pre">P_sleeptimer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_sleeptimer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_sleeptimer" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>sleeptimer</cite> endpoint.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#sleeptimer">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#sleeptimer</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+<dl class="http get">
+<dt class="sig sig-object http" id="get--web-sleeptimer">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/web/sleeptimer</span></span><a class="headerlink" href="#get--web-sleeptimer" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cmd</strong> (<em>string</em>) – command (<em>get</em> or <em>set</em>)</p></li>
+<li><p><strong>time</strong> (<em>int</em>) – time in minutes (<em>0</em> – <em>999</em>)</p></li>
+<li><p><strong>action</strong> (<em>string</em>) – action (<em>standby</em> or <em>shutdown</em>)</p></li>
+<li><p><strong>enabled</strong> (<em>string</em>) – enabled (<em>True</em> or <em>False</em>)</p></li>
+<li><p><strong>confirmed</strong> (<em>string</em>) – confirmed (supported?)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_streamcurrentm3u">
+<span class="sig-name descname"><span class="pre">P_streamcurrentm3u</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_streamcurrentm3u"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_streamcurrentm3u" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>streamcurrentm3u</cite> endpoint.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#streamcurrentm3u">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#streamcurrentm3u</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+<dl class="http get">
+<dt class="sig sig-object http" id="get--web-streamcurrent.m3u">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/web/streamcurrent.m3u</span></span><a class="headerlink" href="#get--web-streamcurrent.m3u" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_streamm3u">
+<span class="sig-name descname"><span class="pre">P_streamm3u</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_streamm3u"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_streamm3u" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>streamm3u</cite> endpoint.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#streamm3u">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#streamm3u</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Parameters Not available in <em>Enigma2 WebInterface API</em>.</p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+<dl class="http get">
+<dt class="sig sig-object http" id="get--web-stream.m3u">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/web/stream.m3u</span></span><a class="headerlink" href="#get--web-stream.m3u" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ref</strong> (<em>string</em>) – service reference</p></li>
+<li><p><strong>name</strong> (<em>string</em>) – service name</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_streamsubservices">
+<span class="sig-name descname"><span class="pre">P_streamsubservices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_streamsubservices"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_streamsubservices" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>streamsubservices</cite> endpoint.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#streamsubservices">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#streamsubservices</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+<dl class="http get">
+<dt class="sig sig-object http" id="get--web-streamsubservices">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/web/streamsubservices</span></span><a class="headerlink" href="#get--web-streamsubservices" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sRef</strong> (<em>string</em>) – service reference</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_subservices">
+<span class="sig-name descname"><span class="pre">P_subservices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_subservices"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_subservices" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>subservices</cite> endpoint.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#subservices">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#subservices</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_supports_powerup_without_waking_tv">
+<span class="sig-name descname"><span class="pre">P_supports_powerup_without_waking_tv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_supports_powerup_without_waking_tv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_supports_powerup_without_waking_tv" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>supports_powerup_without_waking_tv</cite> endpoint.
+Check if ‘powerup without waking TV’ is available.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not available in <em>Enigma2 WebInterface API</em>.</p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_timeradd">
+<span class="sig-name descname"><span class="pre">P_timeradd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_timeradd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_timeradd" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>timeradd</cite> endpoint.
+Add timer</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#timeradd">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#timeradd</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_timeraddbyeventid">
+<span class="sig-name descname"><span class="pre">P_timeraddbyeventid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_timeraddbyeventid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_timeraddbyeventid" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>timeraddbyeventid</cite> endpoint.
+Add timer by event ID</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#timeraddbyeventid">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#timeraddbyeventid</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_timerchange">
+<span class="sig-name descname"><span class="pre">P_timerchange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_timerchange"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_timerchange" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>timerchange</cite> endpoint.
+Change timer</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#timerchange">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#timerchange</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+<dl class="http get">
+<dt class="sig sig-object http" id="get--web-timerchange">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/web/timerchange</span></span><a class="headerlink" href="#get--web-timerchange" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sRef</strong> (<em>string</em>) – service reference</p></li>
+<li><p><strong>begin</strong> (<em>int</em>) – begin timestamp</p></li>
+<li><p><strong>end</strong> (<em>int</em>) – end timestamp</p></li>
+<li><p><strong>name</strong> (<em>string</em>) – name</p></li>
+<li><p><strong>description</strong> (<em>string</em>) – description</p></li>
+<li><p><strong>channelOld</strong> (<em>string</em>) – old channel(?)</p></li>
+<li><p><strong>beginOld</strong> (<em>int</em>) – old begin timestamp(?)</p></li>
+<li><p><strong>endOld</strong> (<em>int</em>) – old end timestamp(?)</p></li>
+<li><p><strong>justplay</strong> (<em>int</em>) – <em>Just Play</em> indicator</p></li>
+<li><p><strong>dirname</strong> (<em>string</em>) – target path(?)</p></li>
+<li><p><strong>tags</strong> (<em>string</em>) – tags to add(?)</p></li>
+<li><p><strong>always_zap</strong> (<em>int</em>) – always zap first(?)</p></li>
+<li><p><strong>disabled</strong> (<em>int</em>) – disabled state</p></li>
+<li><p><strong>afterevent</strong> (<em>int</em>) – afterevent state</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_timercleanup">
+<span class="sig-name descname"><span class="pre">P_timercleanup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_timercleanup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_timercleanup" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>timercleanup</cite> endpoint.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#timercleanup">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#timercleanup</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_timerdelete">
+<span class="sig-name descname"><span class="pre">P_timerdelete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_timerdelete"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_timerdelete" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>timerdelete</cite> endpoint.
+Delete timer</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#timerdelete">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#timerdelete</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_timerlist">
+<span class="sig-name descname"><span class="pre">P_timerlist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_timerlist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_timerlist" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>timerlist</cite> endpoint.
+Retrieve list of timers.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#timerlist">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#timerlist</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_timerlistwrite">
+<span class="sig-name descname"><span class="pre">P_timerlistwrite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_timerlistwrite"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_timerlistwrite" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>timerlistwrite</cite> endpoint.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#timerlistwrite">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#timerlistwrite</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_timertogglestatus">
+<span class="sig-name descname"><span class="pre">P_timertogglestatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_timertogglestatus"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_timertogglestatus" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>timertogglestatus</cite> endpoint.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not available in <em>Enigma2 WebInterface API</em>.</p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_tsm3u">
+<span class="sig-name descname"><span class="pre">P_tsm3u</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_tsm3u"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_tsm3u" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>tsm3u</cite> endpoint.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#tsm3u">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#tsm3u</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_tsstart">
+<span class="sig-name descname"><span class="pre">P_tsstart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_tsstart"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_tsstart" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>tsstart</cite> endpoint.
+Start timeshift (?).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not available in <em>Enigma2 WebInterface API</em>.</p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_tsstate">
+<span class="sig-name descname"><span class="pre">P_tsstate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">success</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_tsstate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_tsstate" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>tsstate</cite> endpoint.
+Retrieve timeshift status(?).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not available in <em>Enigma2 WebInterface API</em>.</p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_tsstop">
+<span class="sig-name descname"><span class="pre">P_tsstop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_tsstop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_tsstop" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>tsstop</cite> endpoint.
+Stop timeshift (?).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not available in <em>Enigma2 WebInterface API</em>.</p>
+</div>
+<p><em>TODO: improve after action / save , save+record , nothing
+config.timeshift.favoriteSaveAction ….</em></p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_tunersignal">
+<span class="sig-name descname"><span class="pre">P_tunersignal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_tunersignal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_tunersignal" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>tunersignal</cite> endpoint.
+Get tuner signal status(?)</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#signal">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#signal</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+<dl class="http get">
+<dt class="sig sig-object http" id="get--web-signal">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/web/signal</span></span><a class="headerlink" href="#get--web-signal" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_tvbrowser">
+<span class="sig-name descname"><span class="pre">P_tvbrowser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_tvbrowser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_tvbrowser" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>tvbrowser</cite> endpoint.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#tvbrowser">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#tvbrowser</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_vol">
+<span class="sig-name descname"><span class="pre">P_vol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_vol"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_vol" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>vol</cite> endpoint.
+Get/Set current volume setting.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#vol">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#vol</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_vpschannels">
+<span class="sig-name descname"><span class="pre">P_vpschannels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_vpschannels"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_vpschannels" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>vpschannels</cite> endpoint.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not available in <em>Enigma2 WebInterface API</em>.</p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.P_zap">
+<span class="sig-name descname"><span class="pre">P_zap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.P_zap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.P_zap" title="Link to this definition"></a></dt>
+<dd><p>Request handler for the <cite>/zap</cite> endpoint.
+Zap to requested service_reference.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#zap">https://github.com/oe-alliance/OpenWebif/wiki/OpenWebif-API-documentation#zap</a></p>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+<dl class="http get">
+<dt class="sig sig-object http" id="get--web-zap">
+<span class="sig-name descname"><span class="pre">GET</span> </span><span class="sig-name descname"><span class="pre">/web/zap</span></span><a class="headerlink" href="#get--web-zap" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Query Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sRef</strong> (<em>string</em>) – service reference</p></li>
+<li><p><strong>title</strong> (<em>string</em>) – service title</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="controllers.web.WebController.vpsparams">
+<span class="sig-name descname"><span class="pre">vpsparams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/controllers/web.html#WebController.vpsparams"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#controllers.web.WebController.vpsparams" title="Link to this definition"></a></dt>
+<dd><p>VPS related helper function(?)</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>request (twisted.web.server.Request): HTTP request object</p>
+</dd>
+<dt>Returns:</dt><dd><p>HTTP response with headers</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="common.html" class="btn btn-neutral float-left" title="Common" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023 jbleyel and others.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
