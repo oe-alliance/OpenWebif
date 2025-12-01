@@ -2324,7 +2324,8 @@ class WebController(BaseController):
 
 		return {
 			"result": True,
-			"message": "EPG data saved"
+			"message": "EPG data saved",
+			"path": comp_config.misc.epgcache_filename.value
 		}
 
 	def P_loadepg(self, request):
