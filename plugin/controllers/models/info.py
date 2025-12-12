@@ -514,14 +514,15 @@ def getInfo(session=None, need_fullinfo=False):
 				# print(f"[OpenWebif] -D- recs count '{len(recs)}'")
 
 				for rec in recs:
-					feinfo = rec.frontendInfo()
-					frontenddata = feinfo and feinfo.getAll(True)
-					if frontenddata is not None:
-						cur_info = feinfo.getTransponderData(True)
-						if cur_info:
-							nr = frontenddata["tuner_number"]
-							if nr in servicenames:
-								info["tuners"][nr]["rec"] = f"{getOrbitalText(cur_info)} / {servicenames[nr]}"
+					if hasattr(rec, "frontendInfo"):
+						feinfo = rec.frontendInfo()
+						frontenddata = feinfo and feinfo.getAll(True)
+						if frontenddata is not None:
+							cur_info = feinfo.getTransponderData(True)
+							if cur_info:
+								nr = frontenddata["tuner_number"]
+								if nr in servicenames:
+									info["tuners"][nr]["rec"] = f"{getOrbitalText(cur_info)} / {servicenames[nr]}"
 
 			service = session.nav.getCurrentService()
 			for sinfo in info["streams"]:
@@ -542,7 +543,7 @@ def getInfo(session=None, need_fullinfo=False):
 						info["tuners"][nr]["live"] = f"{getOrbitalText(cur_info)} / {sname}"
 
 		except Exception as error:
-			info["EX"] = error
+			info["EX"] = str(error)
 
 	info["timerpipzap"] = False
 	info["allow_duplicate"] = False
