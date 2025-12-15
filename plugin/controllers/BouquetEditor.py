@@ -318,7 +318,9 @@ class BouquetEditor(Source):
 		mutablebouquetlist = self.getMutableList(bouquetref)
 		if mutablebouquetlist is not None:
 			if srefurl:
-				ref = eServiceReference(4097, 0, sref)
+				stype = sbouquetref.split(":")[2]
+				ref = eServiceReference(f"4097:0:{stype}:0:0:0:0:0:0:0")
+				ref.setPath(sref)
 			else:
 				ref = eServiceReference(sref)
 			if sname:
