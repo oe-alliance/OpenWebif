@@ -553,7 +553,7 @@ def getServices(sref, showall=True, showhidden=False, pos=0, showproviders=False
 				flags = int(sref.split(":")[1])
 				hs = flags & 512  # eServiceReference.isInvisible
 				sp = flags & 256  # eServiceReference.isNumberedMarker
-				#sp = (sref[:7] == '1:832:D') or (sref[:7] == '1:832:1') or (sref[:6] == '1:320:')
+				# sp = (sref[:7] == '1:832:D') or (sref[:7] == '1:832:1') or (sref[:6] == '1:320:')
 				if not hs or sp:  # 512 is hidden service on sifteam image. Doesn't affect other images
 					opos = opos + 1
 					if not sp and flags & 64:  # eServiceReference.isMarker:
@@ -740,7 +740,7 @@ def getTimerEventStatus(starttime, endtime, sref, timers=None):
 	# we cannot simply check against timer.eit, because a timer
 	# does not necessarily have one belonging to an epg event id.
 
-	#catch ValueError
+	# catch ValueError
 	endtime = endtime - 120  # TODO: find out what this 120 means
 	timerlist = {}
 	if not timers:
@@ -792,7 +792,7 @@ def getEvent(sref, eventid, encode=True):
 		info['genre'], info['genreid'] = convertGenre(event[8])
 		info['picon'] = getPicon(event[7])
 		info['timer'] = getTimerEventStatus(event[1], event[1] + event[2], eventlookuptable, None)
-		info['link'] = getIPTVLink(event[7])
+		info['link'] = getIPTVLink(event[7]).replace("%253a", ":")
 	return {'event': info}
 
 

@@ -46,12 +46,17 @@
 		</td>
 		</tr>
 		<tr>
-			#if $transcoding
-			<td><a href="#" onclick="jumper8001('$sref', '$channel');" title="$tstrings['stream']: $channel"><i class="fa fa-desktop" style="font-size:22px;"></i></a></td>
-			<td><a href="#" onclick="jumper8002('$sref', '$channel');" title="$tstrings['stream'] ($tstrings['transcoded']): $channel"><i class="fa fa-mobile" style="font-size:26px;margin-top:-3px;"></i></a></td>
+			#if $event.link != ""
+				<td><a target="_blank" href='$event.link' title="$tstrings['stream'] $channel"><i class="fa fa-desktop" style="font-size:22px;"></i></a></td>
+				<td></td>
 			#else
-			<td><a target="_blank" href='../web/stream.m3u?ref=$sref&name=$channel' title="$tstrings['stream'] $channel"><i class="fa fa-desktop" style="font-size:22px;"></i></a></td>
-			<td></td>
+				#if $transcoding
+				<td><a href="#" onclick="jumper8001('$sref', '$channel');" title="$tstrings['stream']: $channel"><i class="fa fa-desktop" style="font-size:22px;"></i></a></td>
+				<td><a href="#" onclick="jumper8002('$sref', '$channel');" title="$tstrings['stream'] ($tstrings['transcoded']): $channel"><i class="fa fa-mobile" style="font-size:26px;margin-top:-3px;"></i></a></td>
+				#else
+				<td><a target="_blank" href='../web/stream.m3u?ref=$sref&name=$channel' title="$tstrings['stream'] $channel"><i class="fa fa-desktop" style="font-size:22px;"></i></a></td>
+				<td></td>
+				#end if
 			#end if
 		</tr>
 		<tr>
