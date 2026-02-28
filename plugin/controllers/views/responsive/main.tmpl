@@ -390,11 +390,7 @@
 								#set $target_url = $extra["key"];
 								#if $target_url not in ('ajax/at','ajax/bqe','ajax/settings')
 									#if 'nw' in $extra
-										#if $extra["nw"] == "1"
 										<li><a href="$target_url" target='_blank'>$extra["description"]</a></li>
-										#else
-										<li><a href="$target_url" class="lmc pop">$extra["description"]</a></li>
-										#end if
 									#else
 										<li><a href='javascript:void(0);' data-close="true" onclick="load_maincontent('$target_url'); return false;" >$extra["description"]</a></li>
 									#end if
