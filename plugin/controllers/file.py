@@ -40,7 +40,7 @@ def new_getRequestHostname(self):
 	return self.getHost().host.encode('ascii')
 
 # Do wee need this?
-#http.Request.getRequestHostname = new_getRequestHostname
+# http.Request.getRequestHostname = new_getRequestHostname
 
 
 class FileController(resource.Resource):
@@ -69,7 +69,7 @@ class FileController(resource.Resource):
 
 				response = f"#EXTM3U\n#EXTVLCOPT:http-reconnect=true\n#EXTINF:-1,{name}\n{proto}://{request.getRequestHostname()}:{port}/file?action=download&file={quote(filename)}"
 				request.setHeader("Content-Disposition", f'attachment;filename="{name}.m3u"')
-				request.setHeader("Content-Type", "application/x-mpegurl")
+				request.setHeader("Content-Type", "application/octet-stream")
 				return response
 			elif action == "delete":
 				request.setResponseCode(http.OK)

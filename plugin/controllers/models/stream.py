@@ -145,11 +145,12 @@ def getStream(session, request, m3ufile):
 		if "http://" in sref or "https://" in sref:
 			link = sref.split(":http")[1]
 			response = f"#EXTM3U \n#EXTVLCOPT:http-reconnect=true\n{progopt}http{link}\n"
-	request.setHeader("Content-Type", "application/x-mpegurl")
+
+	request.setHeader("Content-Type", "application/octet-stream")
 	# Note: do not rename the m3u file all the time
 	fname = getUrlArg(request, "fname")
 	if fname is not None:
-		request.setHeader("Content-Disposition", f"inline; filename={fname}.m3u8;")
+		request.setHeader("Content-Disposition", f"attachment; filename={fname}.m3u8;")
 	return response
 
 
@@ -258,7 +259,7 @@ def getTS(self, request):
 			auth = ""
 
 		response = f"#EXTM3U \n#EXTVLCOPT:http-reconnect=true \n{progopt}{proto}://{auth}{request.getRequestHostname()}:{portnumber}/file?file={quote(filename)}{args}\n"
-		request.setHeader("Content-Type", "application/x-mpegurl")
+		request.setHeader("Content-Type", "application/octet-stream")
 		return response
 	else:
 		return "Missing file parameter"

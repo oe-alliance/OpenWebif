@@ -555,7 +555,7 @@ class WebController(BaseController):
 		bouquetname = getUrlArg(request, "bName")
 		if bouquetname:
 			bouquetname = bouquetname.replace(",", "_").replace(";", "_")
-			request.setHeader('Content-Disposition', f'inline; filename={bouquetname}.xspf;')
+			request.setHeader('Content-Disposition', f'attachment; filename={bouquetname}.xspf;')
 		services = getServices(bref, False)
 		if comp_config.OpenWebif.auth_for_streaming.value:
 			session = GetSession()
@@ -590,11 +590,11 @@ class WebController(BaseController):
 			:query string bRef: bouquet reference
 		"""
 		bref = getUrlArg(request, "bRef", "")
-		request.setHeader('Content-Type', 'application/x-mpegurl')
+		request.setHeader('Content-Type', 'application/octet-stream')
 		bouquetname = getUrlArg(request, "bName")
 		if bouquetname:
 			bouquetname = bouquetname.replace(",", "_").replace(";", "_")
-			request.setHeader('Content-Disposition', f'inline; filename={bouquetname}.m3u8;')
+			request.setHeader('Content-Disposition', f'attachment; filename={bouquetname}.m3u8;')
 		services = getServices(bref, False)
 		if comp_config.OpenWebif.auth_for_streaming.value:
 			session = GetSession()
@@ -820,7 +820,7 @@ class WebController(BaseController):
 		Returns:
 			HTTP response with headers
 		"""
-		request.setHeader('Content-Type', 'application/x-mpegurl')
+		request.setHeader('Content-Type', 'application/octet-stream')
 		movielist = getMovieList(request.args)
 		movielist["host"] = f"{whoami(request)['proto']}://{request.getRequestHostname()}:{whoami(request)['port']}"
 		return movielist
