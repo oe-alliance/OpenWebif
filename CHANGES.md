@@ -1,3 +1,6 @@
+## Version 2.2.3
+* improve m3u browser handling
+
 ## Version 2.2.2
 * add allservices and allservicescsv
 
