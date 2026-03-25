@@ -47,8 +47,10 @@
 		</tr>
 		<tr>
 			#if $event.link != ""
-				<td><a target="_blank" href='$event.link' title="$tstrings['stream'] $channel"><i class="fa fa-desktop" style="font-size:22px;"></i></a></td>
-				<td></td>
+				#if $event.link != "NoStream"
+					<td><a target="_blank" href='$event.link' title="$tstrings['stream'] $channel"><i class="fa fa-desktop" style="font-size:22px;"></i></a></td>
+					<td></td>
+				#end if
 			#else
 				#if $transcoding
 				<td><a href="#" onclick="jumper8001('$sref', '$channel');" title="$tstrings['stream']: $channel"><i class="fa fa-desktop" style="font-size:22px;"></i></a></td>

@@ -41,7 +41,9 @@
 			<button type="button" onclick="zapChannel('$sRefQuoteEscaped', '$channelQuoteEscaped');" class="link--not-skinned" title="$tstrings['zap_to'] $channel"><i class="icon material-icons material-icons-centered">settings_remote</i></button>
 
 		#if $event.link != ""
-			<a href="$event.link" class="now-next__external-link link--not-skinned" target="extlink" title="$tstrings['open_in_new_window']"><i class="material-icons material-icons-centered">phonelink</i></a>
+			#if $event.link != "NoStream"
+				<a href="$event.link" class="now-next__external-link link--not-skinned" target="extlink" title="$tstrings['open_in_new_window']"><i class="material-icons material-icons-centered">phonelink</i></a>
+			#end if
 		#else
 			<button type="button" onclick="open_epg_dialog('$sRefQuoteEscaped', '$channelQuoteEscaped');" class="link--not-skinned" title="$tstrings['show_epg_for'] $channel" data-toggle="modal" data-target="#EPGModal"><i class="icon material-icons material-icons-centered">event_note</i></button>
 			<button type="button" onclick="jumper8001('$sRefQuoteEscaped', '$channelQuoteEscaped');" class="link--not-skinned" title="$tstrings['stream'] $channel"><i class="icon material-icons material-icons-centered">ondemand_video</i></button>

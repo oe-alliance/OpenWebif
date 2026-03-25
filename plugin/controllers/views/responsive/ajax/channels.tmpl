@@ -81,7 +81,9 @@
 					<button type="button" onclick="zapChannel('$sRefQuoteEscaped', '$channelName');" class="link--not-skinned" title="$tstrings['zap_to'] $channel.name"><i class="icon material-icons material-icons-centered">settings_remote</i></button>
 
 		#if $channel.link != ""
-					<a href="$channel.link" class="now-next__external-link link--not-skinned" target="extlink" title="$tstrings['open_in_new_window']"><i class="material-icons material-icons-centered">phonelink</i></a>
+			#if $channel.link != "NoStream"
+				<a href="$channel.link" class="now-next__external-link link--not-skinned" target="extlink" title="$tstrings['open_in_new_window']"><i class="material-icons material-icons-centered">phonelink</i></a>
+			#end if
 		#else
 			#set $epgDisabledState = ''
 			#if not 'now_title' in $channel

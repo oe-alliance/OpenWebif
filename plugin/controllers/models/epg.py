@@ -86,6 +86,8 @@ def getIPTVLink(ref):
 			ref = ref[ref.index("http"):]
 			ref = ref.replace("%3a", ":").replace("%3A", ":").replace("http://127.0.0.1:8088/", "")
 			return ref
+		else:
+			return "NoStream"
 	return ""
 
 
