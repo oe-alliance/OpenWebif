@@ -80,17 +80,17 @@
 
 					<button type="button" onclick="zapChannel('$sRefQuoteEscaped', '$channelName');" class="link--not-skinned" title="$tstrings['zap_to'] $channel.name"><i class="icon material-icons material-icons-centered">settings_remote</i></button>
 
+		#set $epgDisabledState = ''
+		#if not 'now_title' in $channel
+			#set $epgDisabledState = 'disabled'
+		#end if
+		<button type="button" onclick="open_epg_dialog('$sRefQuoteEscaped','$channelName');" $epgDisabledState class="link--not-skinned" title="$tstrings['show_epg_for'] $channel.name" data-toggle="modal" data-target="#EPGModal"><i class="icon material-icons material-icons-centered">event_note</i></button>
 		#if $channel.link != ""
 			#if $channel.link != "NoStream"
 				<a href="$channel.link" class="now-next__external-link link--not-skinned" target="extlink" title="$tstrings['open_in_new_window']"><i class="material-icons material-icons-centered">phonelink</i></a>
 			#end if
 		#else
-			#set $epgDisabledState = ''
-			#if not 'now_title' in $channel
-				#set $epgDisabledState = 'disabled'
-			#end if
-					<button type="button" onclick="open_epg_dialog('$sRefQuoteEscaped','$channelName');" $epgDisabledState class="link--not-skinned" title="$tstrings['show_epg_for'] $channel.name" data-toggle="modal" data-target="#EPGModal"><i class="icon material-icons material-icons-centered">event_note</i></button>
-					<button type="button" onclick="jumper8001('$sRefQuoteEscaped', '$channelName');" class="link--not-skinned" title="$tstrings['stream'] $channel.name"><i class="icon material-icons material-icons-centered">ondemand_video</i></button>
+			<button type="button" onclick="jumper8001('$sRefQuoteEscaped', '$channelName');" class="link--not-skinned" title="$tstrings['stream'] $channel.name"><i class="icon material-icons material-icons-centered">ondemand_video</i></button>
 			#if $transcoding
 					<button type="button" onclick="jumper8002('$sRefQuoteEscaped', '$channelName');" class="link--not-skinned" title="$tstrings['stream'] ($tstrings['transcoded']) $channel.name"><i class="icon material-icons material-icons-centered">smartphone</i></button>
 			#end if
