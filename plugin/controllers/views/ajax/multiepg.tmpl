@@ -115,7 +115,7 @@
 	#set $ref= ""
 	#if $evl
 		#set $ev=$evl[0]
-		#set $ref = "data-ref='" + $ev.ref + "'"
+		#set $ref = "data-ref='" + $ev.ref.replace('%253a//','%3a//') + "'"
 	#end if
 	<td class="border"><div class="service ui-widget-header" $ref><img src="$(picons[$sname])" /> $sname</div></td>
 	#end for
@@ -195,7 +195,7 @@
 					#for $event in $eventlist[0]
 					#set pad = 0
 					#if $c == 0
-						#set $ref = quote(event['ref'], safe=' ~@#$()*!+=:;,.?/\'')
+						#set $ref = quote(event['ref'], safe=' ~@#$()*!+=:;,.?/\'').replace('%253a//','%3a//')
 						#set pad = 141 + ($event.begin_timestamp - $first) / 6
 						<li class="event" style=;width:${pad}px;">
 						</li>

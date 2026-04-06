@@ -22,7 +22,7 @@ class renderEvtBlock:
             timerEventSymbol = ''
             timerbar = ''
 
-        ref = quote(event['ref'], safe=' ~@#$()*!+=:;,.?/\'')
+        ref = quote(event['ref'], safe=' ~@#$()*!+=:;,.?/\'').replace('%253a//', '%3a//')
         hourmin = strftime("%H:%M", localtime(event['begin_timestamp']))
 
         return f"""

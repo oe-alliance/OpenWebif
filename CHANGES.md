@@ -1,3 +1,6 @@
+## Version 2.2.4
+* improve IPTV
+
 ## Version 2.2.3
 * improve m3u browser handling
 

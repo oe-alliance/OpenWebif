@@ -1,7 +1,7 @@
 ##########################################################################
 # OpenWebif: services
 ##########################################################################
-# Copyright (C) 2011 - 2025 E2OpenPlugins, jbleyel
+# Copyright (C) 2011 - 2026 E2OpenPlugins, jbleyel
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -713,7 +713,7 @@ def getSubServices(session):
 		if subservices and subservices.getNumberOfSubservices() > 0:
 			# print(subservices.getNumberOfSubservices())
 
-			for i in list(range(subservices.getNumberOfSubservices())):
+			for i in range(subservices.getNumberOfSubservices()):
 				subservice = subservices.getSubservice(i)
 				services.append({
 					"servicereference": subservice.toString(),
@@ -806,6 +806,7 @@ def getChannelEpg(ref, begintime=-1, endtime=-1, encode=True, nownext=False):
 		# When querying EPG, we don't need URL; also getPicon doesn't like URL
 		if "://" in ref:
 			_ref = ":".join(ref.split(":")[:10]) + "::" + ref.split(":")[-1]
+			ref = ref.replace("://", "%3a//")
 		else:
 			_ref = ref
 

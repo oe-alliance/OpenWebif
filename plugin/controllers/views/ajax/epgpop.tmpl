@@ -68,8 +68,9 @@ table { font-size:12px; font-family: Verdana,Arial,sans-serif;}
 		#set $channel = $event.sname.replace("'", r"\'")
 		#set $title = $event.title.replace("'", r"\'")
 		#set $sref=quote($event.sref, safe=' ~@#$()*!+=:;,.?/\'')
+		#set $tsref=$sref.replace('%253a//','%3a//')
 
-	<tbody data-id='$sref;$event.begin_timestamp;$event.duration'>
+	<tbody data-id='$tsref;$event.begin_timestamp;$event.duration'>
 	<tr class="eft">
 	<td class="efi ui-widget-header" colspan="2"><img src="$event.picon" title=""></td>
 	<td style="width:100%;height:60px;">
