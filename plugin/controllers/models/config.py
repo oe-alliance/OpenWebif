@@ -228,11 +228,11 @@ def saveConfig(path, value):
 def saveConfigBatch(configs_dict):
 	"""
 	Save multiple configuration values in a single operation.
-	
+
 	Args:
 		configs_dict: Dictionary with config paths as keys and values as values
 		Example: {"config.usage.setup_level": "1", "config.misc.useHDMICEC": "true"}
-	
+
 	Returns:
 		Dictionary with result status and error messages
 	"""
