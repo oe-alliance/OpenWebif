@@ -386,6 +386,9 @@ class BaseController(resource.Resource):
 		if exists('/usr/bin/shellinaboxd'):
 			extras.append({'key': 'ajax/terminal', 'description': _('Terminal')})
 
+		if exists('/usr/script'):
+			extras.append({'key': 'ajax/scripts', 'description': _('Scripts')})
+
 		ret['extras'] = extras
 		theme = 'original'
 		if config.OpenWebif.webcache.theme.value:

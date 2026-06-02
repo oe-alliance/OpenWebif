@@ -789,7 +789,16 @@
 						</button>
 					</div>
 				</div>
-				<div class="row clearfix">
+				<hr/>
+				<div class="row clearfix m-t-20">
+					<div class="col-xs-12">
+						<div id="multiBoot_container_responsive" style="display: none;">
+							<div style="font-weight: bold; margin-bottom: 10px; font-size: 14px;"><i class="material-icons" style="font-size: 16px; vertical-align: middle; margin-right: 5px;">sync</i>MultiBoot Slots:</div>
+							<div id="multiBoot_list_responsive" class="row clearfix">
+								<div class="col-xs-12" style="text-align: center;">$tstrings['loading']</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="modal-footer">
@@ -909,8 +918,69 @@
 <script>initJsTranslationAddon($dumps($tstrings))</script>
 
 <script>
+	// Load MultiBoot slots for responsive PowerModal
+	function loadMultiBootSlotsResponsive() {
+		$.ajax({
+			url: 'multiboot/get',
+			type: 'GET',
+			dataType: 'json',
+			success: function(result) {
+				if (result && result.multiboot && result.slots && result.slots.length > 0) {
+					var slotsContainer = document.getElementById('multiBoot_list_responsive');
+					slotsContainer.innerHTML = '';
+					
+					result.slots.forEach(function(slot) {
+						console.log(slot);
+						var colDiv = document.createElement('div');
+						colDiv.className = 'col-xs-6 m-t-10';
+						var button = document.createElement('button');
+						button.className = 'btn waves-effect responsivebtn responsivebtnpower btn--skinned';
+						button.style.width = '100%';
+						button.type = 'button';
+						
+						var text = slot.label + ':' + slot.imagename;
+						
+						if (slot.current) {
+							button.style.opacity = '0.6';
+							button.style.fontWeight = 'bold';
+							button.innerHTML = '<h6 style="margin: 0; font-size: 12px;">' + text + '</h6>';
+							button.disabled = true;
+						} else {
+							button.innerHTML = '<h6 style="margin: 0; font-size: 12px;">' + text + '</h6>';
+							button.onclick = function() {
+								handle_multiboot_reboot_responsive(slot.slot, slot.bootCode);
+								return false;
+							};
+						}
+						
+						colDiv.appendChild(button);
+						slotsContainer.appendChild(colDiv);
+					});
+					
+					document.getElementById('multiBoot_container_responsive').style.display = 'block';
+				}
+			}
+		});
+	}
+	
+	function handle_multiboot_reboot_responsive(slot, bootCode) {
+		\$("#PowerModal").modal('hide');
+		let sp = loadspinner.replace("'spinner'","'spinner1'");
+		load_reboot_dialog(sp, $tstrings['reboot_box']);
+		wait_for_openwebif();
+		setTimeout(function () {
+			webapi_execute('multiboot/set?slot=' + encodeURIComponent(slot) + '&bootcode=' + encodeURIComponent(bootCode));
+		}, 1000);
+	}
 
 	\$(document).ready(function() {
+		directlink();
+		
+		// Load MultiBoot slots when PowerModal opens
+		\$('#PowerModal').on('show.bs.modal', function (e) {
+			loadMultiBootSlotsResponsive();
+		});
+		
 		\$(".remote__button").click(function(e) {
 			var d = \$(this).data("code");
 			if (d != undefined) {

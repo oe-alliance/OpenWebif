@@ -1,17 +1,86 @@
 #from Plugins.Extensions.OpenWebif.controllers.i18n import tstrings
-<div style="height: 425px; width:500px">
-	<div class="powerStateButtons">
-		<ul>
-			<li class="ui-button" onclick="handle_power_state_dialog(new_power_state = 0); return false">$tstrings['standby_toggle']</li>
-			<li class="ui-button" onclick="handle_power_state_dialog(new_power_state = 1); return false">$tstrings['deep_standby']</li>
-			<li class="ui-button" onclick="handle_power_state_dialog(new_power_state = 2); return false">$tstrings['reboot_box']</li>
-			<li class="ui-button" onclick="handle_power_state_dialog(new_power_state = 3); return false">$tstrings['restart_gui']</li>
-			<li class="ui-button" onclick="handle_power_state_dialog(new_power_state = 4); return false">$tstrings['wake_up']</li>
-			<li class="ui-button" onclick="handle_power_state_dialog(new_power_state = 5); return false">$tstrings['standby']</li>
-		</ul>
+<div id="powerstate_dialog" style="height: 320px; width:380px; display: flex; gap: 10px;">
+	<!-- Power State Buttons (Left) -->
+	<div style="flex: 0.6;">
+		<div class="powerStateButtons buttonGrid">
+			<ul>
+				<li class="ui-button" onclick="handle_power_state_dialog(new_power_state = 0); return false">$tstrings['standby_toggle']</li>
+				<li class="ui-button" onclick="handle_power_state_dialog(new_power_state = 1); return false">$tstrings['deep_standby']</li>
+				<li class="ui-button" onclick="handle_power_state_dialog(new_power_state = 2); return false">$tstrings['reboot_box']</li>
+				<li class="ui-button" onclick="handle_power_state_dialog(new_power_state = 3); return false">$tstrings['restart_gui']</li>
+				<li class="ui-button" onclick="handle_power_state_dialog(new_power_state = 4); return false">$tstrings['wake_up']</li>
+				<li class="ui-button" onclick="handle_power_state_dialog(new_power_state = 5); return false">$tstrings['standby']</li>
+			</ul>
+		</div>
+	</div>
+	<!-- MultiBoot Slots Section (Right) -->
+	<div id="multiBoot_right_container" style="flex: 0.8; display: none;">
+		<div id="multiBoot_container">
+			<div style="font-weight: bold; margin-bottom: 10px; font-size: 14px;">🔄 MultiBoot Slots:</div>
+			<ul id="multiBoot_list" class="multibootButtons buttonGrid">
+				<li style="text-align: center;">$tstrings['loading']</li>
+			</ul>
+		</div>
 	</div>
 </div>
 <!-- cache the spinner for the restart gui or reboot stb dialog -->
 <div id="screenshotspinnerl" style="font-size:50px">
 	<div id="screenshotspinner" class='fa fa-spinner fa-spin' style="display: none;"></div>
 </div>
+<script>
+	var reboot_box = '$tstrings["reboot_box"]';
+	// Load MultiBoot slots when dialog opens
+	(function() {
+		function loadMultiBootSlots() {
+			$.ajax({
+				url: 'multiboot/get',
+				type: 'GET',
+				dataType: 'json',
+				success: function(result) {
+					if (result && result.multiboot && result.slots && result.slots.length > 0) {
+						var slotsList = document.getElementById('multiBoot_list');
+						slotsList.innerHTML = '';
+						
+						result.slots.forEach(function(slot) {
+							console.log(slot);
+							var li = document.createElement('li');
+							li.className = 'ui-button';
+							var text = slot.label + ':' + slot.imagename;
+							if (slot.current) {
+								li.style.fontWeight = 'bold';
+								li.innerHTML = text;
+								li.style.opacity = '0.6';
+							} else {
+								li.innerHTML = text;
+								li.onclick = function() {
+									handle_multiboot_reboot(slot.slot, slot.bootCode);
+									return false;
+								};
+							}
+							slotsList.appendChild(li);
+						});
+						
+						// Show MultiBoot section and resize dialog
+						document.getElementById('multiBoot_right_container').style.display = 'flex';
+						document.getElementById('powerstate_dialog').style.height = '320px';
+						document.getElementById('powerstate_dialog').style.width = '720px';
+					}
+				}
+			});
+		}
+		
+		// Load slots when this script executes
+		loadMultiBootSlots();
+
+	})();
+	
+	function handle_multiboot_reboot(slot, bootCode) {
+		let sp = loadspinner.replace("'spinner'","'spinner1'");
+		\$("#modaldialog").dialog('close');
+		load_reboot_dialog(sp, reboot_box);
+		wait_for_openwebif();
+		setTimeout(function () {
+			webapi_execute('multiboot/set?slot=' + encodeURIComponent(slot) + '&bootcode=' + encodeURIComponent(bootCode));
+		}, 1000);
+	}
+</script>

@@ -225,6 +225,87 @@ def saveConfig(path, value):
 	}
 
 
+def saveConfigBatch(configs_dict):
+	"""
+	Save multiple configuration values in a single operation.
+	
+	Args:
+		configs_dict: Dictionary with config paths as keys and values as values
+		Example: {"config.usage.setup_level": "1", "config.misc.useHDMICEC": "true"}
+	
+	Returns:
+		Dictionary with result status and error messages
+	"""
+	if not configs_dict or not isinstance(configs_dict, dict):
+		return {
+			"result": False,
+			"message": "Invalid configuration format"
+		}
+
+	errors = []
+	successful = 0
+
+	for path, value in configs_dict.items():
+		try:
+			cnf = get_config_attribute(path, root_obj=config)
+		except Exception as exc:
+			print(f"[OpenWebif] saveConfigBatch Error for {path}: {exc}")
+			errors.append(f"Config '{path}' not found")
+			continue
+
+		try:
+			if cnf.__class__.__name__ in ("ConfigBoolean", "ConfigEnableDisable", "ConfigYesNo"):
+				cnf.value = value == "true" or value is True
+			elif cnf.__class__.__name__ == "ConfigSet":
+				values = cnf.value
+				if int(value) in values:
+					values.remove(int(value))
+				else:
+					values.append(int(value))
+				cnf.value = values
+			elif cnf.__class__.__name__ == "ConfigNumber":
+				cnf.value = int(value)
+			elif cnf.__class__.__name__ in ("ConfigInteger", "TconfigInteger"):
+				cnf_min = int(cnf.limits[0][0])
+				cnf_max = int(cnf.limits[0][1])
+				cnf_value = int(value)
+				if cnf_value < cnf_min:
+					cnf_value = cnf_min
+				elif cnf_value > cnf_max:
+					cnf_value = cnf_max
+				cnf.value = cnf_value
+			elif cnf.__class__.__name__ in ("ConfigSlider"):
+				cnf_min = int(cnf.min)
+				cnf_max = int(cnf.max)
+				cnf_value = int(value)
+				if cnf_value < cnf_min:
+					cnf_value = cnf_min
+				elif cnf_value > cnf_max:
+					cnf_value = cnf_max
+				cnf.value = cnf_value
+			else:
+				cnf.value = value
+			cnf.save()
+			successful += 1
+		except Exception as e:
+			print(f"[OpenWebif] saveConfigBatch Error for {path}: {e}")
+			errors.append(f"Error saving '{path}': {str(e)}")
+
+	# Reload config files once after all changes
+	try:
+		configfiles.reload()
+	except Exception as e:
+		print(f"[OpenWebif] saveConfigBatch reload error: {e}")
+		errors.append("Error reloading configuration")
+
+	return {
+		"result": successful > 0 and len(errors) == 0,
+		"successful": successful,
+		"total": len(configs_dict),
+		"errors": errors if errors else []
+	}
+
+
 def getConfigs(key):
 	configs = []
 	title = None

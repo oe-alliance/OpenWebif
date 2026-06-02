@@ -1,7 +1,7 @@
 ##########################################################################
 # OpenWebif: AjaxController
 ##########################################################################
-# Copyright (C) 2011 - 2022 E2OpenPlugins
+# Copyright (C) 2011 - 2026 E2OpenPlugins
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -18,6 +18,7 @@
 # Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
 ##########################################################################
 
+from os import listdir
 from os.path import exists, isdir
 from time import mktime, localtime
 
@@ -408,3 +409,14 @@ class AjaxController(BaseController):
 			'radioChannels': getAllServices(RADIO),
 		}
 		return {'data': ret}
+
+	def P_scripts(self, request):
+		scripts = []
+		try:
+			for file in listdir('/usr/script'):
+				if file.endswith('.sh') and not file.startswith('.'):
+					scripts.append(file)
+		except OSError as exc:
+			print(f"Error accessing /usr/script: {exc}")
+
+		return {'scripts': scripts}

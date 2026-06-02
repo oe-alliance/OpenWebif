@@ -1,0 +1,78 @@
+#from Plugins.Extensions.OpenWebif.controllers.i18n import tstrings
+<style>
+#scripts ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+#scripts li {
+	margin: 4px 0;
+}
+</style>
+<div id="content_main" class="ui-widget-content" style="min-height: 500px;background-image:none;">
+	<h3 class="ui-widget-header">$tstrings['scripts']</h3>
+	<div id="info">
+		<div id='scripts'>
+			<ul>
+#for $script in $scripts
+				<li class="ui-button" onclick="ask('$script'); return false;">
+					$script
+				</li>
+#end for
+			</ul>
+		</div>
+	</div>
+	<textarea id="resulttext" style="display: none; width: 95%; height: 400px; margin: 10px; border: 1px solid #ccc; border-radius: 4px; padding: 10px; font-family: monospace; font-size: 12px;" readonly></textarea>
+</div>
+<script type="text/javascript">
+let str = "$tstrings['run_script']";
+let executing = "$tstrings['executing']";
+let completed = "$tstrings['script_completed']";
+#raw
+function ask(scriptName)
+{
+	if (confirm(str + ': ' + scriptName) === true) {
+		Action('/scripts/execute?script=' + scriptName, 'true');
+	}
+}
+
+function Action(action,rl)
+{
+	// Show the output textarea
+	$('#resulttext').show();
+	$('#resulttext').val(executing + '\n');
+	
+	// Use EventSource for Server-Sent Events streaming
+	var eventSource = new EventSource(action);
+	var currentOutput = executing + '\n';
+	
+	eventSource.onmessage = function(event) {
+		try {
+			var data = JSON.parse(event.data);
+			if (data.output) {
+				// Append output in real-time
+				currentOutput += data.output;
+				$('#resulttext').val(currentOutput);
+				// Auto-scroll to bottom
+				$('#resulttext').scrollTop($('#resulttext')[0].scrollHeight);
+			}
+			// Check if script execution is complete
+			if (data.complete) {
+				eventSource.close();
+				currentOutput += '\n['+ completed +']';
+				$('#resulttext').val(currentOutput);
+			}
+		} catch (e) {
+			console.error('Error parsing SSE data:', e);
+		}
+	};
+	
+	eventSource.onerror = function(error) {
+		console.error('EventSource error:', error);
+		eventSource.close();
+		currentOutput += '\n[Error or connection lost]';
+		$('#resulttext').val(currentOutput);
+	};
+}
+#end raw
+</script>

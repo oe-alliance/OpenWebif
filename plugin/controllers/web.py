@@ -18,6 +18,7 @@
 # Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
 ##########################################################################
 
+from json import loads, JSONDecodeError
 from re import match
 from os.path import isfile
 from Components.config import config as comp_config
@@ -32,7 +33,7 @@ from .models.locations import getLocations, getCurrentLocation, addLocation, rem
 from .models.timers import getTimers, addTimer, addTimerByEventId, editTimer, removeTimer, toggleTimerStatus, cleanupTimer, writeTimerList, recordNow, tvbrowser, getSleepTimer, setSleepTimer, getPowerTimer, setPowerTimer, getVPSChannels
 from .models.message import sendMessage, getMessageAnswer
 from .models.movies import getMovieList, removeMovie, getMovieInfo, movieAction, getAllMovies, getMovieDetails, setMovieResumePoint, MOVIETAGFILE
-from .models.config import getSettings, addCollapsedMenu, removeCollapsedMenu, saveConfig, getConfigs, getConfigsSections
+from .models.config import getSettings, addCollapsedMenu, removeCollapsedMenu, saveConfig, saveConfigBatch, getConfigs, getConfigsSections
 from .models.stream import getStream, getTS, getStreamSubservices, GetSession
 from .models.servicelist import reloadServicesLists
 from .models.mediaplayer import mediaPlayerAdd, mediaPlayerRemove, mediaPlayerPlay, mediaPlayerCommand, mediaPlayerCurrent, mediaPlayerList, mediaPlayerLoad, mediaPlayerSave, mediaPlayerFindFile
@@ -2094,6 +2095,43 @@ class WebController(BaseController):
 				key = getUrlArg(request, "key")
 				return saveConfig(key, value)
 		return {"result": False}
+
+	def P_saveconfigbatch(self, request):
+		"""
+		Request handler for the `saveconfigbatch` endpoint.
+		Saves multiple configuration values in a single batch operation.
+
+		.. note::
+
+			Not available in *Enigma2 WebInterface API*.
+
+		Args:
+			request (twisted.web.server.Request): HTTP request object
+		Returns:
+			HTTP response with batch save result
+
+		.. http:post:: /web/saveconfigbatch
+
+			:query string configs: JSON string with configuration key-value pairs
+			Example: {"config.usage.setup_level": "1", "config.misc.useHDMICEC": "true"}
+		"""
+
+		message = "Invalid request method"
+		if request.method == b'POST':
+			try:
+				configs_json = getUrlArg(request, "configs", "")
+				if configs_json:
+					try:
+						configs_dict = loads(configs_json)
+						return saveConfigBatch(configs_dict)
+					except JSONDecodeError:
+						message = "Invalid JSON format"
+				else:
+					message = "No configurations provided"
+			except Exception as e:
+				print(f"[OpenWebif] P_saveconfigbatch Error: {e}")
+				message = "Error processing batch config save"
+		return {"result": False, "message": message}
 
 	def P_mediaplayeradd(self, request):
 		res = self.testMandatoryArguments(request, ["file"])

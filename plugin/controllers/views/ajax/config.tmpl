@@ -1,8 +1,9 @@
+#from Plugins.Extensions.OpenWebif.controllers.i18n import tstrings
 #def select($config)
 <tr>
 <td>$config.description</td>
 <td>
-	<select id="$config.path" onchange="saveConfig('$config.path', this.value, '$key');">
+	<select id="$config.path" data-config-type="select">
 		#for $choice in $config.data.choices
 			#if str($config.data.current) == str($choice[0])
 				<option value="$choice[0]" selected="true">$choice[1]</option>
@@ -20,9 +21,9 @@
 <td>$config.description</td>
 <td>
 	#if $config.data.current
-		<input type="checkbox" id="$config.path" checked="true" onclick="saveConfig('$config.path', this.checked, '$key');" />
+		<input type="checkbox" id="$config.path" data-config-type="checkbox" checked="true" />
 	#else
-		<input type="checkbox" id="$config.path" onclick="saveConfig('$config.path', this.checked, '$key');" />
+		<input type="checkbox" id="$config.path" data-config-type="checkbox" />
 	#end if
 </td>
 </tr>
@@ -34,9 +35,9 @@
 <td>
 	#for $choice in $config.data.choices
 		#if $choice in $config.data.current
-			<input type="checkbox" id="${config.path}_${choice}" checked="true" onclick="saveConfig('$config.path', $choice, '$key');" />
+			<input type="checkbox" id="${config.path}_${choice}" data-config-type="multicheckbox" data-config-group="$config.path" checked="true" />
 		#else
-			<input type="checkbox" id="${config.path}_${choice}" onclick="saveConfig('$config.path', $choice, '$key');" />
+			<input type="checkbox" id="${config.path}_${choice}" data-config-type="multicheckbox" data-config-group="$config.path" />
 		#end if
 		$choice
 	#end for
@@ -48,7 +49,7 @@
 <tr>
 <td>$config.description</td>
 <td>
-	<input type="text" id="${config.path}" value="$config.data.current" onkeydown="numberTextboxKeydownFilter(event);" onchange="saveConfig('$config.path', this.value, '$key');">
+	<input type="text" id="${config.path}" data-config-type="number" value="$config.data.current" onkeydown="numberTextboxKeydownFilter(event);">
 </td>
 </tr>
 #end def
@@ -57,7 +58,7 @@
 <tr>
 <td>$config.description</td>
 <td>
-	<input type="text" id="${config.path}" value="$config.data.current" onchange="saveConfig('$config.path', this.value, '$key');">
+	<input type="text" id="${config.path}" data-config-type="text" value="$config.data.current">
 </td>
 </tr>
 #end def
@@ -81,4 +82,19 @@
 			#end if
 		#end for
 	</table>
+	<div style="margin-top: 15px; padding: 10px; text-align: right;">
+		<button id="btn_reset" class="ui-button ui-widget ui-corner-all" style="margin-right: 10px;">$tstrings['form_reset']</button>
+		<button id="btn_save" class="ui-button ui-widget ui-corner-all ui-button-primary">$tstrings['save']</button>
+	</div>
 </div>
+
+<script type="text/javascript">
+\$(document).ready(function() {
+	\$('#btn_save').click(function() {
+		saveAllConfig('$key');
+	});
+	\$('#btn_reset').click(function() {
+		location.reload();
+	});
+});
+</script>

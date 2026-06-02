@@ -35,6 +35,8 @@ from .ER import ERController
 from .BQE import BQEController
 from .wol import WOLSetupController, WOLClientController
 from .file import FileController
+from .MultiBoot import MultiBootController
+from .Scripts import ScriptsController
 from .defaults import PICON_PATH, getPublicPath, VIEWS_PATH, setMobile, refreshPiconPath
 from .utilities import toBinary
 
@@ -65,6 +67,8 @@ class RootController(BaseController):
 		self.putChild2("autotimer", ATController(session))
 		self.putChild2("epgrefresh", ERController(session))
 		self.putChild2("bouqueteditor", BQEController(session))
+		self.putChild2("multiboot", MultiBootController(session))
+		self.putChild2("scripts", ScriptsController())
 		self.putChild2("wol", WOLClientController())
 		self.putChild2("wolsetup", WOLSetupController(session))
 		if PICON_PATH:

@@ -579,6 +579,8 @@ function addTimerEventPlay(sRef, eventId) {
 */
 
 function addEditTimerEvent(sRef, eventId) {
+	console.debug("addEditTimerEvent")
+
 	let url="/api/event?sRef=" + sRef + "&idev=" + eventId;
 	$.ajax({
 		url: url,
@@ -1025,6 +1027,100 @@ function saveConfig(key, value, section) {
 	});
 }
 
+// Batch config saving - collect all changes and save on button click
+function saveAllConfig(section) {
+	var changes = {};
+	var hasChanges = false;
+
+	// Collect all form changes
+	$('#configuration').find('[id][data-config-type]').each(function() {
+		var $elem = $(this);
+		var elemId = $elem.attr('id');
+		var elemType = $elem.attr('data-config-type');
+		var configGroup = $elem.attr('data-config-group');
+		var currentValue = '';
+
+		if (elemType === 'checkbox') {
+			currentValue = $elem.is(':checked');
+			if (elemId && elemId !== '') {
+				changes[elemId] = currentValue;
+				hasChanges = true;
+			}
+		} else if (elemType === 'multicheckbox') {
+			// Handle multicheckbox - collect all checked items for this group
+			if (!changes[configGroup]) {
+				changes[configGroup] = [];
+			}
+			if ($elem.is(':checked')) {
+				var checkboxValue = elemId.replace(configGroup + '_', '');
+				changes[configGroup].push(checkboxValue);
+				hasChanges = true;
+			}
+		} else if (elemType === 'select' || elemType === 'text' || elemType === 'number') {
+			currentValue = $elem.val();
+			if (elemId && elemId !== '') {
+				changes[elemId] = currentValue;
+				hasChanges = true;
+			}
+		}
+	});
+
+	if (!hasChanges) {
+		alert('No changes to save');
+		return;
+	}
+
+	// Show saving indicator
+	var $btn = $('#btn_save');
+	var originalText = $btn.text();
+	$btn.prop('disabled', true).text('Saving...');
+
+	// Convert arrays to comma-separated strings for multicheckbox
+	var configsToSave = {};
+	$.each(changes, function(key, value) {
+		if (Array.isArray(value)) {
+			configsToSave[key] = value.join(',');
+		} else {
+			configsToSave[key] = String(value);
+		}
+	});
+
+	// Send all changes in a single batch request
+	$.ajax({
+		url: "/api/saveconfigbatch",
+		cache: false,
+		async: true,
+		type: "POST",
+		data: {
+			configs: JSON.stringify(configsToSave)
+		},
+		dataType: 'json'
+	}).done(function(response) {
+		$btn.prop('disabled', false).text('Save All');
+		
+		if (response.result) {
+			// Success - reload config section like saveConfig does
+			// Check if any config.usage.setup_level was changed
+			if ('config.usage.setup_level' in configsToSave) {
+				$("#content_container").load(lastcontenturl);
+			} else {
+				load_scontent('ajax/config?section=' + section);
+			}
+		} else {
+			// Show error message
+			var errorMsg = response.message || 'Error saving configuration';
+			if (response.errors && response.errors.length > 0) {
+				errorMsg += '\n\nErrors:\n' + response.errors.join('\n');
+			}
+			alert(errorMsg);
+		}
+	}).fail(function(jqXHR, textStatus, errorThrown) {
+		$btn.prop('disabled', false).text(originalText);
+		alert('Error communicating with server: ' + textStatus);
+	});
+}
+
+
 function numberTextboxKeydownFilter(event) {
 	if (event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9) {
 		return;
@@ -1365,6 +1461,8 @@ function unEscape(htmlStr) {
 }
 
 function addTimer(evt,chsref,chname,top,isradio) {
+	console.debug("addTimer")
+	console.debug(evt, chsref, chname, top, isradio);
 	current_serviceref = '';
 	current_begin = -1;
 	current_end = -1;
@@ -1405,6 +1503,7 @@ function addTimer(evt,chsref,chname,top,isradio) {
 		serviceref = chsref;
 		title = chname;
 		if ($('#bouquet_select').val(chsref) === 'undefined') {
+			console.debug("add missing serviceref to select: " + chsref + " - " + chname);
 			$('#bouquet_select').append($("<option></option>").attr("value", serviceref).text(chname));
 		}
 	}
@@ -1430,6 +1529,7 @@ function addTimer(evt,chsref,chname,top,isradio) {
 	let enddate = end !== -1 ? new Date( (Math.round(end) + margin_after*60) * 1000) : new Date(begindate.getTime() + (60*60*1000));
 	$('#timerend').datetimepicker('setDate', enddate);
 
+	console.debug(serviceref)
 	$('#bouquet_select').val(serviceref);
 	$('#bouquet_select').trigger("chosen:updated");
 	

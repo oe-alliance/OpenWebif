@@ -240,3 +240,153 @@ def getStandbyState():
 		"result": True,
 		"instandby": inStandby is not None
 	}
+
+
+def getMultiBootSlots():
+	"""
+	Get available MultiBoot slots and their information using async getSlotImageList.
+	Returns a Twisted Deferred that fires with the result dict.
+	"""
+	from twisted.internet import defer
+
+	d = defer.Deferred()
+
+	def processSlotImages(slotImages, currentSlotCode, currentBootCode):
+		"""Process the async slotImages result"""
+		slots = []
+
+		if not slotImages:
+			result = {
+				"result": True,
+				"multiboot": False,
+				"slots": []
+			}
+			d.callback(result)
+			return
+
+		try:
+			from Tools.MultiBoot import MultiBoot
+
+			# Sort slots numerically and alphanumerically
+			slotImageList = sorted(slotImages.keys(), key=lambda x: (not x.isnumeric(), int(x) if x.isnumeric() else x))
+
+			for slot in slotImageList:
+				slotInfo = slotImages[slot]
+				device = slotInfo.get("device", "Unknown")
+				imagename = slotInfo.get("imagename", "Unknown")
+				status = slotInfo.get("status", "unknown")
+				ubi = slotInfo.get("ubi", False)
+
+				# Determine slot type
+				if "mmcblk" in device:
+					slotType = "eMMC"
+				elif "mtd" in device:
+					slotType = "MTD"
+				elif "ubi" in device:
+					slotType = "UBI"
+				elif "mmc" in device:
+					slotType = "SD"
+				else:
+					slotType = "USB" if "/" in device else "Unknown"
+
+				# Get boot codes for this slot
+				bootCodes = slotInfo.get("bootCodes", [""])
+
+				for bootCodeEntry in bootCodes:
+					bootCodeDesc = MultiBoot.getBootCodeDescription(bootCodeEntry)
+					slotLabel = slot
+					if bootCodeEntry:
+						slotLabel = f"{slot} ({bootCodeDesc})"
+
+					isCurrent = (slot == currentSlotCode and bootCodeEntry == currentBootCode)
+
+					slots.append({
+						"slot": slot,
+						"label": slotLabel,
+						"bootCode": bootCodeEntry,
+						"type": slotType,
+						"device": device,
+						"imagename": imagename,
+						"status": status,
+						"ubi": ubi,
+						"current": isCurrent,
+						"description": bootCodeDesc
+					})
+
+			result = {
+				"result": True,
+				"multiboot": True,
+				"slots": slots,
+				"currentSlot": currentSlotCode,
+				"currentBootCode": currentBootCode
+			}
+			d.callback(result)
+		except Exception as e:
+			d.errback(e)
+
+	try:
+		from Tools.MultiBoot import MultiBoot
+
+		# Check if MultiBoot is available
+		if not MultiBoot.canMultiBoot():
+			d.callback({
+				"result": True,
+				"multiboot": False,
+				"slots": []
+			})
+			return d
+
+		# Get current slot and boot code
+		try:
+			currentSlotCode, currentBootCode = MultiBoot.getCurrentSlotAndBootCodes()
+		except Exception:
+			currentSlotCode = None
+			currentBootCode = None
+
+		def slotImageListCallback(slotImages):
+			"""Wrapper for async callback"""
+			processSlotImages(slotImages, currentSlotCode, currentBootCode)
+
+		# Get slot image list asynchronously
+		MultiBoot.getSlotImageList(slotImageListCallback)
+
+	except ImportError:
+		# MultiBoot not available on this device
+		d.callback({
+			"result": True,
+			"multiboot": False,
+			"slots": []
+		})
+
+	return d
+
+
+def setMultiBoot(session, slot, bootCode=""):
+	"""
+	Activate a MultiBoot slot and optionally set the boot code.
+	Then reboot the device.
+
+	Args:
+		session: enigma2 session
+		slot: slot number/code (e.g., "1", "2", "A", "R")
+		bootCode: boot code for the slot (e.g., "", "1", "12")
+	"""
+	try:
+		from Tools.MultiBoot import MultiBoot
+		from Screens.Standby import TryQuitMainloop, QUIT_REBOOT
+
+		# Activate the slot with the specified boot code
+		MultiBoot.activateSlot(slot, bootCode, lambda result: None)
+
+		# Reboot after a short delay
+		session.open(TryQuitMainloop, QUIT_REBOOT)
+
+		return {
+			"result": True,
+			"message": f"Activating slot {slot} and rebooting..."
+		}
+	except Exception as e:
+		return {
+			"result": False,
+			"message": f"Error activating slot: {str(e)}"
+		}
