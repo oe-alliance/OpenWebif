@@ -467,7 +467,7 @@ tstrings = {
 	'bqe_rename_marker': _("Enter a name for the new marker"),
 	'bqe_filename': _("A filename is required"),
 	'bqe_restore_question': _("Are you sure you want to restore from file?"),
-	'loading': _("Loading..."),
+	'loading1': _("Loading..."),
 
 	'via': _("via"),
 	'zap_record': _("Zap & Record"),
