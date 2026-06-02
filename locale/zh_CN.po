@@ -1,18 +1,19 @@
+# Mark Stone <grystyle@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenWebif\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-26 22:02+0200\n"
-"PO-Revision-Date: 2023-08-22 17:46+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
-"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
-"e2openplugin-openwebif/e2openplugin-openwebif/zh_Hans/>\n"
+"POT-Creation-Date: 2026-05-31 14:25+0200\n"
+"PO-Revision-Date: 2025-02-13 02:02+0000\n"
+"Last-Translator: Mark Stone <grystyle@gmail.com>\n"
+"Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
+"projects/e2openplugin-openwebif/e2openplugin-openwebif/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.0-dev\n"
+"X-Generator: Weblate 5.10-dev\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SearchPath-0: plugin\n"
 "X-Poedit-SearchPath-1: U\n"
@@ -45,7 +46,7 @@ msgstr "%s %02d.%02d.%d"
 
 #, python-format
 msgid "%s %s is locked."
-msgstr "%s %s 已加锁."
+msgstr "%s %s 已被锁定。"
 
 #, python-format
 msgid "%s / %s"
@@ -53,37 +54,35 @@ msgstr "%s / %s"
 
 #, python-format
 msgid "%s Style"
-msgstr ""
+msgstr "%s 样式"
 
 #, python-format
 msgid "%s free / %s total"
-msgstr "%s 可用 / %s 总容量"
+msgstr "可用 %s /总计 %s"
 
 msgid "(Press 'shift' and click to 'hold')"
-msgstr "(按'shift'键并点击'保持')"
+msgstr "（按下“shift”键并点击以“保持”）"
 
 msgid "(in minutes)"
-msgstr "（在几分钟后）"
+msgstr "（分钟）"
 
 msgid "<Current movie list location>"
-msgstr ""
+msgstr "<当前电影列表位置>"
 
-#, fuzzy
 msgid "<Default movie location>"
-msgstr "使用自定义位置"
+msgstr "<默认电影位置>"
 
-#, fuzzy
 msgid "<Last timer location>"
-msgstr "使用自定义位置"
+msgstr "<最后定时器位置>"
 
 msgid "A filename is required"
-msgstr "必须有文件名"
+msgstr "必需要文件名"
 
 msgid "A value is required"
-msgstr "必须填写"
+msgstr "必填项"
 
 msgid "AGC"
-msgstr "强度"
+msgstr "AGC"
 
 msgid "About"
 msgstr "关于"
@@ -92,57 +91,56 @@ msgid "Add"
 msgstr "添加"
 
 msgid "Add  AutoTimer  to tags"
-msgstr "将自动定时器添加到标签"
+msgstr "将“自动定时器”添加到标签中"
 
 msgid "Add AutoTimer name to tags"
-msgstr "将自动定时器名称添加到标记"
+msgstr "将自动定时器名称添加到标签中"
 
 msgid "Add Bouquet"
-msgstr "增加节目分组"
+msgstr "添加频道群"
 
 msgid "Add IPTV/URL"
-msgstr "添加IPTV/URL"
+msgstr "添加 IPTV/URL"
 
 msgid "Add Marker"
 msgstr "添加标记"
 
 msgid "Add Spacer"
-msgstr "添加间隔"
+msgstr "添加空格"
 
 msgid "Add a timer"
 msgstr "添加定时器"
 
 msgid "Add a zap timer"
-msgstr "添加定时切换"
+msgstr "添加换台定时器"
 
 msgid "Add an AutoTimer"
 msgstr "添加自动定时器"
 
 msgid "Add channel(s) as alternate"
-msgstr "添加频道作为备用频道"
+msgstr "将频道添加为备选"
 
 msgid "Add filters"
 msgstr "添加筛选器"
 
 msgid "Add selection to bouquet"
-msgstr "添加频道到节目分组"
+msgstr "添加所选到频道群"
 
 msgid "Add similar on conflict"
 msgstr "添加类似冲突"
 
 msgid "Add tags to recordings"
-msgstr "向录制添加标记"
+msgstr "为录像添加标签"
 
 #, python-format
 msgid "Added %s to alternative service %s."
-msgstr "已将 %s 添加到备用频道 %s."
+msgstr "已将 %s 添加为备用频道 %s。"
 
-#, fuzzy
 msgid "After"
-msgstr "事件之后"
+msgstr "之后"
 
 msgid "After event"
-msgstr "事件之后"
+msgstr "事件后"
 
 msgid "All"
 msgstr "全部"
@@ -155,18 +153,18 @@ msgid ""
 "and/or modify it under the terms of the GNU General Public License version 3 "
 "as published by the Free Software Foundation."
 msgstr ""
-"本软件所有文件均为开源软件;您可以在自由软件基金会发布的GNU通用公共许可证版本3"
-"的条款下重新分发和/或修改它."
+"本软件的所有文件均为开源软件；您可以根据自由软件基金会发布的 GNU 通用公共许可"
+"证第 3 版的条款，重新分发它或进行修改。"
 
 msgid "All alternative services deleted."
-msgstr "已删除所有替代频道."
+msgstr "已删除所有备用频道。"
 
 msgid "Allow duplicates"
 msgstr "允许重复"
 
 #, python-format
 msgid "Alternative %s created failed."
-msgstr "创建备选方案%s失败."
+msgstr "备用 %s 创建失败。"
 
 msgid "Always"
 msgstr "始终"
@@ -178,10 +176,10 @@ msgid "Answer is YES!"
 msgstr "是！"
 
 msgid "Any"
-msgstr ""
+msgstr "任何"
 
 msgid "Any day"
-msgstr "随时"
+msgstr "任何一天"
 
 msgid "Any service/recording"
 msgstr "任何频道/录制"
@@ -189,52 +187,50 @@ msgstr "任何频道/录制"
 msgid "April"
 msgstr "四月"
 
-#, fuzzy
 msgid "Are you sure you want to copy this recording?"
-msgstr "是否确定要删除此录制？"
+msgstr "确定要拷贝此录像吗？"
 
 msgid "Are you sure you want to delete the selected bouquet?"
-msgstr "是否真的要删除节目分组？"
+msgstr "确定要删除选择的频道群？"
 
 msgid "Are you sure you want to delete the selected item(s)?"
-msgstr "是否真的要删除所选项目?"
+msgstr "确定要删除所选项目?"
 
 msgid "Are you sure you want to delete this AutoTimer?"
-msgstr "是否确实要删除此自动定时器？"
+msgstr "确定要删除此自动定时器？"
 
 msgid "Are you sure you want to delete this recording?"
-msgstr "是否确定要删除此录制？"
+msgstr "确定要删除此录制？"
 
 msgid "Are you sure you want to delete this timer?"
-msgstr "是否确定要删除此定时器？"
+msgstr "确定要删除此定时器？"
 
-#, fuzzy
 msgid "Are you sure you want to move this recording?"
-msgstr "是否确实要重命名此录制？"
+msgstr "确定要移动此录像吗？"
 
 msgid "Are you sure you want to rename this recording?"
-msgstr "是否确实要重命名此录制？"
+msgstr "确定要重命名此录像？"
 
 msgid "Are you sure you want to restore from file?"
-msgstr "是否确实要从文件中恢复？"
+msgstr "确定要从文件中恢复？"
 
 msgid "Are you sure you want to start recording instantly?"
-msgstr "是否确定要立即开始录制?"
+msgstr "确定要立即开始录制?"
 
 msgid "Ask, default No"
-msgstr "询问,默认否"
+msgstr "询问，默认为否"
 
 msgid "Ask, default Yes"
-msgstr "询问,默认是"
+msgstr "询问，默认为是"
 
 msgid "Audio Encoding"
-msgstr ""
+msgstr "音频编码"
 
 msgid "Audio PID (APID)"
-msgstr ""
+msgstr "音频 PID (APID)"
 
 msgid "Audio Track"
-msgstr ""
+msgstr "音轨"
 
 msgid "August"
 msgstr "八月"
@@ -246,19 +242,19 @@ msgid "Auto"
 msgstr "自动"
 
 msgid "AutoPoll"
-msgstr "自动循环"
+msgstr "自动轮询"
 
 msgid "AutoTimer Edit"
-msgstr "自动定时器编辑"
+msgstr "编辑自动定时器"
 
 msgid "AutoTimer Settings"
-msgstr "自动定时器设置"
+msgstr "设置自动定时器"
 
 msgid "AutoTimers"
 msgstr "自动定时器"
 
 msgid "Autotimer Preview"
-msgstr "自动定时器预览"
+msgstr "预览自动定时器"
 
 msgid "BER"
 msgstr "误码率"
@@ -270,19 +266,19 @@ msgid "Background only"
 msgstr "仅背景"
 
 msgid "Before"
-msgstr ""
+msgstr "之前"
 
 msgid "Begin"
 msgstr "开始"
 
 msgid "Begin of \"After event\" timespan"
-msgstr "\"事件后\" 时间跨度开始"
+msgstr "“事件后”时间段的开始"
 
 msgid "Beginning of timespan"
-msgstr "开始时间"
+msgstr "时间段的开始"
 
 msgid "Bit Error Rate (BER)"
-msgstr ""
+msgstr "误码率（BER）"
 
 msgid "Bookmark"
 msgstr "书签"
@@ -292,60 +288,60 @@ msgstr "书签"
 
 #, python-format
 msgid "Bouquet %s already exists."
-msgstr "自定义组%s已经存在."
+msgstr "已存在频道群 %s。"
 
 #, python-format
 msgid "Bouquet %s can not be moved."
-msgstr "节目分组%s不能移动."
+msgstr "无法移动频道群 %s。"
 
 #, python-format
 msgid "Bouquet %s created."
-msgstr "自定义组%s已创建."
+msgstr "已创建 频道群 %s。"
 
 #, python-format
 msgid "Bouquet %s deleted."
-msgstr "节目分组%s已删除."
+msgstr "已删除频道群 %s。"
 
 #, python-format
 msgid "Bouquet %s is locked."
-msgstr "节目分组%s已锁定."
+msgstr "%s 频道群已被锁定。"
 
 #, python-format
 msgid "Bouquet %s is unlocked."
-msgstr "节目分组 %s 已解锁."
+msgstr "%s 频道群已解除锁定。"
 
 #, python-format
 msgid "Bouquet %s moved."
-msgstr "移动自定义组 %s."
+msgstr "已移动 %s 频道群。"
 
 #, python-format
 msgid "Bouquet %s removed failed, sevicerefence or mutable list is not valid."
-msgstr "移除节目分组%s失败, 频道引用或可变列表无效."
+msgstr "频道群 %s 删除失败，频道标识符或可变列表无效。"
 
 #, python-format
 msgid "Bouquet %s removed failed."
-msgstr "移除节目分组%s失败."
+msgstr "频道群 %s 删除失败。"
 
 msgid "Bouquet Editor"
-msgstr "节目分组编辑器"
+msgstr "频道群编辑器"
 
 msgid "Bouquet name"
-msgstr "节目分组名称"
+msgstr "频道群名称"
 
 msgid "Bouquet renamed successfully."
-msgstr "节目分组改名完成."
+msgstr "频道群更名成功。"
 
 msgid "Bouquet-settings were restored successfully"
-msgstr "节目分组设置已成功恢复"
+msgstr "频道群设置已成功恢复"
 
 msgid "BouquetEditor"
-msgstr "编辑节目分组"
+msgstr "频道群编辑器"
 
 msgid "Bouquetlist is not editable!"
-msgstr "节目分组列表不可编辑!"
+msgstr "频道群列表不可编辑！"
 
 msgid "Bouquets"
-msgstr "节目分组"
+msgstr "频道群"
 
 msgid "Box"
 msgstr "机顶盒"
@@ -357,31 +353,31 @@ msgid "Box Info"
 msgstr "机顶盒信息"
 
 msgid "Box uptime"
-msgstr "运行时间"
+msgstr "机顶盒运行时间"
 
 msgid "Brand"
 msgstr "品牌"
 
 msgid "Build"
-msgstr ""
+msgstr "构建"
 
 msgid "Cable"
-msgstr "有线"
+msgstr "有线电视"
 
 msgid "Calendar Week"
-msgstr "本周"
+msgstr "日历周"
 
 msgid "Cancel"
 msgstr "取消"
 
 msgid "Cancelled"
-msgstr "取消"
+msgstr "已取消"
 
 msgid "Capacity"
 msgstr "容量"
 
 msgid "Capture screenshot"
-msgstr "截图"
+msgstr "截屏"
 
 msgid "Channel"
 msgstr "频道"
@@ -393,13 +389,13 @@ msgid "Chipset"
 msgstr "芯片组"
 
 msgid "Cleanup Timers"
-msgstr "清除定时器"
+msgstr "清理定时器"
 
 msgid "Close"
 msgstr "关闭"
 
 msgid "Common Settings"
-msgstr "常用设置"
+msgstr "通用设置"
 
 msgid "Config"
 msgstr "配置"
@@ -414,9 +410,8 @@ msgstr "贡献者"
 msgid "Control"
 msgstr "控制"
 
-#, fuzzy
 msgid "Copy Recording"
-msgstr "删除录制"
+msgstr "拷贝录像"
 
 #, python-format
 msgid "Could not add timer '%s'!"
@@ -424,10 +419,10 @@ msgstr "无法添加定时器“%s”!"
 
 #, python-format
 msgid "Could not find timer '%s' with given start and end time!"
-msgstr "未找到指定开始时间和结束时间的定时器 '%s' ！"
+msgstr "无法找到具有给定开始和结束时间的定时器 '%s'！"
 
 msgid "Create bouquet from selection"
-msgstr "从选择中创建节目分组"
+msgstr "从选择创建频道群"
 
 msgid "Current"
 msgstr "当前"
@@ -436,7 +431,7 @@ msgid "Current Event"
 msgstr "当前事件"
 
 msgid "Currently recording"
-msgstr ""
+msgstr "正在录制"
 
 msgid "Custom box name"
 msgstr "自定义机顶盒名称"
@@ -445,7 +440,7 @@ msgid "Custom offset"
 msgstr "自定义偏移"
 
 msgid "DHCP"
-msgstr "DHCP服务器"
+msgstr "DHCP"
 
 msgid "Date"
 msgstr "日期"
@@ -475,7 +470,7 @@ msgid "Delete Bookmark"
 msgstr "删除书签"
 
 msgid "Delete Bouquet"
-msgstr "删除节目分组"
+msgstr "删除频道群"
 
 msgid "Delete Recording"
 msgstr "删除录制"
@@ -484,13 +479,13 @@ msgid "Delete Timer"
 msgstr "删除定时器"
 
 msgid "Deleted"
-msgstr "删除"
+msgstr "已删除"
 
 msgid "Description"
 msgstr "描述"
 
 msgid "Device"
-msgstr ""
+msgstr "设备"
 
 msgid "Disable"
 msgstr "禁用"
@@ -505,10 +500,10 @@ msgid "Display Mode"
 msgstr "显示模式"
 
 msgid "Display duration (s)"
-msgstr "显示持续时间(秒)"
+msgstr "显示持续时间（秒）"
 
 msgid "Distro"
-msgstr "发行版本"
+msgstr "发行版"
 
 msgid "Dolby"
 msgstr "杜比"
@@ -535,26 +530,25 @@ msgid "EPG"
 msgstr "EPG"
 
 msgid "EPG encoding"
-msgstr "EPG编码"
+msgstr "EPG 编码"
 
 msgid "EPGRefresh"
 msgstr "EPG刷新"
 
 msgid "ERROR: Cannot set SleepTimer while device is in Standby-Mode"
-msgstr "错误:设备处于待机模式时无法设置休眠定时器"
+msgstr "错误：设备处于待机模式时无法设置睡眠定时器"
 
 msgid "Edit"
 msgstr "编辑"
 
-#, fuzzy
 msgid "Edit Recording"
-msgstr "删除录制"
+msgstr "编辑录像"
 
 msgid "Edit Timer"
 msgstr "编辑定时器"
 
 msgid "Editor"
-msgstr "编辑"
+msgstr "编辑器"
 
 msgid "Enable"
 msgstr "启用"
@@ -569,10 +563,10 @@ msgid "Enable filtering"
 msgstr "启用筛选"
 
 msgid "Enable/Disable Screenshot on key press"
-msgstr "启用/禁用键或"
+msgstr "启用/禁用按键截图"
 
 msgid "Enabled"
-msgstr "启用"
+msgstr "已启用"
 
 msgid "Encrypted"
 msgstr "加密"
@@ -581,13 +575,13 @@ msgid "End"
 msgstr "结束"
 
 msgid "End of \"After event\" timespan"
-msgstr "\"事件后\" 时间跨度结束"
+msgstr "“事件后”时间段的结束"
 
 msgid "End of timespan"
-msgstr "结束时间"
+msgstr "时间段的结束"
 
 msgid "Enter a name for the new bouquet"
-msgstr "输入新的节目分组名称"
+msgstr "输入新的频道群名称"
 
 msgid "Enter a name for the new marker"
 msgstr "为标记输入新的名称"
@@ -599,62 +593,62 @@ msgid "Enter path"
 msgstr "输入路径"
 
 msgid "Enter text"
-msgstr ""
+msgstr "输入文字"
 
 msgid "Enter the text to find in the EPG"
-msgstr "输入要在EPG中查找的文本"
+msgstr "输入要在 EPG 中查找的文本"
 
 msgid "Error"
 msgstr "错误"
 
 msgid "Error parsing vps.xml"
-msgstr "分析vps.xml时出错"
+msgstr "解析 vps.xml 时出错"
 
 msgid "Error upload File"
-msgstr "上传文件时错误"
+msgstr "上传文件错误"
 
 msgid "Error while preparing backup file."
-msgstr "创建备份文件时错误."
+msgstr "准备备份文件时出错。"
 
 msgid "Error writing File"
 msgstr "写入文件时出错"
 
 #, python-format
 msgid "Error, %s does not exists, restore is not possible..."
-msgstr "错误, %s不存在,无法恢复..."
+msgstr "错误，%s 不存在，无法恢复…"
 
 #, python-format
 msgid "Error, %s was not created with WebBouquetEditor..."
-msgstr "错误, %s创建节目分组失败..."
+msgstr "错误，%s 不是通过网页频道群编辑器创建..."
 
 #, python-format
 msgid "Error, extract files from backup '%s'"
-msgstr ""
+msgstr "错误，从备份“%s”中提取文件"
 
 #, python-format
 msgid "Error: Bouquet %s could not deleted, OSError."
-msgstr "错误:节目分组%s不能被删除,,系统错误"
+msgstr "错误：无法删除频道群 %s，系统错误。"
 
 msgid "Event not found"
-msgstr "事件未找到"
+msgstr "未找到事件"
 
 msgid "EventId not found"
-msgstr "未找到事件ID"
+msgstr "未找到事件 ID"
 
 msgid "Every"
-msgstr "每个"
+msgstr "每"
 
 msgid "Exclude when"
 msgstr "排除时间"
 
 msgid "Execute \"After event\" during timespan"
-msgstr "在时间跨度内执行 \"事件后\""
+msgstr "在时间段内执行“事件后”操作"
 
 msgid "Export"
 msgstr "导出"
 
 msgid "Extras"
-msgstr "附加"
+msgstr "其他"
 
 msgid "Fake Recording"
 msgstr "伪录制"
@@ -666,20 +660,19 @@ msgid "February"
 msgstr "二月"
 
 msgid "Find similar events"
-msgstr ""
+msgstr "查找类似事件"
 
 msgid "Firmware version"
 msgstr "固件版本"
 
-#, fuzzy
 msgid "Folders"
-msgstr "提供商"
+msgstr "文件夹"
 
 msgid "Force"
 msgstr "强制"
 
 msgid "Fr"
-msgstr "星期五"
+msgstr "周五"
 
 msgid "Free"
 msgstr "空闲"
@@ -688,10 +681,10 @@ msgid "Free Memory"
 msgstr "可用内存"
 
 msgid "Free space"
-msgstr ""
+msgstr "可用空间"
 
 msgid "Fri"
-msgstr "星期五"
+msgstr "周五"
 
 msgid "Friday"
 msgstr "星期五"
@@ -700,25 +693,25 @@ msgid "From date"
 msgstr "起始日期"
 
 msgid "Front processor version"
-msgstr "前处理器版本"
+msgstr "前端处理器版本"
 
 msgid "Full remote"
-msgstr "全遥"
+msgstr "完整遥控器"
 
 msgid "GB"
 msgstr "GB"
 
 msgid "GUI version"
-msgstr "GUI版本"
+msgstr "GUI 版本"
 
 msgid "Gateway"
 msgstr "网关"
 
 msgid "Get mutable list for new created alternative failed!"
-msgstr "获取新创建的备选方案的可变列表失败！"
+msgstr "获取新创建的备用可变列表失败！"
 
 msgid "Get mutable list for new created bouquet failed!"
-msgstr "获取新创建的自定义组可变列表失败！"
+msgstr "获取新创建的频道群可变列表失败！"
 
 msgid "HH:MM"
 msgstr "小时:分钟"
@@ -727,34 +720,34 @@ msgid "Hard disk model"
 msgstr "硬盘型号"
 
 msgid "Hardware"
-msgstr ""
+msgstr "硬件"
 
 msgid "Hide full remote"
-msgstr "隐藏全远程"
+msgstr "隐藏完整遥控器"
 
 msgid "High Resolution"
 msgstr "高分辨率"
 
 msgid "Hold to drag"
-msgstr ""
+msgstr "按住以拖动"
 
 msgid "Hour"
 msgstr "小时"
 
 msgid "IPTV / URL name"
-msgstr "IPTV/URL名称"
+msgstr "IPTV/URL 名称"
 
 msgid "IPv4 address"
-msgstr "IPv4地址"
+msgstr "IPv4 地址"
 
 msgid "IPv4-only Python/Twisted"
-msgstr "仅IPV4"
+msgstr "仅限 IPv4 的 Python/Twisted"
 
 msgid "IPv4-only kernel"
-msgstr "仅IPv4内核"
+msgstr "仅限 IPv4 内核"
 
 msgid "IPv6 address(es)"
-msgstr "IPv6地址"
+msgstr "IPv6 地址"
 
 msgid "Import"
 msgstr "导入"
@@ -769,7 +762,7 @@ msgid "Include short description"
 msgstr "包含简短描述"
 
 msgid "Include when"
-msgstr "包含"
+msgstr "包含时间"
 
 msgid "Infinite Instant recording started"
 msgstr "无限即时录制已开始"
@@ -778,44 +771,44 @@ msgid "Info"
 msgstr "信息"
 
 msgid "Information"
-msgstr ""
+msgstr "信息"
 
 msgid "Inherit AutoTimer"
-msgstr "沿用自动计时器"
+msgstr "继承自动定时器"
 
 msgid "Install Package"
 msgstr "安装软件包"
 
 msgid "Installed"
-msgstr "安装"
+msgstr "已安装"
 
 msgid "Instant Record"
-msgstr "即时记录"
+msgstr "即时录制"
 
 msgid "Instant record for current Event started"
-msgstr "当前事件的即时记录已启动"
+msgstr "当前事件的即时录制已开始"
 
 msgid "Internal error!"
 msgstr "内部错误!"
 
 msgid "Internal flash memory"
-msgstr ""
+msgstr "内部闪存"
 
 #, python-format
 msgid "Interval (in %s)"
 msgstr "间隔（以%s为单位）"
 
 msgid "Interval (min.)"
-msgstr "间隔(分钟.)"
+msgstr "间隔（分钟）"
 
 msgid "Interval (sec.)"
-msgstr "间隔(秒.)"
+msgstr "间隔（秒）"
 
 msgid "January"
 msgstr "一月"
 
 msgid "Javascript Libraries"
-msgstr "Java脚本库"
+msgstr "Java 脚本库"
 
 msgid "July"
 msgstr "七月"
@@ -833,19 +826,19 @@ msgid "LCD"
 msgstr "LCD"
 
 msgid "LCD4Linux Setup"
-msgstr "LCD设置"
+msgstr "LCD4Linux 设置"
 
 msgid "Label series"
 msgstr "标签系列"
 
 msgid "License"
-msgstr ""
+msgstr "许可"
 
 msgid "Link speed"
 msgstr "链路速度"
 
 msgid "List of Timers has been cleaned"
-msgstr "定时器列表已被清理"
+msgstr "定时器列表已清理"
 
 msgid "Loading..."
 msgstr "加载中..."
@@ -854,10 +847,10 @@ msgid "Location"
 msgstr "位置"
 
 msgid "Locked"
-msgstr "锁定"
+msgstr "已锁定"
 
 msgid "MAC address"
-msgstr "MAC地址"
+msgstr "MAC 地址"
 
 msgid "MB"
 msgstr "MB"
@@ -872,16 +865,16 @@ msgid "March"
 msgstr "三月"
 
 msgid "Margin"
-msgstr ""
+msgstr "边距"
 
 msgid "Marker added."
-msgstr "标记已添加."
+msgstr "标记已添加。"
 
 msgid "Marker name"
 msgstr "标记名称"
 
 msgid "Match text"
-msgstr "匹配标题"
+msgstr "匹配文字"
 
 msgid "Max Days"
 msgstr "最大天数"
@@ -893,10 +886,10 @@ msgid "Message sent successfully!"
 msgstr "消息发送成功！"
 
 msgid "Method"
-msgstr "模式"
+msgstr "方法"
 
 msgid "Minimal EPG list"
-msgstr "最小EPG列表"
+msgstr "最小 EPG 列表"
 
 msgid "Minimal movie list"
 msgstr "最小电影列表"
@@ -911,18 +904,17 @@ msgstr "分钟"
 msgid "Missing mandatory parameter '%s'"
 msgstr "缺少必需参数 '%s'"
 
-#, fuzzy
 msgid "Missing request parameter: sRef"
-msgstr "缺少请求者:参考信息"
+msgstr "缺少请求参数：sRef"
 
 msgid "Mo"
-msgstr "星期一"
+msgstr "周一"
 
 msgid "Model"
 msgstr "型号"
 
 msgid "Mon"
-msgstr "星期一"
+msgstr "周一"
 
 msgid "Monday"
 msgstr "星期一"
@@ -937,14 +929,13 @@ msgid "More details"
 msgstr "更多细节"
 
 msgid "Mount point"
-msgstr ""
+msgstr "挂载点"
 
-#, fuzzy
 msgid "Move Recording"
-msgstr "伪录制"
+msgstr "移动录像"
 
 msgid "Movie database for EPG"
-msgstr "EPG电影数据库"
+msgstr "EPG 电影数据库"
 
 msgid "Movielist"
 msgstr "电影列表"
@@ -953,19 +944,22 @@ msgid "Movies"
 msgstr "电影"
 
 msgid "Multi-Bouquet is not enabled!"
-msgstr "多个节目分组未启用!"
+msgstr "未启用多频道群！"
 
-msgid "MultiEPG"
-msgstr "多重EPG"
-
-msgid "Mute/Unmute"
+msgid "MultiBoot Slots"
 msgstr ""
 
+msgid "MultiEPG"
+msgstr "多频道 EPG"
+
+msgid "Mute/Unmute"
+msgstr "静音/取消静音"
+
 msgid "NCam Webinterface"
-msgstr "NCam网络接口"
+msgstr "NCam 网络界面"
 
 msgid "Name"
-msgstr "频道名称"
+msgstr "名称"
 
 msgid "Name (a-z)"
 msgstr "名称 (a-z)"
@@ -986,68 +980,67 @@ msgid "Never"
 msgstr "从不"
 
 msgid "New"
-msgstr "新发现"
+msgstr "新"
 
 msgid "New Bookmark:"
-msgstr "新书签:"
+msgstr "新书签："
 
 msgid "New Name"
 msgstr "新名称"
 
-#, fuzzy
 msgid "Next Event"
-msgstr "当前事件"
+msgstr "下一事件"
 
 msgid "No"
 msgstr "否"
 
 msgid "No EPG data available."
-msgstr "没有可用的EPG数据."
+msgstr "没有可用的 EPG 数据。"
 
 msgid "No Parent Control Setup Pin given!"
-msgstr "没有给到家长控制设置PIN码!"
+msgstr "未提供家长控制设置 PIN 码！"
 
 msgid "No answer in time"
-msgstr "无响应"
+msgstr "没有及时答复"
 
 msgid "No bouquet given!"
-msgstr "没有指定节目分组名称!"
+msgstr "未提供频道群！"
 
 msgid "No bouquet name given!"
-msgstr "没有指定节目分组名称!"
+msgstr "未提供频道群名称！"
 
 msgid "No current service given!"
-msgstr "没有指定当前频道!"
+msgstr "未提供当前频道！"
 
 msgid "No event found! Not recording!"
-msgstr "定时器事件未找到！未录制！"
+msgstr "未找到事件！未录制！"
 
 msgid "No marker-name given!"
-msgstr "没有指定标记名称"
+msgstr "没有给出标记名称！"
 
 msgid "No matches were found in the EPG"
-msgstr "在EPG中没有找到匹配项."
+msgstr "在 EPG 中未找到匹配项"
 
 msgid "No matching Timer found"
-msgstr "找不到匹配的定时器"
+msgstr "未找到匹配的定时器"
 
 msgid "No network connection"
-msgstr ""
+msgstr "没有网络连接"
 
 msgid "No new servicename given!"
-msgstr "没有指定新的频道名!"
+msgstr "没有给出新的频道名！"
 
 msgid "No position given!"
-msgstr "没有指定位置!"
+msgstr "未提供位置！"
 
 msgid "No provider given!"
-msgstr "没有指定服务商!"
+msgstr "未提供供应商！"
 
 msgid "No service given!"
-msgstr "没有指定频道!"
+msgstr "未提供就道！"
 
 msgid "No, cancel"
-msgstr "不,取消"
+msgstr "否，取消"
 
 msgid "None"
 msgstr "无"
@@ -1056,7 +1049,7 @@ msgid "Nothing"
 msgstr "什么也没有"
 
 msgid "Nothing playing."
-msgstr "没有什么可以播放."
+msgstr "没有正在播放的内容。"
 
 msgid "Notify if Conflict"
 msgstr "冲突时通知"
@@ -1071,61 +1064,61 @@ msgid "Now"
 msgstr "现在"
 
 msgid "Now/Next Columns"
-msgstr ""
+msgstr "现在/下一栏"
 
 msgid "Number of recordings remaining"
-msgstr "剩余录制数"
+msgstr "剩余录制数量"
 
 msgid "ONID"
-msgstr ""
+msgstr "ONID"
 
 msgid "OSCam Webinterface"
-msgstr "OSCam网络接口"
+msgstr "OSCam 网络界面"
 
 msgid "OSD"
-msgstr "OSD菜单"
+msgstr "OSD"
 
 msgid "October"
 msgstr "十月"
 
 msgid "Offset after recording (mins)"
-msgstr "录制后偏移量(分钟)"
+msgstr "录制后偏移时间（分钟）"
 
 msgid "Offset before recording (mins)"
-msgstr "录制前偏移量(分钟)"
+msgstr "录制前偏移时间（分钟）"
 
 msgid "On"
 msgstr "在"
 
 msgid "On any service"
-msgstr "在任何服务"
+msgstr "在任何频道"
 
 msgid "On same service"
-msgstr "在同一服务上"
+msgstr "在同一频道"
 
 msgid "Only match between dates"
-msgstr "仅日期之间匹配"
+msgstr "仅匹配日期"
 
 msgid "Only match during timespan"
-msgstr "仅在时间跨度内匹配"
+msgstr "仅在时间段内匹配"
 
 msgid "Oops, no results matched your search"
-msgstr "糟糕,没有搜索到与你匹配的结果"
+msgstr "哎呀，没有匹配您搜索的结果"
 
 msgid "Oops..."
-msgstr "糟糕.."
+msgstr "糟糕..."
 
 msgid "Open Source Web Interface for Linux set-top box"
-msgstr "用于Linux机顶盒的开源Web界面"
+msgstr "Linux 机顶盒的开源 Web 界面"
 
 msgid "Open in new window"
 msgstr "在新窗口中打开"
 
 msgid "OpenWebif Browser Settings"
-msgstr "OpenWebif浏览器设置"
+msgstr "OpenWebif 浏览器设置"
 
 msgid "OpenWebif Settings"
-msgstr "OpenWebif设置"
+msgstr "OpenWebif 设置"
 
 msgid "OpenWebif url:"
 msgstr "OpenWebif 网址："
@@ -1134,22 +1127,22 @@ msgid "Orbital Position"
 msgstr "轨道位置"
 
 msgid "Override found with alternative service"
-msgstr "覆盖替代频道"
+msgstr "使用备用频道覆盖找到的"
 
 msgid "PCR PID"
-msgstr ""
+msgstr "PCR PID"
 
 msgid "PMT PID"
-msgstr ""
+msgstr "PMT PID"
 
 msgid "Packages"
 msgstr "软件包"
 
 msgid "Parent Control Setup Pin is wrong!"
-msgstr "家长控制设置PIN码错误！"
+msgstr "家长控制设置 PIN 码错误！"
 
 msgid "Parent Control is not activated."
-msgstr "用家长控制没有激活."
+msgstr "家长控制未激活。"
 
 msgid "Parse AutoTimer"
 msgstr "解析自动定时器"
@@ -1161,7 +1154,7 @@ msgid "Picture in Picture"
 msgstr "画中画"
 
 msgid "Picture in Picture (hidden)"
-msgstr "画中画(隐藏)"
+msgstr "画中画（隐藏）"
 
 msgid "Plain"
 msgstr "普通"
@@ -1194,10 +1187,10 @@ msgid "Provider"
 msgstr "供应商"
 
 msgid "Providers"
-msgstr "提供商"
+msgstr "供应商"
 
 msgid "REC"
-msgstr ""
+msgstr "REC"
 
 msgid "Radio"
 msgstr "广播"
@@ -1206,17 +1199,16 @@ msgid "Reboot Box"
 msgstr "重启机顶盒"
 
 msgid "Receiver"
-msgstr ""
+msgstr "接收机"
 
 msgid "Record a maximum of # times"
 msgstr "最多录制#次"
 
 msgid "Recording"
-msgstr ""
+msgstr "录制"
 
-#, fuzzy
 msgid "Recording Type"
-msgstr "录制状态"
+msgstr "录制类型"
 
 msgid "Refresh"
 msgstr "刷新"
@@ -1234,7 +1226,7 @@ msgid "Reload"
 msgstr "重新载入"
 
 msgid "Remote"
-msgstr "远程遥控"
+msgstr "遥控器"
 
 msgid "Remove Package"
 msgstr "删除软件包"
@@ -1246,7 +1238,7 @@ msgid "Rename"
 msgstr "重命名"
 
 msgid "Rename Bouquet"
-msgstr "重命名节目分组"
+msgstr "重命名频道群"
 
 msgid "Rename Recording"
 msgstr "重命名录制"
@@ -1255,19 +1247,19 @@ msgid "Repeated"
 msgstr "重复"
 
 msgid "Require description to be unique"
-msgstr "要求描述是唯一的"
+msgstr "要求描述唯一"
 
 msgid "Reset"
 msgstr "重置"
 
 msgid "Reset count"
-msgstr "复位计数"
+msgstr "重置计数"
 
 msgid "Restart GUI"
-msgstr "重启GUI"
+msgstr "重启用户界面"
 
 msgid "Restrict to bouquets"
-msgstr "仅限分组"
+msgstr "限制到频道群"
 
 msgid "Restrict to channels"
 msgstr "限制到频道"
@@ -1279,19 +1271,19 @@ msgid "SLAAC"
 msgstr "SLAAC"
 
 msgid "SNR"
-msgstr "质量"
+msgstr "SNR"
 
 msgid "SRef"
-msgstr ""
+msgstr "频道标识符"
 
 msgid "Sa"
-msgstr "星期六"
+msgstr "周六"
 
 msgid "Safe mode"
 msgstr "安全模式"
 
 msgid "Sat"
-msgstr "星期六"
+msgstr "周六"
 
 msgid "Satellites"
 msgstr "卫星"
@@ -1308,44 +1300,47 @@ msgstr "保存"
 msgid "Screenshot"
 msgstr "截图"
 
+msgid "Scripts"
+msgstr ""
+
 msgid "Search"
 msgstr "搜索"
 
 msgid "Search CSFD"
-msgstr "搜索CSFD"
+msgstr "搜索 CSFD"
 
 msgid "Search EPG"
-msgstr ""
+msgstr "搜索 EPG"
 
 msgid "Search IMDb"
-msgstr "搜索IMDB"
+msgstr "搜索 IMDb"
 
 msgid "Search KinoPoisk"
-msgstr "搜索KinoPoisk"
+msgstr "搜索 KinoPoisk"
 
 msgid "Search TV Guide UK"
-msgstr "搜索英国电视指南"
+msgstr "搜索 TV Guide UK"
 
 msgid "Search by name, sd / hd / uhd, or provider"
-msgstr "按名称,sd/hd/uhd或提供商搜索"
+msgstr "按名称、标清/高清/超高清或供应商搜索"
 
 msgid "Search strictness"
-msgstr "搜索精度 "
+msgstr "搜索严格程度"
 
 msgid "Search type"
 msgstr "搜索类型"
 
 msgid "Select Directory"
-msgstr ""
+msgstr "选择目录"
 
 msgid "Select IPK file for upload"
-msgstr "选择要上传的IPK文件"
+msgstr "选择 IPK 文件进行上传"
 
 msgid "Select..."
 msgstr "选择..."
 
 msgid "Send"
-msgstr ""
+msgstr "发送"
 
 msgid "Send Message"
 msgstr "发送信息"
@@ -1361,56 +1356,56 @@ msgstr "频道"
 
 #, python-format
 msgid "Service %s added."
-msgstr "频道%s已添加."
+msgstr "频道 %s 已添加。"
 
 #, python-format
 msgid "Service %s already exists in bouquet %s."
-msgstr "频道%s已经存在于节目分组%s."
+msgstr "频道 %s 已存在于频道群 %s 中。"
 
 #, python-format
 msgid "Service %s can not be removed."
-msgstr "频道%s不能被移除."
+msgstr "无法删除频道 %s。"
 
 #, python-format
 msgid "Service %s is locked."
-msgstr "频道%s已加锁."
+msgstr "频道 %s 已被锁定。"
 
 #, python-format
 msgid "Service %s is unlocked."
-msgstr "频道 %s 已解锁."
+msgstr "频道 %s 已解锁。"
 
 #, python-format
 msgid "Service %s moved."
-msgstr "频道%s已移动."
+msgstr "频道 %s 已移动。"
 
 #, python-format
 msgid "Service %s removed from bouquet %s."
-msgstr "频道%s已从节目分组%s中移除."
+msgstr "频道 %s 已从 %s 频道群中移除。"
 
 #, python-format
 msgid "Service %s removed."
-msgstr "频道%s已删除"
+msgstr "频道 %s 已删除。"
 
 msgid "Service ID (SID)"
-msgstr ""
+msgstr "频道 ID (SID)"
 
 msgid "Service can not be moved."
-msgstr "频道不能被移动"
+msgstr "频道无法移动。"
 
 msgid "Service can not be renamed."
-msgstr "频道不能改名."
+msgstr "无法重命名频道。"
 
 msgid "Service is not an alternative."
-msgstr "当前频道不是替代频道。"
+msgstr "频道不是备用频道。"
 
 msgid "Service renamed successfully."
-msgstr "频道改名完成."
+msgstr "频道重命名成功。"
 
 msgid "Services"
 msgstr "频道"
 
 msgid "Serving stream"
-msgstr ""
+msgstr "频道流"
 
 msgid "Set maximum duration"
 msgstr "设置最大持续时间"
@@ -1419,20 +1414,19 @@ msgid "Settings"
 msgstr "设置"
 
 msgid "Show EPG History"
-msgstr ""
+msgstr "显示 EPG 历史记录"
 
 msgid "Show EPG for"
-msgstr "显示EPG为"
+msgstr "显示 EPG"
 
 msgid "Show Full OpenWebif"
-msgstr "显示完整的OpenWebif"
+msgstr "显示完整的 OpenWebif"
 
 msgid "Show IPTV channels in selection (eg. Autotimer)"
-msgstr "在选择中显示IPTV频道(如自动定时器)"
+msgstr "显示所选的 IPTV 频道（例如自动定时器）"
 
-#, fuzzy
 msgid "Show all packages"
-msgstr "升级全部软件包"
+msgstr "显示所有软件包"
 
 msgid "Show box name in header"
 msgstr "在标题中显示机顶盒名称"
@@ -1441,19 +1435,19 @@ msgid "Show details"
 msgstr "显示详细信息"
 
 msgid "Show full remote"
-msgstr "显示完整的遥控"
+msgstr "显示完整遥控器"
 
 msgid "Show in Extensions menu"
 msgstr "在扩展菜单中显示"
 
 msgid "Show picon background"
-msgstr "显示picon背景"
+msgstr "显示频道图标背景"
 
 msgid "Show picons"
-msgstr "显示picon"
+msgstr "显示频道图标"
 
 msgid "Show picons in channel list"
-msgstr "在频道列表中显示picon"
+msgstr "在频道列表中显示频道图标"
 
 msgid "Show service type in channel list"
 msgstr "在频道列表中显示频道类型"
@@ -1462,56 +1456,56 @@ msgid "Shutdown"
 msgstr "关机"
 
 msgid "Shutdown after refresh."
-msgstr ""
+msgstr "刷新后关机。"
 
 msgid "Signal Power (AGC)"
-msgstr ""
+msgstr "信号功率 (AGC)"
 
 msgid "Signal Quality (SNR DB)"
-msgstr ""
+msgstr "信号质量 (SNR DB)"
 
 msgid "Signal Quality (SNR)"
-msgstr ""
+msgstr "信号质量 (SNR)"
 
 msgid "Simulate"
 msgstr "模拟"
 
 msgid "Site and sources"
-msgstr "来源站点"
+msgstr "网站和来源"
 
 msgid "Skins"
 msgstr "皮肤"
 
 msgid "SleepTimer error"
-msgstr "睡眠计时器错误"
+msgstr "睡眠定时器错误"
 
 msgid "Sleeptimer has been disabled"
-msgstr "睡眠计时器已被禁用"
+msgstr "睡眠定时器已被禁用"
 
 msgid "Sleeptimer is disabled"
-msgstr "睡眠定时器已禁用"
+msgstr "已禁用睡眠定时器"
 
 msgid "Sleeptimer is enabled"
-msgstr "睡眠计时器已启用"
+msgstr "已启用睡眠定时器"
 
 #, python-format
 msgid "Sleeptimer set to %d minutes"
-msgstr "睡眠计时器设置为%d分钟"
+msgstr "睡眠定时器设置为 %d 分钟"
 
 msgid "Small remote layout"
-msgstr ""
+msgstr "小型遥控器布局"
 
 msgid "Software"
 msgstr "软件"
 
 msgid "Sorry this page is not yet implemented"
-msgstr "抱歉,此页面尚未实现"
+msgstr "抱歉，此页面尚未实现"
 
 msgid "Sort"
 msgstr "排序"
 
 msgid "Spinner"
-msgstr "微调"
+msgstr "加载动画"
 
 msgid "Standby"
 msgstr "待机"
@@ -1523,25 +1517,25 @@ msgid "Start Instant Record"
 msgstr "开始即时录制"
 
 msgid "Start time is after end time"
-msgstr "开始时间为结束时间后"
+msgstr "开始时间晚于结束时间"
 
 msgid "Start typing..."
 msgstr "开始输入..."
 
 msgid "State"
-msgstr "国家"
+msgstr "状态"
 
 msgid "Storage"
-msgstr ""
+msgstr "存储"
 
 msgid "Stream"
 msgstr "串流"
 
 msgid "Stream Clients"
-msgstr "流客户端"
+msgstr "流媒体客户端"
 
 msgid "Su"
-msgstr "星期日"
+msgstr "周日"
 
 msgid "Subdirectories"
 msgstr "子目录"
@@ -1553,19 +1547,19 @@ msgid "Subservices"
 msgstr "子频道"
 
 msgid "Sun"
-msgstr "星期日"
+msgstr "周日"
 
 msgid "Sunday"
 msgstr "星期日"
 
 msgid "System OE"
-msgstr "OE系统"
+msgstr "系统 OE"
 
 msgid "TB"
 msgstr "TB"
 
 msgid "TSID"
-msgstr ""
+msgstr "TSID"
 
 msgid "TV"
 msgstr "电视"
@@ -1574,7 +1568,7 @@ msgid "TV Guide"
 msgstr "电视指南"
 
 msgid "TV Multi EPG"
-msgstr "多路EPG电视"
+msgstr "电视多频道 EPG"
 
 msgid "Tags"
 msgstr "标签"
@@ -1583,7 +1577,7 @@ msgid "Teletext"
 msgstr "图文电视"
 
 msgid "Teletext PID"
-msgstr "Teletext PID"
+msgstr "图文电视 PID"
 
 msgid "Television"
 msgstr "电视"
@@ -1592,7 +1586,7 @@ msgid "Template Engine"
 msgstr "模板引擎"
 
 msgid "Terminal"
-msgstr "终端设备"
+msgstr "终端"
 
 msgid "Terrestrial"
 msgstr "地面波"
@@ -1601,26 +1595,26 @@ msgid "Text"
 msgstr "文本"
 
 msgid "Th"
-msgstr "星期四"
+msgstr "周四"
 
 #, python-format
 msgid "The parameter '%s' can't be empty"
 msgstr "参数 “%s” 不能为空"
 
 msgid "The parameter 'command' must be a number"
-msgstr "'命令'参数必须是数字"
+msgstr "参数“命令”必须是数字"
 
 #, python-format
 msgid "The timer '%s' has been %s successfully"
-msgstr "定时器 '%s' 已成功设置为 %s"
+msgstr "定时器 '%s' 已成功 %s"
 
 #, python-format
 msgid "The timer '%s' has been deleted successfully"
-msgstr "定时器'%s'已被成功删除"
+msgstr "定时器“%s”已成功删除"
 
 #, python-format
 msgid "The timer '%s' now recorded! Not disabled!"
-msgstr "定时器 '%s' 正在录制!不能禁用!"
+msgstr "定时器 '%s' 现在已录制！未禁用！"
 
 msgid "Theme"
 msgstr "主题"
@@ -1629,10 +1623,10 @@ msgid "Theme mode"
 msgstr "主题模式"
 
 msgid "This service can not be added."
-msgstr "无法添加此频道."
+msgstr "无法添加此频道。"
 
 msgid "Thu"
-msgstr "星期四"
+msgstr "周四"
 
 msgid "Thursday"
 msgstr "星期四"
@@ -1641,51 +1635,51 @@ msgid "Time"
 msgstr "时间"
 
 msgid "Timeline"
-msgstr "时间表"
+msgstr "时间线"
 
 msgid "Timeout"
-msgstr "超时设置"
+msgstr "超时"
 
 msgid "Timer"
 msgstr "定时器"
 
 #, python-format
 msgid "Timer '%s' added"
-msgstr "定时器 '%s' 已添加"
+msgstr "已 添加定时器 '%s'"
 
 #, python-format
 msgid "Timer '%s' already exists!"
-msgstr "定时器 '%s' 已存在!"
+msgstr "已存在定时器 '%s' !"
 
 #, python-format
 msgid "Timer '%s' changed"
-msgstr "定时器 '%s' 已更改"
+msgstr "已更改定时器 '%s'"
 
 #, python-format
 msgid "Timer '%s' not enabled while Conflict"
-msgstr "冲突时未启用计时器 '%s'"
+msgstr "冲突时定时器“%s”未启用"
 
 #, python-format
 msgid "Timer '%s' not saved while Conflict"
-msgstr "定时器 '%s' 在冲突时不保存"
+msgstr "冲突时定时器“%s”未保存"
 
 msgid "Timer Added"
 msgstr "定时器已添加"
 
 msgid "Timer Conflict"
-msgstr ""
+msgstr "定时器冲突"
 
 msgid "Timer added"
 msgstr "定时器已添加"
 
 msgid "Timer conflict detected! Not recording!"
-msgstr "检测到定时器冲突!停止录制!"
+msgstr "检测到定时器冲突！未录制！"
 
 msgid "Timer type"
 msgstr "定时器类型"
 
 msgid "TimerList has been saved"
-msgstr "定时器列表已保存"
+msgstr "已保存定时器列表"
 
 msgid "Timerlist"
 msgstr "定时器列表"
@@ -1703,22 +1697,22 @@ msgid "Today"
 msgstr "今天"
 
 msgid "Toggle Standby"
-msgstr ""
+msgstr "切换待机"
 
 msgid "Transcode"
 msgstr "转码"
 
 msgid "Translation to Spanish"
-msgstr "西班牙语翻译"
+msgstr "翻译成西班牙语"
 
 msgid "Try guessing"
 msgstr "尝试猜测"
 
 msgid "Tu"
-msgstr "星期二"
+msgstr "周二"
 
 msgid "Tue"
-msgstr "星期二"
+msgstr "周二"
 
 msgid "Tuesday"
 msgstr "星期二"
@@ -1740,11 +1734,11 @@ msgstr "类型"
 
 #, python-format
 msgid "Unknown Volume command %s"
-msgstr "未知音量命令 %s"
+msgstr "未知的音量命令 %s"
 
 #, python-format
 msgid "Unknown command: '%s'"
-msgstr "未知命令: '%s'"
+msgstr "未知命令： '%s'"
 
 msgid "Upcoming Events"
 msgstr "节目预告"
@@ -1756,7 +1750,7 @@ msgid "Update Package"
 msgstr "更新软件包"
 
 msgid "Update from feed"
-msgstr "从Feed更新"
+msgstr "从订阅源更新"
 
 msgid "Upgrade all packages"
 msgstr "升级全部软件包"
@@ -1765,19 +1759,19 @@ msgid "Upload File Error"
 msgstr "上传文件错误"
 
 msgid "Upload package"
-msgstr "上传程序包"
+msgstr "上传软件包"
 
 msgid "Uploaded Files"
-msgstr "上传文件"
+msgstr "已上传文件"
 
 msgid "Use Channelname for screenshots"
-msgstr "使用频道名称进行屏幕截图"
+msgstr "使用频道名称作为截图文件名"
 
 msgid "Use a custom location"
 msgstr "使用自定义位置"
 
 msgid "Use as PiP if possible"
-msgstr "如果可能,可用作画中画"
+msgstr "如果可能，用作画中画"
 
 msgid "Use classic interface"
 msgstr "使用经典界面"
@@ -1795,7 +1789,7 @@ msgid "VPS"
 msgstr "VPS"
 
 msgid "VPS plugin not found"
-msgstr "未找到VPS插件"
+msgstr "未找到 VPS 插件"
 
 msgid "Version"
 msgstr "版本"
@@ -1807,13 +1801,13 @@ msgid "Video Height"
 msgstr "视频高度"
 
 msgid "Video PID (VPID)"
-msgstr ""
+msgstr "视频 PID (VPID)"
 
 msgid "Video Width"
 msgstr "视频宽度"
 
 msgid "Visibly"
-msgstr "可见"
+msgstr "可视"
 
 msgid "Volume"
 msgstr "音量"
@@ -1837,13 +1831,13 @@ msgid "Warning"
 msgstr "警告"
 
 msgid "We"
-msgstr "星期三"
+msgstr "周三"
 
 msgid "Web TV"
 msgstr "网络电视"
 
 msgid "Wed"
-msgstr "星期三"
+msgstr "周三"
 
 msgid "Wednesday"
 msgstr "星期三"
@@ -1855,7 +1849,7 @@ msgid "Weekly (Sunday)"
 msgstr "每周（星期日）"
 
 msgid "Widescreen"
-msgstr ""
+msgstr "宽屏"
 
 msgid "Wizard"
 msgstr "向导"
@@ -1865,7 +1859,7 @@ msgstr "是否保存更改?"
 
 #, python-format
 msgid "Wrong parameter format 'set=%s'. Use set=set15 "
-msgstr "错误的参数格式设置'set=%s', 使用 set=set15"
+msgstr "参数格式“set=%s”错误。请使用 set=set15"
 
 msgid "YYYY-MM-DD"
 msgstr "YYYY-MM-DD"
@@ -1883,16 +1877,16 @@ msgid "Zap"
 msgstr "切换频道"
 
 msgid "Zap & Record"
-msgstr "切换&录制"
+msgstr "切换并录制"
 
 msgid "Zap before streaming"
-msgstr "串流之前切换频道"
+msgstr "串流前切换频道"
 
 msgid "Zap to"
 msgstr "切换到"
 
 msgid "Zapped to"
-msgstr "快速切换到"
+msgstr "已切换到"
 
 msgid "any time"
 msgstr "任何时候"
@@ -1901,7 +1895,7 @@ msgid "auto"
 msgstr "自动"
 
 msgid "box_ip"
-msgstr "box_ip"
+msgstr "机顶盒 IP"
 
 msgid "case-insensitive"
 msgstr "不区分大小写"
@@ -1910,7 +1904,7 @@ msgid "case-sensitive"
 msgstr "区分大小写"
 
 msgid "descramble and record ecm"
-msgstr ""
+msgstr "解扰并录制 ECM"
 
 msgid "description contains"
 msgstr "描述包含"
@@ -1925,10 +1919,10 @@ msgid "do nothing"
 msgstr "什么也不做"
 
 msgid "don't descramble, record ecm"
-msgstr ""
+msgstr "不解扰，录制 ECM"
 
 msgid "error! Loading Page"
-msgstr "错误!正在载入页面"
+msgstr "错误！正在加载页面"
 
 msgid "exact title match"
 msgstr "精确标题匹配"
@@ -1937,7 +1931,7 @@ msgid "favourite desc match"
 msgstr "最喜欢的描述匹配"
 
 msgid "finished"
-msgstr "完成"
+msgstr "已完成"
 
 msgid "go to deep standby"
 msgstr "进入深度待机"
@@ -1967,10 +1961,10 @@ msgid "no description available"
 msgstr "无可用描述"
 
 msgid "none/IPv4-only network"
-msgstr "无/仅IPv4网络"
+msgstr "无/仅 IPv4 网络"
 
 msgid "normal"
-msgstr ""
+msgstr "普通"
 
 msgid "on day"
 msgstr "白天"
@@ -2003,7 +1997,7 @@ msgid "seconds"
 msgstr "秒"
 
 msgid "select bouquets"
-msgstr "选择节目分组"
+msgstr "选择频道群"
 
 msgid "select channels"
 msgstr "选择频道"
@@ -2030,7 +2024,7 @@ msgid "title contains"
 msgstr "标题包含"
 
 msgid "title ends with"
-msgstr "标题以结尾"
+msgstr "标题结尾为"
 
 msgid "title or description match"
 msgstr "标题或描述匹配"
@@ -2039,14 +2033,14 @@ msgid "title or short description match"
 msgstr "标题或简短描述匹配"
 
 msgid "title starts with"
-msgstr "标题以开头"
+msgstr "标题开头为"
 
 msgid "transcoded"
 msgstr "转码"
 
 #, python-format
 msgid "type %s is not a number"
-msgstr "类型 %s 的不是数字"
+msgstr "类型 %s 不是数字"
 
 msgid "unknown"
 msgstr "未知"
@@ -2073,61 +2067,61 @@ msgid "zap"
 msgstr "切换频道"
 
 msgid "Add service name to stream information"
-msgstr "添加频道名称到数据流信息"
+msgstr "将频道名称添加到流媒体信息"
 
 msgid "Allow IPK Upload"
-msgstr "允许IPK上传"
+msgstr "允许 IPK 上传"
 
 msgid "Debug - Display Tracebacks in browser"
-msgstr "调试-在浏览器中显示错误信息和回跟踪"
+msgstr "调试 - 在浏览器中显示回溯"
 
 msgid "Disable remote access for user root"
-msgstr "禁用用户根目录的远程访问"
+msgstr "禁用 root 用户的远程访问"
 
 msgid "Enable Authentication for streaming"
-msgstr "为流媒体启用身份验证"
+msgstr "启用串流身份验证"
 
 msgid "Enable HTTP Authentication"
-msgstr "启用HTTP身份验证"
+msgstr "启用 HTTP 身份验证"
 
 msgid "Enable HTTPS"
-msgstr "启用HTTPS"
+msgstr "启用 HTTPS"
 
 msgid "Enable HTTPS Authentication"
-msgstr "启用HTTPS身份验证"
+msgstr "启用 HTTPS 身份验证"
 
 msgid "Enable Parental Control"
 msgstr "启用家长控制"
 
 msgid "Enable access from VPNs"
-msgstr "启用VPN接入"
+msgstr "启用 VPN 访问"
 
 msgid "HTTP port"
-msgstr "HTTP端口"
+msgstr "HTTP 端口"
 
 msgid "HTTPS port"
-msgstr "HTTPS端口"
+msgstr "HTTPS 端口"
 
 msgid "OpenWebInterface Enabled"
-msgstr "启用开放的Web界面"
+msgstr "启用 OpenWebInterface"
 
 msgid "OpenWebif Configuration"
-msgstr "网页管理配置"
+msgstr "OpenWebif 配置"
 
 msgid "Playback IPTV Streams in browser"
-msgstr "在浏览器中播放IPTV流"
+msgstr "在浏览器中播放 IPTV 串流"
 
 msgid "Require client cert for HTTPS"
-msgstr "HTTPS需要客户端证书"
+msgstr "HTTPS 需要客户端证书"
 
 msgid "Streaming port"
-msgstr "流媒体端口"
+msgstr "串流端口"
 
 msgid "Use custom Color"
 msgstr "使用自定义颜色"
 
 msgid "Without auth only local access is allowed!"
-msgstr "没有认证只有本地访问是允许的！"
+msgstr "未经身份验证，只允许本地访问！"
 
 #~ msgid ""
 #~ "Delete failed, because there is no movie trash !\n"

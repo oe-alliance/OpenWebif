@@ -1,22 +1,22 @@
 # Signed-off-by: Dario Croci <spaeleus@croci.org>
 #
 # Dario Croci <spaeleus@croci.org>, 2021, 2022, 2023.
-# Massimo Pissarello <mapi68@gmail.com>, 2022, 2023.
+# Massimo Pissarello <mapi68@gmail.com>, 2022, 2023, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenWebif\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-26 22:02+0200\n"
-"PO-Revision-Date: 2023-09-01 08:52+0000\n"
+"POT-Creation-Date: 2026-05-31 14:25+0200\n"
+"PO-Revision-Date: 2025-05-06 16:03+0000\n"
 "Last-Translator: Massimo Pissarello <mapi68@gmail.com>\n"
-"Language-Team: Italian <https://hosted.weblate.org/projects/"
-"e2openplugin-openwebif/e2openplugin-openwebif/it/>\n"
+"Language-Team: Italian <https://hosted.weblate.org/projects/e2openplugin-"
+"openwebif/e2openplugin-openwebif/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0.1-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -76,7 +76,7 @@ msgid "<Default movie location>"
 msgstr "<Posizione predefinita registrazioni>"
 
 msgid "<Last timer location>"
-msgstr "<Posizione dell'ultimo timer>"
+msgstr "<Posizione ultimo timer>"
 
 msgid "A filename is required"
 msgstr "È richiesto un nome di file"
@@ -115,7 +115,7 @@ msgid "Add a timer"
 msgstr "Aggiungi un timer"
 
 msgid "Add a zap timer"
-msgstr "Aggiungi un timer di zapping"
+msgstr "Aggiungi timer per zap"
 
 msgid "Add an AutoTimer"
 msgstr "Aggiungi un timer automatico"
@@ -156,9 +156,9 @@ msgid ""
 "and/or modify it under the terms of the GNU General Public License version 3 "
 "as published by the Free Software Foundation."
 msgstr ""
-"Tutti i file di questo software sono opere open source: è possibile "
-"ridistribuirli o modificarli secondo i termini la licenza GNU versione 3, "
-"così come pubblicato dalla Free Software Foundation."
+"Tutti i file di questo software sono software open source; puoi "
+"ridistribuirlo e/o modificarlo secondo i termini della GNU General Public "
+"License versione 3 pubblicata dalla Free Software Foundation."
 
 msgid "All alternative services deleted."
 msgstr "Tutti i servizi alternativi sono stati cancellati."
@@ -956,6 +956,9 @@ msgstr "Registrazioni"
 msgid "Multi-Bouquet is not enabled!"
 msgstr "Bouquet multipli non abilitati!"
 
+msgid "MultiBoot Slots"
+msgstr ""
+
 msgid "MultiEPG"
 msgstr "EPG multiplo"
 
@@ -1026,7 +1029,7 @@ msgid "No marker-name given!"
 msgstr "Nessun nome marcatore specificato!"
 
 msgid "No matches were found in the EPG"
-msgstr "Nessuna corrispondenza è stata trovata nell'EPG"
+msgstr "Non è stata trovata alcuna corrispondenza nell'EPG"
 
 msgid "No matching Timer found"
 msgstr "Nessun timer corrispondente trovato"
@@ -1307,6 +1310,9 @@ msgstr "Salva"
 msgid "Screenshot"
 msgstr "Screenshot"
 
+msgid "Scripts"
+msgstr ""
+
 msgid "Search"
 msgstr "Cerca"
 
@@ -1463,13 +1469,13 @@ msgid "Shutdown after refresh."
 msgstr "Spegni dopo l'aggiornamento."
 
 msgid "Signal Power (AGC)"
-msgstr "Potenza del segnale (AGC)"
+msgstr "Potenza segnale (AGC)"
 
 msgid "Signal Quality (SNR DB)"
-msgstr "Qualità del segnale (DB SNR)"
+msgstr "Qualità segnale (DB SNR)"
 
 msgid "Signal Quality (SNR)"
-msgstr "Qualità del segnale (SNR)"
+msgstr "Qualità segnale (SNR)"
 
 msgid "Simulate"
 msgstr "Simulazione"
@@ -1965,7 +1971,7 @@ msgid "no description available"
 msgstr "nessuna descrizione disponibile"
 
 msgid "none/IPv4-only network"
-msgstr "nessuna o sola rete IPv4"
+msgstr "nessuno o sola rete IPv4"
 
 msgid "normal"
 msgstr "normale"
@@ -2050,7 +2056,7 @@ msgid "unknown"
 msgstr "sconosciuto"
 
 msgid "using"
-msgstr "utilizzando"
+msgstr "usando"
 
 msgid "via"
 msgstr "attraverso"

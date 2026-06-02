@@ -1,10 +1,11 @@
+# rimasx <riks_12@hot.ee>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenWebif\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-26 22:02+0200\n"
-"PO-Revision-Date: 2023-08-22 17:44+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"POT-Creation-Date: 2026-05-31 14:25+0200\n"
+"PO-Revision-Date: 2025-05-06 16:03+0000\n"
+"Last-Translator: rimasx <riks_12@hot.ee>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/e2openplugin-"
 "openwebif/e2openplugin-openwebif/et/>\n"
 "Language: et\n"
@@ -12,33 +13,33 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #, python-format
 msgid "%02d.%02d."
-msgstr ""
+msgstr "%02d.%02d."
 
 #, python-format
 msgid "%02d.%02d.%d"
-msgstr ""
+msgstr "%02d.%02d.%d"
 
 #, python-format
 msgid "%02d:%02d"
-msgstr ""
+msgstr "%02d:%02d"
 
 msgid "%d.%m.%Y"
-msgstr ""
+msgstr "%d.%m.%Y"
 
 msgid "%d.%m.%Y %H:%M"
-msgstr ""
+msgstr "%d.%m.%Y %H:%M"
 
 #, python-format
 msgid "%s %02d.%02d."
-msgstr ""
+msgstr "%s %02d.%02d."
 
 #, python-format
 msgid "%s %02d.%02d.%d"
-msgstr ""
+msgstr "%s %02d.%02d.%d"
 
 #, python-format
 msgid "%s %s is locked."
@@ -46,11 +47,11 @@ msgstr "%s %s on lukustatud."
 
 #, python-format
 msgid "%s / %s"
-msgstr ""
+msgstr "%s / %s"
 
 #, python-format
 msgid "%s Style"
-msgstr ""
+msgstr "%s stiil"
 
 #, python-format
 msgid "%s free / %s total"
@@ -59,23 +60,20 @@ msgstr "Vaba %s / kokku %s"
 msgid "(Press 'shift' and click to 'hold')"
 msgstr "(shift + klõps = pikk nupuvajutus)"
 
-#, fuzzy
 msgid "(in minutes)"
-msgstr "minut"
+msgstr "(minutites)"
 
 msgid "<Current movie list location>"
-msgstr ""
+msgstr "<Praegune filmiloendi asukoht>"
 
-#, fuzzy
 msgid "<Default movie location>"
-msgstr "Kasuta kohandatud asukohta"
+msgstr "<Salvestiste vaikeasukoht>"
 
-#, fuzzy
 msgid "<Last timer location>"
-msgstr "Kasuta kohandatud asukohta"
+msgstr "<Viimase taimeri asukoht>"
 
 msgid "A filename is required"
-msgstr "Sisesta failinimi"
+msgstr "Vajalik on failinimi"
 
 msgid "A value is required"
 msgstr "Midagi tuleb kirjutada!"
@@ -93,13 +91,13 @@ msgid "Add  AutoTimer  to tags"
 msgstr "Lisa siltidele 'autotaimer'"
 
 msgid "Add AutoTimer name to tags"
-msgstr "Lisa siltidele nimi"
+msgstr "Lisa siltidele autotaimeri nimi"
 
 msgid "Add Bouquet"
 msgstr "Lisa lemmiknimekiri"
 
 msgid "Add IPTV/URL"
-msgstr ""
+msgstr "Lisa IPTV/URL"
 
 msgid "Add Marker"
 msgstr "Lisa märgis"
@@ -119,26 +117,24 @@ msgstr "Lisa autotaimer"
 msgid "Add channel(s) as alternate"
 msgstr "Lisa asenduskanalina"
 
-#, fuzzy
 msgid "Add filters"
-msgstr "Lisa taimer"
+msgstr "Lisa filtreid"
 
 msgid "Add selection to bouquet"
 msgstr "Lisa lemmiknimekirja"
 
 msgid "Add similar on conflict"
-msgstr "Vastuolu puhul lisa asendustaimer"
+msgstr "Vastuolu puhul lisa sarnane"
 
 msgid "Add tags to recordings"
-msgstr ""
+msgstr "Lisa salvestistele silte"
 
 #, python-format
 msgid "Added %s to alternative service %s."
 msgstr "%s lisati asenduskanalile %s."
 
-#, fuzzy
 msgid "After"
-msgstr "Pärast sündmust"
+msgstr "Pärast"
 
 msgid "After event"
 msgstr "Pärast sündmust"
@@ -178,10 +174,10 @@ msgid "Answer is YES!"
 msgstr "Vastus - JAH!"
 
 msgid "Any"
-msgstr ""
+msgstr "Mistahes"
 
 msgid "Any day"
-msgstr ""
+msgstr "Iga päev"
 
 msgid "Any service/recording"
 msgstr "Iga kanal/salvestus"
@@ -189,35 +185,32 @@ msgstr "Iga kanal/salvestus"
 msgid "April"
 msgstr "Aprill"
 
-#, fuzzy
 msgid "Are you sure you want to copy this recording?"
-msgstr "Kas kustutada salvestis"
+msgstr "Kas soovid selle salvestise kopeerida?"
 
 msgid "Are you sure you want to delete the selected bouquet?"
-msgstr "Kas kustutada lemmiknimekiri"
+msgstr "Kas kustutada lemmiknimekiri?"
 
 msgid "Are you sure you want to delete the selected item(s)?"
-msgstr "Kas kustutad valitud elemendid"
+msgstr "Kas kustutada valitud elemendid?"
 
-#, fuzzy
 msgid "Are you sure you want to delete this AutoTimer?"
-msgstr "Kas kustutada taimer"
+msgstr "Kas soovid selle autotaimeri kustutada?"
 
 msgid "Are you sure you want to delete this recording?"
-msgstr "Kas kustutada salvestis"
+msgstr "Kas kustutada salvestis?"
 
 msgid "Are you sure you want to delete this timer?"
-msgstr "Kas kustutada taimer"
+msgstr "Kas kustutada taimer?"
 
-#, fuzzy
 msgid "Are you sure you want to move this recording?"
-msgstr "Kas nimetada salvestis ümber"
+msgstr "Kas soovid selle salvestise teisaldada?"
 
 msgid "Are you sure you want to rename this recording?"
-msgstr "Kas nimetada salvestis ümber"
+msgstr "Kas nimetada salvestis ümber?"
 
 msgid "Are you sure you want to restore from file?"
-msgstr "Kas taastad failist"
+msgstr "Kas taastada failist?"
 
 msgid "Are you sure you want to start recording instantly?"
 msgstr "Kas käivitada kohene salvestus?"
@@ -229,13 +222,13 @@ msgid "Ask, default Yes"
 msgstr "Küsitakse (vaikimisi 'jah')"
 
 msgid "Audio Encoding"
-msgstr ""
+msgstr "Heli kodeering"
 
 msgid "Audio PID (APID)"
-msgstr ""
+msgstr "Heli PID (APID)"
 
 msgid "Audio Track"
-msgstr ""
+msgstr "Heliriba"
 
 msgid "August"
 msgstr "August"
@@ -271,20 +264,19 @@ msgid "Background only"
 msgstr "Ainult taust"
 
 msgid "Before"
-msgstr ""
+msgstr "Enne"
 
 msgid "Begin"
 msgstr "Algus"
 
-#, fuzzy
 msgid "Begin of \"After event\" timespan"
-msgstr "\"pärast sündmust\" ajaakna algus"
+msgstr "\"Pärast sündmust\" ajaakna algus"
 
 msgid "Beginning of timespan"
 msgstr "Ajaakna algus"
 
 msgid "Bit Error Rate (BER)"
-msgstr ""
+msgstr "Bitiviga (BER)"
 
 msgid "Bookmark"
 msgstr "Järjehoidja"
@@ -306,7 +298,7 @@ msgstr "Lemmiknimekiri %s loodud."
 
 #, python-format
 msgid "Bouquet %s deleted."
-msgstr "Lemmiknimekiri %s kustutatud."
+msgstr "Lemmiknimekiri %s kustutati."
 
 #, python-format
 msgid "Bouquet %s is locked."
@@ -318,7 +310,7 @@ msgstr "Lemmiknimekirja %s lukustus maas."
 
 #, python-format
 msgid "Bouquet %s moved."
-msgstr "Lemmiknimekiri %s liigutatud."
+msgstr "Lemmiknimekiri %s teisaldati."
 
 #, python-format
 msgid "Bouquet %s removed failed, sevicerefence or mutable list is not valid."
@@ -367,7 +359,7 @@ msgid "Brand"
 msgstr "Mark"
 
 msgid "Build"
-msgstr ""
+msgstr "Järk"
 
 msgid "Cable"
 msgstr "Kaabel"
@@ -406,11 +398,11 @@ msgid "Common Settings"
 msgstr "Üldseaded"
 
 msgid "Config"
-msgstr ""
+msgstr "Seadistus"
 
 #, python-format
 msgid "Conflicting Timer(s) detected! %s"
-msgstr "Vastuolus taimerid!  %s"
+msgstr "Vastuolus taimerid! %s"
 
 msgid "Contributors"
 msgstr "Kaasautorid"
@@ -418,9 +410,8 @@ msgstr "Kaasautorid"
 msgid "Control"
 msgstr "Juhtimine"
 
-#, fuzzy
 msgid "Copy Recording"
-msgstr "Kustuta salvestis"
+msgstr "Kopeeri salvestis"
 
 #, python-format
 msgid "Could not add timer '%s'!"
@@ -440,7 +431,7 @@ msgid "Current Event"
 msgstr "Käesolev saade"
 
 msgid "Currently recording"
-msgstr ""
+msgstr "Hetkel salvestatakse"
 
 msgid "Custom box name"
 msgstr "Kohandatud vastuvõtja nimi"
@@ -455,10 +446,10 @@ msgid "Date"
 msgstr "Kuupäev"
 
 msgid "Date (newest)"
-msgstr ""
+msgstr "Kuupäev (uusim)"
 
 msgid "Date (oldest)"
-msgstr ""
+msgstr "Kuupäev (vanim)"
 
 msgid "December"
 msgstr "Detsember"
@@ -494,11 +485,10 @@ msgid "Description"
 msgstr "Sisututvustus"
 
 msgid "Device"
-msgstr ""
+msgstr "Vastuvõtja"
 
-#, fuzzy
 msgid "Disable"
-msgstr "keelatud"
+msgstr "Keela"
 
 msgid "Disable Timer"
 msgstr "Keela taimer"
@@ -548,13 +538,11 @@ msgstr "EPG värskendus"
 msgid "ERROR: Cannot set SleepTimer while device is in Standby-Mode"
 msgstr "VIGA: Unetaimerit ei saa määrata kui vastuvõtja on ooteseisundis"
 
-#, fuzzy
 msgid "Edit"
-msgstr "Redaktor"
+msgstr "Muuda"
 
-#, fuzzy
 msgid "Edit Recording"
-msgstr "Kustuta salvestis"
+msgstr "Muuda salvestust"
 
 msgid "Edit Timer"
 msgstr "Muuda taimerit"
@@ -562,9 +550,8 @@ msgstr "Muuda taimerit"
 msgid "Editor"
 msgstr "Redaktor"
 
-#, fuzzy
 msgid "Enable"
-msgstr "Lubatud"
+msgstr "Luba"
 
 msgid "Enable Messages"
 msgstr "Luba teavitused"
@@ -587,9 +574,8 @@ msgstr "Kodeeritud"
 msgid "End"
 msgstr "Lõpp"
 
-#, fuzzy
 msgid "End of \"After event\" timespan"
-msgstr "\"pärast sündmust\" ajaakna lõpp"
+msgstr "\"Pärast sündmust\" ajaakna lõpp"
 
 msgid "End of timespan"
 msgstr "Ajaakna lõpp"
@@ -600,18 +586,17 @@ msgstr "Sisesta lemmiknimekirja uus nimi"
 msgid "Enter a name for the new marker"
 msgstr "Sisesta märgise uus nimi"
 
-#, fuzzy
 msgid "Enter a name for this AutoTimer"
-msgstr "Sisesta märgise uus nimi"
+msgstr "Sisesta selle autotaimeri nimi"
 
 msgid "Enter path"
-msgstr ""
+msgstr "Sisesta rada"
 
 msgid "Enter text"
-msgstr ""
+msgstr "Sisesta tekst"
 
 msgid "Enter the text to find in the EPG"
-msgstr ""
+msgstr "Sisesta EPG-st otsitav tekst"
 
 msgid "Error"
 msgstr "Viga"
@@ -656,9 +641,8 @@ msgstr "Iga"
 msgid "Exclude when"
 msgstr "Jäta välja"
 
-#, fuzzy
 msgid "Execute \"After event\" during timespan"
-msgstr "Teosta \"pärast sündmust\" ajaakna sees"
+msgstr "Teosta \"Pärast sündmust\" ajaaknas"
 
 msgid "Export"
 msgstr "Ekspordi"
@@ -676,14 +660,13 @@ msgid "February"
 msgstr "Veebruar"
 
 msgid "Find similar events"
-msgstr ""
+msgstr "Otsi sarnaseid saateid"
 
 msgid "Firmware version"
 msgstr "Püsivara versioon"
 
-#, fuzzy
 msgid "Folders"
-msgstr "Levitajad"
+msgstr "Kaustad"
 
 msgid "Force"
 msgstr "Sunnitud"
@@ -698,7 +681,7 @@ msgid "Free Memory"
 msgstr "Vaba mälu"
 
 msgid "Free space"
-msgstr ""
+msgstr "Vaba kettaruum"
 
 msgid "Fri"
 msgstr "R"
@@ -731,7 +714,7 @@ msgid "Get mutable list for new created bouquet failed!"
 msgstr "Uue lemmiknimekirja jaoks muudetava nimekirja hankimine nurjus!"
 
 msgid "HH:MM"
-msgstr ""
+msgstr "HH:MM"
 
 msgid "Hard disk model"
 msgstr "Salvesti"
@@ -746,13 +729,13 @@ msgid "High Resolution"
 msgstr "Kõrglahutus"
 
 msgid "Hold to drag"
-msgstr ""
+msgstr "Lohistamiseks hoia all"
 
 msgid "Hour"
 msgstr "Tund"
 
 msgid "IPTV / URL name"
-msgstr ""
+msgstr "IPTV / URL-nimi"
 
 msgid "IPv4 address"
 msgstr "IPv4 aadress"
@@ -788,7 +771,7 @@ msgid "Info"
 msgstr "Andmed"
 
 msgid "Information"
-msgstr ""
+msgstr "Teave"
 
 msgid "Inherit AutoTimer"
 msgstr "Päring Autotaimerist"
@@ -809,7 +792,7 @@ msgid "Internal error!"
 msgstr "Sisemine viga!"
 
 msgid "Internal flash memory"
-msgstr ""
+msgstr "Sisemine välkmälu"
 
 #, python-format
 msgid "Interval (in %s)"
@@ -849,7 +832,7 @@ msgid "Label series"
 msgstr "Seriaalide pealdis"
 
 msgid "License"
-msgstr ""
+msgstr "Litsents"
 
 msgid "Link speed"
 msgstr "Ühenduse kiirus"
@@ -857,9 +840,8 @@ msgstr "Ühenduse kiirus"
 msgid "List of Timers has been cleaned"
 msgstr "Taimerinimekiri tühjendati"
 
-#, fuzzy
 msgid "Loading..."
-msgstr "laadimine"
+msgstr "Laadimine..."
 
 msgid "Location"
 msgstr "Asukoht"
@@ -883,7 +865,7 @@ msgid "March"
 msgstr "Märts"
 
 msgid "Margin"
-msgstr ""
+msgstr "Marginaal"
 
 msgid "Marker added."
 msgstr "Märgis lisatud."
@@ -922,9 +904,8 @@ msgstr "Minut"
 msgid "Missing mandatory parameter '%s'"
 msgstr "Puudub kohustuslik parameeter '%s'"
 
-#, fuzzy
 msgid "Missing request parameter: sRef"
-msgstr "Puudub registri parameeter: sRef"
+msgstr "Puudub päringu parameeter: sRef"
 
 msgid "Mo"
 msgstr "E"
@@ -944,16 +925,14 @@ msgstr "Kord kuus"
 msgid "More"
 msgstr "Veel"
 
-#, fuzzy
 msgid "More details"
-msgstr "Kuva üksikasjad"
+msgstr "Rohkem üksikasju"
 
 msgid "Mount point"
-msgstr ""
+msgstr "Haakepunkt"
 
-#, fuzzy
 msgid "Move Recording"
-msgstr "Võltssalvestus"
+msgstr "Teisalda salvestis"
 
 msgid "Movie database for EPG"
 msgstr "EPG kasutatav andmebaas"
@@ -967,11 +946,14 @@ msgstr "Salvestised"
 msgid "Multi-Bouquet is not enabled!"
 msgstr "Luba mitme nimekirja kasutus!"
 
+msgid "MultiBoot Slots"
+msgstr ""
+
 msgid "MultiEPG"
 msgstr "MultiEPG"
 
 msgid "Mute/Unmute"
-msgstr ""
+msgstr "Vaigista/Heli peale"
 
 msgid "NCam Webinterface"
 msgstr "NCam veebiliides"
@@ -980,10 +962,10 @@ msgid "Name"
 msgstr "Nimi"
 
 msgid "Name (a-z)"
-msgstr ""
+msgstr "Nimi (a-ü)"
 
 msgid "Name (z-a)"
-msgstr ""
+msgstr "Nimi (ü-a)"
 
 msgid "Namespace"
 msgstr "Nimeruum"
@@ -1000,23 +982,20 @@ msgstr "Mitte kunagi"
 msgid "New"
 msgstr "Uus"
 
-#, fuzzy
 msgid "New Bookmark:"
-msgstr "Järjehoidja"
+msgstr "Uus järjehoidja:"
 
 msgid "New Name"
 msgstr "Uus nimi"
 
-#, fuzzy
 msgid "Next Event"
-msgstr "Käesolev saade"
+msgstr "Järgmine sündmus"
 
 msgid "No"
 msgstr "Ei"
 
-#, fuzzy
 msgid "No EPG data available."
-msgstr "sisututvustus puudub"
+msgstr "EPG puudub."
 
 msgid "No Parent Control Setup Pin given!"
 msgstr "Lapseluku PIN sisestamata!"
@@ -1039,15 +1018,14 @@ msgstr "Saadet ei leitud! Ei salvestata!"
 msgid "No marker-name given!"
 msgstr "Märgise nimi andmata!"
 
-#, fuzzy
 msgid "No matches were found in the EPG"
-msgstr "Taimeri vastet ei leitud"
+msgstr "EPG-st ei leitud vasteid"
 
 msgid "No matching Timer found"
 msgstr "Taimeri vastet ei leitud"
 
 msgid "No network connection"
-msgstr ""
+msgstr "Võrguühendus puudub"
 
 msgid "No new servicename given!"
 msgstr "Uue kanali nimi andmata!"
@@ -1086,13 +1064,13 @@ msgid "Now"
 msgstr "Hetkel"
 
 msgid "Now/Next Columns"
-msgstr ""
+msgstr "Nüüd/järgmine veerud"
 
 msgid "Number of recordings remaining"
 msgstr "Järelejäänud salvestuste arv"
 
 msgid "ONID"
-msgstr ""
+msgstr "ONID"
 
 msgid "OSCam Webinterface"
 msgstr "OSCam veebiliides"
@@ -1125,10 +1103,10 @@ msgid "Only match during timespan"
 msgstr "Vaste ainult ajaaknas"
 
 msgid "Oops, no results matched your search"
-msgstr ""
+msgstr "Otsingule ei leitud vastet"
 
 msgid "Oops..."
-msgstr ""
+msgstr "Oih..."
 
 msgid "Open Source Web Interface for Linux set-top box"
 msgstr "Veebiliides linux vastuvõtjale"
@@ -1142,7 +1120,6 @@ msgstr "OpenWebif brauseri seaded"
 msgid "OpenWebif Settings"
 msgstr "OpenWebif seaded"
 
-#, fuzzy
 msgid "OpenWebif url:"
 msgstr "OpenWebif URL:"
 
@@ -1153,10 +1130,10 @@ msgid "Override found with alternative service"
 msgstr "Eelista asenduskanalit"
 
 msgid "PCR PID"
-msgstr ""
+msgstr "PCR PID"
 
 msgid "PMT PID"
-msgstr ""
+msgstr "PMT PID"
 
 msgid "Packages"
 msgstr "Paketid"
@@ -1198,7 +1175,7 @@ msgid "PowerTimer feature not available"
 msgstr "Toitetaimeri võimalus puudub"
 
 msgid "Preview"
-msgstr ""
+msgstr "Eelvaade"
 
 msgid "Primetimes"
 msgstr "Tippajad"
@@ -1213,7 +1190,7 @@ msgid "Providers"
 msgstr "Levitajad"
 
 msgid "REC"
-msgstr ""
+msgstr "REC"
 
 msgid "Radio"
 msgstr "Raadio"
@@ -1222,17 +1199,16 @@ msgid "Reboot Box"
 msgstr "Taaskäivitus"
 
 msgid "Receiver"
-msgstr ""
+msgstr "Vastuvõtja"
 
 msgid "Record a maximum of # times"
 msgstr "Salvesta maksimaalselt x korda"
 
 msgid "Recording"
-msgstr ""
+msgstr "Salvestus"
 
-#, fuzzy
 msgid "Recording Type"
-msgstr "Salvestamine"
+msgstr "Salvestuse tüüp"
 
 msgid "Refresh"
 msgstr "Värskenda"
@@ -1255,9 +1231,8 @@ msgstr "Pult"
 msgid "Remove Package"
 msgstr "Eemalda pakett"
 
-#, fuzzy
 msgid "Remove filter"
-msgstr "Pult"
+msgstr "Eemalda filter"
 
 msgid "Rename"
 msgstr "Nimeta ümber"
@@ -1274,9 +1249,8 @@ msgstr "Korduv"
 msgid "Require description to be unique"
 msgstr "Nõua täpselt vastavat sisukirjeldust"
 
-#, fuzzy
 msgid "Reset"
-msgstr "Lähtesta arvestus"
+msgstr "Lähtesta"
 
 msgid "Reset count"
 msgstr "Lähtesta arvestus"
@@ -1287,9 +1261,8 @@ msgstr "E2 taaskäivitus"
 msgid "Restrict to bouquets"
 msgstr "Ainult kindlas nimekirjas"
 
-#, fuzzy
 msgid "Restrict to channels"
-msgstr "Ainult kindlas nimekirjas"
+msgstr "Piira kanalitega"
 
 msgid "Root"
 msgstr "Juur"
@@ -1301,7 +1274,7 @@ msgid "SNR"
 msgstr "SNR"
 
 msgid "SRef"
-msgstr ""
+msgstr "SRef"
 
 msgid "Sa"
 msgstr "L"
@@ -1327,6 +1300,9 @@ msgstr "Salvesta"
 msgid "Screenshot"
 msgstr "Ekraanipilt"
 
+msgid "Scripts"
+msgstr ""
+
 msgid "Search"
 msgstr "Otsi"
 
@@ -1334,7 +1310,7 @@ msgid "Search CSFD"
 msgstr "CSFD otsing"
 
 msgid "Search EPG"
-msgstr ""
+msgstr "EPG otsing"
 
 msgid "Search IMDb"
 msgstr "IMDb otsing"
@@ -1342,32 +1318,29 @@ msgstr "IMDb otsing"
 msgid "Search KinoPoisk"
 msgstr "KinoPoisk otsing"
 
-#, fuzzy
 msgid "Search TV Guide UK"
-msgstr "Telekava"
+msgstr ""
 
 msgid "Search by name, sd / hd / uhd, or provider"
-msgstr ""
+msgstr "Otsi nime, sd / hd / uhd või teenusepakkuja järgi"
 
-#, fuzzy
 msgid "Search strictness"
-msgstr "KinoPoisk otsing"
+msgstr "Otsingu rangus"
 
-#, fuzzy
 msgid "Search type"
-msgstr "Otsi"
+msgstr "Otsingu tüüp"
 
 msgid "Select Directory"
-msgstr ""
+msgstr "Vali kataloog"
 
 msgid "Select IPK file for upload"
 msgstr "Üleslaaditav IPK fail"
 
 msgid "Select..."
-msgstr ""
+msgstr "Vali..."
 
 msgid "Send"
-msgstr ""
+msgstr "Saada"
 
 msgid "Send Message"
 msgstr "Saada sõnum"
@@ -1414,7 +1387,7 @@ msgid "Service %s removed."
 msgstr "Kanal %s eemaldatud."
 
 msgid "Service ID (SID)"
-msgstr ""
+msgstr "Service ID (SID)"
 
 msgid "Service can not be moved."
 msgstr "Kanalit ei saa liigutada."
@@ -1441,7 +1414,7 @@ msgid "Settings"
 msgstr "Seaded"
 
 msgid "Show EPG History"
-msgstr ""
+msgstr "Kuva EPG ajalugu"
 
 msgid "Show EPG for"
 msgstr "EPG kanalile"
@@ -1450,11 +1423,10 @@ msgid "Show Full OpenWebif"
 msgstr "Kuva täielik OpenWebif"
 
 msgid "Show IPTV channels in selection (eg. Autotimer)"
-msgstr ""
+msgstr "Kuva valikus IPTV kanalid (nt Autotimer)"
 
-#, fuzzy
 msgid "Show all packages"
-msgstr "Uuenda kõik paketid"
+msgstr "Kuva kõik paketid"
 
 msgid "Show box name in header"
 msgstr "Kuva päises vastuvõtja nimi"
@@ -1469,11 +1441,10 @@ msgid "Show in Extensions menu"
 msgstr "Kuva laienduste menüüs"
 
 msgid "Show picon background"
-msgstr ""
+msgstr "Kuva pikoni taust"
 
-#, fuzzy
 msgid "Show picons"
-msgstr "Kuva üksikasjad"
+msgstr "Kuva pikonid"
 
 msgid "Show picons in channel list"
 msgstr "Kuva kanalinimekirjas pikonid"
@@ -1485,16 +1456,16 @@ msgid "Shutdown"
 msgstr "Seiska"
 
 msgid "Shutdown after refresh."
-msgstr ""
+msgstr "Seiska pärast värskendamist."
 
 msgid "Signal Power (AGC)"
-msgstr ""
+msgstr "Signaali võimsus (AGC)"
 
 msgid "Signal Quality (SNR DB)"
-msgstr ""
+msgstr "Signaali kvaliteet (SNR DB)"
 
 msgid "Signal Quality (SNR)"
-msgstr ""
+msgstr "Signaali kvaliteet (SNR)"
 
 msgid "Simulate"
 msgstr "Matki"
@@ -1503,7 +1474,7 @@ msgid "Site and sources"
 msgstr "Lähtekood"
 
 msgid "Skins"
-msgstr ""
+msgstr "Rüüd"
 
 msgid "SleepTimer error"
 msgstr "Unetaimeri viga"
@@ -1522,7 +1493,7 @@ msgid "Sleeptimer set to %d minutes"
 msgstr "Unetaimer määratud %d minutile"
 
 msgid "Small remote layout"
-msgstr ""
+msgstr "Väikese puldi asetus"
 
 msgid "Software"
 msgstr "Tarkvara"
@@ -1531,7 +1502,7 @@ msgid "Sorry this page is not yet implemented"
 msgstr "See leht ei ole veel kasutuses"
 
 msgid "Sort"
-msgstr ""
+msgstr "Järjesta"
 
 msgid "Spinner"
 msgstr "Spinner"
@@ -1552,10 +1523,10 @@ msgid "Start typing..."
 msgstr "KIRJUTA SIIA"
 
 msgid "State"
-msgstr ""
+msgstr "Olek"
 
 msgid "Storage"
-msgstr ""
+msgstr "Kettaruum"
 
 msgid "Stream"
 msgstr "Voogesitus"
@@ -1567,7 +1538,7 @@ msgid "Su"
 msgstr "P"
 
 msgid "Subdirectories"
-msgstr ""
+msgstr "Alamkataloogid"
 
 msgid "Subnet mask"
 msgstr "Alamvõrgu mask"
@@ -1588,7 +1559,7 @@ msgid "TB"
 msgstr "TB"
 
 msgid "TSID"
-msgstr ""
+msgstr "TSID"
 
 msgid "TV"
 msgstr "TV"
@@ -1648,7 +1619,6 @@ msgstr "Taimer '%s' on nüüd salvestav! Mitte keelatud!"
 msgid "Theme"
 msgstr "Kujundus"
 
-#, fuzzy
 msgid "Theme mode"
 msgstr "Kujundus"
 
@@ -1697,7 +1667,7 @@ msgid "Timer Added"
 msgstr "Taimer lisatud"
 
 msgid "Timer Conflict"
-msgstr ""
+msgstr "Taimeri konflikt"
 
 msgid "Timer added"
 msgstr "Taimer lisatud"
@@ -1724,10 +1694,10 @@ msgid "To date"
 msgstr "Mitte enne"
 
 msgid "Today"
-msgstr ""
+msgstr "Täna"
 
 msgid "Toggle Standby"
-msgstr ""
+msgstr "Ooteseisundi lüliti"
 
 msgid "Transcode"
 msgstr "Transkodeeri"
@@ -1795,7 +1765,7 @@ msgid "Uploaded Files"
 msgstr "Üleslaetud failid"
 
 msgid "Use Channelname for screenshots"
-msgstr ""
+msgstr "Lisa ekraanipiltidele kanali nimi"
 
 msgid "Use a custom location"
 msgstr "Kasuta kohandatud asukohta"
@@ -1803,16 +1773,14 @@ msgstr "Kasuta kohandatud asukohta"
 msgid "Use as PiP if possible"
 msgstr "Kasuta võimalusel PiP akent"
 
-#, fuzzy
 msgid "Use classic interface"
-msgstr "Kasuta uut disaini"
+msgstr "Kasuta klassikalist kujundust"
 
 msgid "Use custom box name"
 msgstr "Kasuta kohandatud vastuvõtja nime"
 
-#, fuzzy
 msgid "Use modern design"
-msgstr "Kasuta uut disaini"
+msgstr "Kasuta uut kujundust"
 
 msgid "Use modern interface"
 msgstr "Kasuta uut disaini"
@@ -1833,7 +1801,7 @@ msgid "Video Height"
 msgstr "Pildi kõrgus"
 
 msgid "Video PID (VPID)"
-msgstr ""
+msgstr "Video PID (VPID)"
 
 msgid "Video Width"
 msgstr "Pildi laius"
@@ -1881,13 +1849,13 @@ msgid "Weekly (Sunday)"
 msgstr "Kord nädalas (pühapäev)"
 
 msgid "Widescreen"
-msgstr ""
+msgstr "Laiekraan"
 
 msgid "Wizard"
 msgstr "Abiline"
 
 msgid "Would you like to save your changes?"
-msgstr ""
+msgstr "Kas soovid muudatused salvestada?"
 
 #, python-format
 msgid "Wrong parameter format 'set=%s'. Use set=set15 "
@@ -1903,7 +1871,7 @@ msgid "Yes/No"
 msgstr "Jah/Ei"
 
 msgid "Yesterday"
-msgstr ""
+msgstr "Eile"
 
 msgid "Zap"
 msgstr "Kanalivahetus"
@@ -1920,33 +1888,29 @@ msgstr "Kanalile"
 msgid "Zapped to"
 msgstr "Vahetatud kanalile"
 
-#, fuzzy
 msgid "any time"
-msgstr "Lisa taimer"
+msgstr "igal ajal"
 
 msgid "auto"
 msgstr "auto"
 
 msgid "box_ip"
-msgstr ""
+msgstr "vastuvõtja-IP"
 
-#, fuzzy
 msgid "case-insensitive"
-msgstr "Otsingu rangus"
+msgstr "tõusutundetu"
 
-#, fuzzy
 msgid "case-sensitive"
-msgstr "Otsingu rangus"
+msgstr "tõstutundlik"
 
 msgid "descramble and record ecm"
-msgstr ""
+msgstr "dekodeeri ja salvesta ecm"
 
 msgid "description contains"
 msgstr "sisututvustuses"
 
-#, fuzzy
 msgid "description match"
-msgstr "Sisututvustus"
+msgstr "sisukirjelduse vaste"
 
 msgid "disabled"
 msgstr "keelatud"
@@ -1955,13 +1919,13 @@ msgid "do nothing"
 msgstr "ära tee midagi"
 
 msgid "don't descramble, record ecm"
-msgstr ""
+msgstr "ära dekodeeri, salvesta ecm"
 
 msgid "error! Loading Page"
 msgstr "Tõrge lehe laadimisel"
 
 msgid "exact title match"
-msgstr ""
+msgstr "täpne nime vaste"
 
 msgid "favourite desc match"
 msgstr ""
@@ -1988,7 +1952,7 @@ msgid "manual/disabled"
 msgstr "käsitsi/keelatud"
 
 msgid "mins"
-msgstr ""
+msgstr "min"
 
 msgid "minute"
 msgstr "minut"
@@ -2003,7 +1967,7 @@ msgid "normal"
 msgstr ""
 
 msgid "on day"
-msgstr ""
+msgstr "päeval"
 
 msgid "on weekday"
 msgstr "tööpäeval"
@@ -2012,7 +1976,7 @@ msgid "one two three four unknown command"
 msgstr "üks kaks kolm neli tundmatu käsk"
 
 msgid "partial title match"
-msgstr ""
+msgstr "osaline nime vaste"
 
 msgid "r/o"
 msgstr "r/o"
@@ -2044,7 +2008,6 @@ msgstr "Vali sildid"
 msgid "short description contains"
 msgstr "lühitutvustusest"
 
-#, fuzzy
 msgid "short description match"
 msgstr "lühitutvustuse vaste"
 
@@ -2055,24 +2018,22 @@ msgid "static"
 msgstr "staatiline"
 
 msgid "this service is protected by a parental control pin"
-msgstr ""
+msgstr "See kanal on kaitstud lapseluku PIN koodiga"
 
 msgid "title contains"
 msgstr "nimest"
 
 msgid "title ends with"
-msgstr ""
+msgstr "nimi lõppeb"
 
-#, fuzzy
 msgid "title or description match"
 msgstr "nime või sisututvustuse vaste"
 
-#, fuzzy
 msgid "title or short description match"
 msgstr "nime või lühitutvustuse vaste"
 
 msgid "title starts with"
-msgstr ""
+msgstr "nimi algab"
 
 msgid "transcoded"
 msgstr "transkodeeritud"
@@ -2112,7 +2073,7 @@ msgid "Allow IPK Upload"
 msgstr "Luba IPK üleslaadimine"
 
 msgid "Debug - Display Tracebacks in browser"
-msgstr ""
+msgstr "Silu – sündmuse teabe kuvamine veebilehitsejas"
 
 msgid "Disable remote access for user root"
 msgstr "Keela kaugligipääs kasutaja juurkataloogile"
@@ -2148,18 +2109,16 @@ msgid "OpenWebif Configuration"
 msgstr "Veebiliidese seaded"
 
 msgid "Playback IPTV Streams in browser"
-msgstr ""
+msgstr "Esita IPTV vooge veebilehitsejas"
 
 msgid "Require client cert for HTTPS"
 msgstr "HTTPS nõuab kliendi serti"
 
-#, fuzzy
 msgid "Streaming port"
-msgstr "Voogesituskliendid"
+msgstr "Voogesituse port"
 
-#, fuzzy
 msgid "Use custom Color"
-msgstr "Kasuta kohandatud asukohta"
+msgstr "Kasuta kohandatud värvi"
 
 msgid "Without auth only local access is allowed!"
 msgstr "Autentimata on lubatud ainult kohalik aadress!"

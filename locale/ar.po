@@ -1,10 +1,12 @@
+# Abdulelah Aqeil <dr.romantic@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenWebif\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-26 22:02+0200\n"
-"PO-Revision-Date: 2023-08-22 17:43+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"POT-Creation-Date: 2026-05-31 14:25+0200\n"
+"PO-Revision-Date: 2026-02-19 06:09+0000\n"
+"Last-Translator: Abdulelah Aqeil "
+"<dr.romantic@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/e2openplugin-"
 "openwebif/e2openplugin-openwebif/ar/>\n"
 "Language: ar\n"
@@ -13,35 +15,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 5.0-dev\n"
+"X-Generator: Weblate 5.16.1-dev\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ../plugin\n"
 
 #, python-format
 msgid "%02d.%02d."
-msgstr ""
+msgstr "%02d.%02d."
 
 #, python-format
 msgid "%02d.%02d.%d"
-msgstr ""
+msgstr "%02d.%02d.%d"
 
 #, python-format
 msgid "%02d:%02d"
-msgstr ""
+msgstr "%02d:%02d"
 
 msgid "%d.%m.%Y"
-msgstr ""
+msgstr "%d.%m.%Y"
 
 msgid "%d.%m.%Y %H:%M"
-msgstr ""
+msgstr "%d.%m.%Y %H:%M"
 
 #, python-format
 msgid "%s %02d.%02d."
-msgstr ""
+msgstr "%s %02d.%02d."
 
 #, python-format
 msgid "%s %02d.%02d.%d"
-msgstr ""
+msgstr "%s %02d.%02d.%d"
 
 #, python-format
 msgid "%s %s is locked."
@@ -49,7 +51,7 @@ msgstr "%s %s تم إغلاقه."
 
 #, python-format
 msgid "%s / %s"
-msgstr ""
+msgstr "%s / %s"
 
 #, python-format
 msgid "%s Style"
@@ -898,7 +900,7 @@ msgid "Match text"
 msgstr "مطابقة العنوان"
 
 msgid "Max Days"
-msgstr "اقصي مدي  للأيام"
+msgstr "اقصي مدى للأيام"
 
 msgid "May"
 msgstr "مايو"
@@ -969,6 +971,9 @@ msgstr "الأفلام"
 
 msgid "Multi-Bouquet is not enabled!"
 msgstr "لم يتم تمكين الباقة المتعددة!"
+
+msgid "MultiBoot Slots"
+msgstr ""
 
 msgid "MultiEPG"
 msgstr "دليل البرامج الإلكتروينة المتعدد"
@@ -1287,7 +1292,7 @@ msgid "Reset count"
 msgstr "إعادة تعيين العد"
 
 msgid "Restart GUI"
-msgstr "إعادة تشغيل الاينجما"
+msgstr "إعادة تشغيل الواجهة الرسومية (GUI)"
 
 msgid "Restrict to bouquets"
 msgstr "حصر الباقات"
@@ -1331,6 +1336,9 @@ msgstr "Save"
 
 msgid "Screenshot"
 msgstr "لقطة الشاشة"
+
+msgid "Scripts"
+msgstr ""
 
 msgid "Search"
 msgstr "بحث"
@@ -2002,6 +2010,7 @@ msgstr "دقيقة"
 msgid "no description available"
 msgstr "لايوجد وصف متوفر."
 
+#, fuzzy
 msgid "none/IPv4-only network"
 msgstr "شبكه لا شيء/IPv4 فقط"
 
@@ -2027,7 +2036,7 @@ msgid "r/w"
 msgstr "r/w"
 
 msgid "record"
-msgstr "x تسجيل"
+msgstr "تسجيل"
 
 msgid "regex match (experimental)"
 msgstr ""
@@ -2115,7 +2124,7 @@ msgid "Add service name to stream information"
 msgstr "إضافة اسم الخدمة إلى معلومات قنوات البث"
 
 msgid "Allow IPK Upload"
-msgstr "السماح برفع الملفات المحمية"
+msgstr "السماح برفع ملفات IPK"
 
 msgid "Debug - Display Tracebacks in browser"
 msgstr ""
@@ -2123,49 +2132,49 @@ msgstr ""
 msgid "Disable remote access for user root"
 msgstr "تعطيل الوصول البعيد لجذر المستخدم"
 
+#, fuzzy
 msgid "Enable Authentication for streaming"
 msgstr "تمكين مصادقة للتدفق"
 
 msgid "Enable HTTP Authentication"
-msgstr "تفعيل توثيق بروتوكول نقل النصوص"
+msgstr "تفعيل توثيق بروتوكول HTTP"
 
 msgid "Enable HTTPS"
-msgstr "تمكين بروتوكول نقل الروابط المحمية"
+msgstr "تمكين بروتوكول HTTPS"
 
 msgid "Enable HTTPS Authentication"
-msgstr "تفعيل توثيق بروتوكول نقل النصوص المحمي"
+msgstr "تفعيل توثيق بروتوكول HTTPS"
 
 msgid "Enable Parental Control"
 msgstr "تمكين الرقابة الابوية"
 
 msgid "Enable access from VPNs"
-msgstr "تمكين الدخول من الشبكة الخاصة"
+msgstr "تمكين الدخول من الشبكة الخاصة VPN"
 
 msgid "HTTP port"
-msgstr "منفذ (بروتوكول محمي التشفير)"
+msgstr "منفذ الـ HTTP"
 
 msgid "HTTPS port"
-msgstr "منفذ بروتوكول نقل النصوص المحمي"
+msgstr "منفذ الـ HTTPS"
 
 msgid "OpenWebInterface Enabled"
-msgstr "تميكن فتح واجهة المستخدم"
+msgstr "تفعيل واجهة OpenWebInterface"
 
 msgid "OpenWebif Configuration"
-msgstr "تكوين فتح واجهة إستخدام الويب"
+msgstr "اعدادات واجهة OpenWebif"
 
 msgid "Playback IPTV Streams in browser"
 msgstr ""
 
+#, fuzzy
 msgid "Require client cert for HTTPS"
 msgstr "يتطلب شهادة العميل لصيغة تشفير الصفحة المحمية"
 
-#, fuzzy
 msgid "Streaming port"
-msgstr "‫Stream"
+msgstr "منفذ بث الـ Streaming"
 
-#, fuzzy
 msgid "Use custom Color"
-msgstr "استخدام موقع مخصص"
+msgstr "استخدام لون مخصص"
 
 msgid "Without auth only local access is allowed!"
 msgstr "دون المصادقة يسمح فقط الوصول المحلي!"

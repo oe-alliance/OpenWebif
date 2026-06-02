@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenWebif\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-26 22:02+0200\n"
+"POT-Creation-Date: 2026-05-31 14:25+0200\n"
 "PO-Revision-Date: 2023-08-22 17:44+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/e2openplugin-"
@@ -958,6 +958,9 @@ msgstr "Opnames"
 msgid "Multi-Bouquet is not enabled!"
 msgstr "Multi bouquet is niet ingeschakeld!"
 
+msgid "MultiBoot Slots"
+msgstr ""
+
 msgid "MultiEPG"
 msgstr "Multi-EPG"
 
@@ -1309,6 +1312,9 @@ msgstr "Bevestigen"
 
 msgid "Screenshot"
 msgstr "Screenshot"
+
+msgid "Scripts"
+msgstr ""
 
 msgid "Search"
 msgstr "Zoek"

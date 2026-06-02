@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenWebif\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-26 22:02+0200\n"
+"POT-Creation-Date: 2026-05-31 14:25+0200\n"
 "PO-Revision-Date: 2023-08-22 17:44+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Lithuanian <https://hosted.weblate.org/projects/e2openplugin-"
@@ -960,6 +960,9 @@ msgstr "Filmai"
 msgid "Multi-Bouquet is not enabled!"
 msgstr "Perėjimas tarp bukietų neįjungtas!"
 
+msgid "MultiBoot Slots"
+msgstr ""
+
 msgid "MultiEPG"
 msgstr "Daugiakanalis EPG"
 
@@ -1311,6 +1314,9 @@ msgstr "Išsaugoti"
 
 msgid "Screenshot"
 msgstr "Ekrano nuotrauka"
+
+msgid "Scripts"
+msgstr ""
 
 msgid "Search"
 msgstr "Paieška"

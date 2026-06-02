@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenWebif\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-26 22:02+0200\n"
+"POT-Creation-Date: 2026-05-31 14:25+0200\n"
 "PO-Revision-Date: 2023-08-22 17:44+0000\n"
 "Last-Translator: Pr2 <pr2circle@outlook.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/e2openplugin-"
@@ -962,6 +962,9 @@ msgstr "Films"
 msgid "Multi-Bouquet is not enabled!"
 msgstr "L'option Multi-bouquet n'est pas activée!"
 
+msgid "MultiBoot Slots"
+msgstr ""
+
 msgid "MultiEPG"
 msgstr "MultiEPG"
 
@@ -1313,6 +1316,9 @@ msgstr "Sauvegarder"
 
 msgid "Screenshot"
 msgstr "Capture d'écran"
+
+msgid "Scripts"
+msgstr ""
 
 msgid "Search"
 msgstr "Recherche"

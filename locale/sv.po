@@ -1,10 +1,11 @@
+# Priskvark <prenumerationer1@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenWebif\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-26 22:02+0200\n"
-"PO-Revision-Date: 2023-08-22 17:46+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"POT-Creation-Date: 2026-05-31 14:25+0200\n"
+"PO-Revision-Date: 2025-01-20 16:34+0000\n"
+"Last-Translator: Priskvark <prenumerationer1@gmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/e2openplugin-"
 "openwebif/e2openplugin-openwebif/sv/>\n"
 "Language: sv\n"
@@ -12,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0-dev\n"
+"X-Generator: Weblate 5.10-dev\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ../plugin\n"
@@ -62,26 +63,23 @@ msgstr "%s ledigt / %s totalt"
 msgid "(Press 'shift' and click to 'hold')"
 msgstr "(shift + klick ger lång knapptryckning)"
 
-#, fuzzy
 msgid "(in minutes)"
-msgstr "Minut"
+msgstr "(i minuter)"
 
 msgid "<Current movie list location>"
-msgstr ""
+msgstr "<Nuvarande plats för filmlista>"
 
-#, fuzzy
 msgid "<Default movie location>"
-msgstr "Använd en anpassad lagringsplats"
+msgstr "<Standardplats för filmer>"
 
-#, fuzzy
 msgid "<Last timer location>"
-msgstr "Använd en anpassad lagringsplats"
+msgstr "<Senaste timerplats>"
 
 msgid "A filename is required"
 msgstr "Vänligen ange ett filnamn"
 
 msgid "A value is required"
-msgstr ""
+msgstr "Ett värde behövs"
 
 msgid "AGC"
 msgstr "AGC"
@@ -102,13 +100,13 @@ msgid "Add Bouquet"
 msgstr "Lägg till favoritlista"
 
 msgid "Add IPTV/URL"
-msgstr ""
+msgstr "Lägg till IPTV/URL"
 
 msgid "Add Marker"
 msgstr "Lägg till bokmärke"
 
 msgid "Add Spacer"
-msgstr ""
+msgstr "Lägg till mellanrum"
 
 msgid "Add a timer"
 msgstr "Lägg till timer"
@@ -122,9 +120,8 @@ msgstr "Lägg till Autotimer"
 msgid "Add channel(s) as alternate"
 msgstr "Lägg till kanalen som alternativ"
 
-#, fuzzy
 msgid "Add filters"
-msgstr "Lägg till timer"
+msgstr "Lägg till filter"
 
 msgid "Add selection to bouquet"
 msgstr "Lägg till kanal(er) till en favoritlista"
@@ -133,7 +130,7 @@ msgid "Add similar on conflict"
 msgstr "Lägg till liknande vid konflikt"
 
 msgid "Add tags to recordings"
-msgstr ""
+msgstr "Lägg till tags till inspelningar"
 
 #, python-format
 msgid "Added %s to alternative service %s."
@@ -162,11 +159,11 @@ msgid "All alternative services deleted."
 msgstr "Alla alternativa distributörer togs bort."
 
 msgid "Allow duplicates"
-msgstr ""
+msgstr "Tillåt dubbletter"
 
 #, python-format
 msgid "Alternative %s created failed."
-msgstr "Misslyckades med att skapa alternativ distributör %s"
+msgstr "Misslyckades med att skapa alternativ distributör %s."
 
 msgid "Always"
 msgstr "Alltid"
@@ -178,10 +175,10 @@ msgid "Answer is YES!"
 msgstr "Svaret är JA!"
 
 msgid "Any"
-msgstr ""
+msgstr "Vilken som helst"
 
 msgid "Any day"
-msgstr ""
+msgstr "Valfri dag"
 
 msgid "Any service/recording"
 msgstr "Valfri distributör/inspelning"
@@ -189,39 +186,35 @@ msgstr "Valfri distributör/inspelning"
 msgid "April"
 msgstr "April"
 
-#, fuzzy
 msgid "Are you sure you want to copy this recording?"
-msgstr "Vill du verkligen ta bort inspelningen"
+msgstr "Vill du verkligen ta bort inspelningen?"
 
 msgid "Are you sure you want to delete the selected bouquet?"
-msgstr "Vill du verkligen ta bort favoritlistan"
+msgstr "Vill du verkligen ta bort favoritlistan?"
 
 msgid "Are you sure you want to delete the selected item(s)?"
-msgstr ""
+msgstr "Är du säker på att du vill ta bort valda objekt?"
 
-#, fuzzy
 msgid "Are you sure you want to delete this AutoTimer?"
-msgstr "Vill du verkligen ta bort timern"
+msgstr "Vill du verkligen ta bort timern?"
 
 msgid "Are you sure you want to delete this recording?"
-msgstr "Vill du verkligen ta bort inspelningen"
+msgstr "Vill du verkligen ta bort inspelningen?"
 
 msgid "Are you sure you want to delete this timer?"
-msgstr "Vill du verkligen ta bort timern"
+msgstr "Vill du verkligen ta bort timern?"
 
-#, fuzzy
 msgid "Are you sure you want to move this recording?"
-msgstr "Skall namnet på inspelningen verkligen bytas"
+msgstr "Skall namnet på inspelningen verkligen bytas?"
 
 msgid "Are you sure you want to rename this recording?"
-msgstr "Skall namnet på inspelningen verkligen bytas"
+msgstr "Skall namnet på inspelningen verkligen bytas?"
 
 msgid "Are you sure you want to restore from file?"
-msgstr "Vill du verkligen återställa från en fil"
+msgstr "Vill du verkligen återställa från en fil?"
 
-#, fuzzy
 msgid "Are you sure you want to start recording instantly?"
-msgstr "Starta direktinspelning"
+msgstr "Vill du starta en direktinspelning?"
 
 msgid "Ask, default No"
 msgstr "Fråga, med standardsvar Nej"
@@ -230,13 +223,13 @@ msgid "Ask, default Yes"
 msgstr "Fråga, med standardsvar Ja"
 
 msgid "Audio Encoding"
-msgstr ""
+msgstr "Ljudinspelning"
 
 msgid "Audio PID (APID)"
-msgstr ""
+msgstr "Ljudströmmens PID (APID)"
 
 msgid "Audio Track"
-msgstr ""
+msgstr "Ljudspår"
 
 msgid "August"
 msgstr "Augusti"
@@ -272,20 +265,19 @@ msgid "Background only"
 msgstr "Uppdateringen sker i bakgrunden"
 
 msgid "Before"
-msgstr ""
+msgstr "Innan"
 
 msgid "Begin"
 msgstr "Börjar"
 
-#, fuzzy
 msgid "Begin of \"After event\" timespan"
-msgstr "Början av begränsningsperioden (tt:mm)"
+msgstr "Början av \"Slutprocessens\" begränsningsperiod"
 
 msgid "Beginning of timespan"
 msgstr "Perioden börjar"
 
 msgid "Bit Error Rate (BER)"
-msgstr ""
+msgstr "Bitfelshastighet (BER)"
 
 msgid "Bookmark"
 msgstr ""
@@ -303,7 +295,7 @@ msgstr "Favoritlista %s kan inte flyttas."
 
 #, python-format
 msgid "Bouquet %s created."
-msgstr "Favoritlista %s  skapades."
+msgstr "Favoritlista %s skapades."
 
 #, python-format
 msgid "Bouquet %s deleted."
@@ -341,7 +333,7 @@ msgid "Bouquet renamed successfully."
 msgstr "Namnet på favoritlistan ändrades."
 
 msgid "Bouquet-settings were restored successfully"
-msgstr "Favoritlistans inställningar återskapades."
+msgstr "Favoritlistans inställningar återskapades"
 
 msgid "BouquetEditor"
 msgstr "Redigera favoritlistor"
@@ -368,20 +360,19 @@ msgid "Brand"
 msgstr "Fabrikat"
 
 msgid "Build"
-msgstr ""
+msgstr "Version"
 
 msgid "Cable"
 msgstr "Kabel-TV"
 
 msgid "Calendar Week"
-msgstr ""
+msgstr "Veckonr"
 
 msgid "Cancel"
 msgstr "Avbryt"
 
-#, fuzzy
 msgid "Cancelled"
-msgstr "Avbryt"
+msgstr "Avbruten"
 
 msgid "Capacity"
 msgstr "Kapacitet"
@@ -404,12 +395,11 @@ msgstr "Rensa timer"
 msgid "Close"
 msgstr "Stäng"
 
-#, fuzzy
 msgid "Common Settings"
-msgstr "Inställningar"
+msgstr "Allmänna inställningar"
 
 msgid "Config"
-msgstr ""
+msgstr "Konfigurera"
 
 #, python-format
 msgid "Conflicting Timer(s) detected! %s"
@@ -421,9 +411,8 @@ msgstr "Andra som har bidragit"
 msgid "Control"
 msgstr "Kontroll"
 
-#, fuzzy
 msgid "Copy Recording"
-msgstr "Ta bort inspelningen"
+msgstr "Kopiera inspelningen"
 
 #, python-format
 msgid "Could not add timer '%s'!"
@@ -431,7 +420,7 @@ msgstr "Kunde inte lägga till timer '%s'!"
 
 #, python-format
 msgid "Could not find timer '%s' with given start and end time!"
-msgstr "Kunde inte hitta någon timer '%s' med angiven start-och stopptid"
+msgstr "Kunde inte hitta någon timer '%s' med angiven start-och stopptid!"
 
 msgid "Create bouquet from selection"
 msgstr "Lägg till leverantören som en ny favoritlista"
@@ -443,7 +432,7 @@ msgid "Current Event"
 msgstr "Pågående aktivitet"
 
 msgid "Currently recording"
-msgstr ""
+msgstr "Pågående inspelning"
 
 msgid "Custom box name"
 msgstr "Anpassat boxnamn"
@@ -458,10 +447,10 @@ msgid "Date"
 msgstr "Datum"
 
 msgid "Date (newest)"
-msgstr ""
+msgstr "Datum (senaste)"
 
 msgid "Date (oldest)"
-msgstr ""
+msgstr "Datum (äldsta)"
 
 msgid "December"
 msgstr "December"
@@ -491,19 +480,17 @@ msgstr "Ta bort inspelningen"
 msgid "Delete Timer"
 msgstr "Ta bort timern"
 
-#, fuzzy
 msgid "Deleted"
-msgstr "Ta bort"
+msgstr "Borttagen"
 
 msgid "Description"
 msgstr "Beskrivning"
 
 msgid "Device"
-msgstr ""
+msgstr "Enhet"
 
-#, fuzzy
 msgid "Disable"
-msgstr "avaktiverat"
+msgstr "Avaktivera"
 
 msgid "Disable Timer"
 msgstr "Slå av timern"
@@ -548,18 +535,16 @@ msgid "EPG encoding"
 msgstr "EPG teckenkodning"
 
 msgid "EPGRefresh"
-msgstr "EPGRefresh"
+msgstr "EPG-uppdatering"
 
 msgid "ERROR: Cannot set SleepTimer while device is in Standby-Mode"
 msgstr "FEL: Kan inte ställa in insomningstimer medan enheten är i viloläge"
 
-#, fuzzy
 msgid "Edit"
-msgstr "Redigerare"
+msgstr "Redigera"
 
-#, fuzzy
 msgid "Edit Recording"
-msgstr "Ta bort inspelningen"
+msgstr "Redigera inspelningen"
 
 msgid "Edit Timer"
 msgstr "Redigera timern"
@@ -567,9 +552,8 @@ msgstr "Redigera timern"
 msgid "Editor"
 msgstr "Redigerare"
 
-#, fuzzy
 msgid "Enable"
-msgstr "Aktiverat"
+msgstr "Aktivera"
 
 msgid "Enable Messages"
 msgstr "Aktivera statusmeddelanden"
@@ -581,7 +565,7 @@ msgid "Enable filtering"
 msgstr "Slå på filtrering"
 
 msgid "Enable/Disable Screenshot on key press"
-msgstr ""
+msgstr "Aktivera/avaktivera skärmdump vid tangenttryck"
 
 msgid "Enabled"
 msgstr "Aktiverat"
@@ -616,7 +600,7 @@ msgid "Enter text"
 msgstr ""
 
 msgid "Enter the text to find in the EPG"
-msgstr ""
+msgstr "Ange söksträng för EPG-sökningen"
 
 msgid "Error"
 msgstr "Fel"
@@ -639,7 +623,7 @@ msgstr "Fel: %s existerar inte. Därför kan återställning inte utföras..."
 
 #, python-format
 msgid "Error, %s was not created with WebBouquetEditor..."
-msgstr "Fel: %s skapades inte av WebBouquetEditor... "
+msgstr "Fel: %s skapades inte av WebBouquetEditor..."
 
 #, python-format
 msgid "Error, extract files from backup '%s'"
@@ -661,9 +645,8 @@ msgstr "Varje"
 msgid "Exclude when"
 msgstr "Undanta"
 
-#, fuzzy
 msgid "Execute \"After event\" during timespan"
-msgstr "Begränsa valt avslutsalternativ till att gälla tidsintervallet"
+msgstr "Kör avslutningsfunktionen under tidsintervallet"
 
 msgid "Export"
 msgstr "Exportera"
@@ -703,7 +686,7 @@ msgid "Free Memory"
 msgstr "Ledigt minne"
 
 msgid "Free space"
-msgstr ""
+msgstr "Ledigt utrymme"
 
 msgid "Fri"
 msgstr "Fre"
@@ -717,15 +700,14 @@ msgstr "Inte efter"
 msgid "Front processor version"
 msgstr "Frontprocessorversion"
 
-#, fuzzy
 msgid "Full remote"
-msgstr "Dölj stor fjärrkontroll"
+msgstr "Stor fjärrkontroll"
 
 msgid "GB"
 msgstr "GB"
 
 msgid "GUI version"
-msgstr "GUI version"
+msgstr "Gränssnittsversion"
 
 msgid "Gateway"
 msgstr "Gateway"
@@ -738,13 +720,13 @@ msgid "Get mutable list for new created bouquet failed!"
 msgstr "Den föränderliga listan för en ny favorit kunde inte hämtas!"
 
 msgid "HH:MM"
-msgstr ""
+msgstr "TT:MM"
 
 msgid "Hard disk model"
 msgstr "Hårddiskmodell"
 
 msgid "Hardware"
-msgstr ""
+msgstr "Hårdvara"
 
 msgid "Hide full remote"
 msgstr "Dölj stor fjärrkontroll"
@@ -779,9 +761,8 @@ msgstr "Importera"
 msgid "Include description"
 msgstr "Inkludera beskrivningen"
 
-#, fuzzy
 msgid "Include extended description"
-msgstr "Inkludera beskrivningen"
+msgstr "Inkludera utökad beskrivningen"
 
 #, fuzzy
 msgid "Include short description"
@@ -797,17 +778,16 @@ msgid "Info"
 msgstr "Information"
 
 msgid "Information"
-msgstr ""
+msgstr "Information"
 
 msgid "Inherit AutoTimer"
 msgstr "Överför distributörer från Autotimer"
 
 msgid "Install Package"
-msgstr ""
+msgstr "Installera paket"
 
-#, fuzzy
 msgid "Installed"
-msgstr "Direktinspelning"
+msgstr "Installerad"
 
 msgid "Instant Record"
 msgstr "Direktinspelning"
@@ -819,11 +799,11 @@ msgid "Internal error!"
 msgstr "Internt fel!"
 
 msgid "Internal flash memory"
-msgstr ""
+msgstr "Internt flashminne"
 
-#, fuzzy, python-format
+#, python-format
 msgid "Interval (in %s)"
-msgstr "Intervall (i tim)"
+msgstr "Intervall (i %s)"
 
 msgid "Interval (min.)"
 msgstr "Tid för att hålla servicekanalen öppen (min)"
@@ -850,7 +830,7 @@ msgid "Kernel"
 msgstr "Kernel"
 
 msgid "LCD"
-msgstr ""
+msgstr "LCD-panel"
 
 msgid "LCD4Linux Setup"
 msgstr "LCD4Linux inställning"
@@ -859,7 +839,7 @@ msgid "Label series"
 msgstr "Lägg till avsnittsinformation för TV-serier"
 
 msgid "License"
-msgstr ""
+msgstr "Licens"
 
 msgid "Link speed"
 msgstr "Länkhastighet"
@@ -867,9 +847,8 @@ msgstr "Länkhastighet"
 msgid "List of Timers has been cleaned"
 msgstr "Timerlistan har rensats"
 
-#, fuzzy
 msgid "Loading..."
-msgstr "laddar"
+msgstr "Laddar..."
 
 msgid "Location"
 msgstr "Plats"
@@ -893,13 +872,13 @@ msgid "March"
 msgstr "Mars"
 
 msgid "Margin"
-msgstr ""
+msgstr "Marginal"
 
 msgid "Marker added."
-msgstr "Bokmärket lades till."
+msgstr "Avskiljare lades till."
 
 msgid "Marker name"
-msgstr "Bokmärkets namn"
+msgstr "Avskiljarens namn"
 
 msgid "Match text"
 msgstr "Matcha titeln"
@@ -917,14 +896,13 @@ msgid "Method"
 msgstr "Uppdatera EPG genom att använda"
 
 msgid "Minimal EPG list"
-msgstr ""
+msgstr "Komprimerad EPG-lista"
 
-#, fuzzy
 msgid "Minimal movie list"
-msgstr "Filmlista"
+msgstr "Komprimerad filmlista"
 
 msgid "Minimal timer list"
-msgstr ""
+msgstr "Komprimerad timerlista"
 
 msgid "Minute"
 msgstr "Minut"
@@ -933,9 +911,8 @@ msgstr "Minut"
 msgid "Missing mandatory parameter '%s'"
 msgstr "Saknar den obligatoriska parametern '%s'"
 
-#, fuzzy
 msgid "Missing request parameter: sRef"
-msgstr "Begäran saknas: sRef"
+msgstr "Parameter saknas: sRef"
 
 msgid "Mo"
 msgstr "Må"
@@ -953,20 +930,19 @@ msgid "Monthly"
 msgstr "Månadsvis"
 
 msgid "More"
-msgstr ""
+msgstr "Mer"
 
 msgid "More details"
-msgstr ""
+msgstr "Fler detaljer"
 
 msgid "Mount point"
-msgstr ""
+msgstr "Mount point"
 
-#, fuzzy
 msgid "Move Recording"
-msgstr "Simulerad inspelning"
+msgstr "Flytta inspelning"
 
 msgid "Movie database for EPG"
-msgstr ""
+msgstr "Filmdatabas för EPG"
 
 msgid "Movielist"
 msgstr "Filmlista"
@@ -977,24 +953,26 @@ msgstr "Filmer"
 msgid "Multi-Bouquet is not enabled!"
 msgstr "Multi-favoritlista är inte aktiverad!"
 
-msgid "MultiEPG"
-msgstr "MultiEPG"
-
-msgid "Mute/Unmute"
+msgid "MultiBoot Slots"
 msgstr ""
 
-#, fuzzy
+msgid "MultiEPG"
+msgstr "Utvidgad EPG"
+
+msgid "Mute/Unmute"
+msgstr "Ljudet av/på"
+
 msgid "NCam Webinterface"
-msgstr "Webbgränssnitt för OSCam "
+msgstr "Webbgränssnitt för NCam"
 
 msgid "Name"
 msgstr "Namn"
 
 msgid "Name (a-z)"
-msgstr ""
+msgstr "Namn (a-ö)"
 
 msgid "Name (z-a)"
-msgstr ""
+msgstr "Namn (ö-a)"
 
 msgid "Namespace"
 msgstr "Namnrymd"
@@ -1018,16 +996,14 @@ msgstr "Ta bort timern"
 msgid "New Name"
 msgstr "Nytt namn"
 
-#, fuzzy
 msgid "Next Event"
-msgstr "Pågående aktivitet"
+msgstr "Nästa aktivitet"
 
 msgid "No"
 msgstr "Nej"
 
-#, fuzzy
 msgid "No EPG data available."
-msgstr "beskrivning saknas"
+msgstr "EPG-data saknas."
 
 msgid "No Parent Control Setup Pin given!"
 msgstr "Ingen kod för föräldrakontroll angavs!"
@@ -1050,15 +1026,14 @@ msgstr "Ingen aktivitet hittades. Spelar inte in!"
 msgid "No marker-name given!"
 msgstr "Bokmärkesnamnet angavs inte!"
 
-#, fuzzy
 msgid "No matches were found in the EPG"
-msgstr "Kunde inte hitta någon passande timer"
+msgstr "Finns inte i EPG"
 
 msgid "No matching Timer found"
 msgstr "Kunde inte hitta någon passande timer"
 
 msgid "No network connection"
-msgstr ""
+msgstr "Nätverksanslutning saknas"
 
 msgid "No new servicename given!"
 msgstr "Ett nytt distributörsnamn angavs inte!"
@@ -1083,7 +1058,7 @@ msgid "Nothing"
 msgstr "Inget"
 
 msgid "Nothing playing."
-msgstr "Inget spelas upp"
+msgstr "Inget spelas upp."
 
 msgid "Notify if Conflict"
 msgstr "Meddela vid konflikt"
@@ -1098,7 +1073,7 @@ msgid "Now"
 msgstr "Nu"
 
 msgid "Now/Next Columns"
-msgstr ""
+msgstr "Nu/Nästa kolumn"
 
 msgid "Number of recordings remaining"
 msgstr "Antal inspelningar kvar"
@@ -1137,10 +1112,10 @@ msgid "Only match during timespan"
 msgstr "Enbart matchning under tidsintervallet "
 
 msgid "Oops, no results matched your search"
-msgstr ""
+msgstr "Hoppsan, din sökning gav inga träffar"
 
 msgid "Oops..."
-msgstr ""
+msgstr "Hoppsan..."
 
 msgid "Open Source Web Interface for Linux set-top box"
 msgstr "Open Source webbstöd för Linux-set-top-boxar"
@@ -1162,7 +1137,7 @@ msgid "Orbital Position"
 msgstr "Omloppsbanans position"
 
 msgid "Override found with alternative service"
-msgstr " Använd vid behov samma kanal från en alternativ distributör"
+msgstr "Använd vid behov samma kanal från en alternativ distributör"
 
 msgid "PCR PID"
 msgstr ""
@@ -1183,7 +1158,7 @@ msgid "Parse AutoTimer"
 msgstr "Starta en Autotimeranalys efter EPG uppdateringar"
 
 msgid "PiP"
-msgstr ""
+msgstr "Bild i bild"
 
 msgid "Picture in Picture"
 msgstr "Bild i Bild"
@@ -1200,9 +1175,8 @@ msgstr "Uppspelning"
 msgid "Playlist"
 msgstr "Spellista"
 
-#, fuzzy
 msgid "Playlist format"
-msgstr "Spellista"
+msgstr "Format på spellista"
 
 msgid "Power Control"
 msgstr "Strömbrytare"
@@ -1211,10 +1185,10 @@ msgid "PowerTimer feature not available"
 msgstr "Funktionen för att hantera PowerTimer saknas"
 
 msgid "Preview"
-msgstr ""
+msgstr "Förhandsgranska"
 
 msgid "Primetimes"
-msgstr ""
+msgstr "Primetime"
 
 msgid "Process"
 msgstr "Analysera"
@@ -1226,7 +1200,7 @@ msgid "Providers"
 msgstr "Leverantörer"
 
 msgid "REC"
-msgstr ""
+msgstr "Spela in"
 
 msgid "Radio"
 msgstr "Radio"
@@ -1235,17 +1209,16 @@ msgid "Reboot Box"
 msgstr "Starta om boxen"
 
 msgid "Receiver"
-msgstr ""
+msgstr "Mottagare"
 
 msgid "Record a maximum of # times"
 msgstr "Spela maximalt in vid x tillfällen"
 
 msgid "Recording"
-msgstr ""
+msgstr "Inspelning"
 
-#, fuzzy
 msgid "Recording Type"
-msgstr "Inspelning pågår"
+msgstr "Inspelningstyp"
 
 msgid "Refresh"
 msgstr "Uppdatera"
@@ -1266,7 +1239,7 @@ msgid "Remote"
 msgstr "Fjärrkontroll"
 
 msgid "Remove Package"
-msgstr ""
+msgstr "Ta bort paket"
 
 #, fuzzy
 msgid "Remove filter"
@@ -1287,9 +1260,8 @@ msgstr "Repeterat"
 msgid "Require description to be unique"
 msgstr "Kräv att beskrivningen är unik"
 
-#, fuzzy
 msgid "Reset"
-msgstr "Återställ antalet"
+msgstr "Återställ"
 
 msgid "Reset count"
 msgstr "Återställ antalet"
@@ -1300,9 +1272,8 @@ msgstr "Starta om GUI"
 msgid "Restrict to bouquets"
 msgstr ""
 
-#, fuzzy
 msgid "Restrict to channels"
-msgstr "Välj kanaler"
+msgstr "Begränsa till kanaler"
 
 msgid "Root"
 msgstr "Root"
@@ -1340,6 +1311,9 @@ msgstr "Spara"
 msgid "Screenshot"
 msgstr "Skärmdump"
 
+msgid "Scripts"
+msgstr ""
+
 msgid "Search"
 msgstr "Sök"
 
@@ -1348,7 +1322,7 @@ msgid "Search CSFD"
 msgstr "Sök i IMDb"
 
 msgid "Search EPG"
-msgstr ""
+msgstr "Sök i EPG"
 
 msgid "Search IMDb"
 msgstr "Sök i IMDb"
@@ -1356,32 +1330,29 @@ msgstr "Sök i IMDb"
 msgid "Search KinoPoisk"
 msgstr "Sök i KinoPoisk"
 
-#, fuzzy
 msgid "Search TV Guide UK"
-msgstr "TV tablå"
+msgstr "Sök i TV tablå (UK)"
 
 msgid "Search by name, sd / hd / uhd, or provider"
-msgstr ""
+msgstr "Sök bland namn, sd / hd / uhd, eller distributör"
 
-#, fuzzy
 msgid "Search strictness"
-msgstr "Sök i KinoPoisk"
+msgstr "Söknoggrannhet"
 
-#, fuzzy
 msgid "Search type"
-msgstr "Sök"
+msgstr "Typ av sökning"
 
 msgid "Select Directory"
-msgstr ""
+msgstr "Välj katalog"
 
 msgid "Select IPK file for upload"
-msgstr ""
+msgstr "Välj IPK-fil att ladda upp"
 
 msgid "Select..."
-msgstr ""
+msgstr "Välj..."
 
 msgid "Send"
-msgstr ""
+msgstr "Skicka"
 
 msgid "Send Message"
 msgstr "Skicka meddelandet"
@@ -1620,7 +1591,7 @@ msgid "Teletext"
 msgstr "Text-TV"
 
 msgid "Teletext PID"
-msgstr "Teletext PID"
+msgstr "Text tv PID"
 
 msgid "Television"
 msgstr "Television"
@@ -2078,9 +2049,8 @@ msgstr "i titeln"
 msgid "title ends with"
 msgstr ""
 
-#, fuzzy
 msgid "title or description match"
-msgstr "titeln eller beskrivningen  matchar"
+msgstr "titeln eller beskrivningen matchar"
 
 #, fuzzy
 msgid "title or short description match"
