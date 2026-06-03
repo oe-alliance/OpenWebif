@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-31 14:25+0200\n"
+"POT-Creation-Date: 2026-06-03 17:36+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -851,6 +851,10 @@ msgstr ""
 msgid "Execute \"After event\" during timespan"
 msgstr ""
 
+#: ../plugin/controllers/i18n.py:614
+msgid "Executing..."
+msgstr ""
+
 #: ../plugin/controllers/i18n.py:556
 msgid "Export"
 msgstr ""
@@ -1202,7 +1206,7 @@ msgstr ""
 msgid "Minute"
 msgstr ""
 
-#: ../plugin/controllers/web.py:84
+#: ../plugin/controllers/web.py:85
 #, python-format
 msgid "Missing mandatory parameter '%s'"
 msgstr ""
@@ -1697,6 +1701,10 @@ msgstr ""
 msgid "Root"
 msgstr ""
 
+#: ../plugin/controllers/i18n.py:612
+msgid "Run Script"
+msgstr ""
+
 #: ../plugin/controllers/models/info.py:51
 msgid "SLAAC"
 msgstr ""
@@ -1739,11 +1747,19 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
+#: ../plugin/controllers/i18n.py:616
+msgid "Saving..."
+msgstr ""
+
 #: ../plugin/controllers/i18n.py:224
 msgid "Screenshot"
 msgstr ""
 
-#: ../plugin/controllers/base.py:390
+#: ../plugin/controllers/i18n.py:615
+msgid "Script completed"
+msgstr ""
+
+#: ../plugin/controllers/base.py:390 ../plugin/controllers/i18n.py:613
 msgid "Scripts"
 msgstr ""
 
@@ -2144,12 +2160,12 @@ msgstr ""
 msgid "Th"
 msgstr ""
 
-#: ../plugin/controllers/web.py:90 ../plugin/controllers/web.py:1698
+#: ../plugin/controllers/web.py:91 ../plugin/controllers/web.py:1699
 #, python-format
 msgid "The parameter '%s' can't be empty"
 msgstr ""
 
-#: ../plugin/controllers/web.py:349
+#: ../plugin/controllers/web.py:350
 msgid "The parameter 'command' must be a number"
 msgstr ""
 
@@ -2327,7 +2343,7 @@ msgstr ""
 msgid "Type"
 msgstr ""
 
-#: ../plugin/controllers/web.py:251
+#: ../plugin/controllers/web.py:252
 #, python-format
 msgid "Unknown Volume command %s"
 msgstr ""
@@ -2494,7 +2510,7 @@ msgstr ""
 msgid "Would you like to save your changes?"
 msgstr ""
 
-#: ../plugin/controllers/web.py:246
+#: ../plugin/controllers/web.py:247
 #, python-format
 msgid "Wrong parameter format 'set=%s'. Use set=set15 "
 msgstr ""
@@ -2742,7 +2758,7 @@ msgstr ""
 msgid "transcoded"
 msgstr ""
 
-#: ../plugin/controllers/web.py:745
+#: ../plugin/controllers/web.py:746
 #, python-format
 msgid "type %s is not a number"
 msgstr ""
