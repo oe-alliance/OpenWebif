@@ -252,6 +252,9 @@ function initJsTranslation(strings) {
 	tstr_begin = strings.end;
 	tstr_rename_recording = strings.rename_recording;
 
+	tstr_save = strings.save;
+	tstr_saving = strings.saving;
+
 }
 
 function wait_for_openwebif() {
@@ -1073,7 +1076,7 @@ function saveAllConfig(section) {
 	// Show saving indicator
 	var $btn = $('#btn_save');
 	var originalText = $btn.text();
-	$btn.prop('disabled', true).text('Saving...');
+	$btn.prop('disabled', true).text(tstr_saving);
 
 	// Convert arrays to comma-separated strings for multicheckbox
 	var configsToSave = {};
@@ -1096,7 +1099,7 @@ function saveAllConfig(section) {
 		},
 		dataType: 'json'
 	}).done(function(response) {
-		$btn.prop('disabled', false).text('Save All');
+		$btn.prop('disabled', false).text(tstr_save);
 		
 		if (response.result) {
 			// Success - reload config section like saveConfig does

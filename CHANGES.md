@@ -5,6 +5,7 @@
 * add saveAllConfig() JavaScript function for efficient multi-config saves
 * add multiboot support
 * add scripts support
+* fix autotimer selection
 
 ## Version 2.2.4
 * improve IPTV

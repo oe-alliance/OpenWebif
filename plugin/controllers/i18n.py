@@ -612,5 +612,7 @@ tstrings = {
 	'run_script': _("Run Script"),
 	'scripts': _("Scripts"),
 	'executing': _("Executing..."),
-	'script_completed': _("Script completed")
+	'script_completed': _("Script completed"),
+	'saving': _("Saving..."),
+
 }

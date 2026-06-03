@@ -1,8 +1,8 @@
 //******************************************************************************
 //* at.js: openwebif Autotimer plugin
-//* Version 2.14
+//* Version 2.15
 //******************************************************************************
-//* Copyright (C) 2014-2022 jbleyel
+//* Copyright (C) 2014-2026 jbleyel
 //* Copyright (C) 2014-2022 E2OpenPlugins
 //*
 //* V 1.0 - Initial Version
@@ -30,6 +30,7 @@
 //* V 2.12 - fix test request
 //* V 2.13 - improve FillAllServices
 //* V 2.14 - use let instead of var
+//* V 2.15 - fix jump to the selected AT after reload
 //*
 //* Authors: jbleyel
 //* 		 plnick
@@ -344,7 +345,7 @@ function isBQ(sref)
 }
 
 // parse and create AT List
-function Parse() {
+function Parse(preserveATId) {
 	$("#atlist").empty();
 	
 	let atlist = [];
@@ -375,11 +376,21 @@ function Parse() {
 	}
 	else
 	{
-		let item = $("#atlist").find("li").first();
-		if(item) {
-			FillAT(item.data('id'));
-			item.addClass('ui-selected');
-			item.addClass(getActiveCls());
+		// Try to restore the previously selected AT, otherwise use the first one
+		let itemToSelect = null;
+		if(preserveATId) {
+			itemToSelect = $("#atlist").find("li").filter(function() {
+				return $(this).data('id') === preserveATId;
+			}).first();
+		}
+		if(!itemToSelect || itemToSelect.length === 0) {
+			itemToSelect = $("#atlist").find("li").first();
+		}
+		
+		if(itemToSelect) {
+			FillAT(itemToSelect.data('id'));
+			itemToSelect.addClass('ui-selected');
+			itemToSelect.addClass(getActiveCls());
 		}
 		setHover('#atlist li');
 	}
@@ -817,6 +828,8 @@ function delAT()
 
 function readAT()
 {
+	// Save the current AT id before reloading
+	let currentATId = CurrentAT ? CurrentAT.id : null;
 	CurrentAT = null;
 	$.ajax({
 		type: "GET", url: "/autotimer",
@@ -824,7 +837,7 @@ function readAT()
 		success: function (xml)
 		{
 			atxml=xml;
-			Parse();
+			Parse(currentATId);
 		},error: function (request, status, error) {
 			showError(request.responseText);
 		}
