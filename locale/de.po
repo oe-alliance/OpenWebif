@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenWebif\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-03 17:36+0200\n"
-"PO-Revision-Date: 2026-06-03 17:43+0200\n"
+"POT-Creation-Date: 2026-06-04 22:04+0200\n"
+"PO-Revision-Date: 2026-06-04 22:06+0200\n"
 "Last-Translator: T-Rex <t-rex@t.pl>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/e2openplugin-"
 "openwebif/e2openplugin-openwebif/de/>\n"
@@ -72,7 +72,7 @@ msgstr "%s %s ist gesperrt."
 msgid "%s / %s"
 msgstr ""
 
-#: ../plugin/controllers/ajax.py:287
+#: ../plugin/controllers/ajax.py:284
 #, python-format
 msgid "%s Style"
 msgstr ""
@@ -866,7 +866,7 @@ msgstr "Enthält nicht"
 msgid "Execute \"After event\" during timespan"
 msgstr "Zeitspanne für \"nach der Aufnahme\""
 
-#: ../plugin/controllers/i18n.py:614
+#: ../plugin/controllers/i18n.py:615
 msgid "Executing..."
 msgstr "Ausführen…"
 
@@ -1288,7 +1288,7 @@ msgstr "Aufnahmen"
 msgid "Multi-Bouquet is not enabled!"
 msgstr "Multi-Bouquet ist nicht aktiviert!"
 
-#: ../plugin/controllers/i18n.py:611
+#: ../plugin/controllers/i18n.py:612
 msgid "MultiBoot Slots"
 msgstr ""
 
@@ -1523,7 +1523,7 @@ msgstr "OpenWebif Browser Einstellungen"
 msgid "OpenWebif Settings"
 msgstr "OpenWebif Einstellungen"
 
-#: ../plugin/plugin.py:146
+#: ../plugin/plugin.py:147
 msgid "OpenWebif url:"
 msgstr "OpenWebif-URL:"
 
@@ -1721,7 +1721,7 @@ msgstr "Limitiert auf Sender"
 msgid "Root"
 msgstr "Hauptverzeichnis"
 
-#: ../plugin/controllers/i18n.py:612
+#: ../plugin/controllers/i18n.py:613
 msgid "Run Script"
 msgstr "Starte Script"
 
@@ -1767,7 +1767,7 @@ msgstr "Samstag"
 msgid "Save"
 msgstr "Speichern"
 
-#: ../plugin/controllers/i18n.py:616
+#: ../plugin/controllers/i18n.py:617
 msgid "Saving..."
 msgstr "Speichern…"
 
@@ -1775,11 +1775,11 @@ msgstr "Speichern…"
 msgid "Screenshot"
 msgstr "Bildschirmfoto"
 
-#: ../plugin/controllers/i18n.py:615
+#: ../plugin/controllers/i18n.py:616
 msgid "Script completed"
 msgstr "Script Ausgeführt"
 
-#: ../plugin/controllers/base.py:390 ../plugin/controllers/i18n.py:613
+#: ../plugin/controllers/base.py:390 ../plugin/controllers/i18n.py:614
 msgid "Scripts"
 msgstr "Scripte"
 
@@ -1930,6 +1930,10 @@ msgstr "Finde maximale Länge"
 msgid "Settings"
 msgstr "Einstellungen"
 
+#: ../plugin/controllers/i18n.py:611
+msgid "Show Compact Timer List"
+msgstr "Timerliste kompakt"
+
 #: ../plugin/controllers/i18n.py:610
 msgid "Show EPG History"
 msgstr "Zeige EPG Historie"
@@ -1953,6 +1957,10 @@ msgstr "Alle Pakete anzeigen"
 #: ../plugin/controllers/i18n.py:197 ../plugin/setup.xml
 msgid "Show box name in header"
 msgstr "Boxnamen in der Kopfzeile anzeigen"
+
+#: ../plugin/controllers/i18n.py:618
+msgid "Show description"
+msgstr "Beschreibung Anzeigen"
 
 #: ../plugin/controllers/i18n.py:550
 msgid "Show details"
@@ -2582,7 +2590,7 @@ msgstr "Jederzeit"
 msgid "auto"
 msgstr "Automatisch"
 
-#: ../plugin/plugin.py:140
+#: ../plugin/plugin.py:141
 msgid "box_ip"
 msgstr ""
 

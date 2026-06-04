@@ -608,11 +608,13 @@ tstrings = {
 	'before': _("Before"),
 	'select_directory': _("Select Directory"),
 	'showepghistory': _("Show EPG History"),
+	'showcompacttimerlist': _("Show Compact Timer List"),
 	'multiboot_slots': _("MultiBoot Slots"),
 	'run_script': _("Run Script"),
 	'scripts': _("Scripts"),
 	'executing': _("Executing..."),
 	'script_completed': _("Script completed"),
 	'saving': _("Saving..."),
+	'show_description': _("Show description"),
 
 }

@@ -34,6 +34,7 @@
 		</div>
 
 		<div id="timers">
+		#if not $compacttimerlist
 		#for $timer in $timers
 			<div class="tm_row ui-widget-content ui-state-default" id="$timer.begin-$timer.end">
 				<div class="t_buttons tm_buttons">
@@ -96,6 +97,55 @@
 				<div style="clear: both;"></div>
 			</div>
 		#end for
+		#else
+		#for $timer in $timers
+			<div class="tm_row" style="display: flex; gap: 0px; align-items: center; height: 24px; padding: 3px; margin: 3px 0; border: 1px solid #ccc; font-size: 0.85em;">
+				<div style="flex: 0 0 auto; display: flex; gap: 0;">
+					#set $sref=quote($timer.serviceref, safe=' ~@#$()*!+=:;,.?/\'')
+					#set $tname=quote($timer.name)
+					<a href='#' onclick="editTimer('$sref', '$timer.begin', '$timer.end');" title="$tstrings['edit_timer']" style="padding: 2px;"><i class="fa fa-edit"></i></a>
+					<a href='#' onclick="deleteTimer('$sref', '$timer.begin', '$timer.end', '$tname');" title="$tstrings['delete_timer']" style="padding: 2px;"><i class="fa fa-trash-o"></i></a>
+					<a href='#' onclick="toggleTimerStatus('$sref', '$timer.begin', '$timer.end');" 
+					#if $timer.disabled
+					title="$tstrings['enable_timer']" style="padding: 2px;"><i id='img-$timer.begin-$timer.end' data-ref="$sref" class="fa fa-square-o">
+					#else
+					title="$tstrings['disable_timer']" style="padding: 2px;"><i id='img-$timer.begin-$timer.end' data-ref="$sref" class="fa fa-check-square-o">
+					#end if
+					</i></a>
+				</div>
+				<span class="tm_title" style="margin: 0 5px 0 5px; font-weight: bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1; min-width: 0;">$timer.servicename | $timer.name</span>
+				<span class="tm_title" style="margin: 0 5px; font-size: 0.9em; white-space: nowrap; flex: 0 0 auto;">$timer.realbegin $timer.realend</span>
+				#if $timer.repeated != 0
+				<span class="tm_title" style="margin: 0 5px; font-size: 0.75em; white-space: nowrap; flex: 0 0 auto;">
+					#set $flags=$timer.repeated
+					#set $timerDays=[]
+					#for $day in [$tstrings['monday'],$tstrings['tuesday'],$tstrings['wednesday'],$tstrings['thursday'],$tstrings['friday'],$tstrings['saturday'],$tstrings['sunday']]
+						#if $flags&1
+							$timerDays.append($day)
+						#end if
+						#set $flags = $flags >> 1
+					#end for
+					#echo ', '.join($timerDays)
+				</span>
+				#end if
+				<span class="tm_desc" style="margin: 0 5px; font-weight: bold; white-space: nowrap; flex: 0 0 auto;">
+					#if $timer.disabled
+						$tstrings['disabled']
+					#elif $timer.state == 0
+						$tstrings['waiting']
+					#elif $timer.state == 2
+						$tstrings['running']
+					#elif $timer.state == 3
+						$tstrings['finished']
+					#end if
+				</span>
+				<button onclick="toggleTimerDescription('timer-desc-$timer.begin-$timer.end', this); return false;" style="background: none; border: none; cursor: pointer; padding: 0; margin: 0 5px; flex: 0 0 auto; width: 20px; height: 20px;"><i class="ui-icon ui-icon-caret-1-w" id="chevron-$timer.begin-$timer.end"></i></button>
+			</div>
+			<div id="timer-desc-$timer.begin-$timer.end" style="display: none; margin: 0 3px 3px 3px; padding: 5px; border: 1px solid #ddd; background: #f9f9f9; font-size: 0.8em;">
+				$timer.description
+			</div>
+		#end for
+		#end if
 		</div>
 	</div>
 </div>
@@ -144,6 +194,21 @@ $(function() {
 		}
 	});
 });
+
+function toggleTimerDescription(elementId, buttonElement) {
+	let elem = $('#' + elementId);
+	if(elem.length > 0) {
+		let chevron = $(buttonElement).find('i');
+		if(elem.is(':visible')) {
+			elem.slideUp(200);
+			chevron.removeClass('ui-icon-caret-1-s').addClass('ui-icon-caret-1-w');
+		} else {
+			elem.slideDown(200);
+			chevron.removeClass('ui-icon-caret-1-w').addClass('ui-icon-caret-1-s');
+		}
+	}
+	return false;
+}
 #end raw
 </script>
 #end filter

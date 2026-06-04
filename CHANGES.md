@@ -1,3 +1,6 @@
+## Version 2.3.1
+* add compact timer list
+
 ## Version 2.3.0
 * add config batch save feature with Save button
 * add new /api/saveconfigbatch endpoint for batch configuration updates via JSON

@@ -218,25 +218,21 @@ class AjaxController(BaseController):
 		return movies
 
 	def P_timers(self, request):
-
 		timers = getTimers(self.session)
-		unsort = timers['timers']
-
 		sorttype = getUrlArg(request, "sort")
-		if sorttype is None:
-			return timers
-
-		if sorttype == 'name':
-			timers['timers'] = sorted(unsort, key=lambda k: k['name'])
-		elif sorttype == 'named':
-			timers['timers'] = sorted(unsort, key=lambda k: k['name'], reverse=True)
-		elif sorttype == 'date':
-			timers['timers'] = sorted(unsort, key=lambda k: k['begin'])
-		else:
-			timers['timers'] = sorted(unsort, key=lambda k: k['begin'], reverse=True)
-			sorttype = 'dated'
-
-		timers['sort'] = sorttype
+		if sorttype is not None:
+			unsort = timers['timers']
+			if sorttype == 'name':
+				timers['timers'] = sorted(unsort, key=lambda k: k['name'])
+			elif sorttype == 'named':
+				timers['timers'] = sorted(unsort, key=lambda k: k['name'], reverse=True)
+			elif sorttype == 'date':
+				timers['timers'] = sorted(unsort, key=lambda k: k['begin'])
+			else:
+				timers['timers'] = sorted(unsort, key=lambda k: k['begin'], reverse=True)
+				sorttype = 'dated'
+			timers['sort'] = sorttype
+		timers['compacttimerlist'] = config.OpenWebif.webcache.compacttimerlist.value
 		return timers
 
 	# http://enigma2/ajax/tvradio
@@ -278,6 +274,7 @@ class AjaxController(BaseController):
 		ret['screenshotchannelname'] = config.OpenWebif.webcache.screenshotchannelname.value
 		ret['showallpackages'] = config.OpenWebif.webcache.showallpackages.value
 		ret['showepghistory'] = config.OpenWebif.webcache.showepghistory.value
+		ret['compacttimerlist'] = config.OpenWebif.webcache.compacttimerlist.value
 		ret['allowipkupload'] = config.OpenWebif.allow_upload_ipk.value
 		ret['smallremotes'] = [(x, _('%s Style') % x.capitalize()) for x in config.OpenWebif.webcache.smallremote.choices]
 		ret['smallremote'] = config.OpenWebif.webcache.smallremote.value

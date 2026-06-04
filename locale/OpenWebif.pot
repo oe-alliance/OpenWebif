@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-03 17:36+0200\n"
+"POT-Creation-Date: 2026-06-04 22:04+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,7 +70,7 @@ msgstr ""
 msgid "%s / %s"
 msgstr ""
 
-#: ../plugin/controllers/ajax.py:287
+#: ../plugin/controllers/ajax.py:284
 #, python-format
 msgid "%s Style"
 msgstr ""
@@ -851,7 +851,7 @@ msgstr ""
 msgid "Execute \"After event\" during timespan"
 msgstr ""
 
-#: ../plugin/controllers/i18n.py:614
+#: ../plugin/controllers/i18n.py:615
 msgid "Executing..."
 msgstr ""
 
@@ -1269,7 +1269,7 @@ msgstr ""
 msgid "Multi-Bouquet is not enabled!"
 msgstr ""
 
-#: ../plugin/controllers/i18n.py:611
+#: ../plugin/controllers/i18n.py:612
 msgid "MultiBoot Slots"
 msgstr ""
 
@@ -1504,7 +1504,7 @@ msgstr ""
 msgid "OpenWebif Settings"
 msgstr ""
 
-#: ../plugin/plugin.py:146
+#: ../plugin/plugin.py:147
 msgid "OpenWebif url:"
 msgstr ""
 
@@ -1701,7 +1701,7 @@ msgstr ""
 msgid "Root"
 msgstr ""
 
-#: ../plugin/controllers/i18n.py:612
+#: ../plugin/controllers/i18n.py:613
 msgid "Run Script"
 msgstr ""
 
@@ -1747,7 +1747,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: ../plugin/controllers/i18n.py:616
+#: ../plugin/controllers/i18n.py:617
 msgid "Saving..."
 msgstr ""
 
@@ -1755,11 +1755,11 @@ msgstr ""
 msgid "Screenshot"
 msgstr ""
 
-#: ../plugin/controllers/i18n.py:615
+#: ../plugin/controllers/i18n.py:616
 msgid "Script completed"
 msgstr ""
 
-#: ../plugin/controllers/base.py:390 ../plugin/controllers/i18n.py:613
+#: ../plugin/controllers/base.py:390 ../plugin/controllers/i18n.py:614
 msgid "Scripts"
 msgstr ""
 
@@ -1908,6 +1908,10 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
+#: ../plugin/controllers/i18n.py:611
+msgid "Show Compact Timer List"
+msgstr ""
+
 #: ../plugin/controllers/i18n.py:610
 msgid "Show EPG History"
 msgstr ""
@@ -1930,6 +1934,10 @@ msgstr ""
 
 #: ../plugin/controllers/i18n.py:197 ../plugin/setup.xml
 msgid "Show box name in header"
+msgstr ""
+
+#: ../plugin/controllers/i18n.py:618
+msgid "Show description"
 msgstr ""
 
 #: ../plugin/controllers/i18n.py:550
@@ -2560,7 +2568,7 @@ msgstr ""
 msgid "auto"
 msgstr ""
 
-#: ../plugin/plugin.py:140
+#: ../plugin/plugin.py:141
 msgid "box_ip"
 msgstr ""
 
