@@ -966,7 +966,7 @@
 	function handle_multiboot_reboot_responsive(slot, bootCode) {
 		\$("#PowerModal").modal('hide');
 		let sp = loadspinner.replace("'spinner'","'spinner1'");
-		load_reboot_dialog(sp, $tstrings['reboot_box']);
+		load_reboot_dialog(sp, "$tstrings['reboot_box']");
 		wait_for_openwebif();
 		setTimeout(function () {
 			webapi_execute('multiboot/set?slot=' + encodeURIComponent(slot) + '&bootcode=' + encodeURIComponent(bootCode));
