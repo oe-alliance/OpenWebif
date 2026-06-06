@@ -286,7 +286,6 @@ FIXME : complete reorg header
 
 .multibootButtons
 {
-	width: 100%;
 	margin: 0;
 }
 
@@ -297,22 +296,10 @@ FIXME : complete reorg header
 .multibootButtons li {
 	margin-top: 8px;
 	width: 100%;
-	line-height: 32px;
-	font-size: 13px;
+	font-size: 12px;
 	padding: 8px 12px;
 	box-sizing: border-box;
-	border: 1px solid #5cb85c;
-	background: linear-gradient(to bottom, #f0f8f0, #e8f5e8);
-	border-radius: 3px;
-	transition: all 0.2s ease;
 }
-
-.multibootButtons li:hover {
-	border: 1px solid #449d44;
-	background: linear-gradient(to bottom, #d4edda, #c3e6cb);
-	box-shadow: 0 2px 5px rgba(76, 175, 80, 0.3);
-}
-
 
 .moviecontainer_left {
 	float: left;
