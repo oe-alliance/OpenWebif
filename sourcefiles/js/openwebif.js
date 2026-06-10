@@ -1095,7 +1095,8 @@ function saveAllConfig(section) {
 		async: true,
 		type: "POST",
 		data: {
-			configs: JSON.stringify(configsToSave)
+			configs: JSON.stringify(configsToSave),
+			section: section
 		},
 		dataType: 'json'
 	}).done(function(response) {

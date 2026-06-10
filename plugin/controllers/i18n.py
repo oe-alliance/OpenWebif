@@ -609,6 +609,7 @@ tstrings = {
 	'select_directory': _("Select Directory"),
 	'showepghistory': _("Show EPG History"),
 	'showcompacttimerlist': _("Show Compact Timer List"),
+	'showcompactepglist': _("Show Compact EPG List"),
 	'multiboot_slots': _("MultiBoot Slots"),
 	'run_script': _("Run Script"),
 	'scripts': _("Scripts"),

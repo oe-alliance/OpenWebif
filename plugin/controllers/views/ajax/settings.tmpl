@@ -152,6 +152,13 @@
 				<input type="checkbox" name="compacttimerlist"/>
 				#end if
 				</td></tr>
+				<tr><td>$tstrings['showcompactepglist']</td><td>
+				#if $compactepglist
+				<input type="checkbox" name="compactepglist" checked="checked"/>
+				#else
+				<input type="checkbox" name="compactepglist"/>
+				#end if
+				</td></tr>
 				#if $getVar("responsivedesign", "") != ""
 					<tr><td>$tstrings['use_modern_design']</td><td>
 					#if $responsivedesign
@@ -636,6 +643,12 @@ $(function() {
 		var ch = evt.currentTarget.checked;
 		$('input[name=compacttimerlist]').attr('checked', ch);
 		webapi_execute("/api/setwebconfig?compacttimerlist=" + ch);
+	});
+
+	$("input[name=compactepglist]").click(function(evt) {
+		var ch = evt.currentTarget.checked;
+		$('input[name=compactepglist]').attr('checked', ch);
+		webapi_execute("/api/setwebconfig?compactepglist=" + ch);
 	});
 
 	$("input[name=responsivedesign]").click(function(evt) {

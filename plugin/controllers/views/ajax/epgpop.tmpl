@@ -40,23 +40,32 @@
 <style>
 
 a {text-decoration:none;color:#000;}
-.tb { display:inline-block; margin-left:3px;}
-.tb i.fa { font-size:32px;}
 #station { cursor:pointer;}
 .im { font-family:Impact,Arial;font-size:18px;text-decoration:none;}
 table { font-size:12px; font-family: Verdana,Arial,sans-serif;}
 .deltimer{display:none;}
 .ETV table {font-size:12px;width:100%;}
-.ETV table td { width:50px;height:40px;}
-.eft td { height:60px;vertical-align: middle;}
 .efi { width:100px;}
 .eft td > div { display:table;width:100%;}
-.esl1,.esl2 { display:table-cell;width:30%;font-size:13px;font-weight: bold;vertical-align: middle;height: 60px;padding-left: 10px;}
 .esl2 { width:70%;border-left: 1px solid black;}
 .eff {width:100% !important;vertical-align: top;padding-left:10px;}
-.efi img {width:100px;height:60px; border:none;}
 .eff1 {width:100%;}
 .panel.ui-state-hover { background-image: none; }
+
+#if $compactepglist
+.ETV table td { width:25px;height:20px;}
+.tb i.fa { font-size:26px;}
+.eft td { height:30px;vertical-align: middle;}
+.esl1,.esl2 { display:table-cell;width:30%;font-size:13px;font-weight: bold;vertical-align: middle;height: 30px;padding-left: 5px;}
+.efi img {width:50px;height:30px; border:none;}
+#else
+.tb { display:inline-block; margin-left:3px;}
+.ETV table td { width:50px;height:40px;}
+.tb i.fa { font-size:32px;}
+.eft td { height:60px;vertical-align: middle;}
+.esl1,.esl2 { display:table-cell;width:30%;font-size:13px;font-weight: bold;vertical-align: middle;height: 60px;padding-left: 10px;}
+.efi img {width:100px;height:60px; border:none;}
+#end if
 </style>
 
 <title>Open Webif $tstrings['epg']</title>
@@ -70,7 +79,78 @@ table { font-size:12px; font-family: Verdana,Arial,sans-serif;}
 		#set $sref=quote($event.sref, safe=' ~@#$()*!+=:;,.?/\'')
 		#set $tsref=$sref.replace('%253a//','%3a//')
 
+
 	<tbody data-id='$tsref;$event.begin_timestamp;$event.duration'>
+
+#if $compactepglist
+
+	<tr>
+	<td>
+
+		<div class="ui-widget-content ui-state-default compactepg" data-begin="$event.begin_timestamp">
+
+			<!-- LINKS: Text -->
+			<div class="tm_text">
+				<div class="tm_title compact_text">
+					$event.sname
+
+					#if 'ns' in $event
+						#if '4097:' in $event.sref or '5002:' in $event.sref or 'http%3a' in $event.sref or 'https%3a' in $event.sref
+							IPTV
+						#else
+							$event.service_type / $event.ns
+						#end if
+					#end if
+
+					$event.date $event.begin&nbsp;-&nbsp;$event.end&nbsp;($event.duration min.) / $event.title
+				</div>
+			</div>
+
+			<!-- RECHTS: Toggle + Buttons -->
+			<div class="tm_actions">
+
+
+				<a class="tb addtimer" href="#" onclick="addTimerEvent('$sref',$event.id,false);return false;" title="$tstrings['add_timer']">
+					<i class="fa fa-timerplus"></i>
+				</a>
+
+				<a class="tb deltimer" href="#" onclick="delTimerEvent('$sref',$event.id);return false;" title="$tstrings['delete_timer']">
+					<i class="fa fa-timertrash"></i>
+				</a>
+
+				<a class="tb" href="#" onclick="addEditTimerEvent('$sref',$event.id);return false;" title="$tstrings['edit_timer']">
+					<i class="fa fa-timeredit"></i>
+				</a>
+
+				<a class="tb" href="#" onclick="addTimerEvent('$sref',$event.id,true);return false;" title="$tstrings['add_zaptimer']">
+					<i class="fa fa-timerplay"></i>
+				</a>
+
+				#if $at
+				<a class="tb" href="#" onclick="addAutoTimerEvent('$sref','$channel','$title','$event.begin','$event.end');return false;" title="$tstrings['add_autotimer']">
+					<i class="fa fa-timerat"></i>
+				</a>
+				#end if
+
+				<!-- Toggle ganz rechts außen vor den Timerbuttons -->
+
+				<button class="epg-toggle">
+					<i class="ui-icon ui-icon-caret-1-w"></i>
+				</button>
+
+			</div>
+
+			<div id="desc-$event.begin_timestamp"
+				class="epg-desc">
+				<span>$event.shortdesc</span><br><br>
+				$event.longdesc
+			</div>
+
+		</div>
+
+	</td>
+	</tr>
+#else
 	<tr class="eft">
 	<td class="efi ui-widget-header" colspan="2"><img src="$event.picon" title=""></td>
 	<td style="width:100%;height:60px;">
@@ -83,6 +163,7 @@ table { font-size:12px; font-family: Verdana,Arial,sans-serif;}
 					$event.service_type / $event.ns
 				#end if
 			<br />
+			<span>$event.shortdesc</span> / $event.longdesc
 			#end if
 			$event.date</div>
 		<div class="esl2 panel ui-state-hover">$event.title<br/>$event.begin&nbsp;-&nbsp;$event.end&nbsp;($event.duration min.)</div>
@@ -134,6 +215,7 @@ table { font-size:12px; font-family: Verdana,Arial,sans-serif;}
 	</td>
 		<td></td>
 	</tr>
+#end if
 </tbody>
 #end for
 </table>
@@ -149,7 +231,7 @@ var t = [
 #raw
 var reloadTimers = true;
 $(function() {
-	$('#editTimerForm').load('ajax/edittimer');
+	$('#editTimerForm').load('/ajax/edittimer');
 	if (t.length > 0) {
 		var x = $(".ETV tbody");
 		if (x != undefined)
@@ -168,6 +250,27 @@ $(function() {
 //		}
 	});
 });
+
+if (!window.__epgToggleBound) {
+    window.__epgToggleBound = true;
+
+    $(document).on('click', '.epg-toggle', function () {
+
+        const row = $(this).closest('.compactepg');
+        const desc = row.find('.epg-desc');
+        const icon = $(this).find('i');
+
+        if (desc.is(':visible')) {
+            desc.stop(true, true).slideUp(200);
+            icon.removeClass('ui-icon-caret-1-s')
+                .addClass('ui-icon-caret-1-w');
+        } else {
+            desc.stop(true, true).slideDown(200);
+            icon.removeClass('ui-icon-caret-1-w')
+                .addClass('ui-icon-caret-1-s');
+        }
+    });
+}
 
 #end raw
 </script>

@@ -2120,10 +2120,11 @@ class WebController(BaseController):
 		if request.method == b'POST':
 			try:
 				configs_json = getUrlArg(request, "configs", "")
+				section = getUrlArg(request, "section", "")
 				if configs_json:
 					try:
 						configs_dict = loads(configs_json)
-						return saveConfigBatch(configs_dict)
+						return saveConfigBatch(configs_dict, section)
 					except JSONDecodeError:
 						message = "Invalid JSON format"
 				else:
@@ -2497,7 +2498,7 @@ class WebController(BaseController):
 		args = list(request.args.keys())
 		for arg in args:
 			sarg = toString(arg)
-			if sarg in ("minmovielist", "mintimerlist", "minepglist", "rcu_full_view", "epgsearch_full", "epgsearch_only_bq", "nownext_columns", "responsive_enabled", "showpicons", "showchanneldetails", "showiptvchannelsinselection", "screenshotchannelname", "showallpackages", "showepghistory", "compacttimerlist", "zapstream", "screenshot_high_resolution", "screenshot_refresh_auto"):
+			if sarg in ("minmovielist", "mintimerlist", "minepglist", "rcu_full_view", "epgsearch_full", "epgsearch_only_bq", "nownext_columns", "responsive_enabled", "showpicons", "showchanneldetails", "showiptvchannelsinselection", "screenshotchannelname", "showallpackages", "showepghistory", "compacttimerlist", "compactepglist", "zapstream", "screenshot_high_resolution", "screenshot_refresh_auto"):
 				val = request.args[arg][0] in (b"true", b"1")
 				configitem = getattr(comp_config.OpenWebif.webcache, sarg)
 				configitem.value = val

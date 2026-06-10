@@ -1,3 +1,7 @@
+## Version 2.3.2
+* add compact epg list
+* add save callback for setup
+
 ## Version 2.3.1
 * add compact timer list
 

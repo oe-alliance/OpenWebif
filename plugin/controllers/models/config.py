@@ -29,6 +29,12 @@ from enigma import eEnv
 from Components.SystemInfo import BoxInfo, SystemInfo
 from Components.config import config, ConfigBoolean
 
+try:
+	from Components.config import setupOnSave  # Get setupOnSave if available otherwise fallback to empty dict
+except ImportError:
+	setupOnSave = {}
+
+
 from ..i18n import _
 from ..utilities import get_config_attribute
 
@@ -225,13 +231,14 @@ def saveConfig(path, value):
 	}
 
 
-def saveConfigBatch(configs_dict):
+def saveConfigBatch(configs_dict, section):
 	"""
 	Save multiple configuration values in a single operation.
 
 	Args:
 		configs_dict: Dictionary with config paths as keys and values as values
 		Example: {"config.usage.setup_level": "1", "config.misc.useHDMICEC": "true"}
+		section: The section to which the configurations belong
 
 	Returns:
 		Dictionary with result status and error messages
@@ -297,6 +304,14 @@ def saveConfigBatch(configs_dict):
 	except Exception as e:
 		print(f"[OpenWebif] saveConfigBatch reload error: {e}")
 		errors.append("Error reloading configuration")
+
+	if section and setupOnSave:
+		try:
+			callback = setupOnSave.get(section)
+			if callback and callable(callback):
+				callback()
+		except Exception as e:
+			print(f"[OpenWebif] saveConfigBatch callback error for section '{section}': {e}")
 
 	return {
 		"result": successful > 0 and len(errors) == 0,

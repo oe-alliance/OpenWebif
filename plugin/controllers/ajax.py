@@ -159,7 +159,7 @@ class AjaxController(BaseController):
 		moviedb = config.OpenWebif.webcache.moviedb.value if config.OpenWebif.webcache.moviedb.value else EXT_EVENT_INFO_SOURCE
 		exteventinfoprovider = getEventInfoProvider(moviedb)
 
-		return {"theme": theme, "events": events, "timers": timers, "at": at, "moviedb": moviedb, "extEventInfoProvider": exteventinfoprovider}
+		return {"theme": theme, "events": events, "timers": timers, "at": at, "moviedb": moviedb, "extEventInfoProvider": exteventinfoprovider, "compactepglist": config.OpenWebif.webcache.compactepglist.value}
 
 	# http://enigma2/ajax/epgdialog?sstr=test&bouquetsonly=1
 	def P_epgdialog(self, request):
@@ -275,6 +275,7 @@ class AjaxController(BaseController):
 		ret['showallpackages'] = config.OpenWebif.webcache.showallpackages.value
 		ret['showepghistory'] = config.OpenWebif.webcache.showepghistory.value
 		ret['compacttimerlist'] = config.OpenWebif.webcache.compacttimerlist.value
+		ret['compactepglist'] = config.OpenWebif.webcache.compactepglist.value
 		ret['allowipkupload'] = config.OpenWebif.allow_upload_ipk.value
 		ret['smallremotes'] = [(x, _('%s Style') % x.capitalize()) for x in config.OpenWebif.webcache.smallremote.choices]
 		ret['smallremote'] = config.OpenWebif.webcache.smallremote.value

@@ -934,4 +934,59 @@ i.fa-mobile {font-size: 22px;}
 	background: #b0b0b0;
 }
 
+.compactepg {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.compactepg .tm_text {
+    flex: 1;
+    min-width: 0;
+}
+
+.compactepg .tm_title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.compactepg .tm_actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.epg-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.epg-toggle i {
+	font-size: 18px;
+}
+
+.epg-desc {
+    display: none;
+    flex: 0 0 100%;
+    width: 100%;
+    margin: 0 3px 3px 3px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+    font-size: 0.8em;
+}
+
+
 @include meta.load-css("channel_tags");
