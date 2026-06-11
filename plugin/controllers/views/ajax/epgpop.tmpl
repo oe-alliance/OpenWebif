@@ -86,14 +86,10 @@ table { font-size:12px; font-family: Verdana,Arial,sans-serif;}
 
 	<tr>
 	<td>
-
 		<div class="ui-widget-content ui-state-default compactepg" data-begin="$event.begin_timestamp">
-
-			<!-- LINKS: Text -->
 			<div class="tm_text">
 				<div class="tm_title compact_text">
 					$event.sname
-
 					#if 'ns' in $event
 						#if '4097:' in $event.sref or '5002:' in $event.sref or 'http%3a' in $event.sref or 'https%3a' in $event.sref
 							IPTV
@@ -101,27 +97,21 @@ table { font-size:12px; font-family: Verdana,Arial,sans-serif;}
 							$event.service_type / $event.ns
 						#end if
 					#end if
-
 					$event.date $event.begin&nbsp;-&nbsp;$event.end&nbsp;($event.duration min.) / $event.title
 				</div>
 			</div>
 
-			<!-- RECHTS: Toggle + Buttons -->
 			<div class="tm_actions">
-
 
 				<a class="tb addtimer" href="#" onclick="addTimerEvent('$sref',$event.id,false);return false;" title="$tstrings['add_timer']">
 					<i class="fa fa-timerplus"></i>
 				</a>
-
 				<a class="tb deltimer" href="#" onclick="delTimerEvent('$sref',$event.id);return false;" title="$tstrings['delete_timer']">
 					<i class="fa fa-timertrash"></i>
 				</a>
-
 				<a class="tb" href="#" onclick="addEditTimerEvent('$sref',$event.id);return false;" title="$tstrings['edit_timer']">
 					<i class="fa fa-timeredit"></i>
 				</a>
-
 				<a class="tb" href="#" onclick="addTimerEvent('$sref',$event.id,true);return false;" title="$tstrings['add_zaptimer']">
 					<i class="fa fa-timerplay"></i>
 				</a>
@@ -131,8 +121,6 @@ table { font-size:12px; font-family: Verdana,Arial,sans-serif;}
 					<i class="fa fa-timerat"></i>
 				</a>
 				#end if
-
-				<!-- Toggle ganz rechts außen vor den Timerbuttons -->
 
 				<button class="epg-toggle">
 					<i class="ui-icon ui-icon-caret-1-w"></i>
@@ -147,7 +135,6 @@ table { font-size:12px; font-family: Verdana,Arial,sans-serif;}
 			</div>
 
 		</div>
-
 	</td>
 	</tr>
 #else
