@@ -7102,7 +7102,7 @@ Picker.extend( 'pickadate', DatePicker )
 
         function setupEvents() {
           if (typeof window.ontouchstart !== 'undefined') {
-            view[0].addEventListener('touchstart', tap);
+            view[0].addEventListener('touchstart', tap, { passive: true });
             view[0].addEventListener('touchmove', drag);
             view[0].addEventListener('touchend', release);
           }
