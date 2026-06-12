@@ -176,9 +176,11 @@ def getJsonFromConfig(cnf):
 	}
 
 
-def saveConfig(path, value):
+def saveConfig(path, value, save):
+	oldValue = None
 	try:
 		cnf = get_config_attribute(path, root_obj=config)
+		oldValue = cnf.value
 	except Exception as exc:
 		print(f"[OpenWebif] saveConfig Error : {exc}")
 		return {
@@ -218,7 +220,8 @@ def saveConfig(path, value):
 			cnf.value = cnf_value
 		else:
 			cnf.value = value
-		cnf.save()
+		if save:
+			cnf.save()
 		configfiles.reload()
 	except Exception as e:
 		print(f"[OpenWebif] saveConfig Error : {e}")
@@ -227,32 +230,62 @@ def saveConfig(path, value):
 		}
 
 	return {
-		"result": True
+		"result": True,
+		"value": cnf.value,
+		"oldValue": oldValue,
+		"saved": cnf.saved_value
 	}
 
 
-def saveConfigBatch(configs_dict, section):
-	"""
-	Save multiple configuration values in a single operation.
-
-	Args:
-		configs_dict: Dictionary with config paths as keys and values as values
-		Example: {"config.usage.setup_level": "1", "config.misc.useHDMICEC": "true"}
-		section: The section to which the configurations belong
-
-	Returns:
-		Dictionary with result status and error messages
-	"""
-	if not configs_dict or not isinstance(configs_dict, dict):
+def cancelConfigBatch(keys, section):
+	if not keys or not isinstance(keys, list):
 		return {
 			"result": False,
-			"message": "Invalid configuration format"
+			"message": "Invalid keys format"
 		}
 
 	errors = []
 	successful = 0
 
-	for path, value in configs_dict.items():
+	for path in keys:
+		try:
+			cnf = get_config_attribute(path, root_obj=config)
+		except Exception as exc:
+			print(f"[OpenWebif] cancelConfigBatch Error for {path}: {exc}")
+			errors.append(f"Config '{path}' not found")
+			continue
+
+		print(f"[OpenWebif] cancelConfigBatch canceling {path}")
+		print(f"[OpenWebif] cancelConfigBatch current value of {path} is {cnf.value}")
+
+		try:
+			cnf.cancel()
+			successful += 1
+		except Exception as e:
+			print(f"[OpenWebif] cancelConfigBatch Error for {path}: {e}")
+			errors.append(f"Error canceling '{path}': {str(e)}")
+
+		print(f"[OpenWebif] cancelConfigBatch new value of {path} is {cnf.value}")
+
+	try:
+		configfiles.reloadSection(section)
+	except Exception as e:
+		print(f"[OpenWebif] cancelConfigBatch reload error: {e}")
+		return {"result": False, "message": str(e)}
+	return {"result": True}
+
+
+def saveConfigBatch(keys, section):
+	if not keys or not isinstance(keys, list):
+		return {
+			"result": False,
+			"message": "Invalid keys format"
+		}
+
+	errors = []
+	successful = 0
+
+	for path in keys:
 		try:
 			cnf = get_config_attribute(path, root_obj=config)
 		except Exception as exc:
@@ -261,51 +294,19 @@ def saveConfigBatch(configs_dict, section):
 			continue
 
 		try:
-			if cnf.__class__.__name__ in ("ConfigBoolean", "ConfigEnableDisable", "ConfigYesNo"):
-				cnf.value = value == "true" or value is True
-			elif cnf.__class__.__name__ == "ConfigSet":
-				values = cnf.value
-				if int(value) in values:
-					values.remove(int(value))
-				else:
-					values.append(int(value))
-				cnf.value = values
-			elif cnf.__class__.__name__ == "ConfigNumber":
-				cnf.value = int(value)
-			elif cnf.__class__.__name__ in ("ConfigInteger", "TconfigInteger"):
-				cnf_min = int(cnf.limits[0][0])
-				cnf_max = int(cnf.limits[0][1])
-				cnf_value = int(value)
-				if cnf_value < cnf_min:
-					cnf_value = cnf_min
-				elif cnf_value > cnf_max:
-					cnf_value = cnf_max
-				cnf.value = cnf_value
-			elif cnf.__class__.__name__ in ("ConfigSlider"):
-				cnf_min = int(cnf.min)
-				cnf_max = int(cnf.max)
-				cnf_value = int(value)
-				if cnf_value < cnf_min:
-					cnf_value = cnf_min
-				elif cnf_value > cnf_max:
-					cnf_value = cnf_max
-				cnf.value = cnf_value
-			else:
-				cnf.value = value
 			cnf.save()
 			successful += 1
 		except Exception as e:
 			print(f"[OpenWebif] saveConfigBatch Error for {path}: {e}")
 			errors.append(f"Error saving '{path}': {str(e)}")
 
-	# Reload config files once after all changes
 	try:
-		configfiles.reload()
+		configfiles.reloadSection(section)
 	except Exception as e:
 		print(f"[OpenWebif] saveConfigBatch reload error: {e}")
 		errors.append("Error reloading configuration")
 
-	if section and setupOnSave:
+	if section in setupOnSave:
 		try:
 			callback = setupOnSave.get(section)
 			if callback and callable(callback):
@@ -316,7 +317,7 @@ def saveConfigBatch(configs_dict, section):
 	return {
 		"result": successful > 0 and len(errors) == 0,
 		"successful": successful,
-		"total": len(configs_dict),
+		"total": len(keys),
 		"errors": errors if errors else []
 	}
 
@@ -432,6 +433,37 @@ class ConfigFiles:
 		self.section_config = {}
 		self.sections = []
 		self.parseConfigFiles()
+
+	def reloadSection(self, key):
+		self.section_config.pop(key, None)
+		self.sections = [s for s in self.sections if s["key"] != key]
+		for setupfileName, pluginLanguageDomain in self.setupfiles:
+			if not exists(setupfileName):
+				continue
+			setupfile = open(setupfileName)
+			setupdom = parse(setupfile)  # nosec
+			setupfile.close()
+			for section in setupdom.getroot().findall("setup"):
+				if section.get("key") != key:
+					continue
+				requires = section.get("requires")
+				if requires and not BoxInfo.getItem(requires, False):
+					break
+				self.itemstoadd = []
+				self.addItems(section)
+				configs = list(self.itemstoadd)
+				if configs:
+					title = section.get("title", "") or ""
+					allowDefault = section.get("allowDefault", "0").lower() in ("1", "enabled", "on", "true", "yes")
+					if pluginLanguageDomain:
+						newtitle = dgettext(pluginLanguageDomain, title)
+						title = newtitle if newtitle != title else _(title)
+					else:
+						title = _(title)
+					self.section_config[key] = (title, configs, pluginLanguageDomain)
+					self.sections.append({"key": key, "description": title, "allowDefault": allowDefault})
+					self.sections = sorted(self.sections, key=lambda s: s["description"])
+				break
 
 	def getConfigFiles(self):
 		setupfiles = [eEnv.resolve('${datadir}/enigma2/setup.xml')]

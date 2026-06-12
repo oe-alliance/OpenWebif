@@ -1019,110 +1019,79 @@ function toggleFullRemote() {
 	$("#remotecontainer").toggle();
 }
 
+function reloadConfigSection(section) {
+	var url = 'ajax/config?section=' + section;
+	if (typeof load_scontent === 'function') {
+		load_scontent(url);
+	} else {
+		$('#scontent').load(url);
+	}
+}
+
+function updateConfig(key, value, section) {
+	$.ajax({ url: "/api/updateconfig?key=" + escape(key) + "&value=" + escape(value), cache: false, async: true, type: "POST"}).done(function() { 
+		if (key == "config.usage.setup_level") {
+			$("#content_container").load(lastcontenturl);
+		}
+		else {
+			reloadConfigSection(section);
+		}
+	});
+}
+
 function saveConfig(key, value, section) {
 	$.ajax({ url: "/api/saveconfig?key=" + escape(key) + "&value=" + escape(value), cache: false, async: true, type: "POST"}).done(function() { 
 		if (key == "config.usage.setup_level") {
 			$("#content_container").load(lastcontenturl);
 		}
 		else {
-			load_scontent('ajax/config?section=' + section);
+			reloadConfigSection(section);
 		}
 	});
 }
 
-// Batch config saving - collect all changes and save on button click
-function saveAllConfig(section) {
-	var changes = {};
-	var hasChanges = false;
+function batchConfig(section, save) {
+	var keys = [];
 
-	// Collect all form changes
 	$('#configuration').find('[id][data-config-type]').each(function() {
-		var $elem = $(this);
-		var elemId = $elem.attr('id');
-		var elemType = $elem.attr('data-config-type');
-		var configGroup = $elem.attr('data-config-group');
-		var currentValue = '';
-
-		if (elemType === 'checkbox') {
-			currentValue = $elem.is(':checked');
-			if (elemId && elemId !== '') {
-				changes[elemId] = currentValue;
-				hasChanges = true;
-			}
-		} else if (elemType === 'multicheckbox') {
-			// Handle multicheckbox - collect all checked items for this group
-			if (!changes[configGroup]) {
-				changes[configGroup] = [];
-			}
-			if ($elem.is(':checked')) {
-				var checkboxValue = elemId.replace(configGroup + '_', '');
-				changes[configGroup].push(checkboxValue);
-				hasChanges = true;
-			}
-		} else if (elemType === 'select' || elemType === 'text' || elemType === 'number') {
-			currentValue = $elem.val();
-			if (elemId && elemId !== '') {
-				changes[elemId] = currentValue;
-				hasChanges = true;
-			}
+		var elemId = $(this).attr('id');
+		if (elemId && keys.indexOf(elemId) === -1) {
+			keys.push(elemId);
 		}
 	});
 
-	if (!hasChanges) {
-		alert('No changes to save');
+	if (!keys.length) {
 		return;
 	}
 
-	// Show saving indicator
-	var $btn = $('#btn_save');
-	var originalText = $btn.text();
+	var $btn = save ? $('#btn_save') : $('#btn_cancel');
 	$btn.prop('disabled', true).text(tstr_saving);
 
-	// Convert arrays to comma-separated strings for multicheckbox
-	var configsToSave = {};
-	$.each(changes, function(key, value) {
-		if (Array.isArray(value)) {
-			configsToSave[key] = value.join(',');
-		} else {
-			configsToSave[key] = String(value);
-		}
-	});
-
-	// Send all changes in a single batch request
 	$.ajax({
-		url: "/api/saveconfigbatch",
+		url: save ? '/api/saveconfigbatch' : '/api/cancelconfigbatch',
 		cache: false,
 		async: true,
-		type: "POST",
+		type: 'POST',
 		data: {
-			configs: JSON.stringify(configsToSave),
+			keys: JSON.stringify(keys),
 			section: section
 		},
 		dataType: 'json'
 	}).done(function(response) {
-		$btn.prop('disabled', false).text(tstr_save);
-		
+		$btn.prop('disabled', false).text(save ? tstr_save : tstr_cancel);
 		if (response.result) {
-			// Success - reload config section like saveConfig does
-			// Check if any config.usage.setup_level was changed
-			if ('config.usage.setup_level' in configsToSave) {
-				$("#content_container").load(lastcontenturl);
-			} else {
-				load_scontent('ajax/config?section=' + section);
-			}
+			reloadConfigSection(section);
 		} else {
-			// Show error message
-			var errorMsg = response.message || 'Error saving configuration';
-			if (response.errors && response.errors.length > 0) {
-				errorMsg += '\n\nErrors:\n' + response.errors.join('\n');
-			}
-			alert(errorMsg);
+			alert(response.message || 'Error saving configuration');
 		}
-	}).fail(function(jqXHR, textStatus, errorThrown) {
-		$btn.prop('disabled', false).text(originalText);
+	}).fail(function(jqXHR, textStatus) {
+		$btn.prop('disabled', false).text(save ? tstr_save : tstr_cancel);
 		alert('Error communicating with server: ' + textStatus);
 	});
 }
+
+function cancelAllConfig(section) { batchConfig(section, false); }
+function saveAllConfig(section) { batchConfig(section, true); }
 
 
 function numberTextboxKeydownFilter(event) {

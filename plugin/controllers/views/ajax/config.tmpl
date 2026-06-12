@@ -3,7 +3,7 @@
 <tr>
 <td>$config.description</td>
 <td>
-	<select id="$config.path" data-config-type="select">
+	<select id="$config.path" data-config-type="select" onchange="updateConfig('$config.path', this.value, '$key');">
 		#for $choice in $config.data.choices
 			#if str($config.data.current) == str($choice[0])
 				<option value="$choice[0]" selected="true">$choice[1]</option>
@@ -21,9 +21,9 @@
 <td>$config.description</td>
 <td>
 	#if $config.data.current
-		<input type="checkbox" id="$config.path" data-config-type="checkbox" checked="true" />
+		<input type="checkbox" id="$config.path" data-config-type="checkbox" checked="true" onclick="updateConfig('$config.path', this.checked, '$key');" />
 	#else
-		<input type="checkbox" id="$config.path" data-config-type="checkbox" />
+		<input type="checkbox" id="$config.path" data-config-type="checkbox" onclick="updateConfig('$config.path', this.checked, '$key');" />
 	#end if
 </td>
 </tr>
@@ -35,9 +35,9 @@
 <td>
 	#for $choice in $config.data.choices
 		#if $choice in $config.data.current
-			<input type="checkbox" id="${config.path}_${choice}" data-config-type="multicheckbox" data-config-group="$config.path" checked="true" />
+			<input type="checkbox" id="${config.path}_${choice}" data-config-type="multicheckbox" data-config-group="$config.path" checked="true" onclick="updateConfig('$config.path', $choice, '$key');" />
 		#else
-			<input type="checkbox" id="${config.path}_${choice}" data-config-type="multicheckbox" data-config-group="$config.path" />
+			<input type="checkbox" id="${config.path}_${choice}" data-config-type="multicheckbox" data-config-group="$config.path" onclick="updateConfig('$config.path', $choice, '$key');" />
 		#end if
 		$choice
 	#end for
@@ -49,7 +49,7 @@
 <tr>
 <td>$config.description</td>
 <td>
-	<input type="text" id="${config.path}" data-config-type="number" value="$config.data.current" onkeydown="numberTextboxKeydownFilter(event);">
+	<input type="text" id="${config.path}" data-config-type="number" value="$config.data.current" onkeydown="numberTextboxKeydownFilter(event);" onchange="updateConfig('$config.path', this.value, '$key');">
 </td>
 </tr>
 #end def
@@ -58,7 +58,7 @@
 <tr>
 <td>$config.description</td>
 <td>
-	<input type="text" id="${config.path}" data-config-type="text" value="$config.data.current">
+	<input type="text" id="${config.path}" data-config-type="text" value="$config.data.current" onchange="updateConfig('$config.path', this.value, '$key');">
 </td>
 </tr>
 #end def
@@ -83,7 +83,7 @@
 		#end for
 	</table>
 	<div style="margin-top: 15px; padding: 10px; text-align: right;">
-		<button id="btn_reset" class="ui-button ui-widget ui-corner-all" style="margin-right: 10px;">$tstrings['form_reset']</button>
+		<button id="btn_cancel" class="ui-button ui-widget ui-corner-all" style="margin-right: 10px;">$tstrings['cancel']</button>
 		<button id="btn_save" class="ui-button ui-widget ui-corner-all ui-button-primary">$tstrings['save']</button>
 	</div>
 </div>
@@ -93,8 +93,8 @@
 	\$('#btn_save').click(function() {
 		saveAllConfig('$key');
 	});
-	\$('#btn_reset').click(function() {
-		location.reload();
+	\$('#btn_cancel').click(function() {
+		cancelAllConfig('$key');
 	});
 });
 </script>
