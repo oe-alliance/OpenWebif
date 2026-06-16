@@ -248,6 +248,7 @@ def getMultiBootSlots():
 	Returns a Twisted Deferred that fires with the result dict.
 	"""
 	from twisted.internet import defer
+	from Components.SystemInfo import BoxInfo
 
 	d = defer.Deferred()
 
@@ -265,11 +266,13 @@ def getMultiBootSlots():
 			return
 
 		try:
-			from Tools.MultiBoot import MultiBoot
-
 			# Sort slots numerically and alphanumerically
-			slotImageList = sorted(slotImages.keys(), key=lambda x: (not x.isnumeric(), int(x) if x.isnumeric() else x))
-
+			if BoxInfo.getItem("distro") in ["openvix", "openbh"]:
+				import Tools.Multiboot as MultiBoot
+				slotImageList = sorted(slotImages.keys())
+			else:
+				from Tools.MultiBoot import MultiBoot
+				slotImageList = sorted(slotImages.keys(), key=lambda x: (not x.isnumeric(), int(x) if x.isnumeric() else x))
 			for slot in slotImageList:
 				slotInfo = slotImages[slot]
 				device = slotInfo.get("device", "Unknown")
@@ -325,7 +328,10 @@ def getMultiBootSlots():
 			d.errback(e)
 
 	try:
-		from Tools.MultiBoot import MultiBoot
+		if BoxInfo.getItem("distro") in ["openvix", "openbh"]:
+			import Tools.Multiboot as MultiBoot
+		else:
+			from Tools.MultiBoot import MultiBoot
 
 		# Check if MultiBoot is available
 		if not MultiBoot.canMultiBoot():
@@ -372,7 +378,11 @@ def setMultiBoot(session, slot, bootCode=""):
 		bootCode: boot code for the slot (e.g., "", "1", "12")
 	"""
 	try:
-		from Tools.MultiBoot import MultiBoot
+		from Components.SystemInfo import BoxInfo
+		if BoxInfo.getItem("distro") in ["openvix", "openbh"]:
+			import Tools.Multiboot as MultiBoot
+		else:
+			from Tools.MultiBoot import MultiBoot
 		from Screens.Standby import TryQuitMainloop, QUIT_REBOOT
 
 		# Activate the slot with the specified boot code
