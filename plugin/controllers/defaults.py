@@ -1,7 +1,7 @@
 ##########################################################################
 # OpenWebif: defaults
 ##########################################################################
-# Copyright (C) 2022 - 2025 jbleyel
+# Copyright (C) 2022 - 2026 jbleyel
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by
@@ -66,7 +66,7 @@ def setDebugEnabled(enabled):
 
 # Get transcoding feature
 def getTranscoding():
-	if isfile("/proc/stb/encoder/0/bitrate"):
+	if isfile("/proc/stb/encoder/0/bitrate") or exists("/dev/venc0"):
 		return isPluginInstalled("TranscodingSetup") or isPluginInstalled("TransCodingSetup") or isPluginInstalled("MultiTransCodingSetup")
 	return False
 

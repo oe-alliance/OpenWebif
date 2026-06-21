@@ -1,5 +1,5 @@
 ##############################################################################
-#                        2011-2022 E2OpenPlugins                                  #
+#                        2011-2026 jbleyel, E2OpenPlugins                    #
 #                                                                            #
 #  This file is open source software; you can redistribute it and/or modify  #
 #     it under the terms of the GNU General Public License version 2 as      #
@@ -19,6 +19,7 @@ from ..defaults import STREAMRELAY
 
 BMC0 = "/dev/bcm_enc0"
 ENC0 = "/dev/encoder0"
+DENC0 = "/dev/venc0"
 ENC0APPLY = "/proc/stb/encoder/0/apply"
 
 
@@ -74,6 +75,8 @@ def getStream(session, request, m3ufile):
 
 	device = getUrlArg(request, "device")
 
+	enc = False
+
 	if exists(BMC0):
 		try:
 			transcoder_port = int(config.plugins.transcodingsetup.port.value)
@@ -85,10 +88,12 @@ def getStream(session, request, m3ufile):
 		_port = getUrlArg(request, "port")
 		if _port is not None:
 			portnumber = _port
-	elif exists(ENC0) or exists(ENC0APPLY):
+		enc = True
+	elif exists(ENC0) or exists(ENC0APPLY) or exists(DENC0):
 		transcoder_port = portnumber
+		enc = True
 
-	if device == "phone" and (exists(BMC0) or exists(ENC0) or exists(ENC0APPLY)):
+	if device == "phone" and enc:
 		try:
 			bitrate = config.plugins.transcodingsetup.bitrate.value
 			resolution = config.plugins.transcodingsetup.resolution.value
@@ -201,7 +206,7 @@ def getTS(session, request):
 
 		device = getUrlArg(request, "device")
 
-		if exists(BMC0) or exists(ENC0) or exists(ENC0APPLY):
+		if exists(BMC0) or exists(ENC0) or exists(ENC0APPLY) or exists(DENC0):
 			try:
 				transcoder_port = int(config.plugins.transcodingsetup.port.value)
 			except Exception:
@@ -213,7 +218,6 @@ def getTS(session, request):
 			if _port is not None:
 				portnumber = _port
 
-		if exists(BMC0) or exists(ENC0) or exists(ENC0APPLY):
 			if device == "phone":
 				try:
 					bitrate = config.plugins.transcodingsetup.bitrate.value
