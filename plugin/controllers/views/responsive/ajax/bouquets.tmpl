@@ -20,6 +20,12 @@
     background: #282c37;
     box-shadow: 0px 0px 10px 10px #282c37;
 	}
+	#bqlist { display: flex !important; flex-wrap: nowrap !important; overflow-x: auto; width: 100%; }
+	#bqlist > li { flex-shrink: 0; }
+	#bqwrap { position: relative; padding-right: 36px; }
+	#bqwrap::after { content: '\276F'; position: absolute; right: 0; top: 0; bottom: 0; width: 36px; display: flex; align-items: center; justify-content: center; background: linear-gradient(to right, transparent, #fff 50%); pointer-events: none; font-weight: bold; font-size: 14px; }
+	#bqwrap.at-end::after { display: none; }
+	.theme--city-lights #bqwrap::after { background: linear-gradient(to right, transparent, #282c37 50%); }
 </style>
 
 <div class="form-group hidden-md hidden-lg hidden-xl">
@@ -31,7 +37,8 @@
 	</select>
 </div>
 <div class="hidden-sm hidden-xs sticky-top">
-	<ul class="nav nav-tabs tab--skinned">
+	<div id="bqwrap">
+	<ul id="bqlist" class="nav nav-tabs tab--skinned">
 	#set $f="id='firstBq'"
 	#for $bouquet in $bouquets
 		#set bn = $bouquet[1].replace('<','&lt;').replace('>','&gt;')
@@ -43,6 +50,7 @@
 		#set $f="class='align-middle'"
 	#end for
 	</ul>
+	</div>
 </div>
 <div class="tab-content">
 	<div class="tab-pane active" id="tab">
@@ -53,6 +61,16 @@
 <script>
 	var firstBq = document.getElementById("firstBq");
 	firstBq.click();
+	(function() {
+		var list = document.getElementById('bqlist');
+		var wrap = document.getElementById('bqwrap');
+		if (!list || !wrap) return;
+		function update() {
+			wrap.classList.toggle('at-end', list.scrollLeft + list.clientWidth >= list.scrollWidth - 2);
+		}
+		list.addEventListener('scroll', update);
+		update();
+	})();
 	jQuery.AdminBSB.select.activate();
 	jQuery(function() {
 		jQuery('#bqselector').change(function() {

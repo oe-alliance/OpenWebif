@@ -12,7 +12,11 @@
 	.title { font-weight: bold;}
 	.desc { font-size: 10px; line-height: 1.25em; max-height: 3.75em; overflow: hidden; }
 	.event { cursor: pointer; width: 190px; overflow:hidden; margin-bottom: 0.75em;}
-	.bq { font-size: 11px; font-weight: bold; padding: 2px 4px; line-height: 18px; cursor: pointer; white-space: nowrap; display: inline-block; margin: 1px 1px 0px 0px;}
+	.bq { font-size: 11px; font-weight: bold; padding: 2px 4px; line-height: 18px; cursor: pointer; white-space: nowrap; display: inline-block; margin: 1px 1px 0px 0px; float: none; }
+	#bqlist { overflow-x: auto; white-space: nowrap; padding-bottom: 2px; }
+	#bqwrap { position: relative; }
+	#bqwrap::after { content: '\276F'; position: absolute; right: 0; top: 0; bottom: 0; width: 36px; display: flex; align-items: center; justify-content: center; pointer-events: none; font-weight: bold; font-size: 14px; }
+	#bqwrap.at-end::after { display: none; }
 	.plus { font-size: 13px; font-weight: bold; padding: 2px 4px; line-height: 21px; cursor: pointer; white-space: nowrap; }
 	.timer { font-weight: bold; font-size: 10px; }
 	#eventdescription { width: 375px; height: auto; position: fixed; top: 205px; left: 350px; z-index: 100; display: none; overflow: auto; }
@@ -59,11 +63,38 @@
 <div id="refreshmepg2" onclick="RefreshMEPG();"><i id="refreshmepgi" class="fa fa-refresh link" aria-hidden="true"></i></div>
 	<br clear="all">
 
+<div id="bqwrap">
+<div id="bqlist">
 #for $bq in $bouquets
-	<div class="float bq ui-state-default #if $bq[0]==$bref then 'ui-state-active' else '' #" data-ref="$quote($bq[0])">$bq[1]</div>
+	<div class="bq ui-state-default #if $bq[0]==$bref then 'ui-state-active' else '' #" data-ref="$quote($bq[0])">$bq[1]</div>
 #end for
-<br clear="all">
 </div>
+</div>
+</div>
+<script>
+(function() {
+	var list = document.getElementById('bqlist');
+	var wrap = document.getElementById('bqwrap');
+	if (!list || !wrap) return;
+	function getBg(el) {
+		while (el && el !== document.documentElement) {
+			var bg = window.getComputedStyle(el).backgroundColor;
+			if (bg && bg !== 'rgba(0, 0, 0, 0)' && bg !== 'transparent') return bg;
+			el = el.parentElement;
+		}
+		return '#fff';
+	}
+	var bg = getBg(wrap.parentElement);
+	var st = document.createElement('style');
+	st.textContent = '#bqwrap::after { background: linear-gradient(to right, transparent, ' + bg + ' 50%); }';
+	document.head.appendChild(st);
+	function update() {
+		wrap.classList.toggle('at-end', list.scrollLeft + list.clientWidth >= list.scrollWidth - 2);
+	}
+	list.addEventListener('scroll', update);
+	update();
+})();
+</script>
 
 #if $mode == 2
 
