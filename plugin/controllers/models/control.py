@@ -386,7 +386,7 @@ def setMultiBoot(session, slot, bootCode=""):
 		from Screens.Standby import TryQuitMainloop, QUIT_REBOOT
 
 		# Activate the slot with the specified boot code
-		def rebootCallback(self, result):
+		def rebootCallback(self, result=None):
 			session.open(TryQuitMainloop, QUIT_REBOOT)
 		MultiBoot.activateSlot(str(slot), bootCode, rebootCallback)
 
