@@ -1165,8 +1165,14 @@ class WebController(BaseController):
 					"result": False,
 					"message": "The parameter 'eventid' must be a number"
 				}
-		elif b"eit" in list(request.args.keys()) and isinstance(request.args[b"eit"][0], int):
-			eit = int(request.args[b"eit"][0])
+		elif b"eit" in request.args:
+			try:
+				eit = int(request.args[b"eit"][0])
+			except (TypeError, ValueError):
+				return {
+					"result": False,
+					"message": "The parameter 'eit' must be a number"
+				}
 		else:
 			# This might need further investigation. Do not get exactly the middle, take 20% so we usually expect to get first event.
 			queryTime = int(request.args[b"begin"][0]) + (int(request.args[b"end"][0]) - int(request.args[b"begin"][0])) // 5
