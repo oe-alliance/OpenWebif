@@ -384,7 +384,7 @@ function setOSD( statusinfo )
 	let responsive_osd_cur_event = '';
 
 	if (station) {
-		if (sref.startsWith('1:0:') || sref.startsWith('1:134:') || sref.startsWith('4097:0:')) {
+		if (sref.startsWith('1:0:') || sref.startsWith('1:134:') || sref.startsWith('4097:0:') || sref.startsWith('5002:0:')) {
 			$('#osd__current-event__name').html(statusinfo['currservice_name']);
 			if (!sref.startsWith('1:0:0')) {
 				$('#osd__current-event__time__start').html(statusinfo['currservice_begin'] || '');
