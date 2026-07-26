@@ -159,9 +159,7 @@ EXT_EVENT_INFO_SOURCE = getExtEventInfoProvider()
 
 TRANSCODING = getTranscoding()
 
-VXGENABLED = isfile(getPublicPath("/vxg/media_player.pexe"))
-
-WEBTV = VXGENABLED or TRANSCODING
+WEBTV = TRANSCODING
 
 
 def getOpenwebifPackageVersion():

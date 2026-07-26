@@ -8,7 +8,6 @@ var PlayerObj = function () {
 	var self;
 	var _vlc;
 	var _html;
-	var vxgplayerId = null;
 	var currentp;
 	var folderoptions;
 	var dn;
@@ -16,12 +15,11 @@ var PlayerObj = function () {
 	var pr;
 	var pl;
 	var hasvlc=false;
-	var hasvxg=false;
 	return {
-		setup: function (vxg,auth,streamingport) {
+		setup: function (auth,streamingport) {
 			self = this;
 			self.auth = auth;
-			self.hasvlc = self.hasvxg = false;
+			self.hasvlc = false;
 			self.pl = GetLSValue('webtvplayerl','vlc');
 			self.pr = GetLSValue('webtvplayerr','vlc');
 			if (isChrome) {
@@ -30,20 +28,6 @@ var PlayerObj = function () {
 			} else
 				self.hasvlc=true;
 				
-			if(vxg)
-				self.hasvxg = true;
-
-			if (isChrome && self.hasvxg)
-			{
-				self.pl = GetLSValue('webtvplayerl','vxg');
-				self.pr = GetLSValue('webtvplayerr','vxg');
-			}
-			else
-			{
-				$('#plbtn_vxg').remove();
-				$('#lplbtn_vxg').remove();
-			}
-
 			SetLSValue('webtvplayerl',self.pl);
 			SetLSValue('webtvplayerr',self.pr);
 
@@ -197,9 +181,6 @@ var PlayerObj = function () {
 			$('#plbtn_vlc').click(function(){
 				self.setRecPlayer('vlc');
 			});
-			$('#plbtn_vxg').click(function(){
-				self.setRecPlayer('vxg');
-			});
 			$('#plbtn_html').click(function(){
 				self.setRecPlayer('html');
 			});
@@ -254,13 +235,10 @@ var PlayerObj = function () {
 			var pl = self.currentp;
 			
 			$('#htmlPlayer').toggle(pl == 'html');
-			$('#vxgPlayer').toggle(pl == 'vxg');
 			$('#vlcPlayer').toggle(pl == 'vlc');
 
 			if (!live) {
 				$('#plbtn_html').prop('checked',false).button("refresh");
-				if(self.hasvxg)
-					$('#plbtn_vxg').prop('checked',false).button("refresh");
 				if(self.hasvlc)
 					$('#plbtn_vlc').prop('checked',false).button("refresh");
 				$('#plbtn_'+pl).prop('checked',true).button("refresh");
@@ -358,22 +336,16 @@ var PlayerObj = function () {
 				if(self._html) {
 					self._html.src = url;
 				}
-				if(self.hasvxg && self.currentp == 'vxg')
-					vxgplayer(self.vxgplayerId).src(url);
 
 			} catch (e) {
 			}
 		}, stop: function() {
 
-			if(self.hasvxg && self.currentp == 'vxg')
-				vxgplayer(self.vxgplayerId).stop();
 			if(self.currentp == 'vlc')
 				try { self._vlc.playlist.stop(); } catch (e) { }
 			if(self.currentp == 'html')
 				try { self._html.stop(); } catch (e) { }
 		}, play: function() {
-			if(self.hasvxg && self.currentp == 'vxg')
-				vxgplayer(self.vxgplayerId).play();
 			if(self.currentp == 'vlc')
 				try { self._vlc.playlist.play(); } catch (e) { }
 			if(self.currentp == 'html')
@@ -393,33 +365,7 @@ var PlayerObj = function () {
 			if(pl == 'html')
 				self._html = document.getElementById("htmlp");
 
-			if(self.hasvxg) {
-				$('#vxgPlayer').toggle(pl == 'vxg');
-				if(pl == 'vxg'){
-					if(!self.vxgplayerId)
-						self.createVX();
-				}
-				self.CheckPlayer();
-			}
 			
-		}, createVX: function() {
-		
-			self.vxgplayerId = 'vxg_media_player1';
-			var div = document.createElement('div');
-			div.setAttribute("id", self.vxgplayerId);
-			div.setAttribute("class", "vxgplayer");
-			var _parent = document.getElementById('vxgPlayer');
-			_parent.appendChild(div);
-			vxgplayer(self.vxgplayerId, {
-				nmf_path: 'media_player.nmf',
-				nmf_src: '/vxg/media_player.nmf',
-				latency: 300000,
-				aspect_ratio_mode: 1,
-				autohide: 3,
-				controls: true,
-				avsync: true,
-				autoreconnect: 1
-			});
 		},
 	}
 };

@@ -14,14 +14,9 @@
 				<video id="htmlp" width="640" height="360" controls>
 				</video>
 				</div>
-				#if $vxgenabled
-				<div id="vxgPlayer" style="margin:0 auto 0 auto;width:640px;height:500px;display:none;">
-				</div>
-				#end if
 				<div style="display:table;margin:10 auto 10 auto;">
 					<span id="plbuttons" style="margin-right:10px;">
 					<input type="radio" id="plbtn_vlc" name="rplbutton" /><label id="lplbtn_vlc" for="plbtn_vlc">VLC</label>
-					<input type="radio" id="plbtn_vxg" name="rplbutton" /><label id="lplbtn_vxg" for="plbtn_vxg">VXG</label>
 					<input type="radio" id="plbtn_html" name="rplbutton" /><label id="lplbtn_html" for="plbtn_html">HTML</label>
 					</span>
 					<div style="display:inline-block;margin-left:10px;">
@@ -75,18 +70,9 @@
 				
 			</div>
 		</div>
-#if $vxgenabled
-<script type="text/javascript" src="/vxg/vxgplayer-1.8.51.min.js"></script>
-#end if
 <script type="text/javascript" src="/webtv/webtv.js"></script>
 <script type="text/javascript">
-\$(function() { var playerObj=new PlayerObj(); playerObj.setup(('$vxgenabled' === 'True'),'$auth','$streaming_port')});
+\$(function() { var playerObj=new PlayerObj(); playerObj.setup('$auth','$streaming_port')});
 </script>
 <link rel="stylesheet" type="text/css" href="/css/chosen.min.css" />
-#if $vxgenabled
-<link rel="stylesheet" type="text/css" href="/vxg/vxgplayer-1.8.51.min.css" />
-<style>
-.vxgplayer-error { margin-left:0px;}
-</style>
-#end if
 #end filter

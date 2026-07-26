@@ -2,7 +2,6 @@
 #from Plugins.Extensions.OpenWebif.controllers.i18n import tstrings
 
 <link rel="stylesheet" type="text/css" href="/css/chosen.min.css">
-<link rel="stylesheet" type="text/css" href="/vxg/vxgplayer-1.8.51.min.css">
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	<div class="card">
@@ -28,9 +27,6 @@
 							<div id="htmlPlayer" style="margin:0 auto 0 auto;width:640px;height:400px;display:none;">
 								<video id="htmlp" width="640" height="360" controls></video>
 							</div>
-						#if $vxgenabled
-								<div id="vxgPlayer" style="margin:0 auto 0 auto;width:640px;height:500px;display:none;"></div>
-						#end if
 						</div>
 					</div>
 					<div class="row clearfix">
@@ -39,10 +35,6 @@
 							<label for="plbtn_html">HTML</label>
 							<input type="radio" name="plbtn_vlc" id="plbtn_vlc" class="radio--skinned">
 							<label for="plbtn_vlc">VLC</label>
-#if $vxgenabled
-							<input type="radio" name="plbtn_vxg" id="plbtn_vxg" class="radio--skinned">
-							<label for="plbtn_vxg">VXG</label>
-#end if
 						</div>
 					</div>
 					<div style="display:inline-block;margin-left:10px;">
@@ -100,15 +92,11 @@
 	</div>
 </div>
 
-#if $vxgenabled
-<script src="/vxg/vxgplayer-1.8.51.min.js"></script>
-#end if
-
 <script src="/webtv/webtv.js"></script>
 <script>
 	jQuery(function() {
 		var playerObj = new PlayerObj();
-		playerObj.setup(('$vxgenabled' === 'True'), '$auth', '$streaming_port');
+		playerObj.setup('$auth', '$streaming_port');
 	});
 </script>
 
