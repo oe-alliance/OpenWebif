@@ -203,7 +203,7 @@ input#to,input#from,.text.number {width:60px;}
 									</table>
 									</span>
 								</div>
-								#if $hasVPS == 1
+								#if $hasVPS
 								<br><label for="vps">$tstrings['vps']:</label>
 								<input type="checkbox" id="vps" value="">
 								<span id="vpsE">
@@ -211,7 +211,7 @@ input#to,input#from,.text.number {width:60px;}
 									<input type="checkbox" id="vpssm" value="">
 								</span>
 								#end if
-								#if $hasSeriesPlugin == 1
+								#if $hasSeriesPlugin
 								<br><label for="seriesplugin">$tstrings['at_label_series']:</label>
 								<input type="checkbox" id="series_labeling" value="">
 								#end if

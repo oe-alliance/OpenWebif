@@ -49,7 +49,6 @@ MOBILEDEVICE = False
 
 DEBUG_ENABLED = False
 
-MODEL = BoxInfo.getItem("model")
 
 ROOTTV = '1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "bouquets.tv" ORDER BY bouquet'
 
@@ -64,11 +63,7 @@ def setDebugEnabled(enabled):
 	DEBUG_ENABLED = enabled
 
 
-# Get transcoding feature
-def getTranscoding():
-	if isfile("/proc/stb/encoder/0/bitrate") or exists("/dev/venc0"):
-		return isPluginInstalled("TranscodingSetup") or isPluginInstalled("TransCodingSetup") or isPluginInstalled("MultiTransCodingSetup")
-	return False
+TRANSCODIDINGPROXY = isfile("/usr/bin/transtreamproxy")
 
 
 def getExtEventInfoProvider():
@@ -90,7 +85,6 @@ def setMobile(ismobile=False):
 
 
 def getViewsPath(file=""):
-	global MOBILEDEVICE
 	if (comp_config.OpenWebif.webcache.responsive_enabled.value or MOBILEDEVICE) and exists(f"{VIEWS_PATH}/responsive") and not (file.startswith('web/') or file.startswith('/web/')):
 		return f"{VIEWS_PATH}/responsive/{file}"
 	else:
@@ -99,49 +93,6 @@ def getViewsPath(file=""):
 
 def getPublicPath(file=""):
 	return f"{PUBLIC_PATH}/{file}"
-
-
-def getPiconPath():
-
-	# Alternative locations need to come first, as the default location always exists and needs to be the last resort
-	# Sort alternative locations in order of likelyness that they are non-rotational media:
-	# CF/MMC are always memory cards
-	# USB can be memory stick or magnetic hdd or SSD, but stick is most likely
-	# HDD can be magnetic hdd, SSD or even memory stick (if no hdd present) or a NAS
-	PICON_PREFIXES = [
-		"/media/cf/",
-		"/media/mmc/",
-		"/media/usb/",
-		"/media/hdd/",
-		"/usr/share/enigma2/",
-		"/"
-	]
-
-	#: subfolders containing picons
-	PICON_FOLDERS = ('owipicon', 'picon')
-
-	#: extension of picon files
-	# PICON_EXT = ".png"
-
-	for prefix in PICON_PREFIXES:
-		if isdir(prefix):
-			for folder in PICON_FOLDERS:
-				current = f"{prefix}{folder}/"
-				if isdir(current):
-					print(f"Current Picon Path : {current}")
-					return current
-#: TODO discuss
-#					for item in os.listdir(current):
-#						if isfile(current + item) and item.endswith(PICON_EXT):
-#							PICONPATH = current
-#							return PICONPATH
-
-	return None
-
-
-def refreshPiconPath():
-	global PICON_PATH
-	PICON_PATH = getPiconPath()
 
 
 def getIP():
@@ -153,13 +104,7 @@ def getIP():
 	return None
 
 
-PICON_PATH = getPiconPath()
-
 EXT_EVENT_INFO_SOURCE = getExtEventInfoProvider()
-
-TRANSCODING = getTranscoding()
-
-WEBTV = TRANSCODING
 
 
 def getOpenwebifPackageVersion():
@@ -173,60 +118,6 @@ def getOpenwebifPackageVersion():
 			except AttributeError:
 				pass
 	return version
-
-
-def getAutoTimer():
-	try:
-		from Plugins.Extensions.AutoTimer.AutoTimer import AutoTimer  # noqa: F401
-		return True
-	except ImportError:
-		return False
-
-
-def getAutoTimerChangeResource():
-	if HASAUTOTIMER:
-		try:
-			from Plugins.Extensions.AutoTimer.AutoTimerResource import AutoTimerChangeResource  # noqa: F401
-			return True
-		except ImportError:
-			return False
-	else:
-		return False
-
-
-def getAutoTimerTestResource():
-	if HASAUTOTIMER:
-		try:
-			from Plugins.Extensions.AutoTimer.AutoTimerResource import AutoTimerTestResource  # noqa: F401
-			return True
-		except ImportError:
-			return False
-	else:
-		return False
-
-
-def getVPSPlugin():
-	try:
-		from Plugins.SystemPlugins.vps import Vps  # noqa: F401
-		return True
-	except ImportError:
-		return False
-
-
-def getSeriesPlugin():
-	try:
-		from Plugins.Extensions.SeriesPlugin.plugin import Plugins  # noqa: F401
-		return True
-	except ImportError:
-		return False
-
-
-def getATSearchtypes():
-	try:
-		from Plugins.Extensions.AutoTimer.AutoTimer import typeMap
-		return typeMap
-	except ImportError:
-		return {}
 
 
 def getTextInputSupport():
@@ -289,45 +180,221 @@ def getCustomCSS(css):
 	return ""
 
 
-def getLCNVer():
-	ver = 1
-	try:
-		lines = []
-		with open("/etc/enigma2/lcndb") as fd:
-			lines = [line.strip().upper() for line in fd.readlines()]
-		if lines and lines[0] == "#VERSION 2":
-			ver = 2
-	except OSError:
-		pass
-	return ver
-
-
 OPENWEBIFPACKAGEVERSION = getOpenwebifPackageVersion()
 
 USERCSSCLASSIC = getCustomCSS("classic")
 
 USERCSSMODERN = getCustomCSS("modern")
 
-HASAUTOTIMER = getAutoTimer()
-
-HASAUTOTIMERCHANGE = getAutoTimerChangeResource()
-
-HASAUTOTIMERTEST = getAutoTimerTestResource()
-
-HASVPS = getVPSPlugin()
-
-HASSERIES = getSeriesPlugin()
-
-ATSEARCHTYPES = getATSearchtypes()
-
 TEXTINPUTSUPPORT = getTextInputSupport()
 
 DEFAULT_RCU = getDefaultRcu()
 
-GRABPIP = BoxInfo.getItem("ArchIsARM")
-
-LCD = ("lcd" in MODEL) or ("lcd" in BoxInfo.getItem("displaytype"))
-
 STREAMRELAY = hasattr(comp_config.misc, "softcam_streamrelay_url") and hasattr(comp_config.misc, "softcam_streamrelay_port")
 
-LCNSUPPORT = BoxInfo.getItem("distro") == "openatv" and getLCNVer() == 2
+
+class Globals:
+	def __init__(self):
+		self._piconMode = 0
+		self._piconPath = self._getPiconPath()
+		self._hasAutoTimer, self._hasAutoTimerChange, self._hasAutoTimerTest, self._atSearchTypes = self._getAutoTimer()
+		self._hasVPS = isPluginInstalled("vps")
+		self._hasSeries = isPluginInstalled("SeriesPlugin")
+		self._lcnSupport = BoxInfo.getItem("distro") == "openatv" and self.getLCNVer() == 2
+		self._lcd = ("lcd" in BoxInfo.getItem("model")) or ("lcd" in BoxInfo.getItem("displaytype"))
+
+	def initSession(self):
+		self._transcodingNew = bool(BoxInfo.getItem("HasTranscodingSettings", False))
+		self._transcoding = self._getTranscoding()
+		self._webTV = self._transcoding
+		self._live555Hls = self._getLive555Hls()
+		self._live555Rtsp = self._getLive555Rtsp()
+		if self._transcodingNew and BoxInfo.getItem("TranscodingSettingsLive555", False):
+			settings = comp_config.plugins.transcodingsettings
+			settings.rtsp.enabled.addNotifier(self.refreshTransocdingRTSP, initial_call=False, immediate_feedback=False, call_on_save_or_cancel=True)
+			settings.hls.enabled.addNotifier(self.refreshTransocdingHLS, initial_call=False, immediate_feedback=False, call_on_save_or_cancel=True)
+			settings.port.addNotifier(self.refreshTransocding, initial_call=False, immediate_feedback=False, call_on_save_or_cancel=True)
+			settings.enabled.addNotifier(self.refreshTransocding, initial_call=False, immediate_feedback=False, call_on_save_or_cancel=True)
+
+		for name, value in vars(self).items():
+			print(f"[OWI] DEBUG SESSION {name} = {value}")
+
+	def getLCNVer(self):
+		ver = 1
+		try:
+			lines = []
+			with open("/etc/enigma2/lcndb") as fd:
+				lines = [line.strip().upper() for line in fd.readlines()]
+			if lines and lines[0] == "#VERSION 2":
+				ver = 2
+		except OSError:
+			pass
+		return ver
+
+	def _getTranscoding(self):
+		if self._transcodingNew:
+			return True
+		if isfile("/proc/stb/encoder/0/bitrate") or exists("/dev/venc0"):
+			return isPluginInstalled("TranscodingSetup") or isPluginInstalled("TransCodingSetup") or isPluginInstalled("MultiTransCodingSetup")
+		return False
+
+	def _getLive555Hls(self):
+		if self._transcodingNew and BoxInfo.getItem("TranscodingSettingsLive555", False):
+			setting = comp_config.plugins.transcodingsettings
+			return bool(setting.enabled.value
+				and setting.port.value == 8001
+				and setting.hls.enabled.value
+			)
+		return False
+
+	def _getLive555Rtsp(self):
+		if self._transcodingNew and BoxInfo.getItem("TranscodingSettingsLive555", False):
+			settings = comp_config.plugins.transcodingsettings
+			return bool(settings.enabled.value
+				and settings.port.value == 8001
+				and settings.rtsp.enabled.value
+			)
+		return False
+
+	def refreshTransocding(self, configItem):
+		self._live555Hls = self._getLive555Hls()
+		self._live555Rtsp = self._getLive555Rtsp()
+
+	def refreshTransocdingRTSP(self, configItem):
+		self._live555Rtsp = self._getLive555Rtsp()
+
+	def refreshTransocdingHLS(self, configItem):
+		self._live555Hls = self._getLive555Hls()
+
+	def _getPiconPath(self):
+		try:
+			if comp_config.picon.mode.value:
+				path = getattr(comp_config.picon, f"set{comp_config.picon.openwebif.value}")
+				if exists(path):
+					# print(f"[OpenWebif] Current Picon Path : {path}")
+					self._piconMode = 1
+					return path
+		except Exception:
+			pass
+
+		# Alternative locations need to come first, as the default location always exists and needs to be the last resort
+		# Sort alternative locations in order of likelyness that they are non-rotational media:
+		# CF/MMC are always memory cards
+		# USB can be memory stick or magnetic hdd or SSD, but stick is most likely
+		# HDD can be magnetic hdd, SSD or even memory stick (if no hdd present) or a NAS
+		PICON_PREFIXES = [
+			"/media/cf/",
+			"/media/mmc/",
+			"/media/usb/",
+			"/media/hdd/",
+			"/usr/share/enigma2/",
+			"/"
+		]
+
+		#: subfolders containing picons
+		PICON_FOLDERS = ('owipicon', 'picon')
+
+		for prefix in PICON_PREFIXES:
+			if isdir(prefix):
+				for folder in PICON_FOLDERS:
+					current = f"{prefix}{folder}/"
+					if isdir(current):
+						print(f"[OpenWebif] Current Picon Path : {current}")
+						return current
+
+		return None
+
+	def refreshPiconPath(self):
+		self._piconPath = self._getPiconPath()
+
+	def _getAutoTimer(self):
+		def _getATSearchtypes():
+			try:
+				from Plugins.Extensions.AutoTimer.AutoTimer import typeMap
+				return typeMap
+			except ImportError:
+				return {}
+
+		_hasAutoTimer = False
+		_hasAutoTimerChange = False
+		_hasAutoTimerTest = False
+		try:
+			from Plugins.Extensions.AutoTimer.AutoTimer import AutoTimer  # noqa: F401
+			_hasAutoTimer = True
+			try:
+				from Plugins.Extensions.AutoTimer.AutoTimerResource import AutoTimerChangeResource  # noqa: F401
+				_hasAutoTimerChange = True
+			except ImportError:
+				pass
+			try:
+				from Plugins.Extensions.AutoTimer.AutoTimerResource import AutoTimerTestResource  # noqa: F401
+				_hasAutoTimerTest = True
+			except ImportError:
+				pass
+		except ImportError:
+			pass
+
+		return _hasAutoTimer, _hasAutoTimerChange, _hasAutoTimerTest, _getATSearchtypes()
+
+	@property
+	def lcnSupport(self):
+		return self._lcnSupport
+
+	@property
+	def lcd(self):
+		return self._lcd
+
+	@property
+	def transcodingNew(self):
+		return self._transcodingNew
+
+	@property
+	def transcoding(self):
+		return self._transcoding
+
+	@property
+	def webTV(self):
+		return self._webTV
+
+	@property
+	def live555Hls(self):
+		return self._live555Hls
+
+	@property
+	def live555Rtsp(self):
+		return self._live555Rtsp
+
+	@property
+	def piconPath(self):
+		return self._piconPath
+
+	@property
+	def piconMode(self):
+		return self._piconMode
+
+	@property
+	def hasAutoTimer(self):
+		return self._hasAutoTimer
+
+	@property
+	def hasAutoTimerChange(self):
+		return self._hasAutoTimerChange
+
+	@property
+	def hasAutoTimerTest(self):
+		return self._hasAutoTimerTest
+
+	@property
+	def hasVPS(self):
+		return self._hasVPS
+
+	@property
+	def hasSeries(self):
+		return self._hasSeries
+
+	@property
+	def atSearchTypes(self):
+		return self._atSearchTypes
+
+
+globalVars = Globals()

@@ -1,3 +1,16 @@
+## Version 2.4.0
+* add new transcoding backend support (TranscodingSettings plugin) with encoder/profile selection
+* add live555 HLS streaming support for WebTV and stream links
+* rework WebTV player to use hls.js instead of VLC/native HTML plugin
+* add bouquet selector to WebTV channel list
+* add zap before stream option to WebTV
+* add transcoding mode setting to web settings
+* cache static file responses (js/css/images/fonts/themes/webtv)
+* improve picon path handling (support picon path config, faster partition change handling)
+* refactor global feature flags (TRANSCODING, HASAUTOTIMER, LCNSUPPORT, ...) into a single Globals class
+* add getPlayableServices includeName option and IPTV link support
+* fix service_name_for_stream forcing program id on transcoded/phone streams
+
 ## Version 2.3.3
 * refactor config settings
 

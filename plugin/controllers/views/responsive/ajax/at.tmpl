@@ -145,7 +145,7 @@
 						<li><button type="button" name="preview" data-toggle="modal" data-target="#ATPreviewModal" title="$tstrings['at_preview']" class="m-0" style="border: none; background: none;"><i class="material-icons material-icons-mg-right">view_list</i></button></li>
 						<li><button type="button" name="rename" title="$tstrings['rename']" class="m-0" style="border: none; background: none;"><i class="material-icons material-icons-mg-right">text_fields</i></button></li>
 						<li><a href="/#/at/edit?id={{id}}" title="$tstrings['at_edit']"><i class="material-icons material-icons-mg-right">edit</i></a> 
-						#if $hasChange == 1
+						#if $hasChange
 							#set $style_val=""
 						#else
 							#set $style_val="display: none;"
@@ -598,7 +598,7 @@
 
 											<!-- Restrict to days -->
 
-#if $hasVPS == 1 or $debugMode
+#if $hasVPS or $debugMode
 											<div class="atform__fields-container">
 												<div class="atform__details__title">
 													<input type="checkbox" name="vps_enabled" value="yes" id="checkbox--vps_enabled" class="form-control chk--skinned">
@@ -619,7 +619,7 @@
 											</div>
 #end if
 
-#if $hasSeriesPlugin == 1 or $debugMode
+#if $hasSeriesPlugin or $debugMode
 											<div class="atform__fields-container">
 												<div class="atform__details__title">
 													<input type="checkbox" name="series_labeling" value="yes" id="checkbox--series_labeling" class="form-control chk--skinned">

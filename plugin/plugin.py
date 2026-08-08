@@ -23,7 +23,7 @@ from Components.SystemInfo import BoxInfo
 from Plugins.Plugin import PluginDescriptor
 from Screens.Setup import Setup
 from enigma import getDesktop
-from .controllers.defaults import EXT_EVENT_INFO_SOURCE, getIP, setDebugEnabled, PLUGIN_NAME, PLUGIN_DESCRIPTION
+from .controllers.defaults import EXT_EVENT_INFO_SOURCE, getIP, setDebugEnabled, PLUGIN_NAME, PLUGIN_DESCRIPTION, TRANSCODIDINGPROXY, globalVars
 
 from .httpserver import HttpdStart, HttpdStop, HttpdRestart
 from .controllers.i18n import _
@@ -36,6 +36,21 @@ THEMES = [
 	'south-street', 'start', 'sunny', 'swanky-purse', 'ui-darkness', 'vader',
 	'original-small-screen'
 ]
+
+
+def getTranscodingModeChoices():
+	if TRANSCODIDINGPROXY:
+		return [
+			(0, _("Default")),
+			(1, _("Legacy via port 8002")),
+			(2, "HLS")
+		]
+	else:
+		return [
+			(0, _("Default")),
+			(2, "HLS")
+		]
+
 
 config.OpenWebif = ConfigSubsection()
 config.OpenWebif.enabled = ConfigYesNo(default=True)
@@ -67,6 +82,7 @@ config.OpenWebif.webcache.screenshot_high_resolution = ConfigYesNo(default=True)
 config.OpenWebif.webcache.screenshot_refresh_auto = ConfigYesNo(default=False)
 config.OpenWebif.webcache.screenshot_refresh_time = ConfigInteger(default=30)
 config.OpenWebif.webcache.moviedir = ConfigText(default="", fixed_size=False)
+config.OpenWebif.webcache.transcoding_mode = ConfigSelection(default=0, choices=getTranscodingModeChoices())
 
 # HTTPS
 config.OpenWebif.https_enabled = ConfigYesNo(default=False)
@@ -177,9 +193,11 @@ def IfUpIfDown(reason, **kwargs):
 
 
 def startSession(reason, session):
-	global global_session
-	global_session = session
-	HttpdStart(global_session)
+	if reason == 0:
+		global global_session
+		global_session = session
+		HttpdStart(global_session)
+		globalVars.initSession()
 
 
 def main_menu(menuid, **kwargs):

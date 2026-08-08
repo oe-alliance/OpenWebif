@@ -187,6 +187,8 @@ tstrings = {
 	'network_interface': _("Network Interface"),
 	'no_description_available': _("no description available"),
 	'no_epg_data': _("No EPG data available."),
+	'no_tuner_free': _("No free tuner available for this channel."),
+	'switch_channel_question': _("Do you want to switch the receiver to this channel?"),
 	'not_implemented': _("Sorry this page is not yet implemented"),
 	'nothing': _("Nothing"),
 	'nothing_play': _("Nothing playing."),
@@ -617,5 +619,6 @@ tstrings = {
 	'script_completed': _("Script completed"),
 	'saving': _("Saving..."),
 	'show_description': _("Show description"),
+	'transcoding_mode': _("Transcoding Mode")
 
 }

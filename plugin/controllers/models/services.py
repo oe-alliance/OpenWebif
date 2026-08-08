@@ -38,7 +38,7 @@ from Screens.InfoBar import InfoBar
 from .info import getOrbitalText, getOrb
 from ..utilities import parse_servicereference, SERVICE_TYPE_LOOKUP, NS_LOOKUP
 from ..i18n import _, tstrings
-from ..defaults import PICON_PATH, STREAMRELAY, LCNSUPPORT
+from ..defaults import STREAMRELAY, globalVars
 from .epg import EPG, convertGenre, getIPTVLink, filterName, convertDesc, GetWithAlternative
 
 try:
@@ -537,7 +537,7 @@ def getServices(sref, showall=True, showhidden=False, pos=0, showproviders=False
 
 	bqservices = servicehandler.list(eServiceReference(sref))
 	contentFilter = "CN" if removenamefromsref else "SN"
-	if LCNSUPPORT:
+	if globalVars.lcnSupport:
 		contentFilter += "L"
 
 	slist = bqservices and bqservices.getContent(contentFilter, True)
@@ -588,7 +588,7 @@ def getServices(sref, showall=True, showhidden=False, pos=0, showproviders=False
 					service['provider'] = allproviders[sitem[0]]
 				else:
 					service['provider'] = ""
-			if flags == 0 and LCNSUPPORT:
+			if flags == 0 and globalVars.lcnSupport:
 				LCN = sitem[2]
 				if LCN:
 					service['lcn'] = LCN
@@ -666,22 +666,33 @@ def getAllServicesRaw(mode, csv=False):
 	}
 
 
-def getPlayableServices(sref, srefplaying):
+def getPlayableServices(sref, srefplaying, includeName=False):
 	if sref == "":
 		sref = f'{service_types_tv} FROM BOUQUET "bouquets.tv" ORDER BY bouquet'
 
 	services = []
 	servicecenter = eServiceCenter.getInstance()
 	servicelist = servicecenter.list(eServiceReference(sref))
-	servicelist2 = servicelist and servicelist.getContent('S') or []
+	servicelist2 = servicelist and servicelist.getContent('SN') or []
 
 	for service in servicelist2:
-		if not int(service.split(":")[1]) & 512:  # 512 is hidden service on sifteam image. Doesn't affect other images
-			service2 = {}
-			service2['servicereference'] = service
-			info = servicecenter.info(eServiceReference(service))
-			service2['isplayable'] = info.isPlayable(eServiceReference(service), eServiceReference(srefplaying)) > 0
-			services.append(service2)
+		if not int(service[0].split(":")[1]) & 512:  # 512 is hidden service on sifteam image. Doesn't affect other images
+			iptvurl = getIPTVLink(service[0])
+			if iptvurl and iptvurl != "NoStream":
+				entry = {
+					'servicereference': service[0],
+					'isplayable': True,
+					'iptvurl': iptvurl,
+				}
+			else:
+				info = servicecenter.info(eServiceReference(service[0]))
+				entry = {
+					'servicereference': service[0],
+					'isplayable': info.isPlayable(eServiceReference(service[0]), eServiceReference(srefplaying)) > 0,
+				}
+			if includeName:
+				entry['servicename'] = service[1]
+			services.append(entry)
 
 	return {
 		"result": True,
@@ -1199,7 +1210,7 @@ def getPicon(sname, pp=None, defaultpicon=True):
 	DEFAULTPIC = "/images/default_picon.png"
 
 	if pp is None:
-		pp = PICON_PATH
+		pp = globalVars.piconPath
 	if pp is not None:
 		if getPiconName is not None:  # use distro own picon resolver
 			return sname and (p := getPiconName(sname)) is not None and p.replace(pp, PIC) or (DEFAULTPIC if defaultpicon else None)

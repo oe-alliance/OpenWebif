@@ -51,6 +51,19 @@
 				<input type="checkbox" name="zapstream"/>
 				#end if
 				</td></tr>
+				#if $transcodingnew
+				<tr><td>$tstrings['transcoding_mode']</td><td>
+				<select name="selecttranscodingmode" id="selecttranscodingmode" style="min-width: 150px;margin: 5px;border:none;font-size: 1em;">
+				#for $sr in $transcodingmodes
+					#if $sr[0] == $transcodingmode
+						<option value="$sr[0]" selected="selected">$sr[1]</option>
+					#else
+						<option value="$sr[0]">$sr[1]</option>
+					#end if
+				#end for
+				</select>
+				</td></tr>
+				#end if
 				<tr><td>$tstrings['show_picons']</td><td>
 				#if $showpicons
 				<input type="checkbox" name="showpicons" checked="checked"/>
@@ -540,6 +553,15 @@ function load_scontent(url) {
 		$("#selectsmallremote").change(function() {
 			$.ajax({
 				url: "api/setwebconfig?smallremote=" + $(this).val(),
+				success: function() {
+					window.location.hash = '';
+					window.location.reload(true);
+				}
+			});
+		});
+		$("#selecttranscodingmode").change(function() {
+			$.ajax({
+				url: "api/setwebconfig?transcoding_mode=" + $(this).val(),
 				success: function() {
 					window.location.hash = '';
 					window.location.reload(true);

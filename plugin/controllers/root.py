@@ -37,8 +37,14 @@ from .wol import WOLSetupController, WOLClientController
 from .file import FileController
 from .MultiBoot import MultiBootController
 from .Scripts import ScriptsController
-from .defaults import PICON_PATH, getPublicPath, VIEWS_PATH, setMobile, refreshPiconPath
+from .defaults import getPublicPath, VIEWS_PATH, setMobile, globalVars
 from .utilities import toBinary
+
+
+class CachedFile(static.File):
+	def render(self, request):
+		request.setHeader("Cache-Control", "public, max-age=86400")
+		return static.File.render(self, request)
 
 
 class RootController(BaseController):
@@ -56,10 +62,10 @@ class RootController(BaseController):
 		self.putChild2("grab", GrabScreenshot(session))
 		self.putChild2('hardware', static.File(toBinary("/usr/share/enigma2/hardware")))
 		for static_val in ('js', 'css', 'static', 'images', 'fonts'):
-			self.putChild2(static_val, static.File(toBinary(getPublicPath(static_val))))
-		for static_val in ('modern', 'themes', 'webtv'):
+			self.putChild2(static_val, CachedFile(toBinary(getPublicPath(static_val))))
+		for static_val in ('modern', 'themes', 'webtv', 'vxg'):
 			if exists(getPublicPath(static_val)):
-				self.putChild2(static_val, static.File(toBinary(getPublicPath(static_val))))
+				self.putChild2(static_val, CachedFile(toBinary(getPublicPath(static_val))))
 
 		if exists('/usr/bin/shellinaboxd'):
 			self.putChild2("terminal", proxy.ReverseProxyResource('::1', 4200, b'/'))
@@ -71,22 +77,23 @@ class RootController(BaseController):
 		self.putChild2("scripts", ScriptsController())
 		self.putChild2("wol", WOLClientController())
 		self.putChild2("wolsetup", WOLSetupController(session))
-		if PICON_PATH:
-			self.setPiconChild(PICON_PATH)
+		if globalVars.piconPath:
+			self.setPiconChild(globalVars.piconPath)
 		try:
 			from Plugins.Extensions.OpenWebif.controllers.NET import NetController
 			self.putChild2("net", NetController(session))
 		except:  # nosec # noqa: E722
 			pass
-		try:
-			harddiskmanager.on_partition_list_change.append(self.onPartitionChange)
-		except:  # nosec # noqa: E722
-			pass
+		if globalVars.piconMode == 0:
+			try:
+				harddiskmanager.on_partition_list_change.append(self.onPartitionChange)
+			except:  # nosec # noqa: E722
+				pass
 
 	def onPartitionChange(self, why, part):
-		refreshPiconPath()
-		if PICON_PATH:
-			self.setPiconChild(PICON_PATH)
+		globalVars.refreshPiconPath()
+		if globalVars.piconPath:
+			self.setPiconChild(globalVars.piconPath)
 
 	def setPiconChild(self, pp):
 		self.putChild2("picon", static.File(toBinary(pp)))

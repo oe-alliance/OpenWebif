@@ -37,7 +37,7 @@ from Components.SystemInfo import BoxInfo
 
 from .models.info import getInfo
 from .models.config import getCollapsedMenus, getConfigsSections, getShowName, getCustomName, getBoxName
-from .defaults import getPublicPath, getViewsPath, EXT_EVENT_INFO_SOURCE, STB_LANG, getIP, HASAUTOTIMER, TEXTINPUTSUPPORT, WEBTV
+from .defaults import getPublicPath, getViewsPath, EXT_EVENT_INFO_SOURCE, STB_LANG, getIP, TEXTINPUTSUPPORT, globalVars
 from .utilities import toBinary, toString
 
 
@@ -341,7 +341,7 @@ class BaseController(resource.Resource):
 			elif variant == "ncam":
 				extras.append({'key': url, 'description': _("NCam Webinterface"), 'nw': '1'})
 
-		if HASAUTOTIMER:
+		if globalVars.hasAutoTimer:
 			extras.append({'key': 'ajax/at', 'description': _('AutoTimers')})
 
 		extras.append({'key': 'ajax/bqe', 'description': _('BouquetEditor')})
@@ -403,7 +403,7 @@ class BaseController(resource.Resource):
 		config.OpenWebif.webcache.moviedb.value = moviedb
 		config.OpenWebif.webcache.moviedb.save()
 		ret['moviedb'] = moviedb
-		ret['webtv'] = WEBTV
+		ret['webtv'] = globalVars.webTV
 		ret['stbLang'] = STB_LANG
 		smallremote = config.OpenWebif.webcache.smallremote.value if config.OpenWebif.webcache.smallremote.value else 'new'
 		ret['smallremote'] = smallremote

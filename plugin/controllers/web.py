@@ -43,7 +43,7 @@ from .i18n import _
 from .base import BaseController
 from .stream import StreamController
 from .utilities import getUrlArg, toBinary, toString
-from .defaults import PICON_PATH
+from .defaults import globalVars
 from .models.epg import EPG
 
 
@@ -656,7 +656,8 @@ class WebController(BaseController):
 		"""
 		sref = getUrlArg(request, "sRef", "")
 		srefplaying = getUrlArg(request, "sRefPlaying", "")
-		return getPlayableServices(sref, srefplaying)
+		includeName = getUrlArg(request, "includeName", "") != ""
+		return getPlayableServices(sref, srefplaying, includeName)
 
 	def P_serviceplayable(self, request):
 		"""
@@ -1942,6 +1943,29 @@ class WebController(BaseController):
 			return res
 		return removeCollapsedMenu(getUrlArg(request, "name"))
 
+	def P_streamhlsm3u(self, request):
+		self.isCustom = True
+		ref = getUrlArg(request, "ref")
+		name = getUrlArg(request, "name", "")
+		zap = getUrlArg(request, "zap", "")
+		if ref and zap:
+			zapService(self.session, ref, name, stream=True)
+		stream = getStream(self.session, request, "streamhls.m3u")
+		if stream.startswith("http://") or stream.startswith("https://"):
+			request.setResponseCode(307)
+			request.setHeader("Location", stream)
+			return b""
+		return None
+
+	def P_streamnewm3u(self, request):
+		self.isCustom = True
+		if comp_config.OpenWebif.webcache.zapstream.value:
+			ref = getUrlArg(request, "ref")
+			if ref:
+				name = getUrlArg(request, "name", "")
+				zapService(self.session, ref, name, stream=True)
+		return getStream(self.session, request, "streamnew.m3u")
+
 	def P_streamm3u(self, request):
 		"""
 		Request handler for the `streamm3u` endpoint.
@@ -2571,7 +2595,7 @@ class WebController(BaseController):
 				configitem.value = val
 				configitem.save()
 				return {"result": True}
-			elif sarg in ("moviedb", "smallremote", "theme"):
+			elif sarg in ("moviedb", "smallremote", "theme", "transcoding_mode"):
 				try:
 					configitem = getattr(comp_config.OpenWebif.webcache, sarg)
 					configitem.value = getUrlArg(request, sarg)
@@ -2637,7 +2661,7 @@ class WebController(BaseController):
 		pp = getPicon(sref, path, False)
 		if pp:
 			if path is None:
-				path = PICON_PATH
+				path = globalVars.piconPath
 			link = pp
 			pp = pp.replace("/picon/", path)
 		if json == 'true':

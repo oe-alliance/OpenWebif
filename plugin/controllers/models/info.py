@@ -37,7 +37,7 @@ from Screens.InfoBar import InfoBar
 from timer import TimerEntry
 
 from ..i18n import _
-from ..defaults import OPENWEBIFVER, TRANSCODING, TEXTINPUTSUPPORT, LCD, GRABPIP
+from ..defaults import OPENWEBIFVER, TEXTINPUTSUPPORT, globalVars
 from ..utilities import removeBad, removeBad2
 from .epg import EPG
 
@@ -193,8 +193,8 @@ def getInfo(session=None, need_fullinfo=False):
 	info["boxtype"] = BoxInfo.getItem("machinebuild")
 	info["machinebuild"] = BoxInfo.getItem("model")
 
-	info["lcd"] = int(LCD)
-	info["grabpip"] = int(GRABPIP)
+	info["lcd"] = int(globalVars.lcd)
+	info["grabpip"] = int(BoxInfo.getItem("ArchIsARM"))
 
 	SH4266 = "SH4 @266MHz"
 
@@ -487,7 +487,7 @@ def getInfo(session=None, need_fullinfo=False):
 					})
 	# TODO: fstab
 
-	info["transcoding"] = TRANSCODING
+	info["transcoding"] = globalVars.transcoding
 
 	info["EX"] = ""
 
@@ -561,6 +561,8 @@ def getInfo(session=None, need_fullinfo=False):
 		print(f"[OpenWebif] -D- RecordTimerEntry check {error}")
 
 	info["textinputsupport"] = TEXTINPUTSUPPORT
+	info["live555Hls"] = globalVars.live555Hls
+	info["live555Rtsp"] = globalVars.live555Rtsp
 	STATICBOXINFO = info
 	return info
 
@@ -712,7 +714,7 @@ def getStatusInfo(self):
 	statusinfo = {
 		"volume": vcontrol.getVolume(),
 		"muted": vcontrol.isMuted(),
-		"transcoding": TRANSCODING,
+		"transcoding": globalVars.transcoding,
 		"currservice_filename": "",
 		"currservice_id": -1,
 	}

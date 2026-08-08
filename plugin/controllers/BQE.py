@@ -24,7 +24,7 @@ from enigma import eServiceCenter, eServiceReference
 from Components.config import config
 from Components.ParentalControl import parentalControl
 from .utilities import getUrlArg, toBinary, toString, e2simplexmlresult
-from .defaults import service_types_tv, LCNSUPPORT
+from .defaults import service_types_tv, globalVars
 from .models.services import getPicon
 from .BouquetEditor import BouquetEditor
 from .base import BaseController
@@ -180,7 +180,7 @@ class BQEWebController(BaseController):
 		includepicon = (getUrlArg(request, "picon", "") == '1')
 		services = []
 
-		lcn = LCNSUPPORT and config.usage.numberMode.value == 2
+		lcn = globalVars.lcnSupport and config.usage.numberMode.value == 2
 		calcpos = False
 
 		if sref == "":

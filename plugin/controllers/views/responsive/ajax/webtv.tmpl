@@ -1,7 +1,11 @@
 #filter WebSafe
 #from Plugins.Extensions.OpenWebif.controllers.i18n import tstrings
+#from json import dumps
 
 <link rel="stylesheet" type="text/css" href="/css/chosen.min.css">
+<style>
+#hlsPlayer { display:block; margin:0 auto; background:#000; }
+</style>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	<div class="card">
@@ -15,61 +19,28 @@
 				</div>
 			</div>
 		</div>
-		<div class="body" >
+		<div class="body">
 			<div id="content_main">
-				<div class="row clearfix id="info">
-					<div class="row clearfix">
-						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							<p style="margin: 10px; text-align: center;">* Please note that most browsers no longer support this functionality. *</p><!-- TODO: i10n -->
-							<div id="vlcPlayer" style="margin:0 auto 0 auto;width:640px;height:400px;display:none;">
-								<embed type="application/x-vlc-plugin" pluginspage="https://www.videolan.org/vlc/" version="VideoLAN.VLCPlugin.2" width="640px" height="360px" id="vlc"></embed>
-							</div>
-							<div id="htmlPlayer" style="margin:0 auto 0 auto;width:640px;height:400px;display:none;">
-								<video id="htmlp" width="640" height="360" controls></video>
-							</div>
-						</div>
+				<div class="row clearfix">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align:center;">
+						<video id="hlsPlayer" width="640" height="360" controls></video>
 					</div>
-					<div class="row clearfix">
-						<div class="col-xs-12 align-center">
-							<input type="radio" name="plbtn_html" id="plbtn_html" class="radio--skinned">
-							<label for="plbtn_html">HTML</label>
-							<input type="radio" name="plbtn_vlc" id="plbtn_vlc" class="radio--skinned">
-							<label for="plbtn_vlc">VLC</label>
-						</div>
-					</div>
-					<div style="display:inline-block;margin-left:10px;">
-						<span id="Deinterlace"><!-- TODO: i10n -->
-							Deinterlace: <select id="deinterlace">
-								<option value="off">Off</option>
-								<option value="blend">Blend</option>
-								<option value="bob">Bob</option>
-								<option value="discard">Discard</option>
-								<option value="linear">Linear</option>
-								<option value="mean">Mean</option>
-								<option value="x">X</option>
-								<option value="yadif">Yadif</option>
-								<option value="yadif2x">Yadif2x</option>
-							</select>
-						</span>
-						<div style="display:inline-block;margin-left:10px;">
-							<label for="wautoplay">Autoplay</label><!-- TODO: i10n -->
-							<input type="checkbox" name="wautoplay" id="wautoplay">
-							<label id="wtranscodingl" for="wtranscoding">Transcoding</label>
-							<input type="checkbox" name="wtranscoding" id="wtranscoding" data-port="$transcoder_port" name="wtranscoding">
-							<button id="btnstop" style="margin-left:5px;">Stop</button>
-							<button id="btnplay" style="margin-left:5px;">Play</button>
-						</div>
-					</div>
+				</div>
+				<div class="row clearfix" style="margin-top:10px; text-align:center;">
+					<label for="wzapstream">$tstrings['zapbeforestream']</label>
+					<input type="checkbox" name="wzapstream" id="wzapstream">
+					<span id="srcbuttons" style="margin-left:5px;">
+						<input type="radio" name="srcbutton" id="sbtn0" class="radio--skinned" checked="checked">
+						<label for="sbtn0">$tstrings['channels']</label>
+						<input type="radio" id="sbtn1" name="srcbutton" class="radio--skinned">
+						<label for="sbtn1">$tstrings['movies']</label>
+					</span>
+					<button id="btnstop" style="margin-left:5px;">Stop</button>
 				</div>
 				<div style="display:table;margin-top:10px;margin-bottom:10px;width: 95%;">
 					<div style="display:table;margin:10 auto 10 auto;">
-						<span id="srcbuttons" style="margin-right:10px;">
-							<input type="radio" name="srcbutton" id="sbtn0" class="radio--skinned" checked="checked">
-							<label for="sbtn0">$tstrings['channels']</label>
-							<input type="radio" id="sbtn1" name="srcbutton" class="radio--skinned">
-							<label for="sbtn1">$tstrings['movies']</label>
-						</span>
 						<span style="display:inline-block;">
+							<select name="streambouquets" id="streambouquets" tabindex="15"></select>
 							<select name="streamchannels" id="streamchannels" tabindex="16"></select>
 							<select name="streamrecordings" id="streamrecordings" tabindex="10"></select>
 							<select id="moviesort">
@@ -87,16 +58,17 @@
 						</span>
 					</div>
 				</div>
-		</div>
+			</div>
 		</div>
 	</div>
 </div>
 
-<script src="/webtv/webtv.js"></script>
+<script src="/webtv/hls.min.js"></script>
+<script src="/webtv/webtv.js?v=6"></script>
 <script>
 	jQuery(function() {
 		var playerObj = new PlayerObj();
-		playerObj.setup('$auth', '$streaming_port');
+		playerObj.setup('$auth', '$streaming_port', '$live555_hls_base', $dumps({'notunerfree': $tstrings['no_tuner_free'], 'switchchannelquestion': $tstrings['switch_channel_question'], 'yes': $tstrings['yes'], 'no': $tstrings['no']}));
 	});
 </script>
 
