@@ -633,7 +633,7 @@ def getAllServices(mode, noiptv=False, nolastscanned=False, removenamefromsref=F
 	}
 
 
-def getAllServicesRaw(mode, csv=False):
+def getAllServicesRaw(mode, csv=False, alphabetical=False):
 	starttime = datetime.now()
 	services = []
 	servicecenter = eServiceCenter.getInstance()
@@ -647,9 +647,30 @@ def getAllServicesRaw(mode, csv=False):
 	servicelist = servicecenter.list(eServiceReference(refStr))
 	servicelist = servicelist and servicelist.getContent('SN') or []
 	if csv:
-		services.append("\"ServiceReference\",\"ServiceName\"")
-		for service in servicelist:
-			services.append(f"\"{service[0]}\",\"{service[1]}\"")
+		if alphabetical:
+			rows = []
+			for service in servicelist:
+				sref, name = service[0], service[1]
+				try:
+					parsed = parse_servicereference(sref)
+					stype_dec = str(parsed['service_type'])
+					sid = "0x%x" % parsed['sid']
+					tsid = "0x%x" % parsed['tsid']
+					ns = parsed['ns']
+					location = NS_LOOKUP.get(ns, "DVB-S")
+					if location == "DVB-S":
+						location = getOrb(ns >> 16 & 0xFFF)
+				except (IndexError, ValueError):
+					stype_dec = sid = tsid = location = "?"
+				rows.append((name, sref, stype_dec, sid, tsid, location))
+			rows.sort(key=lambda r: r[0].lower())
+			services.append("\"Name\",\"Service ref\",\"Service type\",\"SID\",\"TSID\",\"Orbital position\"")
+			for name, sref, stype_dec, sid, tsid, location in rows:
+				services.append(f"\"{name}\",\"{sref}\",\"{stype_dec}\",\"{sid}\",\"{tsid}\",\"{location}\"")
+		else:
+			services.append("\"ServiceReference\",\"ServiceName\"")
+			for service in servicelist:
+				services.append(f"\"{service[0]}\",\"{service[1]}\"")
 		return "\n".join(services)
 	else:
 		for service in servicelist:
