@@ -657,8 +657,12 @@ def getAllServicesRaw(mode, csv=False, alphabetical=False):
 					sid = "0x%x" % parsed['sid']
 					tsid = "0x%x" % parsed['tsid']
 					ns = parsed['ns']
-					location = NS_LOOKUP.get(ns, "DVB-S")
-					if location == "DVB-S":
+					ns_high = ns >> 16 & 0xFFFF
+					if ns_high == 0xFFFF:
+						location = "DVB-C"
+					elif ns_high == 0xEEEE:
+						location = "DVB-T"
+					else:
 						location = getOrb(ns >> 16 & 0xFFF)
 				except (IndexError, ValueError):
 					stype_dec = sid = tsid = location = "?"
