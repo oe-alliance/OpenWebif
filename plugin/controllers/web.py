@@ -459,8 +459,21 @@ class WebController(BaseController):
 		return getCurrentLocation()
 
 	def P_allservicescsv(self, request):
+		request.setHeader('Content-Disposition', 'inline; filename=allservices.csv')
 		mode = getUrlArg(request, "mode", "all")
-		return getAllServicesRaw(mode, csv=True)
+		raw = getAllServicesRaw(mode, csv=True)
+		# Prepend UTF-8 BOM so Excel detects the encoding correctly instead
+		# of misreading non-ASCII names as cp1252 (e.g. "BBC RnGàid")
+		return "\ufeff" + raw
+
+	def P_allservicescsvalphabetical(self, request):
+		"""allservicescsvalphabetical: Name, Service ref, Service type, SID, TSID, Orbital position — sorted by name."""
+		request.setHeader('Content-Disposition', 'inline; filename=allservices_alphabetical.csv')
+		mode = getUrlArg(request, "mode", "all")
+		raw = getAllServicesRaw(mode, csv=True, alphabetical=True)
+		# Prepend UTF-8 BOM so Excel detects the encoding correctly instead
+		# of misreading non-ASCII names as cp1252 (e.g. "BBC RnGàid")
+		return "\ufeff" + raw
 
 	def P_allservices(self, request):
 		mode = getUrlArg(request, "mode", "all")
