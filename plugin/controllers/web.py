@@ -2007,6 +2007,7 @@ class WebController(BaseController):
 			if ref:
 				name = getUrlArg(request, "name", "")
 				zapService(self.session, ref, name, stream=True)
+		request.setHeader("Content-Disposition", 'attachment;filename="stream.m3u"')
 		return getStream(self.session, request, "stream.m3u")
 
 	def P_tsm3u(self, request):
@@ -2027,6 +2028,7 @@ class WebController(BaseController):
 
 		"""
 		self.isCustom = True
+		request.setHeader("Content-Disposition", 'attachment;filename="ts.m3u"')
 		return getTS(self.session, request)
 
 	def P_videom3u(self, request):
@@ -2050,6 +2052,7 @@ class WebController(BaseController):
 
 		"""
 		self.isCustom = True
+		request.setHeader("Content-Disposition", 'attachment;filename="streamcurrent.m3u"')
 		return getStream(self.session, request, "streamcurrent.m3u")
 
 	def P_streamsubservices(self, request):
