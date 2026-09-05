@@ -22,7 +22,7 @@ from os import popen, statvfs
 from os.path import exists, isdir, realpath
 from time import localtime, strftime
 from twisted import version
-from socket import has_ipv6, AF_INET6, AF_INET, inet_ntop, inet_pton, getaddrinfo
+from socket import has_ipv6, socket, AF_INET6, AF_INET, SOCK_DGRAM, inet_ntop, inet_pton, getaddrinfo
 
 from enigma import eDVBVolumecontrol, eServiceCenter, eServiceReference, getEnigmaVersionString
 from Components.config import config
@@ -43,7 +43,31 @@ from .epg import EPG
 
 STATICBOXINFO = None
 
+HASIPV6ROUTE = None
+
 NI = "/etc/network/interfaces"
+
+
+def hasIPv6Route():
+	# socket.has_ipv6 only says the Python build supports IPv6 sockets, not that
+	# the box has a real IPv6 interface. A UDP connect() never sends a packet,
+	# it just asks the kernel routing table for a route to a global address,
+	# so this fails immediately when only lo has IPv6 and succeeds as soon as
+	# a real interface has a route, whether or not it actually reaches the internet.
+	global HASIPV6ROUTE
+	if HASIPV6ROUTE is None:
+		HASIPV6ROUTE = False
+		if has_ipv6:
+			try:
+				s = socket(AF_INET6, SOCK_DGRAM)
+				try:
+					s.connect(("2001:4860:4860::8888", 53))
+					HASIPV6ROUTE = True
+				finally:
+					s.close()
+			except OSError:
+				pass
+	return HASIPV6ROUTE
 
 
 def getIPMethod(iface):
@@ -458,7 +482,7 @@ def getInfo(session=None, need_fullinfo=False):
 						# Will fail on literal IPs
 						try:
 							# Try IPv6 first, as will Linux
-							if has_ipv6:
+							if hasIPv6Route():
 								tmpaddress = None
 								tmpaddress = getaddrinfo(server, 0, AF_INET6)
 								if tmpaddress:
