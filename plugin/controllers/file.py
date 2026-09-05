@@ -53,7 +53,7 @@ class FileController(resource.Resource):
 			filename = sanitise_filename_slashes(realpath(filename))
 
 			if not exists(filename):
-				return f"File '{filename}' not found"
+				return toBinary(f"File '{filename}' not found")
 
 			if action == "stream":
 				name = getUrlArg(request, "name", "stream")
@@ -70,16 +70,16 @@ class FileController(resource.Resource):
 				response = f"#EXTM3U\n#EXTVLCOPT:http-reconnect=true\n#EXTINF:-1,{name}\n{proto}://{request.getRequestHostname()}:{port}/file?action=download&file={quote(filename)}"
 				request.setHeader("Content-Disposition", f'attachment;filename="{name}.m3u"')
 				request.setHeader("Content-Type", "application/vnd.apple.mpegurl")
-				return response
+				return toBinary(response)
 			elif action == "delete":
 				request.setResponseCode(http.OK)
-				return f"TODO: DELETE FILE: {filename}"
+				return toBinary(f"TODO: DELETE FILE: {filename}")
 			elif action == "download":
 				request.setHeader("Content-Disposition", f"attachment;filename=\"{filename.split('/')[-1]}\"")
 				rfile = static.File(toBinary(filename), defaultType="application/octet-stream")
 				return rfile.render(request)
 			else:
-				return "wrong action parameter"
+				return toBinary("wrong action parameter")
 
 		path = getUrlArg(request, "dir")
 		if path is not None:
