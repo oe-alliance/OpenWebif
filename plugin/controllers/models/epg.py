@@ -79,6 +79,8 @@ def convertGenre(val):
 
 def getIPTVLink(ref):
 	first = ref.split(":")[0]
+	if first == "4115":  # DAB, streamed like a normal service via port 8001
+		return ""
 	if first in ["4097", "5003", "5002", "5001"] or "%3A" in ref or "%3a" in ref:
 		if "http" in ref:
 			if ref.index("http") < ref.rindex(":"):

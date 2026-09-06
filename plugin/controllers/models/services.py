@@ -442,14 +442,18 @@ def getChannels(idbouquet, stype):
 			chan['sr'] = "1"
 
 		if not int(channel[0].split(":")[1]) & 64:
-			psref = parse_servicereference(channel[0])
-			chan['service_type'] = SERVICE_TYPE_LOOKUP.get(psref.get('service_type'), "UNKNOWN")
-			nsi = psref.get('ns')
-			ns = NS_LOOKUP.get(nsi, "DVB-S")
-			if ns == "DVB-S":
-				chan['ns'] = getOrb(nsi >> 16 & 0xFFF)
+			if channel[0].split(":")[0] == "4115":  # DAB, not a standard DVB service reference layout
+				chan['service_type'] = "DAB"
+				chan['ns'] = "DAB"
 			else:
-				chan['ns'] = ns
+				psref = parse_servicereference(channel[0])
+				chan['service_type'] = SERVICE_TYPE_LOOKUP.get(psref.get('service_type'), "UNKNOWN")
+				nsi = psref.get('ns')
+				ns = NS_LOOKUP.get(nsi, "DVB-S")
+				if ns == "DVB-S":
+					chan['ns'] = getOrb(nsi >> 16 & 0xFFF)
+				else:
+					chan['ns'] = ns
 			chan['picon'] = _getPicon(chan['ref'])
 			if config.OpenWebif.parentalenabled.value and config.ParentalControl.configured.value and config.ParentalControl.servicepinactive.value:
 				chan['protection'] = getProtection(channel[0])
