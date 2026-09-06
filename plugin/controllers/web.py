@@ -1898,6 +1898,13 @@ class WebController(BaseController):
 					mnow["duration_sec"] = movie.getDuration()
 					mnow["remaining"] = movie.getDuration()
 					mnow["id"] = movie.getEventId()
+					seek = service and service.seek()
+					if seek:
+						position = seek.getPlayPosition()
+						if not position[0]:
+							position_sec = position[1] // 90000
+							mnow["position"] = position_sec
+							mnow["remaining"] = max(0, mnow["duration_sec"] - position_sec)
 			except Exception:  # nosec # noqa: E722
 				mnow = eventnow
 		elif mnow["sref"] == '':
