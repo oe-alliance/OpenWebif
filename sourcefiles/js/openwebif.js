@@ -887,8 +887,10 @@ function grabScreenshot(mode) {
 	}
 	if (mode == "lcd") {
 		$('#screenshotimage').css("width", 'auto');
+		$('#screenshotImageContainer').css("text-align", 'center');
 	} else {
 		$('#screenshotimage').css('width', '100%');
+		$('#screenshotImageContainer').css("text-align", '');
 	}
 }
 
