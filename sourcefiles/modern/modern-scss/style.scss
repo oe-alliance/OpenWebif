@@ -1324,7 +1324,7 @@ fieldset[disabled] .form-control {
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 12;
+	z-index: 1002;
 	width: 100%;
 	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 	user-select: none;
@@ -1363,12 +1363,12 @@ fieldset[disabled] .form-control {
 	bottom: 0;
 	background-color: rgba(0, 0, 0, 0.5);
 	display: none;
-	z-index: 10;
+	z-index: 998;
 }
 
 .overlay-open .sidebar {
 	margin-left: 0;
-	z-index: 99999999;
+	z-index: 1000;
 }
 
 @include meta.load-css("_layout/sidebar");

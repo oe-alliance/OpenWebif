@@ -24,9 +24,11 @@ class renderEvtBlock:
 
         ref = quote(event['ref'], safe=' ~@#$()*!+=:;,.?/\'').replace('%253a//', '%3a//')
         hourmin = strftime("%H:%M", localtime(event['begin_timestamp']))
+        begints = event.get('begin_timestamp', 0)
+        endts = begints + event.get('duration', 0)
 
         return f"""
-        <div class="event" data-ref="{ref}" data-id="{event['id']}">
+        <div class="event" data-ref="{ref}" data-id="{event['id']}" data-begin="{begints}" data-end="{endts}">
             <div style="width:40px; float:left; padding: 0 3px">{hourmin}{timerEventSymbol}</div>
             <div style="width:144px; float:left">
                 <div class="title">{event['title']}</div>{shortdesc}

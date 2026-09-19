@@ -9,7 +9,7 @@ if (multiepg_mode == 2) {
 	}
 
 	if (multiepg_day == 0) {
-		jQuery(".timetable-now").css('left', 151 + pos);
+		jQuery(".timetable-now").css('left', (140 + pos) + 'px');
 
 		setTimeout(function () {
 			let nowdate = Math.round(+new Date() / 1000);
@@ -17,7 +17,7 @@ if (multiepg_mode == 2) {
 
 			if (pos > 0)
 				pos = pos / 6;
-			jQuery(".timetable-now").css('left', 151 + pos);
+			jQuery(".timetable-now").css('left', (140 + pos) + 'px');
 		}, 10000);
 
 		jQuery(".timetable-now").css('height', jQuery("#tblinner").height());
@@ -49,21 +49,19 @@ function fixTableHeight() {
   }
 
 	if (multiepg_mode == 1) {
-		let new_height = (jQuery("#epgcard").height() * 0.85 - jQuery("#epgcardheaderI").height() - jQuery("#epgcardheaderII").height() - jQuery("#navepg").height() - 2 * jQuery("#tbl1 thead").height() - addScrollBarWidth - 2);
+		let new_height = (jQuery("#epgcard").height() * 0.90 - jQuery("#epgcardheaderI").height() - jQuery("#epgcardheaderII").height() - jQuery("#navepg").height() - addScrollBarWidth - 2);
 		let scrollwidth = (jQuery("#epgcard").width() - 40) + "px";
 		let scrollheightI = new_height + 'px';
 
-		jQuery("#tbl1body").height(new_height + "px");
-		jQuery('#tbl1body').height(scrollheightI);
+		jQuery('#fulltbl').height(scrollheightI);
 		jQuery('#fulltbl').width(scrollwidth);
-		jQuery("#fulltbl").height((jQuery("#leftsidemenu").height() - 300) + "px");
 	} else {
-		let new_height = (jQuery("#epgcard").height() * 0.90 - jQuery("#epgcardheaderI").height() - jQuery("#epgcardheaderII").height() - jQuery("#navepg").height() - 2 * jQuery("#tbl1 thead").height() - addScrollBarWidth - 2);
+		let new_height = (jQuery("#epgcard").height() * 0.90 - jQuery("#epgcardheaderI").height() - jQuery("#epgcardheaderII").height() - jQuery("#navepg").height() - addScrollBarWidth - 2);
 		let scrollheightI = new_height + 'px';
 		let scrollwidth = (jQuery("#epgcard").width() - 40) + "px";
 
 		jQuery('#fulltbl').height(scrollheightI);
-		jQuery('#tblinner').width(scrollwidth);
+		jQuery('#fulltbl').width(scrollwidth);
 	}
 }
 
@@ -104,27 +102,22 @@ jQuery(".plusclick").click(function () {
       let dt = (d == 0) ? '' : jQuery(this).html();
       let pos = 0;
 
-      jQuery('#tblinner').scrollLeft(0);
-      jQuery("#timescroller li ol .event").each(function () {
-        if (pos == 0) {
-          if (jQuery(this).data("dt") == dt) {
-            if (jQuery(this).position() != undefined)
-              pos = jQuery(this).position().left;
-          }
-        }
-      });
-
-      if (d == '') {
+      if (d == 0 || d == '') {
         let l = jQuery(".timetable-now").css('left');
-
-        pos = parseInt(l.replace('px', ''));
+        pos = parseInt(l.replace('px', '')) || 0;
+      } else if (d == 1) {
+        pos = 140 + (6 * 3600 / 6);
+      } else if (d == 2) {
+        pos = 140 + (12 * 3600 / 6);
+      } else if (d == 3) {
+        pos = 140 + (20 * 3600 / 6);
       }
 
       if (pos > 0) {
-        pos -= 200;
+        pos -= 160;
 
-        jQuery('#tbl1body').animate({
-          scrollLeft: pos
+        jQuery('#fulltbl').animate({
+          scrollLeft: Math.max(0, pos)
         }, 500);
       }
     } else if (day > 100) {
@@ -158,30 +151,6 @@ if (jQuery("#header").is(':hidden')) {
 if (mepgdirect == 1) {
   mepgdirect = 0; //NOSONAR
   jQuery("#expandmepg").click();
-}
-
-jQuery(".togglescroll").click(function () {
-  if (jQuery('#tblinner').css('overflow-y') == 'hidden') {
-    jQuery('#tblinner').css('overflow-y', '');
-    jQuery('.togglescroll').removeClass('ui-widget-header');
-    SetLSValue('MultiEPGScrollStyle', '1');
-  } else {
-    jQuery('#tblinner').css('overflow-y', 'hidden');
-    jQuery('.togglescroll').addClass('ui-widget-header');
-    SetLSValue('MultiEPGScrollStyle', '0');
-  }
-});
-
-if (multiepg_mode == 2) {
-	jQuery(function () {
-		if (GetLSValue('MultiEPGScrollStyle', '0') == '0') {
-			jQuery('#tblinner').css('overflow-y', 'hidden');
-			jQuery('.togglescroll').addClass('ui-widget-header');
-		} else {
-			jQuery('#tblinner').css('overflow-y', '');
-			jQuery('.togglescroll').removeClass('ui-widget-header');
-		}
-	});
 }
 
 console.log('x');

@@ -1118,6 +1118,14 @@ function WebConfig() {
 		let val = $(this).is(":checked") ? '1' : '0'
 		$.get('api/setwebconfig?minepglist=' + val);
 	});
+	$('#epg_jump_now').change(function () {
+		let val = $(this).is(":checked") ? '1' : '0'
+		$.get('api/setwebconfig?epg_jump_now=' + val);
+	});
+	$('#epg_jump_active_service').change(function () {
+		let val = $(this).is(":checked") ? '1' : '0'
+		$.get('api/setwebconfig?epg_jump_active_service=' + val);
+	});
 	$('#zapstream').change(function () {
 		let val = $(this).is(":checked") ? '1' : '0'
 		$.get('api/setwebconfig?zapstream=' + val);

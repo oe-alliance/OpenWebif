@@ -8,7 +8,7 @@ from urllib.parse import quote
 class renderEvtBlock:
 	def __init__(self):
 		self.template = """
-		<article onclick="loadeventepg('%s', '%s'); return false;" class="epg__event event %s" data-ref="%s" data-id="%s" data-toggle="modal" data-target="#EventModal">
+		<article onclick="loadeventepg('%s', '%s'); return false;" class="epg__event event %s" data-ref="%s" data-id="%s" data-begin="%s" data-end="%s" data-toggle="modal" data-target="#EventModal">
 			<time class="epg__time--start">%s</time>
 			<span class="epg__title title">
 				%s
@@ -41,6 +41,8 @@ class renderEvtBlock:
 			shortdesc = ''
 
 		sref = quote(event['ref'], safe=' ~@#$()*!+=:;,.?/\'')
+		begints = event.get('begin_timestamp', 0)
+		endts = begints + event.get('duration', 0)
 
 		return self.template % (
 			event['id'],
@@ -48,6 +50,8 @@ class renderEvtBlock:
 			eventcssclass,
 			sref,
 			event['id'],
+			begints,
+			endts,
 			strftime("%H:%M", localtime(event['begin_timestamp'])),
 			event['title'],
 			shortdesc

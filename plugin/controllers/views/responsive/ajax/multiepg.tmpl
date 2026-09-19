@@ -11,7 +11,7 @@
 	.float { float:left }
 	.service { font-weight: bold; font-size: 12px; padding-right: 4px; white-space: nowrap; overflow: hidden; }
 	.service img { width:50px; height:30px; float:none; margin-right:10px; border: 0; }
-	.serviceheader { padding: 10px; width: 190px; text-align: center; background-color: #bababa; box-shadow: inset -20px 40px 60px #fff; }
+	.serviceheader { position: sticky; top: 0; z-index: 10; padding: 10px; width: 190px; text-align: center; background-color: #bababa; box-shadow: inset -20px 40px 60px #fff; }
 	.theme--city-lights .serviceheader { background-color: #313443; box-shadow: inset -20px 40px 60px #282c37; }
 	.event { cursor: pointer; width: 190px; overflow:hidden; }
 	.bq { font-size: 12px; padding: 2px 4px; line-height: 18px; cursor: pointer; white-space: nowrap; display: inline-block; margin: 1px 1px 0px 0px;}
@@ -27,11 +27,7 @@
 	.timer { font-weight: bold; font-size: 10px; color:red; }
 	#eventdescription { width: 375px; height: auto; position: fixed; top: 205px; left: 350px; z-index: 100; display: none; overflow: auto; }
 	#navepg { margin-bottom: 1px; }
-#if $mode != 2
-	#tbl1 tbody { width: 100%; height: 100%; overflow-y: auto; display: block; overflow-x: hidden;}
-	#tbl2 tbody { width: 100%; height: 100%; overflow-y: hidden; display: block; overflow-x: hidden;}
-	#fulltbl { width: 100%; height: 100%; overflow-y: hidden; display: block; overflow-x: auto;}
-#end if
+	#fulltbl { width: 100%; height: 100%; overflow: auto; }
 	.notablemargin { margin: 0px;}
 	.ui-widget-content.nobg , .ui-widget-header.nobg{ background-image: none; } 
 	.wrapper { overflow-x: auto; width: 100%; -ms-overflow-style: -ms-autohiding-scrollbar;}
@@ -154,11 +150,9 @@
 <style>
 	.picon { display: inline-block; margin:0; max-width: 100px;}
 	.picon > img { max-height: 30px;}
-	.timetable { border:none; height: 0px;}
-	.timetable > div { display:table; margin:0px 0px 0px -110px; padding:0;}
-	.timetable-now { position: relative;top: 0;left: 0px;z-index: 1;width: 2px;background-color: #0fb8fb;float:left;}
-	#tbl1 tbody { width: 100%; height: 100%; overflow-y: auto; display: block; overflow-x: hidden;}
-	.eventlist { display: inline-block; list-style-type: none; margin: 0px; padding: 0px 0px; width: calc(100% - 105px); }
+	.timetable { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 5; border: none; }
+	.timetable-now { position: absolute; top: 0; width: 2px; height: 100%; background-color: #0fb8fb; }
+	.eventlist { display: inline-block; list-style-type: none; margin: 0px; padding: 0px 0px; width: 30000px; }
 	.event { display: block; position: relative; vertical-align: top; clear: left; border: none; }
 	.event a,.event > span { padding: 0px; height:58px; width:100%; display: block; white-space: normal; overflow: hidden; }
 	.event a:link:hover { text-decoration: none; }
@@ -174,6 +168,44 @@
 	}
 	.etimesmall, .etime {
 		font-size: 10px;
+	}
+	.epg__timeline-row {
+		display: flex;
+		width: 30140px;
+		min-width: 30140px;
+		height: 60px;
+		border-top: 1px solid rgba(0, 0, 0, 0.08);
+		box-sizing: border-box;
+	}
+	.epg__channel-col {
+		position: sticky;
+		left: 0;
+		z-index: 10;
+		width: 140px;
+		min-width: 140px;
+		max-width: 140px;
+		height: 60px;
+		background-color: #fff;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		padding: 4px 8px;
+		box-shadow: 2px 0px 4px -2px rgba(0, 0, 0, 0.2);
+		flex-shrink: 0;
+		box-sizing: border-box;
+	}
+	.epg__events-col {
+		width: 30000px;
+		height: 60px;
+		flex-shrink: 0;
+	}
+	.theme--city-lights .epg__channel-col {
+		background-color: #282c37;
+		color: #f1f1f1;
+	}
+	.theme--city-lights .epg__timeline-row {
+		border-top-color: rgba(255, 255, 255, 0.08);
 	}
 	.theme--city-lights .event a {
 		color: inherit;
@@ -193,34 +225,16 @@
 </style>
 
 #set $now = $mktime($localtime())
-
-#if $day == 0
-#set $first = $now - 3600
-#else
-#set $first = $now + ($day * 3600 * 24)
-#end if
-
-#set $s = $strftime("%S",$localtime($first))
-#set $m = $strftime("%M",$localtime($first))
-#set $offset = $int($m) * 60
-#set $offset = $offset + $int($s)
-
-#if $day > 0
-#set $h = $strftime("%H",$localtime($first))
-#set $offset = $offset + $int($h) * 60 * 60
-#set $offset = $offset + 3600
-#end if
-
-#set $first = $first - $offset
-
+#set $bt = $localtime($now + ($day * 86400))
+#set $first = $mktime(($bt.tm_year, $bt.tm_mon, $bt.tm_mday, 0, 0, 0, -1, -1, -1))
 #end if
 
 #if $mode == 1
 #set $renderEventBlock = $renderEvtBlock()
-<div id="fulltbl" class="responsive-table">
-	<table border="0" cellpadding="0" cellspacing="0" width="100%" id="tbl2">
-		<tbody id="tbl2body">
-			<tr style="background-color:#bababa;">
+<div id="fulltbl" class="responsive-table" style="overflow:auto">
+	<table border="0" cellpadding="0" cellspacing="0" width="100%" id="tbl1" class="table table-striped">
+		<thead>
+			<tr id="tbl2body" style="background-color:#bababa;">
 #for $sname, $eventlist in $events.items()
 #set $ref = $channelrefs.get($sname, "")
 #set $qref = $quote($ref, safe=' ~@#$()*!+=:;,.?/\'').replace('%253a//','%3a//')
@@ -229,112 +243,89 @@
 				</td>
 #end for
 			</tr>
-			<tr>
-					<table border="0" cellpadding="0" cellspacing="0" width="100%" id="tbl1" class="table table-striped">
-						<tbody id="tbl1body">
+		</thead>
+		<tbody id="tbl1body">
 #set even = 0
 #for $slot in list(range(0,12))
-							<tr>
+			<tr>
 	#for $sname, $eventlist in $events.items()
-								<td class="border" style="white-space:normal;">
+				<td class="border" style="white-space:normal;">
 		#for $event in $eventlist[$slot]
 			$renderEventBlock.render($event)
 		#end for
 		#if len($eventlist[$slot]) == 0
-									<article class="epg__event event"></article>
+					<article class="epg__event event"></article>
 		#end if
-								</td>
+				</td>
 	#end for
-							</tr>
-#end for
-						</tbody>
-					</table>
 			</tr>
+#end for
 		</tbody>
-	<table>
+	</table>
 </div>
 
 #else
-<div id="fulltbl" class="responsive-table" style="overflow-y:auto;overflow-x:hidden">
-	<table>
-		<tbody>
-			<tr>
-				<td>
-					<table>
-						<tbody>
-							<tr>
-								<td>
+<div id="fulltbl" class="responsive-table" style="overflow: auto; width: 100%;">
+	<div id="tblinner" style="position: relative; width: 30140px; min-width: 30140px;">
+		<div class="timetable">
+			<div class="timetable-now"></div>
+		</div>
 #for $sname, $eventlist in $events.items()
 #set $ref = $channelrefs.get($sname, "")
 #set $qref = $quote($ref, safe=' ~@#$()*!+=:;,.?/\'').replace('%253a//','%3a//')
-									<div class="row epg__row" data-sref="$ref" data-ref="$qref">
-										<div class="epg__channel pull-left">
-											<h2 class="picon"><img src="$(picons[$sname])" title="$(channelnames[$sname])" loading="lazy"></h2>
-											</br><label>$(channelnames[$sname])</label>
-										</div>
-									</div>
-#end for
-								</td>
-							<tr>
-						<tbody>
-					</table>
-				</td>
-				<td>
-					<table class="table-striped">
-						<tbody>
-							<tr style="background-color: initial;">
-								<td>
-									<div style="overflow:auto" id="tblinner">
-										<div class="timetable">
-											<div>
-												<div class="timetable-now"></div>
-											</div>
-										</div>
-#for $sname, $eventlist in $events.items()
-										<div class="row" style="width:30000px;border:solid;border-width:1px 0px 0px 0px;height:60px !important;">
-											<ol class="eventlist">
-	#set $c=0
-	#set $ref = ''
-	#for $event in $eventlist[0]
-		#set pad = 0
-		#if $c == 0
-			#set $ref = quote(event['ref'], safe=' ~@#$()*!+=:;,.?/\'')
-			#set pad = 58 + ($event.begin_timestamp - $first) / 6
-												<li class="event" style="width:${pad}px;border:none;">
-												</li>
-		#end if
-		#set $end = $event.begin_timestamp + $event.duration
-		#set $iscurr = ""
-		#if $event.begin_timestamp < $now and $end > $now
-			#set $iscurr = " curevent"
-		#end if
-												<li class="event" data-ref="$ref" data-id="${event.id}" data-toggle="modal" data-target="#EventModal" onclick="loadeventepg('${event.id}', '$ref');return false;" style="width:${event.duration/6}px;padding:10px;">
-													<a href="javascript:void(0);" class="ui-widget-content ${iscurr}" title="$event['title']">
-														<span class="ename">$event['title']<span class="etimesmall"> ($strftime("%d.%m", $localtime($event['begin_timestamp'])))</span></span>
-														<span class="etime">$strftime("%H:%M", $localtime($event['begin_timestamp'])) - $strftime("%H:%M", $localtime($event['begin_timestamp'] + $event['duration']))</span>
-			#if $event['timerStatus'] != ''
-														<span class="etimer $event['timerStatus']">$tstrings['timer']</span>
+		<div class="epg__timeline-row epg__row" data-sref="$ref" data-ref="$qref">
+			<div class="epg__channel-col">
+				<div class="epg__channel" style="width: 100% !important; margin: 0; padding: 0; text-align: center;">
+					<div class="picon" style="margin: 0 auto;"><img src="$(picons[$sname])" alt="" loading="lazy" onerror="this.style.display='none'"></div>
+					<label style="display: block; font-size: 11px; line-height: 1.2; margin: 2px 0 0 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">$(channelnames[$sname])</label>
+				</div>
+			</div>
+			<div class="epg__events-col">
+				<ol class="eventlist">
+#set $c=0
+#set $ref = ''
+#for $event in $eventlist[0]
+	#set pad = 0
+	#set $dur = $event.duration
+	#if $c == 0
+		#set $ref = quote(event['ref'], safe=' ~@#$()*!+=:;,.?/\'')
+		#if $event.begin_timestamp < $first
+			#set pad = 0
+			#set $dur = ($event.begin_timestamp + $event.duration - $first)
+			#if $dur < 0
+				#set $dur = 0
 			#end if
-													</a>
-												</li>
-		#set $c = $c + 1
-	#end for
-											</ol>
-										</div>
+		#else
+			#set pad = ($event.begin_timestamp - $first) / 6
+		#end if
+		#if $pad > 0
+					<li class="event" style="width:${pad}px;border:none;">
+					</li>
+		#end if
+	#end if
+	#set $end = $event.begin_timestamp + $event.duration
+	#set $iscurr = ""
+	#if $event.begin_timestamp <= $now and $end > $now
+		#set $iscurr = " curevent"
+	#end if
+					<li class="event" data-ref="$ref" data-id="${event.id}" data-toggle="modal" data-target="#EventModal" onclick="loadeventepg('${event.id}', '$ref');return false;" style="width:${dur/6}px;padding:10px;">
+						<a href="javascript:void(0);" class="ui-widget-content ${iscurr}" title="$event['title']">
+							<span class="ename">$event['title']<span class="etimesmall"> ($strftime("%d.%m", $localtime($event['begin_timestamp'])))</span></span>
+							<span class="etime">$strftime("%H:%M", $localtime($event['begin_timestamp'])) - $strftime("%H:%M", $localtime($event['begin_timestamp'] + $event['duration']))</span>
+#if $event['timerStatus'] != ''
+							<span class="etimer $event['timerStatus']">$tstrings['timer']</span>
+#end if
+						</a>
+					</li>
+	#set $c = $c + 1
 #end for
-									</div>
-								</td>
-							<tr>
-						</tbody>
-					</table>
-					
-				</td>
-			<tr>
-		</tbody>
-	<table>
+				</ol>
+			</div>
+		</div>
+#end for
+	</div>
 </div>
 </div>
-
 </div>
 #end if
 <div id="eventdescription"></div>
@@ -349,14 +340,14 @@ if (pos > 0)
 
 #if $day == 0
 
-jQuery(".timetable-now").css('left',151 + pos);
+jQuery(".timetable-now").css('left', (140 + pos) + 'px');
 
 setTimeout(function() {
 	var nowdate = Math.round(+new Date()/1000);
 	var pos = (nowdate - opena);
 	if(pos > 0)
 		pos = pos / 6;
-	jQuery(".timetable-now").css('left',151 + pos);
+	jQuery(".timetable-now").css('left', (140 + pos) + 'px');
 } ,10000);
 
 jQuery(".timetable-now").css('height', jQuery("#tblinner").height());
@@ -381,20 +372,17 @@ function fixTableHeight() {
 	}
 
 #if $mode == 1
-	var new_height = (jQuery("#epgcard").height() *0.85 - jQuery("#epgcardheaderI").height() - jQuery("#epgcardheaderII").height() - jQuery("#navepg").height() - 2*jQuery("#tbl1 thead").height() - addScrollBarWidth - 2);
-	jQuery("#tbl1body").height(new_height + "px");
-	var scrollwidth = (jQuery("#epgcard").width() -40 ) + "px";
+	var new_height = (jQuery("#epgcard").height() * 0.90 - jQuery("#epgcardheaderI").height() - jQuery("#epgcardheaderII").height() - jQuery("#navepg").height() - addScrollBarWidth - 2);
 	var scrollheightI = new_height + 'px';
-	jQuery('#tbl1body').height(scrollheightI);
-	jQuery('#fulltbl').width(scrollwidth);
-
-	jQuery("#fulltbl").height((jQuery("#leftsidemenu").height() - 300) + "px");
-#else
-	var new_height = (jQuery("#epgcard").height() *0.90 - jQuery("#epgcardheaderI").height() - jQuery("#epgcardheaderII").height() - jQuery("#navepg").height() - 2*jQuery("#tbl1 thead").height() - addScrollBarWidth - 2);
-	var scrollheightI = new_height + 'px';
-	var scrollwidth = (jQuery("#epgcard").width() -40 ) + "px";
+	var scrollwidth = (jQuery("#epgcard").width() - 40 ) + "px";
 	jQuery('#fulltbl').height(scrollheightI);
-	jQuery('#tblinner').width(scrollwidth);
+	jQuery('#fulltbl').width(scrollwidth);
+#else
+	var new_height = (jQuery("#epgcard").height() * 0.90 - jQuery("#epgcardheaderI").height() - jQuery("#epgcardheaderII").height() - jQuery("#navepg").height() - addScrollBarWidth - 2);
+	var scrollheightI = new_height + 'px';
+	var scrollwidth = (jQuery("#epgcard").width() - 40 ) + "px";
+	jQuery('#fulltbl').height(scrollheightI);
+	jQuery('#fulltbl').width(scrollwidth);
 #end if
 }
 fixTableHeight();
@@ -430,29 +418,20 @@ jQuery(".plusclick").click(function() {
 			var d = day - 200;
 			var dt = (d==0) ? '' : jQuery(this).html();
 			var pos = 0;
-			jQuery('#tblinner').scrollLeft(0);
-			jQuery("#timescroller li ol .event").each( function (){
-				if (pos == 0) {
-					if (jQuery(this).data("dt") == dt) {
-						if(jQuery(this).position() != undefined)
-							pos = jQuery(this).position().left;
-					}
-				}
-			});
-			
-			if(d=='')
-			{
+			if (d == 0 || d == '') {
 				var l = jQuery(".timetable-now").css('left');
-				pos = parseInt(l.replace('px',''));
+				pos = parseInt(l.replace('px','')) || 0;
+			} else if (d == 1) {
+				pos = 140 + (6 * 3600 / 6);
+			} else if (d == 2) {
+				pos = 140 + (12 * 3600 / 6);
+			} else if (d == 3) {
+				pos = 140 + (20 * 3600 / 6);
 			}
 
-			if(pos>0)
-			{
-				pos-=200;
-				
-				jQuery('#tbl1body').animate({scrollLeft: pos}, 500);
-				
-				 
+			if (pos > 0) {
+				pos -= 160;
+				jQuery('#fulltbl').animate({scrollLeft: Math.max(0, pos)}, 500);
 			}
 		}
 		else if (day > 100)
@@ -486,29 +465,6 @@ jQuery(".plusclick").click(function() {
 		mepgdirect=0;
 		jQuery("#expandmepg").click();
 	}
-	jQuery(".togglescroll").click(function() {
-		if(jQuery('#tblinner').css('overflow-y') == 'hidden') {
-			jQuery('#tblinner').css('overflow-y', '');
-			jQuery('.togglescroll').removeClass('ui-widget-header');
-			SetLSValue('MultiEPGScrollStyle', '1');
-		} else {
-			jQuery('#tblinner').css('overflow-y', 'hidden');
-			jQuery('.togglescroll').addClass('ui-widget-header');
-			SetLSValue('MultiEPGScrollStyle', '0');
-		}
-	});
-
-#if $mode == 2
-	jQuery(function() {
-		if (GetLSValue('MultiEPGScrollStyle', '0')=='0') {
-			jQuery('#tblinner').css('overflow-y', 'hidden');
-			jQuery('.togglescroll').addClass('ui-widget-header');
-		} else {
-			jQuery('#tblinner').css('overflow-y', '');
-			jQuery('.togglescroll').removeClass('ui-widget-header');
-		}
-	});
-#end if
 
 var epgJumpNow = $epg_jump_now;
 var epgJumpActiveService = $epg_jump_active_service;
@@ -518,7 +474,7 @@ function autoJumpTvGuide() {
 	if (epgJumpActiveService && currentServiceRef) {
 		var normActive = currentServiceRef.trim().toLowerCase().replace(/%3a/g, ':');
 		var targetCol = null;
-		jQuery('#tbl2body td.serviceheader').each(function() {
+		jQuery('#tbl2body td.serviceheader, .serviceheader').each(function() {
 			var sref = (jQuery(this).data('sref') || jQuery(this).data('ref') || jQuery(this).attr('data-sref') || jQuery(this).attr('data-ref') || '').toString().trim().toLowerCase().replace(/%3a/g, ':');
 			if (sref && (sref === normActive || normActive.indexOf(sref) === 0 || sref.indexOf(normActive) === 0)) {
 				targetCol = jQuery(this);
@@ -536,14 +492,38 @@ function autoJumpTvGuide() {
 	}
 	#if $day == 0
 	if (epgJumpNow) {
-		var currentHour = (new Date()).getHours();
-		var slotIndex = Math.floor(currentHour / 2);
-		var row = jQuery('#tbl1body tr').eq(slotIndex);
-		if (row.length) {
-			var rowPos = row.position();
-			if (rowPos) {
-				var targetY = jQuery('#tbl1body').scrollTop() + rowPos.top;
-				jQuery('#tbl1body').scrollTop(Math.max(0, targetY));
+		var container = jQuery('#fulltbl');
+		if (container.length) {
+			var containerTop = container.offset().top;
+			var containerScroll = container.scrollTop();
+			var headerHeight = jQuery('.serviceheader').first().outerHeight() || 0;
+			var currentHour = (new Date()).getHours();
+			var slotIndex = Math.floor(currentHour / 2);
+			var targetSlotIndex = slotIndex;
+
+			var nowTs = Math.floor(Date.now() / 1000);
+			var minSlot = Math.max(0, slotIndex - 1);
+			for (var s = minSlot; s <= slotIndex; s++) {
+				var sRow = jQuery('#tbl1body').find('tr').eq(s);
+				var hasRunning = false;
+				sRow.find('.event, .epg__event').each(function() {
+					var b = parseInt(jQuery(this).attr('data-begin')) || 0;
+					var e = parseInt(jQuery(this).attr('data-end')) || 0;
+					if (b > 0 && e > 0 && b <= nowTs && nowTs < e) {
+						hasRunning = true;
+						return false;
+					}
+				});
+				if (hasRunning) {
+					targetSlotIndex = s;
+					break;
+				}
+			}
+
+			var targetRow = jQuery('#tbl1body').find('tr').eq(targetSlotIndex);
+			if (targetRow.length) {
+				var targetY = targetRow.offset().top - containerTop + containerScroll - headerHeight;
+				container.scrollTop(Math.max(0, targetY));
 			}
 		}
 	}
@@ -551,9 +531,9 @@ function autoJumpTvGuide() {
 }
 
 function autoJumpTimeline() {
+	var targetRow = null;
 	if (epgJumpActiveService && currentServiceRef) {
 		var normActive = currentServiceRef.trim().toLowerCase().replace(/%3a/g, ':');
-		var targetRow = null;
 		jQuery('.epg__row').each(function() {
 			var sref = (jQuery(this).data('sref') || jQuery(this).data('ref') || jQuery(this).attr('data-sref') || jQuery(this).attr('data-ref') || '').toString().trim().toLowerCase().replace(/%3a/g, ':');
 			if (sref && (sref === normActive || normActive.indexOf(sref) === 0 || sref.indexOf(normActive) === 0)) {
@@ -572,13 +552,23 @@ function autoJumpTimeline() {
 	}
 	#if $day == 0
 	if (epgJumpNow) {
-		var l = jQuery(".timetable-now").css('left');
-		if (l) {
-			var pos = parseInt(l.replace('px', '')) || 0;
-			if (pos > 0) {
-				pos -= 200;
-				jQuery('#tblinner').scrollLeft(Math.max(0, pos));
+		var container = jQuery('#fulltbl');
+		var targetX = 0;
+		var activeRow = targetRow && targetRow.length ? targetRow : jQuery('.epg__row').first();
+		var currEvent = activeRow.find('.curevent').first().closest('.event');
+		if (!currEvent.length) {
+			currEvent = jQuery('.curevent').first().closest('.event');
+		}
+		if (currEvent.length && currEvent.position()) {
+			targetX = currEvent.position().left;
+		} else {
+			var l = jQuery(".timetable-now").css('left');
+			if (l) {
+				targetX = parseInt(l.replace('px', '')) || 0;
 			}
+		}
+		if (targetX > 0) {
+			container.scrollLeft(Math.max(0, targetX - 160));
 		}
 	}
 	#end if
