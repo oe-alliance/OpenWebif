@@ -99,12 +99,11 @@ jQuery(".plusclick").click(function () {
       jQuery("#tvcontent").html(loadspinner).load('ajax/multiepg?bref=' + multiepg_bref + '&day=' + multiepg_day + '&epgmode=' + multiepg_epgmode + '&week=' + w);
     } else if (day > 199) {
       let d = day - 200;
-      let dt = (d == 0) ? '' : jQuery(this).html();
       let pos = 0;
 
       if (d == 0 || d == '') {
         let l = jQuery(".timetable-now").css('left');
-        pos = parseInt(l.replace('px', '')) || 0;
+        pos = Number.parseInt(l.replace('px', ''), 10) || 0;
       } else if (d == 1) {
         pos = 140 + (6 * 3600 / 6);
       } else if (d == 2) {
