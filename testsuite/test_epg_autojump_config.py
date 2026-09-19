@@ -63,6 +63,8 @@ twisted.__path__ = []
 twisted.version = "20.0.0"
 twisted_web = types.ModuleType('twisted.web')
 twisted_web.__path__ = []
+
+
 class FakeResource(object):
 	def putChild(self, path, child):
 		pass
@@ -113,6 +115,7 @@ cheetah.Template = cheetah_template
 sys.modules['Cheetah'] = cheetah
 sys.modules['Cheetah.Template'] = cheetah_template
 
+
 class LanguageMock(object):
 	def getLanguage(self):
 		return "de_DE"
@@ -154,6 +157,8 @@ screens.ChannelSelection = screens_channelselection
 sys.modules['Screens'] = screens
 sys.modules['Screens.InfoBar'] = screens_infobar
 sys.modules['Screens.ChannelSelection'] = screens_channelselection
+
+
 class MockModule(types.ModuleType):
 	def __getattr__(self, name):
 		m = MagicMock()
@@ -196,7 +201,7 @@ class EpgAutoJumpTestCase(unittest.TestCase):
 	def test_setwebconfig_epg_jump_keys(self):
 		from controllers.web import WebController
 		web = WebController(session=None)
-		
+
 		class FakeRequest(object):
 			def __init__(self, key, val):
 				self.args = {key.encode('utf-8'): [val.encode('utf-8')]}
