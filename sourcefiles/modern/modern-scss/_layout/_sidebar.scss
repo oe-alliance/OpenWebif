@@ -16,7 +16,7 @@ $color-border: #eee;
   position: fixed;
   background: $color-background;
   overflow: hidden;
-  z-index: 11;
+  z-index: 1000;
 }
 
 @mixin truncate {

@@ -172,6 +172,20 @@
 				<input type="checkbox" name="compactepglist"/>
 				#end if
 				</td></tr>
+				<tr><td>$tstrings['epg_jump_now']</td><td>
+				#if $epg_jump_now
+				<input type="checkbox" name="epg_jump_now" checked="checked"/>
+				#else
+				<input type="checkbox" name="epg_jump_now"/>
+				#end if
+				</td></tr>
+				<tr><td>$tstrings['epg_jump_active_service']</td><td>
+				#if $epg_jump_active_service
+				<input type="checkbox" name="epg_jump_active_service" checked="checked"/>
+				#else
+				<input type="checkbox" name="epg_jump_active_service"/>
+				#end if
+				</td></tr>
 				#if $getVar("responsivedesign", "") != ""
 					<tr><td>$tstrings['use_modern_design']</td><td>
 					#if $responsivedesign
@@ -671,6 +685,18 @@ $(function() {
 		var ch = evt.currentTarget.checked;
 		$('input[name=compactepglist]').attr('checked', ch);
 		webapi_execute("/api/setwebconfig?compactepglist=" + ch);
+	});
+
+	$("input[name=epg_jump_now]").click(function(evt) {
+		var ch = evt.currentTarget.checked;
+		$('input[name=epg_jump_now]').attr('checked', ch);
+		webapi_execute("/api/setwebconfig?epg_jump_now=" + ch);
+	});
+
+	$("input[name=epg_jump_active_service]").click(function(evt) {
+		var ch = evt.currentTarget.checked;
+		$('input[name=epg_jump_active_service]').attr('checked', ch);
+		webapi_execute("/api/setwebconfig?epg_jump_active_service=" + ch);
 	});
 
 	$("input[name=responsivedesign]").click(function(evt) {
