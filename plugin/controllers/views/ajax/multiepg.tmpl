@@ -21,16 +21,10 @@
 	.timer { font-weight: bold; font-size: 10px; }
 	#eventdescription { width: 375px; height: auto; position: fixed; top: 205px; left: 350px; z-index: 100; display: none; overflow: auto; }
 	#navepg { margin-bottom: 1px; }
-#if $mode == 1
-	#tbl1 thead td { position: sticky; top: 0; z-index: 10; }
-	.wrapper { overflow: auto; width: 100%; -ms-overflow-style: -ms-autohiding-scrollbar;}
-#else
 	#tbl1 thead tr, #tbl1 tfoot tr { display: block; width: 100%; }
 	#tbl1 tbody { width: 100%; height: 100%; overflow-y: auto; display: block; overflow-x: hidden;}
-	.wrapper { overflow: auto; width: 100%; -ms-overflow-style: -ms-autohiding-scrollbar;}
-	.channel-listing > li > span { position: sticky !important; left: 0; z-index: 10; background-color: inherit; }
-#end if
 	.ui-widget-content.nobg , .ui-widget-header.nobg{ background-image: none; } 
+	.wrapper { overflow-x: auto; width: 100%; -ms-overflow-style: -ms-autohiding-scrollbar;}
 	td.border { width: 190px; }
 	.plus.ui-state-default.lbl { border:none; background:none; cursor:default; color:inherit;}
 	.wrapper::-webkit-scrollbar { width: 12px; }
@@ -119,8 +113,26 @@
 </style>
 
 #set $now = $mktime($localtime())
-#set $bt = $localtime($now + ($day * 86400))
-#set $first = $mktime(($bt.tm_year, $bt.tm_mon, $bt.tm_mday, 0, 0, 0, -1, -1, -1))
+
+#if $day == 0
+#set $first = $now - 3600
+#else
+#set $first = $now + ($day * 3600 * 24)
+#end if
+
+#set $s = $strftime("%S",$localtime($first))
+#set $m = $strftime("%M",$localtime($first))
+#set $offset = $int($m) * 60
+#set $offset = $offset + $int($s)
+
+#if $day > 0
+#set $h = $strftime("%H",$localtime($first))
+#set $offset = $offset + $int($h) * 60 * 60
+#set $offset = $offset + 3600
+#end if
+
+#set $first = $first - $offset
+
 #end if
 
 #if $mode == 1
@@ -176,7 +188,7 @@
 		<li>
 			<span>
 				<div class="togglescroll ui-widget-header">
-					<span class="picon"></span>
+					<h2 class="picon" ></h2>
 					<span></span>
 				</div>
 			</span>
@@ -204,7 +216,7 @@
 			<li>
 				<span class="ui-widget-header">
 					<div>
-						<span class="picon"><img src="$(picons[$sname])" alt="" onerror="this.style.display='none'" /></span>
+						<h2 class="picon" ><img src="$(picons[$sname])" title="$(channelnames[$sname])" /></h2>
 						<span>$(channelnames[$sname])</span>
 					</div>
 				</span>
@@ -213,30 +225,21 @@
 					#set $ref = ''
 					#for $event in $eventlist[0]
 					#set pad = 0
-					#set $dur = $event.duration
 					#if $c == 0
 						#set $ref = quote(event['ref'], safe=' ~@#$()*!+=:;,.?/\'').replace('%253a//','%3a//')
-						#if $event.begin_timestamp < $first
-							#set pad = 141
-							#set $dur = ($event.begin_timestamp + $event.duration - $first)
-							#if $dur < 0
-								#set $dur = 0
-							#end if
-						#else
-							#set pad = 141 + ($event.begin_timestamp - $first) / 6
-						#end if
+						#set pad = 141 + ($event.begin_timestamp - $first) / 6
 						<li class="event" style="width:${pad}px;">
 						</li>
 					#end if
 					#set $end = $event.begin_timestamp + $event.duration
 					#set $iscurr = ""
-					#if $event.begin_timestamp <= $now and $end > $now
-						#set $iscurr = " ui-state-hover curevent"
+					#if $event.begin_timestamp < $now and $end > $now
+						#set $iscurr = " ui-state-hover"
 					#end if
 					#if $event['timerStatus'] != ''
-						#set $iscurr = $iscurr + " ui-state-hover"
+						#set $iscurr = " ui-state-hover"
 					#end if
-					<li class="event" data-ref="$ref" data-id="${event.id}" style="width:${dur/6}px;" >
+					<li class="event" data-ref="$ref" data-id="${event.id}" style="width:${event.duration/6}px;" >
 						<a href="#" class="ui-widget-content ${iscurr}" title="$event['title']">
 						<span class="ename">$event['title']</span>
 						<span class="etime">$strftime("%H:%M", $localtime($event['begin_timestamp']))</span>
@@ -267,19 +270,19 @@ if (pos>0)
 
 #if $day == 0
 
-\$(".timetable-now").css('left', 141 + pos);
+\$(".timetable-now").css('left',151+pos);
 
 setTimeout(function() {
 	var nowdate = Math.round(+new Date()/1000);
 	var pos = (nowdate - opena);
-	if(pos > 0)
+	if(pos>0)
 		pos = pos / 6;
-	\$(".timetable-now").css('left', 141 + pos);
+	\$(".timetable-now").css('left',151+pos);
 } ,10000);
 
-\$(".timetable-now").css('height', \$("#tblinner").height());
+\$(".timetable-now").css('height',\$("#tblinner").height());
 #else
-\$(".timetable-now").css('height', '0');
+\$(".timetable-now").css('height','0');
 #end if
 
 #end if
@@ -299,16 +302,14 @@ function fixTableHeight() {
 	}
 	
 #if $mode == 1
-	var new_height = (\$("#tvcontent").height() - \$("#navepg").height() - addScrollBarWidth - 2);
-	\$(".wrapper").height(new_height + "px");
+	\$("#tbl1body").height( (\$("#tvcontent").height() - \$("#navepg").height() - 2*\$("#tbl1 thead").height() - addScrollBarWidth - 2) + "px");
 #else
-	var new_height = (\$("#tvcontent").height() - \$("#navepg").height() - 20 - addScrollBarWidth - 2);
-	\$(".wrapper").height(new_height + "px");
+	\$("#tbl1body").height( (\$("#tvcontent").height() - \$("#navepg").height() - 20 - addScrollBarWidth - 2) + "px");
 #end if
 	if (!\$('#toolbar-header').is(':visible')) {
 		var dh = \$(window).height();
 		\$("#tvcontentmain").height(dh-80);
-		\$(".wrapper").height(dh-215);
+		\$("#tbl1body").height(dh-215);
 	}
 }
 fixTableHeight();
@@ -350,20 +351,27 @@ fixTableHeight();
 			var d = day - 200;
 			var dt = (d==0) ? '' : \$(this).html();
 			var pos = 0;
-			if (d == 0 || d == '') {
+			\$('#tblinner').scrollLeft(0);
+			
+			\$("#timescroller li ol .event").each( function (){
+				if (pos == 0) {
+					if (\$(this).data("dt") == dt) {
+						if(\$(this).position() != undefined)
+							pos = \$(this).position().left;
+					}
+				}
+			});
+			
+			if(d=='')
+			{
 				var l = \$(".timetable-now").css('left');
-				pos = parseInt(l.replace('px','')) || 0;
-			} else if (d == 1) {
-				pos = 141 + (6 * 3600 / 6);
-			} else if (d == 2) {
-				pos = 141 + (12 * 3600 / 6);
-			} else if (d == 3) {
-				pos = 141 + (20 * 3600 / 6);
+				pos = parseInt(l.replace('px',''));
 			}
 			
-			if (pos > 0) {
-				pos -= 160;
-				\$('.wrapper').animate({scrollLeft: Math.max(0, pos)}, 500);
+			if(pos>0)
+			{
+				pos-=200;
+				\$('#tblinner').animate({scrollLeft: pos}, 500);
 			}
 		}
 		else if (day > 100)
@@ -398,6 +406,33 @@ if(\$("#header").is(':hidden')) {
 if(mepgdirect==1) {
 	mepgdirect=0;\$("#expandmepg").click();
 }
+\$(".togglescroll").click(function() {
+
+	if(\$('#tblinner').css('overflow-y')=='hidden') {
+		\$('#tblinner').css('overflow-y','');
+		\$('.togglescroll').removeClass('ui-widget-header');
+		SetLSValue('MultiEPGScrollStyle','1');
+	}else{
+		\$('#tblinner').css('overflow-y','hidden');
+		\$('.togglescroll').addClass('ui-widget-header');
+		SetLSValue('MultiEPGScrollStyle','0');
+	}
+});
+#if $mode == 2
+\$(function() {
+
+	if(GetLSValue('MultiEPGScrollStyle','0')=='0') {
+		\$('#tblinner').css('overflow-y','hidden');
+		\$('.togglescroll').addClass('ui-widget-header');
+	}
+	else
+	{
+		\$('#tblinner').css('overflow-y','');
+		\$('.togglescroll').removeClass('ui-widget-header');
+	}
+
+});
+#end if
 
 var epgJumpNow = $epg_jump_now;
 var epgJumpActiveService = $epg_jump_active_service;
@@ -425,38 +460,14 @@ function autoJumpTvGuide() {
 	}
 	#if $day == 0
 	if (epgJumpNow) {
-		var container = \$('.wrapper');
-		if (container.length) {
-			var containerTop = container.offset().top;
-			var containerScroll = container.scrollTop();
-			var headerHeight = \$('#tbl1 thead').outerHeight() || 0;
-			var currentHour = (new Date()).getHours();
-			var slotIndex = Math.floor(currentHour / 2);
-			var targetSlotIndex = slotIndex;
-
-			var nowTs = Math.floor(Date.now() / 1000);
-			var minSlot = Math.max(0, slotIndex - 1);
-			for (var s = minSlot; s <= slotIndex; s++) {
-				var sRow = \$('#tbl1body').find('tr').eq(s);
-				var hasRunning = false;
-				sRow.find('.event, .epg__event').each(function() {
-					var b = parseInt(\$(this).attr('data-begin')) || 0;
-					var e = parseInt(\$(this).attr('data-end')) || 0;
-					if (b > 0 && e > 0 && b <= nowTs && nowTs < e) {
-						hasRunning = true;
-						return false;
-					}
-				});
-				if (hasRunning) {
-					targetSlotIndex = s;
-					break;
-				}
-			}
-
-			var targetRow = \$('#tbl1body').find('tr').eq(targetSlotIndex);
-			if (targetRow.length) {
-				var targetY = targetRow.offset().top - containerTop + containerScroll - headerHeight;
-				container.scrollTop(Math.max(0, targetY));
+		var currentHour = (new Date()).getHours();
+		var slotIndex = Math.floor(currentHour / 2);
+		var row = \$('#tbl1body tr').eq(slotIndex);
+		if (row.length) {
+			var rowPos = row.position();
+			if (rowPos) {
+				var targetY = \$('#tbl1body').scrollTop() + rowPos.top;
+				\$('#tbl1body').scrollTop(Math.max(0, targetY));
 			}
 		}
 	}
@@ -464,9 +475,9 @@ function autoJumpTvGuide() {
 }
 
 function autoJumpTimeline() {
-	var targetRow = null;
 	if (epgJumpActiveService && currentServiceRef) {
 		var normActive = currentServiceRef.trim().toLowerCase().replace(/%3a/g, ':');
+		var targetRow = null;
 		\$('ol.channel-listing').each(function() {
 			var sref = (\$(this).data('sref') || \$(this).data('ref') || \$(this).attr('data-sref') || \$(this).attr('data-ref') || '').toString().trim().toLowerCase().replace(/%3a/g, ':');
 			if (sref && (sref === normActive || normActive.indexOf(sref) === 0 || sref.indexOf(normActive) === 0)) {
@@ -475,7 +486,7 @@ function autoJumpTimeline() {
 			}
 		});
 		if (targetRow && targetRow.length) {
-			var container = \$('.wrapper');
+			var container = \$('#tbl1body');
 			var rowPos = targetRow.position();
 			if (rowPos) {
 				var targetY = container.scrollTop() + rowPos.top - (container.height() / 2) + (targetRow.outerHeight() / 2);
@@ -485,23 +496,13 @@ function autoJumpTimeline() {
 	}
 	#if $day == 0
 	if (epgJumpNow) {
-		var container = \$('.wrapper');
-		var targetX = 0;
-		var activeRow = targetRow && targetRow.length ? targetRow : \$('ol.channel-listing').first();
-		var currEvent = activeRow.find('.curevent, .ui-state-hover').first().closest('.event');
-		if (!currEvent.length) {
-			currEvent = \$('.curevent, .ui-state-hover').first().closest('.event');
-		}
-		if (currEvent.length && currEvent.position()) {
-			targetX = currEvent.position().left;
-		} else {
-			var l = \$(".timetable-now").css('left');
-			if (l) {
-				targetX = parseInt(l.replace('px', '')) || 0;
+		var l = \$(".timetable-now").css('left');
+		if (l) {
+			var pos = parseInt(l.replace('px', '')) || 0;
+			if (pos > 0) {
+				pos -= 200;
+				\$('#tblinner').scrollLeft(Math.max(0, pos));
 			}
-		}
-		if (targetX > 0) {
-			container.scrollLeft(Math.max(0, targetX - 160));
 		}
 	}
 	#end if

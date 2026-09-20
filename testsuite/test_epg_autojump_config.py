@@ -185,11 +185,8 @@ class ConfigItemMock(object):
 
 class EpgAutoJumpTestCase(unittest.TestCase):
 	def test_i18n_keys(self):
-		self.assertIn('epg_autojump', tstrings)
 		self.assertIn('epg_jump_now', tstrings)
 		self.assertIn('epg_jump_active_service', tstrings)
-		self.assertNotIn('epg_jump_keep_running_visible', tstrings)
-		self.assertEqual(tstrings['epg_autojump'], "EPG Auto-Jump")
 		self.assertEqual(tstrings['epg_jump_now'], "Jump to current time in EPG")
 		self.assertEqual(tstrings['epg_jump_active_service'], "Jump to active channel in EPG")
 

@@ -2914,13 +2914,9 @@ msgid "zap"
 msgstr "Umschalten"
 
 #: ../plugin/controllers/i18n.py:623
-msgid "EPG Auto-Jump"
-msgstr "EPG Auto-Sprung"
-
-#: ../plugin/controllers/i18n.py:624
 msgid "Jump to current time in EPG"
 msgstr "Beim Öffnen der EPG-Seite zur aktuellen Uhrzeit springen"
 
-#: ../plugin/controllers/i18n.py:625
+#: ../plugin/controllers/i18n.py:624
 msgid "Jump to active channel in EPG"
 msgstr "Beim Öffnen zum aktiven Sender springen"

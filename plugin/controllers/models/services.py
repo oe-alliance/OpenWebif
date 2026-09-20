@@ -21,7 +21,7 @@
 from datetime import datetime
 from collections import OrderedDict
 from re import search, sub, IGNORECASE
-from os.path import isfile, join as pathjoin, basename
+from os.path import isfile, join as pathjoin
 from urllib.parse import quote, unquote
 from time import time, localtime, strftime, mktime
 from unicodedata import normalize
@@ -1207,7 +1207,9 @@ def getMultiEpg(self, ref, begintime=-1, endtime=None, mode=1):
 			}
 
 			ev['timerStatus'] = timer['basicStatus'] if timer else ""
-			ev['duration'] = event[6]
+
+			if mode == 2:
+				ev['duration'] = event[6]
 
 			channel = filterName(event[5])
 
@@ -1241,13 +1243,8 @@ def getPicon(sname, pp=None, defaultpicon=True):
 	if pp is None:
 		pp = globalVars.piconPath
 	if pp is not None:
-		if getPiconName is not None and sname:  # use distro own picon resolver
-			p = getPiconName(sname)
-			if p and isfile(p):
-				if pp and p.startswith(pp):
-					return p.replace(pp, PIC)
-				return pathjoin(PIC, basename(p))
-			return DEFAULTPIC if defaultpicon else None
+		if getPiconName is not None:  # use distro own picon resolver
+			return sname and (p := getPiconName(sname)) is not None and p.replace(pp, PIC) or (DEFAULTPIC if defaultpicon else None)
 
 		# remove URL part
 		if ("://" in sname) or ("%3a//" in sname) or ("%3A//" in sname):
