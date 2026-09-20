@@ -142,9 +142,13 @@
 <thead>
 <tr>
 	#for $sname, $eventlist in $events.items()
-	#set $ref = $channelrefs.get($sname, "")
-	#set $qref = $quote($ref, safe=' ~@#$()*!+=:;,.?/\'').replace('%253a//','%3a//')
-	<td class="border" data-sref="$ref" data-ref="$qref"><div class="service ui-widget-header" data-ref="$qref" data-sref="$ref"><img src="$(picons[$sname])" /> $sname</div></td>
+	#set $evl = $eventlist[0]
+	#set $ref= ""
+	#if $evl
+		#set $ev=$evl[0]
+		#set $ref = "data-ref='" + $ev.ref.replace('%253a//','%3a//') + "'"
+	#end if
+	<td class="border"><div class="service ui-widget-header" $ref><img src="$(picons[$sname])" /> $sname</div></td>
 	#end for
 </tr>
 </thead>
@@ -167,9 +171,7 @@
 <tfoot>
 <tr>
 	#for $sname, $eventlist in $events.items()
-	#set $ref = $channelrefs.get($sname, "")
-	#set $qref = $quote($ref, safe=' ~@#$()*!+=:;,.?/\'').replace('%253a//','%3a//')
-	<td class="border" data-sref="$ref" data-ref="$qref"><div class="service ui-widget-header" data-ref="$qref" data-sref="$ref"><img src="$(picons[$sname])" /> $(channelnames[$sname])</div></td>
+	<td class="border"><div class="service ui-widget-header"><img src="$(picons[$sname])" /> $(channelnames[$sname])</div></td>
 	#end for
 </tr>
 </tfoot>
@@ -210,9 +212,7 @@
 	</ol>
 
 	#for $sname, $eventlist in $events.items()
-	#set $ref = $channelrefs.get($sname, "")
-	#set $qref = $quote($ref, safe=' ~@#$()*!+=:;,.?/\'').replace('%253a//','%3a//')
-		<ol class="channel-listing" data-sref="$ref" data-ref="$qref">
+		<ol class="channel-listing">
 			<li>
 				<span class="ui-widget-header">
 					<div>
@@ -228,7 +228,7 @@
 					#if $c == 0
 						#set $ref = quote(event['ref'], safe=' ~@#$()*!+=:;,.?/\'').replace('%253a//','%3a//')
 						#set pad = 141 + ($event.begin_timestamp - $first) / 6
-						<li class="event" style="width:${pad}px;">
+						<li class="event" style=;width:${pad}px;">
 						</li>
 					#end if
 					#set $end = $event.begin_timestamp + $event.duration
@@ -433,86 +433,4 @@ if(mepgdirect==1) {
 
 });
 #end if
-
-var epgJumpNow = $epg_jump_now;
-var epgJumpActiveService = $epg_jump_active_service;
-var currentServiceRef = "$current_service_ref";
-
-function autoJumpTvGuide() {
-	if (epgJumpActiveService && currentServiceRef) {
-		var normActive = currentServiceRef.trim().toLowerCase().replace(/%3a/g, ':');
-		var targetCol = null;
-		\$('#tbl1 thead td.border').each(function() {
-			var sref = (\$(this).data('sref') || \$(this).data('ref') || \$(this).attr('data-sref') || \$(this).attr('data-ref') || '').toString().trim().toLowerCase().replace(/%3a/g, ':');
-			if (sref && (sref === normActive || normActive.indexOf(sref) === 0 || sref.indexOf(normActive) === 0)) {
-				targetCol = \$(this);
-				return false;
-			}
-		});
-		if (targetCol && targetCol.length) {
-			var wrapper = \$('.wrapper');
-			var colPos = targetCol.position();
-			if (colPos) {
-				var targetX = wrapper.scrollLeft() + colPos.left - (wrapper.width() / 2) + (targetCol.outerWidth() / 2);
-				wrapper.scrollLeft(Math.max(0, targetX));
-			}
-		}
-	}
-	#if $day == 0
-	if (epgJumpNow) {
-		var currentHour = (new Date()).getHours();
-		var slotIndex = Math.floor(currentHour / 2);
-		var row = \$('#tbl1body tr').eq(slotIndex);
-		if (row.length) {
-			var rowPos = row.position();
-			if (rowPos) {
-				var targetY = \$('#tbl1body').scrollTop() + rowPos.top;
-				\$('#tbl1body').scrollTop(Math.max(0, targetY));
-			}
-		}
-	}
-	#end if
-}
-
-function autoJumpTimeline() {
-	if (epgJumpActiveService && currentServiceRef) {
-		var normActive = currentServiceRef.trim().toLowerCase().replace(/%3a/g, ':');
-		var targetRow = null;
-		\$('ol.channel-listing').each(function() {
-			var sref = (\$(this).data('sref') || \$(this).data('ref') || \$(this).attr('data-sref') || \$(this).attr('data-ref') || '').toString().trim().toLowerCase().replace(/%3a/g, ':');
-			if (sref && (sref === normActive || normActive.indexOf(sref) === 0 || sref.indexOf(normActive) === 0)) {
-				targetRow = \$(this);
-				return false;
-			}
-		});
-		if (targetRow && targetRow.length) {
-			var container = \$('#tbl1body');
-			var rowPos = targetRow.position();
-			if (rowPos) {
-				var targetY = container.scrollTop() + rowPos.top - (container.height() / 2) + (targetRow.outerHeight() / 2);
-				container.scrollTop(Math.max(0, targetY));
-			}
-		}
-	}
-	#if $day == 0
-	if (epgJumpNow) {
-		var l = \$(".timetable-now").css('left');
-		if (l) {
-			var pos = parseInt(l.replace('px', '')) || 0;
-			if (pos > 0) {
-				pos -= 200;
-				\$('#tblinner').scrollLeft(Math.max(0, pos));
-			}
-		}
-	}
-	#end if
-}
-
-setTimeout(function() {
-	#if $mode == 1
-	autoJumpTvGuide();
-	#else
-	autoJumpTimeline();
-	#end if
-}, 100);
 </script>

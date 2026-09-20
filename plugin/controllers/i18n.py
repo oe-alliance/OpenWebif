@@ -619,8 +619,6 @@ tstrings = {
 	'script_completed': _("Script completed"),
 	'saving': _("Saving..."),
 	'show_description': _("Show description"),
-	'transcoding_mode': _("Transcoding Mode"),
-	'epg_jump_now': _("Jump to current time in EPG"),
-	'epg_jump_active_service': _("Jump to active channel in EPG")
+	'transcoding_mode': _("Transcoding Mode")
 
 }

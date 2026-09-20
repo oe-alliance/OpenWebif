@@ -222,10 +222,14 @@
 		<tbody id="tbl2body">
 			<tr style="background-color:#bababa;">
 #for $sname, $eventlist in $events.items()
-#set $ref = $channelrefs.get($sname, "")
-#set $qref = $quote($ref, safe=' ~@#$()*!+=:;,.?/\'').replace('%253a//','%3a//')
-				<td class="serviceheader" data-sref="$ref" data-ref="$qref">
-					<div class="service event" data-sref="$ref" data-ref="$qref"><img src="$(picons[$sname])" loading="lazy">$(channelnames[$sname])</div>
+#set $evl = $eventlist[0]
+#set $ref= ""
+#if $evl
+	#set $ev=$evl[0]
+	#set $ref = "data-ref='" + $ev.ref + "'"
+#end if
+				<td class="serviceheader">
+					<div class="service event" $ref><img src="$(picons[$sname])" loading="lazy">$(channelnames[$sname])</div>
 				</td>
 #end for
 			</tr>
@@ -265,9 +269,7 @@
 							<tr>
 								<td>
 #for $sname, $eventlist in $events.items()
-#set $ref = $channelrefs.get($sname, "")
-#set $qref = $quote($ref, safe=' ~@#$()*!+=:;,.?/\'').replace('%253a//','%3a//')
-									<div class="row epg__row" data-sref="$ref" data-ref="$qref">
+									<div class="row epg__row">
 										<div class="epg__channel pull-left">
 											<h2 class="picon"><img src="$(picons[$sname])" title="$(channelnames[$sname])" loading="lazy"></h2>
 											</br><label>$(channelnames[$sname])</label>
@@ -510,85 +512,4 @@ jQuery(".plusclick").click(function() {
 	});
 #end if
 
-var epgJumpNow = $epg_jump_now;
-var epgJumpActiveService = $epg_jump_active_service;
-var currentServiceRef = "$current_service_ref";
-
-function autoJumpTvGuide() {
-	if (epgJumpActiveService && currentServiceRef) {
-		var normActive = currentServiceRef.trim().toLowerCase().replace(/%3a/g, ':');
-		var targetCol = null;
-		jQuery('#tbl2body td.serviceheader').each(function() {
-			var sref = (jQuery(this).data('sref') || jQuery(this).data('ref') || jQuery(this).attr('data-sref') || jQuery(this).attr('data-ref') || '').toString().trim().toLowerCase().replace(/%3a/g, ':');
-			if (sref && (sref === normActive || normActive.indexOf(sref) === 0 || sref.indexOf(normActive) === 0)) {
-				targetCol = jQuery(this);
-				return false;
-			}
-		});
-		if (targetCol && targetCol.length) {
-			var scroller = jQuery('#fulltbl');
-			var colPos = targetCol.position();
-			if (colPos) {
-				var targetX = scroller.scrollLeft() + colPos.left - (scroller.width() / 2) + (targetCol.outerWidth() / 2);
-				scroller.scrollLeft(Math.max(0, targetX));
-			}
-		}
-	}
-	#if $day == 0
-	if (epgJumpNow) {
-		var currentHour = (new Date()).getHours();
-		var slotIndex = Math.floor(currentHour / 2);
-		var row = jQuery('#tbl1body tr').eq(slotIndex);
-		if (row.length) {
-			var rowPos = row.position();
-			if (rowPos) {
-				var targetY = jQuery('#tbl1body').scrollTop() + rowPos.top;
-				jQuery('#tbl1body').scrollTop(Math.max(0, targetY));
-			}
-		}
-	}
-	#end if
-}
-
-function autoJumpTimeline() {
-	if (epgJumpActiveService && currentServiceRef) {
-		var normActive = currentServiceRef.trim().toLowerCase().replace(/%3a/g, ':');
-		var targetRow = null;
-		jQuery('.epg__row').each(function() {
-			var sref = (jQuery(this).data('sref') || jQuery(this).data('ref') || jQuery(this).attr('data-sref') || jQuery(this).attr('data-ref') || '').toString().trim().toLowerCase().replace(/%3a/g, ':');
-			if (sref && (sref === normActive || normActive.indexOf(sref) === 0 || sref.indexOf(normActive) === 0)) {
-				targetRow = jQuery(this);
-				return false;
-			}
-		});
-		if (targetRow && targetRow.length) {
-			var container = jQuery('#fulltbl');
-			var rowPos = targetRow.position();
-			if (rowPos) {
-				var targetY = container.scrollTop() + rowPos.top - (container.height() / 2) + (targetRow.outerHeight() / 2);
-				container.scrollTop(Math.max(0, targetY));
-			}
-		}
-	}
-	#if $day == 0
-	if (epgJumpNow) {
-		var l = jQuery(".timetable-now").css('left');
-		if (l) {
-			var pos = parseInt(l.replace('px', '')) || 0;
-			if (pos > 0) {
-				pos -= 200;
-				jQuery('#tblinner').scrollLeft(Math.max(0, pos));
-			}
-		}
-	}
-	#end if
-}
-
-setTimeout(function() {
-	#if $mode == 1
-	autoJumpTvGuide();
-	#else
-	autoJumpTimeline();
-	#end if
-}, 100);
 </script>

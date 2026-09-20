@@ -25,7 +25,6 @@ from time import mktime, localtime
 from Components.config import config
 from Components.SystemInfo import BoxInfo
 from Tools.Directories import fileExists
-import NavigationInstance
 
 from .models.services import getBouquets, getChannels, getAllServices, getSatellites, getProviders, getEventDesc, getSimilarEpg, getChannelEpg, getSearchEpg, getCurrentFullInfo, getMultiEpg, getEvent
 from .models.info import getInfo
@@ -277,8 +276,6 @@ class AjaxController(BaseController):
 		ret['showepghistory'] = config.OpenWebif.webcache.showepghistory.value
 		ret['compacttimerlist'] = config.OpenWebif.webcache.compacttimerlist.value
 		ret['compactepglist'] = config.OpenWebif.webcache.compactepglist.value
-		ret['epg_jump_now'] = config.OpenWebif.webcache.epg_jump_now.value
-		ret['epg_jump_active_service'] = config.OpenWebif.webcache.epg_jump_active_service.value
 		ret['allowipkupload'] = config.OpenWebif.allow_upload_ipk.value
 		ret['smallremotes'] = [(x, _('%s Style') % x.capitalize()) for x in config.OpenWebif.webcache.smallremote.choices]
 		ret['smallremote'] = config.OpenWebif.webcache.smallremote.value
@@ -335,14 +332,6 @@ class AjaxController(BaseController):
 		epg['week'] = week
 		epg['mode'] = mode
 		epg['epgmode'] = epgmode
-		epg['epg_jump_now'] = 1 if config.OpenWebif.webcache.epg_jump_now.value else 0
-		epg['epg_jump_active_service'] = 1 if config.OpenWebif.webcache.epg_jump_active_service.value else 0
-		current_service_ref = ""
-		if NavigationInstance.instance:
-			playingref = NavigationInstance.instance.getCurrentlyPlayingServiceReference()
-			if playingref is not None:
-				current_service_ref = playingref.toString()
-		epg['current_service_ref'] = current_service_ref
 		return epg
 
 	def P_epgr(self, request):

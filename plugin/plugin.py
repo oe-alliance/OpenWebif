@@ -143,8 +143,6 @@ config.OpenWebif.webcache.rcu_full_view = ConfigYesNo(default=False)
 config.OpenWebif.webcache.minepglist = ConfigYesNo(default=False)
 config.OpenWebif.webcache.mintimerlist = ConfigYesNo(default=False)
 config.OpenWebif.webcache.minmovielist = ConfigYesNo(default=False)
-config.OpenWebif.webcache.epg_jump_now = ConfigYesNo(default=False)
-config.OpenWebif.webcache.epg_jump_active_service = ConfigYesNo(default=False)
 
 config.OpenWebif.autotimer_regex_searchtype = ConfigYesNo(default=False)  # TODO
 
