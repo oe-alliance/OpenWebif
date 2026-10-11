@@ -22,6 +22,7 @@ from os import popen, statvfs
 from os.path import exists, isdir, realpath
 from time import localtime, strftime
 from twisted import version
+from twisted.internet.threads import deferToThread
 from socket import has_ipv6, socket, AF_INET6, AF_INET, SOCK_DGRAM, inet_ntop, inet_pton, getaddrinfo
 
 from enigma import eDVBVolumecontrol, eServiceCenter, eServiceReference, getEnigmaVersionString
@@ -42,6 +43,7 @@ from ..utilities import removeBad, removeBad2
 from .epg import EPG
 
 STATICBOXINFO = None
+SHARES = []
 
 HASIPV6ROUTE = None
 
@@ -202,6 +204,90 @@ def formatIp(ip):
 	if ip is None or len(ip) != 4:
 		return "0.0.0.0"  # nosec
 	return f"{ip[0]}.{ip[1]}.{ip[2]}.{ip[3]}"
+
+
+def getShares():
+	shares = []
+	autofiles = ("/etc/auto.network",)
+	for autofs in autofiles:
+		if exists(autofs):
+			method = "autofs"
+			for line in open(autofs).readlines():
+				if not line.startswith("#"):
+					# Replace escaped spaces that can appear inside credentials with underscores
+					# Not elegant but we wouldn't want to expose credentials on the OWIF anyways
+					tmpline = line.replace(r"\ ", "_")
+					tmp = tmpline.split()
+					if len(tmp) != 3:
+						continue
+					name = tmp[0].strip()
+					ntype = "unknown"
+					if "cifs" in tmp[1]:
+						# Linux still defaults to SMBv1
+						ntype = "SMBv1.0"
+						settings = tmp[1].split(",")
+						for setting in settings:
+							if setting.startswith("vers="):
+								ntype = setting.replace("vers=", "SMBv")
+					elif "nfs" in tmp[1]:
+						ntype = "NFS"
+
+					# Default is r/w
+					mode = _("r/w")
+					settings = tmp[1].split(",")
+					for setting in settings:
+						if setting == "ro":
+							mode = _("r/o")
+
+					uri = tmp[2]
+					parts = []
+					parts = tmp[2].split(":")
+					if parts[0] == "":
+						server = uri.split("/")[2]
+						uri = uri.strip()[1:]
+					else:
+						server = parts[0]
+
+					ipaddress = None
+					if server:
+						# Will fail on literal IPs
+						try:
+							# Try IPv6 first, as will Linux
+							if hasIPv6Route():
+								tmpaddress = None
+								tmpaddress = getaddrinfo(server, 0, AF_INET6)
+								if tmpaddress:
+									ipaddress = f"[{list(tmpaddress)[0][4][0]}]"
+							# Use IPv4 if IPv6 fails or is not present
+							if ipaddress is None:
+								tmpaddress = None
+								tmpaddress = getaddrinfo(server, 0, AF_INET)
+								if tmpaddress:
+									ipaddress = list(tmpaddress)[0][4][0]
+						except:  # nosec # noqa: E722
+							pass
+
+					friendlyaddress = server
+					if ipaddress is not None and ipaddress != server:
+						friendlyaddress = f"{server} ({ipaddress})"
+					shares.append({
+						"name": name,
+						"method": method,
+						"type": ntype,
+						"mode": mode,
+						"path": uri,
+						"host": server,
+						"ipaddress": ipaddress,
+						"friendlyaddress": friendlyaddress
+					})
+	return shares
+
+
+def updateShares():
+	def setShares(shares):
+		SHARES[:] = shares  # Update in place, STATICBOXINFO holds a reference
+
+	deferToThread(getShares).addCallback(setShares)
 
 
 def getInfo(session=None, need_fullinfo=False):
@@ -436,79 +522,7 @@ def getInfo(session=None, need_fullinfo=False):
 			"friendlycapacity": _("%s free / %s total") % (free, f"{size} ({iecsize})")
 		})
 
-	info["shares"] = []
-	autofiles = ("/etc/auto.network",)
-	for autofs in autofiles:
-		if exists(autofs):
-			method = "autofs"
-			for line in open(autofs).readlines():
-				if not line.startswith("#"):
-					# Replace escaped spaces that can appear inside credentials with underscores
-					# Not elegant but we wouldn't want to expose credentials on the OWIF anyways
-					tmpline = line.replace(r"\ ", "_")
-					tmp = tmpline.split()
-					if len(tmp) != 3:
-						continue
-					name = tmp[0].strip()
-					ntype = "unknown"
-					if "cifs" in tmp[1]:
-						# Linux still defaults to SMBv1
-						ntype = "SMBv1.0"
-						settings = tmp[1].split(",")
-						for setting in settings:
-							if setting.startswith("vers="):
-								ntype = setting.replace("vers=", "SMBv")
-					elif "nfs" in tmp[1]:
-						ntype = "NFS"
-
-					# Default is r/w
-					mode = _("r/w")
-					settings = tmp[1].split(",")
-					for setting in settings:
-						if setting == "ro":
-							mode = _("r/o")
-
-					uri = tmp[2]
-					parts = []
-					parts = tmp[2].split(":")
-					if parts[0] == "":
-						server = uri.split("/")[2]
-						uri = uri.strip()[1:]
-					else:
-						server = parts[0]
-
-					ipaddress = None
-					if server:
-						# Will fail on literal IPs
-						try:
-							# Try IPv6 first, as will Linux
-							if hasIPv6Route():
-								tmpaddress = None
-								tmpaddress = getaddrinfo(server, 0, AF_INET6)
-								if tmpaddress:
-									ipaddress = f"[{list(tmpaddress)[0][4][0]}]"
-							# Use IPv4 if IPv6 fails or is not present
-							if ipaddress is None:
-								tmpaddress = None
-								tmpaddress = getaddrinfo(server, 0, AF_INET)
-								if tmpaddress:
-									ipaddress = list(tmpaddress)[0][4][0]
-						except:  # nosec # noqa: E722
-							pass
-
-					friendlyaddress = server
-					if ipaddress is not None and ipaddress != server:
-						friendlyaddress = f"{server} ({ipaddress})"
-					info["shares"].append({
-						"name": name,
-						"method": method,
-						"type": ntype,
-						"mode": mode,
-						"path": uri,
-						"host": server,
-						"ipaddress": ipaddress,
-						"friendlyaddress": friendlyaddress
-					})
+	info["shares"] = SHARES
 	# TODO: fstab
 
 	info["transcoding"] = globalVars.transcoding

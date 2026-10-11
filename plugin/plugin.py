@@ -26,6 +26,7 @@ from enigma import getDesktop
 from .controllers.defaults import EXT_EVENT_INFO_SOURCE, getIP, setDebugEnabled, PLUGIN_NAME, PLUGIN_DESCRIPTION, TRANSCODIDINGPROXY, globalVars
 
 from .httpserver import HttpdStart, HttpdStop, HttpdRestart
+from .controllers.models.info import updateShares
 from .controllers.i18n import _
 
 # not used redmond -> original , trontastic , ui-lightness
@@ -198,6 +199,7 @@ def startSession(reason, session):
 		global_session = session
 		HttpdStart(global_session)
 		globalVars.initSession()
+		updateShares()
 
 
 def main_menu(menuid, **kwargs):
