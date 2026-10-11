@@ -96,11 +96,10 @@ def getPublicPath(file=""):
 
 
 def getIP():
-	ifaces = iNetwork.getConfiguredAdapters()
-	if len(ifaces):
-		ip_list = iNetwork.getAdapterAttribute(ifaces[0], "ip")  # use only the first configured interface
-		if ip_list:
-			return f"{ip_list[0]}.{ip_list[1]}.{ip_list[2]}.{ip_list[3]}"
+	for iface in iNetwork.getConfiguredAdapters():
+		ip = iNetwork.getAdapterAttribute(iface, "ip")
+		if ip and any(ip):  # Skip adapters without IPv4, e.g. eth0 without link
+			return ".".join(str(x) for x in ip)
 	return None
 
 
