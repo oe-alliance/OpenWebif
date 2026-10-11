@@ -125,9 +125,10 @@ class API {
     }
   }
 
-  async getAllServices(noiptv,cuttitle) {
+  async getAllServices(noiptv,cuttitle,radio) {
     let niptv = (noiptv==true) ? "&noiptv=1" : "";
-    let response = await fetch('/api/getallservices?nolastscanned=1' + niptv);
+    let type = (radio==true) ? "&type=radio" : "";
+    let response = await fetch('/api/getallservices?nolastscanned=1' + niptv + type);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     } else {

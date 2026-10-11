@@ -991,7 +991,14 @@
         const excludeIptv = true;
         const CutTitle = true;
         self.allAutoTimers = [];
-        self.availableServices = await owif.api.getAllServices(excludeIptv, CutTitle);
+        const [tvServices, radioServices] = await Promise.all([
+          owif.api.getAllServices(excludeIptv, CutTitle),
+          owif.api.getAllServices(excludeIptv, CutTitle, true),
+        ]);
+        self.availableServices = {
+          channels: tvServices.channels.concat(radioServices.channels),
+          bouquets: tvServices.bouquets.concat(radioServices.bouquets),
+        };
         self.availableLocations = []; // these are already server-rendered
         self.allLocations = [];
         self.availableTags = await owif.api.getTags();

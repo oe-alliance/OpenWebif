@@ -1,6 +1,6 @@
 //******************************************************************************
 //* epgr.js: openwebif EPGRefresh plugin
-//* Version 1.8
+//* Version 1.9
 //******************************************************************************
 //* Copyright (C) 2016-2022 jbleyel
 //* Copyright (C) 2016-2022 E2OpenPlugins
@@ -14,6 +14,7 @@
 //* V 1.6 - improve getallservices
 //* V 1.7 - improve FillAllServices
 //* V 1.8 - show last refresh time
+//* V 1.9 - add radio services
 //*
 //* Authors: jbleyel
 //*
@@ -68,26 +69,29 @@ function isAlter(sref) {return (sref.indexOf("1:134:1") == 0);}
 			}, getAllServices: function () {
 			
 				let niptv = (EPGRnoiptv) ? "&noiptv=1" : "";
-				$.ajax({
-					url: '/api/getallservices?nolastscanned=1' + niptv,
-					dataType: "json",
-					success: function ( data ) {
-						let sdata = JSON.stringify(data);
-						let bqs = data['services'];
-
-						FillAllServices(bqs, false, function ( options , boptions) {
-							$('#bouquets').hide();
-							$('#channels').hide();
-							$("#channels").append( options);
-							$('#channels').selectpicker('refresh');
-							$("#bouquets").append( boptions);
-							$('#bouquets').selectpicker('refresh');
-							self.reloadEPGR();
-							$('#bouquets').show();
-							$('#channels').show();
-						});
-
-					}
+				let fillServices = function (radio, callback) {
+					$.ajax({
+						url: '/api/getallservices?nolastscanned=1' + niptv + (radio ? "&type=radio" : ""),
+						dataType: "json",
+						success: function ( data ) {
+							FillAllServices(data['services'], false, function ( options , boptions) {
+								$("#channels").append( options);
+								$("#bouquets").append( boptions);
+								callback();
+							});
+						}
+					});
+				};
+				$('#bouquets').hide();
+				$('#channels').hide();
+				fillServices(false, function () {
+					fillServices(true, function () {
+						$('#channels').selectpicker('refresh');
+						$('#bouquets').selectpicker('refresh');
+						self.reloadEPGR();
+						$('#bouquets').show();
+						$('#channels').show();
+					});
 				});
 			
 			}, reloadEPGR: function () {

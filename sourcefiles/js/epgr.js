@@ -1,6 +1,6 @@
 //******************************************************************************
 //* epgr.js: openwebif EPGRefresh plugin
-//* Version 1.10
+//* Version 1.11
 //******************************************************************************
 //* Copyright (C) 2016-2023 jbleyel
 //* Copyright (C) 2016-2023 E2OpenPlugins
@@ -16,6 +16,7 @@
 //* V 1.8 - use let instead of var
 //* V 1.9 - fix save begin / end
 //* V 1.10 - show last refresh time
+//* V 1.11 - add radio services
 //*
 //* Authors: jbleyel
 //*
@@ -80,22 +81,25 @@ function isAlter(sref) {return (sref.indexOf("1:134:1") == 0);}
 			}, getAllServices: function () {
 			
 				let niptv = (EPGRnoiptv) ? "&noiptv=1" : "";
-				$.ajax({
-					url: '/api/getallservices?nolastscanned=1' + niptv,
-					dataType: "json",
-					success: function ( data ) {
-						let sdata = JSON.stringify(data);
-						let bqs = data.services;
-
-						FillAllServices(bqs, false, function ( options , boptions) {
-							$("#channels").append( options);
-							$('#channels').trigger("chosen:updated");
-							$("#bouquets").append( boptions);
-							$('#bouquets').trigger("chosen:updated");
-							self.reloadEPGR();
-						});
-
-					}
+				let fillServices = function (radio, callback) {
+					$.ajax({
+						url: '/api/getallservices?nolastscanned=1' + niptv + (radio ? "&type=radio" : ""),
+						dataType: "json",
+						success: function ( data ) {
+							FillAllServices(data.services, false, function ( options , boptions) {
+								$("#channels").append( options);
+								$("#bouquets").append( boptions);
+								callback();
+							});
+						}
+					});
+				};
+				fillServices(false, function () {
+					fillServices(true, function () {
+						$('#channels').trigger("chosen:updated");
+						$('#bouquets').trigger("chosen:updated");
+						self.reloadEPGR();
+					});
 				});
 			
 			}, reloadEPGR: function () {

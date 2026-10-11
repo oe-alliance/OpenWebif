@@ -1,6 +1,6 @@
 //******************************************************************************
 //* at.js: openwebif Autotimer plugin
-//* Version 2.15
+//* Version 2.16
 //******************************************************************************
 //* Copyright (C) 2014-2026 jbleyel
 //* Copyright (C) 2014-2022 E2OpenPlugins
@@ -31,6 +31,7 @@
 //* V 2.13 - improve FillAllServices
 //* V 2.14 - use let instead of var
 //* V 2.15 - fix jump to the selected AT after reload
+//* V 2.16 - add radio services
 //*
 //* Authors: jbleyel
 //* 		 plnick
@@ -447,10 +448,14 @@ function getAllServices()
 {
 	ATGetAllServices(function ( options , boptions) {
 		$("#channels").append( options);
-		$('#channels').trigger("chosen:updated");
 		$("#bouquets").append( boptions);
-		$('#bouquets').trigger("chosen:updated");
-		reloadAT();
+		ATGetAllServices(function ( options , boptions) {
+			$("#channels").append( options);
+			$('#channels').trigger("chosen:updated");
+			$("#bouquets").append( boptions);
+			$('#bouquets').trigger("chosen:updated");
+			reloadAT();
+		}, true);
 	});
 }
 
