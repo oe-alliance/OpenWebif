@@ -447,6 +447,7 @@ tstrings = {
 	'er_fake_recording': _("Fake Recording"),
 	'er_save': _("Save"),
 	'er_refresh': _("Refresh now"),
+	'er_lastscan': _("Last refresh"),
 
 	'bqe_add_provider_as_bouquet': _("Create bouquet from selection"),
 	'bqe_add_channel': _("Add selection to bouquet"),

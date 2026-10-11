@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenWebif\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-08 07:58+0200\n"
+"POT-Creation-Date: 2026-10-11 14:04+0200\n"
 "PO-Revision-Date: 2026-08-08 08:04+0200\n"
 "Last-Translator: T-Rex <t-rex@t.pl>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/e2openplugin-openwebif/e2openplugin-openwebif/de/>\n"
@@ -34,10 +34,10 @@ msgstr ""
 msgid "%02d:%02d"
 msgstr ""
 
-#: ../plugin/controllers/models/epg.py:298
+#: ../plugin/controllers/models/epg.py:310
 #: ../plugin/controllers/models/services.py:179
-#: ../plugin/controllers/models/services.py:1004
-#: ../plugin/controllers/models/services.py:1060
+#: ../plugin/controllers/models/services.py:1036
+#: ../plugin/controllers/models/services.py:1093
 msgid "%d.%m.%Y"
 msgstr ""
 
@@ -76,8 +76,8 @@ msgstr ""
 msgid "%s Style"
 msgstr ""
 
-#: ../plugin/controllers/models/info.py:288
-#: ../plugin/controllers/models/info.py:412
+#: ../plugin/controllers/models/info.py:312
+#: ../plugin/controllers/models/info.py:436
 #, python-format
 msgid "%s free / %s total"
 msgstr "%s frei / %s insgesamt"
@@ -104,11 +104,11 @@ msgstr "Angepasstes Aufnahmeverzeichnis"
 msgid "<Last timer location>"
 msgstr "Angepasstes Aufnahmeverzeichnis"
 
-#: ../plugin/controllers/i18n.py:470
+#: ../plugin/controllers/i18n.py:471
 msgid "A filename is required"
 msgstr "Bitte den Dateinamen angeben"
 
-#: ../plugin/controllers/i18n.py:528
+#: ../plugin/controllers/i18n.py:529
 msgid "A value is required"
 msgstr "Sie müssen etwas schreiben!"
 
@@ -132,19 +132,19 @@ msgstr "\"AutoTimer\" als Markierung zufügen"
 msgid "Add AutoTimer name to tags"
 msgstr "Name als Markierung zufügen"
 
-#: ../plugin/controllers/i18n.py:456
+#: ../plugin/controllers/i18n.py:457
 msgid "Add Bouquet"
 msgstr "Bouquet hinzufügen"
 
-#: ../plugin/controllers/i18n.py:459
+#: ../plugin/controllers/i18n.py:460
 msgid "Add IPTV/URL"
 msgstr "IPTV URL hinzufügen"
 
-#: ../plugin/controllers/i18n.py:460
+#: ../plugin/controllers/i18n.py:461
 msgid "Add Marker"
 msgstr "Marker hinzufügen"
 
-#: ../plugin/controllers/i18n.py:461
+#: ../plugin/controllers/i18n.py:462
 msgid "Add Spacer"
 msgstr "Spacer hinzufügen"
 
@@ -160,7 +160,7 @@ msgstr "Umschalttimer anlegen"
 msgid "Add an AutoTimer"
 msgstr "AutoTimer anlegen"
 
-#: ../plugin/controllers/i18n.py:453
+#: ../plugin/controllers/i18n.py:454
 msgid "Add channel(s) as alternate"
 msgstr "Sender als Alternative(n) hinzufügen"
 
@@ -168,7 +168,7 @@ msgstr "Sender als Alternative(n) hinzufügen"
 msgid "Add filters"
 msgstr "Filter hinzufügen"
 
-#: ../plugin/controllers/i18n.py:452
+#: ../plugin/controllers/i18n.py:453
 msgid "Add selection to bouquet"
 msgstr "Sender zum Bouquet hinzufügen"
 
@@ -189,7 +189,7 @@ msgstr "Tags zu Aufnahmen hinzufügen"
 msgid "Added %s to alternative service %s."
 msgstr "%s zu Alternativen Service %s hinzugefügt."
 
-#: ../plugin/controllers/i18n.py:609
+#: ../plugin/controllers/i18n.py:610
 #, fuzzy
 msgid "After"
 msgstr "Nach der Aufnahme"
@@ -218,7 +218,7 @@ msgstr "Alle alternativen wurden gelöscht."
 msgid "Allow IPK Upload"
 msgstr "IPK Upload erlauben"
 
-#: ../plugin/controllers/i18n.py:573
+#: ../plugin/controllers/i18n.py:574
 msgid "Allow duplicates"
 msgstr "Erlaube Duplikate"
 
@@ -239,7 +239,7 @@ msgstr "Antwort lautet NEIN!"
 msgid "Answer is YES!"
 msgstr "Antwort lautet JA!"
 
-#: ../plugin/controllers/i18n.py:599
+#: ../plugin/controllers/i18n.py:600
 msgid "Any"
 msgstr ""
 
@@ -259,11 +259,11 @@ msgstr "April"
 msgid "Are you sure you want to copy this recording?"
 msgstr "Soll die Aufnahme kopiert werden?"
 
-#: ../plugin/controllers/i18n.py:464
+#: ../plugin/controllers/i18n.py:465
 msgid "Are you sure you want to delete the selected bouquet?"
 msgstr "Wollen Sie folgendes Bouquet wirklich löschen?"
 
-#: ../plugin/controllers/i18n.py:463
+#: ../plugin/controllers/i18n.py:464
 msgid "Are you sure you want to delete the selected item(s)?"
 msgstr "Wollen Sie nachfolgende(n) Sender wirklich löschen?"
 
@@ -287,7 +287,7 @@ msgstr "Soll die Aufnahme verschoben werden?"
 msgid "Are you sure you want to rename this recording?"
 msgstr "Wirklich Aufnahme umbenennen?"
 
-#: ../plugin/controllers/i18n.py:471
+#: ../plugin/controllers/i18n.py:472
 msgid "Are you sure you want to restore from file?"
 msgstr "Wollen Sie diese Datei wirklich importieren?"
 
@@ -307,7 +307,7 @@ msgstr "Nachfrage mit Standard Ja"
 msgid "Audio Encoding"
 msgstr ""
 
-#: ../plugin/controllers/i18n.py:477
+#: ../plugin/controllers/i18n.py:478
 msgid "Audio PID (APID)"
 msgstr ""
 
@@ -359,7 +359,7 @@ msgstr "Zurück"
 msgid "Background only"
 msgstr "Nur im Hintergrund"
 
-#: ../plugin/controllers/i18n.py:610
+#: ../plugin/controllers/i18n.py:611
 msgid "Before"
 msgstr ""
 
@@ -379,11 +379,11 @@ msgstr "Anfang der Zeitspanne"
 msgid "Bit Error Rate (BER)"
 msgstr ""
 
-#: ../plugin/controllers/i18n.py:513
+#: ../plugin/controllers/i18n.py:514
 msgid "Bookmark"
 msgstr "Bookmark"
 
-#: ../plugin/controllers/i18n.py:512
+#: ../plugin/controllers/i18n.py:513
 msgid "Bookmarks"
 msgstr "Bookmarks"
 
@@ -436,7 +436,7 @@ msgstr "Bouquet %s entfernen fehlgeschlagen."
 msgid "Bouquet Editor"
 msgstr "Bouquet-Editor"
 
-#: ../plugin/controllers/i18n.py:466
+#: ../plugin/controllers/i18n.py:467
 msgid "Bouquet name"
 msgstr "Name des Bouquets"
 
@@ -481,7 +481,7 @@ msgstr "Receiver-Laufzeit"
 msgid "Brand"
 msgstr "Marke"
 
-#: ../plugin/controllers/i18n.py:595
+#: ../plugin/controllers/i18n.py:596
 msgid "Build"
 msgstr ""
 
@@ -489,7 +489,7 @@ msgstr ""
 msgid "Cable"
 msgstr "Kabel"
 
-#: ../plugin/controllers/i18n.py:504
+#: ../plugin/controllers/i18n.py:505
 msgid "Calendar Week"
 msgstr "Kalenderwoche"
 
@@ -497,7 +497,7 @@ msgstr "Kalenderwoche"
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: ../plugin/controllers/i18n.py:526
+#: ../plugin/controllers/i18n.py:527
 msgid "Cancelled"
 msgstr "Abgebrochen"
 
@@ -517,7 +517,7 @@ msgstr "Kanal"
 msgid "Channels"
 msgstr "Kanäle"
 
-#: ../plugin/controllers/i18n.py:100 ../plugin/controllers/models/info.py:325
+#: ../plugin/controllers/i18n.py:100 ../plugin/controllers/models/info.py:349
 msgid "Chipset"
 msgstr "Chipsatz"
 
@@ -529,11 +529,11 @@ msgstr "Timer aufräumen"
 msgid "Close"
 msgstr "Schließen"
 
-#: ../plugin/controllers/i18n.py:529
+#: ../plugin/controllers/i18n.py:530
 msgid "Common Settings"
 msgstr "Allgemeine Einstellungen"
 
-#: ../plugin/controllers/i18n.py:576
+#: ../plugin/controllers/i18n.py:577
 msgid "Config"
 msgstr ""
 
@@ -564,7 +564,7 @@ msgstr "Timer '%s' konnte nicht zugefügt werden!"
 msgid "Could not find timer '%s' with given start and end time!"
 msgstr "Timer '%s' mit angegebener Start-/Endzeit nicht gefunden!"
 
-#: ../plugin/controllers/i18n.py:451
+#: ../plugin/controllers/i18n.py:452
 msgid "Create bouquet from selection"
 msgstr "Anbieter als neues Bouquet hinzufügen"
 
@@ -576,7 +576,7 @@ msgstr "Aktuell"
 msgid "Current Event"
 msgstr "Aktuelle Sendung"
 
-#: ../plugin/controllers/i18n.py:590
+#: ../plugin/controllers/i18n.py:591
 msgid "Currently recording"
 msgstr ""
 
@@ -588,8 +588,8 @@ msgstr "Eigener Boxname"
 msgid "Custom offset"
 msgstr "Angepasster Vor- und Nachlauf"
 
-#: ../plugin/controllers/i18n.py:121 ../plugin/controllers/models/info.py:60
-#: ../plugin/controllers/models/info.py:79
+#: ../plugin/controllers/i18n.py:121 ../plugin/controllers/models/info.py:84
+#: ../plugin/controllers/models/info.py:103
 msgid "DHCP"
 msgstr "DHCP"
 
@@ -597,11 +597,11 @@ msgstr "DHCP"
 msgid "Date"
 msgstr "Datum"
 
-#: ../plugin/controllers/i18n.py:564
+#: ../plugin/controllers/i18n.py:565
 msgid "Date (newest)"
 msgstr "Datum (neustes)"
 
-#: ../plugin/controllers/i18n.py:563
+#: ../plugin/controllers/i18n.py:564
 msgid "Date (oldest)"
 msgstr "Datum (ältestes)"
 
@@ -630,11 +630,11 @@ msgstr "Standby-Verzögerung"
 msgid "Delete"
 msgstr "Löschen"
 
-#: ../plugin/controllers/i18n.py:515
+#: ../plugin/controllers/i18n.py:516
 msgid "Delete Bookmark"
 msgstr "Favorit löschen"
 
-#: ../plugin/controllers/i18n.py:458
+#: ../plugin/controllers/i18n.py:459
 msgid "Delete Bouquet"
 msgstr "Bouquet löschen"
 
@@ -646,7 +646,7 @@ msgstr "Aufnahme löschen"
 msgid "Delete Timer"
 msgstr "Timer löschen"
 
-#: ../plugin/controllers/i18n.py:527
+#: ../plugin/controllers/i18n.py:528
 msgid "Deleted"
 msgstr "Gelöscht"
 
@@ -654,7 +654,7 @@ msgstr "Gelöscht"
 msgid "Description"
 msgstr "Beschreibung"
 
-#: ../plugin/controllers/i18n.py:604
+#: ../plugin/controllers/i18n.py:605
 msgid "Device"
 msgstr ""
 
@@ -675,11 +675,11 @@ msgstr "Externen Zugriff als Benutzer 'root' verbieten"
 msgid "Disabled on conflict"
 msgstr "Deaktiveren bei Konflikt"
 
-#: ../plugin/controllers/i18n.py:500
+#: ../plugin/controllers/i18n.py:501
 msgid "Display Mode"
 msgstr "Anzeigemodus"
 
-#: ../plugin/controllers/i18n.py:498
+#: ../plugin/controllers/i18n.py:499
 msgid "Display duration (s)"
 msgstr "Anzeigedauer (s)"
 
@@ -715,7 +715,7 @@ msgstr "Treiber"
 msgid "Duration"
 msgstr "Dauer"
 
-#: ../plugin/controllers/models/info.py:648
+#: ../plugin/controllers/models/info.py:672
 msgid "E"
 msgstr "O"
 
@@ -739,7 +739,7 @@ msgstr "FEHLER: SleepTimer im Standby nicht verfügbar"
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: ../plugin/controllers/i18n.py:588
+#: ../plugin/controllers/i18n.py:589
 msgid "Edit Recording"
 msgstr "Aufnahme bearbeiten"
 
@@ -792,7 +792,7 @@ msgstr "Auch Zugriff aus VPNs erlauben"
 msgid "Enable filtering"
 msgstr "Filter einschalten"
 
-#: ../plugin/controllers/i18n.py:510
+#: ../plugin/controllers/i18n.py:511
 msgid "Enable/Disable Screenshot on key press"
 msgstr "Aktivieren/Deaktivieren Screenshot bei Tastendruck"
 
@@ -817,11 +817,11 @@ msgstr "Ende der \"nach der Aufnahme\" Zeitspanne"
 msgid "End of timespan"
 msgstr "Ende der Zeitspanne"
 
-#: ../plugin/controllers/i18n.py:468
+#: ../plugin/controllers/i18n.py:469
 msgid "Enter a name for the new bouquet"
 msgstr "Neuen Namen des Bouquets eingeben"
 
-#: ../plugin/controllers/i18n.py:469
+#: ../plugin/controllers/i18n.py:470
 msgid "Enter a name for the new marker"
 msgstr "Neuen Namen des Markers eingeben"
 
@@ -829,11 +829,11 @@ msgstr "Neuen Namen des Markers eingeben"
 msgid "Enter a name for this AutoTimer"
 msgstr "Neuen Namen des Autotimers eingeben"
 
-#: ../plugin/controllers/i18n.py:516
+#: ../plugin/controllers/i18n.py:517
 msgid "Enter path"
 msgstr "Pfad eingeben"
 
-#: ../plugin/controllers/i18n.py:587
+#: ../plugin/controllers/i18n.py:588
 msgid "Enter text"
 msgstr "Text Eingeben"
 
@@ -882,7 +882,7 @@ msgstr ""
 msgid "Error: Bouquet %s could not deleted, OSError."
 msgstr "Fehler: Bouquet %s kann nicht gelöscht werden, OSError."
 
-#: ../plugin/controllers/i18n.py:489
+#: ../plugin/controllers/i18n.py:490
 msgid "Event not found"
 msgstr "Event nicht gefunden"
 
@@ -902,11 +902,11 @@ msgstr "Enthält nicht"
 msgid "Execute \"After event\" during timespan"
 msgstr "Zeitspanne für \"nach der Aufnahme\""
 
-#: ../plugin/controllers/i18n.py:618
+#: ../plugin/controllers/i18n.py:619
 msgid "Executing..."
 msgstr "Ausführen…"
 
-#: ../plugin/controllers/i18n.py:558
+#: ../plugin/controllers/i18n.py:559
 msgid "Export"
 msgstr "Exportieren"
 
@@ -934,7 +934,7 @@ msgstr "Suche ähnliche Sendungen"
 msgid "Firmware version"
 msgstr "Firmware-Version"
 
-#: ../plugin/controllers/i18n.py:607
+#: ../plugin/controllers/i18n.py:608
 msgid "Folders"
 msgstr "Verzeichnisse"
 
@@ -954,7 +954,7 @@ msgstr "Frei"
 msgid "Free Memory"
 msgstr "Freier Speicher"
 
-#: ../plugin/controllers/i18n.py:605
+#: ../plugin/controllers/i18n.py:606
 msgid "Free space"
 msgstr "Freier Speicher"
 
@@ -971,18 +971,18 @@ msgstr "Freitag"
 msgid "From date"
 msgstr "Ausführung nicht nach"
 
-#: ../plugin/controllers/i18n.py:150 ../plugin/controllers/models/info.py:330
+#: ../plugin/controllers/i18n.py:150 ../plugin/controllers/models/info.py:354
 msgid "Front processor version"
 msgstr "Frontprozessor-Version"
 
-#: ../plugin/controllers/i18n.py:551
+#: ../plugin/controllers/i18n.py:552
 msgid "Full remote"
 msgstr "Vollständige Fernbedienung"
 
-#: ../plugin/controllers/models/info.py:378
-#: ../plugin/controllers/models/info.py:384
-#: ../plugin/controllers/models/info.py:399
 #: ../plugin/controllers/models/info.py:402
+#: ../plugin/controllers/models/info.py:408
+#: ../plugin/controllers/models/info.py:423
+#: ../plugin/controllers/models/info.py:426
 #: ../plugin/controllers/models/movies.py:239
 #: ../plugin/controllers/models/movies.py:661
 msgid "GB"
@@ -1004,7 +1004,7 @@ msgstr "Das Erhalten der Variablen Liste für die neu erstellte Alternative fehl
 msgid "Get mutable list for new created bouquet failed!"
 msgstr "Das Erhalten der Variablen Liste für das neu erstellte Bouquet fehlgeschlagen!"
 
-#: ../plugin/controllers/i18n.py:568
+#: ../plugin/controllers/i18n.py:569
 msgid "HH:MM"
 msgstr ""
 
@@ -1020,7 +1020,7 @@ msgstr "Port für HTTPS"
 msgid "Hard disk model"
 msgstr "Festplattenmodell"
 
-#: ../plugin/controllers/i18n.py:601
+#: ../plugin/controllers/i18n.py:602
 msgid "Hardware"
 msgstr ""
 
@@ -1032,7 +1032,7 @@ msgstr "Vollständige Fernbedienung ausblenden"
 msgid "High Resolution"
 msgstr "Hohe Auflösung"
 
-#: ../plugin/controllers/i18n.py:600
+#: ../plugin/controllers/i18n.py:601
 msgid "Hold to drag"
 msgstr "Halten zum Verschieben"
 
@@ -1040,7 +1040,7 @@ msgstr "Halten zum Verschieben"
 msgid "Hour"
 msgstr "Stunde"
 
-#: ../plugin/controllers/i18n.py:465
+#: ../plugin/controllers/i18n.py:466
 msgid "IPTV / URL name"
 msgstr ""
 
@@ -1048,11 +1048,11 @@ msgstr ""
 msgid "IPv4 address"
 msgstr "IPv4-Adresse"
 
-#: ../plugin/controllers/i18n.py:163 ../plugin/controllers/models/info.py:143
+#: ../plugin/controllers/i18n.py:163 ../plugin/controllers/models/info.py:167
 msgid "IPv4-only Python/Twisted"
 msgstr "Python/Twisted ohne IPv6-Unterstützung"
 
-#: ../plugin/controllers/i18n.py:161 ../plugin/controllers/models/info.py:139
+#: ../plugin/controllers/i18n.py:161 ../plugin/controllers/models/info.py:163
 msgid "IPv4-only kernel"
 msgstr "Kernel ohne IPv6-Unterstützung"
 
@@ -1060,7 +1060,7 @@ msgstr "Kernel ohne IPv6-Unterstützung"
 msgid "IPv6 address(es)"
 msgstr "IPv6-Adresse(n)"
 
-#: ../plugin/controllers/i18n.py:559
+#: ../plugin/controllers/i18n.py:560
 msgid "Import"
 msgstr "Importieren"
 
@@ -1068,11 +1068,11 @@ msgstr "Importieren"
 msgid "Include description"
 msgstr "Beschreibung einbeziehen"
 
-#: ../plugin/controllers/i18n.py:545
+#: ../plugin/controllers/i18n.py:546
 msgid "Include extended description"
 msgstr "Lange Beschreibung einbeziehen"
 
-#: ../plugin/controllers/i18n.py:544
+#: ../plugin/controllers/i18n.py:545
 msgid "Include short description"
 msgstr "Kurzbeschreibung einbeziehen"
 
@@ -1088,7 +1088,7 @@ msgstr "Unbegrenzte Sofortaufnahme gestartet"
 msgid "Info"
 msgstr "Informationen"
 
-#: ../plugin/controllers/i18n.py:596
+#: ../plugin/controllers/i18n.py:597
 msgid "Information"
 msgstr ""
 
@@ -1096,11 +1096,11 @@ msgstr ""
 msgid "Inherit AutoTimer"
 msgstr "Sender aus AutoTimern übernehmen"
 
-#: ../plugin/controllers/i18n.py:536
+#: ../plugin/controllers/i18n.py:537
 msgid "Install Package"
 msgstr "Installiere Paket"
 
-#: ../plugin/controllers/i18n.py:538
+#: ../plugin/controllers/i18n.py:539
 msgid "Installed"
 msgstr "Installiert"
 
@@ -1116,7 +1116,7 @@ msgstr "Sofortaufnahme für aktuelle Sendung gestartet"
 msgid "Internal error!"
 msgstr "Interner Fehler!"
 
-#: ../plugin/controllers/i18n.py:602
+#: ../plugin/controllers/i18n.py:603
 msgid "Internal flash memory"
 msgstr "Interner Flashspeicher"
 
@@ -1169,15 +1169,19 @@ msgstr "LCD4Linux-Einstellungen"
 msgid "Label series"
 msgstr ""
 
+#: ../plugin/controllers/i18n.py:450
+msgid "Last refresh"
+msgstr "Letzte Auffrischung"
+
 #: ../plugin/plugin.py:45
 msgid "Legacy via port 8002"
 msgstr ""
 
 #: ../plugin/controllers/i18n.py:172
 msgid "License"
-msgstr ""
+msgstr "Lizenz"
 
-#: ../plugin/controllers/i18n.py:506
+#: ../plugin/controllers/i18n.py:507
 msgid "Link speed"
 msgstr "Verbindungsgeschwindigkeit"
 
@@ -1185,7 +1189,7 @@ msgstr "Verbindungsgeschwindigkeit"
 msgid "List of Timers has been cleaned"
 msgstr "Timerliste wurde aufgeräumt"
 
-#: ../plugin/controllers/i18n.py:472
+#: ../plugin/controllers/i18n.py:473
 msgid "Loading..."
 msgstr "Laden…"
 
@@ -1201,9 +1205,9 @@ msgstr "Gesperrt"
 msgid "MAC address"
 msgstr "MAC-Adresse"
 
-#: ../plugin/controllers/models/info.py:375
-#: ../plugin/controllers/models/info.py:386
-#: ../plugin/controllers/models/info.py:404
+#: ../plugin/controllers/models/info.py:399
+#: ../plugin/controllers/models/info.py:410
+#: ../plugin/controllers/models/info.py:428
 #: ../plugin/controllers/models/movies.py:241
 #: ../plugin/controllers/models/movies.py:663
 msgid "MB"
@@ -1221,7 +1225,7 @@ msgstr "Hauptspeicher"
 msgid "March"
 msgstr "März"
 
-#: ../plugin/controllers/i18n.py:608
+#: ../plugin/controllers/i18n.py:609
 msgid "Margin"
 msgstr ""
 
@@ -1229,7 +1233,7 @@ msgstr ""
 msgid "Marker added."
 msgstr "Marker hinzugefügt."
 
-#: ../plugin/controllers/i18n.py:467
+#: ../plugin/controllers/i18n.py:468
 msgid "Marker name"
 msgstr "Name des Markers"
 
@@ -1253,15 +1257,15 @@ msgstr "Nachricht erfolgreich verschickt!"
 msgid "Method"
 msgstr "Methode"
 
-#: ../plugin/controllers/i18n.py:532
+#: ../plugin/controllers/i18n.py:533
 msgid "Minimal EPG list"
 msgstr "Minimale EPG Liste"
 
-#: ../plugin/controllers/i18n.py:530
+#: ../plugin/controllers/i18n.py:531
 msgid "Minimal movie list"
 msgstr "Minimal Aufnahmeliste"
 
-#: ../plugin/controllers/i18n.py:531
+#: ../plugin/controllers/i18n.py:532
 msgid "Minimal timer list"
 msgstr "Minimale Timer Liste"
 
@@ -1299,7 +1303,7 @@ msgstr "Montag"
 msgid "Monthly"
 msgstr "Monatlich"
 
-#: ../plugin/controllers/i18n.py:539
+#: ../plugin/controllers/i18n.py:540
 msgid "More"
 msgstr "Mehr"
 
@@ -1307,7 +1311,7 @@ msgstr "Mehr"
 msgid "More details"
 msgstr "Mehr Details"
 
-#: ../plugin/controllers/i18n.py:606
+#: ../plugin/controllers/i18n.py:607
 msgid "Mount point"
 msgstr "Mountpunkt"
 
@@ -1315,7 +1319,7 @@ msgstr "Mountpunkt"
 msgid "Move Recording"
 msgstr "Aufnahme Verschieben"
 
-#: ../plugin/controllers/i18n.py:491
+#: ../plugin/controllers/i18n.py:492
 msgid "Movie database for EPG"
 msgstr "Filmdatenbank für EPG"
 
@@ -1332,7 +1336,7 @@ msgstr "Aufnahmen"
 msgid "Multi-Bouquet is not enabled!"
 msgstr "Multi-Bouquet ist nicht aktiviert!"
 
-#: ../plugin/controllers/i18n.py:615
+#: ../plugin/controllers/i18n.py:616
 msgid "MultiBoot Slots"
 msgstr ""
 
@@ -1340,7 +1344,7 @@ msgstr ""
 msgid "MultiEPG"
 msgstr "Multi-EPG"
 
-#: ../plugin/controllers/i18n.py:592
+#: ../plugin/controllers/i18n.py:593
 msgid "Mute/Unmute"
 msgstr ""
 
@@ -1352,11 +1356,11 @@ msgstr "NCam-Webinterface"
 msgid "Name"
 msgstr "Name"
 
-#: ../plugin/controllers/i18n.py:561
+#: ../plugin/controllers/i18n.py:562
 msgid "Name (a-z)"
 msgstr ""
 
-#: ../plugin/controllers/i18n.py:562
+#: ../plugin/controllers/i18n.py:563
 msgid "Name (z-a)"
 msgstr ""
 
@@ -1368,7 +1372,7 @@ msgstr "Namensraum"
 msgid "Network Interface"
 msgstr "Netzwerkschnittstelle"
 
-#: ../plugin/controllers/i18n.py:507
+#: ../plugin/controllers/i18n.py:508
 msgid "Network Shares"
 msgstr "Netzwerk-Freigaben"
 
@@ -1381,7 +1385,7 @@ msgstr "Niemals"
 msgid "New"
 msgstr "Neu"
 
-#: ../plugin/controllers/i18n.py:514
+#: ../plugin/controllers/i18n.py:515
 msgid "New Bookmark:"
 msgstr "Neuer Favorit:"
 
@@ -1393,7 +1397,7 @@ msgstr "Neuer Name"
 msgid "Next Event"
 msgstr "Nächste Sendung"
 
-#: ../plugin/controllers/i18n.py:359 ../plugin/controllers/i18n.py:543
+#: ../plugin/controllers/i18n.py:359 ../plugin/controllers/i18n.py:544
 msgid "No"
 msgstr "Nein"
 
@@ -1442,7 +1446,7 @@ msgstr "Kein entsprechender EPG Eintrag gefunden"
 msgid "No matching Timer found"
 msgstr "Kein entsprechender Timer gefunden"
 
-#: ../plugin/controllers/i18n.py:598
+#: ../plugin/controllers/i18n.py:599
 msgid "No network connection"
 msgstr "Keine Netzwerkverbindung"
 
@@ -1463,7 +1467,7 @@ msgstr "Kein Provider angegeben!"
 msgid "No service given!"
 msgstr "Kein Service angegeben!"
 
-#: ../plugin/controllers/i18n.py:524
+#: ../plugin/controllers/i18n.py:525
 msgid "No, cancel"
 msgstr "Nein, Abbrechen"
 
@@ -1495,7 +1499,7 @@ msgstr "November"
 msgid "Now"
 msgstr "Jetzt"
 
-#: ../plugin/controllers/i18n.py:533
+#: ../plugin/controllers/i18n.py:534
 msgid "Now/Next Columns"
 msgstr "Jetzt/Später Spalten"
 
@@ -1503,7 +1507,7 @@ msgstr "Jetzt/Später Spalten"
 msgid "Number of recordings remaining"
 msgstr "Verbleibende Anzahl Aufnahmen"
 
-#: ../plugin/controllers/i18n.py:482
+#: ../plugin/controllers/i18n.py:483
 msgid "ONID"
 msgstr ""
 
@@ -1551,7 +1555,7 @@ msgstr "Suche nur innerhalb einer Zeitspanne"
 msgid "Oops, no results matched your search"
 msgstr "Apps, keine Ergebnisse"
 
-#: ../plugin/controllers/i18n.py:521
+#: ../plugin/controllers/i18n.py:522
 msgid "Oops..."
 msgstr "Ups..."
 
@@ -1567,7 +1571,7 @@ msgstr "In neuem Fenster öffnen"
 msgid "OpenWebInterface Enabled"
 msgstr "OpenWebinterface einschalten"
 
-#: ../plugin/controllers/i18n.py:493
+#: ../plugin/controllers/i18n.py:494
 msgid "OpenWebif Browser Settings"
 msgstr "OpenWebif Browser Einstellungen"
 
@@ -1575,7 +1579,7 @@ msgstr "OpenWebif Browser Einstellungen"
 msgid "OpenWebif Configuration"
 msgstr "OpenWebif-Konfiguration"
 
-#: ../plugin/controllers/i18n.py:494
+#: ../plugin/controllers/i18n.py:495
 msgid "OpenWebif Settings"
 msgstr "OpenWebif Einstellungen"
 
@@ -1583,7 +1587,7 @@ msgstr "OpenWebif Einstellungen"
 msgid "OpenWebif url:"
 msgstr "OpenWebif-URL:"
 
-#: ../plugin/controllers/i18n.py:485
+#: ../plugin/controllers/i18n.py:486
 msgid "Orbital Position"
 msgstr ""
 
@@ -1591,15 +1595,15 @@ msgstr ""
 msgid "Override found with alternative service"
 msgstr "Sendung durch Alternative ersetzen"
 
-#: ../plugin/controllers/i18n.py:480
+#: ../plugin/controllers/i18n.py:481
 msgid "PCR PID"
 msgstr ""
 
-#: ../plugin/controllers/i18n.py:476
+#: ../plugin/controllers/i18n.py:477
 msgid "PMT PID"
 msgstr ""
 
-#: ../plugin/controllers/i18n.py:518
+#: ../plugin/controllers/i18n.py:519
 msgid "Packages"
 msgstr "Pakete"
 
@@ -1644,7 +1648,7 @@ msgstr "IPTV Streams im Browser abspielen"
 msgid "Playlist"
 msgstr "Wiedergabeliste"
 
-#: ../plugin/controllers/i18n.py:571
+#: ../plugin/controllers/i18n.py:572
 #, fuzzy
 msgid "Playlist format"
 msgstr "Wiedergabeliste"
@@ -1661,7 +1665,7 @@ msgstr "PowerTimer-Funktion nicht verfügbar"
 msgid "Preview"
 msgstr "Vorschau"
 
-#: ../plugin/controllers/i18n.py:509
+#: ../plugin/controllers/i18n.py:510
 msgid "Primetimes"
 msgstr "Hauptzeit"
 
@@ -1677,7 +1681,7 @@ msgstr "Anbieter"
 msgid "Providers"
 msgstr "Anbieter"
 
-#: ../plugin/controllers/i18n.py:586
+#: ../plugin/controllers/i18n.py:587
 msgid "REC"
 msgstr ""
 
@@ -1689,7 +1693,7 @@ msgstr "Radio"
 msgid "Reboot Box"
 msgstr "Receiver neustarten"
 
-#: ../plugin/controllers/i18n.py:594
+#: ../plugin/controllers/i18n.py:595
 msgid "Receiver"
 msgstr ""
 
@@ -1701,7 +1705,7 @@ msgstr "Höchstens X-mal aufnehmen"
 msgid "Recording"
 msgstr "Aufnahme"
 
-#: ../plugin/controllers/i18n.py:582
+#: ../plugin/controllers/i18n.py:583
 msgid "Recording Type"
 msgstr "Aufnahmetyp"
 
@@ -1729,7 +1733,7 @@ msgstr "Aktualisieren"
 msgid "Remote"
 msgstr "Fernbedienung"
 
-#: ../plugin/controllers/i18n.py:534
+#: ../plugin/controllers/i18n.py:535
 msgid "Remove Package"
 msgstr "Paket entfernen"
 
@@ -1737,11 +1741,11 @@ msgstr "Paket entfernen"
 msgid "Remove filter"
 msgstr "Filter entfernen"
 
-#: ../plugin/controllers/i18n.py:462 ../plugin/controllers/i18n.py:523
+#: ../plugin/controllers/i18n.py:463 ../plugin/controllers/i18n.py:524
 msgid "Rename"
 msgstr "Umbenennen"
 
-#: ../plugin/controllers/i18n.py:457
+#: ../plugin/controllers/i18n.py:458
 msgid "Rename Bouquet"
 msgstr "Bouquet umbenennen"
 
@@ -1761,7 +1765,7 @@ msgstr "Erzwinge zertifikatbasierte Anmeldung"
 msgid "Require description to be unique"
 msgstr "Beschreibung muss eindeutig sein"
 
-#: ../plugin/controllers/i18n.py:567
+#: ../plugin/controllers/i18n.py:568
 msgid "Reset"
 msgstr "Zurücksetzten"
 
@@ -1785,11 +1789,11 @@ msgstr "Limitiert auf Sender"
 msgid "Root"
 msgstr "Hauptverzeichnis"
 
-#: ../plugin/controllers/i18n.py:616
+#: ../plugin/controllers/i18n.py:617
 msgid "Run Script"
 msgstr "Starte Script"
 
-#: ../plugin/controllers/models/info.py:51
+#: ../plugin/controllers/models/info.py:75
 msgid "SLAAC"
 msgstr "SL-AAC"
 
@@ -1797,7 +1801,7 @@ msgstr "SL-AAC"
 msgid "SNR"
 msgstr "SNR"
 
-#: ../plugin/controllers/i18n.py:484
+#: ../plugin/controllers/i18n.py:485
 msgid "SRef"
 msgstr ""
 
@@ -1831,7 +1835,7 @@ msgstr "Samstag"
 msgid "Save"
 msgstr "Speichern"
 
-#: ../plugin/controllers/i18n.py:620
+#: ../plugin/controllers/i18n.py:621
 msgid "Saving..."
 msgstr "Speichern…"
 
@@ -1839,15 +1843,15 @@ msgstr "Speichern…"
 msgid "Screenshot"
 msgstr "Bildschirmfoto"
 
-#: ../plugin/controllers/i18n.py:619
+#: ../plugin/controllers/i18n.py:620
 msgid "Script completed"
 msgstr "Script Ausgeführt"
 
-#: ../plugin/controllers/base.py:390 ../plugin/controllers/i18n.py:617
+#: ../plugin/controllers/base.py:390 ../plugin/controllers/i18n.py:618
 msgid "Scripts"
 msgstr "Scripte"
 
-#: ../plugin/controllers/i18n.py:227 ../plugin/controllers/i18n.py:454
+#: ../plugin/controllers/i18n.py:227 ../plugin/controllers/i18n.py:455
 msgid "Search"
 msgstr "Suchen"
 
@@ -1872,7 +1876,7 @@ msgstr "Suche KinoPoisk"
 msgid "Search TV Guide UK"
 msgstr "Zeitschrift"
 
-#: ../plugin/controllers/i18n.py:455
+#: ../plugin/controllers/i18n.py:456
 msgid "Search by name, sd / hd / uhd, or provider"
 msgstr "Suchen Sie nach Name, SD/HD/UHD oder Anbieter"
 
@@ -1885,19 +1889,19 @@ msgstr "Suche KinoPoisk"
 msgid "Search type"
 msgstr "Such-Typ"
 
-#: ../plugin/controllers/i18n.py:611
+#: ../plugin/controllers/i18n.py:612
 msgid "Select Directory"
 msgstr "Verzeichnis wählen"
 
-#: ../plugin/controllers/i18n.py:547
+#: ../plugin/controllers/i18n.py:548
 msgid "Select IPK file for upload"
 msgstr "Wählen Sie die 'IPK' Datei zum Hochladen"
 
-#: ../plugin/controllers/i18n.py:566
+#: ../plugin/controllers/i18n.py:567
 msgid "Select..."
 msgstr "Auswählen..."
 
-#: ../plugin/controllers/i18n.py:593
+#: ../plugin/controllers/i18n.py:594
 msgid "Send"
 msgstr "Senden"
 
@@ -1957,7 +1961,7 @@ msgstr "Service %s vom Bouquet %s entfernt."
 msgid "Service %s removed."
 msgstr "Service %s entfernt."
 
-#: ../plugin/controllers/i18n.py:483
+#: ../plugin/controllers/i18n.py:484
 msgid "Service ID (SID)"
 msgstr ""
 
@@ -1981,7 +1985,7 @@ msgstr "Service erfolgreich umbenannt"
 msgid "Services"
 msgstr "Service"
 
-#: ../plugin/controllers/i18n.py:591
+#: ../plugin/controllers/i18n.py:592
 msgid "Serving stream"
 msgstr ""
 
@@ -1994,15 +1998,15 @@ msgstr "Finde maximale Länge"
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: ../plugin/controllers/i18n.py:614
+#: ../plugin/controllers/i18n.py:615
 msgid "Show Compact EPG List"
 msgstr "EPG-Liste kompakt"
 
-#: ../plugin/controllers/i18n.py:613
+#: ../plugin/controllers/i18n.py:614
 msgid "Show Compact Timer List"
 msgstr "Timerliste kompakt"
 
-#: ../plugin/controllers/i18n.py:612
+#: ../plugin/controllers/i18n.py:613
 msgid "Show EPG History"
 msgstr "Zeige EPG Historie"
 
@@ -2014,11 +2018,11 @@ msgstr "Zeige EPG für"
 msgid "Show Full OpenWebif"
 msgstr "Desktop-Version OpenWebif"
 
-#: ../plugin/controllers/i18n.py:554
+#: ../plugin/controllers/i18n.py:555
 msgid "Show IPTV channels in selection (eg. Autotimer)"
 msgstr "IPTV-Kanäle in der Auswahl anzeigen (z. B. Autotimer)"
 
-#: ../plugin/controllers/i18n.py:580
+#: ../plugin/controllers/i18n.py:581
 msgid "Show all packages"
 msgstr "Alle Pakete anzeigen"
 
@@ -2026,11 +2030,11 @@ msgstr "Alle Pakete anzeigen"
 msgid "Show box name in header"
 msgstr "Boxnamen in der Kopfzeile anzeigen"
 
-#: ../plugin/controllers/i18n.py:621
+#: ../plugin/controllers/i18n.py:622
 msgid "Show description"
 msgstr "Beschreibung Anzeigen"
 
-#: ../plugin/controllers/i18n.py:552
+#: ../plugin/controllers/i18n.py:553
 msgid "Show details"
 msgstr "Zeige Details"
 
@@ -2042,19 +2046,19 @@ msgstr "Vollständige Fernbedienung einblenden"
 msgid "Show in Extensions menu"
 msgstr "Im Erweiterungsmenü anzeigen"
 
-#: ../plugin/controllers/i18n.py:557
+#: ../plugin/controllers/i18n.py:558
 msgid "Show picon background"
 msgstr "Zeige Piconhintergrund"
 
-#: ../plugin/controllers/i18n.py:556
+#: ../plugin/controllers/i18n.py:557
 msgid "Show picons"
 msgstr "Zeige Picons"
 
-#: ../plugin/controllers/i18n.py:490
+#: ../plugin/controllers/i18n.py:491
 msgid "Show picons in channel list"
 msgstr "Zeige Picon in Senderliste"
 
-#: ../plugin/controllers/i18n.py:553
+#: ../plugin/controllers/i18n.py:554
 msgid "Show service type in channel list"
 msgstr "Zeige Sendertyp in Senderliste"
 
@@ -2086,7 +2090,7 @@ msgstr "Simulieren"
 msgid "Site and sources"
 msgstr "Webseite und Quellcode"
 
-#: ../plugin/controllers/i18n.py:577
+#: ../plugin/controllers/i18n.py:578
 msgid "Skins"
 msgstr ""
 
@@ -2115,7 +2119,7 @@ msgstr "SleepTimer aktiviert"
 msgid "Sleeptimer set to %d minutes"
 msgstr "SleepTimer eingestellt auf %d Minuten"
 
-#: ../plugin/controllers/i18n.py:497
+#: ../plugin/controllers/i18n.py:498
 msgid "Small remote layout"
 msgstr "Kleinere Fernbedienung"
 
@@ -2127,11 +2131,11 @@ msgstr "Software"
 msgid "Sorry this page is not yet implemented"
 msgstr "Entschuldigung, diese Seite existiert noch nicht"
 
-#: ../plugin/controllers/i18n.py:560
+#: ../plugin/controllers/i18n.py:561
 msgid "Sort"
 msgstr ""
 
-#: ../plugin/controllers/i18n.py:496
+#: ../plugin/controllers/i18n.py:497
 msgid "Spinner"
 msgstr "'IN-ARBEIT Symbol"
 
@@ -2151,7 +2155,7 @@ msgstr "Starte Sofortaufnahme"
 msgid "Start time is after end time"
 msgstr "Die Startzeit liegt vor dem Endzeitpunkt"
 
-#: ../plugin/controllers/i18n.py:546
+#: ../plugin/controllers/i18n.py:547
 msgid "Start typing..."
 msgstr "BEGINNT SCHREIBEN"
 
@@ -2159,7 +2163,7 @@ msgstr "BEGINNT SCHREIBEN"
 msgid "State"
 msgstr ""
 
-#: ../plugin/controllers/i18n.py:603
+#: ../plugin/controllers/i18n.py:604
 msgid "Storage"
 msgstr ""
 
@@ -2167,7 +2171,7 @@ msgstr ""
 msgid "Stream"
 msgstr "Stream"
 
-#: ../plugin/controllers/i18n.py:575
+#: ../plugin/controllers/i18n.py:576
 msgid "Stream Clients"
 msgstr "Stream Clients"
 
@@ -2179,7 +2183,7 @@ msgstr "Streaming Port"
 msgid "Su"
 msgstr "So"
 
-#: ../plugin/controllers/i18n.py:565
+#: ../plugin/controllers/i18n.py:566
 msgid "Subdirectories"
 msgstr "Unterverzeichnisse"
 
@@ -2204,13 +2208,13 @@ msgstr "Sonntag"
 msgid "System OE"
 msgstr "OE-System"
 
-#: ../plugin/controllers/models/info.py:382
-#: ../plugin/controllers/models/info.py:394
-#: ../plugin/controllers/models/info.py:396
+#: ../plugin/controllers/models/info.py:406
+#: ../plugin/controllers/models/info.py:418
+#: ../plugin/controllers/models/info.py:420
 msgid "TB"
 msgstr "TB"
 
-#: ../plugin/controllers/i18n.py:481
+#: ../plugin/controllers/i18n.py:482
 msgid "TSID"
 msgstr ""
 
@@ -2218,7 +2222,7 @@ msgstr ""
 msgid "TV"
 msgstr "TV"
 
-#: ../plugin/controllers/i18n.py:501
+#: ../plugin/controllers/i18n.py:502
 msgid "TV Guide"
 msgstr "Zeitschrift"
 
@@ -2234,7 +2238,7 @@ msgstr "Stichworte"
 msgid "Teletext"
 msgstr "Videotext"
 
-#: ../plugin/controllers/i18n.py:479
+#: ../plugin/controllers/i18n.py:480
 msgid "Teletext PID"
 msgstr "Teletext PID"
 
@@ -2262,7 +2266,7 @@ msgstr "Text"
 msgid "Th"
 msgstr "Do"
 
-#: ../plugin/controllers/web.py:91 ../plugin/controllers/web.py:1706
+#: ../plugin/controllers/web.py:91 ../plugin/controllers/web.py:1719
 #, python-format
 msgid "The parameter '%s' can't be empty"
 msgstr "Der Parameter '%s' darf nicht leer sein"
@@ -2287,7 +2291,7 @@ msgstr "Timer '%s' erfolgreich gelöscht"
 msgid "The timer '%s' now recorded! Not disabled!"
 msgstr "Der Timer '%s' ist aufgezeichnet! Nicht deaktiviert!"
 
-#: ../plugin/controllers/i18n.py:495
+#: ../plugin/controllers/i18n.py:496
 msgid "Theme"
 msgstr "Design-Thema"
 
@@ -2312,7 +2316,7 @@ msgstr "Donnerstag"
 msgid "Time"
 msgstr "Zeit"
 
-#: ../plugin/controllers/i18n.py:502
+#: ../plugin/controllers/i18n.py:503
 msgid "Timeline"
 msgstr "Zeitstrahl"
 
@@ -2351,11 +2355,11 @@ msgstr "Timer '%s' wegen Konflikt nicht aktiviert "
 msgid "Timer '%s' not saved while Conflict"
 msgstr "Timer '%s' wegen Konflikt nicht gespeichert"
 
-#: ../plugin/controllers/i18n.py:488
+#: ../plugin/controllers/i18n.py:489
 msgid "Timer Added"
 msgstr "Timer hinzugefügt"
 
-#: ../plugin/controllers/i18n.py:597
+#: ../plugin/controllers/i18n.py:598
 msgid "Timer Conflict"
 msgstr "Timerkonflikt"
 
@@ -2404,7 +2408,7 @@ msgstr "Standby Umschalten"
 msgid "Transcode"
 msgstr "Transcodieren"
 
-#: ../plugin/controllers/i18n.py:622
+#: ../plugin/controllers/i18n.py:623
 msgid "Transcoding Mode"
 msgstr "Transcoding-Modus"
 
@@ -2463,35 +2467,35 @@ msgstr "Unbekanntes Kommando: '%s'"
 msgid "Upcoming Events"
 msgstr "Nachfolgende Sendungen"
 
-#: ../plugin/controllers/i18n.py:537
+#: ../plugin/controllers/i18n.py:538
 msgid "Update"
 msgstr "Aktualisieren"
 
-#: ../plugin/controllers/i18n.py:535
+#: ../plugin/controllers/i18n.py:536
 msgid "Update Package"
 msgstr "Paket aktualisieren"
 
-#: ../plugin/controllers/i18n.py:540
+#: ../plugin/controllers/i18n.py:541
 msgid "Update from feed"
 msgstr "Update vom Feed"
 
-#: ../plugin/controllers/i18n.py:541
+#: ../plugin/controllers/i18n.py:542
 msgid "Upgrade all packages"
 msgstr "Alle Pakete aktualisieren"
 
-#: ../plugin/controllers/i18n.py:550
+#: ../plugin/controllers/i18n.py:551
 msgid "Upload File Error"
 msgstr "Datei-Upload Fehler"
 
-#: ../plugin/controllers/i18n.py:549
+#: ../plugin/controllers/i18n.py:550
 msgid "Upload package"
 msgstr "Paket hochladen"
 
-#: ../plugin/controllers/i18n.py:548
+#: ../plugin/controllers/i18n.py:549
 msgid "Uploaded Files"
 msgstr "Hochgeladene Dateien"
 
-#: ../plugin/controllers/i18n.py:555
+#: ../plugin/controllers/i18n.py:556
 msgid "Use Channelname for screenshots"
 msgstr "Nutze Sendername für Screenshots"
 
@@ -2499,11 +2503,11 @@ msgstr "Nutze Sendername für Screenshots"
 msgid "Use a custom location"
 msgstr "Angepasstes Aufnahmeverzeichnis"
 
-#: ../plugin/controllers/i18n.py:572
+#: ../plugin/controllers/i18n.py:573
 msgid "Use as PiP if possible"
 msgstr "Nutze PiP wenn möglich"
 
-#: ../plugin/controllers/i18n.py:578
+#: ../plugin/controllers/i18n.py:579
 msgid "Use classic interface"
 msgstr "Nutze klassisches Design"
 
@@ -2515,11 +2519,11 @@ msgstr "Benutzerdefinierte Farbe"
 msgid "Use custom box name"
 msgstr "Eigenen Boxnamen verwenden"
 
-#: ../plugin/controllers/i18n.py:520
+#: ../plugin/controllers/i18n.py:521
 msgid "Use modern design"
 msgstr "Nutze modernes Design"
 
-#: ../plugin/controllers/i18n.py:579 ../plugin/setup.xml
+#: ../plugin/controllers/i18n.py:580 ../plugin/setup.xml
 msgid "Use modern interface"
 msgstr "Nutze neues Design"
 
@@ -2543,7 +2547,7 @@ msgstr "Video"
 msgid "Video Height"
 msgstr "Bildhöhe"
 
-#: ../plugin/controllers/i18n.py:478
+#: ../plugin/controllers/i18n.py:479
 msgid "Video PID (VPID)"
 msgstr ""
 
@@ -2563,7 +2567,7 @@ msgstr "Lautstärke"
 msgid "Volume Control"
 msgstr "Lautstärke"
 
-#: ../plugin/controllers/models/info.py:651
+#: ../plugin/controllers/models/info.py:675
 msgid "W"
 msgstr "W"
 
@@ -2587,7 +2591,7 @@ msgstr "Warnung"
 msgid "We"
 msgstr "Mi"
 
-#: ../plugin/controllers/i18n.py:503
+#: ../plugin/controllers/i18n.py:504
 msgid "Web TV"
 msgstr "Web TV"
 
@@ -2620,7 +2624,7 @@ msgstr "Ohne Anmeldung ist nur lokaler Zugriff möglich!"
 msgid "Wizard"
 msgstr "Assistent"
 
-#: ../plugin/controllers/i18n.py:522
+#: ../plugin/controllers/i18n.py:523
 msgid "Would you like to save your changes?"
 msgstr "Möchten Sie Ihre Änderungen speichern?"
 
@@ -2629,11 +2633,11 @@ msgstr "Möchten Sie Ihre Änderungen speichern?"
 msgid "Wrong parameter format 'set=%s'. Use set=set15 "
 msgstr "Falsches Parameter-Format 'set=%s'. Korrekt: set=set15 "
 
-#: ../plugin/controllers/i18n.py:569
+#: ../plugin/controllers/i18n.py:570
 msgid "YYYY-MM-DD"
 msgstr ""
 
-#: ../plugin/controllers/i18n.py:525 ../plugin/controllers/i18n.py:542
+#: ../plugin/controllers/i18n.py:526 ../plugin/controllers/i18n.py:543
 msgid "Yes"
 msgstr "Ja"
 
@@ -2650,7 +2654,7 @@ msgstr "Gestern"
 msgid "Zap"
 msgstr "Umschalten"
 
-#: ../plugin/controllers/i18n.py:475
+#: ../plugin/controllers/i18n.py:476
 msgid "Zap & Record"
 msgstr "Umschalten und aufnehmen"
 
@@ -2686,7 +2690,7 @@ msgstr "Groß-/Kleinschreibung nicht beachten"
 msgid "case-sensitive"
 msgstr "Groß-/Kleinschreibung beachten"
 
-#: ../plugin/controllers/i18n.py:584
+#: ../plugin/controllers/i18n.py:585
 msgid "descramble and record ecm"
 msgstr "Entschlüsseln und ECM Aufzeichnen"
 
@@ -2706,11 +2710,11 @@ msgstr "deaktiviert"
 msgid "do nothing"
 msgstr "Nichts"
 
-#: ../plugin/controllers/i18n.py:585
+#: ../plugin/controllers/i18n.py:586
 msgid "don't descramble, record ecm"
 msgstr "Nicht Entschlüsseln, ECM Aufzeichnen"
 
-#: ../plugin/controllers/i18n.py:487
+#: ../plugin/controllers/i18n.py:488
 msgid "error! Loading Page"
 msgstr "Fehler beim Laden der Seite"
 
@@ -2738,8 +2742,8 @@ msgstr "Standby"
 msgid "hour"
 msgstr "Stunde"
 
-#: ../plugin/controllers/models/info.py:284
-#: ../plugin/controllers/models/info.py:287
+#: ../plugin/controllers/models/info.py:308
+#: ../plugin/controllers/models/info.py:311
 #: ../plugin/controllers/models/movies.py:243
 #: ../plugin/controllers/models/movies.py:665
 msgid "kB"
@@ -2749,8 +2753,8 @@ msgstr "kB"
 msgid "loading"
 msgstr "lade"
 
-#: ../plugin/controllers/models/info.py:62
-#: ../plugin/controllers/models/info.py:81
+#: ../plugin/controllers/models/info.py:86
+#: ../plugin/controllers/models/info.py:105
 msgid "manual/disabled"
 msgstr "manuell/deaktiviert"
 
@@ -2768,11 +2772,11 @@ msgstr "Minute"
 msgid "no description available"
 msgstr "keine Beschreibung verfügbar"
 
-#: ../plugin/controllers/i18n.py:162 ../plugin/controllers/models/info.py:172
+#: ../plugin/controllers/i18n.py:162 ../plugin/controllers/models/info.py:196
 msgid "none/IPv4-only network"
 msgstr "keine/reines IPv4-Netzwerk"
 
-#: ../plugin/controllers/i18n.py:583
+#: ../plugin/controllers/i18n.py:584
 msgid "normal"
 msgstr ""
 
@@ -2793,11 +2797,11 @@ msgstr "eins zwei drei vier unbekannter Befehl"
 msgid "partial title match"
 msgstr "Teil des Titels"
 
-#: ../plugin/controllers/models/info.py:445
+#: ../plugin/controllers/models/info.py:469
 msgid "r/o"
 msgstr ""
 
-#: ../plugin/controllers/models/info.py:441
+#: ../plugin/controllers/models/info.py:465
 msgid "r/w"
 msgstr ""
 
@@ -2841,9 +2845,9 @@ msgstr "Kurzbeschreibung"
 msgid "standard"
 msgstr "Standard"
 
-#: ../plugin/controllers/models/info.py:58
-#: ../plugin/controllers/models/info.py:70
-#: ../plugin/controllers/models/info.py:77
+#: ../plugin/controllers/models/info.py:82
+#: ../plugin/controllers/models/info.py:94
+#: ../plugin/controllers/models/info.py:101
 msgid "static"
 msgstr "statisch"
 
@@ -2875,21 +2879,21 @@ msgstr "Titel beginnt mit"
 msgid "transcoded"
 msgstr "transkodiert"
 
-#: ../plugin/controllers/web.py:747
+#: ../plugin/controllers/web.py:760
 #, python-format
 msgid "type %s is not a number"
 msgstr "der Typ %s ist keine Zahl"
 
-#: ../plugin/controllers/models/info.py:86
-#: ../plugin/controllers/models/info.py:103
+#: ../plugin/controllers/models/info.py:110
+#: ../plugin/controllers/models/info.py:127
 msgid "unknown"
 msgstr "unbekannt"
 
-#: ../plugin/controllers/i18n.py:508
+#: ../plugin/controllers/i18n.py:509
 msgid "using"
 msgstr "mittels"
 
-#: ../plugin/controllers/i18n.py:474
+#: ../plugin/controllers/i18n.py:475
 msgid "via"
 msgstr "über"
 

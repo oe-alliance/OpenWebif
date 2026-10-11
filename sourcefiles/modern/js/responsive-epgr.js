@@ -1,6 +1,6 @@
 //******************************************************************************
 //* epgr.js: openwebif EPGRefresh plugin
-//* Version 1.7
+//* Version 1.8
 //******************************************************************************
 //* Copyright (C) 2016-2022 jbleyel
 //* Copyright (C) 2016-2022 E2OpenPlugins
@@ -13,6 +13,7 @@
 //* V 1.5 - improve getallservices
 //* V 1.6 - improve getallservices
 //* V 1.7 - improve FillAllServices
+//* V 1.8 - show last refresh time
 //*
 //* Authors: jbleyel
 //*
@@ -137,6 +138,10 @@ function isAlter(sref) {return (sref.indexOf("1:134:1") == 0);}
 								else if(name == "interval") {
 									self.binterval_in_seconds = false;
 									$("#er_interval").val(val);
+								}
+								else if(name === "lastscan") {
+									let lastscan = parseInt(val);
+									$("#er_lastscan").text(lastscan > 0 ? new Date(lastscan * 1000).toLocaleString() : EPGRnever);
 								}
 								else
 									$('#er_'+name).val(val);

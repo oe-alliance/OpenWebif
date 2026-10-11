@@ -183,6 +183,9 @@
 				</button>
 			</div>
 		</div>
+		<div class="col-xs-12 align-center">
+			$tstrings['er_lastscan']: <span id="er_lastscan"></span>
+		</div>
 	</div>
 	<div id="statuscont" style="display:none;margin-top: 10px;">
 		<div id="statusbox" class="ui-state-error ui-corner-all" style="padding: 0 0.7em;"> 
@@ -206,9 +209,10 @@ var EPGRnoiptv=false;
 #else
 var EPGRnoiptv=true;
 #end if
+var EPGRnever="$tstrings['er_never']";
 </script>
 
-<script src="/modern/js/responsive-epgr.min.js?v1.7"></script>
+<script src="/modern/js/responsive-epgr.min.js?v1.8"></script>
 <script src="/modern/plugins/jquery-inputmask/jquery.inputmask.bundle.min.js"></script>
 <script>
 	jQuery.AdminBSB.input.activate();

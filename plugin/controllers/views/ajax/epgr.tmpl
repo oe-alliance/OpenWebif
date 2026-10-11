@@ -110,7 +110,9 @@ optgroup {font-weight: bolder;}
 	<button id="epgrbutton0">$tstrings['reload']</button>
 	<button id="epgrbutton1">$tstrings['er_save']</button>
 	<button id="epgrbutton2">$tstrings['er_refresh']</button>
-	</div></div>
+	</div>
+	<div style="padding: .5em 0;">$tstrings['er_lastscan']: <span id="er_lastscan"></span></div>
+	</div>
 
 	<div id="statuscont" style="display:none;margin-top:10px;">
 	<div id="statusbox" class="ui-state-error ui-corner-all" style="padding: 0 .7em;"> 
@@ -130,7 +132,8 @@ var EPGRnoiptv=false;
 #else
 var EPGRnoiptv=true;
 #end if
+var EPGRnever="$tstrings['er_never']";
 </script>
-<script type="text/javascript" src="js/epgr.min.js?v1.9"></script>
+<script type="text/javascript" src="js/epgr.min.js?v1.10"></script>
 <link rel="stylesheet" type="text/css" href="css/chosen.min.css" />
 #end filter
