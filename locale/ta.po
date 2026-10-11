@@ -1,0 +1,2164 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# jbleyel <jbleyel@gmx.net>, 2026.
+# தமிழ்நேரம் <tamilneram247@gmail.com>, 2026.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-11 14:04+0200\n"
+"PO-Revision-Date: 2026-10-11 13:14+0000\n"
+"Last-Translator: தமிழ்நேரம் <tamilneram247@gmail.com>\n"
+"Language-Team: Tamil <https://hosted.weblate.org/projects/e2openplugin-"
+"openwebif/e2openplugin-openwebif/ta/>\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.10.1.dev0\n"
+
+#, python-format
+msgid "%02d.%02d."
+msgstr "%02d.%02d."
+
+#, python-format
+msgid "%02d.%02d.%d"
+msgstr "%02d.%02d.%d"
+
+#, python-format
+msgid "%02d:%02d"
+msgstr "%02d:%02d"
+
+msgid "%d.%m.%Y"
+msgstr "%Y.%m.%d"
+
+msgid "%d.%m.%Y %H:%M"
+msgstr "%Y.%m.%d %H:%M"
+
+#, python-format
+msgid "%s %02d.%02d."
+msgstr "%s %02d.%02d."
+
+#, python-format
+msgid "%s %02d.%02d.%d"
+msgstr "%s%02d.%02d.%d"
+
+#, python-format
+msgid "%s %s is locked."
+msgstr "%s %s பூட்டப்பட்டுள்ளது."
+
+#, python-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#, python-format
+msgid "%s Style"
+msgstr "%s பாணி"
+
+#, python-format
+msgid "%s free / %s total"
+msgstr "%s இலவச / %s மொத்தம்"
+
+msgid "(Press 'shift' and click to 'hold')"
+msgstr "('சிப்ட்' ஐ அழுத்தி 'ஓல்ட்' என்பதைக் சொடுக்கு செய்க)"
+
+msgid "(in minutes)"
+msgstr "(நிமிடங்களில்)"
+
+msgid "<Current movie list location>"
+msgstr "<தற்போதைய திரைப்பட பட்டியல் இடம்>"
+
+msgid "<Default movie location>"
+msgstr "<இயல்புநிலை திரைப்பட இருப்பிடம்>"
+
+msgid "<Last timer location>"
+msgstr "<கடைசி நேரங்குறிகருவி இடம்>"
+
+msgid "A filename is required"
+msgstr "ஒரு கோப்பு பெயர் தேவை"
+
+msgid "A value is required"
+msgstr "ஒரு மதிப்பு தேவை"
+
+msgid "AGC"
+msgstr "AGC"
+
+msgid "About"
+msgstr "பற்றி"
+
+msgid "Add"
+msgstr "கூட்டு"
+
+msgid "Add  AutoTimer  to tags"
+msgstr "குறிச்சொற்களில் ஆட்டோடிமரைச் சேர்க்கவும்"
+
+msgid "Add AutoTimer name to tags"
+msgstr "குறிச்சொற்களில் ஆட்டோடிமர் பெயரைச் சேர்க்கவும்"
+
+msgid "Add Bouquet"
+msgstr "பூச்செண்டு சேர்க்கவும்"
+
+msgid "Add IPTV/URL"
+msgstr "ஐபிடிவி/url ஐச் சேர்க்கவும்"
+
+msgid "Add Marker"
+msgstr "மார்க்கரைச் சேர்க்கவும்"
+
+msgid "Add Spacer"
+msgstr "ச்பேசரைச் சேர்க்கவும்"
+
+msgid "Add a timer"
+msgstr "ஒரு டைமரைச் சேர்க்கவும்"
+
+msgid "Add a zap timer"
+msgstr "ஒரு சாப் டைமரைச் சேர்க்கவும்"
+
+msgid "Add an AutoTimer"
+msgstr "ஆட்டோடிமரைச் சேர்க்கவும்"
+
+msgid "Add channel(s) as alternate"
+msgstr "சேனல் (களை) மாற்றாக சேர்க்கவும்"
+
+msgid "Add filters"
+msgstr "வடிப்பான்களைச் சேர்க்கவும்"
+
+msgid "Add selection to bouquet"
+msgstr "பூச்செட்டில் தேர்வைச் சேர்க்கவும்"
+
+msgid "Add similar on conflict"
+msgstr "மோதலில் ஒத்ததைச் சேர்க்கவும்"
+
+msgid "Add tags to recordings"
+msgstr "பதிவுகளில் குறிச்சொற்களைச் சேர்க்கவும்"
+
+#, python-format
+msgid "Added %s to alternative service %s."
+msgstr "மாற்று சேவைக்கு %s சேர்க்கப்பட்டது %s."
+
+msgid "After"
+msgstr "பிறகு"
+
+msgid "After event"
+msgstr "நிகழ்வுக்குப் பிறகு"
+
+msgid "All"
+msgstr "அனைத்தும்"
+
+msgid "All Channels"
+msgstr "அனைத்து சேனல்களும்"
+
+msgid ""
+"All Files of this Software are open source software; you can redistribute it "
+"and/or modify it under the terms of the GNU General Public License version 3 "
+"as published by the Free Software Foundation."
+msgstr ""
+"இந்த மென்பொருளின் அனைத்து கோப்புகளும் திறந்த மூல மென்பொருள்; இலவச மென்பொருள் அறக்கட்டளை "
+"வெளியிட்டுள்ளபடி குனு பொது பொதுமக்கள் உரிமம் பதிப்பு 3 இன் விதிமுறைகளின் கீழ் நீங்கள் அதை "
+"மறுபகிர்வு செய்யலாம் மற்றும்/அல்லது மாற்றலாம்."
+
+msgid "All alternative services deleted."
+msgstr "அனைத்து மாற்று சேவைகளும் நீக்கப்பட்டன."
+
+msgid "Allow duplicates"
+msgstr "நகல்களை அனுமதிக்கவும்"
+
+#, python-format
+msgid "Alternative %s created failed."
+msgstr "மாற்று %s உருவாக்கப்பட்டவை."
+
+msgid "Always"
+msgstr "எப்போதும்"
+
+msgid "Answer is NO!"
+msgstr "பதில் இல்லை!"
+
+msgid "Answer is YES!"
+msgstr "பதில் ஆம்!"
+
+msgid "Any"
+msgstr "ஏதேனும்"
+
+msgid "Any day"
+msgstr "எந்த நாள்"
+
+msgid "Any service/recording"
+msgstr "எந்த சேவை/பதிவு"
+
+msgid "April"
+msgstr "ப-சித்திரை"
+
+msgid "Are you sure you want to copy this recording?"
+msgstr "இந்த பதிவை நகலெடுக்க விரும்புகிறீர்களா?"
+
+msgid "Are you sure you want to delete the selected bouquet?"
+msgstr "தேர்ந்தெடுக்கப்பட்ட பூச்செண்டை நீக்க விரும்புகிறீர்களா?"
+
+msgid "Are you sure you want to delete the selected item(s)?"
+msgstr "தேர்ந்தெடுக்கப்பட்ட உருப்படி (களை) நீக்க விரும்புகிறீர்களா?"
+
+msgid "Are you sure you want to delete this AutoTimer?"
+msgstr "இந்த ஆட்டோடிமரை நீக்க விரும்புகிறீர்களா?"
+
+msgid "Are you sure you want to delete this recording?"
+msgstr "இந்த பதிவை நீக்க விரும்புகிறீர்களா?"
+
+msgid "Are you sure you want to delete this timer?"
+msgstr "இந்த டைமரை நீக்க விரும்புகிறீர்களா?"
+
+msgid "Are you sure you want to move this recording?"
+msgstr "இந்த பதிவை நகர்த்த விரும்புகிறீர்களா?"
+
+msgid "Are you sure you want to rename this recording?"
+msgstr "இந்த பதிவை மறுபெயரிட விரும்புகிறீர்களா?"
+
+msgid "Are you sure you want to restore from file?"
+msgstr "கோப்பிலிருந்து மீட்டெடுக்க விரும்புகிறீர்களா?"
+
+msgid "Are you sure you want to start recording instantly?"
+msgstr "நீங்கள் உடனடியாக பதிவு செய்யத் தொடங்க விரும்புகிறீர்களா?"
+
+msgid "Ask, default No"
+msgstr "கேளுங்கள், இயல்புநிலை எண்"
+
+msgid "Ask, default Yes"
+msgstr "கேளுங்கள், இயல்புநிலை ஆம்"
+
+msgid "Audio Encoding"
+msgstr "ஆடியோ குறியாக்கம்"
+
+msgid "Audio PID (APID)"
+msgstr "ஆடியோ பிஐடி (ஏபிஐடி)"
+
+msgid "Audio Track"
+msgstr "ஆடியோ டிராக்"
+
+msgid "August"
+msgstr "ஆ-ஆவணி"
+
+msgid "Authors"
+msgstr "ஆசிரியர்கள்"
+
+msgid "Auto"
+msgstr "தானி"
+
+msgid "AutoPoll"
+msgstr "தன்னியக்க"
+
+msgid "AutoTimer Edit"
+msgstr "ஆட்டோ நேரங்குறிகருவி திருத்து"
+
+msgid "AutoTimer Settings"
+msgstr "ஆட்டோடிமர் அமைப்புகள்"
+
+msgid "AutoTimers"
+msgstr "ஆட்டோடிமர்கள்"
+
+msgid "Autotimer Preview"
+msgstr "ஆட்டோடிமர் முன்னோட்டம்"
+
+msgid "BER"
+msgstr "பெர்"
+
+msgid "Back"
+msgstr "பின்"
+
+msgid "Background only"
+msgstr "பின்னணி மட்டுமே"
+
+msgid "Before"
+msgstr "முன்"
+
+msgid "Begin"
+msgstr "தொடங்கு"
+
+msgid "Begin of \"After event\" timespan"
+msgstr "\"நிகழ்வுக்குப் பிறகு\" டைம்ச்பான் தொடங்குகிறது"
+
+msgid "Beginning of timespan"
+msgstr "டைம்ச்பானின் துவக்கம்"
+
+msgid "Bit Error Rate (BER)"
+msgstr "பிட் பிழை விகிதம் (பெர்)"
+
+msgid "Bookmark"
+msgstr "புத்தககுறி"
+
+msgid "Bookmarks"
+msgstr "புக்மார்க்குகள்"
+
+#, python-format
+msgid "Bouquet %s already exists."
+msgstr "பூச்செண்டு %s ஏற்கனவே உள்ளன."
+
+#, python-format
+msgid "Bouquet %s can not be moved."
+msgstr "பூச்செண்டு %s ஐ நகர்த்த முடியாது."
+
+#, python-format
+msgid "Bouquet %s created."
+msgstr "பூச்செண்டு %s உருவாக்கப்பட்டன."
+
+#, python-format
+msgid "Bouquet %s deleted."
+msgstr "பூச்செண்டு %s நீக்கப்பட்டன."
+
+#, python-format
+msgid "Bouquet %s is locked."
+msgstr "பூச்செண்டு %s பூட்டப்பட்டுள்ளன."
+
+#, python-format
+msgid "Bouquet %s is unlocked."
+msgstr "பூச்செண்டு %s திறக்கப்படுகின்றன."
+
+#, python-format
+msgid "Bouquet %s moved."
+msgstr "பூச்செண்டு %s நகர்ந்தன."
+
+#, python-format
+msgid "Bouquet %s removed failed, sevicerefence or mutable list is not valid."
+msgstr ""
+"பூச்செண்டு %s நீக்கப்பட்டவை, செவிசெரெஃபென்ச் அல்லது மாற்றக்கூடிய பட்டியல் செல்லுபடியாகாது."
+
+#, python-format
+msgid "Bouquet %s removed failed."
+msgstr "பூச்செண்டு %s அகற்றப்பட்டன."
+
+msgid "Bouquet Editor"
+msgstr "பூச்செண்டு எடிட்டர்"
+
+msgid "Bouquet name"
+msgstr "பூச்செண்டு பெயர்"
+
+msgid "Bouquet renamed successfully."
+msgstr "பூச்செண்டு வெற்றிகரமாக மறுபெயரிடப்பட்டது."
+
+msgid "Bouquet-settings were restored successfully"
+msgstr "பூச்செண்டு-அமைப்புகள் வெற்றிகரமாக மீட்டெடுக்கப்பட்டன"
+
+msgid "BouquetEditor"
+msgstr "பூச்செடி எடிட்டர்"
+
+msgid "Bouquetlist is not editable!"
+msgstr "பூச்செண்டு பட்டியல் திருத்தக்கூடியது அல்ல!"
+
+msgid "Bouquets"
+msgstr "பூங்கொத்துகள்"
+
+msgid "Box"
+msgstr "பெட்டி"
+
+msgid "Box Control"
+msgstr "பெட்டி கட்டுப்பாடு"
+
+msgid "Box Info"
+msgstr "பெட்டி செய்தி"
+
+msgid "Box uptime"
+msgstr "பெட்டி நேரம்"
+
+msgid "Brand"
+msgstr "சூட்டுக்குறி"
+
+msgid "Build"
+msgstr "உருவாக்கு"
+
+msgid "Cable"
+msgstr "வடம்"
+
+msgid "Calendar Week"
+msgstr "காலண்டர் வாரம்"
+
+msgid "Cancel"
+msgstr "ரத்துசெய்"
+
+msgid "Cancelled"
+msgstr "ரத்து செய்யப்பட்டது"
+
+msgid "Capacity"
+msgstr "திறன்"
+
+msgid "Capture screenshot"
+msgstr "திரை சாட்டைப் பிடிக்கவும்"
+
+msgid "Channel"
+msgstr "வாய்க்கால்"
+
+msgid "Channels"
+msgstr "சேனல்கள்"
+
+msgid "Chipset"
+msgstr "சில்லுத்தொகுதி"
+
+msgid "Cleanup Timers"
+msgstr "தூய்மைப்படுத்தும் டைமர்கள்"
+
+msgid "Close"
+msgstr "மூடு"
+
+msgid "Common Settings"
+msgstr "பொதுவான அமைப்புகள்"
+
+msgid "Config"
+msgstr "கட்டமைப்பு"
+
+#, python-format
+msgid "Conflicting Timer(s) detected! %s"
+msgstr "முரண்பட்ட நேரங்குறிகருவி (கள்) கண்டறியப்பட்டது! %s"
+
+msgid "Contributors"
+msgstr "பங்களிப்பாளர்கள்"
+
+msgid "Control"
+msgstr "கட்டுப்பாடு"
+
+msgid "Copy Recording"
+msgstr "நகல் பதிவு"
+
+#, python-format
+msgid "Could not add timer '%s'!"
+msgstr "டைமரை '%s' சேர்க்க முடியவில்லை!"
+
+#, python-format
+msgid "Could not find timer '%s' with given start and end time!"
+msgstr ""
+"கொடுக்கப்பட்ட தொடக்க மற்றும் இறுதி நேரத்துடன் டைமரை '%s' கண்டுபிடிக்க முடியவில்லை!"
+
+msgid "Create bouquet from selection"
+msgstr "தேர்விலிருந்து பூச்செண்டை உருவாக்கவும்"
+
+msgid "Current"
+msgstr "மின்னோட்ட்ம், ஓட்டம்"
+
+msgid "Current Event"
+msgstr "தற்போதைய நிகழ்வு"
+
+msgid "Currently recording"
+msgstr "தற்போது பதிவு செய்கிறது"
+
+msgid "Custom box name"
+msgstr "தனிப்பயன் பெட்டி பெயர்"
+
+msgid "Custom offset"
+msgstr "தனிப்பயன் ஆஃப்செட்"
+
+msgid "DHCP"
+msgstr "டி.எச்.சி.பி."
+
+msgid "Date"
+msgstr "திகதி"
+
+msgid "Date (newest)"
+msgstr "தேதி (புதியது)"
+
+msgid "Date (oldest)"
+msgstr "தேதி (பழமையானது)"
+
+msgid "December"
+msgstr "கா-மார்கழி"
+
+msgid "Deep Standby"
+msgstr "ஆழமான காத்திருப்பு"
+
+msgid "Default"
+msgstr "இயல்புநிலை"
+
+msgid "Delay Standby"
+msgstr "தாமதமாக காத்திருப்பு"
+
+msgid "Delete"
+msgstr "நீக்கு"
+
+msgid "Delete Bookmark"
+msgstr "புத்தகக்குறியை நீக்கு"
+
+msgid "Delete Bouquet"
+msgstr "பூச்செண்டை நீக்கு"
+
+msgid "Delete Recording"
+msgstr "பதிவை நீக்கு"
+
+msgid "Delete Timer"
+msgstr "டைமரை நீக்கு"
+
+msgid "Deleted"
+msgstr "நீக்கப்பட்டது"
+
+msgid "Description"
+msgstr "விவரம்"
+
+msgid "Device"
+msgstr "சாதனம்"
+
+msgid "Disable"
+msgstr "முடக்கு"
+
+msgid "Disable Timer"
+msgstr "டைமரை முடக்கு"
+
+msgid "Disabled on conflict"
+msgstr "மோதலில் முடக்கப்பட்டது"
+
+msgid "Display Mode"
+msgstr "காட்சி முறை"
+
+msgid "Display duration (s)"
+msgstr "காட்சி காலம் (கள்)"
+
+msgid "Distro"
+msgstr "டிச்ட்ரோ"
+
+msgid "Do you want to switch the receiver to this channel?"
+msgstr ""
+
+msgid "Dolby"
+msgstr "டால்பி"
+
+msgid "Done"
+msgstr "முடிந்தது"
+
+msgid "Download"
+msgstr "பதிவிறக்கம்"
+
+msgid "Download playlist for"
+msgstr "பிளேலிச்ட்டைப் பதிவிறக்கவும்"
+
+msgid "Drivers"
+msgstr "ஓட்டுநர்கள்"
+
+msgid "Duration"
+msgstr "காலம்"
+
+msgid "E"
+msgstr "இ"
+
+msgid "EPG"
+msgstr "எப்சி"
+
+msgid "EPG encoding"
+msgstr "ஈபிசி குறியாக்கம்"
+
+msgid "EPGRefresh"
+msgstr "EPGREFRESH"
+
+msgid "ERROR: Cannot set SleepTimer while device is in Standby-Mode"
+msgstr "பிழை: சாதனம் காத்திருப்பு-பயன்முறையில் இருக்கும்போது ச்லீப் டைமரை அமைக்க முடியாது"
+
+msgid "Edit"
+msgstr "தொகு"
+
+msgid "Edit Recording"
+msgstr "பதிவைத் திருத்து"
+
+msgid "Edit Timer"
+msgstr "நேரத்தைத் திருத்து"
+
+msgid "Editor"
+msgstr "திருத்தி"
+
+msgid "Enable"
+msgstr "இயக்கு"
+
+msgid "Enable Messages"
+msgstr "செய்திகளை இயக்கவும்"
+
+msgid "Enable Timer"
+msgstr "டைமரை இயக்கவும்"
+
+msgid "Enable filtering"
+msgstr "வடிகட்டலை இயக்கவும்"
+
+msgid "Enable/Disable Screenshot on key press"
+msgstr "முக்கிய பத்திரிகைகளில் திரை சாட்டை இயக்கவும்/முடக்கவும்"
+
+msgid "Enabled"
+msgstr "இயக்கப்பட்டது"
+
+msgid "Encrypted"
+msgstr "குறியாக்கப்பட்டது"
+
+msgid "End"
+msgstr "முடிவு"
+
+msgid "End of \"After event\" timespan"
+msgstr "\"நிகழ்வுக்குப் பிறகு\" டைம்ச்பான் முடிவு"
+
+msgid "End of timespan"
+msgstr "நேரச்பானின் முடிவு"
+
+msgid "Enter a name for the new bouquet"
+msgstr "புதிய பூச்செண்டுக்கு ஒரு பெயரை உள்ளிடவும்"
+
+msgid "Enter a name for the new marker"
+msgstr "புதிய மார்க்கருக்கு ஒரு பெயரை உள்ளிடவும்"
+
+msgid "Enter a name for this AutoTimer"
+msgstr "இந்த ஆட்டோடிமருக்கு ஒரு பெயரை உள்ளிடவும்"
+
+msgid "Enter path"
+msgstr "பாதையை உள்ளிடவும்"
+
+msgid "Enter text"
+msgstr "உரையை உள்ளிடவும்"
+
+msgid "Enter the text to find in the EPG"
+msgstr "EPG இல் கண்டுபிடிக்க உரையை உள்ளிடவும்"
+
+msgid "Error"
+msgstr "பிழை"
+
+msgid "Error parsing vps.xml"
+msgstr "Vps.xml ஐ பாகுபடுத்துவதில் பிழை"
+
+msgid "Error upload File"
+msgstr "பிழை பதிவேற்றும் கோப்பு"
+
+msgid "Error while preparing backup file."
+msgstr "காப்புப்பிரதி கோப்பைத் தயாரிக்கும் போது பிழை."
+
+msgid "Error writing File"
+msgstr "கோப்பு எழுதுதல் கோப்பு"
+
+#, python-format
+msgid "Error, %s does not exists, restore is not possible..."
+msgstr "பிழை, %s இல்லை, மீட்டமைப்பது சாத்தியமில்லை ..."
+
+#, python-format
+msgid "Error, %s was not created with WebBouquetEditor..."
+msgstr "பிழை, வெப் ப ouquetediter உடன் %s உருவாக்கப்படவில்லை ..."
+
+#, python-format
+msgid "Error, extract files from backup '%s'"
+msgstr "பிழை, '%s' காப்புப்பிரதியிலிருந்து கோப்புகளைப் பிரித்தெடுக்கவும்"
+
+#, python-format
+msgid "Error: Bouquet %s could not deleted, OSError."
+msgstr "பிழை: பூச்செண்டு %s நீக்க முடியவில்லை, ஒச்ரர்."
+
+msgid "Event not found"
+msgstr "நிகழ்வு கிடைக்கவில்லை"
+
+msgid "EventId not found"
+msgstr "நிகழ்வுஅடையாளம் கண்டுபிடிக்கப்படவில்லை"
+
+msgid "Every"
+msgstr "ஒவ்வொன்றும்"
+
+msgid "Exclude when"
+msgstr "எப்போது விலக்கு"
+
+msgid "Execute \"After event\" during timespan"
+msgstr "டைம்ச்பானின் போது \"நிகழ்வுக்குப் பிறகு\" செயல்படுத்தவும்"
+
+msgid "Executing..."
+msgstr ""
+
+msgid "Export"
+msgstr "ஏற்றுமதி"
+
+msgid "Extras"
+msgstr "கூடுதல்"
+
+msgid "Fake Recording"
+msgstr "போலி பதிவு"
+
+msgid "Fastscan"
+msgstr "ஃபாச்ட்ச்கான்"
+
+msgid "February"
+msgstr "தை-மாசி"
+
+msgid "Find similar events"
+msgstr "இதே போன்ற நிகழ்வுகளைக் கண்டறியவும்"
+
+msgid "Firmware version"
+msgstr "ஃபார்ம்வேர் பதிப்பு"
+
+msgid "Folders"
+msgstr "கோப்புறைகள்"
+
+msgid "Force"
+msgstr "ஆற்றல்"
+
+msgid "Fr"
+msgstr "Fr"
+
+msgid "Free"
+msgstr "இலவசம்"
+
+msgid "Free Memory"
+msgstr "இலவச நினைவகம்"
+
+msgid "Free space"
+msgstr "வெற்று இடம்"
+
+msgid "Fri"
+msgstr "வெள்ளி"
+
+msgid "Friday"
+msgstr "வெள்ளிக்கிழமை"
+
+msgid "From date"
+msgstr "தேதியிலிருந்து"
+
+msgid "Front processor version"
+msgstr "முன் செயலி பதிப்பு"
+
+msgid "Full remote"
+msgstr "முழு தொலைநிலை"
+
+msgid "GB"
+msgstr "சிபி"
+
+msgid "GUI version"
+msgstr "GUI பதிப்பு"
+
+msgid "Gateway"
+msgstr "நுழைவாயில்"
+
+msgid "Get mutable list for new created alternative failed!"
+msgstr "புதிய உருவாக்கப்பட்ட மாற்று தோல்வியுற்றதற்கு மாற்றக்கூடிய பட்டியலைப் பெறுங்கள்!"
+
+msgid "Get mutable list for new created bouquet failed!"
+msgstr "புதிய உருவாக்கப்பட்ட பூச்செண்டுக்கு மாற்றக்கூடிய பட்டியலைப் பெறுங்கள்!"
+
+msgid "HH:MM"
+msgstr "HH: மிமீ"
+
+msgid "Hard disk model"
+msgstr "ஆர்ட் டிச்க் மாதிரி"
+
+msgid "Hardware"
+msgstr "வன்பொருள்"
+
+msgid "Hide full remote"
+msgstr "முழு தொலைதூரத்தை மறைக்கவும்"
+
+msgid "High Resolution"
+msgstr "உயர் தெளிவுத்திறன்"
+
+msgid "Hold to drag"
+msgstr "இழுக்க பிடிக்கவும்"
+
+msgid "Hour"
+msgstr "மணி"
+
+msgid "IPTV / URL name"
+msgstr "IPTV / முகவரி பெயர்"
+
+msgid "IPv4 address"
+msgstr "ஐபிவி 4 முகவரி"
+
+msgid "IPv4-only Python/Twisted"
+msgstr "Ipv4-மட்டும் பைதான்/முறுக்கப்பட்ட"
+
+msgid "IPv4-only kernel"
+msgstr "IPv4-மட்டும் கர்னல்"
+
+msgid "IPv6 address(es)"
+msgstr "IPv6 முகவரி (ES)"
+
+msgid "Import"
+msgstr "இறக்குமதி"
+
+msgid "Include description"
+msgstr "விளக்கத்தை சேர்க்கவும்"
+
+msgid "Include extended description"
+msgstr "நீட்டிக்கப்பட்ட விளக்கத்தை சேர்க்கவும்"
+
+msgid "Include short description"
+msgstr "குறுகிய விளக்கத்தை சேர்க்கவும்"
+
+msgid "Include when"
+msgstr "எப்போது சேர்க்கவும்"
+
+msgid "Infinite Instant recording started"
+msgstr "எல்லையற்ற உடனடி பதிவு தொடங்கியது"
+
+msgid "Info"
+msgstr "தகவல்"
+
+msgid "Information"
+msgstr "தகவல்"
+
+msgid "Inherit AutoTimer"
+msgstr "ஆட்டோடிமரை வாரிசு"
+
+msgid "Install Package"
+msgstr "தொகுப்பை நிறுவவும்"
+
+msgid "Installed"
+msgstr "நிறுவப்பட்டது"
+
+msgid "Instant Record"
+msgstr "உடனடி பதிவு"
+
+msgid "Instant record for current Event started"
+msgstr "தற்போதைய நிகழ்வுக்கான உடனடி பதிவு தொடங்கியது"
+
+msgid "Internal error!"
+msgstr "உள் பிழை!"
+
+msgid "Internal flash memory"
+msgstr "உள் ஃபிளாச் நினைவகம்"
+
+#, python-format
+msgid "Interval (in %s)"
+msgstr "இடைவெளி ( %s இல்)"
+
+msgid "Interval (min.)"
+msgstr "இடைவெளி (நிமிடம்.)"
+
+msgid "Interval (sec.)"
+msgstr "இடைவெளி (நொடி.)"
+
+msgid "January"
+msgstr "மா-தை"
+
+msgid "Javascript Libraries"
+msgstr "சாவாச்கிரிப்ட் நூலகங்கள்"
+
+msgid "July"
+msgstr "ஆ-ஆடி"
+
+msgid "June"
+msgstr "வை-ஆனி"
+
+msgid "Just play"
+msgstr "விளையாடுங்கள்"
+
+msgid "Kernel"
+msgstr "கர்னல்"
+
+msgid "LCD"
+msgstr "எல்.சி.டி."
+
+msgid "LCD4Linux Setup"
+msgstr "LCD4Linux அமைப்பு"
+
+msgid "Label series"
+msgstr "சிட்டை தொடர்"
+
+msgid "Last refresh"
+msgstr ""
+
+msgid "Legacy via port 8002"
+msgstr ""
+
+msgid "License"
+msgstr "உரிமம்"
+
+msgid "Link speed"
+msgstr "இணைப்பு விரைவு"
+
+msgid "List of Timers has been cleaned"
+msgstr "டைமர்களின் பட்டியல் தூய்மை செய்யப்பட்டுள்ளது"
+
+msgid "Loading..."
+msgstr "ஏற்றுகிறது ..."
+
+msgid "Location"
+msgstr "இடம்"
+
+msgid "Locked"
+msgstr "பூட்டப்பட்டுள்ளது"
+
+msgid "MAC address"
+msgstr "மேக் முகவரி"
+
+msgid "MB"
+msgstr "எம்பி"
+
+msgid "Main"
+msgstr "முக்கிய"
+
+msgid "Main memory"
+msgstr "முதன்மையான நினைவகம்"
+
+msgid "March"
+msgstr "மா-பங்குனி"
+
+msgid "Margin"
+msgstr "விளிம்பு"
+
+msgid "Marker added."
+msgstr "மார்க்கர் சேர்க்கப்பட்டது."
+
+msgid "Marker name"
+msgstr "மார்க்கர் பெயர்"
+
+msgid "Match text"
+msgstr "உரை பொருந்தவும்"
+
+msgid "Max Days"
+msgstr "அதிகபட்ச நாட்கள்"
+
+msgid "May"
+msgstr "சி-வைகாசி"
+
+msgid "Message sent successfully!"
+msgstr "செய்தி வெற்றிகரமாக அனுப்பப்பட்டது!"
+
+msgid "Method"
+msgstr "முறை"
+
+msgid "Minimal EPG list"
+msgstr "குறைந்தபட்ச ஈபிசி பட்டியல்"
+
+msgid "Minimal movie list"
+msgstr "குறைந்தபட்ச திரைப்பட பட்டியல்"
+
+msgid "Minimal timer list"
+msgstr "குறைந்தபட்ச நேரங்குறிகருவி பட்டியல்"
+
+msgid "Minute"
+msgstr "நிமிடங்கள்"
+
+#, python-format
+msgid "Missing mandatory parameter '%s'"
+msgstr "கட்டாய அளவுருவைக் காணவில்லை '%s'"
+
+msgid "Missing request parameter: sRef"
+msgstr "கோரிக்கை அளவுரு இல்லை: sRef"
+
+msgid "Mo"
+msgstr "மோ"
+
+msgid "Model"
+msgstr "மாதிரியுரு"
+
+msgid "Mon"
+msgstr "தி"
+
+msgid "Monday"
+msgstr "திங்கள்"
+
+msgid "Monthly"
+msgstr "மாதாந்திர"
+
+msgid "More"
+msgstr "மேலும்"
+
+msgid "More details"
+msgstr "மேலும் விவரங்கள்"
+
+msgid "Mount point"
+msgstr "மவுண்ட் புள்ளி"
+
+msgid "Move Recording"
+msgstr "பதிவை நகர்த்தவும்"
+
+msgid "Movie database for EPG"
+msgstr "EPG க்கான திரைப்பட தரவுத்தளம்"
+
+msgid "Movielist"
+msgstr "மூவிச்ட்"
+
+msgid "Movies"
+msgstr "திரைப்படங்கள்"
+
+msgid "Multi-Bouquet is not enabled!"
+msgstr "மல்டி-பூங்கொத்துகள் இயக்கப்படவில்லை!"
+
+msgid "MultiBoot Slots"
+msgstr ""
+
+msgid "MultiEPG"
+msgstr "மல்டிபிக்"
+
+msgid "Mute/Unmute"
+msgstr "முடக்கு/அசைவு"
+
+msgid "NCam Webinterface"
+msgstr "NCAM Webinterface"
+
+msgid "Name"
+msgstr "பெயர்"
+
+msgid "Name (a-z)"
+msgstr "பெயர் (A-Z)"
+
+msgid "Name (z-a)"
+msgstr "பெயர் (Z-A)"
+
+msgid "Namespace"
+msgstr "பெயர்வெளி"
+
+msgid "Network Interface"
+msgstr "பிணைய இடைமுகம்"
+
+msgid "Network Shares"
+msgstr "பிணையம் பங்குகள்"
+
+msgid "Never"
+msgstr "ஒருபோதும்"
+
+msgid "New"
+msgstr "புதிய"
+
+msgid "New Bookmark:"
+msgstr "புதிய புக்மார்க்கு:"
+
+msgid "New Name"
+msgstr "புதிய பெயர்"
+
+msgid "Next Event"
+msgstr "அடுத்த நிகழ்வு"
+
+msgid "No"
+msgstr "இல்லை"
+
+msgid "No EPG data available."
+msgstr "ஈபிசி தரவு எதுவும் கிடைக்கவில்லை."
+
+msgid "No Parent Control Setup Pin given!"
+msgstr "பெற்றோர் கட்டுப்பாட்டு அமைவு முள் எதுவும் கொடுக்கப்படவில்லை!"
+
+msgid "No answer in time"
+msgstr "சரியான நேரத்தில் பதில் இல்லை"
+
+msgid "No bouquet given!"
+msgstr "பூச்செண்டு எதுவும் கொடுக்கப்படவில்லை!"
+
+msgid "No bouquet name given!"
+msgstr "பூச்செண்டு பெயர் எதுவும் கொடுக்கப்படவில்லை!"
+
+msgid "No current service given!"
+msgstr "தற்போதைய பணி எதுவும் கொடுக்கப்படவில்லை!"
+
+msgid "No event found! Not recording!"
+msgstr "எந்த நிகழ்வும் கிடைக்கவில்லை! பதிவு செய்யவில்லை!"
+
+msgid "No free tuner available for this channel."
+msgstr ""
+
+msgid "No marker-name given!"
+msgstr "மார்க்கர் பெயர் கொடுக்கப்படவில்லை!"
+
+msgid "No matches were found in the EPG"
+msgstr "ஈபிசியில் போட்டிகள் எதுவும் காணப்படவில்லை"
+
+msgid "No matching Timer found"
+msgstr "பொருந்தக்கூடிய நேரங்குறிகருவி எதுவும் கிடைக்கவில்லை"
+
+msgid "No network connection"
+msgstr "பிணைய இணைப்பு இல்லை"
+
+msgid "No new servicename given!"
+msgstr "புதிய சேவைப் பெயர் எதுவும் கொடுக்கப்படவில்லை!"
+
+msgid "No position given!"
+msgstr "எந்த நிலையும் கொடுக்கப்படவில்லை!"
+
+msgid "No provider given!"
+msgstr "எந்த வழங்குநரும் கொடுக்கப்படவில்லை!"
+
+msgid "No service given!"
+msgstr "எந்த சேவையும் கொடுக்கப்படவில்லை!"
+
+msgid "No, cancel"
+msgstr "இல்லை, ரத்துசெய்"
+
+msgid "None"
+msgstr "எதுவுமில்லை"
+
+msgid "Nothing"
+msgstr "எதுவும் இல்லை"
+
+msgid "Nothing playing."
+msgstr "எதுவும் விளையாடுவதில்லை."
+
+msgid "Notify if Conflict"
+msgstr "மோதல் இருந்தால் அறிவிக்கவும்"
+
+msgid "Notify if Similar"
+msgstr "ஒத்திருந்தால் அறிவிக்கவும்"
+
+msgid "November"
+msgstr "ஐ-கார்த்திகை"
+
+msgid "Now"
+msgstr "இப்போது"
+
+msgid "Now/Next Columns"
+msgstr "இப்போது/அடுத்த நெடுவரிசைகள்"
+
+msgid "Number of recordings remaining"
+msgstr "மீதமுள்ள பதிவுகளின் எண்ணிக்கை"
+
+msgid "ONID"
+msgstr "தவிர"
+
+msgid "OSCam Webinterface"
+msgstr "OSCAM Webinterface"
+
+msgid "OSD"
+msgstr "OSD"
+
+msgid "October"
+msgstr "பு-ஐப்பசி"
+
+msgid "Offset after recording (mins)"
+msgstr "பதிவுசெய்த பிறகு ஆஃப்செட் (பொருள்)"
+
+msgid "Offset before recording (mins)"
+msgstr "பதிவு செய்வதற்கு முன் ஆஃப்செட் (நிமிடங்கள்)"
+
+msgid "On"
+msgstr "ஆன்"
+
+msgid "On any service"
+msgstr "எந்தவொரு சேவையிலும்"
+
+msgid "On same service"
+msgstr "அதே சேவையில்"
+
+msgid "Only match between dates"
+msgstr "தேதிகளுக்கு இடையில் மட்டுமே பொருந்தும்"
+
+msgid "Only match during timespan"
+msgstr "டைம்ச்பானின் போது மட்டுமே பொருந்துகிறது"
+
+msgid "Oops, no results matched your search"
+msgstr "அச்சச்சோ, எந்த முடிவுகளும் உங்கள் தேடலுடன் பொருந்தவில்லை"
+
+msgid "Oops..."
+msgstr "அச்சச்சோ ..."
+
+msgid "Open Source Web Interface for Linux set-top box"
+msgstr "லினக்ச் செட்-டாப் பெட்டிக்கான மூல வலை இடைமுகத்தைத் திறக்கவும்"
+
+msgid "Open in new window"
+msgstr "புதிய சாளரத்தில் திறக்கவும்"
+
+msgid "OpenWebif Browser Settings"
+msgstr "OpenWebif உலாவி அமைப்புகள்"
+
+msgid "OpenWebif Settings"
+msgstr "OpenWebif அமைப்புகள்"
+
+msgid "OpenWebif url:"
+msgstr "இருப்பின்இணையம்திற முகவரி:"
+
+msgid "Orbital Position"
+msgstr "சுற்றுப்பாதை நிலை"
+
+msgid "Override found with alternative service"
+msgstr "மாற்று சேவையுடன் மேலெழுதல் காணப்படுகிறது"
+
+msgid "PCR PID"
+msgstr "பி.சி.ஆர் பிஐடி"
+
+msgid "PMT PID"
+msgstr "பிஎம்டி பிஐடி"
+
+msgid "Packages"
+msgstr "தொகுப்பு"
+
+msgid "Parent Control Setup Pin is wrong!"
+msgstr "பெற்றோர் கட்டுப்பாட்டு அமைவு முள் தவறு!"
+
+msgid "Parent Control is not activated."
+msgstr "பெற்றோர் கட்டுப்பாடு செயல்படுத்தப்படவில்லை."
+
+msgid "Parse AutoTimer"
+msgstr "Parese self -mider"
+
+msgid "PiP"
+msgstr "பிப்"
+
+msgid "Picture in Picture"
+msgstr "படத்தில் படம்"
+
+msgid "Picture in Picture (hidden)"
+msgstr "படத்தில் படம் (மறைக்கப்பட்டுள்ளது)"
+
+msgid "Plain"
+msgstr "வெற்று"
+
+msgid "Playback"
+msgstr "பின்னணி"
+
+msgid "Playlist"
+msgstr "பிளேலிச்ட்"
+
+msgid "Playlist format"
+msgstr "பிளேலிச்ட் வடிவம்"
+
+msgid "Power Control"
+msgstr "ஆற்றல் கட்டுப்பாடு"
+
+msgid "PowerTimer feature not available"
+msgstr "பவர்டிமர் நற்பொருத்தம் கிடைக்கவில்லை"
+
+msgid "Preview"
+msgstr "முன்னோட்டம்"
+
+msgid "Primetimes"
+msgstr "பிரைம் டைம்ச்"
+
+msgid "Process"
+msgstr "செயல்முறை"
+
+msgid "Provider"
+msgstr "வழங்குநர்"
+
+msgid "Providers"
+msgstr "வழங்குநர்கள்"
+
+msgid "REC"
+msgstr "ரெக்"
+
+msgid "Radio"
+msgstr "வானொலி"
+
+msgid "Reboot Box"
+msgstr "பெட்டியை மறுதொடக்கம் செய்யுங்கள்"
+
+msgid "Receiver"
+msgstr "பெறுவி"
+
+msgid "Record a maximum of # times"
+msgstr "அதிகபட்சம் # முறை பதிவு செய்யுங்கள்"
+
+msgid "Recording"
+msgstr "பதிவு"
+
+msgid "Recording Type"
+msgstr "பதிவு வகை"
+
+msgid "Refresh"
+msgstr "புதுப்பிப்பு"
+
+msgid "Refresh Timer"
+msgstr "டைமரை புதுப்பிக்கவும்"
+
+msgid "Refresh automatically every"
+msgstr "ஒவ்வொன்றும் தானாகவே புதுப்பிக்கவும்"
+
+msgid "Refresh now"
+msgstr "இப்போது புதுப்பிக்கவும்"
+
+msgid "Reload"
+msgstr "ஏற்றவும்"
+
+msgid "Remote"
+msgstr "தொலைநிலை"
+
+msgid "Remove Package"
+msgstr "தொகுப்பை அகற்று"
+
+msgid "Remove filter"
+msgstr "வடிகட்டியை அகற்று"
+
+msgid "Rename"
+msgstr "மறுபெயரிடுங்கள்"
+
+msgid "Rename Bouquet"
+msgstr "பூச்செண்டு மறுபெயரிடுங்கள்"
+
+msgid "Rename Recording"
+msgstr "பதிவை மறுபெயரிடுங்கள்"
+
+msgid "Repeated"
+msgstr "மறுநிகழ்ந்தது"
+
+msgid "Require description to be unique"
+msgstr "விளக்கம் தனித்துவமாக இருக்க வேண்டும்"
+
+msgid "Reset"
+msgstr "மீட்டமை"
+
+msgid "Reset count"
+msgstr "எண்ணிக்கையை மீட்டமை"
+
+msgid "Restart GUI"
+msgstr "GUI ஐ மறுதொடக்கம் செய்யுங்கள்"
+
+msgid "Restrict to bouquets"
+msgstr "பூங்கொத்துகளுக்கு கட்டுப்படுத்துங்கள்"
+
+msgid "Restrict to channels"
+msgstr "சேனல்களுக்கு கட்டுப்படுத்துங்கள்"
+
+msgid "Root"
+msgstr "மூலம்"
+
+msgid "Run Script"
+msgstr ""
+
+msgid "SLAAC"
+msgstr "ச்லாக்"
+
+msgid "SNR"
+msgstr "எச்.என்.ஆர்"
+
+msgid "SRef"
+msgstr "சச்ட்"
+
+msgid "Sa"
+msgstr "ச"
+
+msgid "Safe mode"
+msgstr "பாதுகாப்பான பயன்முறை"
+
+msgid "Sat"
+msgstr "காரி"
+
+msgid "Satellites"
+msgstr "செயற்கைக்கோள்கள்"
+
+msgid "Satfinder"
+msgstr "சாட்ஃபைண்டர்"
+
+msgid "Saturday"
+msgstr "காரிக்கிழமை"
+
+msgid "Save"
+msgstr "சேமி"
+
+msgid "Saving..."
+msgstr ""
+
+msgid "Screenshot"
+msgstr "திரைக்காட்சி"
+
+msgid "Script completed"
+msgstr ""
+
+msgid "Scripts"
+msgstr ""
+
+msgid "Search"
+msgstr "தேடல்"
+
+msgid "Search CSFD"
+msgstr "CSFD ஐத் தேடுங்கள்"
+
+msgid "Search EPG"
+msgstr "EPG ஐத் தேடுங்கள்"
+
+msgid "Search IMDb"
+msgstr "IMDB ஐத் தேடுங்கள்"
+
+msgid "Search KinoPoisk"
+msgstr "கினோபோயிச்கைத் தேடுங்கள்"
+
+msgid "Search TV Guide UK"
+msgstr "தேடல் தொலைக்காட்சி வழிகாட்டி யுகே"
+
+msgid "Search by name, sd / hd / uhd, or provider"
+msgstr "பெயர், எசுடி/எச்டி / யுஎச்.டி அல்லது வழங்குநர்மூலம் தேடு"
+
+msgid "Search strictness"
+msgstr "கண்டிப்பைத் தேடுங்கள்"
+
+msgid "Search type"
+msgstr "தேடல் வகை"
+
+msgid "Select Directory"
+msgstr "கோப்பகத்தைத் தேர்ந்தெடு"
+
+msgid "Select IPK file for upload"
+msgstr "பதிவேற்ற ஐபிகே கோப்பைத் தேர்ந்தெடுக்கவும்"
+
+msgid "Select..."
+msgstr "தேர்ந்தெடுக்கவும் ..."
+
+msgid "Send"
+msgstr "அனுப்பு"
+
+msgid "Send Message"
+msgstr "செய்தி அனுப்பவும்"
+
+msgid "Send a Message"
+msgstr "ஒரு செய்தியை அனுப்பவும்"
+
+msgid "September"
+msgstr "ஆ-புரட்டாசி"
+
+msgid "Service"
+msgstr "பணி"
+
+#, python-format
+msgid "Service %s added."
+msgstr "பணி %s சேர்க்கப்பட்டது."
+
+#, python-format
+msgid "Service %s already exists in bouquet %s."
+msgstr "%s பணி ஏற்கனவே %s பூங்கொத்துகளில் உள்ளது."
+
+#, python-format
+msgid "Service %s can not be removed."
+msgstr "பணி %s ஐ அகற்ற முடியாது."
+
+#, python-format
+msgid "Service %s is locked."
+msgstr "பணி %s பூட்டப்பட்டுள்ளன."
+
+#, python-format
+msgid "Service %s is unlocked."
+msgstr "பணி %s திறக்கப்படுகின்றன."
+
+#, python-format
+msgid "Service %s moved."
+msgstr "பணி %s நகர்ந்தன."
+
+#, python-format
+msgid "Service %s removed from bouquet %s."
+msgstr "பணி %s பூச்செண்டு %s இலிருந்து அகற்றப்பட்டன."
+
+#, python-format
+msgid "Service %s removed."
+msgstr "பணி %s அகற்றப்பட்டன."
+
+msgid "Service ID (SID)"
+msgstr "பணி ஐடி (எச்ஐடி)"
+
+msgid "Service can not be moved."
+msgstr "சேவையை நகர்த்த முடியாது."
+
+msgid "Service can not be renamed."
+msgstr "சேவையை மறுபெயரிட முடியாது."
+
+msgid "Service is not an alternative."
+msgstr "பணி ஒரு மாற்று அல்ல."
+
+msgid "Service renamed successfully."
+msgstr "பணி வெற்றிகரமாக மறுபெயரிடப்பட்டது."
+
+msgid "Services"
+msgstr "சேவைகள்"
+
+msgid "Serving stream"
+msgstr "பணி ச்ட்ரீம்"
+
+msgid "Set maximum duration"
+msgstr "அதிகபட்ச கால அளவை அமைக்கவும்"
+
+msgid "Settings"
+msgstr "அமைப்புகள்"
+
+msgid "Show Compact EPG List"
+msgstr ""
+
+msgid "Show Compact Timer List"
+msgstr ""
+
+msgid "Show EPG History"
+msgstr "ஈபிசி வரலாற்றைக் காட்டு"
+
+msgid "Show EPG for"
+msgstr "EPG ஐக் காட்டு"
+
+msgid "Show Full OpenWebif"
+msgstr "முழு ஓபன்வெபிஃப் காட்டு"
+
+msgid "Show IPTV channels in selection (eg. Autotimer)"
+msgstr "தேர்வில் ஐபிடிவி சேனல்களைக் காட்டு (எ.கா. ஆட்டோடிமர்)"
+
+msgid "Show all packages"
+msgstr "அனைத்து தொகுப்புகளையும் காட்டு"
+
+msgid "Show box name in header"
+msgstr "தலைப்பில் பெட்டி பெயரைக் காட்டு"
+
+msgid "Show description"
+msgstr ""
+
+msgid "Show details"
+msgstr "விவரங்களைக் காட்டு"
+
+msgid "Show full remote"
+msgstr "முழு தொலைதூரத்தைக் காட்டு"
+
+msgid "Show in Extensions menu"
+msgstr "நீட்டிப்பு பட்டியலில் காண்பி"
+
+msgid "Show picon background"
+msgstr "பிகான் பின்னணியைக் காட்டு"
+
+msgid "Show picons"
+msgstr "பிக்கன்களைக் காட்டு"
+
+msgid "Show picons in channel list"
+msgstr "சேனல் பட்டியலில் பிகன்களைக் காட்டு"
+
+msgid "Show service type in channel list"
+msgstr "சேனல் பட்டியலில் பணி வகையைக் காட்டு"
+
+msgid "Shutdown"
+msgstr "பணிநிறுத்தம்"
+
+msgid "Shutdown after refresh."
+msgstr "புதுப்பித்த பிறகு பணிநிறுத்தம்."
+
+msgid "Signal Power (AGC)"
+msgstr "சமிக்ஞை ஆற்றல் (AGC)"
+
+msgid "Signal Quality (SNR DB)"
+msgstr "சமிக்ஞை தகுதி (எச்.என்.ஆர் டி.பி.)"
+
+msgid "Signal Quality (SNR)"
+msgstr "சமிக்ஞை தகுதி (எச்.என்.ஆர்)"
+
+msgid "Simulate"
+msgstr "உருவகப்படுத்துங்கள்"
+
+msgid "Site and sources"
+msgstr "தளம் மற்றும் ஆதாரங்கள்"
+
+msgid "Skins"
+msgstr "தோல்கள்"
+
+msgid "SleepTimer error"
+msgstr "ச்லீப் டெமர் பிழை"
+
+msgid "Sleeptimer has been disabled"
+msgstr "ச்லீப் டெமர் முடக்கப்பட்டுள்ளது"
+
+msgid "Sleeptimer is disabled"
+msgstr "ச்லீப் டெமர் முடக்கப்பட்டுள்ளது"
+
+msgid "Sleeptimer is enabled"
+msgstr "ச்லீப் டெமர் இயக்கப்பட்டது"
+
+#, python-format
+msgid "Sleeptimer set to %d minutes"
+msgstr "ச்லீப் டெமர் %d நிமிடங்களுக்கு அமைக்கப்பட்டுள்ளது"
+
+msgid "Small remote layout"
+msgstr "சிறிய தொலைநிலை தளவமைப்பு"
+
+msgid "Software"
+msgstr "மென்பொருள்"
+
+msgid "Sorry this page is not yet implemented"
+msgstr "மன்னிக்கவும் இந்த பக்கம் இன்னும் செயல்படுத்தப்படவில்லை"
+
+msgid "Sort"
+msgstr "வரிசைப்படுத்து"
+
+msgid "Spinner"
+msgstr "ச்பின்னர்"
+
+msgid "Standby"
+msgstr "காத்திருப்பு"
+
+msgid "Start"
+msgstr "தொடங்கு"
+
+msgid "Start Instant Record"
+msgstr "உடனடி பதிவைத் தொடங்கவும்"
+
+msgid "Start time is after end time"
+msgstr "தொடக்க நேரம் இறுதி நேரத்திற்குப் பிறகு"
+
+msgid "Start typing..."
+msgstr "தட்டச்சு செய்யத் தொடங்குங்கள் ..."
+
+msgid "State"
+msgstr "மாநிலம்"
+
+msgid "Storage"
+msgstr "சேமிப்பு"
+
+msgid "Stream"
+msgstr "ச்ட்ரீம்"
+
+msgid "Stream Clients"
+msgstr "ச்ட்ரீம் கிளையண்டுகள்"
+
+msgid "Su"
+msgstr "அவை"
+
+msgid "Subdirectories"
+msgstr "துணை அடைவுகள்"
+
+msgid "Subnet mask"
+msgstr "சப்நெட் மாச்க்"
+
+msgid "Subservices"
+msgstr "உட்பிரிவுகள்"
+
+msgid "Sun"
+msgstr "சூரியன்"
+
+msgid "Sunday"
+msgstr "ஞாயிற்றுக்கிழமை"
+
+msgid "System OE"
+msgstr "கணினி oe"
+
+msgid "TB"
+msgstr "காசநோய்"
+
+msgid "TSID"
+msgstr "Tumd"
+
+msgid "TV"
+msgstr "டிவி"
+
+msgid "TV Guide"
+msgstr "டிவி வழிகாட்டி"
+
+msgid "TV Multi EPG"
+msgstr "டிவி மல்டி ஈபிசி"
+
+msgid "Tags"
+msgstr "குறிச்சொற்கள்"
+
+msgid "Teletext"
+msgstr "டெலிடெக்ச்ட்"
+
+msgid "Teletext PID"
+msgstr "டெலிடெக்ச்ட் பிஐடி"
+
+msgid "Television"
+msgstr "தொலைக்காட்சி"
+
+msgid "Template Engine"
+msgstr "வார்ப்புரு இயந்திரம்"
+
+msgid "Terminal"
+msgstr "முனையத்தில்"
+
+msgid "Terrestrial"
+msgstr "நிலப்பரப்பு"
+
+msgid "Text"
+msgstr "உரை"
+
+msgid "Th"
+msgstr "வது"
+
+#, python-format
+msgid "The parameter '%s' can't be empty"
+msgstr "'%s' அளவுரு காலியாக இருக்க முடியாது"
+
+msgid "The parameter 'command' must be a number"
+msgstr "'கட்டளை' அளவுரு ஒரு எண்ணாக இருக்க வேண்டும்"
+
+#, python-format
+msgid "The timer '%s' has been %s successfully"
+msgstr "நேரங்குறிகருவி ' %s' %s வெற்றிகரமாக உள்ளது"
+
+#, python-format
+msgid "The timer '%s' has been deleted successfully"
+msgstr "நேரங்குறிகருவி '%s' வெற்றிகரமாக நீக்கப்பட்டுள்ளது"
+
+#, python-format
+msgid "The timer '%s' now recorded! Not disabled!"
+msgstr "நேரங்குறிகருவி '%s' இப்போது பதிவு செய்யப்பட்டுள்ளது! முடக்கப்படவில்லை!"
+
+msgid "Theme"
+msgstr "கருப்பொருள்"
+
+msgid "Theme mode"
+msgstr "கருப்பொருள் பயன்முறை"
+
+msgid "This service can not be added."
+msgstr "இந்த சேவையைச் சேர்க்க முடியாது."
+
+msgid "Thu"
+msgstr "Thu"
+
+msgid "Thursday"
+msgstr "வியாழக்கிழமை"
+
+msgid "Time"
+msgstr "நேரம்"
+
+msgid "Timeline"
+msgstr "காலவரிசை"
+
+msgid "Timeout"
+msgstr "நேரம் முடிந்தது"
+
+msgid "Timer"
+msgstr "நேரங்குறிகருவி"
+
+#, python-format
+msgid "Timer '%s' added"
+msgstr "நேரங்குறிகருவி '%s' சேர்க்கப்பட்டது"
+
+#, python-format
+msgid "Timer '%s' already exists!"
+msgstr "நேரங்குறிகருவி '%s' ஏற்கனவே உள்ளது!"
+
+#, python-format
+msgid "Timer '%s' changed"
+msgstr "நேரங்குறிகருவி '%s' மாற்றப்பட்டது"
+
+#, python-format
+msgid "Timer '%s' not enabled while Conflict"
+msgstr "நேரங்குறிகருவி '%s' மோதல் போது இயக்கப்படவில்லை"
+
+#, python-format
+msgid "Timer '%s' not saved while Conflict"
+msgstr "நேரங்குறிகருவி '%s' மோதலில் சேமிக்கப்படவில்லை"
+
+msgid "Timer Added"
+msgstr "நேரங்குறிகருவி சேர்க்கப்பட்டது"
+
+msgid "Timer Conflict"
+msgstr "நேரங்குறிகருவி மோதல்"
+
+msgid "Timer added"
+msgstr "நேரங்குறிகருவி சேர்க்கப்பட்டது"
+
+msgid "Timer conflict detected! Not recording!"
+msgstr "நேரங்குறிகருவி மோதல் கண்டறியப்பட்டது! பதிவு செய்யவில்லை!"
+
+msgid "Timer type"
+msgstr "நேரங்குறிகருவி வகை"
+
+msgid "TimerList has been saved"
+msgstr "நேரங்குறிகருவி பட்டியல் சேமிக்கப்பட்டுள்ளது"
+
+msgid "Timerlist"
+msgstr "நேரங்குறிகருவி பட்டியல்"
+
+msgid "Timers"
+msgstr "டைமர்கள்"
+
+msgid "Title"
+msgstr "தலைப்பு"
+
+msgid "To date"
+msgstr "இன்றுவரை"
+
+msgid "Today"
+msgstr "இன்று"
+
+msgid "Toggle Standby"
+msgstr "காத்திருப்பு மாற்று"
+
+msgid "Transcode"
+msgstr "டிரான்ச்கோட்"
+
+msgid "Transcoding Mode"
+msgstr ""
+
+msgid "Translation to Spanish"
+msgstr "ச்பானிச் மொழியில் மொழிபெயர்ப்பு"
+
+msgid "Try guessing"
+msgstr "யூகிக்க முயற்சிக்கவும்"
+
+msgid "Tu"
+msgstr "செ"
+
+msgid "Tue"
+msgstr "செவ்வாய்"
+
+msgid "Tuesday"
+msgstr "செவ்வாய்க்கிழமை"
+
+msgid "Tuner Number"
+msgstr "ட்யூனர் எண்"
+
+msgid "Tuner Signal"
+msgstr "ட்யூனர் சிக்னல்"
+
+msgid "Tuner Type"
+msgstr "ட்யூனர் வகை"
+
+msgid "Tuners"
+msgstr "சுருதிக்கூட்டிகள"
+
+msgid "Type"
+msgstr "வகை"
+
+#, python-format
+msgid "Unknown Volume command %s"
+msgstr "அறியப்படாத தொகுதி கட்டளை %s"
+
+#, python-format
+msgid "Unknown command: '%s'"
+msgstr "தெரியாத கட்டளை: '%s'"
+
+msgid "Upcoming Events"
+msgstr "வரவிருக்கும் நிகழ்வுகள்"
+
+msgid "Update"
+msgstr "புதுப்பிப்பு"
+
+msgid "Update Package"
+msgstr "புதுப்பிப்பு தொகுப்பு"
+
+msgid "Update from feed"
+msgstr "ஊட்டத்திலிருந்து புதுப்பிக்கவும்"
+
+msgid "Upgrade all packages"
+msgstr "அனைத்து தொகுப்புகளையும் மேம்படுத்தவும்"
+
+msgid "Upload File Error"
+msgstr "கோப்பு பிழையைப் பதிவேற்றவும்"
+
+msgid "Upload package"
+msgstr "தொகுப்பைப் பதிவேற்றவும்"
+
+msgid "Uploaded Files"
+msgstr "பதிவேற்றிய கோப்புகள்"
+
+msgid "Use Channelname for screenshots"
+msgstr "திரை சாட்களுக்கு சேனல் பெயர் பயன்படுத்தவும்"
+
+msgid "Use a custom location"
+msgstr "தனிப்பயன் இருப்பிடத்தைப் பயன்படுத்தவும்"
+
+msgid "Use as PiP if possible"
+msgstr "முடிந்தால் பிஐபி ஆகப் பயன்படுத்து"
+
+msgid "Use classic interface"
+msgstr "கிளாசிக் இடைமுகத்தைப் பயன்படுத்தவும்"
+
+msgid "Use custom box name"
+msgstr "தனிப்பயன் பெட்டி பெயரைப் பயன்படுத்தவும்"
+
+msgid "Use modern design"
+msgstr "நவீன வடிவமைப்பைப் பயன்படுத்துங்கள்"
+
+msgid "Use modern interface"
+msgstr "நவீன இடைமுகத்தைப் பயன்படுத்தவும்"
+
+msgid "VPS"
+msgstr "வி.பி.எச்"
+
+msgid "VPS plugin not found"
+msgstr "வி.பி.எச் சொருகி கிடைக்கவில்லை"
+
+msgid "Version"
+msgstr "பதிப்பு"
+
+msgid "Video"
+msgstr "ஒளிதோற்றம்"
+
+msgid "Video Height"
+msgstr "வீடியோ உயரம்"
+
+msgid "Video PID (VPID)"
+msgstr "வீடியோ பிஐடி (VPID)"
+
+msgid "Video Width"
+msgstr "வீடியோ அகலம்"
+
+msgid "Visibly"
+msgstr "பார்வைக்கு"
+
+msgid "Volume"
+msgstr "தொகுதி"
+
+msgid "Volume Control"
+msgstr "தொகுதி கட்டுப்பாடு"
+
+msgid "W"
+msgstr "W"
+
+msgid "Waiting for answer ..."
+msgstr "பதிலுக்காக காத்திருக்கிறது ..."
+
+msgid "Wake Up"
+msgstr "எழுந்திரு"
+
+msgid "Wakeup"
+msgstr "விழித்தெழு"
+
+msgid "Warning"
+msgstr "எச்சரிக்கை"
+
+msgid "We"
+msgstr "நாங்கள்"
+
+msgid "Web TV"
+msgstr "வலை டிவி"
+
+msgid "Wed"
+msgstr "அறிவன்"
+
+msgid "Wednesday"
+msgstr "புதன்கிழமை"
+
+msgid "Weekly (Monday)"
+msgstr "வாராந்திர (திங்கள்)"
+
+msgid "Weekly (Sunday)"
+msgstr "வாராந்திர (ஞாயிறு)"
+
+msgid "Widescreen"
+msgstr "அகலத்திரை"
+
+msgid "Wizard"
+msgstr "வழிகாட்டி"
+
+msgid "Would you like to save your changes?"
+msgstr "உங்கள் மாற்றங்களைச் சேமிக்க விரும்புகிறீர்களா?"
+
+#, python-format
+msgid "Wrong parameter format 'set=%s'. Use set=set15 "
+msgstr "தவறான அளவுரு வடிவம் 'set=%s'. set=set15 ஐப் பயன்படுத்து"
+
+msgid "YYYY-MM-DD"
+msgstr "Yyyy-mm-dd"
+
+msgid "Yes"
+msgstr "ஆம்"
+
+msgid "Yes/No"
+msgstr "ஆம்/இல்லை"
+
+msgid "Yesterday"
+msgstr "நேற்று"
+
+msgid "Zap"
+msgstr "சாப்"
+
+msgid "Zap & Record"
+msgstr "சாப் & பதிவு"
+
+msgid "Zap before streaming"
+msgstr "ச்ட்ரீமிங்கிற்கு முன் சாப்"
+
+msgid "Zap to"
+msgstr "Zap பெறுநர்"
+
+msgid "Zapped to"
+msgstr "பெறுநர்"
+
+msgid "any time"
+msgstr "எந்த நேரத்திலும்"
+
+msgid "auto"
+msgstr "தானி"
+
+msgid "box_ip"
+msgstr "box_ip"
+
+msgid "case-insensitive"
+msgstr "வழக்கு-உணர்வற்ற"
+
+msgid "case-sensitive"
+msgstr "வழக்கு உணர்திறன்"
+
+msgid "descramble and record ecm"
+msgstr "டெச்கிராம்பிள் மற்றும் பதிவு ஈ.சி.எம்"
+
+msgid "description contains"
+msgstr "விளக்கம் உள்ளது"
+
+msgid "description match"
+msgstr "விளக்கம் போட்டி"
+
+msgid "disabled"
+msgstr "முடக்கப்பட்டது"
+
+msgid "do nothing"
+msgstr "எதுவும் செய்ய வேண்டாம்"
+
+msgid "don't descramble, record ecm"
+msgstr "டெச்கிராம்பிள் செய்ய வேண்டாம், இசிஎம் ஐ பதிவு செய்"
+
+msgid "error! Loading Page"
+msgstr "பிழை! பக்கத்தை ஏற்றுகிறது"
+
+msgid "exact title match"
+msgstr "சரியான தலைப்பு போட்டி"
+
+msgid "favourite desc match"
+msgstr "பிடித்த விவர பொருத்தம்"
+
+msgid "finished"
+msgstr "முடிந்தது"
+
+msgid "go to deep standby"
+msgstr "ஆழமான காத்திருப்புக்குச் செல்லுங்கள்"
+
+msgid "go to standby"
+msgstr "காத்திருப்புக்குச் செல்லுங்கள்"
+
+msgid "hour"
+msgstr "மணி"
+
+msgid "kB"
+msgstr "கே.பி."
+
+msgid "loading"
+msgstr "ஏற்றுகிறது"
+
+msgid "manual/disabled"
+msgstr "கையேடு/முடக்கப்பட்டது"
+
+msgid "mins"
+msgstr "நிமிடங்கள்"
+
+msgid "minute"
+msgstr "நிமிடங்கள்"
+
+msgid "no description available"
+msgstr "எந்த விளக்கமும் கிடைக்கவில்லை"
+
+msgid "none/IPv4-only network"
+msgstr "எதுவுமில்லை/ஐபிவி 4-மட்டும் பிணையம்"
+
+msgid "normal"
+msgstr "சாதாரண"
+
+msgid "on day"
+msgstr "நாள்"
+
+msgid "on weekday"
+msgstr "வார நாளில்"
+
+msgid "one two three four unknown command"
+msgstr "ஒரு இரண்டு மூன்று நான்கு அறியப்படாத கட்டளை"
+
+msgid "partial title match"
+msgstr "பகுதி தலைப்பு போட்டி"
+
+msgid "r/o"
+msgstr "r/o"
+
+msgid "r/w"
+msgstr "r/w"
+
+msgid "record"
+msgstr "பதிவு"
+
+msgid "regex match (experimental)"
+msgstr "ரீசெக்ச் போட்டி (சோதனை)"
+
+msgid "running"
+msgstr "இயங்கும்"
+
+msgid "seconds"
+msgstr "நொடிகள்"
+
+msgid "select bouquets"
+msgstr "பூங்கொத்துகளைத் தேர்ந்தெடுக்கவும்"
+
+msgid "select channels"
+msgstr "சேனல்களைத் தேர்ந்தெடுக்கவும்"
+
+msgid "select tags"
+msgstr "குறிச்சொற்களைத் தேர்ந்தெடுக்கவும்"
+
+msgid "short description contains"
+msgstr "குறுகிய விளக்கத்தில் உள்ளது"
+
+msgid "short description match"
+msgstr "குறுகிய விளக்கம் போட்டி"
+
+msgid "standard"
+msgstr "தரநிலை"
+
+msgid "static"
+msgstr "நிலையான"
+
+msgid "this service is protected by a parental control pin"
+msgstr "இந்த பணி பெற்றோரின் கட்டுப்பாட்டு முள் மூலம் பாதுகாக்கப்படுகிறது"
+
+msgid "title contains"
+msgstr "தலைப்பு உள்ளது"
+
+msgid "title ends with"
+msgstr "தலைப்பு முடிவடைகிறது"
+
+msgid "title or description match"
+msgstr "தலைப்பு அல்லது விளக்கம் போட்டி"
+
+msgid "title or short description match"
+msgstr "தலைப்பு அல்லது குறுகிய விளக்கம் போட்டி"
+
+msgid "title starts with"
+msgstr "தலைப்பு தொடங்குகிறது"
+
+msgid "transcoded"
+msgstr "டிரான்ச்கோடட்"
+
+#, python-format
+msgid "type %s is not a number"
+msgstr "வகை %s என்பது ஒரு எண் அல்ல"
+
+msgid "unknown"
+msgstr "தெரியவில்லை"
+
+msgid "using"
+msgstr "பயன்படுத்துகிறது"
+
+msgid "via"
+msgstr "வழிமம்"
+
+msgid "waiting"
+msgstr "காத்திருக்கிறது"
+
+msgid "weekday"
+msgstr "வார நாள்"
+
+msgid "weekend"
+msgstr "வார இறுதி"
+
+msgid "wrong filetype"
+msgstr "தவறான பைல்டைப்"
+
+msgid "zap"
+msgstr "சாப்"
+
+msgid "Add service name to stream information"
+msgstr "தகவல்களை ச்ட்ரீம் செய்ய பணி பெயரைச் சேர்க்கவும்"
+
+msgid "Allow IPK Upload"
+msgstr "ஐபிகே பதிவேற்ற அனுமதிக்கவும்"
+
+msgid "Debug - Display Tracebacks in browser"
+msgstr "பிழைத்திருத்தம் - உலாவியில் டிரேச்பேக்குகளைக் காண்பி"
+
+msgid "Disable remote access for user root"
+msgstr "பயனர் ரூட்டிற்கான தொலைநிலை அணுகலை முடக்கு"
+
+msgid "Enable Authentication for streaming"
+msgstr "ச்ட்ரீமிங்கிற்கான அங்கீகாரத்தை இயக்கவும்"
+
+msgid "Enable HTTP Authentication"
+msgstr "HTTP அங்கீகாரத்தை இயக்கவும்"
+
+msgid "Enable HTTPS"
+msgstr "HTTPS ஐ இயக்கவும்"
+
+msgid "Enable HTTPS Authentication"
+msgstr "HTTPS அங்கீகாரத்தை இயக்கவும்"
+
+msgid "Enable Parental Control"
+msgstr "பெற்றோரின் கட்டுப்பாட்டை இயக்கவும்"
+
+msgid "Enable access from VPNs"
+msgstr "VPN களில் இருந்து அணுகலை இயக்கவும்"
+
+msgid "HTTP port"
+msgstr "HTTP துறைமுகம்"
+
+msgid "HTTPS port"
+msgstr "HTTPS துறைமுகம்"
+
+msgid "OpenWebInterface Enabled"
+msgstr "OpenWebinterface இயக்கப்பட்டது"
+
+msgid "OpenWebif Configuration"
+msgstr "OpenWebif உள்ளமைவு"
+
+msgid "Playback IPTV Streams in browser"
+msgstr "உலாவியில் பிளேபேக் ஐபிடிவி ச்ட்ரீம்கள்"
+
+msgid "Require client cert for HTTPS"
+msgstr "HTTPS க்கு கிளையன்ட் சான்றிதழ் தேவை"
+
+msgid "Streaming port"
+msgstr "ச்ட்ரீமிங் துறைமுகம்"
+
+msgid "Use custom Color"
+msgstr "தனிப்பயன் நிறத்தைப் பயன்படுத்தவும்"
+
+msgid "Without auth only local access is allowed!"
+msgstr "ஏற்பு இல்லாமல் உள்ளக அணுகல் மட்டுமே அனுமதிக்கப்படுகிறது!"
