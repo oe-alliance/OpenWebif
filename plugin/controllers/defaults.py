@@ -201,7 +201,7 @@ class Globals:
 		self._hasVPS = isPluginInstalled("vps")
 		self._hasSeries = isPluginInstalled("SeriesPlugin")
 		self._lcnSupport = BoxInfo.getItem("distro") == "openatv" and self.getLCNVer() == 2
-		self._lcd = ("lcd" in BoxInfo.getItem("model")) or ("lcd" in BoxInfo.getItem("displaytype"))
+		self._lcd = BoxInfo.getItem("displaytype", "").startswith(("bwlcd", "colorlcd"))
 
 	def initSession(self):
 		self._transcodingNew = bool(BoxInfo.getItem("HasTranscodingSettings", False))
