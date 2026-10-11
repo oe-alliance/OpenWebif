@@ -39,7 +39,7 @@ from .info import getOrbitalText, getOrb
 from ..utilities import parse_servicereference, SERVICE_TYPE_LOOKUP, NS_LOOKUP
 from ..i18n import _, tstrings
 from ..defaults import STREAMRELAY, globalVars
-from .epg import EPG, convertGenre, getIPTVLink, filterName, convertDesc, GetWithAlternative
+from .epg import EPG, convertGenre, convertRating, getIPTVLink, filterName, convertDesc, GetWithAlternative
 
 try:
 	from Components.Renderer.Picon import piconLocator
@@ -814,7 +814,7 @@ def getTimerEventStatus(starttime, endtime, sref, timers=None):
 
 
 def getEvent(sref, eventid, encode=True):
-	eventlookuptable = 'IBDTSENRWX'
+	eventlookuptable = 'IBDTSENRWPX'
 	epg = EPG()
 	event = epg.getEvent(sref, eventid, eventlookuptable)
 	info = {}
@@ -830,6 +830,7 @@ def getEvent(sref, eventid, encode=True):
 		info['channel'] = filterName(event[6], encode)
 		info['sref'] = event[7]
 		info['genre'], info['genreid'] = convertGenre(event[8])
+		info['rating'], info['ratingcountry'] = convertRating(event[9])
 		info['picon'] = getPicon(event[7])
 		info['timer'] = getTimerEventStatus(event[1], event[1] + event[2], eventlookuptable, None)
 		info['link'] = getIPTVLink(event[7]).replace("%253a", ":")
@@ -880,6 +881,8 @@ def getChannelEpg(ref, begintime=-1, endtime=-1, encode=True, nownext=False):
 		ev['now_timestamp'] = 0
 		ev['genre'] = ""
 		ev['genreid'] = 0
+		ev['rating'] = 0
+		ev['ratingcountry'] = ""
 		ret.append(ev)
 
 	return {"events": ret, "result": True}
@@ -1044,6 +1047,7 @@ def getSearchEpg(sstr, endtime=None, fulldesc=False, bouquetsonly=False, encode=
 			ev['picon'] = getPicon(event[7])
 			ev['now_timestamp'] = None
 			ev['genre'], ev['genreid'] = convertGenre(event[8])
+			ev['rating'], ev['ratingcountry'] = convertRating(event[9])
 			if endtime:
 				# don't show events if begin after endtime
 				if event[1] <= endtime:
@@ -1100,6 +1104,7 @@ def getSimilarEpg(ref, eventid, encode=False):
 			ev['picon'] = _getPicon(event[7])
 			ev['now_timestamp'] = None
 			ev['genre'], ev['genreid'] = convertGenre(event[8])
+			ev['rating'], ev['ratingcountry'] = convertRating(event[9])
 			ret.append(ev)
 
 	return {"events": ret, "result": True}

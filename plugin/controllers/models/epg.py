@@ -38,13 +38,13 @@ NOW_EVENT = 0
 NEXT_EVENT = +1
 TIME_NOW = -1
 
-BOUQUET_NOWNEXT_FIELDS = "IBDCTSEWRNX"  # getBouquetNowNextEvents
-BOUQUET_FIELDS = "IBDCTSEWRN"  # getBouquetEvents
+BOUQUET_NOWNEXT_FIELDS = "IBDCTSEWRNPX"  # getBouquetNowNextEvents
+BOUQUET_FIELDS = "IBDCTSEWRNP"  # getBouquetEvents
 MULTI_CHANNEL_FIELDS = "IBTSRND"     # getMultiChannelEvents
 MULTI_NOWNEXT_FIELDS = "TBDCIESX"    # getMultiChannelNowNextEvents
-SINGLE_CHANNEL_FIELDS = "IBDTSENCW"   # getChannelEvents;
-SINGLE_CHANNEL_FIELDS_NN = "IBDTSENCWX"   # getChannelEvents now next;
-SEARCH_FIELDS = "IBDTSENRW"   # search, findSimilarEvents
+SINGLE_CHANNEL_FIELDS = "IBDTSENCWP"   # getChannelEvents;
+SINGLE_CHANNEL_FIELDS_NN = "IBDTSENCWPX"   # getChannelEvents now next;
+SEARCH_FIELDS = "IBDTSENRWP"   # search, findSimilarEvents
 
 
 # TODO: load configgy stuff once
@@ -75,6 +75,13 @@ def convertGenre(val):
 			gid = val[0] * 16 + val[1]
 			return str(getGenreStringLong(val[0], val[1])).strip(), gid
 	return "", 0
+
+
+def convertRating(val):
+	if val:
+		country, rating = val[0]
+		return rating, country.upper()
+	return 0, ""
 
 
 def getIPTVLink(ref):
@@ -270,6 +277,7 @@ class EPG():
 			ev["now_timestamp"] = event[3]
 			ev["remaining"] = (event[1] + event[2]) - event[3]
 			ev["genre"], ev["genreid"] = convertGenre(event[7])
+			ev["rating"], ev["ratingcountry"] = convertRating(event[10])
 			if streamRelay:
 				ev['streamrelay'] = event[8] in streamRelay
 
@@ -285,6 +293,8 @@ class EPG():
 			ev["remaining"] = 0
 			ev["genre"] = ""
 			ev["genreid"] = 0
+			ev["rating"] = 0
+			ev["ratingcountry"] = ""
 		return ev
 
 	def convertEventSingle(self, *event):
@@ -315,10 +325,11 @@ class EPG():
 				ev["progress"] = int(((event[7] - event[1]) * 100 / event[2]) * 4)
 			ev["now_timestamp"] = event[7]
 			ev["genre"], ev["genreid"] = convertGenre(event[8])
+			ev["rating"], ev["ratingcountry"] = convertRating(event[9])
 			return ev
 
 	def similar(self, sref, eventid):
-		return self._instance.search(("IBDTSENRW", 128, self._instance.SIMILAR_BROADCASTINGS_SEARCH, sref, eventid))
+		return self._instance.search((SEARCH_FIELDS, MAX_RESULTS, self._instance.SIMILAR_BROADCASTINGS_SEARCH, sref, eventid))
 
 	def getNowNextEpg(self, sref, nowornext, encode):
 		nn = 0 if nowornext == EPG.NOW else 1
