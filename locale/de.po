@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: OpenWebif\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-31 14:25+0200\n"
-"PO-Revision-Date: 2026-10-11 13:03+0000\n"
+"PO-Revision-Date: 2026-10-11 13:09+0000\n"
 "Last-Translator: jbleyel <jbleyel@gmx.net>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/e2openplugin-"
 "openwebif/e2openplugin-openwebif/de/>\n"
@@ -39,11 +39,11 @@ msgstr "%d.%m.%Y %H:%M"
 
 #, python-format
 msgid "%s %02d.%02d."
-msgstr ""
+msgstr "%s %02d.%02d."
 
 #, python-format
 msgid "%s %02d.%02d.%d"
-msgstr ""
+msgstr "%s %02d.%02d.%d"
 
 #, python-format
 msgid "%s %s is locked."
@@ -51,11 +51,11 @@ msgstr "%s %s ist gesperrt."
 
 #, python-format
 msgid "%s / %s"
-msgstr ""
+msgstr "%s / %s"
 
 #, python-format
 msgid "%s Style"
-msgstr ""
+msgstr "%s Stil"
 
 #, python-format
 msgid "%s free / %s total"
@@ -70,13 +70,11 @@ msgstr "(In Minuten)"
 msgid "<Current movie list location>"
 msgstr "<Aktuelles Filmverzeichnis>"
 
-#, fuzzy
 msgid "<Default movie location>"
-msgstr "Angepasstes Aufnahmeverzeichnis"
+msgstr "<Standard Filmverzeichnis>"
 
-#, fuzzy
 msgid "<Last timer location>"
-msgstr "Angepasstes Aufnahmeverzeichnis"
+msgstr "<Letztes Timerverzeichnis>"
 
 msgid "A filename is required"
 msgstr "Bitte den Dateinamen angeben"
@@ -181,7 +179,7 @@ msgid "Answer is YES!"
 msgstr "Antwort lautet JA!"
 
 msgid "Any"
-msgstr ""
+msgstr "Jeder"
 
 msgid "Any day"
 msgstr "Jeden Tag"
@@ -229,10 +227,10 @@ msgid "Ask, default Yes"
 msgstr "Nachfrage mit Standard Ja"
 
 msgid "Audio Encoding"
-msgstr ""
+msgstr "Audio Encodierung"
 
 msgid "Audio PID (APID)"
-msgstr ""
+msgstr "Audio PID (APID)"
 
 msgid "Audio Track"
 msgstr "Audiospur"
@@ -283,7 +281,7 @@ msgid "Beginning of timespan"
 msgstr "Anfang der Zeitspanne"
 
 msgid "Bit Error Rate (BER)"
-msgstr ""
+msgstr "Bit Error Rate (BER)"
 
 msgid "Bookmark"
 msgstr "Bookmark"
@@ -366,7 +364,7 @@ msgid "Brand"
 msgstr "Marke"
 
 msgid "Build"
-msgstr ""
+msgstr "Build"
 
 msgid "Cable"
 msgstr "Kabel"
@@ -438,7 +436,7 @@ msgid "Current Event"
 msgstr "Aktuelle Sendung"
 
 msgid "Currently recording"
-msgstr ""
+msgstr "Aktuelle Aufnahme"
 
 msgid "Custom box name"
 msgstr "Eigener Boxname"
@@ -727,13 +725,13 @@ msgstr ""
 "fehlgeschlagen!"
 
 msgid "HH:MM"
-msgstr ""
+msgstr "HH:MM"
 
 msgid "Hard disk model"
 msgstr "Festplattenmodell"
 
 msgid "Hardware"
-msgstr ""
+msgstr "Hardware"
 
 msgid "Hide full remote"
 msgstr "Vollständige Fernbedienung ausblenden"
@@ -748,7 +746,7 @@ msgid "Hour"
 msgstr "Stunde"
 
 msgid "IPTV / URL name"
-msgstr ""
+msgstr "IPTV / URL Name"
 
 msgid "IPv4 address"
 msgstr "IPv4-Adresse"
@@ -784,7 +782,7 @@ msgid "Info"
 msgstr "Informationen"
 
 msgid "Information"
-msgstr ""
+msgstr "Information"
 
 msgid "Inherit AutoTimer"
 msgstr "Sender aus AutoTimern übernehmen"
@@ -836,7 +834,7 @@ msgid "Kernel"
 msgstr "Kernel"
 
 msgid "LCD"
-msgstr ""
+msgstr "LCD"
 
 msgid "LCD4Linux Setup"
 msgstr "LCD4Linux-Einstellungen"
@@ -845,7 +843,7 @@ msgid "Label series"
 msgstr ""
 
 msgid "License"
-msgstr ""
+msgstr "Lizenz"
 
 msgid "Link speed"
 msgstr "Verbindungsgeschwindigkeit"
