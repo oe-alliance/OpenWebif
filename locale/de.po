@@ -1,4 +1,4 @@
-# jbleyel <jbleyel@gmx.net>, 2021, 2022, 2023.
+# jbleyel <jbleyel@gmx.net>, 2021, 2022, 2023, 2026.
 # Ettore Atalan <atalanttore@googlemail.com>, 2023.
 # T-Rex <t-rex@t.pl>, 2023.
 msgid ""
@@ -6,8 +6,8 @@ msgstr ""
 "Project-Id-Version: OpenWebif\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-31 14:25+0200\n"
-"PO-Revision-Date: 2023-08-22 17:44+0000\n"
-"Last-Translator: T-Rex <t-rex@t.pl>\n"
+"PO-Revision-Date: 2026-10-11 13:03+0000\n"
+"Last-Translator: jbleyel <jbleyel@gmx.net>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/e2openplugin-"
 "openwebif/e2openplugin-openwebif/de/>\n"
 "Language: de\n"
@@ -15,27 +15,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0-dev\n"
+"X-Generator: Weblate 2026.10.1.dev0\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ../plugin\n"
 
 #, python-format
 msgid "%02d.%02d."
-msgstr ""
+msgstr "%02d.%02d."
 
 #, python-format
 msgid "%02d.%02d.%d"
-msgstr ""
+msgstr "%02d.%02d.%d"
 
 #, python-format
 msgid "%02d:%02d"
-msgstr ""
+msgstr "%02d:%02d"
 
 msgid "%d.%m.%Y"
-msgstr ""
+msgstr "%d.%m.%Y"
 
 msgid "%d.%m.%Y %H:%M"
-msgstr ""
+msgstr "%d.%m.%Y %H:%M"
 
 #, python-format
 msgid "%s %02d.%02d."
@@ -68,7 +68,7 @@ msgid "(in minutes)"
 msgstr "(In Minuten)"
 
 msgid "<Current movie list location>"
-msgstr ""
+msgstr "<Aktuelles Filmverzeichnis>"
 
 #, fuzzy
 msgid "<Default movie location>"
@@ -271,7 +271,7 @@ msgid "Background only"
 msgstr "Nur im Hintergrund"
 
 msgid "Before"
-msgstr ""
+msgstr "Bevor"
 
 msgid "Begin"
 msgstr "Beginn"
