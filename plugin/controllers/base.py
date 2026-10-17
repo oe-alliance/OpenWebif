@@ -28,7 +28,7 @@ from twisted.web.server import GzipEncoderFactory
 from twisted.internet import defer
 from twisted.protocols.basic import FileSender
 
-from Plugins.Extensions.OpenWebif.controllers.i18n import _
+from Plugins.Extensions.OpenWebif import _
 from Tools.Directories import isPluginInstalled
 from Cheetah.Template import Template
 from enigma import eEPGCache

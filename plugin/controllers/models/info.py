@@ -37,7 +37,7 @@ from ServiceReference import ServiceReference
 from Screens.InfoBar import InfoBar
 from timer import TimerEntry
 
-from ..i18n import _
+from ... import _
 from ..defaults import OPENWEBIFVER, TEXTINPUTSUPPORT, globalVars
 from ..utilities import removeBad, removeBad2
 from .epg import EPG

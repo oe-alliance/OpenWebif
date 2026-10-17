@@ -7,7 +7,7 @@
 #                                                                            #
 ##############################################################################
 from Screens.MessageBox import MessageBox
-from ..i18n import _
+from ... import _
 
 lastreply = None
 

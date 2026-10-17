@@ -35,7 +35,7 @@ except ImportError:
 	setupOnSave = {}
 
 
-from ..i18n import _
+from ... import _
 from ..utilities import get_config_attribute
 
 TRANSLATE = {
