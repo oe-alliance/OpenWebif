@@ -18,16 +18,16 @@
 # Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
 ##########################################################################
 
-from Components.config import config, ConfigSubsection, ConfigInteger, ConfigYesNo, ConfigText, ConfigSelection
+from enigma import getDesktop
+
+from Components.config import ConfigInteger, ConfigSelection, ConfigSubsection, ConfigText, ConfigYesNo, config
 from Components.SystemInfo import BoxInfo
 from Plugins.Plugin import PluginDescriptor
 from Screens.Setup import Setup
-from enigma import getDesktop
-from .controllers.defaults import EXT_EVENT_INFO_SOURCE, getIP, setDebugEnabled, PLUGIN_NAME, PLUGIN_DESCRIPTION, TRANSCODIDINGPROXY, globalVars
 
-from .httpserver import HttpdStart, HttpdStop, HttpdRestart
-from .controllers.models.info import updateShares
-from .controllers.i18n import _
+from .startup import HttpdRestart, HttpdStart, HttpdStop
+from .controllers.defaults import EXT_EVENT_INFO_SOURCE, PLUGIN_DESCRIPTION, PLUGIN_NAME, TRANSCODIDINGPROXY, getIP, setDebugEnabled
+from . import _
 
 # not used redmond -> original , trontastic , ui-lightness
 THEMES = [
@@ -146,6 +146,7 @@ config.OpenWebif.webcache.mintimerlist = ConfigYesNo(default=False)
 config.OpenWebif.webcache.minmovielist = ConfigYesNo(default=False)
 
 config.OpenWebif.autotimer_regex_searchtype = ConfigYesNo(default=False)  # TODO
+global_session = None
 
 
 class OpenWebifConfig(Setup):
@@ -198,8 +199,6 @@ def startSession(reason, session):
 		global global_session
 		global_session = session
 		HttpdStart(global_session)
-		globalVars.initSession()
-		updateShares()
 
 
 def main_menu(menuid, **kwargs):

@@ -27,7 +27,7 @@ from twisted.web import server, resource, http
 
 from Components.config import config
 from .base import BaseController
-from .i18n import _
+from .. import _
 from .utilities import getUrlArg
 
 
