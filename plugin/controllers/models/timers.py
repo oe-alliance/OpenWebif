@@ -29,7 +29,7 @@ from RecordTimer import RecordTimerEntry, parseEvent
 from ServiceReference import ServiceReference
 from Screens.InfoBar import InfoBar
 from .info import getInfo
-from ..i18n import _
+from ... import _
 from ..utilities import removeBad
 from .epg import EPG, GetWithAlternative
 

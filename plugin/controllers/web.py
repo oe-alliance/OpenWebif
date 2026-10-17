@@ -39,7 +39,7 @@ from .models.servicelist import reloadServicesLists
 from .models.mediaplayer import mediaPlayerAdd, mediaPlayerRemove, mediaPlayerPlay, mediaPlayerCommand, mediaPlayerCurrent, mediaPlayerList, mediaPlayerLoad, mediaPlayerSave, mediaPlayerFindFile
 from .models.plugins import reloadPlugins
 
-from .i18n import _
+from .. import _
 from .base import BaseController
 from .stream import StreamController
 from .utilities import getUrlArg, toBinary, toString

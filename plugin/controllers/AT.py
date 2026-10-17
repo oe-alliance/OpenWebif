@@ -25,7 +25,7 @@ from os import remove
 import tarfile
 import json
 from .utilities import e2simplexmlresult
-from .i18n import _
+from .. import _
 
 ATFN = "/tmp/autotimer_backup.tar"  # nosec
 

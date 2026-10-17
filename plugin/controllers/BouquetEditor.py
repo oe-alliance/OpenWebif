@@ -10,7 +10,7 @@ from os import remove
 from os.path import exists, join as pathjoin
 from re import compile
 import tarfile
-from .i18n import _
+from .. import _
 from enigma import eServiceReference, eServiceCenter, eDVBDB, eEnv
 from Components.Sources.Source import Source
 from Screens.ChannelSelection import MODE_TV, MODE_RADIO

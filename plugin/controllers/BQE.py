@@ -28,7 +28,7 @@ from .defaults import service_types_tv, globalVars
 from .models.services import getPicon
 from .BouquetEditor import BouquetEditor
 from .base import BaseController
-from .i18n import _
+from .. import _
 
 
 class BQEWebController(BaseController):

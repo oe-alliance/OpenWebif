@@ -33,7 +33,7 @@ from Components.MovieList import MovieList
 from Screens.MovieSelection import defaultMoviePath
 from Tools.CopyFiles import copyFiles, moveFiles
 from Tools.Directories import fileExists
-from ..i18n import _
+from ... import _
 from ..utilities import getUrlArg2, toString
 
 from Components.MovieList import moviePlayState
