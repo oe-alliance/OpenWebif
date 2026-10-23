@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: OpenWebif\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-11 14:04+0200\n"
-"PO-Revision-Date: 2026-10-11 13:13+0000\n"
-"Last-Translator: Karol Sz <kaolsz@interia.pl>\n"
+"PO-Revision-Date: 2026-10-23 18:57+0000\n"
+"Last-Translator: pololoko111 <pololoko111@o2.pl>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/e2openplugin-"
 "openwebif/e2openplugin-openwebif/pl/>\n"
 "Language: pl\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.10.1.dev0\n"
+"X-Generator: Weblate 2026.11.dev0\n"
 
 #, python-format
 msgid "%02d.%02d."
@@ -511,7 +511,7 @@ msgid "Distro"
 msgstr "Dystrybucja"
 
 msgid "Do you want to switch the receiver to this channel?"
-msgstr ""
+msgstr "Czy chcesz przełączyć odbiornik na ten kanał?"
 
 msgid "Dolby"
 msgstr "Dolby"
@@ -643,7 +643,7 @@ msgid "Event not found"
 msgstr "Nie znaleziono wydarzenia"
 
 msgid "EventId not found"
-msgstr "Nie znaleziono ID wydarzenia"
+msgstr "Nie znaleziono EventId"
 
 msgid "Every"
 msgstr "Każdy"
@@ -655,7 +655,7 @@ msgid "Execute \"After event\" during timespan"
 msgstr "Wykonaj „Po zdarzeniu” w określonym przedziale czasu"
 
 msgid "Executing..."
-msgstr ""
+msgstr "Wykonywanie..."
 
 msgid "Export"
 msgstr "Eksport"
@@ -846,10 +846,10 @@ msgid "Label series"
 msgstr "Seria etykiet"
 
 msgid "Last refresh"
-msgstr ""
+msgstr "Ostatnie odświeżenie"
 
 msgid "Legacy via port 8002"
-msgstr ""
+msgstr "Starszy tryb przez port 8002"
 
 msgid "License"
 msgstr "Licencja"
@@ -967,7 +967,7 @@ msgid "Multi-Bouquet is not enabled!"
 msgstr "Multi-Lista kanałów nie jest włączona!"
 
 msgid "MultiBoot Slots"
-msgstr ""
+msgstr "Sloty MultiBoot"
 
 msgid "MultiEPG"
 msgstr "Multi EPG"
@@ -1018,7 +1018,7 @@ msgid "No EPG data available."
 msgstr "Brak dostępnych danych EPG."
 
 msgid "No Parent Control Setup Pin given!"
-msgstr "Nie podano PINu ustawień kontroli rodzicielskiej!"
+msgstr "Nie podano kodu PIN ustawień kontroli rodzicielskiej!"
 
 msgid "No answer in time"
 msgstr "Brak odpowiedzi na czas"
@@ -1036,7 +1036,7 @@ msgid "No event found! Not recording!"
 msgstr "Nie znaleziono wydarzenia! Nie nagrywam!"
 
 msgid "No free tuner available for this channel."
-msgstr ""
+msgstr "Brak wolnego tunera dla tego kanału."
 
 msgid "No marker-name given!"
 msgstr "Nie podano nazwy znacznika!"
@@ -1144,7 +1144,7 @@ msgid "OpenWebif Settings"
 msgstr "Ustawienia OpenWebif"
 
 msgid "OpenWebif url:"
-msgstr "OpenWebif URL:"
+msgstr "Adres URL OpenWebif:"
 
 msgid "Orbital Position"
 msgstr "Pozycja orbitalna"
@@ -1162,7 +1162,7 @@ msgid "Packages"
 msgstr "Pakiety"
 
 msgid "Parent Control Setup Pin is wrong!"
-msgstr "Kod PIN ustawień kontroli rodzicielskiej jest nieprawidłowy!"
+msgstr "Nieprawidłowy kod PIN ustawień kontroli rodzicielskiej!"
 
 msgid "Parent Control is not activated."
 msgstr "Kontrola rodzicielska jest nieaktywna."
@@ -1291,7 +1291,7 @@ msgid "Root"
 msgstr "Root"
 
 msgid "Run Script"
-msgstr ""
+msgstr "Uruchom skrypt"
 
 msgid "SLAAC"
 msgstr "SLAAC"
@@ -1323,18 +1323,17 @@ msgstr "Sobota"
 msgid "Save"
 msgstr "Zapisz"
 
-#, fuzzy
 msgid "Saving..."
-msgstr "Ładowanie..."
+msgstr "Zapisywanie..."
 
 msgid "Screenshot"
 msgstr "Zrzut ekranu"
 
 msgid "Script completed"
-msgstr ""
+msgstr "Skrypt zakończony"
 
 msgid "Scripts"
-msgstr ""
+msgstr "Skrypty"
 
 msgid "Search"
 msgstr "Szukaj"
@@ -1355,7 +1354,7 @@ msgid "Search TV Guide UK"
 msgstr "Szukaj w przewodniku TV w UK"
 
 msgid "Search by name, sd / hd / uhd, or provider"
-msgstr "Szukaj po nazwie, SD / HD / UHD lub dostawcy"
+msgstr "Szukaj według nazwy, sd / hd / uhd lub dostawcy"
 
 msgid "Search strictness"
 msgstr "Wyszukaj ściśle"
@@ -1446,12 +1445,11 @@ msgstr "Ustaw maksymalny czas trwania"
 msgid "Settings"
 msgstr "Ustawienia"
 
-#, fuzzy
 msgid "Show Compact EPG List"
-msgstr "Wyświetl historię EPG"
+msgstr "Pokaż kompaktową listę EPG"
 
 msgid "Show Compact Timer List"
-msgstr ""
+msgstr "Pokaż kompaktową listę timerów"
 
 msgid "Show EPG History"
 msgstr "Wyświetl historię EPG"
@@ -1471,9 +1469,8 @@ msgstr "Pokaż wszystkie pakiety"
 msgid "Show box name in header"
 msgstr "Pokaż nazwę odbiornika w nagłówku"
 
-#, fuzzy
 msgid "Show description"
-msgstr "Opis"
+msgstr "Pokaż opis"
 
 msgid "Show details"
 msgstr "Pokaż szczegóły"
@@ -1746,9 +1743,8 @@ msgstr "Przełącznik trybu czuwania"
 msgid "Transcode"
 msgstr "Transkoduj"
 
-#, fuzzy
 msgid "Transcoding Mode"
-msgstr "Transkoduj"
+msgstr "Tryb transkodowania"
 
 msgid "Translation to Spanish"
 msgstr "Tłumaczenie na język hiszpański"
@@ -2066,7 +2062,7 @@ msgid "static"
 msgstr "statyczny"
 
 msgid "this service is protected by a parental control pin"
-msgstr "Ta usługa jest zabezpieczona kodem PIN kontroli rodzicielskiej"
+msgstr "ten kanał jest chroniony kodem PIN kontroli rodzicielskiej"
 
 msgid "title contains"
 msgstr "tytuł zawiera"
