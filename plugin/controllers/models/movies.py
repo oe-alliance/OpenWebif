@@ -29,14 +29,13 @@ from glob import glob
 from enigma import eServiceReference, iServiceInformation, eServiceCenter
 from ServiceReference import ServiceReference
 from Components.config import config
-from Components.MovieList import MovieList
+from Components.MovieList import moviePlayState
 from Screens.MovieSelection import defaultMoviePath
 from Tools.CopyFiles import copyFiles, moveFiles
 from Tools.Directories import fileExists
 from ... import _
 from ..utilities import getUrlArg2, toString
-
-from Components.MovieList import moviePlayState
+from .OWFMovieList import MovieList as OWFMovieList
 
 
 def FuzzyTime2(t):
@@ -90,14 +89,12 @@ def getMovieList(rargs=None, locations=None, directory=None):
 	movieliste = []
 	tag = None
 	fields = None
-	internal = None
 	bookmarklist = []
 
 	if rargs:
 		tag = getUrlArg2(rargs, "tag")
 		directory = getUrlArg2(rargs, "dirname")
 		fields = getUrlArg2(rargs, "fields")
-		internal = getUrlArg2(rargs, "internal")
 
 	if directory is None:
 		directory = defaultMoviePath()
@@ -154,14 +151,7 @@ def getMovieList(rargs=None, locations=None, directory=None):
 		dir_is_protected = False
 
 	if not dir_is_protected:
-		if internal:
-			try:
-				from .OWFMovieList import MovieList as OWFMovieList
-				movielist = OWFMovieList(None)
-			except ImportError:
-				movielist = MovieList(None)
-		else:
-			movielist = MovieList(None)
+		movielist = OWFMovieList(None)
 		for root in folders:
 			if tag is not None:
 				movielist.load(root=root, filter_tags=[tag])
