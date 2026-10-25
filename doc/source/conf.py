@@ -13,9 +13,13 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 import os
+import re
 import sys
 sys.path.insert(0, os.path.abspath('../../plugin'))
-from __init__ import __version__
+
+# plugin/__init__.py needs enigma2 modules, so read the version without importing it
+with open(os.path.abspath('../../plugin/__init__.py')) as f:
+	__version__ = re.search(r'__version__\s*=\s*"([^"]+)"', f.read()).group(1)
 
 # -- Project information -----------------------------------------------------
 
