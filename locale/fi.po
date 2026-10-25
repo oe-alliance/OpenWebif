@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: OpenWebif\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-17 18:51+0300\n"
-"PO-Revision-Date: 2026-10-25 16:36+0200\n"
+"PO-Revision-Date: 2026-10-25 18:30+0200\n"
 "Last-Translator: Orlandox\n"
 "Language-Team: Orlandox\n"
 "Language: fi\n"
@@ -127,7 +127,7 @@ msgid "Add similar on conflict"
 msgstr "Lisää samanlaisiin ristiriidassa"
 
 msgid "Add tags to recordings"
-msgstr "Lisää kommentti tallennuksille"
+msgstr "Lisää tunnisteet tallennuksiin"
 
 #, python-format
 msgid "Added %s to alternative service %s."
@@ -146,7 +146,7 @@ msgid "All Channels"
 msgstr "Kaikki kanavat"
 
 msgid "All Files of this Software are open source software; you can redistribute it and/or modify it under the terms of the GNU General Public License version 3 as published by the Free Software Foundation."
-msgstr "Kaikki tämän ohjelma tiedostot ovat avointa lähdekoodia; Voit jakaa ja muokata niitä GNU General Public License versio 3 ehtojen mukaan jonka on julkaissut Free Software Foundation."
+msgstr "Kaikki tämän ohjelmiston tiedostot ovat avointa lähdekoodia. Voit jakaa ja/tai muokata niitä Free Software Foundationin julkaisemien GNU General Public License version 3 ehtojen mukaisesti."
 
 msgid "All alternative services deleted."
 msgstr "Kaikki vaihtoehtoiset kanavat poistettu."
@@ -186,7 +186,7 @@ msgid "Are you sure you want to delete the selected bouquet?"
 msgstr "Haluatko varmasti poistaa valitun suosikkilistan?"
 
 msgid "Are you sure you want to delete the selected item(s)?"
-msgstr "Oletko varma että halut poistaa tämän tallenteen(t)?"
+msgstr "Haluatko varmasti poistaa valitut kohteet?"
 
 msgid "Are you sure you want to delete this AutoTimer?"
 msgstr "Haluatko poistaa tämän automaattiajastuksen?"
@@ -261,7 +261,7 @@ msgid "Before"
 msgstr "Ennen"
 
 msgid "Begin"
-msgstr "Alku"
+msgstr "Alkaa"
 
 msgid "Begin of \"After event\" timespan"
 msgstr "Aikajakson \"ajastuksen jälkeen\" alku"
@@ -480,7 +480,7 @@ msgid "Device"
 msgstr "Laite"
 
 msgid "Disable"
-msgstr "Hylkää"
+msgstr "Poista käytöstä"
 
 msgid "Disable Timer"
 msgstr "Poista ajastus käytöstä"
@@ -546,7 +546,7 @@ msgid "Editor"
 msgstr "Muokkaaja"
 
 msgid "Enable"
-msgstr "Salli"
+msgstr "Ota käyttöön"
 
 msgid "Enable Messages"
 msgstr "Salli viestit"
@@ -555,10 +555,10 @@ msgid "Enable Timer"
 msgstr "Ota ajastus käyttöön"
 
 msgid "Enable filtering"
-msgstr "Suodata"
+msgstr "Ota suodatus käyttöön"
 
 msgid "Enable/Disable Screenshot on key press"
-msgstr "Salli/Poista kuvankaappaus näppäimellä tai"
+msgstr "Ota kuvankaappaus käyttöön tai poista käytöstä näppäinpainalluksella"
 
 msgid "Enabled"
 msgstr "Sallittu"
@@ -567,7 +567,7 @@ msgid "Encrypted"
 msgstr "Salattu"
 
 msgid "End"
-msgstr "Lopetus"
+msgstr "Loppuu"
 
 msgid "End of \"After event\" timespan"
 msgstr "Aikajakson \"ajastuksen jälkeen\" loppu"
@@ -700,7 +700,7 @@ msgid "GB"
 msgstr "GB"
 
 msgid "GUI version"
-msgstr "GUI-Versio"
+msgstr "GUI-versio"
 
 msgid "Gateway"
 msgstr "Reitti"
@@ -727,7 +727,7 @@ msgid "High Resolution"
 msgstr "Suuri resoluutio"
 
 msgid "Hold to drag"
-msgstr "Pidä vetääksesi"
+msgstr "Pidä painettuna siirtääksesi"
 
 msgid "Hour"
 msgstr "Tunti"
@@ -794,7 +794,7 @@ msgstr "Sisäinen flash-muisti"
 
 #, python-format
 msgid "Interval (in %s)"
-msgstr "Väli (in %s)"
+msgstr "Väli (%s)"
 
 msgid "Interval (min.)"
 msgstr "Väli (min.)"
@@ -833,7 +833,7 @@ msgid "Last refresh"
 msgstr "Viimeisin päivitys"
 
 msgid "Legacy via port 8002"
-msgstr "Perinteinen portin 8002 kautta"
+msgstr "Yhteensopiva tila portin 8002 kautta"
 
 msgid "License"
 msgstr "Lisenssi"
@@ -845,7 +845,7 @@ msgid "List of Timers has been cleaned"
 msgstr "Ajastuslista tyhjennetty"
 
 msgid "Loading..."
-msgstr "Lataa..."
+msgstr "Ladataan..."
 
 msgid "Location"
 msgstr "Sijainti"
@@ -863,7 +863,7 @@ msgid "Main"
 msgstr "Päävalikko"
 
 msgid "Main memory"
-msgstr "Muistinkäyttö"
+msgstr "Keskusmuisti"
 
 msgid "March"
 msgstr "Maaliskuu"
@@ -893,13 +893,13 @@ msgid "Method"
 msgstr "Tapa"
 
 msgid "Minimal EPG list"
-msgstr "Minimoitu ohjelmaopas"
+msgstr "Pieni ohjelmaopas"
 
 msgid "Minimal movie list"
-msgstr "Minimaalinen tallennelista"
+msgstr "Pieni tallennelista"
 
 msgid "Minimal timer list"
-msgstr "Minimoitu ajastuslista"
+msgstr "Pieni ajastuslista"
 
 msgid "Minute"
 msgstr "Minuutti"
@@ -1122,10 +1122,10 @@ msgid "Open in new window"
 msgstr "Avaa uuteen ikkunaan"
 
 msgid "OpenWebif Browser Settings"
-msgstr "OpenWebif selaimen asetukset"
+msgstr "OpenWebif-selaimen asetukset"
 
 msgid "OpenWebif Settings"
-msgstr "OpenWebif asetukset"
+msgstr "OpenWebif-asetukset"
 
 msgid "OpenWebif url:"
 msgstr "OpenWebif-URL:"
@@ -1164,7 +1164,7 @@ msgid "Picture in Picture (hidden)"
 msgstr "Kuva kuvassa (piilotettu)"
 
 msgid "Plain"
-msgstr "Helppo"
+msgstr "Yksinkertainen"
 
 msgid "Playback"
 msgstr "Toista"
@@ -1179,7 +1179,7 @@ msgid "Power Control"
 msgstr "Virranhallinta"
 
 msgid "PowerTimer feature not available"
-msgstr "Virta-ajastusta ei saatavilla"
+msgstr "Virta-ajastus ei ole käytettävissä"
 
 msgid "Preview"
 msgstr "Esikatselu"
@@ -1338,13 +1338,13 @@ msgid "Search TV Guide UK"
 msgstr "Hae TV Guide UK:sta"
 
 msgid "Search by name, sd / hd / uhd, or provider"
-msgstr "Hae nimellä, sd / hd / uhd, tai palveluntarjoaja"
+msgstr "Hae nimellä, SD/HD/UHD-tyypillä tai palveluntarjoajalla"
 
 msgid "Search strictness"
 msgstr "Hakutarkkuus"
 
 msgid "Search type"
-msgstr "Haku tyypillä"
+msgstr "Hakutyyppi"
 
 msgid "Select Directory"
 msgstr "Valitse hakemisto"
@@ -1442,10 +1442,10 @@ msgid "Show EPG for"
 msgstr "Näytä ohjelmaopas kanavalle"
 
 msgid "Show Full OpenWebif"
-msgstr "OpenWebif työpöytäversio"
+msgstr "Näytä täysi OpenWebif"
 
 msgid "Show IPTV channels in selection (eg. Autotimer)"
-msgstr "Näytä IPTV-kanavat valinnassa (pl. automaattiajastus)"
+msgstr "Näytä IPTV-kanavat valinnoissa (esim. Automaattiajastus)"
 
 msgid "Show all packages"
 msgstr "Näytä kaikki paketit"
@@ -1472,7 +1472,7 @@ msgid "Show picons"
 msgstr "Näytä kanavalogot"
 
 msgid "Show picons in channel list"
-msgstr "Näytä kanavalogo kanavalistassa"
+msgstr "Näytä kanavalogot kanavalistassa"
 
 msgid "Show service type in channel list"
 msgstr "Näytä kanavatyyppi kanavalistassa"
@@ -1518,7 +1518,7 @@ msgid "Sleeptimer set to %d minutes"
 msgstr "Uniajastus asetettu %d minuuttiin"
 
 msgid "Small remote layout"
-msgstr "Pieni kaukosäätimen leiska"
+msgstr "Pieni kaukosäädinasettelu"
 
 msgid "Software"
 msgstr "Ohjelmisto"
@@ -1551,7 +1551,7 @@ msgid "State"
 msgstr "Tila"
 
 msgid "Storage"
-msgstr "Muisti"
+msgstr "Tallennustila"
 
 msgid "Stream"
 msgstr "Striimi"
@@ -1569,7 +1569,7 @@ msgid "Subnet mask"
 msgstr "Aliverkon peite"
 
 msgid "Subservices"
-msgstr "Alipalvelut"
+msgstr "Alikanavat"
 
 msgid "Sun"
 msgstr "Su"
@@ -1596,7 +1596,7 @@ msgid "TV Multi EPG"
 msgstr "TV-Multi-EPG"
 
 msgid "Tags"
-msgstr "Merkit"
+msgstr "Tunnisteet"
 
 msgid "Teletext"
 msgstr "Teksti-TV"
@@ -1608,7 +1608,7 @@ msgid "Television"
 msgstr "Televisio"
 
 msgid "Template Engine"
-msgstr "Teema"
+msgstr "Mallipohjainen moottori"
 
 msgid "Terminal"
 msgstr "Terminaali"
@@ -1631,7 +1631,7 @@ msgstr "Asetus 'komento' pitää olla numero"
 
 #, python-format
 msgid "The timer '%s' has been %s successfully"
-msgstr "Ajastuksen '%s' poisto %s onnistui"
+msgstr "Ajastus '%s' on %s onnistuneesti"
 
 #, python-format
 msgid "The timer '%s' has been deleted successfully"
@@ -1734,7 +1734,7 @@ msgid "Translation to Spanish"
 msgstr "Espanjankielinen käännös"
 
 msgid "Try guessing"
-msgstr "Kokeile kyselyä"
+msgstr "Yritä arvata"
 
 msgid "Tu"
 msgstr "Ti"
@@ -1802,7 +1802,7 @@ msgid "Use as PiP if possible"
 msgstr "Käytä PiP-kuvaa jos mahdollista"
 
 msgid "Use classic interface"
-msgstr "Käytä perinteistä teemaa"
+msgstr "Käytä perinteistä käyttöliittymää"
 
 msgid "Use custom box name"
 msgstr "Käytä omaa laitteen nimeä"
@@ -1835,7 +1835,7 @@ msgid "Video Width"
 msgstr "Kuvan leveys"
 
 msgid "Visibly"
-msgstr "Näkyvyys"
+msgstr "Näkyvästi"
 
 msgid "Volume"
 msgstr "Äänenvoimakkuus"
@@ -1871,10 +1871,10 @@ msgid "Wednesday"
 msgstr "Keskiviikko"
 
 msgid "Weekly (Monday)"
-msgstr "Viikottain (maanantai)"
+msgstr "Viikoittain (maanantai)"
 
 msgid "Weekly (Sunday)"
-msgstr "Viikottain (sunnuntai)"
+msgstr "Viikoittain (sunnuntai)"
 
 msgid "Widescreen"
 msgstr "Laajakuva"
@@ -1883,7 +1883,7 @@ msgid "Wizard"
 msgstr "Avustaja"
 
 msgid "Would you like to save your changes?"
-msgstr "Haluatko tallentaa asetukset?"
+msgstr "Haluatko tallentaa muutokset?"
 
 #, python-format
 msgid "Wrong parameter format 'set=%s'. Use set=set15 "
@@ -1950,7 +1950,7 @@ msgid "don't descramble, record ecm"
 msgstr "älä pura, tallenna ecm"
 
 msgid "error! Loading Page"
-msgstr "virhe! Sivua ladataan"
+msgstr "Virhe sivua ladattaessa"
 
 msgid "exact title match"
 msgstr "täsmällinen ohjelmannimen vastaavuus"
@@ -1974,7 +1974,7 @@ msgid "kB"
 msgstr "kB"
 
 msgid "loading"
-msgstr "lataa"
+msgstr "ladataan"
 
 msgid "manual/disabled"
 msgstr "manuaalinen/pois"
@@ -2064,7 +2064,7 @@ msgid "title starts with"
 msgstr "ohjelmannimi alkaa"
 
 msgid "transcoded"
-msgstr "transkoodaus"
+msgstr "transkoodattu"
 
 #, python-format
 msgid "type %s is not a number"
@@ -2077,7 +2077,7 @@ msgid "using"
 msgstr "käyttää"
 
 msgid "via"
-msgstr "reittiä"
+msgstr "kautta"
 
 msgid "waiting"
 msgstr "odotetaan"
