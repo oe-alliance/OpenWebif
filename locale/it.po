@@ -2,13 +2,15 @@
 #
 # Dario Croci <spaeleus@croci.org>, 2021, 2022, 2023.
 # Massimo Pissarello <mapi68@gmail.com>, 2022, 2023, 2026.
+# Massimo Pissarello <mapi68@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenWebif\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-11 14:04+0200\n"
-"PO-Revision-Date: 2026-10-11 13:12+0000\n"
-"Last-Translator: Massimo Pissarello <mapi68@gmail.com>\n"
+"PO-Revision-Date: 2026-10-13 00:51+0000\n"
+"Last-Translator: Massimo Pissarello <mapi68@users.noreply.hosted.weblate.org>"
+"\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/e2openplugin-"
 "openwebif/e2openplugin-openwebif/it/>\n"
 "Language: it\n"
@@ -16,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.10.1.dev0\n"
+"X-Generator: Weblate 2026.11.dev0\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -49,7 +51,7 @@ msgstr "%s %02d.%02d.%d"
 
 #, python-format
 msgid "%s %s is locked."
-msgstr "%s %s bloccato."
+msgstr "%s %s è bloccato."
 
 #, python-format
 msgid "%s / %s"
@@ -372,7 +374,7 @@ msgid "Calendar Week"
 msgstr "Calendario settimanale"
 
 msgid "Cancel"
-msgstr "Annullare"
+msgstr "Annulla"
 
 msgid "Cancelled"
 msgstr "Annullato"
@@ -439,7 +441,7 @@ msgid "Currently recording"
 msgstr "Attualmente in registrazione"
 
 msgid "Custom box name"
-msgstr "Personalizza il nome del ricevitore"
+msgstr "Nome personalizzato del ricevitore"
 
 msgid "Custom offset"
 msgstr "Compensazione personalizzata"
@@ -493,7 +495,7 @@ msgid "Device"
 msgstr "Dispositivo"
 
 msgid "Disable"
-msgstr "Disabilitare"
+msgstr "Disabilita"
 
 msgid "Disable Timer"
 msgstr "Disattiva timer"
@@ -511,7 +513,7 @@ msgid "Distro"
 msgstr "Distribuzione"
 
 msgid "Do you want to switch the receiver to this channel?"
-msgstr ""
+msgstr "Vuoi sintonizzare il ricevitore su questo canale?"
 
 msgid "Dolby"
 msgstr "Dolby"
@@ -523,7 +525,7 @@ msgid "Download"
 msgstr "Download"
 
 msgid "Download playlist for"
-msgstr "Scaricare la playlist per"
+msgstr "Scarica la playlist per"
 
 msgid "Drivers"
 msgstr "Driver"
@@ -633,7 +635,7 @@ msgstr "Errore, %s non è stato creato con WebBouquetEditor..."
 
 #, python-format
 msgid "Error, extract files from backup '%s'"
-msgstr "Errore, estrai file dal backup '%s'"
+msgstr "Errore estrazione file dal backup '%s'"
 
 #, python-format
 msgid "Error: Bouquet %s could not deleted, OSError."
@@ -655,7 +657,7 @@ msgid "Execute \"After event\" during timespan"
 msgstr "Esegui \"Dopo l'evento\" durante l'intervallo di tempo"
 
 msgid "Executing..."
-msgstr ""
+msgstr "Esecuzione in corso..."
 
 msgid "Export"
 msgstr "Esporta"
@@ -682,7 +684,7 @@ msgid "Folders"
 msgstr "Cartelle"
 
 msgid "Force"
-msgstr "Forzare"
+msgstr "Forza"
 
 msgid "Fr"
 msgstr "Ve"
@@ -722,12 +724,11 @@ msgstr "Gateway"
 
 msgid "Get mutable list for new created alternative failed!"
 msgstr ""
-"Impossibile ottenere l'elenco delle variabili per l'alternativa appena "
-"creata!"
+"Impossibile ottenere l'elenco modificabile per l'alternativa appena creata!"
 
 msgid "Get mutable list for new created bouquet failed!"
 msgstr ""
-"Impossibile ottenere l'elenco delle variabili per il bouquet appena creato!"
+"Impossibile ottenere l'elenco modificabile per il bouquet appena creato!"
 
 msgid "HH:MM"
 msgstr "HH:MM"
@@ -757,10 +758,10 @@ msgid "IPv4 address"
 msgstr "Indirizzo IPv4"
 
 msgid "IPv4-only Python/Twisted"
-msgstr "IPv4-solo Python/Twisted"
+msgstr "Python/Twisted solo IPv4"
 
 msgid "IPv4-only kernel"
-msgstr "IPv4-solo kernel"
+msgstr "Kernel solo IPv4"
 
 msgid "IPv6 address(es)"
 msgstr "Indirizzo IPv6"
@@ -848,10 +849,10 @@ msgid "Label series"
 msgstr "Serie di etichette"
 
 msgid "Last refresh"
-msgstr ""
+msgstr "Ultimo aggiornamento"
 
 msgid "Legacy via port 8002"
-msgstr ""
+msgstr "Legacy tramite porta 8002"
 
 msgid "License"
 msgstr "Licenza"
@@ -890,10 +891,10 @@ msgid "Margin"
 msgstr "Margine"
 
 msgid "Marker added."
-msgstr "Contrassegno aggiunto."
+msgstr "Marcatore aggiunto."
 
 msgid "Marker name"
-msgstr "Nome del contrassegno"
+msgstr "Nome marcatore"
 
 msgid "Match text"
 msgstr "Corrispondenza testo"
@@ -914,7 +915,7 @@ msgid "Minimal EPG list"
 msgstr "Elenco EPG minimo"
 
 msgid "Minimal movie list"
-msgstr "Elenco film minimo"
+msgstr "Registrazioni minime"
 
 msgid "Minimal timer list"
 msgstr "Elenco timer minimo"
@@ -960,7 +961,7 @@ msgid "Movie database for EPG"
 msgstr "Database filmati per EPG"
 
 msgid "Movielist"
-msgstr "Lista dei film"
+msgstr "Registrazioni"
 
 msgid "Movies"
 msgstr "Registrazioni"
@@ -969,7 +970,7 @@ msgid "Multi-Bouquet is not enabled!"
 msgstr "Bouquet multipli non abilitati!"
 
 msgid "MultiBoot Slots"
-msgstr ""
+msgstr "Slot MultiBoot"
 
 msgid "MultiEPG"
 msgstr "EPG multiplo"
@@ -1020,7 +1021,7 @@ msgid "No EPG data available."
 msgstr "Nessun dato EPG disponibile."
 
 msgid "No Parent Control Setup Pin given!"
-msgstr "Nessun pin di configurazione del controllo genitori fornito!"
+msgstr "Nessun PIN di configurazione del controllo genitori fornito!"
 
 msgid "No answer in time"
 msgstr "Nessuna risposta in tempo"
@@ -1038,7 +1039,7 @@ msgid "No event found! Not recording!"
 msgstr "Nessun evento trovato! Non si registra!"
 
 msgid "No free tuner available for this channel."
-msgstr ""
+msgstr "Nessun tuner libero disponibile per questo canale."
 
 msgid "No marker-name given!"
 msgstr "Nessun nome marcatore specificato!"
@@ -1164,10 +1165,10 @@ msgid "Packages"
 msgstr "Pacchetti"
 
 msgid "Parent Control Setup Pin is wrong!"
-msgstr "Il pin di configurazione del controllo genitori è sbagliato!"
+msgstr "Il PIN di configurazione del controllo genitori è sbagliato!"
 
 msgid "Parent Control is not activated."
-msgstr "Controllo Parentale non attivato."
+msgstr "Controllo genitori non attivato."
 
 msgid "Parse AutoTimer"
 msgstr "Analizza timer automatico"
@@ -1191,7 +1192,7 @@ msgid "Playlist"
 msgstr "Playlist"
 
 msgid "Playlist format"
-msgstr "playlist"
+msgstr "Formato playlist"
 
 msgid "Power Control"
 msgstr "Power Control"
@@ -1293,7 +1294,7 @@ msgid "Root"
 msgstr "Root"
 
 msgid "Run Script"
-msgstr ""
+msgstr "Esegui script"
 
 msgid "SLAAC"
 msgstr "SLAAC"
@@ -1325,18 +1326,17 @@ msgstr "Sabato"
 msgid "Save"
 msgstr "Salva"
 
-#, fuzzy
 msgid "Saving..."
-msgstr "Caricamento..."
+msgstr "Salvataggio in corso..."
 
 msgid "Screenshot"
 msgstr "Screenshot"
 
 msgid "Script completed"
-msgstr ""
+msgstr "Script completato"
 
 msgid "Scripts"
-msgstr ""
+msgstr "Script"
 
 msgid "Search"
 msgstr "Cerca"
@@ -1448,12 +1448,11 @@ msgstr "Imposta la durata massima"
 msgid "Settings"
 msgstr "Impostazioni"
 
-#, fuzzy
 msgid "Show Compact EPG List"
-msgstr "Mostra cronologia EPG"
+msgstr "Mostra elenco EPG compatto"
 
 msgid "Show Compact Timer List"
-msgstr ""
+msgstr "Mostra elenco timer compatto"
 
 msgid "Show EPG History"
 msgstr "Mostra cronologia EPG"
@@ -1471,11 +1470,10 @@ msgid "Show all packages"
 msgstr "Mostra tutti i pacchetti"
 
 msgid "Show box name in header"
-msgstr "Mostra nome della casella nell'intestazione"
+msgstr "Mostra nome ricevitore nell'intestazione"
 
-#, fuzzy
 msgid "Show description"
-msgstr "Descrizione"
+msgstr "Mostra descrizione"
 
 msgid "Show details"
 msgstr "Mostra dettagli"
@@ -1539,7 +1537,7 @@ msgid "Sleeptimer set to %d minutes"
 msgstr "Il timer di spegnimento è impostato a %d minuti"
 
 msgid "Small remote layout"
-msgstr "Piccolo layout remoto"
+msgstr "Telecomando piccolo"
 
 msgid "Software"
 msgstr "Software"
@@ -1548,7 +1546,7 @@ msgid "Sorry this page is not yet implemented"
 msgstr "Pagina non ancora implementata"
 
 msgid "Sort"
-msgstr "Ordinare"
+msgstr "Ordina"
 
 msgid "Spinner"
 msgstr "Spinner"
@@ -1629,7 +1627,7 @@ msgid "Television"
 msgstr "Televisione"
 
 msgid "Template Engine"
-msgstr "Modello motore"
+msgstr "Motore template"
 
 msgid "Terminal"
 msgstr "Terminale"
@@ -1699,7 +1697,7 @@ msgstr "Il timer '%s' esiste già!"
 
 #, python-format
 msgid "Timer '%s' changed"
-msgstr "Il timer '%s' è cambiato"
+msgstr "Timer '%s' modificato"
 
 #, python-format
 msgid "Timer '%s' not enabled while Conflict"
@@ -1748,9 +1746,8 @@ msgstr "Standby"
 msgid "Transcode"
 msgstr "Transcodifica"
 
-#, fuzzy
 msgid "Transcoding Mode"
-msgstr "Transcodifica"
+msgstr "Modalità transcodifica"
 
 msgid "Translation to Spanish"
 msgstr "Traduzione in spagnolo"
@@ -1872,13 +1869,13 @@ msgid "Waiting for answer ..."
 msgstr "In attesa di risposta..."
 
 msgid "Wake Up"
-msgstr "Riattivare"
+msgstr "Riattiva"
 
 msgid "Wakeup"
-msgstr "Riattivare"
+msgstr "Riattiva"
 
 msgid "Warning"
-msgstr "Avvertimento"
+msgstr "Attenzione"
 
 msgid "We"
 msgstr "Me"
@@ -1899,7 +1896,7 @@ msgid "Weekly (Sunday)"
 msgstr "Settimanale (domenica)"
 
 msgid "Widescreen"
-msgstr "A tutto schermo"
+msgstr "Widescreen"
 
 msgid "Wizard"
 msgstr "Procedura guidata"
@@ -1939,7 +1936,7 @@ msgid "Zapped to"
 msgstr "Passato al canale"
 
 msgid "any time"
-msgstr "ogni volta"
+msgstr "qualsiasi ora"
 
 msgid "auto"
 msgstr "automatico"
@@ -1987,7 +1984,7 @@ msgid "go to deep standby"
 msgstr "spegni il ricevitore"
 
 msgid "go to standby"
-msgstr "vai a standby"
+msgstr "vai in standby"
 
 msgid "hour"
 msgstr "ora"
@@ -2038,7 +2035,7 @@ msgid "record"
 msgstr "registrazione"
 
 msgid "regex match (experimental)"
-msgstr "corrispondenza regolare (sperimentale)"
+msgstr "corrispondenza regex (sperimentale)"
 
 msgid "running"
 msgstr "in esecuzione"
@@ -2068,7 +2065,7 @@ msgid "static"
 msgstr "statico"
 
 msgid "this service is protected by a parental control pin"
-msgstr "questo servizio è protetto da un pin di controllo parentale"
+msgstr "questo servizio è protetto da un PIN del controllo genitori"
 
 msgid "title contains"
 msgstr "titolo contiene"
@@ -2171,4 +2168,4 @@ msgid "Use custom Color"
 msgstr "Usa colore personalizzato"
 
 msgid "Without auth only local access is allowed!"
-msgstr "Senza autorizzazione è consentito solo l'accesso locale!"
+msgstr "Senza autenticazione è consentito solo l'accesso locale!"
