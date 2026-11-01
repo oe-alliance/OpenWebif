@@ -2127,7 +2127,7 @@ class WebController(BaseController):
 			if res:
 				return res
 			value = getUrlArg(request, "value")
-			if value:
+			if value is not None:
 				key = getUrlArg(request, "key")
 				return saveConfig(key, value, save)
 		return {"result": False}

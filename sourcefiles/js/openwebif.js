@@ -1031,7 +1031,7 @@ function reloadConfigSection(section) {
 }
 
 function updateConfig(key, value, section) {
-	$.ajax({ url: "/api/updateconfig?key=" + escape(key) + "&value=" + escape(value), cache: false, async: true, type: "POST"}).done(function() { 
+	$.ajax({ url: "/api/updateconfig?key=" + encodeURIComponent(key) + "&value=" + encodeURIComponent(value), cache: false, async: true, type: "POST"}).done(function() { 
 		if (key == "config.usage.setup_level") {
 			$("#content_container").load(lastcontenturl);
 		}
@@ -1042,7 +1042,7 @@ function updateConfig(key, value, section) {
 }
 
 function saveConfig(key, value, section) {
-	$.ajax({ url: "/api/saveconfig?key=" + escape(key) + "&value=" + escape(value), cache: false, async: true, type: "POST"}).done(function() { 
+	$.ajax({ url: "/api/saveconfig?key=" + encodeURIComponent(key) + "&value=" + encodeURIComponent(value), cache: false, async: true, type: "POST"}).done(function() { 
 		if (key == "config.usage.setup_level") {
 			$("#content_container").load(lastcontenturl);
 		}
