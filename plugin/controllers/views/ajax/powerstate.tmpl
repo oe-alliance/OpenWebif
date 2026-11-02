@@ -47,9 +47,10 @@
 							li.className = 'ui-button';
 							var text = slot.label + ':' + slot.imagename;
 							if (slot.current) {
+								li.className = 'ui-button ui-state-active';
 								li.style.fontWeight = 'bold';
-								li.innerHTML = text;
-								li.style.opacity = '0.6';
+								li.style.cursor = 'default';
+								li.innerHTML = '&#9679; ' + text;
 							} else {
 								li.innerHTML = text;
 								li.onclick = function() {

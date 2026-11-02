@@ -1,5 +1,5 @@
 ## Version 2.4.1
-* add keyboard remote control to the screenshot screen (0-9, cursor keys, esc, enter, space, r/g/y/b)
+* add keyboard remote control to the screenshot screen (0-9, cursor keys, esc, enter, space, r/g/y/b) with a short key overlay
 * add allservicescsvalphabetical API (services sorted by name with SID/TSID and orbital position)
 * add DAB support
 * add remaining time of the running movie playback to /api/getcurrent

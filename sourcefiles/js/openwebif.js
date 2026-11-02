@@ -1035,8 +1035,33 @@ $(document).on('keydown', function(e) {
 		return;
 	}
 	e.preventDefault();
+	showKeyOverlay(keyboardRemoteLabels[code] || e.key, e.shiftKey);
 	pressMenuRemote(code, e.shiftKey);
 });
+
+var keyboardRemoteLabels = {
+	103: '\u25B2', 105: '\u25C0', 106: '\u25B6', 108: '\u25BC',
+	174: 'Exit', 352: 'OK', 139: 'Menu',
+	398: 'Red', 399: 'Green', 400: 'Yellow', 401: 'Blue'
+};
+var keyboardRemoteColors = {398: '#d9261c', 399: '#2e9e3a', 400: '#e0c200', 401: '#1a2cbd'};
+var keyOverlayTimer = null;
+
+function showKeyOverlay(label, long) {
+	let o = $('#keyoverlay');
+	if (o.length === 0) {
+		o = $('<div id="keyoverlay"></div>').css({
+			position: 'fixed', left: '50%', bottom: '15%', transform: 'translateX(-50%)',
+			padding: '12px 28px', borderRadius: '10px', fontSize: '32px', fontWeight: 'bold',
+			color: '#fff', background: 'rgba(0,0,0,0.75)', zIndex: 99999, pointerEvents: 'none', display: 'none'
+		}).appendTo('body');
+	}
+	let code = Object.keys(keyboardRemoteLabels).find(function(c) { return keyboardRemoteLabels[c] === label; });
+	o.css('background', keyboardRemoteColors[code] || 'rgba(0,0,0,0.75)')
+		.text(label + (long ? ' (long)' : '')).stop(true, true).show();
+	clearTimeout(keyOverlayTimer);
+	keyOverlayTimer = setTimeout(function() { o.fadeOut(300); }, 600);
+}
 
 function toggleFullRemote() {
 	$("#menucontainer").toggle();
