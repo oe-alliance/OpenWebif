@@ -1,3 +1,23 @@
+## Version 2.4.1
+* add keyboard remote control to the screenshot screen (0-9, cursor keys, esc, enter, space, r/g/y/b)
+* add allservicescsvalphabetical API (services sorted by name with SID/TSID and orbital position)
+* add DAB support
+* add remaining time of the running movie playback to /api/getcurrent
+* add parental rating to EPG event data
+* add radio services to the AutoTimer and EPGRefresh channel selection
+* show last refresh time in EPGRefresh
+* center LCD screenshot in classic mode
+* force download for stream/ts m3u playlist links
+* cache network shares and resolve them asynchronously
+* move translation setup into the package and defer startup via StartupTasks
+* always use OWFMovieList for movies and drop the "internal" argument
+* fix LCD grab offered on textlcd displays
+* fix getIP using only the first configured adapter
+* fix IPv6 detection (check the actual route instead of the has_ipv6 build flag)
+* fix relative import error in main template
+* fix saving config values with '+' or an empty string
+* update translations
+
 ## Version 2.4.0
 * add new transcoding backend support (TranscodingSettings plugin) with encoder/profile selection
 * add live555 HLS streaming support for WebTV and stream links

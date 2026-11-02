@@ -1,6 +1,6 @@
 //******************************************************************************
 //* openwebif.js: openwebif base module
-//* Version 2.0.1
+//* Version 2.0.2
 //******************************************************************************
 //* Copyright (C) 2011-2023 E2OpenPlugins
 //*
@@ -43,6 +43,7 @@
 //* V 1.2.28 - improve timeredit
 //* V 2.0.0 - use let instead of var
 //* V 2.0.1 - add new timer margins
+//* V 2.0.2 - add keyboard remote control to the screenshot screen
 //*
 //* Authors: jbleyel
 //*			 skaman <sandro # skanetwork.com>
@@ -1015,6 +1016,27 @@ function pressMenuRemote(code, shift) {
 	}
 	grabTimer = setTimeout(function() { callScreenShot(); }, (code > 1 && code < 12) ? 1500:1000);
 }
+
+// keyboard -> remote control while the screenshot screen is shown
+var keyboardRemoteCodes = {
+	'1': 2, '2': 3, '3': 4, '4': 5, '5': 6, '6': 7, '7': 8, '8': 9, '9': 10, '0': 11,
+	'ArrowUp': 103, 'ArrowLeft': 105, 'ArrowRight': 106, 'ArrowDown': 108,
+	'Escape': 174, 'Enter': 352, ' ': 139,
+	'r': 398, 'g': 399, 'y': 400, 'b': 401
+};
+
+$(document).on('keydown', function(e) {
+	if (e.ctrlKey || e.altKey || e.metaKey || $('#screenshotimage').length === 0) {
+		return;
+	}
+	let code = keyboardRemoteCodes[e.key.length === 1 ? e.key.toLowerCase() : e.key];
+	let el = document.activeElement;
+	if (code === undefined || (el && (/^(INPUT|TEXTAREA|SELECT|BUTTON|A)$/.test(el.tagName) || el.isContentEditable))) {
+		return;
+	}
+	e.preventDefault();
+	pressMenuRemote(code, e.shiftKey);
+});
 
 function toggleFullRemote() {
 	$("#menucontainer").toggle();

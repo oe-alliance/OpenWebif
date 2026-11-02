@@ -3,7 +3,7 @@ from gettext import bindtextdomain, dgettext, gettext
 from Components.Language import language
 from Tools.Directories import SCOPE_PLUGINS, resolveFilename
 
-__version__ = "2.4.0"
+__version__ = "2.4.1"
 
 LOCALES_DOMAIN = "OpenWebif"
 LOCALES_RELPATH = "Extensions/OpenWebif/locale"
