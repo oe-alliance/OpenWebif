@@ -19,7 +19,6 @@
 ##########################################################################
 
 from os import access, F_OK
-from urllib.parse import unquote
 
 from Components.config import config
 from enigma import eServiceReference, eActionMap, eServiceCenter
@@ -179,7 +178,7 @@ def remoteControl(key, rctype="", rcu=DEFAULT_RCU):
 		message = "RC command text not supported"
 		result = False
 		if setPrevAsciiCode:
-			for k in unquote(rcu):
+			for k in rcu:
 				setPrevAsciiCode(ord(k))
 				amap.keyPressed(remotetype, 510, 0)
 				amap.keyPressed(remotetype, 510, 1)

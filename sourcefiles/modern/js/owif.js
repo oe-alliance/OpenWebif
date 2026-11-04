@@ -176,7 +176,7 @@ class API {
   }
 
   async sendKeyboardText(text) {
-    const response = (typeof text == 'undefined') ? {'ok': false, 'status': 'Empty request'} : await fetch(`/api/remotecontrol?text=${text}`);
+    const response = (typeof text == 'undefined') ? {'ok': false, 'status': 'Empty request'} : await fetch(`/api/remotecontrol?text=${encodeURIComponent(text)}`);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     } else {
