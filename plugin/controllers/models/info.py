@@ -383,6 +383,8 @@ def getInfo(session=None, need_fullinfo=False):
 		f = open("/proc/stb/info/chipset")
 		chipset = f.readline().strip()
 		f.close()
+	elif chipset == "unknown":
+		chipset = BoxInfo.getItem("ChipsetString") or chipset
 
 	info["chipset"] = chipset
 
