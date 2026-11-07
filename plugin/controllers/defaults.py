@@ -20,7 +20,7 @@
 
 from glob import glob
 from re import search, MULTILINE
-from os import symlink
+from os import listdir, symlink
 from os.path import dirname, exists, isdir, isfile, join as pathjoin, islink
 import sys
 
@@ -297,7 +297,7 @@ class Globals:
 			if isdir(prefix):
 				for folder in PICON_FOLDERS:
 					current = f"{prefix}{folder}/"
-					if isdir(current):
+					if isdir(current) and any(f.endswith((".png", ".svg")) for f in listdir(current)):
 						print(f"[OpenWebif] Current Picon Path : {current}")
 						return current
 
