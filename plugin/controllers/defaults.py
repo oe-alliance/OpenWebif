@@ -20,7 +20,7 @@
 
 from glob import glob
 from re import search, MULTILINE
-from os import symlink
+from os import scandir, symlink
 from os.path import dirname, exists, isdir, isfile, join as pathjoin, islink
 import sys
 
@@ -293,11 +293,19 @@ class Globals:
 		#: subfolders containing picons
 		PICON_FOLDERS = ('owipicon', 'picon')
 
+		def hasPicons(path):
+			# stops at the first picon found instead of reading the whole folder
+			try:
+				with scandir(path) as entries:
+					return any(entry.name.endswith((".png", ".svg")) for entry in entries)
+			except OSError:
+				return False
+
 		for prefix in PICON_PREFIXES:
 			if isdir(prefix):
 				for folder in PICON_FOLDERS:
 					current = f"{prefix}{folder}/"
-					if isdir(current):
+					if isdir(current) and hasPicons(current):
 						print(f"[OpenWebif] Current Picon Path : {current}")
 						return current
 
