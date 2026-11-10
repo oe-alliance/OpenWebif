@@ -85,16 +85,26 @@ def checkParentalProtection(directory):
 	return False
 
 
+MOVIE_SORTERS = {
+	"name": (lambda m: (m["eventname"], m["recordingtime"]), False),
+	"named": (lambda m: (m["eventname"], m["recordingtime"]), True),
+	"date": (lambda m: (m["recordingtime"], m["filename_stripped"]), False),
+	"dated": (lambda m: (m["recordingtime"], m["filename_stripped"]), True)
+}
+
+
 def getMovieList(rargs=None, locations=None, directory=None):
 	movieliste = []
 	tag = None
 	fields = None
+	sort = None
 	bookmarklist = []
 
 	if rargs:
 		tag = getUrlArg2(rargs, "tag")
 		directory = getUrlArg2(rargs, "dirname")
 		fields = getUrlArg2(rargs, "fields")
+		sort = getUrlArg2(rargs, "sort")
 
 	if directory is None:
 		directory = defaultMoviePath()
@@ -239,6 +249,10 @@ def getMovieList(rargs=None, locations=None, directory=None):
 
 				movieliste.append(movie)
 #		del movielist
+
+	# same sort names as the ajax movie list, default is newest first
+	sortkey, reverse = MOVIE_SORTERS.get(sort, MOVIE_SORTERS["dated"])
+	movieliste.sort(key=sortkey, reverse=reverse)
 
 	if locations is None:
 		return {
