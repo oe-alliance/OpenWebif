@@ -18,8 +18,10 @@
 # Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
 ##########################################################################
 
-from os import popen, statvfs
+from os import statvfs
 from os.path import exists, isdir, realpath
+from re import search
+from subprocess import run
 from time import localtime, strftime
 from twisted import version
 from twisted.internet.threads import deferToThread
@@ -30,6 +32,10 @@ from Components.config import config
 from Components.Harddisk import harddiskmanager
 from Components.NimManager import nimmanager
 from Components.Network import iNetwork
+try:
+	from Components.NetworkManager import networkManager
+except ImportError:
+	networkManager = None
 from Components.SystemInfo import BoxInfo
 import NavigationInstance
 from RecordTimer import parseEvent, RecordTimerEntry
@@ -109,16 +115,25 @@ def getIPv4Method(iface):
 
 
 def getLinkSpeed(iface):
-	speed = _("unknown")
-	try:
-		with open(f"/sys/class/net/{iface}/speed") as f:
-			speed = f.read().strip()
-	except:  # nosec # noqa: E722
-		if isdir(f"/sys/class/net/{iface}/wireless"):
-			try:
-				speed = popen(f'iwlist {iface} bitrate | grep "Bit Rate"').read().split(":")[1].split(" ")[0]
-			except:  # nosec # noqa: E722
-				pass
+	speed = 0
+	if networkManager:
+		adapter = networkManager.getAdapter(iface)
+		netInfo = networkManager.getNetInfo(iface)
+		if adapter:
+			speed = netInfo.bitrateBps // 1000000 if adapter.isWiFi else netInfo.speed
+	if speed <= 0:
+		speed = _("unknown")
+		try:
+			with open(f"/sys/class/net/{iface}/speed") as f:
+				speed = f.read().strip()
+		except OSError:
+			if isdir(f"/sys/class/net/{iface}/wireless"):
+				try:
+					match = search(r"Bit Rate[:=]\s*([0-9.]+)", run(["iwlist", iface, "bitrate"], capture_output=True, text=True, timeout=5).stdout)
+					if match:
+						speed = match.group(1)
+				except Exception:
+					pass
 	speed = str(speed) + " MBit/s"
 	speed = speed.replace("10000 MBit/s", "10 GBit/s")
 	speed = speed.replace("1000 MBit/s", "1 GBit/s")
