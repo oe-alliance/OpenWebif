@@ -165,6 +165,9 @@ function isAlter(sref) {return (sref.indexOf("1:134:1") == 0);}
 
 			}, UpdateCHBQ: function (chbq,begin,end) {
 
+			    $("#er_begin,#er_end").inputmask("remove");
+			    $("#er_begin,#er_end").removeClass("time24");
+
 				let _i=parseInt(begin);
 				let _date = new Date(_i*1000);
 				let h = addZero(_date.getHours());
